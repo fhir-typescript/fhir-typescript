@@ -1,0 +1,37 @@
+{
+  "name": "@fhir-typescript/r4-core",
+  "version": "0.0.11-beta.2",
+  "description": "Developer pre-release testing of a FHIR TypeScript SDK",
+  "keywords": ["fhir", "core", "R4" ],
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "clean": "shx rm -rf dist lib",
+    "build:modules": "rollup -c",
+    "build:modules:watch": "rollup -cw",
+    "build": "npm run clean && npm run build:modules",
+    "build:all": "npm run build",
+    "prepack": "npm run build"
+  },
+  "homepage": "https://github.com/fhir-typescript/fhir-typescript.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fhir-typescript/fhir-typescript.git"
+  },
+  "author": {
+    "name": "Gino Canessa"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "shx": "~0.3.4",
+    "rollup": "~2.73.0",
+    "rollup-plugin-typescript2": "~0.31.2",
+    "typescript": "~4.6.4",
+    "tslib": "~2.4.0",
+    "rimraf": "~3.0.2"
+  }
+}

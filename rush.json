@@ -26,7 +26,7 @@
    * Specify one of: "pnpmVersion", "npmVersion", or "yarnVersion".  See the Rush documentation
    * for details about these alternatives.
    */
-  "pnpmVersion": "6.7.1",
+  "pnpmVersion": "7.1.0",
 
   // "npmVersion": "6.14.15",
   // "yarnVersion": "1.9.4",
@@ -124,7 +124,8 @@
    * LTS schedule: https://nodejs.org/en/about/releases/
    * LTS versions: https://nodejs.org/en/download/releases/
    */
-  "nodeSupportedVersionRange": ">=12.13.0 <13.0.0 || >=14.15.0 <15.0.0 || >=16.13.0 <17.0.0",
+  // "nodeSupportedVersionRange": ">=12.13.0 <13.0.0 || >=14.15.0 <15.0.0 || >=16.13.0 <17.0.0",
+  "nodeSupportedVersionRange": ">=16.13.0",
 
   /**
    * Odd-numbered major versions of Node.js are experimental.  Even-numbered releases
@@ -137,7 +138,7 @@
    * pre-LTS versions in preparation for supporting the first LTS version, you can use this setting
    * to disable Rush's warning.
    */
-  "suppressNodeLtsWarning": false,
+  "suppressNodeLtsWarning": true,
 
   /**
    * If you would like the version specifiers for your dependencies to be consistent, then
@@ -385,7 +386,13 @@
     * to projects. If this property is not specified, any tag is allowed. This
     * list is useful in preventing typos when specifying tags for projects.
     */
-  "allowedProjectTags": [ "fhir", "core", "ig" ],
+  "allowedProjectTags": [ 
+    "fhir", "core", "ig", "hl7",
+    "DSTU2", "R2",
+    "STU3", "R3",
+    "R4", "R4B",
+    "R5" 
+  ],
 
   /**
    * (Required) This is the inventory of projects to be managed by Rush.
@@ -396,6 +403,10 @@
    * 3. It's useful to have a centralized inventory of all projects and their important metadata.
    */
   "projects": [
+    {
+      "packageName": "@fhir-typescript/r4-core",
+      "projectFolder": "core/r4"
+    }
     // {
     //   /**
     //    * The NPM package name of the project (must match package.json)
