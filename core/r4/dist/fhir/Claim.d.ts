@@ -49,7 +49,7 @@ export declare class ClaimRelated extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ClaimPayee type.
@@ -87,7 +87,7 @@ export declare class ClaimPayee extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ClaimCareTeam type.
@@ -149,7 +149,7 @@ export declare class ClaimCareTeam extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ClaimSupportingInfo type.
@@ -255,7 +255,7 @@ export declare class ClaimSupportingInfo extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ClaimDiagnosis type.
@@ -329,7 +329,7 @@ export declare class ClaimDiagnosis extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ClaimProcedure type.
@@ -403,7 +403,7 @@ export declare class ClaimProcedure extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ClaimInsurance type.
@@ -481,7 +481,7 @@ export declare class ClaimInsurance extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ClaimAccident type.
@@ -543,7 +543,7 @@ export declare class ClaimAccident extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ClaimItemDetailSubDetail type.
@@ -653,7 +653,7 @@ export declare class ClaimItemDetailSubDetail extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ClaimItemDetail type.
@@ -771,7 +771,7 @@ export declare class ClaimItemDetail extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ClaimItem type.
@@ -989,7 +989,7 @@ export declare class ClaimItem extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the Claim type.
@@ -1247,6 +1247,6 @@ export declare class Claim extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=Claim.d.ts.map

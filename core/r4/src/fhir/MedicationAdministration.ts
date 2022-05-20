@@ -37,10 +37,6 @@ import { MedicationAdminCategoryCodes,  MedicationAdminCategoryCodeType } from '
 import { ReasonMedicationGivenCodesCodings, ReasonMedicationGivenCodesCodingType,} from '../fhirValueSets/ReasonMedicationGivenCodesCodings.js';
 // @ts-ignore
 import { ReasonMedicationGivenCodesCodes,  ReasonMedicationGivenCodesCodeType } from '../fhirValueSets/ReasonMedicationGivenCodesCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the MedicationAdministrationPerformer type.
  */
@@ -62,7 +58,7 @@ export class MedicationAdministrationPerformer extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MedicationAdministrationPerformer';
+  public static override readonly _fts_dataType:string = 'MedicationAdministrationPerformer';
   /**
    * Distinguishes the type of involvement of the performer in the medication administration.
    */
@@ -83,14 +79,14 @@ export class MedicationAdministrationPerformer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["function"]) { outcome.issue!.push(...this.function.doModelValidation().issue!); }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["function"]) { issues.push(...this.function.doModelValidation()); }
     if (!this['actor']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property actor:fhir.Reference fhir: MedicationAdministration.performer.actor:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actor:fhir.Reference fhir: MedicationAdministration.performer.actor:Reference', });
     }
-    if (this["actor"]) { outcome.issue!.push(...this.actor.doModelValidation().issue!); }
-    return outcome;
+    if (this["actor"]) { issues.push(...this.actor.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -139,7 +135,7 @@ export class MedicationAdministrationDosage extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MedicationAdministrationDosage';
+  public static override readonly _fts_dataType:string = 'MedicationAdministrationDosage';
   /**
    * Free text dosage can be used for cases where the dosage administered is too complex to code. When coded dosage is present, the free text dosage may still be present for display to humans.
    * The dosage instructions should reflect the dosage of the medication that was administered.
@@ -186,14 +182,14 @@ export class MedicationAdministrationDosage extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["text"]) { outcome.issue!.push(...this.text.doModelValidation().issue!); }
-    if (this["site"]) { outcome.issue!.push(...this.site.doModelValidation().issue!); }
-    if (this["route"]) { outcome.issue!.push(...this.route.doModelValidation().issue!); }
-    if (this["method"]) { outcome.issue!.push(...this.method.doModelValidation().issue!); }
-    if (this["dose"]) { outcome.issue!.push(...this.dose.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
+    if (this["site"]) { issues.push(...this.site.doModelValidation()); }
+    if (this["route"]) { issues.push(...this.route.doModelValidation()); }
+    if (this["method"]) { issues.push(...this.method.doModelValidation()); }
+    if (this["dose"]) { issues.push(...this.dose.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -305,11 +301,11 @@ export class MedicationAdministration extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MedicationAdministration';
+  public static override readonly _fts_dataType:string = 'MedicationAdministration';
   /**
    * Resource Type Name
    */
-  public resourceType: "MedicationAdministration";
+  public override resourceType: "MedicationAdministration";
   /**
    * This is a business identifier, not a resource identifier.
    */
@@ -454,39 +450,39 @@ export class MedicationAdministration extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"MedicationAdministration" fhir: MedicationAdministration.resourceType:"MedicationAdministration"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicationAdministration" fhir: MedicationAdministration.resourceType:"MedicationAdministration"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["instantiates"]) { this.instantiates.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["partOf"]) { this.partOf.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["instantiates"]) { this.instantiates.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:MedicationAdminStatusCodeType fhir: MedicationAdministration.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:MedicationAdminStatusCodeType fhir: MedicationAdministration.status:code', });
     }
-    if (this["statusReason"]) { this.statusReason.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["category"]) { outcome.issue!.push(...this.category.doModelValidation().issue!); }
+    if (this["statusReason"]) { this.statusReason.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (!this['medication']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property medication: fhir: MedicationAdministration.medication[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property medication: fhir: MedicationAdministration.medication[x]:', });
     }
     if (!this['subject']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property subject:fhir.Reference fhir: MedicationAdministration.subject:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: MedicationAdministration.subject:Reference', });
     }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["context"]) { outcome.issue!.push(...this.context.doModelValidation().issue!); }
-    if (this["supportingInformation"]) { this.supportingInformation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["context"]) { issues.push(...this.context.doModelValidation()); }
+    if (this["supportingInformation"]) { this.supportingInformation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['effective']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property effective: fhir: MedicationAdministration.effective[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property effective: fhir: MedicationAdministration.effective[x]:', });
     }
-    if (this["performer"]) { this.performer.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["request"]) { outcome.issue!.push(...this.request.doModelValidation().issue!); }
-    if (this["device"]) { this.device.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["dosage"]) { outcome.issue!.push(...this.dosage.doModelValidation().issue!); }
-    if (this["eventHistory"]) { this.eventHistory.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["performer"]) { this.performer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["request"]) { issues.push(...this.request.doModelValidation()); }
+    if (this["device"]) { this.device.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["dosage"]) { issues.push(...this.dosage.doModelValidation()); }
+    if (this["eventHistory"]) { this.eventHistory.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

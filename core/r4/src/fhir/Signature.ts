@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { SignatureTypeCodings, SignatureTypeCodingType,} from '../fhirValueSets/SignatureTypeCodings.js';
 // @ts-ignore
 import { SignatureTypeCodes,  SignatureTypeCodeType } from '../fhirValueSets/SignatureTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Signature type.
  */
@@ -54,7 +50,7 @@ export class Signature extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Signature';
+  public static override readonly _fts_dataType:string = 'Signature';
   /**
    * Examples include attesting to: authorship, correct transcription, and witness of specific event. Also known as a &amp;quot;Commitment Type Indication&amp;quot;.
    */
@@ -108,28 +104,28 @@ export class Signature extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:fhir.Coding[] fhir: Signature.type:Coding', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.Coding[] fhir: Signature.type:Coding', });
     } else if (!Array.isArray(this.type)) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.StructuralIssue,  diagnostics: 'Found scalar in array property type:fhir.Coding[] fhir: Signature.type:Coding', }));
+      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property type:fhir.Coding[] fhir: Signature.type:Coding', });
     } else if (this.type.length === 0) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:fhir.Coding[] fhir: Signature.type:Coding', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.Coding[] fhir: Signature.type:Coding', });
     }
-    if (this["type"]) { this.type.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['when']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property when:fhir.FhirInstant fhir: Signature.when:instant', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property when:fhir.FhirInstant fhir: Signature.when:instant', });
     }
-    if (this["when"]) { outcome.issue!.push(...this.when.doModelValidation().issue!); }
+    if (this["when"]) { issues.push(...this.when.doModelValidation()); }
     if (!this['who']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property who:fhir.Reference fhir: Signature.who:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property who:fhir.Reference fhir: Signature.who:Reference', });
     }
-    if (this["who"]) { outcome.issue!.push(...this.who.doModelValidation().issue!); }
-    if (this["onBehalfOf"]) { outcome.issue!.push(...this.onBehalfOf.doModelValidation().issue!); }
-    if (this["targetFormat"]) { outcome.issue!.push(...this.targetFormat.doModelValidation().issue!); }
-    if (this["sigFormat"]) { outcome.issue!.push(...this.sigFormat.doModelValidation().issue!); }
-    if (this["data"]) { outcome.issue!.push(...this.data.doModelValidation().issue!); }
-    return outcome;
+    if (this["who"]) { issues.push(...this.who.doModelValidation()); }
+    if (this["onBehalfOf"]) { issues.push(...this.onBehalfOf.doModelValidation()); }
+    if (this["targetFormat"]) { issues.push(...this.targetFormat.doModelValidation()); }
+    if (this["sigFormat"]) { issues.push(...this.sigFormat.doModelValidation()); }
+    if (this["data"]) { issues.push(...this.data.doModelValidation()); }
+    return issues;
   }
 }

@@ -13,10 +13,6 @@ import { RiskProbabilityCodes,  RiskProbabilityCodeType } from '../fhirValueSets
 import { ObservationStatusCodings, ObservationStatusCodingType,} from '../fhirValueSets/ObservationStatusCodings.js';
 // @ts-ignore
 import { ObservationStatusCodes,  ObservationStatusCodeType } from '../fhirValueSets/ObservationStatusCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the RiskAssessmentPrediction type.
  */
@@ -70,7 +66,7 @@ export class RiskAssessmentPrediction extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'RiskAssessmentPrediction';
+  public static override readonly _fts_dataType:string = 'RiskAssessmentPrediction';
   /**
    * One of the potential outcomes for the patient (e.g. remission, death,  a particular condition).
    */
@@ -122,13 +118,13 @@ export class RiskAssessmentPrediction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["outcome"]) { outcome.issue!.push(...this.outcome.doModelValidation().issue!); }
-    if (this["qualitativeRisk"]) { outcome.issue!.push(...this.qualitativeRisk.doModelValidation().issue!); }
-    if (this["relativeRisk"]) { outcome.issue!.push(...this.relativeRisk.doModelValidation().issue!); }
-    if (this["rationale"]) { outcome.issue!.push(...this.rationale.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation()); }
+    if (this["qualitativeRisk"]) { issues.push(...this.qualitativeRisk.doModelValidation()); }
+    if (this["relativeRisk"]) { issues.push(...this.relativeRisk.doModelValidation()); }
+    if (this["rationale"]) { issues.push(...this.rationale.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -224,11 +220,11 @@ export class RiskAssessment extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'RiskAssessment';
+  public static override readonly _fts_dataType:string = 'RiskAssessment';
   /**
    * Resource Type Name
    */
-  public resourceType: "RiskAssessment";
+  public override resourceType: "RiskAssessment";
   /**
    * Business identifier assigned to the risk assessment.
    */
@@ -344,32 +340,32 @@ export class RiskAssessment extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"RiskAssessment" fhir: RiskAssessment.resourceType:"RiskAssessment"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"RiskAssessment" fhir: RiskAssessment.resourceType:"RiskAssessment"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["basedOn"]) { outcome.issue!.push(...this.basedOn.doModelValidation().issue!); }
-    if (this["parent"]) { outcome.issue!.push(...this.parent.doModelValidation().issue!); }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["basedOn"]) { issues.push(...this.basedOn.doModelValidation()); }
+    if (this["parent"]) { issues.push(...this.parent.doModelValidation()); }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:ObservationStatusCodeType fhir: RiskAssessment.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ObservationStatusCodeType fhir: RiskAssessment.status:code', });
     }
-    if (this["method"]) { outcome.issue!.push(...this.method.doModelValidation().issue!); }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
+    if (this["method"]) { issues.push(...this.method.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['subject']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property subject:fhir.Reference fhir: RiskAssessment.subject:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: RiskAssessment.subject:Reference', });
     }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["encounter"]) { outcome.issue!.push(...this.encounter.doModelValidation().issue!); }
-    if (this["condition"]) { outcome.issue!.push(...this.condition.doModelValidation().issue!); }
-    if (this["performer"]) { outcome.issue!.push(...this.performer.doModelValidation().issue!); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["basis"]) { this.basis.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["prediction"]) { this.prediction.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["mitigation"]) { outcome.issue!.push(...this.mitigation.doModelValidation().issue!); }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
+    if (this["condition"]) { issues.push(...this.condition.doModelValidation()); }
+    if (this["performer"]) { issues.push(...this.performer.doModelValidation()); }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["basis"]) { this.basis.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["prediction"]) { this.prediction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["mitigation"]) { issues.push(...this.mitigation.doModelValidation()); }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

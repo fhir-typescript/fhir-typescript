@@ -2,7 +2,7 @@ import * as fhir from '../fhir.js';
 /**
  * A string which has at least one character and no leading or trailing whitespace and where there is no whitespace other than single spaces in the contents
  */
-export interface FhirCodeArgs extends fhir.FhirStringArgs {
+export interface FhirCodeArgs extends fhir.FhirPrimitiveArgs {
     /**
      * A string which has at least one character and no leading or trailing whitespace and where there is no whitespace other than single spaces in the contents
      */
@@ -11,7 +11,7 @@ export interface FhirCodeArgs extends fhir.FhirStringArgs {
 /**
  * A string which has at least one character and no leading or trailing whitespace and where there is no whitespace other than single spaces in the contents
  */
-export declare class FhirCode extends fhir.FhirString {
+export declare class FhirCode extends fhir.FhirPrimitive {
     /**
      * Mapping of this datatype to a FHIR equivalent
      */
@@ -36,6 +36,6 @@ export declare class FhirCode extends fhir.FhirString {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=FhirCode.d.ts.map

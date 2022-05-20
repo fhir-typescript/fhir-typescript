@@ -21,10 +21,6 @@ import { ClinicalimpressionStatusCodes,  ClinicalimpressionStatusCodeType } from
 import { ClinicalimpressionPrognosisCodings, ClinicalimpressionPrognosisCodingType,} from '../fhirValueSets/ClinicalimpressionPrognosisCodings.js';
 // @ts-ignore
 import { ClinicalimpressionPrognosisCodes,  ClinicalimpressionPrognosisCodeType } from '../fhirValueSets/ClinicalimpressionPrognosisCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the ClinicalImpressionInvestigation type.
  */
@@ -46,7 +42,7 @@ export class ClinicalImpressionInvestigation extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ClinicalImpressionInvestigation';
+  public static override readonly _fts_dataType:string = 'ClinicalImpressionInvestigation';
   /**
    * A name/code for the group ("set") of investigations. Typically, this will be something like "signs", "symptoms", "clinical", "diagnostic", but the list is not constrained, and others such groups such as (exposure|family|travel|nutritional) history may be used.
    */
@@ -68,14 +64,14 @@ export class ClinicalImpressionInvestigation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: ClinicalImpression.investigation.code:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: ClinicalImpression.investigation.code:CodeableConcept', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["item"]) { this.item.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["item"]) { this.item.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -103,7 +99,7 @@ export class ClinicalImpressionFinding extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ClinicalImpressionFinding';
+  public static override readonly _fts_dataType:string = 'ClinicalImpressionFinding';
   /**
    * Specific text or code for finding or diagnosis, which may include ruled-out or resolved conditions.
    */
@@ -128,12 +124,12 @@ export class ClinicalImpressionFinding extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["itemCodeableConcept"]) { outcome.issue!.push(...this.itemCodeableConcept.doModelValidation().issue!); }
-    if (this["itemReference"]) { outcome.issue!.push(...this.itemReference.doModelValidation().issue!); }
-    if (this["basis"]) { outcome.issue!.push(...this.basis.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["itemCodeableConcept"]) { issues.push(...this.itemCodeableConcept.doModelValidation()); }
+    if (this["itemReference"]) { issues.push(...this.itemReference.doModelValidation()); }
+    if (this["basis"]) { issues.push(...this.basis.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -242,11 +238,11 @@ export class ClinicalImpression extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ClinicalImpression';
+  public static override readonly _fts_dataType:string = 'ClinicalImpression';
   /**
    * Resource Type Name
    */
-  public resourceType: "ClinicalImpression";
+  public override resourceType: "ClinicalImpression";
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
@@ -381,35 +377,35 @@ export class ClinicalImpression extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"ClinicalImpression" fhir: ClinicalImpression.resourceType:"ClinicalImpression"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ClinicalImpression" fhir: ClinicalImpression.resourceType:"ClinicalImpression"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:ClinicalimpressionStatusCodeType fhir: ClinicalImpression.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ClinicalimpressionStatusCodeType fhir: ClinicalImpression.status:code', });
     }
-    if (this["statusReason"]) { outcome.issue!.push(...this.statusReason.doModelValidation().issue!); }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
+    if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (!this['subject']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property subject:fhir.Reference fhir: ClinicalImpression.subject:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: ClinicalImpression.subject:Reference', });
     }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["encounter"]) { outcome.issue!.push(...this.encounter.doModelValidation().issue!); }
-    if (this["date"]) { outcome.issue!.push(...this.date.doModelValidation().issue!); }
-    if (this["assessor"]) { outcome.issue!.push(...this.assessor.doModelValidation().issue!); }
-    if (this["previous"]) { outcome.issue!.push(...this.previous.doModelValidation().issue!); }
-    if (this["problem"]) { this.problem.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["investigation"]) { this.investigation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["protocol"]) { this.protocol.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["summary"]) { outcome.issue!.push(...this.summary.doModelValidation().issue!); }
-    if (this["finding"]) { this.finding.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["prognosisCodeableConcept"]) { this.prognosisCodeableConcept.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["prognosisReference"]) { this.prognosisReference.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["supportingInfo"]) { this.supportingInfo.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
+    if (this["assessor"]) { issues.push(...this.assessor.doModelValidation()); }
+    if (this["previous"]) { issues.push(...this.previous.doModelValidation()); }
+    if (this["problem"]) { this.problem.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["investigation"]) { this.investigation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["protocol"]) { this.protocol.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["summary"]) { issues.push(...this.summary.doModelValidation()); }
+    if (this["finding"]) { this.finding.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["prognosisCodeableConcept"]) { this.prognosisCodeableConcept.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["prognosisReference"]) { this.prognosisReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["supportingInfo"]) { this.supportingInfo.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

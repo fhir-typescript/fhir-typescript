@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the SampledData type.
  */
@@ -50,7 +46,7 @@ export class SampledData extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SampledData';
+  public static override readonly _fts_dataType:string = 'SampledData';
   /**
    * The base quantity that a measured value of zero represents. In addition, this provides the units of the entire measurement series.
    */
@@ -98,24 +94,24 @@ export class SampledData extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['origin']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property origin:fhir.Quantity fhir: SampledData.origin:Quantity', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property origin:fhir.Quantity fhir: SampledData.origin:Quantity', });
     }
-    if (this["origin"]) { outcome.issue!.push(...this.origin.doModelValidation().issue!); }
+    if (this["origin"]) { issues.push(...this.origin.doModelValidation()); }
     if (!this['period']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property period:fhir.FhirDecimal fhir: SampledData.period:decimal', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property period:fhir.FhirDecimal fhir: SampledData.period:decimal', });
     }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    if (this["factor"]) { outcome.issue!.push(...this.factor.doModelValidation().issue!); }
-    if (this["lowerLimit"]) { outcome.issue!.push(...this.lowerLimit.doModelValidation().issue!); }
-    if (this["upperLimit"]) { outcome.issue!.push(...this.upperLimit.doModelValidation().issue!); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["factor"]) { issues.push(...this.factor.doModelValidation()); }
+    if (this["lowerLimit"]) { issues.push(...this.lowerLimit.doModelValidation()); }
+    if (this["upperLimit"]) { issues.push(...this.upperLimit.doModelValidation()); }
     if (!this['dimensions']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property dimensions:fhir.FhirPositiveInt fhir: SampledData.dimensions:positiveInt', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property dimensions:fhir.FhirPositiveInt fhir: SampledData.dimensions:positiveInt', });
     }
-    if (this["dimensions"]) { outcome.issue!.push(...this.dimensions.doModelValidation().issue!); }
-    if (this["data"]) { outcome.issue!.push(...this.data.doModelValidation().issue!); }
-    return outcome;
+    if (this["dimensions"]) { issues.push(...this.dimensions.doModelValidation()); }
+    if (this["data"]) { issues.push(...this.data.doModelValidation()); }
+    return issues;
   }
 }

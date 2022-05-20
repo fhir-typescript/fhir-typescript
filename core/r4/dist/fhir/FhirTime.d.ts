@@ -2,7 +2,7 @@ import * as fhir from '../fhir.js';
 /**
  * A time during the day, with no date specified
  */
-export interface FhirTimeArgs extends fhir.FhirStringArgs {
+export interface FhirTimeArgs extends fhir.FhirPrimitiveArgs {
     /**
      * A time during the day, with no date specified
      */
@@ -11,7 +11,7 @@ export interface FhirTimeArgs extends fhir.FhirStringArgs {
 /**
  * A time during the day, with no date specified
  */
-export declare class FhirTime extends fhir.FhirString {
+export declare class FhirTime extends fhir.FhirPrimitive {
     /**
      * Mapping of this datatype to a FHIR equivalent
      */
@@ -36,6 +36,6 @@ export declare class FhirTime extends fhir.FhirString {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=FhirTime.d.ts.map

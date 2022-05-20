@@ -38,7 +38,7 @@ export declare class MedicationDispensePerformer extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationDispenseSubstitution type.
@@ -92,7 +92,7 @@ export declare class MedicationDispenseSubstitution extends fhir.BackboneElement
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationDispense type.
@@ -348,6 +348,6 @@ export declare class MedicationDispense extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=MedicationDispense.d.ts.map

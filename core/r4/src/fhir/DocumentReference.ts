@@ -45,10 +45,6 @@ import { DocumentClasscodesCodes,  DocumentClasscodesCodeType } from '../fhirVal
 import { SecurityLabelsCodings, SecurityLabelsCodingType,} from '../fhirValueSets/SecurityLabelsCodings.js';
 // @ts-ignore
 import { SecurityLabelsCodes,  SecurityLabelsCodeType } from '../fhirValueSets/SecurityLabelsCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the DocumentReferenceRelatesTo type.
  */
@@ -70,7 +66,7 @@ export class DocumentReferenceRelatesTo extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DocumentReferenceRelatesTo';
+  public static override readonly _fts_dataType:string = 'DocumentReferenceRelatesTo';
   /**
    * If this document appends another document, then the document cannot be fully understood without also accessing the referenced document.
    */
@@ -98,16 +94,16 @@ export class DocumentReferenceRelatesTo extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:DocumentRelationshipTypeCodeType fhir: DocumentReference.relatesTo.code:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:DocumentRelationshipTypeCodeType fhir: DocumentReference.relatesTo.code:code', });
     }
     if (!this['target']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property target:fhir.Reference fhir: DocumentReference.relatesTo.target:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property target:fhir.Reference fhir: DocumentReference.relatesTo.target:Reference', });
     }
-    if (this["target"]) { outcome.issue!.push(...this.target.doModelValidation().issue!); }
-    return outcome;
+    if (this["target"]) { issues.push(...this.target.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -131,7 +127,7 @@ export class DocumentReferenceContent extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DocumentReferenceContent';
+  public static override readonly _fts_dataType:string = 'DocumentReferenceContent';
   /**
    * The document or URL of the document along with critical metadata to prove content has integrity.
    */
@@ -158,14 +154,14 @@ export class DocumentReferenceContent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['attachment']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property attachment:fhir.Attachment fhir: DocumentReference.content.attachment:Attachment', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property attachment:fhir.Attachment fhir: DocumentReference.content.attachment:Attachment', });
     }
-    if (this["attachment"]) { outcome.issue!.push(...this.attachment.doModelValidation().issue!); }
-    if (this["format"]) { outcome.issue!.push(...this.format.doModelValidation().issue!); }
-    return outcome;
+    if (this["attachment"]) { issues.push(...this.attachment.doModelValidation()); }
+    if (this["format"]) { issues.push(...this.format.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -209,7 +205,7 @@ export class DocumentReferenceContext extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DocumentReferenceContext';
+  public static override readonly _fts_dataType:string = 'DocumentReferenceContext';
   /**
    * Describes the clinical encounter or type of care that the document content is associated with.
    */
@@ -257,16 +253,16 @@ export class DocumentReferenceContext extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["encounter"]) { this.encounter.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["event"]) { this.event.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    if (this["facilityType"]) { outcome.issue!.push(...this.facilityType.doModelValidation().issue!); }
-    if (this["practiceSetting"]) { outcome.issue!.push(...this.practiceSetting.doModelValidation().issue!); }
-    if (this["sourcePatientInfo"]) { outcome.issue!.push(...this.sourcePatientInfo.doModelValidation().issue!); }
-    if (this["related"]) { this.related.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["encounter"]) { this.encounter.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["event"]) { this.event.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["facilityType"]) { issues.push(...this.facilityType.doModelValidation()); }
+    if (this["practiceSetting"]) { issues.push(...this.practiceSetting.doModelValidation()); }
+    if (this["sourcePatientInfo"]) { issues.push(...this.sourcePatientInfo.doModelValidation()); }
+    if (this["related"]) { this.related.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -352,11 +348,11 @@ export class DocumentReference extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DocumentReference';
+  public static override readonly _fts_dataType:string = 'DocumentReference';
   /**
    * Resource Type Name
    */
-  public resourceType: "DocumentReference";
+  public override resourceType: "DocumentReference";
   /**
    * CDA Document Id extension and root.
    */
@@ -480,35 +476,35 @@ export class DocumentReference extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"DocumentReference" fhir: DocumentReference.resourceType:"DocumentReference"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"DocumentReference" fhir: DocumentReference.resourceType:"DocumentReference"', });
     }
-    if (this["masterIdentifier"]) { outcome.issue!.push(...this.masterIdentifier.doModelValidation().issue!); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["masterIdentifier"]) { issues.push(...this.masterIdentifier.doModelValidation()); }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:DocumentReferenceStatusCodeType fhir: DocumentReference.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:DocumentReferenceStatusCodeType fhir: DocumentReference.status:code', });
     }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["category"]) { this.category.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["date"]) { outcome.issue!.push(...this.date.doModelValidation().issue!); }
-    if (this["author"]) { this.author.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["authenticator"]) { outcome.issue!.push(...this.authenticator.doModelValidation().issue!); }
-    if (this["custodian"]) { outcome.issue!.push(...this.custodian.doModelValidation().issue!); }
-    if (this["relatesTo"]) { this.relatesTo.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["securityLabel"]) { this.securityLabel.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
+    if (this["author"]) { this.author.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["authenticator"]) { issues.push(...this.authenticator.doModelValidation()); }
+    if (this["custodian"]) { issues.push(...this.custodian.doModelValidation()); }
+    if (this["relatesTo"]) { this.relatesTo.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["securityLabel"]) { this.securityLabel.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['content']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property content:fhir.DocumentReferenceContent[] fhir: DocumentReference.content:content', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property content:fhir.DocumentReferenceContent[] fhir: DocumentReference.content:content', });
     } else if (!Array.isArray(this.content)) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.StructuralIssue,  diagnostics: 'Found scalar in array property content:fhir.DocumentReferenceContent[] fhir: DocumentReference.content:content', }));
+      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property content:fhir.DocumentReferenceContent[] fhir: DocumentReference.content:content', });
     } else if (this.content.length === 0) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property content:fhir.DocumentReferenceContent[] fhir: DocumentReference.content:content', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property content:fhir.DocumentReferenceContent[] fhir: DocumentReference.content:content', });
     }
-    if (this["content"]) { this.content.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["context"]) { outcome.issue!.push(...this.context.doModelValidation().issue!); }
-    return outcome;
+    if (this["content"]) { this.content.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["context"]) { issues.push(...this.context.doModelValidation()); }
+    return issues;
   }
 }

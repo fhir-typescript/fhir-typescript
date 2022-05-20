@@ -45,10 +45,6 @@ import { VerificationresultValidationProcessCodes,  VerificationresultValidation
 import { VerificationresultFailureActionCodings, VerificationresultFailureActionCodingType,} from '../fhirValueSets/VerificationresultFailureActionCodings.js';
 // @ts-ignore
 import { VerificationresultFailureActionCodes,  VerificationresultFailureActionCodeType } from '../fhirValueSets/VerificationresultFailureActionCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the VerificationResultPrimarySource type.
  */
@@ -90,7 +86,7 @@ export class VerificationResultPrimarySource extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'VerificationResultPrimarySource';
+  public static override readonly _fts_dataType:string = 'VerificationResultPrimarySource';
   /**
    * Reference to the primary source.
    */
@@ -156,16 +152,16 @@ export class VerificationResultPrimarySource extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["who"]) { outcome.issue!.push(...this.who.doModelValidation().issue!); }
-    if (this["type"]) { this.type.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["communicationMethod"]) { this.communicationMethod.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["validationStatus"]) { outcome.issue!.push(...this.validationStatus.doModelValidation().issue!); }
-    if (this["validationDate"]) { outcome.issue!.push(...this.validationDate.doModelValidation().issue!); }
-    if (this["canPushUpdates"]) { outcome.issue!.push(...this.canPushUpdates.doModelValidation().issue!); }
-    if (this["pushTypeAvailable"]) { this.pushTypeAvailable.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["who"]) { issues.push(...this.who.doModelValidation()); }
+    if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["communicationMethod"]) { this.communicationMethod.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["validationStatus"]) { issues.push(...this.validationStatus.doModelValidation()); }
+    if (this["validationDate"]) { issues.push(...this.validationDate.doModelValidation()); }
+    if (this["canPushUpdates"]) { issues.push(...this.canPushUpdates.doModelValidation()); }
+    if (this["pushTypeAvailable"]) { this.pushTypeAvailable.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -213,7 +209,7 @@ export class VerificationResultAttestation extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'VerificationResultAttestation';
+  public static override readonly _fts_dataType:string = 'VerificationResultAttestation';
   /**
    * The individual or organization attesting to information.
    */
@@ -263,17 +259,17 @@ export class VerificationResultAttestation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["who"]) { outcome.issue!.push(...this.who.doModelValidation().issue!); }
-    if (this["onBehalfOf"]) { outcome.issue!.push(...this.onBehalfOf.doModelValidation().issue!); }
-    if (this["communicationMethod"]) { outcome.issue!.push(...this.communicationMethod.doModelValidation().issue!); }
-    if (this["date"]) { outcome.issue!.push(...this.date.doModelValidation().issue!); }
-    if (this["sourceIdentityCertificate"]) { outcome.issue!.push(...this.sourceIdentityCertificate.doModelValidation().issue!); }
-    if (this["proxyIdentityCertificate"]) { outcome.issue!.push(...this.proxyIdentityCertificate.doModelValidation().issue!); }
-    if (this["proxySignature"]) { outcome.issue!.push(...this.proxySignature.doModelValidation().issue!); }
-    if (this["sourceSignature"]) { outcome.issue!.push(...this.sourceSignature.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["who"]) { issues.push(...this.who.doModelValidation()); }
+    if (this["onBehalfOf"]) { issues.push(...this.onBehalfOf.doModelValidation()); }
+    if (this["communicationMethod"]) { issues.push(...this.communicationMethod.doModelValidation()); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
+    if (this["sourceIdentityCertificate"]) { issues.push(...this.sourceIdentityCertificate.doModelValidation()); }
+    if (this["proxyIdentityCertificate"]) { issues.push(...this.proxyIdentityCertificate.doModelValidation()); }
+    if (this["proxySignature"]) { issues.push(...this.proxySignature.doModelValidation()); }
+    if (this["sourceSignature"]) { issues.push(...this.sourceSignature.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -301,7 +297,7 @@ export class VerificationResultValidator extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'VerificationResultValidator';
+  public static override readonly _fts_dataType:string = 'VerificationResultValidator';
   /**
    * Reference to the organization validating information.
    */
@@ -327,15 +323,15 @@ export class VerificationResultValidator extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['organization']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property organization:fhir.Reference fhir: VerificationResult.validator.organization:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property organization:fhir.Reference fhir: VerificationResult.validator.organization:Reference', });
     }
-    if (this["organization"]) { outcome.issue!.push(...this.organization.doModelValidation().issue!); }
-    if (this["identityCertificate"]) { outcome.issue!.push(...this.identityCertificate.doModelValidation().issue!); }
-    if (this["attestationSignature"]) { outcome.issue!.push(...this.attestationSignature.doModelValidation().issue!); }
-    return outcome;
+    if (this["organization"]) { issues.push(...this.organization.doModelValidation()); }
+    if (this["identityCertificate"]) { issues.push(...this.identityCertificate.doModelValidation()); }
+    if (this["attestationSignature"]) { issues.push(...this.attestationSignature.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -411,11 +407,11 @@ export class VerificationResult extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'VerificationResult';
+  public static override readonly _fts_dataType:string = 'VerificationResult';
   /**
    * Resource Type Name
    */
-  public resourceType: "VerificationResult";
+  public override resourceType: "VerificationResult";
   /**
    * A resource that was validated.
    */
@@ -526,27 +522,27 @@ export class VerificationResult extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"VerificationResult" fhir: VerificationResult.resourceType:"VerificationResult"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"VerificationResult" fhir: VerificationResult.resourceType:"VerificationResult"', });
     }
-    if (this["target"]) { this.target.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["targetLocation"]) { this.targetLocation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["need"]) { outcome.issue!.push(...this.need.doModelValidation().issue!); }
+    if (this["target"]) { this.target.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["targetLocation"]) { this.targetLocation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["need"]) { issues.push(...this.need.doModelValidation()); }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:VerificationresultStatusCodeType fhir: VerificationResult.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:VerificationresultStatusCodeType fhir: VerificationResult.status:code', });
     }
-    if (this["statusDate"]) { outcome.issue!.push(...this.statusDate.doModelValidation().issue!); }
-    if (this["validationType"]) { outcome.issue!.push(...this.validationType.doModelValidation().issue!); }
-    if (this["validationProcess"]) { this.validationProcess.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["frequency"]) { outcome.issue!.push(...this.frequency.doModelValidation().issue!); }
-    if (this["lastPerformed"]) { outcome.issue!.push(...this.lastPerformed.doModelValidation().issue!); }
-    if (this["nextScheduled"]) { outcome.issue!.push(...this.nextScheduled.doModelValidation().issue!); }
-    if (this["failureAction"]) { outcome.issue!.push(...this.failureAction.doModelValidation().issue!); }
-    if (this["primarySource"]) { this.primarySource.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["attestation"]) { outcome.issue!.push(...this.attestation.doModelValidation().issue!); }
-    if (this["validator"]) { this.validator.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["statusDate"]) { issues.push(...this.statusDate.doModelValidation()); }
+    if (this["validationType"]) { issues.push(...this.validationType.doModelValidation()); }
+    if (this["validationProcess"]) { this.validationProcess.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["frequency"]) { issues.push(...this.frequency.doModelValidation()); }
+    if (this["lastPerformed"]) { issues.push(...this.lastPerformed.doModelValidation()); }
+    if (this["nextScheduled"]) { issues.push(...this.nextScheduled.doModelValidation()); }
+    if (this["failureAction"]) { issues.push(...this.failureAction.doModelValidation()); }
+    if (this["primarySource"]) { this.primarySource.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["attestation"]) { issues.push(...this.attestation.doModelValidation()); }
+    if (this["validator"]) { this.validator.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

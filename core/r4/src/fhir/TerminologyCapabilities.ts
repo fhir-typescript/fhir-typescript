@@ -17,10 +17,6 @@ import { CapabilityStatementKindCodes,  CapabilityStatementKindCodeType } from '
 import { CodeSearchSupportCodings, CodeSearchSupportCodingType,} from '../fhirValueSets/CodeSearchSupportCodings.js';
 // @ts-ignore
 import { CodeSearchSupportCodes,  CodeSearchSupportCodeType } from '../fhirValueSets/CodeSearchSupportCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the TerminologyCapabilitiesSoftware type.
  */
@@ -42,7 +38,7 @@ export class TerminologyCapabilitiesSoftware extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'TerminologyCapabilitiesSoftware';
+  public static override readonly _fts_dataType:string = 'TerminologyCapabilitiesSoftware';
   /**
    * Name the software is known by.
    */
@@ -63,14 +59,14 @@ export class TerminologyCapabilitiesSoftware extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property name:fhir.FhirString fhir: TerminologyCapabilities.software.name:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: TerminologyCapabilities.software.name:string', });
     }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["version"]) { outcome.issue!.push(...this.version.doModelValidation().issue!); }
-    return outcome;
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -94,7 +90,7 @@ export class TerminologyCapabilitiesImplementation extends fhir.BackboneElement 
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'TerminologyCapabilitiesImplementation';
+  public static override readonly _fts_dataType:string = 'TerminologyCapabilitiesImplementation';
   /**
    * Information about the specific installation that this terminology capability statement relates to.
    */
@@ -115,14 +111,14 @@ export class TerminologyCapabilitiesImplementation extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['description']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property description:fhir.FhirString fhir: TerminologyCapabilities.implementation.description:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property description:fhir.FhirString fhir: TerminologyCapabilities.implementation.description:string', });
     }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["url"]) { outcome.issue!.push(...this.url.doModelValidation().issue!); }
-    return outcome;
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -146,7 +142,7 @@ export class TerminologyCapabilitiesCodeSystemVersionFilter extends fhir.Backbon
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'TerminologyCapabilitiesCodeSystemVersionFilter';
+  public static override readonly _fts_dataType:string = 'TerminologyCapabilitiesCodeSystemVersionFilter';
   /**
    * Code of the property supported.
    */
@@ -168,21 +164,21 @@ export class TerminologyCapabilitiesCodeSystemVersionFilter extends fhir.Backbon
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:fhir.FhirCode fhir: TerminologyCapabilities.codeSystem.version.filter.code:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.FhirCode fhir: TerminologyCapabilities.codeSystem.version.filter.code:code', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['op']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property op:fhir.FhirCode[] fhir: TerminologyCapabilities.codeSystem.version.filter.op:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property op:fhir.FhirCode[] fhir: TerminologyCapabilities.codeSystem.version.filter.op:code', });
     } else if (!Array.isArray(this.op)) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.StructuralIssue,  diagnostics: 'Found scalar in array property op:fhir.FhirCode[] fhir: TerminologyCapabilities.codeSystem.version.filter.op:code', }));
+      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property op:fhir.FhirCode[] fhir: TerminologyCapabilities.codeSystem.version.filter.op:code', });
     } else if (this.op.length === 0) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property op:fhir.FhirCode[] fhir: TerminologyCapabilities.codeSystem.version.filter.op:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property op:fhir.FhirCode[] fhir: TerminologyCapabilities.codeSystem.version.filter.op:code', });
     }
-    if (this["op"]) { this.op.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["op"]) { this.op.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -222,7 +218,7 @@ export class TerminologyCapabilitiesCodeSystemVersion extends fhir.BackboneEleme
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'TerminologyCapabilitiesCodeSystemVersion';
+  public static override readonly _fts_dataType:string = 'TerminologyCapabilitiesCodeSystemVersion';
   /**
    * For version-less code systems, there should be a single version with no identifier.
    */
@@ -265,15 +261,15 @@ export class TerminologyCapabilitiesCodeSystemVersion extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["isDefault"]) { outcome.issue!.push(...this.isDefault.doModelValidation().issue!); }
-    if (this["compositional"]) { outcome.issue!.push(...this.compositional.doModelValidation().issue!); }
-    if (this["language"]) { this.language.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["filter"]) { this.filter.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["property"]) { this.property.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["isDefault"]) { issues.push(...this.isDefault.doModelValidation()); }
+    if (this["compositional"]) { issues.push(...this.compositional.doModelValidation()); }
+    if (this["language"]) { this.language.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["filter"]) { this.filter.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["property"]) { this.property.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -301,7 +297,7 @@ export class TerminologyCapabilitiesCodeSystem extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'TerminologyCapabilitiesCodeSystem';
+  public static override readonly _fts_dataType:string = 'TerminologyCapabilitiesCodeSystem';
   /**
    * URI for the Code System.
    */
@@ -327,12 +323,12 @@ export class TerminologyCapabilitiesCodeSystem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["uri"]) { outcome.issue!.push(...this.uri.doModelValidation().issue!); }
-    if (this["version"]) { this.version.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["subsumption"]) { outcome.issue!.push(...this.subsumption.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["uri"]) { issues.push(...this.uri.doModelValidation()); }
+    if (this["version"]) { this.version.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["subsumption"]) { issues.push(...this.subsumption.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -356,7 +352,7 @@ export class TerminologyCapabilitiesExpansionParameter extends fhir.BackboneElem
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'TerminologyCapabilitiesExpansionParameter';
+  public static override readonly _fts_dataType:string = 'TerminologyCapabilitiesExpansionParameter';
   /**
    * Expansion Parameter name.
    */
@@ -377,14 +373,14 @@ export class TerminologyCapabilitiesExpansionParameter extends fhir.BackboneElem
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property name:fhir.FhirCode fhir: TerminologyCapabilities.expansion.parameter.name:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirCode fhir: TerminologyCapabilities.expansion.parameter.name:code', });
     }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["documentation"]) { outcome.issue!.push(...this.documentation.doModelValidation().issue!); }
-    return outcome;
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -420,7 +416,7 @@ export class TerminologyCapabilitiesExpansion extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'TerminologyCapabilitiesExpansion';
+  public static override readonly _fts_dataType:string = 'TerminologyCapabilitiesExpansion';
   /**
    * Whether the server can return nested value sets.
    */
@@ -456,14 +452,14 @@ export class TerminologyCapabilitiesExpansion extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["hierarchical"]) { outcome.issue!.push(...this.hierarchical.doModelValidation().issue!); }
-    if (this["paging"]) { outcome.issue!.push(...this.paging.doModelValidation().issue!); }
-    if (this["incomplete"]) { outcome.issue!.push(...this.incomplete.doModelValidation().issue!); }
-    if (this["parameter"]) { this.parameter.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["textFilter"]) { outcome.issue!.push(...this.textFilter.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["hierarchical"]) { issues.push(...this.hierarchical.doModelValidation()); }
+    if (this["paging"]) { issues.push(...this.paging.doModelValidation()); }
+    if (this["incomplete"]) { issues.push(...this.incomplete.doModelValidation()); }
+    if (this["parameter"]) { this.parameter.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["textFilter"]) { issues.push(...this.textFilter.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -483,7 +479,7 @@ export class TerminologyCapabilitiesValidateCode extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'TerminologyCapabilitiesValidateCode';
+  public static override readonly _fts_dataType:string = 'TerminologyCapabilitiesValidateCode';
   /**
    * Whether translations are validated.
    */
@@ -499,13 +495,13 @@ export class TerminologyCapabilitiesValidateCode extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['translations']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property translations:fhir.FhirBoolean fhir: TerminologyCapabilities.validateCode.translations:boolean', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property translations:fhir.FhirBoolean fhir: TerminologyCapabilities.validateCode.translations:boolean', });
     }
-    if (this["translations"]) { outcome.issue!.push(...this.translations.doModelValidation().issue!); }
-    return outcome;
+    if (this["translations"]) { issues.push(...this.translations.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -525,7 +521,7 @@ export class TerminologyCapabilitiesTranslation extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'TerminologyCapabilitiesTranslation';
+  public static override readonly _fts_dataType:string = 'TerminologyCapabilitiesTranslation';
   /**
    * Whether the client must identify the map.
    */
@@ -541,13 +537,13 @@ export class TerminologyCapabilitiesTranslation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['needsMap']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property needsMap:fhir.FhirBoolean fhir: TerminologyCapabilities.translation.needsMap:boolean', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property needsMap:fhir.FhirBoolean fhir: TerminologyCapabilities.translation.needsMap:boolean', });
     }
-    if (this["needsMap"]) { outcome.issue!.push(...this.needsMap.doModelValidation().issue!); }
-    return outcome;
+    if (this["needsMap"]) { issues.push(...this.needsMap.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -567,7 +563,7 @@ export class TerminologyCapabilitiesClosure extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'TerminologyCapabilitiesClosure';
+  public static override readonly _fts_dataType:string = 'TerminologyCapabilitiesClosure';
   /**
    * If cross-system closure is supported.
    */
@@ -582,10 +578,10 @@ export class TerminologyCapabilitiesClosure extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["translation"]) { outcome.issue!.push(...this.translation.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["translation"]) { issues.push(...this.translation.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -703,11 +699,11 @@ export class TerminologyCapabilities extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'TerminologyCapabilities';
+  public static override readonly _fts_dataType:string = 'TerminologyCapabilities';
   /**
    * Resource Type Name
    */
-  public resourceType: "TerminologyCapabilities";
+  public override resourceType: "TerminologyCapabilities";
   /**
    * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
    * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions). 
@@ -865,41 +861,41 @@ export class TerminologyCapabilities extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"TerminologyCapabilities" fhir: TerminologyCapabilities.resourceType:"TerminologyCapabilities"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"TerminologyCapabilities" fhir: TerminologyCapabilities.resourceType:"TerminologyCapabilities"', });
     }
-    if (this["url"]) { outcome.issue!.push(...this.url.doModelValidation().issue!); }
-    if (this["version"]) { outcome.issue!.push(...this.version.doModelValidation().issue!); }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["title"]) { outcome.issue!.push(...this.title.doModelValidation().issue!); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
+    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: TerminologyCapabilities.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: TerminologyCapabilities.status:code', });
     }
-    if (this["experimental"]) { outcome.issue!.push(...this.experimental.doModelValidation().issue!); }
+    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (!this['date']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: TerminologyCapabilities.date:dateTime', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: TerminologyCapabilities.date:dateTime', });
     }
-    if (this["date"]) { outcome.issue!.push(...this.date.doModelValidation().issue!); }
-    if (this["publisher"]) { outcome.issue!.push(...this.publisher.doModelValidation().issue!); }
-    if (this["contact"]) { this.contact.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["useContext"]) { this.useContext.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["purpose"]) { outcome.issue!.push(...this.purpose.doModelValidation().issue!); }
-    if (this["copyright"]) { outcome.issue!.push(...this.copyright.doModelValidation().issue!); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
+    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
+    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
     if (!this['kind']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property kind:CapabilityStatementKindCodeType fhir: TerminologyCapabilities.kind:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property kind:CapabilityStatementKindCodeType fhir: TerminologyCapabilities.kind:code', });
     }
-    if (this["software"]) { outcome.issue!.push(...this.software.doModelValidation().issue!); }
-    if (this["implementation"]) { outcome.issue!.push(...this.implementation.doModelValidation().issue!); }
-    if (this["lockedDate"]) { outcome.issue!.push(...this.lockedDate.doModelValidation().issue!); }
-    if (this["codeSystem"]) { this.codeSystem.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["expansion"]) { outcome.issue!.push(...this.expansion.doModelValidation().issue!); }
-    if (this["validateCode"]) { outcome.issue!.push(...this.validateCode.doModelValidation().issue!); }
-    if (this["translation"]) { outcome.issue!.push(...this.translation.doModelValidation().issue!); }
-    if (this["closure"]) { outcome.issue!.push(...this.closure.doModelValidation().issue!); }
-    return outcome;
+    if (this["software"]) { issues.push(...this.software.doModelValidation()); }
+    if (this["implementation"]) { issues.push(...this.implementation.doModelValidation()); }
+    if (this["lockedDate"]) { issues.push(...this.lockedDate.doModelValidation()); }
+    if (this["codeSystem"]) { this.codeSystem.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["expansion"]) { issues.push(...this.expansion.doModelValidation()); }
+    if (this["validateCode"]) { issues.push(...this.validateCode.doModelValidation()); }
+    if (this["translation"]) { issues.push(...this.translation.doModelValidation()); }
+    if (this["closure"]) { issues.push(...this.closure.doModelValidation()); }
+    return issues;
   }
 }

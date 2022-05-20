@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { RelatedArtifactTypeCodings, RelatedArtifactTypeCodingType,} from '../fhirValueSets/RelatedArtifactTypeCodings.js';
 // @ts-ignore
 import { RelatedArtifactTypeCodes,  RelatedArtifactTypeCodeType } from '../fhirValueSets/RelatedArtifactTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the RelatedArtifact type.
  */
@@ -54,7 +50,7 @@ export class RelatedArtifact extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'RelatedArtifact';
+  public static override readonly _fts_dataType:string = 'RelatedArtifact';
   /**
    * The type of relationship to the related artifact.
    */
@@ -106,17 +102,17 @@ export class RelatedArtifact extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:RelatedArtifactTypeCodeType fhir: RelatedArtifact.type:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:RelatedArtifactTypeCodeType fhir: RelatedArtifact.type:code', });
     }
-    if (this["label"]) { outcome.issue!.push(...this.label.doModelValidation().issue!); }
-    if (this["display"]) { outcome.issue!.push(...this.display.doModelValidation().issue!); }
-    if (this["citation"]) { outcome.issue!.push(...this.citation.doModelValidation().issue!); }
-    if (this["url"]) { outcome.issue!.push(...this.url.doModelValidation().issue!); }
-    if (this["document"]) { outcome.issue!.push(...this.document.doModelValidation().issue!); }
-    if (this["resource"]) { outcome.issue!.push(...this.resource.doModelValidation().issue!); }
-    return outcome;
+    if (this["label"]) { issues.push(...this.label.doModelValidation()); }
+    if (this["display"]) { issues.push(...this.display.doModelValidation()); }
+    if (this["citation"]) { issues.push(...this.citation.doModelValidation()); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
+    if (this["document"]) { issues.push(...this.document.doModelValidation()); }
+    if (this["resource"]) { issues.push(...this.resource.doModelValidation()); }
+    return issues;
   }
 }

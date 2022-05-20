@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the BackboneElement type.
  */
@@ -26,7 +22,7 @@ export class BackboneElement extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'BackboneElement';
+  public static override readonly _fts_dataType:string = 'BackboneElement';
   /**
    * There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.
    */
@@ -42,9 +38,9 @@ export class BackboneElement extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["modifierExtension"]) { this.modifierExtension.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["modifierExtension"]) { this.modifierExtension.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

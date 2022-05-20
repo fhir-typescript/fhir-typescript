@@ -37,7 +37,7 @@ export declare class ClinicalImpressionInvestigation extends fhir.BackboneElemen
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ClinicalImpressionFinding type.
@@ -83,7 +83,7 @@ export declare class ClinicalImpressionFinding extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ClinicalImpression type.
@@ -291,6 +291,6 @@ export declare class ClinicalImpression extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=ClinicalImpression.d.ts.map

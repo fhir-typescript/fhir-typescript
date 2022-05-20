@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Binary type.
  */
@@ -38,11 +34,11 @@ export class Binary extends fhir.Resource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Binary';
+  public static override readonly _fts_dataType:string = 'Binary';
   /**
    * Resource Type Name
    */
-  public resourceType: "Binary";
+  public override resourceType: "Binary";
   /**
    * MimeType of the binary content represented as a standard MimeType (BCP 13).
    */
@@ -69,17 +65,17 @@ export class Binary extends fhir.Resource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Binary" fhir: Binary.resourceType:"Binary"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Binary" fhir: Binary.resourceType:"Binary"', });
     }
     if (!this['contentType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property contentType:fhir.FhirCode fhir: Binary.contentType:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property contentType:fhir.FhirCode fhir: Binary.contentType:code', });
     }
-    if (this["contentType"]) { outcome.issue!.push(...this.contentType.doModelValidation().issue!); }
-    if (this["securityContext"]) { outcome.issue!.push(...this.securityContext.doModelValidation().issue!); }
-    if (this["data"]) { outcome.issue!.push(...this.data.doModelValidation().issue!); }
-    return outcome;
+    if (this["contentType"]) { issues.push(...this.contentType.doModelValidation()); }
+    if (this["securityContext"]) { issues.push(...this.securityContext.doModelValidation()); }
+    if (this["data"]) { issues.push(...this.data.doModelValidation()); }
+    return issues;
   }
 }

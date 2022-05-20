@@ -71,7 +71,7 @@ export declare class CapabilityStatementSoftware extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CapabilityStatementImplementation type.
@@ -117,7 +117,7 @@ export declare class CapabilityStatementImplementation extends fhir.BackboneElem
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CapabilityStatementRestSecurity type.
@@ -167,7 +167,7 @@ export declare class CapabilityStatementRestSecurity extends fhir.BackboneElemen
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CapabilityStatementRestResourceInteraction type.
@@ -209,7 +209,7 @@ export declare class CapabilityStatementRestResourceInteraction extends fhir.Bac
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CapabilityStatementRestResourceSearchParam type.
@@ -267,7 +267,7 @@ export declare class CapabilityStatementRestResourceSearchParam extends fhir.Bac
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CapabilityStatementRestResourceOperation type.
@@ -314,7 +314,7 @@ export declare class CapabilityStatementRestResourceOperation extends fhir.Backb
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CapabilityStatementRestResource type.
@@ -494,7 +494,7 @@ export declare class CapabilityStatementRestResource extends fhir.BackboneElemen
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CapabilityStatementRestInteraction type.
@@ -536,7 +536,7 @@ export declare class CapabilityStatementRestInteraction extends fhir.BackboneEle
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CapabilityStatementRest type.
@@ -626,7 +626,7 @@ export declare class CapabilityStatementRest extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CapabilityStatementMessagingEndpoint type.
@@ -668,7 +668,7 @@ export declare class CapabilityStatementMessagingEndpoint extends fhir.BackboneE
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CapabilityStatementMessagingSupportedMessage type.
@@ -710,7 +710,7 @@ export declare class CapabilityStatementMessagingSupportedMessage extends fhir.B
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CapabilityStatementMessaging type.
@@ -764,7 +764,7 @@ export declare class CapabilityStatementMessaging extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CapabilityStatementDocument type.
@@ -814,7 +814,7 @@ export declare class CapabilityStatementDocument extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CapabilityStatement type.
@@ -1072,6 +1072,6 @@ export declare class CapabilityStatement extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=CapabilityStatement.d.ts.map

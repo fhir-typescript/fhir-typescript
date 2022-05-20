@@ -1,1 +1,1 @@
-{"version":3,"file":"FlagStatusCodes.d.ts","sourceRoot":"","sources":["../../src/fhirValueSets/FlagStatusCodes.ts"],"names":[],"mappings":"AAKA;;GAEG;AACH,eAAO,MAAM,eAAe;IAC1B;;OAEG;;IAEH;;OAEG;;IAEH;;OAEG;;CAEK,CAAC;AAEX;;GAEG;AACH,oBAAY,kBAAkB,GAAG,OAAO,eAAe,CAAC,MAAM,OAAO,eAAe,CAAC,CAAC"}
+{"version":3,"file":"FlagStatusCodes.d.ts","sourceRoot":"./src/","sources":["fhirValueSets/FlagStatusCodes.ts"],"names":[],"mappings":"AAKA;;GAEG;AACH,eAAO,MAAM,eAAe;IAC1B;;OAEG;;IAEH;;OAEG;;IAEH;;OAEG;;CAEK,CAAC;AAEX;;GAEG;AACH,oBAAY,kBAAkB,GAAG,OAAO,eAAe,CAAC,MAAM,OAAO,eAAe,CAAC,CAAC"}

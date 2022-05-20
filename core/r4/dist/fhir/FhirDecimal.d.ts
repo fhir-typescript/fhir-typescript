@@ -36,6 +36,6 @@ export declare class FhirDecimal extends fhir.FhirPrimitive {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=FhirDecimal.d.ts.map

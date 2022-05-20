@@ -2,7 +2,7 @@ import * as fhir from '../fhir.js';
 /**
  * See The Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A.
  */
-export interface FhirUuidArgs extends fhir.FhirUriArgs {
+export interface FhirUuidArgs extends fhir.FhirPrimitiveArgs {
     /**
      * See The Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A.
      */
@@ -11,7 +11,7 @@ export interface FhirUuidArgs extends fhir.FhirUriArgs {
 /**
  * See The Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A.
  */
-export declare class FhirUuid extends fhir.FhirUri {
+export declare class FhirUuid extends fhir.FhirPrimitive {
     /**
      * Mapping of this datatype to a FHIR equivalent
      */
@@ -36,6 +36,6 @@ export declare class FhirUuid extends fhir.FhirUri {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=FhirUuid.d.ts.map

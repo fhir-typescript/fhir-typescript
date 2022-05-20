@@ -39,7 +39,7 @@ export declare class HealthcareServiceEligibility extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the HealthcareServiceAvailableTime type.
@@ -97,7 +97,7 @@ export declare class HealthcareServiceAvailableTime extends fhir.BackboneElement
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the HealthcareServiceNotAvailable type.
@@ -135,7 +135,7 @@ export declare class HealthcareServiceNotAvailable extends fhir.BackboneElement 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the HealthcareService type.
@@ -365,6 +365,6 @@ export declare class HealthcareService extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=HealthcareService.d.ts.map

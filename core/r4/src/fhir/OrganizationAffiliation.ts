@@ -13,10 +13,6 @@ import { OrganizationRoleCodes,  OrganizationRoleCodeType } from '../fhirValueSe
 import { C80PracticeCodesCodings, C80PracticeCodesCodingType,} from '../fhirValueSets/C80PracticeCodesCodings.js';
 // @ts-ignore
 import { C80PracticeCodesCodes,  C80PracticeCodesCodeType } from '../fhirValueSets/C80PracticeCodesCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the OrganizationAffiliation type.
  */
@@ -82,11 +78,11 @@ export class OrganizationAffiliation extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'OrganizationAffiliation';
+  public static override readonly _fts_dataType:string = 'OrganizationAffiliation';
   /**
    * Resource Type Name
    */
-  public resourceType: "OrganizationAffiliation";
+  public override resourceType: "OrganizationAffiliation";
   /**
    * Business identifiers that are specific to this role.
    */
@@ -171,23 +167,23 @@ export class OrganizationAffiliation extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"OrganizationAffiliation" fhir: OrganizationAffiliation.resourceType:"OrganizationAffiliation"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"OrganizationAffiliation" fhir: OrganizationAffiliation.resourceType:"OrganizationAffiliation"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["active"]) { outcome.issue!.push(...this.active.doModelValidation().issue!); }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    if (this["organization"]) { outcome.issue!.push(...this.organization.doModelValidation().issue!); }
-    if (this["participatingOrganization"]) { outcome.issue!.push(...this.participatingOrganization.doModelValidation().issue!); }
-    if (this["network"]) { this.network.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["code"]) { this.code.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["specialty"]) { this.specialty.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["location"]) { this.location.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["healthcareService"]) { this.healthcareService.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["telecom"]) { this.telecom.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["endpoint"]) { this.endpoint.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["active"]) { issues.push(...this.active.doModelValidation()); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["organization"]) { issues.push(...this.organization.doModelValidation()); }
+    if (this["participatingOrganization"]) { issues.push(...this.participatingOrganization.doModelValidation()); }
+    if (this["network"]) { this.network.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["specialty"]) { this.specialty.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["location"]) { this.location.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["healthcareService"]) { this.healthcareService.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["endpoint"]) { this.endpoint.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

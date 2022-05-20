@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { UsageContextTypeCodings, UsageContextTypeCodingType,} from '../fhirValueSets/UsageContextTypeCodings.js';
 // @ts-ignore
 import { UsageContextTypeCodes,  UsageContextTypeCodeType } from '../fhirValueSets/UsageContextTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the UsageContext type.
  */
@@ -50,7 +46,7 @@ export class UsageContext extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'UsageContext';
+  public static override readonly _fts_dataType:string = 'UsageContext';
   /**
    * A code that identifies the type of context being specified by this usage context.
    */
@@ -86,15 +82,15 @@ export class UsageContext extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:fhir.Coding fhir: UsageContext.code:Coding', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.Coding fhir: UsageContext.code:Coding', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['value']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property value: fhir: UsageContext.value[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value: fhir: UsageContext.value[x]:', });
     }
-    return outcome;
+    return issues;
   }
 }

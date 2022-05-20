@@ -2,7 +2,7 @@ import * as fhir from '../fhir.js';
 /**
  * Note: This is intended for where precisely observed times are required, typically system logs etc., and not human-reported times - for them, see date and dateTime (which can be as precise as instant, but is not required to be) below. Time zone is always required
  */
-export interface FhirInstantArgs extends fhir.FhirStringArgs {
+export interface FhirInstantArgs extends fhir.FhirPrimitiveArgs {
     /**
      * Note: This is intended for where precisely observed times are required, typically system logs etc., and not human-reported times - for them, see date and dateTime (which can be as precise as instant, but is not required to be) below. Time zone is always required
      */
@@ -11,7 +11,7 @@ export interface FhirInstantArgs extends fhir.FhirStringArgs {
 /**
  * Note: This is intended for where precisely observed times are required, typically system logs etc., and not human-reported times - for them, see date and dateTime (which can be as precise as instant, but is not required to be) below. Time zone is always required
  */
-export declare class FhirInstant extends fhir.FhirString {
+export declare class FhirInstant extends fhir.FhirPrimitive {
     /**
      * Mapping of this datatype to a FHIR equivalent
      */
@@ -36,6 +36,6 @@ export declare class FhirInstant extends fhir.FhirString {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=FhirInstant.d.ts.map

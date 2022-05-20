@@ -49,7 +49,7 @@ export declare class ChargeItemDefinitionApplicability extends fhir.BackboneElem
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ChargeItemDefinitionPropertyGroupPriceComponent type.
@@ -107,7 +107,7 @@ export declare class ChargeItemDefinitionPropertyGroupPriceComponent extends fhi
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ChargeItemDefinitionPropertyGroup type.
@@ -145,7 +145,7 @@ export declare class ChargeItemDefinitionPropertyGroup extends fhir.BackboneElem
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ChargeItemDefinition type.
@@ -367,6 +367,6 @@ export declare class ChargeItemDefinition extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=ChargeItemDefinition.d.ts.map

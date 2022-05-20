@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Coding type.
  */
@@ -42,7 +38,7 @@ export class Coding extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Coding';
+  public static override readonly _fts_dataType:string = 'Coding';
   /**
    * The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should reference to some definition that establishes the system clearly and unambiguously.
    */
@@ -77,13 +73,13 @@ export class Coding extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["system"]) { outcome.issue!.push(...this.system.doModelValidation().issue!); }
-    if (this["version"]) { outcome.issue!.push(...this.version.doModelValidation().issue!); }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["display"]) { outcome.issue!.push(...this.display.doModelValidation().issue!); }
-    if (this["userSelected"]) { outcome.issue!.push(...this.userSelected.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["system"]) { issues.push(...this.system.doModelValidation()); }
+    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["display"]) { issues.push(...this.display.doModelValidation()); }
+    if (this["userSelected"]) { issues.push(...this.userSelected.doModelValidation()); }
+    return issues;
   }
 }

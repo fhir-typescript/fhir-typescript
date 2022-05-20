@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { GuidanceResponseStatusCodings, GuidanceResponseStatusCodingType,} from '../fhirValueSets/GuidanceResponseStatusCodings.js';
 // @ts-ignore
 import { GuidanceResponseStatusCodes,  GuidanceResponseStatusCodeType } from '../fhirValueSets/GuidanceResponseStatusCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the GuidanceResponse type.
  */
@@ -102,11 +98,11 @@ export class GuidanceResponse extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'GuidanceResponse';
+  public static override readonly _fts_dataType:string = 'GuidanceResponse';
   /**
    * Resource Type Name
    */
-  public resourceType: "GuidanceResponse";
+  public override resourceType: "GuidanceResponse";
   /**
    * The identifier of the request associated with this response. If an identifier was given as part of the request, it will be reproduced here to enable the requester to more easily identify the response in a multi-request scenario.
    */
@@ -213,30 +209,30 @@ export class GuidanceResponse extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"GuidanceResponse" fhir: GuidanceResponse.resourceType:"GuidanceResponse"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"GuidanceResponse" fhir: GuidanceResponse.resourceType:"GuidanceResponse"', });
     }
-    if (this["requestIdentifier"]) { outcome.issue!.push(...this.requestIdentifier.doModelValidation().issue!); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["requestIdentifier"]) { issues.push(...this.requestIdentifier.doModelValidation()); }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['module']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property module: fhir: GuidanceResponse.module[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property module: fhir: GuidanceResponse.module[x]:', });
     }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:GuidanceResponseStatusCodeType fhir: GuidanceResponse.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:GuidanceResponseStatusCodeType fhir: GuidanceResponse.status:code', });
     }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["encounter"]) { outcome.issue!.push(...this.encounter.doModelValidation().issue!); }
-    if (this["occurrenceDateTime"]) { outcome.issue!.push(...this.occurrenceDateTime.doModelValidation().issue!); }
-    if (this["performer"]) { outcome.issue!.push(...this.performer.doModelValidation().issue!); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["evaluationMessage"]) { this.evaluationMessage.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["outputParameters"]) { outcome.issue!.push(...this.outputParameters.doModelValidation().issue!); }
-    if (this["result"]) { outcome.issue!.push(...this.result.doModelValidation().issue!); }
-    if (this["dataRequirement"]) { this.dataRequirement.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
+    if (this["occurrenceDateTime"]) { issues.push(...this.occurrenceDateTime.doModelValidation()); }
+    if (this["performer"]) { issues.push(...this.performer.doModelValidation()); }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["evaluationMessage"]) { this.evaluationMessage.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["outputParameters"]) { issues.push(...this.outputParameters.doModelValidation()); }
+    if (this["result"]) { issues.push(...this.result.doModelValidation()); }
+    if (this["dataRequirement"]) { this.dataRequirement.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

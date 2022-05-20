@@ -25,10 +25,6 @@ import { TaskCodeCodes,  TaskCodeCodeType } from '../fhirValueSets/TaskCodeCodes
 import { PerformerRoleCodings, PerformerRoleCodingType,} from '../fhirValueSets/PerformerRoleCodings.js';
 // @ts-ignore
 import { PerformerRoleCodes,  PerformerRoleCodeType } from '../fhirValueSets/PerformerRoleCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the TaskRestriction type.
  */
@@ -54,7 +50,7 @@ export class TaskRestriction extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'TaskRestriction';
+  public static override readonly _fts_dataType:string = 'TaskRestriction';
   /**
    * Indicates the number of times the requested action should occur.
    */
@@ -80,12 +76,12 @@ export class TaskRestriction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["repetitions"]) { outcome.issue!.push(...this.repetitions.doModelValidation().issue!); }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    if (this["recipient"]) { this.recipient.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["repetitions"]) { issues.push(...this.repetitions.doModelValidation()); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["recipient"]) { this.recipient.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -309,7 +305,7 @@ export class TaskInput extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'TaskInput';
+  public static override readonly _fts_dataType:string = 'TaskInput';
   /**
    * If referencing a BPMN workflow or Protocol, the "system" is the URL for the workflow definition and the code is the "name" of the required input.
    */
@@ -385,16 +381,16 @@ export class TaskInput extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Task.input.type:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Task.input.type:CodeableConcept', });
     }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['value']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property value: fhir: Task.input.value[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value: fhir: Task.input.value[x]:', });
     }
-    return outcome;
+    return issues;
   }
 }
 /**
@@ -618,7 +614,7 @@ export class TaskOutput extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'TaskOutput';
+  public static override readonly _fts_dataType:string = 'TaskOutput';
   /**
    * The name of the Output parameter.
    */
@@ -694,16 +690,16 @@ export class TaskOutput extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Task.output.type:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Task.output.type:CodeableConcept', });
     }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['value']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property value: fhir: Task.output.value[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value: fhir: Task.output.value[x]:', });
     }
-    return outcome;
+    return issues;
   }
 }
 /**
@@ -848,11 +844,11 @@ export class Task extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Task';
+  public static override readonly _fts_dataType:string = 'Task';
   /**
    * Resource Type Name
    */
-  public resourceType: "Task";
+  public override resourceType: "Task";
   /**
    * The business identifier for this task.
    */
@@ -1054,45 +1050,45 @@ export class Task extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Task" fhir: Task.resourceType:"Task"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Task" fhir: Task.resourceType:"Task"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["instantiatesCanonical"]) { outcome.issue!.push(...this.instantiatesCanonical.doModelValidation().issue!); }
-    if (this["instantiatesUri"]) { outcome.issue!.push(...this.instantiatesUri.doModelValidation().issue!); }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["groupIdentifier"]) { outcome.issue!.push(...this.groupIdentifier.doModelValidation().issue!); }
-    if (this["partOf"]) { this.partOf.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["instantiatesCanonical"]) { issues.push(...this.instantiatesCanonical.doModelValidation()); }
+    if (this["instantiatesUri"]) { issues.push(...this.instantiatesUri.doModelValidation()); }
+    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["groupIdentifier"]) { issues.push(...this.groupIdentifier.doModelValidation()); }
+    if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:TaskStatusCodeType fhir: Task.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:TaskStatusCodeType fhir: Task.status:code', });
     }
-    if (this["statusReason"]) { outcome.issue!.push(...this.statusReason.doModelValidation().issue!); }
-    if (this["businessStatus"]) { outcome.issue!.push(...this.businessStatus.doModelValidation().issue!); }
+    if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation()); }
+    if (this["businessStatus"]) { issues.push(...this.businessStatus.doModelValidation()); }
     if (!this['intent']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property intent:TaskIntentCodeType fhir: Task.intent:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property intent:TaskIntentCodeType fhir: Task.intent:code', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["focus"]) { outcome.issue!.push(...this.focus.doModelValidation().issue!); }
-    if (this["for"]) { outcome.issue!.push(...this.for.doModelValidation().issue!); }
-    if (this["encounter"]) { outcome.issue!.push(...this.encounter.doModelValidation().issue!); }
-    if (this["executionPeriod"]) { outcome.issue!.push(...this.executionPeriod.doModelValidation().issue!); }
-    if (this["authoredOn"]) { outcome.issue!.push(...this.authoredOn.doModelValidation().issue!); }
-    if (this["lastModified"]) { outcome.issue!.push(...this.lastModified.doModelValidation().issue!); }
-    if (this["requester"]) { outcome.issue!.push(...this.requester.doModelValidation().issue!); }
-    if (this["performerType"]) { this.performerType.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["owner"]) { outcome.issue!.push(...this.owner.doModelValidation().issue!); }
-    if (this["location"]) { outcome.issue!.push(...this.location.doModelValidation().issue!); }
-    if (this["reasonCode"]) { outcome.issue!.push(...this.reasonCode.doModelValidation().issue!); }
-    if (this["reasonReference"]) { outcome.issue!.push(...this.reasonReference.doModelValidation().issue!); }
-    if (this["insurance"]) { this.insurance.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["relevantHistory"]) { this.relevantHistory.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["restriction"]) { outcome.issue!.push(...this.restriction.doModelValidation().issue!); }
-    if (this["input"]) { this.input.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["output"]) { this.output.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["focus"]) { issues.push(...this.focus.doModelValidation()); }
+    if (this["for"]) { issues.push(...this.for.doModelValidation()); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
+    if (this["executionPeriod"]) { issues.push(...this.executionPeriod.doModelValidation()); }
+    if (this["authoredOn"]) { issues.push(...this.authoredOn.doModelValidation()); }
+    if (this["lastModified"]) { issues.push(...this.lastModified.doModelValidation()); }
+    if (this["requester"]) { issues.push(...this.requester.doModelValidation()); }
+    if (this["performerType"]) { this.performerType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["owner"]) { issues.push(...this.owner.doModelValidation()); }
+    if (this["location"]) { issues.push(...this.location.doModelValidation()); }
+    if (this["reasonCode"]) { issues.push(...this.reasonCode.doModelValidation()); }
+    if (this["reasonReference"]) { issues.push(...this.reasonReference.doModelValidation()); }
+    if (this["insurance"]) { this.insurance.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["relevantHistory"]) { this.relevantHistory.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["restriction"]) { issues.push(...this.restriction.doModelValidation()); }
+    if (this["input"]) { this.input.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["output"]) { this.output.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

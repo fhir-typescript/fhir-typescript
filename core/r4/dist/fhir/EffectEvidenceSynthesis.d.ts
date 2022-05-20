@@ -56,7 +56,7 @@ export declare class EffectEvidenceSynthesisSampleSize extends fhir.BackboneElem
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the EffectEvidenceSynthesisResultsByExposure type.
@@ -118,7 +118,7 @@ export declare class EffectEvidenceSynthesisResultsByExposure extends fhir.Backb
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the EffectEvidenceSynthesisEffectEstimatePrecisionEstimate type.
@@ -176,7 +176,7 @@ export declare class EffectEvidenceSynthesisEffectEstimatePrecisionEstimate exte
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the EffectEvidenceSynthesisEffectEstimate type.
@@ -258,7 +258,7 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the EffectEvidenceSynthesisCertaintyCertaintySubcomponent type.
@@ -312,7 +312,7 @@ export declare class EffectEvidenceSynthesisCertaintyCertaintySubcomponent exten
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the EffectEvidenceSynthesisCertainty type.
@@ -362,7 +362,7 @@ export declare class EffectEvidenceSynthesisCertainty extends fhir.BackboneEleme
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the EffectEvidenceSynthesis type.
@@ -672,6 +672,6 @@ export declare class EffectEvidenceSynthesis extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=EffectEvidenceSynthesis.d.ts.map

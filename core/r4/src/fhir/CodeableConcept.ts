@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the CodeableConcept type.
  */
@@ -30,7 +26,7 @@ export class CodeableConcept extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'CodeableConcept';
+  public static override readonly _fts_dataType:string = 'CodeableConcept';
   /**
    * Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.
    */
@@ -51,10 +47,10 @@ export class CodeableConcept extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["coding"]) { this.coding.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["text"]) { outcome.issue!.push(...this.text.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["coding"]) { this.coding.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
+    return issues;
   }
 }

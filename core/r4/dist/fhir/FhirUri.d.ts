@@ -2,7 +2,7 @@ import * as fhir from '../fhir.js';
 /**
  * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
  */
-export interface FhirUriArgs extends fhir.FhirStringArgs {
+export interface FhirUriArgs extends fhir.FhirPrimitiveArgs {
     /**
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      */
@@ -11,7 +11,7 @@ export interface FhirUriArgs extends fhir.FhirStringArgs {
 /**
  * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
  */
-export declare class FhirUri extends fhir.FhirString {
+export declare class FhirUri extends fhir.FhirPrimitive {
     /**
      * Mapping of this datatype to a FHIR equivalent
      */
@@ -36,6 +36,6 @@ export declare class FhirUri extends fhir.FhirString {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=FhirUri.d.ts.map

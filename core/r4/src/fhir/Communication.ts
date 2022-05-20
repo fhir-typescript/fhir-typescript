@@ -33,10 +33,6 @@ import { CommunicationTopicCodes,  CommunicationTopicCodeType } from '../fhirVal
 import { ClinicalFindingsCodings, ClinicalFindingsCodingType,} from '../fhirValueSets/ClinicalFindingsCodings.js';
 // @ts-ignore
 import { ClinicalFindingsCodes,  ClinicalFindingsCodeType } from '../fhirValueSets/ClinicalFindingsCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the CommunicationPayload type.
  */
@@ -66,7 +62,7 @@ export class CommunicationPayload extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'CommunicationPayload';
+  public static override readonly _fts_dataType:string = 'CommunicationPayload';
   /**
    * A communicated content (or for multi-part communications, one portion of the communication).
    */
@@ -89,12 +85,12 @@ export class CommunicationPayload extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['content']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property content: fhir: Communication.payload.content[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property content: fhir: Communication.payload.content[x]:', });
     }
-    return outcome;
+    return issues;
   }
 }
 /**
@@ -206,11 +202,11 @@ export class Communication extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Communication';
+  public static override readonly _fts_dataType:string = 'Communication';
   /**
    * Resource Type Name
    */
-  public resourceType: "Communication";
+  public override resourceType: "Communication";
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
@@ -363,35 +359,35 @@ export class Communication extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Communication" fhir: Communication.resourceType:"Communication"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Communication" fhir: Communication.resourceType:"Communication"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["partOf"]) { this.partOf.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["inResponseTo"]) { this.inResponseTo.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["inResponseTo"]) { this.inResponseTo.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:EventStatusCodeType fhir: Communication.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:EventStatusCodeType fhir: Communication.status:code', });
     }
-    if (this["statusReason"]) { outcome.issue!.push(...this.statusReason.doModelValidation().issue!); }
-    if (this["category"]) { this.category.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["medium"]) { this.medium.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["topic"]) { outcome.issue!.push(...this.topic.doModelValidation().issue!); }
-    if (this["about"]) { this.about.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["encounter"]) { outcome.issue!.push(...this.encounter.doModelValidation().issue!); }
-    if (this["sent"]) { outcome.issue!.push(...this.sent.doModelValidation().issue!); }
-    if (this["received"]) { outcome.issue!.push(...this.received.doModelValidation().issue!); }
-    if (this["recipient"]) { this.recipient.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["sender"]) { outcome.issue!.push(...this.sender.doModelValidation().issue!); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["payload"]) { this.payload.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation()); }
+    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["medium"]) { this.medium.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["topic"]) { issues.push(...this.topic.doModelValidation()); }
+    if (this["about"]) { this.about.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
+    if (this["sent"]) { issues.push(...this.sent.doModelValidation()); }
+    if (this["received"]) { issues.push(...this.received.doModelValidation()); }
+    if (this["recipient"]) { this.recipient.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["sender"]) { issues.push(...this.sender.doModelValidation()); }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["payload"]) { this.payload.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

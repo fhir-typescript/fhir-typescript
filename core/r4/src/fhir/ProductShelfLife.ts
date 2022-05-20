@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the ProductShelfLife type.
  */
@@ -38,7 +34,7 @@ export class ProductShelfLife extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ProductShelfLife';
+  public static override readonly _fts_dataType:string = 'ProductShelfLife';
   /**
    * Unique identifier for the packaged Medicinal Product.
    */
@@ -71,18 +67,18 @@ export class ProductShelfLife extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["identifier"]) { outcome.issue!.push(...this.identifier.doModelValidation().issue!); }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: ProductShelfLife.type:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: ProductShelfLife.type:CodeableConcept', });
     }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['period']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property period:fhir.Quantity fhir: ProductShelfLife.period:Quantity', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property period:fhir.Quantity fhir: ProductShelfLife.period:Quantity', });
     }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    if (this["specialPrecautionsForStorage"]) { this.specialPrecautionsForStorage.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["specialPrecautionsForStorage"]) { this.specialPrecautionsForStorage.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

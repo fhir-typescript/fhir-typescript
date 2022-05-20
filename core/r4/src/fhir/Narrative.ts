@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { NarrativeStatusCodings, NarrativeStatusCodingType,} from '../fhirValueSets/NarrativeStatusCodings.js';
 // @ts-ignore
 import { NarrativeStatusCodes,  NarrativeStatusCodeType } from '../fhirValueSets/NarrativeStatusCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Narrative type.
  */
@@ -34,7 +30,7 @@ export class Narrative extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Narrative';
+  public static override readonly _fts_dataType:string = 'Narrative';
   /**
    * The status of the narrative - whether it's entirely generated (from just the defined data or the extensions too), or whether a human authored it and it may contain additional data.
    */
@@ -62,15 +58,15 @@ export class Narrative extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:NarrativeStatusCodeType fhir: Narrative.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:NarrativeStatusCodeType fhir: Narrative.status:code', });
     }
     if (!this['div']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property div:fhir.FhirXhtml fhir: Narrative.div:xhtml', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property div:fhir.FhirXhtml fhir: Narrative.div:xhtml', });
     }
-    if (this["div"]) { outcome.issue!.push(...this.div.doModelValidation().issue!); }
-    return outcome;
+    if (this["div"]) { issues.push(...this.div.doModelValidation()); }
+    return issues;
   }
 }

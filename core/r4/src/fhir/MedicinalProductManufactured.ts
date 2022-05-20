@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the MedicinalProductManufactured type.
  */
@@ -54,11 +50,11 @@ export class MedicinalProductManufactured extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MedicinalProductManufactured';
+  public static override readonly _fts_dataType:string = 'MedicinalProductManufactured';
   /**
    * Resource Type Name
    */
-  public resourceType: "MedicinalProductManufactured";
+  public override resourceType: "MedicinalProductManufactured";
   /**
    * Dose form as manufactured and before any transformation into the pharmaceutical product.
    */
@@ -109,24 +105,24 @@ export class MedicinalProductManufactured extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"MedicinalProductManufactured" fhir: MedicinalProductManufactured.resourceType:"MedicinalProductManufactured"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicinalProductManufactured" fhir: MedicinalProductManufactured.resourceType:"MedicinalProductManufactured"', });
     }
     if (!this['manufacturedDoseForm']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property manufacturedDoseForm:fhir.CodeableConcept fhir: MedicinalProductManufactured.manufacturedDoseForm:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property manufacturedDoseForm:fhir.CodeableConcept fhir: MedicinalProductManufactured.manufacturedDoseForm:CodeableConcept', });
     }
-    if (this["manufacturedDoseForm"]) { outcome.issue!.push(...this.manufacturedDoseForm.doModelValidation().issue!); }
-    if (this["unitOfPresentation"]) { outcome.issue!.push(...this.unitOfPresentation.doModelValidation().issue!); }
+    if (this["manufacturedDoseForm"]) { issues.push(...this.manufacturedDoseForm.doModelValidation()); }
+    if (this["unitOfPresentation"]) { issues.push(...this.unitOfPresentation.doModelValidation()); }
     if (!this['quantity']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property quantity:fhir.Quantity fhir: MedicinalProductManufactured.quantity:Quantity', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property quantity:fhir.Quantity fhir: MedicinalProductManufactured.quantity:Quantity', });
     }
-    if (this["quantity"]) { outcome.issue!.push(...this.quantity.doModelValidation().issue!); }
-    if (this["manufacturer"]) { this.manufacturer.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["ingredient"]) { this.ingredient.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["physicalCharacteristics"]) { outcome.issue!.push(...this.physicalCharacteristics.doModelValidation().issue!); }
-    if (this["otherCharacteristics"]) { this.otherCharacteristics.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
+    if (this["manufacturer"]) { this.manufacturer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["ingredient"]) { this.ingredient.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["physicalCharacteristics"]) { issues.push(...this.physicalCharacteristics.doModelValidation()); }
+    if (this["otherCharacteristics"]) { this.otherCharacteristics.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

@@ -13,10 +13,6 @@ import { AccountStatusCodes,  AccountStatusCodeType } from '../fhirValueSets/Acc
 import { AccountTypeCodings, AccountTypeCodingType,} from '../fhirValueSets/AccountTypeCodings.js';
 // @ts-ignore
 import { AccountTypeCodes,  AccountTypeCodeType } from '../fhirValueSets/AccountTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the AccountCoverage type.
  */
@@ -41,7 +37,7 @@ export class AccountCoverage extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'AccountCoverage';
+  public static override readonly _fts_dataType:string = 'AccountCoverage';
   /**
    * The party(s) that contribute to payment (or part of) of the charges applied to this account (including self-pay).
    * A coverage may only be responsible for specific types of charges, and the sequence of the coverages in the account could be important when processing billing.
@@ -63,14 +59,14 @@ export class AccountCoverage extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['coverage']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property coverage:fhir.Reference fhir: Account.coverage.coverage:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property coverage:fhir.Reference fhir: Account.coverage.coverage:Reference', });
     }
-    if (this["coverage"]) { outcome.issue!.push(...this.coverage.doModelValidation().issue!); }
-    if (this["priority"]) { outcome.issue!.push(...this.priority.doModelValidation().issue!); }
-    return outcome;
+    if (this["coverage"]) { issues.push(...this.coverage.doModelValidation()); }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -98,7 +94,7 @@ export class AccountGuarantor extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'AccountGuarantor';
+  public static override readonly _fts_dataType:string = 'AccountGuarantor';
   /**
    * The entity who is responsible.
    */
@@ -124,15 +120,15 @@ export class AccountGuarantor extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['party']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property party:fhir.Reference fhir: Account.guarantor.party:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property party:fhir.Reference fhir: Account.guarantor.party:Reference', });
     }
-    if (this["party"]) { outcome.issue!.push(...this.party.doModelValidation().issue!); }
-    if (this["onHold"]) { outcome.issue!.push(...this.onHold.doModelValidation().issue!); }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    return outcome;
+    if (this["party"]) { issues.push(...this.party.doModelValidation()); }
+    if (this["onHold"]) { issues.push(...this.onHold.doModelValidation()); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -198,11 +194,11 @@ export class Account extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Account';
+  public static override readonly _fts_dataType:string = 'Account';
   /**
    * Resource Type Name
    */
-  public resourceType: "Account";
+  public override resourceType: "Account";
   /**
    * Unique identifier used to reference the account.  Might or might not be intended for human use (e.g. credit card number).
    */
@@ -281,24 +277,24 @@ export class Account extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Account" fhir: Account.resourceType:"Account"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Account" fhir: Account.resourceType:"Account"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:AccountStatusCodeType fhir: Account.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:AccountStatusCodeType fhir: Account.status:code', });
     }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["subject"]) { this.subject.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["servicePeriod"]) { outcome.issue!.push(...this.servicePeriod.doModelValidation().issue!); }
-    if (this["coverage"]) { this.coverage.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["owner"]) { outcome.issue!.push(...this.owner.doModelValidation().issue!); }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["guarantor"]) { this.guarantor.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["partOf"]) { outcome.issue!.push(...this.partOf.doModelValidation().issue!); }
-    return outcome;
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["subject"]) { this.subject.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["servicePeriod"]) { issues.push(...this.servicePeriod.doModelValidation()); }
+    if (this["coverage"]) { this.coverage.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["owner"]) { issues.push(...this.owner.doModelValidation()); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["guarantor"]) { this.guarantor.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["partOf"]) { issues.push(...this.partOf.doModelValidation()); }
+    return issues;
   }
 }

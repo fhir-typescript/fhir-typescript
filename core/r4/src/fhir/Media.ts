@@ -25,10 +25,6 @@ import { ProcedureReasonCodes,  ProcedureReasonCodeType } from '../fhirValueSets
 import { BodySiteCodings, BodySiteCodingType,} from '../fhirValueSets/BodySiteCodings.js';
 // @ts-ignore
 import { BodySiteCodes,  BodySiteCodeType } from '../fhirValueSets/BodySiteCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Media type.
  */
@@ -145,11 +141,11 @@ export class Media extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Media';
+  public static override readonly _fts_dataType:string = 'Media';
   /**
    * Resource Type Name
    */
-  public resourceType: "Media";
+  public override resourceType: "Media";
   /**
    * The identifier label and use can be used to determine what kind of identifier it is.
    */
@@ -298,37 +294,37 @@ export class Media extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Media" fhir: Media.resourceType:"Media"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Media" fhir: Media.resourceType:"Media"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["partOf"]) { this.partOf.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:EventStatusCodeType fhir: Media.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:EventStatusCodeType fhir: Media.status:code', });
     }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["modality"]) { outcome.issue!.push(...this.modality.doModelValidation().issue!); }
-    if (this["view"]) { outcome.issue!.push(...this.view.doModelValidation().issue!); }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["encounter"]) { outcome.issue!.push(...this.encounter.doModelValidation().issue!); }
-    if (this["issued"]) { outcome.issue!.push(...this.issued.doModelValidation().issue!); }
-    if (this["operator"]) { outcome.issue!.push(...this.operator.doModelValidation().issue!); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["bodySite"]) { outcome.issue!.push(...this.bodySite.doModelValidation().issue!); }
-    if (this["deviceName"]) { outcome.issue!.push(...this.deviceName.doModelValidation().issue!); }
-    if (this["device"]) { outcome.issue!.push(...this.device.doModelValidation().issue!); }
-    if (this["height"]) { outcome.issue!.push(...this.height.doModelValidation().issue!); }
-    if (this["width"]) { outcome.issue!.push(...this.width.doModelValidation().issue!); }
-    if (this["frames"]) { outcome.issue!.push(...this.frames.doModelValidation().issue!); }
-    if (this["duration"]) { outcome.issue!.push(...this.duration.doModelValidation().issue!); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["modality"]) { issues.push(...this.modality.doModelValidation()); }
+    if (this["view"]) { issues.push(...this.view.doModelValidation()); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
+    if (this["issued"]) { issues.push(...this.issued.doModelValidation()); }
+    if (this["operator"]) { issues.push(...this.operator.doModelValidation()); }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation()); }
+    if (this["deviceName"]) { issues.push(...this.deviceName.doModelValidation()); }
+    if (this["device"]) { issues.push(...this.device.doModelValidation()); }
+    if (this["height"]) { issues.push(...this.height.doModelValidation()); }
+    if (this["width"]) { issues.push(...this.width.doModelValidation()); }
+    if (this["frames"]) { issues.push(...this.frames.doModelValidation()); }
+    if (this["duration"]) { issues.push(...this.duration.doModelValidation()); }
     if (!this['content']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property content:fhir.Attachment fhir: Media.content:Attachment', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property content:fhir.Attachment fhir: Media.content:Attachment', });
     }
-    if (this["content"]) { outcome.issue!.push(...this.content.doModelValidation().issue!); }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["content"]) { issues.push(...this.content.doModelValidation()); }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

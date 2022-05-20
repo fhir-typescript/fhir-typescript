@@ -49,10 +49,6 @@ import { RequestStatusCodes,  RequestStatusCodeType } from '../fhirValueSets/Req
 import { RequestIntentCodings, RequestIntentCodingType,} from '../fhirValueSets/RequestIntentCodings.js';
 // @ts-ignore
 import { RequestIntentCodes,  RequestIntentCodeType } from '../fhirValueSets/RequestIntentCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the RequestGroupActionCondition type.
  */
@@ -74,7 +70,7 @@ export class RequestGroupActionCondition extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'RequestGroupActionCondition';
+  public static override readonly _fts_dataType:string = 'RequestGroupActionCondition';
   /**
    * Applicability criteria are used to determine immediate applicability when a plan definition is applied to a given context. Start and stop criteria are carried through application and used to describe enter/exit criteria for an action.
    */
@@ -101,13 +97,13 @@ export class RequestGroupActionCondition extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['kind']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property kind:ActionConditionKindCodeType fhir: RequestGroup.action.condition.kind:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property kind:ActionConditionKindCodeType fhir: RequestGroup.action.condition.kind:code', });
     }
-    if (this["expression"]) { outcome.issue!.push(...this.expression.doModelValidation().issue!); }
-    return outcome;
+    if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -143,7 +139,7 @@ export class RequestGroupActionRelatedAction extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'RequestGroupActionRelatedAction';
+  public static override readonly _fts_dataType:string = 'RequestGroupActionRelatedAction';
   /**
    * The element id of the action this is related to.
    */
@@ -182,16 +178,16 @@ export class RequestGroupActionRelatedAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['actionId']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property actionId:fhir.FhirId fhir: RequestGroup.action.relatedAction.actionId:id', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actionId:fhir.FhirId fhir: RequestGroup.action.relatedAction.actionId:id', });
     }
-    if (this["actionId"]) { outcome.issue!.push(...this.actionId.doModelValidation().issue!); }
+    if (this["actionId"]) { issues.push(...this.actionId.doModelValidation()); }
     if (!this['relationship']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property relationship:ActionRelationshipTypeCodeType fhir: RequestGroup.action.relatedAction.relationship:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property relationship:ActionRelationshipTypeCodeType fhir: RequestGroup.action.relatedAction.relationship:code', });
     }
-    return outcome;
+    return issues;
   }
 }
 /**
@@ -307,7 +303,7 @@ export class RequestGroupAction extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'RequestGroupAction';
+  public static override readonly _fts_dataType:string = 'RequestGroupAction';
   /**
    * A user-visible prefix for the action.
    */
@@ -470,21 +466,21 @@ export class RequestGroupAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["prefix"]) { outcome.issue!.push(...this.prefix.doModelValidation().issue!); }
-    if (this["title"]) { outcome.issue!.push(...this.title.doModelValidation().issue!); }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["textEquivalent"]) { outcome.issue!.push(...this.textEquivalent.doModelValidation().issue!); }
-    if (this["code"]) { this.code.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["documentation"]) { this.documentation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["condition"]) { this.condition.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["relatedAction"]) { this.relatedAction.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["participant"]) { this.participant.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["resource"]) { outcome.issue!.push(...this.resource.doModelValidation().issue!); }
-    if (this["action"]) { this.action.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["prefix"]) { issues.push(...this.prefix.doModelValidation()); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["textEquivalent"]) { issues.push(...this.textEquivalent.doModelValidation()); }
+    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["documentation"]) { this.documentation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["condition"]) { this.condition.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["relatedAction"]) { this.relatedAction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["participant"]) { this.participant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["resource"]) { issues.push(...this.resource.doModelValidation()); }
+    if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -576,11 +572,11 @@ export class RequestGroup extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'RequestGroup';
+  public static override readonly _fts_dataType:string = 'RequestGroup';
   /**
    * Resource Type Name
    */
-  public resourceType: "RequestGroup";
+  public override resourceType: "RequestGroup";
   /**
    * Allows a service to provide a unique, business identifier for the request.
    */
@@ -710,32 +706,32 @@ export class RequestGroup extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"RequestGroup" fhir: RequestGroup.resourceType:"RequestGroup"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"RequestGroup" fhir: RequestGroup.resourceType:"RequestGroup"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["replaces"]) { this.replaces.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["groupIdentifier"]) { outcome.issue!.push(...this.groupIdentifier.doModelValidation().issue!); }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["replaces"]) { this.replaces.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["groupIdentifier"]) { issues.push(...this.groupIdentifier.doModelValidation()); }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:RequestStatusCodeType fhir: RequestGroup.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:RequestStatusCodeType fhir: RequestGroup.status:code', });
     }
     if (!this['intent']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property intent:RequestIntentCodeType fhir: RequestGroup.intent:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property intent:RequestIntentCodeType fhir: RequestGroup.intent:code', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["encounter"]) { outcome.issue!.push(...this.encounter.doModelValidation().issue!); }
-    if (this["authoredOn"]) { outcome.issue!.push(...this.authoredOn.doModelValidation().issue!); }
-    if (this["author"]) { outcome.issue!.push(...this.author.doModelValidation().issue!); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["action"]) { this.action.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
+    if (this["authoredOn"]) { issues.push(...this.authoredOn.doModelValidation()); }
+    if (this["author"]) { issues.push(...this.author.doModelValidation()); }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

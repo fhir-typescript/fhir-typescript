@@ -2,7 +2,7 @@ import * as fhir from '../fhir.js';
 /**
  * A date or partial date (e.g. just year or year + month). There is no time zone. The format is a union of the schema types gYear, gYearMonth and date.  Dates SHALL be valid dates.
  */
-export interface FhirDateArgs extends fhir.FhirStringArgs {
+export interface FhirDateArgs extends fhir.FhirPrimitiveArgs {
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone. The format is a union of the schema types gYear, gYearMonth and date.  Dates SHALL be valid dates.
      */
@@ -11,7 +11,7 @@ export interface FhirDateArgs extends fhir.FhirStringArgs {
 /**
  * A date or partial date (e.g. just year or year + month). There is no time zone. The format is a union of the schema types gYear, gYearMonth and date.  Dates SHALL be valid dates.
  */
-export declare class FhirDate extends fhir.FhirString {
+export declare class FhirDate extends fhir.FhirPrimitive {
     /**
      * Mapping of this datatype to a FHIR equivalent
      */
@@ -36,6 +36,6 @@ export declare class FhirDate extends fhir.FhirString {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=FhirDate.d.ts.map

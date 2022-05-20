@@ -45,10 +45,6 @@ import { AllergyIntoleranceCriticalityCodes,  AllergyIntoleranceCriticalityCodeT
 import { AllergyintoleranceCodeCodings, AllergyintoleranceCodeCodingType,} from '../fhirValueSets/AllergyintoleranceCodeCodings.js';
 // @ts-ignore
 import { AllergyintoleranceCodeCodes,  AllergyintoleranceCodeCodeType } from '../fhirValueSets/AllergyintoleranceCodeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the AllergyIntoleranceReaction type.
  */
@@ -90,7 +86,7 @@ export class AllergyIntoleranceReaction extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'AllergyIntoleranceReaction';
+  public static override readonly _fts_dataType:string = 'AllergyIntoleranceReaction';
   /**
    * Coding of the specific substance (or pharmaceutical product) with a terminology capable of triggering decision support should be used wherever possible.  The 'code' element allows for the use of a specific substance or pharmaceutical product, or a group or class of substances. In the case of an allergy or intolerance to a class of substances, (for example, "penicillins"), the 'reaction.substance' element could be used to code the specific substance that was identified as having caused the reaction (for example, "amoxycillin"). Duplication of the value in the 'code' and 'reaction.substance' elements is acceptable when a specific substance has been recorded in 'code'.
    */
@@ -143,22 +139,22 @@ export class AllergyIntoleranceReaction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["substance"]) { outcome.issue!.push(...this.substance.doModelValidation().issue!); }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["substance"]) { issues.push(...this.substance.doModelValidation()); }
     if (!this['manifestation']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property manifestation:fhir.CodeableConcept[] fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property manifestation:fhir.CodeableConcept[] fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept', });
     } else if (!Array.isArray(this.manifestation)) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.StructuralIssue,  diagnostics: 'Found scalar in array property manifestation:fhir.CodeableConcept[] fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property manifestation:fhir.CodeableConcept[] fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept', });
     } else if (this.manifestation.length === 0) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property manifestation:fhir.CodeableConcept[] fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property manifestation:fhir.CodeableConcept[] fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept', });
     }
-    if (this["manifestation"]) { this.manifestation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["onset"]) { outcome.issue!.push(...this.onset.doModelValidation().issue!); }
-    if (this["exposureRoute"]) { outcome.issue!.push(...this.exposureRoute.doModelValidation().issue!); }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["manifestation"]) { this.manifestation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["onset"]) { issues.push(...this.onset.doModelValidation()); }
+    if (this["exposureRoute"]) { issues.push(...this.exposureRoute.doModelValidation()); }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -265,11 +261,11 @@ export class AllergyIntolerance extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'AllergyIntolerance';
+  public static override readonly _fts_dataType:string = 'AllergyIntolerance';
   /**
    * Resource Type Name
    */
-  public resourceType: "AllergyIntolerance";
+  public override resourceType: "AllergyIntolerance";
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
@@ -407,26 +403,26 @@ export class AllergyIntolerance extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"AllergyIntolerance" fhir: AllergyIntolerance.resourceType:"AllergyIntolerance"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"AllergyIntolerance" fhir: AllergyIntolerance.resourceType:"AllergyIntolerance"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["clinicalStatus"]) { outcome.issue!.push(...this.clinicalStatus.doModelValidation().issue!); }
-    if (this["verificationStatus"]) { outcome.issue!.push(...this.verificationStatus.doModelValidation().issue!); }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["clinicalStatus"]) { issues.push(...this.clinicalStatus.doModelValidation()); }
+    if (this["verificationStatus"]) { issues.push(...this.verificationStatus.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['patient']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property patient:fhir.Reference fhir: AllergyIntolerance.patient:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: AllergyIntolerance.patient:Reference', });
     }
-    if (this["patient"]) { outcome.issue!.push(...this.patient.doModelValidation().issue!); }
-    if (this["encounter"]) { outcome.issue!.push(...this.encounter.doModelValidation().issue!); }
-    if (this["recordedDate"]) { outcome.issue!.push(...this.recordedDate.doModelValidation().issue!); }
-    if (this["recorder"]) { outcome.issue!.push(...this.recorder.doModelValidation().issue!); }
-    if (this["asserter"]) { outcome.issue!.push(...this.asserter.doModelValidation().issue!); }
-    if (this["lastOccurrence"]) { outcome.issue!.push(...this.lastOccurrence.doModelValidation().issue!); }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["reaction"]) { this.reaction.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
+    if (this["recordedDate"]) { issues.push(...this.recordedDate.doModelValidation()); }
+    if (this["recorder"]) { issues.push(...this.recorder.doModelValidation()); }
+    if (this["asserter"]) { issues.push(...this.asserter.doModelValidation()); }
+    if (this["lastOccurrence"]) { issues.push(...this.lastOccurrence.doModelValidation()); }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["reaction"]) { this.reaction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

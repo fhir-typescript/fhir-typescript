@@ -21,10 +21,6 @@ import { RouteCodesCodes,  RouteCodesCodeType } from '../fhirValueSets/RouteCode
 import { AdministrationMethodCodesCodings, AdministrationMethodCodesCodingType,} from '../fhirValueSets/AdministrationMethodCodesCodings.js';
 // @ts-ignore
 import { AdministrationMethodCodesCodes,  AdministrationMethodCodesCodeType } from '../fhirValueSets/AdministrationMethodCodesCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the DosageDoseAndRate type.
  */
@@ -74,7 +70,7 @@ export class DosageDoseAndRate extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DosageDoseAndRate';
+  public static override readonly _fts_dataType:string = 'DosageDoseAndRate';
   /**
    * The kind of dose or rate specified, for example, ordered or calculated.
    */
@@ -113,10 +109,10 @@ export class DosageDoseAndRate extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -192,7 +188,7 @@ export class Dosage extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Dosage';
+  public static override readonly _fts_dataType:string = 'Dosage';
   /**
    * Indicates the order in which the dosage instructions should be applied or interpreted.
    */
@@ -275,20 +271,20 @@ export class Dosage extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["sequence"]) { outcome.issue!.push(...this.sequence.doModelValidation().issue!); }
-    if (this["text"]) { outcome.issue!.push(...this.text.doModelValidation().issue!); }
-    if (this["additionalInstruction"]) { this.additionalInstruction.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["patientInstruction"]) { outcome.issue!.push(...this.patientInstruction.doModelValidation().issue!); }
-    if (this["timing"]) { outcome.issue!.push(...this.timing.doModelValidation().issue!); }
-    if (this["site"]) { outcome.issue!.push(...this.site.doModelValidation().issue!); }
-    if (this["route"]) { outcome.issue!.push(...this.route.doModelValidation().issue!); }
-    if (this["method"]) { outcome.issue!.push(...this.method.doModelValidation().issue!); }
-    if (this["doseAndRate"]) { this.doseAndRate.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["maxDosePerPeriod"]) { outcome.issue!.push(...this.maxDosePerPeriod.doModelValidation().issue!); }
-    if (this["maxDosePerAdministration"]) { outcome.issue!.push(...this.maxDosePerAdministration.doModelValidation().issue!); }
-    if (this["maxDosePerLifetime"]) { outcome.issue!.push(...this.maxDosePerLifetime.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
+    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
+    if (this["additionalInstruction"]) { this.additionalInstruction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["patientInstruction"]) { issues.push(...this.patientInstruction.doModelValidation()); }
+    if (this["timing"]) { issues.push(...this.timing.doModelValidation()); }
+    if (this["site"]) { issues.push(...this.site.doModelValidation()); }
+    if (this["route"]) { issues.push(...this.route.doModelValidation()); }
+    if (this["method"]) { issues.push(...this.method.doModelValidation()); }
+    if (this["doseAndRate"]) { this.doseAndRate.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["maxDosePerPeriod"]) { issues.push(...this.maxDosePerPeriod.doModelValidation()); }
+    if (this["maxDosePerAdministration"]) { issues.push(...this.maxDosePerAdministration.doModelValidation()); }
+    if (this["maxDosePerLifetime"]) { issues.push(...this.maxDosePerLifetime.doModelValidation()); }
+    return issues;
   }
 }

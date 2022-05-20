@@ -17,10 +17,6 @@ import { ServiceTypeCodes,  ServiceTypeCodeType } from '../fhirValueSets/Service
 import { C80PracticeCodesCodings, C80PracticeCodesCodingType,} from '../fhirValueSets/C80PracticeCodesCodings.js';
 // @ts-ignore
 import { C80PracticeCodesCodes,  C80PracticeCodesCodeType } from '../fhirValueSets/C80PracticeCodesCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Schedule type.
  */
@@ -70,11 +66,11 @@ export class Schedule extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Schedule';
+  public static override readonly _fts_dataType:string = 'Schedule';
   /**
    * Resource Type Name
    */
-  public resourceType: "Schedule";
+  public override resourceType: "Schedule";
   /**
    * External Ids for this item.
    */
@@ -136,26 +132,26 @@ export class Schedule extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Schedule" fhir: Schedule.resourceType:"Schedule"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Schedule" fhir: Schedule.resourceType:"Schedule"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["active"]) { outcome.issue!.push(...this.active.doModelValidation().issue!); }
-    if (this["serviceCategory"]) { this.serviceCategory.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["serviceType"]) { this.serviceType.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["specialty"]) { this.specialty.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["active"]) { issues.push(...this.active.doModelValidation()); }
+    if (this["serviceCategory"]) { this.serviceCategory.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["serviceType"]) { this.serviceType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["specialty"]) { this.specialty.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['actor']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property actor:fhir.Reference[] fhir: Schedule.actor:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actor:fhir.Reference[] fhir: Schedule.actor:Reference', });
     } else if (!Array.isArray(this.actor)) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.StructuralIssue,  diagnostics: 'Found scalar in array property actor:fhir.Reference[] fhir: Schedule.actor:Reference', }));
+      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property actor:fhir.Reference[] fhir: Schedule.actor:Reference', });
     } else if (this.actor.length === 0) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property actor:fhir.Reference[] fhir: Schedule.actor:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actor:fhir.Reference[] fhir: Schedule.actor:Reference', });
     }
-    if (this["actor"]) { this.actor.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["planningHorizon"]) { outcome.issue!.push(...this.planningHorizon.doModelValidation().issue!); }
-    if (this["comment"]) { outcome.issue!.push(...this.comment.doModelValidation().issue!); }
-    return outcome;
+    if (this["actor"]) { this.actor.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["planningHorizon"]) { issues.push(...this.planningHorizon.doModelValidation()); }
+    if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
+    return issues;
   }
 }

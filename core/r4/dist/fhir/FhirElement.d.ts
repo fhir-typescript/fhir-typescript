@@ -35,6 +35,6 @@ export declare class FhirElement extends fhir.FhirBase {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=FhirElement.d.ts.map

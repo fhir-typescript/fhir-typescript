@@ -29,10 +29,6 @@ import { GoalPriorityCodes,  GoalPriorityCodeType } from '../fhirValueSets/GoalP
 import { ClinicalFindingsCodings, ClinicalFindingsCodingType,} from '../fhirValueSets/ClinicalFindingsCodings.js';
 // @ts-ignore
 import { ClinicalFindingsCodes,  ClinicalFindingsCodeType } from '../fhirValueSets/ClinicalFindingsCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the GoalTarget type.
  */
@@ -94,7 +90,7 @@ export class GoalTarget extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'GoalTarget';
+  public static override readonly _fts_dataType:string = 'GoalTarget';
   /**
    * The parameter whose value is being tracked, e.g. body weight, blood pressure, or hemoglobin A1c level.
    */
@@ -136,10 +132,10 @@ export class GoalTarget extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["measure"]) { outcome.issue!.push(...this.measure.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["measure"]) { issues.push(...this.measure.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -232,11 +228,11 @@ export class Goal extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Goal';
+  public static override readonly _fts_dataType:string = 'Goal';
   /**
    * Resource Type Name
    */
-  public resourceType: "Goal";
+  public override resourceType: "Goal";
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
@@ -362,34 +358,34 @@ export class Goal extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Goal" fhir: Goal.resourceType:"Goal"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Goal" fhir: Goal.resourceType:"Goal"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['lifecycleStatus']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property lifecycleStatus:GoalStatusCodeType fhir: Goal.lifecycleStatus:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property lifecycleStatus:GoalStatusCodeType fhir: Goal.lifecycleStatus:code', });
     }
-    if (this["achievementStatus"]) { outcome.issue!.push(...this.achievementStatus.doModelValidation().issue!); }
-    if (this["category"]) { this.category.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["priority"]) { outcome.issue!.push(...this.priority.doModelValidation().issue!); }
+    if (this["achievementStatus"]) { issues.push(...this.achievementStatus.doModelValidation()); }
+    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
     if (!this['description']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property description:fhir.CodeableConcept fhir: Goal.description:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property description:fhir.CodeableConcept fhir: Goal.description:CodeableConcept', });
     }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (!this['subject']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property subject:fhir.Reference fhir: Goal.subject:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: Goal.subject:Reference', });
     }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["target"]) { this.target.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["statusDate"]) { outcome.issue!.push(...this.statusDate.doModelValidation().issue!); }
-    if (this["statusReason"]) { outcome.issue!.push(...this.statusReason.doModelValidation().issue!); }
-    if (this["expressedBy"]) { outcome.issue!.push(...this.expressedBy.doModelValidation().issue!); }
-    if (this["addresses"]) { this.addresses.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["outcomeCode"]) { this.outcomeCode.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["outcomeReference"]) { this.outcomeReference.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["target"]) { this.target.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["statusDate"]) { issues.push(...this.statusDate.doModelValidation()); }
+    if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation()); }
+    if (this["expressedBy"]) { issues.push(...this.expressedBy.doModelValidation()); }
+    if (this["addresses"]) { this.addresses.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["outcomeCode"]) { this.outcomeCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["outcomeReference"]) { this.outcomeReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

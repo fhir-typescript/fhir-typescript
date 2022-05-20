@@ -37,10 +37,6 @@ import { AdverseEventSeverityCodes,  AdverseEventSeverityCodeType } from '../fhi
 import { AdverseEventOutcomeCodings, AdverseEventOutcomeCodingType,} from '../fhirValueSets/AdverseEventOutcomeCodings.js';
 // @ts-ignore
 import { AdverseEventOutcomeCodes,  AdverseEventOutcomeCodeType } from '../fhirValueSets/AdverseEventOutcomeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the AdverseEventSuspectEntityCausality type.
  */
@@ -70,7 +66,7 @@ export class AdverseEventSuspectEntityCausality extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'AdverseEventSuspectEntityCausality';
+  public static override readonly _fts_dataType:string = 'AdverseEventSuspectEntityCausality';
   /**
    * Assessment of if the entity caused the event.
    */
@@ -100,13 +96,13 @@ export class AdverseEventSuspectEntityCausality extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["assessment"]) { outcome.issue!.push(...this.assessment.doModelValidation().issue!); }
-    if (this["productRelatedness"]) { outcome.issue!.push(...this.productRelatedness.doModelValidation().issue!); }
-    if (this["author"]) { outcome.issue!.push(...this.author.doModelValidation().issue!); }
-    if (this["method"]) { outcome.issue!.push(...this.method.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["assessment"]) { issues.push(...this.assessment.doModelValidation()); }
+    if (this["productRelatedness"]) { issues.push(...this.productRelatedness.doModelValidation()); }
+    if (this["author"]) { issues.push(...this.author.doModelValidation()); }
+    if (this["method"]) { issues.push(...this.method.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -130,7 +126,7 @@ export class AdverseEventSuspectEntity extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'AdverseEventSuspectEntity';
+  public static override readonly _fts_dataType:string = 'AdverseEventSuspectEntity';
   /**
    * Identifies the actual instance of what caused the adverse event.  May be a substance, medication, medication administration, medication statement or a device.
    */
@@ -152,14 +148,14 @@ export class AdverseEventSuspectEntity extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['instance']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property instance:fhir.Reference fhir: AdverseEvent.suspectEntity.instance:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property instance:fhir.Reference fhir: AdverseEvent.suspectEntity.instance:Reference', });
     }
-    if (this["instance"]) { outcome.issue!.push(...this.instance.doModelValidation().issue!); }
-    if (this["causality"]) { this.causality.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["instance"]) { issues.push(...this.instance.doModelValidation()); }
+    if (this["causality"]) { this.causality.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -259,11 +255,11 @@ export class AdverseEvent extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'AdverseEvent';
+  public static override readonly _fts_dataType:string = 'AdverseEvent';
   /**
    * Resource Type Name
    */
-  public resourceType: "AdverseEvent";
+  public override resourceType: "AdverseEvent";
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
@@ -407,36 +403,36 @@ export class AdverseEvent extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"AdverseEvent" fhir: AdverseEvent.resourceType:"AdverseEvent"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"AdverseEvent" fhir: AdverseEvent.resourceType:"AdverseEvent"', });
     }
-    if (this["identifier"]) { outcome.issue!.push(...this.identifier.doModelValidation().issue!); }
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (!this['actuality']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property actuality:AdverseEventActualityCodeType fhir: AdverseEvent.actuality:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actuality:AdverseEventActualityCodeType fhir: AdverseEvent.actuality:code', });
     }
-    if (this["category"]) { this.category.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["event"]) { outcome.issue!.push(...this.event.doModelValidation().issue!); }
+    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["event"]) { issues.push(...this.event.doModelValidation()); }
     if (!this['subject']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property subject:fhir.Reference fhir: AdverseEvent.subject:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: AdverseEvent.subject:Reference', });
     }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["encounter"]) { outcome.issue!.push(...this.encounter.doModelValidation().issue!); }
-    if (this["date"]) { outcome.issue!.push(...this.date.doModelValidation().issue!); }
-    if (this["detected"]) { outcome.issue!.push(...this.detected.doModelValidation().issue!); }
-    if (this["recordedDate"]) { outcome.issue!.push(...this.recordedDate.doModelValidation().issue!); }
-    if (this["resultingCondition"]) { this.resultingCondition.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["location"]) { outcome.issue!.push(...this.location.doModelValidation().issue!); }
-    if (this["seriousness"]) { outcome.issue!.push(...this.seriousness.doModelValidation().issue!); }
-    if (this["severity"]) { outcome.issue!.push(...this.severity.doModelValidation().issue!); }
-    if (this["outcome"]) { outcome.issue!.push(...this.outcome.doModelValidation().issue!); }
-    if (this["recorder"]) { outcome.issue!.push(...this.recorder.doModelValidation().issue!); }
-    if (this["contributor"]) { this.contributor.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["suspectEntity"]) { this.suspectEntity.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["subjectMedicalHistory"]) { this.subjectMedicalHistory.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["referenceDocument"]) { this.referenceDocument.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["study"]) { this.study.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
+    if (this["detected"]) { issues.push(...this.detected.doModelValidation()); }
+    if (this["recordedDate"]) { issues.push(...this.recordedDate.doModelValidation()); }
+    if (this["resultingCondition"]) { this.resultingCondition.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["location"]) { issues.push(...this.location.doModelValidation()); }
+    if (this["seriousness"]) { issues.push(...this.seriousness.doModelValidation()); }
+    if (this["severity"]) { issues.push(...this.severity.doModelValidation()); }
+    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation()); }
+    if (this["recorder"]) { issues.push(...this.recorder.doModelValidation()); }
+    if (this["contributor"]) { this.contributor.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["suspectEntity"]) { this.suspectEntity.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["subjectMedicalHistory"]) { this.subjectMedicalHistory.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["referenceDocument"]) { this.referenceDocument.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["study"]) { this.study.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

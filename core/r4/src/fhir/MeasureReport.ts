@@ -21,10 +21,6 @@ import { MeasureReportTypeCodes,  MeasureReportTypeCodeType } from '../fhirValue
 import { MeasureImprovementNotationCodings, MeasureImprovementNotationCodingType,} from '../fhirValueSets/MeasureImprovementNotationCodings.js';
 // @ts-ignore
 import { MeasureImprovementNotationCodes,  MeasureImprovementNotationCodeType } from '../fhirValueSets/MeasureImprovementNotationCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the MeasureReportGroupPopulation type.
  */
@@ -50,7 +46,7 @@ export class MeasureReportGroupPopulation extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MeasureReportGroupPopulation';
+  public static override readonly _fts_dataType:string = 'MeasureReportGroupPopulation';
   /**
    * The type of the population.
    */
@@ -81,12 +77,12 @@ export class MeasureReportGroupPopulation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["count"]) { outcome.issue!.push(...this.count.doModelValidation().issue!); }
-    if (this["subjectResults"]) { outcome.issue!.push(...this.subjectResults.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["count"]) { issues.push(...this.count.doModelValidation()); }
+    if (this["subjectResults"]) { issues.push(...this.subjectResults.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -110,7 +106,7 @@ export class MeasureReportGroupStratifierStratumComponent extends fhir.BackboneE
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MeasureReportGroupStratifierStratumComponent';
+  public static override readonly _fts_dataType:string = 'MeasureReportGroupStratifierStratumComponent';
   /**
    * The code for the stratum component value.
    */
@@ -132,17 +128,17 @@ export class MeasureReportGroupStratifierStratumComponent extends fhir.BackboneE
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: MeasureReport.group.stratifier.stratum.component.code:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: MeasureReport.group.stratifier.stratum.component.code:CodeableConcept', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['value']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property value:fhir.CodeableConcept fhir: MeasureReport.group.stratifier.stratum.component.value:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value:fhir.CodeableConcept fhir: MeasureReport.group.stratifier.stratum.component.value:CodeableConcept', });
     }
-    if (this["value"]) { outcome.issue!.push(...this.value.doModelValidation().issue!); }
-    return outcome;
+    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -170,7 +166,7 @@ export class MeasureReportGroupStratifierStratumPopulation extends fhir.Backbone
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MeasureReportGroupStratifierStratumPopulation';
+  public static override readonly _fts_dataType:string = 'MeasureReportGroupStratifierStratumPopulation';
   /**
    * The type of the population.
    */
@@ -201,12 +197,12 @@ export class MeasureReportGroupStratifierStratumPopulation extends fhir.Backbone
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["count"]) { outcome.issue!.push(...this.count.doModelValidation().issue!); }
-    if (this["subjectResults"]) { outcome.issue!.push(...this.subjectResults.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["count"]) { issues.push(...this.count.doModelValidation()); }
+    if (this["subjectResults"]) { issues.push(...this.subjectResults.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -238,7 +234,7 @@ export class MeasureReportGroupStratifierStratum extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MeasureReportGroupStratifierStratum';
+  public static override readonly _fts_dataType:string = 'MeasureReportGroupStratifierStratum';
   /**
    * The value for this stratum, expressed as a CodeableConcept. When defining stratifiers on complex values, the value must be rendered such that the value for each stratum within the stratifier is unique.
    */
@@ -270,13 +266,13 @@ export class MeasureReportGroupStratifierStratum extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["value"]) { outcome.issue!.push(...this.value.doModelValidation().issue!); }
-    if (this["component"]) { this.component.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["population"]) { this.population.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["measureScore"]) { outcome.issue!.push(...this.measureScore.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
+    if (this["component"]) { this.component.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["population"]) { this.population.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["measureScore"]) { issues.push(...this.measureScore.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -300,7 +296,7 @@ export class MeasureReportGroupStratifier extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MeasureReportGroupStratifier';
+  public static override readonly _fts_dataType:string = 'MeasureReportGroupStratifier';
   /**
    * The meaning of this stratifier, as defined in the measure definition.
    */
@@ -322,11 +318,11 @@ export class MeasureReportGroupStratifier extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["code"]) { this.code.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["stratum"]) { this.stratum.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["stratum"]) { this.stratum.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -358,7 +354,7 @@ export class MeasureReportGroup extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MeasureReportGroup';
+  public static override readonly _fts_dataType:string = 'MeasureReportGroup';
   /**
    * The meaning of the population group as defined in the measure definition.
    */
@@ -390,13 +386,13 @@ export class MeasureReportGroup extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["population"]) { this.population.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["measureScore"]) { outcome.issue!.push(...this.measureScore.doModelValidation().issue!); }
-    if (this["stratifier"]) { this.stratifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["population"]) { this.population.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["measureScore"]) { issues.push(...this.measureScore.doModelValidation()); }
+    if (this["stratifier"]) { this.stratifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -460,11 +456,11 @@ export class MeasureReport extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MeasureReport';
+  public static override readonly _fts_dataType:string = 'MeasureReport';
   /**
    * Resource Type Name
    */
-  public resourceType: "MeasureReport";
+  public override resourceType: "MeasureReport";
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II data type - e.g. to identify this {{title}} outside of FHIR, where the logical URL is not possible to use.
    */
@@ -555,32 +551,32 @@ export class MeasureReport extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"MeasureReport" fhir: MeasureReport.resourceType:"MeasureReport"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MeasureReport" fhir: MeasureReport.resourceType:"MeasureReport"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:MeasureReportStatusCodeType fhir: MeasureReport.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:MeasureReportStatusCodeType fhir: MeasureReport.status:code', });
     }
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:MeasureReportTypeCodeType fhir: MeasureReport.type:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:MeasureReportTypeCodeType fhir: MeasureReport.type:code', });
     }
     if (!this['measure']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property measure:fhir.FhirCanonical fhir: MeasureReport.measure:canonical', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property measure:fhir.FhirCanonical fhir: MeasureReport.measure:canonical', });
     }
-    if (this["measure"]) { outcome.issue!.push(...this.measure.doModelValidation().issue!); }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["date"]) { outcome.issue!.push(...this.date.doModelValidation().issue!); }
-    if (this["reporter"]) { outcome.issue!.push(...this.reporter.doModelValidation().issue!); }
+    if (this["measure"]) { issues.push(...this.measure.doModelValidation()); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
+    if (this["reporter"]) { issues.push(...this.reporter.doModelValidation()); }
     if (!this['period']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property period:fhir.Period fhir: MeasureReport.period:Period', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property period:fhir.Period fhir: MeasureReport.period:Period', });
     }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    if (this["improvementNotation"]) { outcome.issue!.push(...this.improvementNotation.doModelValidation().issue!); }
-    if (this["group"]) { this.group.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["evaluatedResource"]) { this.evaluatedResource.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["improvementNotation"]) { issues.push(...this.improvementNotation.doModelValidation()); }
+    if (this["group"]) { this.group.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["evaluatedResource"]) { this.evaluatedResource.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

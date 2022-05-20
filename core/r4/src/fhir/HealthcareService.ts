@@ -37,10 +37,6 @@ import { LanguagesCodes,  LanguagesCodeType } from '../fhirValueSets/LanguagesCo
 import { ServiceReferralMethodCodings, ServiceReferralMethodCodingType,} from '../fhirValueSets/ServiceReferralMethodCodings.js';
 // @ts-ignore
 import { ServiceReferralMethodCodes,  ServiceReferralMethodCodeType } from '../fhirValueSets/ServiceReferralMethodCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the HealthcareServiceEligibility type.
  */
@@ -62,7 +58,7 @@ export class HealthcareServiceEligibility extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'HealthcareServiceEligibility';
+  public static override readonly _fts_dataType:string = 'HealthcareServiceEligibility';
   /**
    * Coded value for the eligibility.
    */
@@ -82,11 +78,11 @@ export class HealthcareServiceEligibility extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["comment"]) { outcome.issue!.push(...this.comment.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -118,7 +114,7 @@ export class HealthcareServiceAvailableTime extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'HealthcareServiceAvailableTime';
+  public static override readonly _fts_dataType:string = 'HealthcareServiceAvailableTime';
   /**
    * Indicates which days of the week are available between the start and end Times.
    */
@@ -155,12 +151,12 @@ export class HealthcareServiceAvailableTime extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["allDay"]) { outcome.issue!.push(...this.allDay.doModelValidation().issue!); }
-    if (this["availableStartTime"]) { outcome.issue!.push(...this.availableStartTime.doModelValidation().issue!); }
-    if (this["availableEndTime"]) { outcome.issue!.push(...this.availableEndTime.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["allDay"]) { issues.push(...this.allDay.doModelValidation()); }
+    if (this["availableStartTime"]) { issues.push(...this.availableStartTime.doModelValidation()); }
+    if (this["availableEndTime"]) { issues.push(...this.availableEndTime.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -184,7 +180,7 @@ export class HealthcareServiceNotAvailable extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'HealthcareServiceNotAvailable';
+  public static override readonly _fts_dataType:string = 'HealthcareServiceNotAvailable';
   /**
    * The reason that can be presented to the user as to why this time is not available.
    */
@@ -205,14 +201,14 @@ export class HealthcareServiceNotAvailable extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['description']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property description:fhir.FhirString fhir: HealthcareService.notAvailable.description:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property description:fhir.FhirString fhir: HealthcareService.notAvailable.description:string', });
     }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["during"]) { outcome.issue!.push(...this.during.doModelValidation().issue!); }
-    return outcome;
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["during"]) { issues.push(...this.during.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -328,11 +324,11 @@ export class HealthcareService extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'HealthcareService';
+  public static override readonly _fts_dataType:string = 'HealthcareService';
   /**
    * Resource Type Name
    */
-  public resourceType: "HealthcareService";
+  public override resourceType: "HealthcareService";
   /**
    * External identifiers for this item.
    */
@@ -491,35 +487,35 @@ export class HealthcareService extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"HealthcareService" fhir: HealthcareService.resourceType:"HealthcareService"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"HealthcareService" fhir: HealthcareService.resourceType:"HealthcareService"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["active"]) { outcome.issue!.push(...this.active.doModelValidation().issue!); }
-    if (this["providedBy"]) { outcome.issue!.push(...this.providedBy.doModelValidation().issue!); }
-    if (this["category"]) { this.category.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["type"]) { this.type.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["specialty"]) { this.specialty.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["location"]) { this.location.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["comment"]) { outcome.issue!.push(...this.comment.doModelValidation().issue!); }
-    if (this["extraDetails"]) { outcome.issue!.push(...this.extraDetails.doModelValidation().issue!); }
-    if (this["photo"]) { outcome.issue!.push(...this.photo.doModelValidation().issue!); }
-    if (this["telecom"]) { this.telecom.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["coverageArea"]) { this.coverageArea.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["serviceProvisionCode"]) { this.serviceProvisionCode.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["eligibility"]) { this.eligibility.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["program"]) { this.program.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["characteristic"]) { this.characteristic.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["communication"]) { this.communication.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["referralMethod"]) { this.referralMethod.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["appointmentRequired"]) { outcome.issue!.push(...this.appointmentRequired.doModelValidation().issue!); }
-    if (this["availableTime"]) { this.availableTime.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["notAvailable"]) { this.notAvailable.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["availabilityExceptions"]) { outcome.issue!.push(...this.availabilityExceptions.doModelValidation().issue!); }
-    if (this["endpoint"]) { this.endpoint.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["active"]) { issues.push(...this.active.doModelValidation()); }
+    if (this["providedBy"]) { issues.push(...this.providedBy.doModelValidation()); }
+    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["specialty"]) { this.specialty.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["location"]) { this.location.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
+    if (this["extraDetails"]) { issues.push(...this.extraDetails.doModelValidation()); }
+    if (this["photo"]) { issues.push(...this.photo.doModelValidation()); }
+    if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["coverageArea"]) { this.coverageArea.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["serviceProvisionCode"]) { this.serviceProvisionCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["eligibility"]) { this.eligibility.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["program"]) { this.program.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["characteristic"]) { this.characteristic.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["communication"]) { this.communication.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["referralMethod"]) { this.referralMethod.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["appointmentRequired"]) { issues.push(...this.appointmentRequired.doModelValidation()); }
+    if (this["availableTime"]) { this.availableTime.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["notAvailable"]) { this.notAvailable.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["availabilityExceptions"]) { issues.push(...this.availabilityExceptions.doModelValidation()); }
+    if (this["endpoint"]) { this.endpoint.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

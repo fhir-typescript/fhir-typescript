@@ -41,7 +41,7 @@ export declare class MedicationRequestDispenseRequestInitialFill extends fhir.Ba
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationRequestDispenseRequest type.
@@ -119,7 +119,7 @@ export declare class MedicationRequestDispenseRequest extends fhir.BackboneEleme
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationRequestSubstitution type.
@@ -169,7 +169,7 @@ export declare class MedicationRequestSubstitution extends fhir.BackboneElement 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationRequest type.
@@ -495,6 +495,6 @@ export declare class MedicationRequest extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=MedicationRequest.d.ts.map

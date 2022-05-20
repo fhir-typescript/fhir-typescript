@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { ContributorTypeCodings, ContributorTypeCodingType,} from '../fhirValueSets/ContributorTypeCodings.js';
 // @ts-ignore
 import { ContributorTypeCodes,  ContributorTypeCodeType } from '../fhirValueSets/ContributorTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Contributor type.
  */
@@ -38,7 +34,7 @@ export class Contributor extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Contributor';
+  public static override readonly _fts_dataType:string = 'Contributor';
   /**
    * The type of contributor.
    */
@@ -72,16 +68,16 @@ export class Contributor extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:ContributorTypeCodeType fhir: Contributor.type:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:ContributorTypeCodeType fhir: Contributor.type:code', });
     }
     if (!this['name']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property name:fhir.FhirString fhir: Contributor.name:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: Contributor.name:string', });
     }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["contact"]) { this.contact.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

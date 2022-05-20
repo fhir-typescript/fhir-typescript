@@ -25,10 +25,6 @@ import { V20276Codes,  V20276CodeType } from '../fhirValueSets/V20276Codes.js';
 import { SlotstatusCodings, SlotstatusCodingType,} from '../fhirValueSets/SlotstatusCodings.js';
 // @ts-ignore
 import { SlotstatusCodes,  SlotstatusCodeType } from '../fhirValueSets/SlotstatusCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Slot type.
  */
@@ -90,11 +86,11 @@ export class Slot extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Slot';
+  public static override readonly _fts_dataType:string = 'Slot';
   /**
    * Resource Type Name
    */
-  public resourceType: "Slot";
+  public override resourceType: "Slot";
   /**
    * External Ids for this item.
    */
@@ -186,33 +182,33 @@ export class Slot extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Slot" fhir: Slot.resourceType:"Slot"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Slot" fhir: Slot.resourceType:"Slot"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["serviceCategory"]) { this.serviceCategory.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["serviceType"]) { this.serviceType.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["specialty"]) { this.specialty.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["appointmentType"]) { outcome.issue!.push(...this.appointmentType.doModelValidation().issue!); }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["serviceCategory"]) { this.serviceCategory.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["serviceType"]) { this.serviceType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["specialty"]) { this.specialty.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["appointmentType"]) { issues.push(...this.appointmentType.doModelValidation()); }
     if (!this['schedule']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property schedule:fhir.Reference fhir: Slot.schedule:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property schedule:fhir.Reference fhir: Slot.schedule:Reference', });
     }
-    if (this["schedule"]) { outcome.issue!.push(...this.schedule.doModelValidation().issue!); }
+    if (this["schedule"]) { issues.push(...this.schedule.doModelValidation()); }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:SlotstatusCodeType fhir: Slot.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:SlotstatusCodeType fhir: Slot.status:code', });
     }
     if (!this['start']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property start:fhir.FhirInstant fhir: Slot.start:instant', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property start:fhir.FhirInstant fhir: Slot.start:instant', });
     }
-    if (this["start"]) { outcome.issue!.push(...this.start.doModelValidation().issue!); }
+    if (this["start"]) { issues.push(...this.start.doModelValidation()); }
     if (!this['end']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property end:fhir.FhirInstant fhir: Slot.end:instant', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property end:fhir.FhirInstant fhir: Slot.end:instant', });
     }
-    if (this["end"]) { outcome.issue!.push(...this.end.doModelValidation().issue!); }
-    if (this["overbooked"]) { outcome.issue!.push(...this.overbooked.doModelValidation().issue!); }
-    if (this["comment"]) { outcome.issue!.push(...this.comment.doModelValidation().issue!); }
-    return outcome;
+    if (this["end"]) { issues.push(...this.end.doModelValidation()); }
+    if (this["overbooked"]) { issues.push(...this.overbooked.doModelValidation()); }
+    if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
+    return issues;
   }
 }

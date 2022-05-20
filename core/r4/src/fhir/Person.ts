@@ -13,10 +13,6 @@ import { IdentityAssuranceLevelCodes,  IdentityAssuranceLevelCodeType } from '..
 import { AdministrativeGenderCodings, AdministrativeGenderCodingType,} from '../fhirValueSets/AdministrativeGenderCodings.js';
 // @ts-ignore
 import { AdministrativeGenderCodes,  AdministrativeGenderCodeType } from '../fhirValueSets/AdministrativeGenderCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the PersonLink type.
  */
@@ -38,7 +34,7 @@ export class PersonLink extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'PersonLink';
+  public static override readonly _fts_dataType:string = 'PersonLink';
   /**
    * The resource to which this actual person is associated.
    */
@@ -65,13 +61,13 @@ export class PersonLink extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['target']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property target:fhir.Reference fhir: Person.link.target:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property target:fhir.Reference fhir: Person.link.target:Reference', });
     }
-    if (this["target"]) { outcome.issue!.push(...this.target.doModelValidation().issue!); }
-    return outcome;
+    if (this["target"]) { issues.push(...this.target.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -131,11 +127,11 @@ export class Person extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Person';
+  public static override readonly _fts_dataType:string = 'Person';
   /**
    * Resource Type Name
    */
-  public resourceType: "Person";
+  public override resourceType: "Person";
   /**
    * Identifier for a person within a particular scope.
    */
@@ -207,20 +203,20 @@ export class Person extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Person" fhir: Person.resourceType:"Person"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Person" fhir: Person.resourceType:"Person"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["name"]) { this.name.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["telecom"]) { this.telecom.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["birthDate"]) { outcome.issue!.push(...this.birthDate.doModelValidation().issue!); }
-    if (this["address"]) { this.address.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["photo"]) { outcome.issue!.push(...this.photo.doModelValidation().issue!); }
-    if (this["managingOrganization"]) { outcome.issue!.push(...this.managingOrganization.doModelValidation().issue!); }
-    if (this["active"]) { outcome.issue!.push(...this.active.doModelValidation().issue!); }
-    if (this["link"]) { this.link.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["name"]) { this.name.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation()); }
+    if (this["address"]) { this.address.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["photo"]) { issues.push(...this.photo.doModelValidation()); }
+    if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation()); }
+    if (this["active"]) { issues.push(...this.active.doModelValidation()); }
+    if (this["link"]) { this.link.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

@@ -41,10 +41,6 @@ import { PropertyRepresentationCodes,  PropertyRepresentationCodeType } from '..
 import { ObservationCodesCodings, ObservationCodesCodingType,} from '../fhirValueSets/ObservationCodesCodings.js';
 // @ts-ignore
 import { ObservationCodesCodes,  ObservationCodesCodeType } from '../fhirValueSets/ObservationCodesCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the ElementDefinitionSlicingDiscriminator type.
  */
@@ -66,7 +62,7 @@ export class ElementDefinitionSlicingDiscriminator extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ElementDefinitionSlicingDiscriminator';
+  public static override readonly _fts_dataType:string = 'ElementDefinitionSlicingDiscriminator';
   /**
    * How the element value is interpreted when discrimination is evaluated.
    */
@@ -94,16 +90,16 @@ export class ElementDefinitionSlicingDiscriminator extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:DiscriminatorTypeCodeType fhir: ElementDefinition.slicing.discriminator.type:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:DiscriminatorTypeCodeType fhir: ElementDefinition.slicing.discriminator.type:code', });
     }
     if (!this['path']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property path:fhir.FhirString fhir: ElementDefinition.slicing.discriminator.path:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property path:fhir.FhirString fhir: ElementDefinition.slicing.discriminator.path:string', });
     }
-    if (this["path"]) { outcome.issue!.push(...this.path.doModelValidation().issue!); }
-    return outcome;
+    if (this["path"]) { issues.push(...this.path.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -135,7 +131,7 @@ export class ElementDefinitionSlicing extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ElementDefinitionSlicing';
+  public static override readonly _fts_dataType:string = 'ElementDefinitionSlicing';
   /**
    * If there is no discriminator, the content is hard to process, so this should be avoided.
    */
@@ -173,15 +169,15 @@ export class ElementDefinitionSlicing extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["discriminator"]) { this.discriminator.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["ordered"]) { outcome.issue!.push(...this.ordered.doModelValidation().issue!); }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["discriminator"]) { this.discriminator.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["ordered"]) { issues.push(...this.ordered.doModelValidation()); }
     if (!this['rules']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property rules:ResourceSlicingRulesCodeType fhir: ElementDefinition.slicing.rules:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property rules:ResourceSlicingRulesCodeType fhir: ElementDefinition.slicing.rules:code', });
     }
-    return outcome;
+    return issues;
   }
 }
 /**
@@ -209,7 +205,7 @@ export class ElementDefinitionBase extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ElementDefinitionBase';
+  public static override readonly _fts_dataType:string = 'ElementDefinitionBase';
   /**
    * The Path that identifies the base element - this matches the ElementDefinition.path for that element. Across FHIR, there is only one base definition of any element - that is, an element definition on a [StructureDefinition](structuredefinition.html#) without a StructureDefinition.base.
    */
@@ -237,21 +233,21 @@ export class ElementDefinitionBase extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['path']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property path:fhir.FhirString fhir: ElementDefinition.base.path:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property path:fhir.FhirString fhir: ElementDefinition.base.path:string', });
     }
-    if (this["path"]) { outcome.issue!.push(...this.path.doModelValidation().issue!); }
+    if (this["path"]) { issues.push(...this.path.doModelValidation()); }
     if (!this['min']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property min:fhir.FhirUnsignedInt fhir: ElementDefinition.base.min:unsignedInt', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property min:fhir.FhirUnsignedInt fhir: ElementDefinition.base.min:unsignedInt', });
     }
-    if (this["min"]) { outcome.issue!.push(...this.min.doModelValidation().issue!); }
+    if (this["min"]) { issues.push(...this.min.doModelValidation()); }
     if (!this['max']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property max:fhir.FhirString fhir: ElementDefinition.base.max:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property max:fhir.FhirString fhir: ElementDefinition.base.max:string', });
     }
-    if (this["max"]) { outcome.issue!.push(...this.max.doModelValidation().issue!); }
-    return outcome;
+    if (this["max"]) { issues.push(...this.max.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -287,7 +283,7 @@ export class ElementDefinitionType extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ElementDefinitionType';
+  public static override readonly _fts_dataType:string = 'ElementDefinitionType';
   /**
    * If the element is a reference to another resource, this element contains "Reference", and the targetProfile element defines what resources can be referenced. The targetProfile may be a reference to the general definition of a resource (e.g. http://hl7.org/fhir/StructureDefinition/Patient).
    */
@@ -344,15 +340,15 @@ export class ElementDefinitionType extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:fhir.FhirUri fhir: ElementDefinition.type.code:uri', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.FhirUri fhir: ElementDefinition.type.code:uri', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["profile"]) { this.profile.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["targetProfile"]) { this.targetProfile.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["profile"]) { this.profile.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["targetProfile"]) { this.targetProfile.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -576,7 +572,7 @@ export class ElementDefinitionExample extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ElementDefinitionExample';
+  public static override readonly _fts_dataType:string = 'ElementDefinitionExample';
   /**
    * Describes the purpose of this example amoung the set of examples.
    */
@@ -652,16 +648,16 @@ export class ElementDefinitionExample extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['label']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property label:fhir.FhirString fhir: ElementDefinition.example.label:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property label:fhir.FhirString fhir: ElementDefinition.example.label:string', });
     }
-    if (this["label"]) { outcome.issue!.push(...this.label.doModelValidation().issue!); }
+    if (this["label"]) { issues.push(...this.label.doModelValidation()); }
     if (!this['value']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property value: fhir: ElementDefinition.example.value[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value: fhir: ElementDefinition.example.value[x]:', });
     }
-    return outcome;
+    return issues;
   }
 }
 /**
@@ -705,7 +701,7 @@ export class ElementDefinitionConstraint extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ElementDefinitionConstraint';
+  public static override readonly _fts_dataType:string = 'ElementDefinitionConstraint';
   /**
    * Allows identification of which elements have their cardinalities impacted by the constraint.  Will not be referenced for constraints that do not affect cardinality.
    */
@@ -759,24 +755,24 @@ export class ElementDefinitionConstraint extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['key']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property key:fhir.FhirId fhir: ElementDefinition.constraint.key:id', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property key:fhir.FhirId fhir: ElementDefinition.constraint.key:id', });
     }
-    if (this["key"]) { outcome.issue!.push(...this.key.doModelValidation().issue!); }
-    if (this["requirements"]) { outcome.issue!.push(...this.requirements.doModelValidation().issue!); }
+    if (this["key"]) { issues.push(...this.key.doModelValidation()); }
+    if (this["requirements"]) { issues.push(...this.requirements.doModelValidation()); }
     if (!this['severity']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property severity:ConstraintSeverityCodeType fhir: ElementDefinition.constraint.severity:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property severity:ConstraintSeverityCodeType fhir: ElementDefinition.constraint.severity:code', });
     }
     if (!this['human']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property human:fhir.FhirString fhir: ElementDefinition.constraint.human:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property human:fhir.FhirString fhir: ElementDefinition.constraint.human:string', });
     }
-    if (this["human"]) { outcome.issue!.push(...this.human.doModelValidation().issue!); }
-    if (this["expression"]) { outcome.issue!.push(...this.expression.doModelValidation().issue!); }
-    if (this["xpath"]) { outcome.issue!.push(...this.xpath.doModelValidation().issue!); }
-    if (this["source"]) { outcome.issue!.push(...this.source.doModelValidation().issue!); }
-    return outcome;
+    if (this["human"]) { issues.push(...this.human.doModelValidation()); }
+    if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
+    if (this["xpath"]) { issues.push(...this.xpath.doModelValidation()); }
+    if (this["source"]) { issues.push(...this.source.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -804,7 +800,7 @@ export class ElementDefinitionBinding extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ElementDefinitionBinding';
+  public static override readonly _fts_dataType:string = 'ElementDefinitionBinding';
   /**
    * For further discussion, see [Using Terminologies](terminologies.html).
    */
@@ -836,14 +832,14 @@ export class ElementDefinitionBinding extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['strength']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property strength:BindingStrengthCodeType fhir: ElementDefinition.binding.strength:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property strength:BindingStrengthCodeType fhir: ElementDefinition.binding.strength:code', });
     }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["valueSet"]) { outcome.issue!.push(...this.valueSet.doModelValidation().issue!); }
-    return outcome;
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["valueSet"]) { issues.push(...this.valueSet.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -875,7 +871,7 @@ export class ElementDefinitionMapping extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ElementDefinitionMapping';
+  public static override readonly _fts_dataType:string = 'ElementDefinitionMapping';
   /**
    * An internal reference to the definition of a mapping.
    */
@@ -907,19 +903,19 @@ export class ElementDefinitionMapping extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['identity']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property identity:fhir.FhirId fhir: ElementDefinition.mapping.identity:id', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property identity:fhir.FhirId fhir: ElementDefinition.mapping.identity:id', });
     }
-    if (this["identity"]) { outcome.issue!.push(...this.identity.doModelValidation().issue!); }
-    if (this["language"]) { outcome.issue!.push(...this.language.doModelValidation().issue!); }
+    if (this["identity"]) { issues.push(...this.identity.doModelValidation()); }
+    if (this["language"]) { issues.push(...this.language.doModelValidation()); }
     if (!this['map']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property map:fhir.FhirString fhir: ElementDefinition.mapping.map:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property map:fhir.FhirString fhir: ElementDefinition.mapping.map:string', });
     }
-    if (this["map"]) { outcome.issue!.push(...this.map.doModelValidation().issue!); }
-    if (this["comment"]) { outcome.issue!.push(...this.comment.doModelValidation().issue!); }
-    return outcome;
+    if (this["map"]) { issues.push(...this.map.doModelValidation()); }
+    if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -1794,7 +1790,7 @@ export class ElementDefinition extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ElementDefinition';
+  public static override readonly _fts_dataType:string = 'ElementDefinition';
   /**
    * The path identifies the element and is expressed as a "."-separated list of ancestor elements, beginning with the name of the resource or extension.
    */
@@ -2178,39 +2174,39 @@ export class ElementDefinition extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['path']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property path:fhir.FhirString fhir: ElementDefinition.path:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property path:fhir.FhirString fhir: ElementDefinition.path:string', });
     }
-    if (this["path"]) { outcome.issue!.push(...this.path.doModelValidation().issue!); }
-    if (this["sliceName"]) { outcome.issue!.push(...this.sliceName.doModelValidation().issue!); }
-    if (this["sliceIsConstraining"]) { outcome.issue!.push(...this.sliceIsConstraining.doModelValidation().issue!); }
-    if (this["label"]) { outcome.issue!.push(...this.label.doModelValidation().issue!); }
-    if (this["code"]) { this.code.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["slicing"]) { outcome.issue!.push(...this.slicing.doModelValidation().issue!); }
-    if (this["short"]) { outcome.issue!.push(...this.short.doModelValidation().issue!); }
-    if (this["definition"]) { outcome.issue!.push(...this.definition.doModelValidation().issue!); }
-    if (this["comment"]) { outcome.issue!.push(...this.comment.doModelValidation().issue!); }
-    if (this["requirements"]) { outcome.issue!.push(...this.requirements.doModelValidation().issue!); }
-    if (this["alias"]) { this.alias.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["min"]) { outcome.issue!.push(...this.min.doModelValidation().issue!); }
-    if (this["max"]) { outcome.issue!.push(...this.max.doModelValidation().issue!); }
-    if (this["base"]) { outcome.issue!.push(...this.base.doModelValidation().issue!); }
-    if (this["contentReference"]) { outcome.issue!.push(...this.contentReference.doModelValidation().issue!); }
-    if (this["type"]) { this.type.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["meaningWhenMissing"]) { outcome.issue!.push(...this.meaningWhenMissing.doModelValidation().issue!); }
-    if (this["orderMeaning"]) { outcome.issue!.push(...this.orderMeaning.doModelValidation().issue!); }
-    if (this["example"]) { this.example.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["maxLength"]) { outcome.issue!.push(...this.maxLength.doModelValidation().issue!); }
-    if (this["condition"]) { this.condition.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["constraint"]) { this.constraint.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["mustSupport"]) { outcome.issue!.push(...this.mustSupport.doModelValidation().issue!); }
-    if (this["isModifier"]) { outcome.issue!.push(...this.isModifier.doModelValidation().issue!); }
-    if (this["isModifierReason"]) { outcome.issue!.push(...this.isModifierReason.doModelValidation().issue!); }
-    if (this["isSummary"]) { outcome.issue!.push(...this.isSummary.doModelValidation().issue!); }
-    if (this["binding"]) { outcome.issue!.push(...this.binding.doModelValidation().issue!); }
-    if (this["mapping"]) { this.mapping.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["path"]) { issues.push(...this.path.doModelValidation()); }
+    if (this["sliceName"]) { issues.push(...this.sliceName.doModelValidation()); }
+    if (this["sliceIsConstraining"]) { issues.push(...this.sliceIsConstraining.doModelValidation()); }
+    if (this["label"]) { issues.push(...this.label.doModelValidation()); }
+    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["slicing"]) { issues.push(...this.slicing.doModelValidation()); }
+    if (this["short"]) { issues.push(...this.short.doModelValidation()); }
+    if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
+    if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
+    if (this["requirements"]) { issues.push(...this.requirements.doModelValidation()); }
+    if (this["alias"]) { this.alias.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["min"]) { issues.push(...this.min.doModelValidation()); }
+    if (this["max"]) { issues.push(...this.max.doModelValidation()); }
+    if (this["base"]) { issues.push(...this.base.doModelValidation()); }
+    if (this["contentReference"]) { issues.push(...this.contentReference.doModelValidation()); }
+    if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["meaningWhenMissing"]) { issues.push(...this.meaningWhenMissing.doModelValidation()); }
+    if (this["orderMeaning"]) { issues.push(...this.orderMeaning.doModelValidation()); }
+    if (this["example"]) { this.example.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["maxLength"]) { issues.push(...this.maxLength.doModelValidation()); }
+    if (this["condition"]) { this.condition.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["constraint"]) { this.constraint.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["mustSupport"]) { issues.push(...this.mustSupport.doModelValidation()); }
+    if (this["isModifier"]) { issues.push(...this.isModifier.doModelValidation()); }
+    if (this["isModifierReason"]) { issues.push(...this.isModifierReason.doModelValidation()); }
+    if (this["isSummary"]) { issues.push(...this.isSummary.doModelValidation()); }
+    if (this["binding"]) { issues.push(...this.binding.doModelValidation()); }
+    if (this["mapping"]) { this.mapping.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

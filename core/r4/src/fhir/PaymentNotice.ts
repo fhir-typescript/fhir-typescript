@@ -13,10 +13,6 @@ import { FmStatusCodes,  FmStatusCodeType } from '../fhirValueSets/FmStatusCodes
 import { PaymentStatusCodings, PaymentStatusCodingType,} from '../fhirValueSets/PaymentStatusCodings.js';
 // @ts-ignore
 import { PaymentStatusCodes,  PaymentStatusCodeType } from '../fhirValueSets/PaymentStatusCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the PaymentNotice type.
  */
@@ -82,11 +78,11 @@ export class PaymentNotice extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'PaymentNotice';
+  public static override readonly _fts_dataType:string = 'PaymentNotice';
   /**
    * Resource Type Name
    */
-  public resourceType: "PaymentNotice";
+  public override resourceType: "PaymentNotice";
   /**
    * A unique identifier assigned to this payment notice.
    */
@@ -169,37 +165,37 @@ export class PaymentNotice extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"PaymentNotice" fhir: PaymentNotice.resourceType:"PaymentNotice"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"PaymentNotice" fhir: PaymentNotice.resourceType:"PaymentNotice"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:FmStatusCodeType fhir: PaymentNotice.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:FmStatusCodeType fhir: PaymentNotice.status:code', });
     }
-    if (this["request"]) { outcome.issue!.push(...this.request.doModelValidation().issue!); }
-    if (this["response"]) { outcome.issue!.push(...this.response.doModelValidation().issue!); }
+    if (this["request"]) { issues.push(...this.request.doModelValidation()); }
+    if (this["response"]) { issues.push(...this.response.doModelValidation()); }
     if (!this['created']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property created:fhir.FhirDateTime fhir: PaymentNotice.created:dateTime', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property created:fhir.FhirDateTime fhir: PaymentNotice.created:dateTime', });
     }
-    if (this["created"]) { outcome.issue!.push(...this.created.doModelValidation().issue!); }
-    if (this["provider"]) { outcome.issue!.push(...this.provider.doModelValidation().issue!); }
+    if (this["created"]) { issues.push(...this.created.doModelValidation()); }
+    if (this["provider"]) { issues.push(...this.provider.doModelValidation()); }
     if (!this['payment']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property payment:fhir.Reference fhir: PaymentNotice.payment:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property payment:fhir.Reference fhir: PaymentNotice.payment:Reference', });
     }
-    if (this["payment"]) { outcome.issue!.push(...this.payment.doModelValidation().issue!); }
-    if (this["paymentDate"]) { outcome.issue!.push(...this.paymentDate.doModelValidation().issue!); }
-    if (this["payee"]) { outcome.issue!.push(...this.payee.doModelValidation().issue!); }
+    if (this["payment"]) { issues.push(...this.payment.doModelValidation()); }
+    if (this["paymentDate"]) { issues.push(...this.paymentDate.doModelValidation()); }
+    if (this["payee"]) { issues.push(...this.payee.doModelValidation()); }
     if (!this['recipient']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property recipient:fhir.Reference fhir: PaymentNotice.recipient:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property recipient:fhir.Reference fhir: PaymentNotice.recipient:Reference', });
     }
-    if (this["recipient"]) { outcome.issue!.push(...this.recipient.doModelValidation().issue!); }
+    if (this["recipient"]) { issues.push(...this.recipient.doModelValidation()); }
     if (!this['amount']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property amount:fhir.Money fhir: PaymentNotice.amount:Money', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property amount:fhir.Money fhir: PaymentNotice.amount:Money', });
     }
-    if (this["amount"]) { outcome.issue!.push(...this.amount.doModelValidation().issue!); }
-    if (this["paymentStatus"]) { outcome.issue!.push(...this.paymentStatus.doModelValidation().issue!); }
-    return outcome;
+    if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
+    if (this["paymentStatus"]) { issues.push(...this.paymentStatus.doModelValidation()); }
+    return issues;
   }
 }

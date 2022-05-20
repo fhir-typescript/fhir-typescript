@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { BasicResourceTypeCodings, BasicResourceTypeCodingType,} from '../fhirValueSets/BasicResourceTypeCodings.js';
 // @ts-ignore
 import { BasicResourceTypeCodes,  BasicResourceTypeCodeType } from '../fhirValueSets/BasicResourceTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Basic type.
  */
@@ -51,11 +47,11 @@ export class Basic extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Basic';
+  public static override readonly _fts_dataType:string = 'Basic';
   /**
    * Resource Type Name
    */
-  public resourceType: "Basic";
+  public override resourceType: "Basic";
   /**
    * Identifier assigned to the resource for business purposes, outside the context of FHIR.
    */
@@ -94,19 +90,19 @@ export class Basic extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Basic" fhir: Basic.resourceType:"Basic"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Basic" fhir: Basic.resourceType:"Basic"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Basic.code:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Basic.code:CodeableConcept', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["created"]) { outcome.issue!.push(...this.created.doModelValidation().issue!); }
-    if (this["author"]) { outcome.issue!.push(...this.author.doModelValidation().issue!); }
-    return outcome;
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["created"]) { issues.push(...this.created.doModelValidation()); }
+    if (this["author"]) { issues.push(...this.author.doModelValidation()); }
+    return issues;
   }
 }

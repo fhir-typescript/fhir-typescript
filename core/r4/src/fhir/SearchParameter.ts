@@ -29,10 +29,6 @@ import { SearchComparatorCodes,  SearchComparatorCodeType } from '../fhirValueSe
 import { SearchModifierCodeCodings, SearchModifierCodeCodingType,} from '../fhirValueSets/SearchModifierCodeCodings.js';
 // @ts-ignore
 import { SearchModifierCodeCodes,  SearchModifierCodeCodeType } from '../fhirValueSets/SearchModifierCodeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the SearchParameterComponent type.
  */
@@ -54,7 +50,7 @@ export class SearchParameterComponent extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SearchParameterComponent';
+  public static override readonly _fts_dataType:string = 'SearchParameterComponent';
   /**
    * The definition of the search parameter that describes this part.
    */
@@ -76,17 +72,17 @@ export class SearchParameterComponent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['definition']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property definition:fhir.FhirCanonical fhir: SearchParameter.component.definition:canonical', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property definition:fhir.FhirCanonical fhir: SearchParameter.component.definition:canonical', });
     }
-    if (this["definition"]) { outcome.issue!.push(...this.definition.doModelValidation().issue!); }
+    if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
     if (!this['expression']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property expression:fhir.FhirString fhir: SearchParameter.component.expression:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property expression:fhir.FhirString fhir: SearchParameter.component.expression:string', });
     }
-    if (this["expression"]) { outcome.issue!.push(...this.expression.doModelValidation().issue!); }
-    return outcome;
+    if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -212,11 +208,11 @@ export class SearchParameter extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SearchParameter';
+  public static override readonly _fts_dataType:string = 'SearchParameter';
   /**
    * Resource Type Name
    */
-  public resourceType: "SearchParameter";
+  public override resourceType: "SearchParameter";
   /**
    * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
    * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions). 
@@ -416,57 +412,57 @@ export class SearchParameter extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"SearchParameter" fhir: SearchParameter.resourceType:"SearchParameter"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"SearchParameter" fhir: SearchParameter.resourceType:"SearchParameter"', });
     }
     if (!this['url']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property url:fhir.FhirUri fhir: SearchParameter.url:uri', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property url:fhir.FhirUri fhir: SearchParameter.url:uri', });
     }
-    if (this["url"]) { outcome.issue!.push(...this.url.doModelValidation().issue!); }
-    if (this["version"]) { outcome.issue!.push(...this.version.doModelValidation().issue!); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
+    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
     if (!this['name']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property name:fhir.FhirString fhir: SearchParameter.name:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: SearchParameter.name:string', });
     }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["derivedFrom"]) { outcome.issue!.push(...this.derivedFrom.doModelValidation().issue!); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["derivedFrom"]) { issues.push(...this.derivedFrom.doModelValidation()); }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: SearchParameter.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: SearchParameter.status:code', });
     }
-    if (this["experimental"]) { outcome.issue!.push(...this.experimental.doModelValidation().issue!); }
-    if (this["date"]) { outcome.issue!.push(...this.date.doModelValidation().issue!); }
-    if (this["publisher"]) { outcome.issue!.push(...this.publisher.doModelValidation().issue!); }
-    if (this["contact"]) { this.contact.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
+    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['description']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property description:fhir.FhirMarkdown fhir: SearchParameter.description:markdown', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property description:fhir.FhirMarkdown fhir: SearchParameter.description:markdown', });
     }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["useContext"]) { this.useContext.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["purpose"]) { outcome.issue!.push(...this.purpose.doModelValidation().issue!); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:fhir.FhirCode fhir: SearchParameter.code:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.FhirCode fhir: SearchParameter.code:code', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['base']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property base:fhir.FhirCode[] fhir: SearchParameter.base:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property base:fhir.FhirCode[] fhir: SearchParameter.base:code', });
     } else if (!Array.isArray(this.base)) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.StructuralIssue,  diagnostics: 'Found scalar in array property base:fhir.FhirCode[] fhir: SearchParameter.base:code', }));
+      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property base:fhir.FhirCode[] fhir: SearchParameter.base:code', });
     } else if (this.base.length === 0) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property base:fhir.FhirCode[] fhir: SearchParameter.base:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property base:fhir.FhirCode[] fhir: SearchParameter.base:code', });
     }
-    if (this["base"]) { this.base.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["base"]) { this.base.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:SearchParamTypeCodeType fhir: SearchParameter.type:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:SearchParamTypeCodeType fhir: SearchParameter.type:code', });
     }
-    if (this["expression"]) { outcome.issue!.push(...this.expression.doModelValidation().issue!); }
-    if (this["xpath"]) { outcome.issue!.push(...this.xpath.doModelValidation().issue!); }
-    if (this["target"]) { this.target.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["multipleOr"]) { outcome.issue!.push(...this.multipleOr.doModelValidation().issue!); }
-    if (this["multipleAnd"]) { outcome.issue!.push(...this.multipleAnd.doModelValidation().issue!); }
-    if (this["chain"]) { this.chain.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["component"]) { this.component.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
+    if (this["xpath"]) { issues.push(...this.xpath.doModelValidation()); }
+    if (this["target"]) { this.target.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["multipleOr"]) { issues.push(...this.multipleOr.doModelValidation()); }
+    if (this["multipleAnd"]) { issues.push(...this.multipleAnd.doModelValidation()); }
+    if (this["chain"]) { this.chain.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["component"]) { this.component.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

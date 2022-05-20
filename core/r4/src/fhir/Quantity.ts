@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { QuantityComparatorCodings, QuantityComparatorCodingType,} from '../fhirValueSets/QuantityComparatorCodings.js';
 // @ts-ignore
 import { QuantityComparatorCodes,  QuantityComparatorCodeType } from '../fhirValueSets/QuantityComparatorCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Quantity type.
  */
@@ -46,7 +42,7 @@ export class Quantity extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Quantity';
+  public static override readonly _fts_dataType:string = 'Quantity';
   /**
    * The implicit precision in the value should always be honored. Monetary values have their own rules for handling precision (refer to standard accounting text books).
    */
@@ -87,12 +83,12 @@ export class Quantity extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["value"]) { outcome.issue!.push(...this.value.doModelValidation().issue!); }
-    if (this["unit"]) { outcome.issue!.push(...this.unit.doModelValidation().issue!); }
-    if (this["system"]) { outcome.issue!.push(...this.system.doModelValidation().issue!); }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
+    if (this["unit"]) { issues.push(...this.unit.doModelValidation()); }
+    if (this["system"]) { issues.push(...this.system.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    return issues;
   }
 }

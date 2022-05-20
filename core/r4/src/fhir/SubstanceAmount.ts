@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the SubstanceAmountReferenceRange type.
  */
@@ -30,7 +26,7 @@ export class SubstanceAmountReferenceRange extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceAmountReferenceRange';
+  public static override readonly _fts_dataType:string = 'SubstanceAmountReferenceRange';
   /**
    * Lower limit possible or expected.
    */
@@ -50,11 +46,11 @@ export class SubstanceAmountReferenceRange extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["lowLimit"]) { outcome.issue!.push(...this.lowLimit.doModelValidation().issue!); }
-    if (this["highLimit"]) { outcome.issue!.push(...this.highLimit.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["lowLimit"]) { issues.push(...this.lowLimit.doModelValidation()); }
+    if (this["highLimit"]) { issues.push(...this.highLimit.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -98,7 +94,7 @@ export class SubstanceAmount extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceAmount';
+  public static override readonly _fts_dataType:string = 'SubstanceAmount';
   /**
    * Used to capture quantitative values for a variety of elements. If only limits are given, the arithmetic mean would be the average. If only a single definite value for a given element is given, it would be captured in this field.
    */
@@ -135,11 +131,11 @@ export class SubstanceAmount extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["amountType"]) { outcome.issue!.push(...this.amountType.doModelValidation().issue!); }
-    if (this["amountText"]) { outcome.issue!.push(...this.amountText.doModelValidation().issue!); }
-    if (this["referenceRange"]) { outcome.issue!.push(...this.referenceRange.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["amountType"]) { issues.push(...this.amountType.doModelValidation()); }
+    if (this["amountText"]) { issues.push(...this.amountText.doModelValidation()); }
+    if (this["referenceRange"]) { issues.push(...this.referenceRange.doModelValidation()); }
+    return issues;
   }
 }

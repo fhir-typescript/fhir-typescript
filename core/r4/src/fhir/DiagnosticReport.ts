@@ -21,10 +21,6 @@ import { ReportCodesCodes,  ReportCodesCodeType } from '../fhirValueSets/ReportC
 import { ClinicalFindingsCodings, ClinicalFindingsCodingType,} from '../fhirValueSets/ClinicalFindingsCodings.js';
 // @ts-ignore
 import { ClinicalFindingsCodes,  ClinicalFindingsCodeType } from '../fhirValueSets/ClinicalFindingsCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the DiagnosticReportMedia type.
  */
@@ -46,7 +42,7 @@ export class DiagnosticReportMedia extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DiagnosticReportMedia';
+  public static override readonly _fts_dataType:string = 'DiagnosticReportMedia';
   /**
    * The comment should be displayed with the image. It would be common for the report to include additional discussion of the image contents in other sections such as the conclusion.
    */
@@ -67,14 +63,14 @@ export class DiagnosticReportMedia extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["comment"]) { outcome.issue!.push(...this.comment.doModelValidation().issue!); }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
     if (!this['link']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property link:fhir.Reference fhir: DiagnosticReport.media.link:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property link:fhir.Reference fhir: DiagnosticReport.media.link:Reference', });
     }
-    if (this["link"]) { outcome.issue!.push(...this.link.doModelValidation().issue!); }
-    return outcome;
+    if (this["link"]) { issues.push(...this.link.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -174,11 +170,11 @@ export class DiagnosticReport extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DiagnosticReport';
+  public static override readonly _fts_dataType:string = 'DiagnosticReport';
   /**
    * Resource Type Name
    */
-  public resourceType: "DiagnosticReport";
+  public override resourceType: "DiagnosticReport";
   /**
    * Usually assigned by the Information System of the diagnostic service provider (filler id).
    */
@@ -310,33 +306,33 @@ export class DiagnosticReport extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"DiagnosticReport" fhir: DiagnosticReport.resourceType:"DiagnosticReport"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"DiagnosticReport" fhir: DiagnosticReport.resourceType:"DiagnosticReport"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:DiagnosticReportStatusCodeType fhir: DiagnosticReport.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:DiagnosticReportStatusCodeType fhir: DiagnosticReport.status:code', });
     }
-    if (this["category"]) { this.category.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: DiagnosticReport.code:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: DiagnosticReport.code:CodeableConcept', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["encounter"]) { outcome.issue!.push(...this.encounter.doModelValidation().issue!); }
-    if (this["issued"]) { outcome.issue!.push(...this.issued.doModelValidation().issue!); }
-    if (this["performer"]) { this.performer.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["resultsInterpreter"]) { this.resultsInterpreter.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["specimen"]) { this.specimen.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["result"]) { this.result.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["imagingStudy"]) { this.imagingStudy.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["media"]) { this.media.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["conclusion"]) { outcome.issue!.push(...this.conclusion.doModelValidation().issue!); }
-    if (this["conclusionCode"]) { this.conclusionCode.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["presentedForm"]) { this.presentedForm.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
+    if (this["issued"]) { issues.push(...this.issued.doModelValidation()); }
+    if (this["performer"]) { this.performer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["resultsInterpreter"]) { this.resultsInterpreter.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["specimen"]) { this.specimen.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["result"]) { this.result.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["imagingStudy"]) { this.imagingStudy.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["media"]) { this.media.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["conclusion"]) { issues.push(...this.conclusion.doModelValidation()); }
+    if (this["conclusionCode"]) { this.conclusionCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["presentedForm"]) { this.presentedForm.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

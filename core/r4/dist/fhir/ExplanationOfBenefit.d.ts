@@ -54,7 +54,7 @@ export declare class ExplanationOfBenefitRelated extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitPayee type.
@@ -92,7 +92,7 @@ export declare class ExplanationOfBenefitPayee extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitCareTeam type.
@@ -154,7 +154,7 @@ export declare class ExplanationOfBenefitCareTeam extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitSupportingInfo type.
@@ -260,7 +260,7 @@ export declare class ExplanationOfBenefitSupportingInfo extends fhir.BackboneEle
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitDiagnosis type.
@@ -334,7 +334,7 @@ export declare class ExplanationOfBenefitDiagnosis extends fhir.BackboneElement 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitProcedure type.
@@ -408,7 +408,7 @@ export declare class ExplanationOfBenefitProcedure extends fhir.BackboneElement 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitInsurance type.
@@ -454,7 +454,7 @@ export declare class ExplanationOfBenefitInsurance extends fhir.BackboneElement 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitAccident type.
@@ -516,7 +516,7 @@ export declare class ExplanationOfBenefitAccident extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitItemAdjudication type.
@@ -570,7 +570,7 @@ export declare class ExplanationOfBenefitItemAdjudication extends fhir.BackboneE
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitItemDetailSubDetail type.
@@ -696,7 +696,7 @@ export declare class ExplanationOfBenefitItemDetailSubDetail extends fhir.Backbo
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitItemDetail type.
@@ -830,7 +830,7 @@ export declare class ExplanationOfBenefitItemDetail extends fhir.BackboneElement
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitItem type.
@@ -1064,7 +1064,7 @@ export declare class ExplanationOfBenefitItem extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitAddItemDetailSubDetail type.
@@ -1150,7 +1150,7 @@ export declare class ExplanationOfBenefitAddItemDetailSubDetail extends fhir.Bac
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitAddItemDetail type.
@@ -1244,7 +1244,7 @@ export declare class ExplanationOfBenefitAddItemDetail extends fhir.BackboneElem
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitAddItem type.
@@ -1438,7 +1438,7 @@ export declare class ExplanationOfBenefitAddItem extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitTotal type.
@@ -1476,7 +1476,7 @@ export declare class ExplanationOfBenefitTotal extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitPayment type.
@@ -1546,7 +1546,7 @@ export declare class ExplanationOfBenefitPayment extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitProcessNote type.
@@ -1608,7 +1608,7 @@ export declare class ExplanationOfBenefitProcessNote extends fhir.BackboneElemen
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitBenefitBalanceFinancial type.
@@ -1682,7 +1682,7 @@ export declare class ExplanationOfBenefitBenefitBalanceFinancial extends fhir.Ba
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefitBenefitBalance type.
@@ -1768,7 +1768,7 @@ export declare class ExplanationOfBenefitBenefitBalance extends fhir.BackboneEle
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExplanationOfBenefit type.
@@ -2158,6 +2158,6 @@ export declare class ExplanationOfBenefit extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=ExplanationOfBenefit.d.ts.map

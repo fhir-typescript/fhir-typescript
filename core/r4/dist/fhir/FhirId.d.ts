@@ -2,7 +2,7 @@ import * as fhir from '../fhir.js';
 /**
  * RFC 4122
  */
-export interface FhirIdArgs extends fhir.FhirStringArgs {
+export interface FhirIdArgs extends fhir.FhirPrimitiveArgs {
     /**
      * RFC 4122
      */
@@ -11,7 +11,7 @@ export interface FhirIdArgs extends fhir.FhirStringArgs {
 /**
  * RFC 4122
  */
-export declare class FhirId extends fhir.FhirString {
+export declare class FhirId extends fhir.FhirPrimitive {
     /**
      * Mapping of this datatype to a FHIR equivalent
      */
@@ -36,6 +36,6 @@ export declare class FhirId extends fhir.FhirString {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=FhirId.d.ts.map

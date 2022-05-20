@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the MedicinalProductInteractionInteractant type.
  */
@@ -34,7 +30,7 @@ export class MedicinalProductInteractionInteractant extends fhir.BackboneElement
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MedicinalProductInteractionInteractant';
+  public static override readonly _fts_dataType:string = 'MedicinalProductInteractionInteractant';
   /**
    * The specific medication, food or laboratory test that interacts.
    */
@@ -56,12 +52,12 @@ export class MedicinalProductInteractionInteractant extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['item']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property item: fhir: MedicinalProductInteraction.interactant.item[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property item: fhir: MedicinalProductInteraction.interactant.item[x]:', });
     }
-    return outcome;
+    return issues;
   }
 }
 /**
@@ -109,11 +105,11 @@ export class MedicinalProductInteraction extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MedicinalProductInteraction';
+  public static override readonly _fts_dataType:string = 'MedicinalProductInteraction';
   /**
    * Resource Type Name
    */
-  public resourceType: "MedicinalProductInteraction";
+  public override resourceType: "MedicinalProductInteraction";
   /**
    * The medication for which this is a described interaction.
    */
@@ -161,18 +157,18 @@ export class MedicinalProductInteraction extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"MedicinalProductInteraction" fhir: MedicinalProductInteraction.resourceType:"MedicinalProductInteraction"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicinalProductInteraction" fhir: MedicinalProductInteraction.resourceType:"MedicinalProductInteraction"', });
     }
-    if (this["subject"]) { this.subject.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["interactant"]) { this.interactant.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["effect"]) { outcome.issue!.push(...this.effect.doModelValidation().issue!); }
-    if (this["incidence"]) { outcome.issue!.push(...this.incidence.doModelValidation().issue!); }
-    if (this["management"]) { outcome.issue!.push(...this.management.doModelValidation().issue!); }
-    return outcome;
+    if (this["subject"]) { this.subject.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["interactant"]) { this.interactant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["effect"]) { issues.push(...this.effect.doModelValidation()); }
+    if (this["incidence"]) { issues.push(...this.incidence.doModelValidation()); }
+    if (this["management"]) { issues.push(...this.management.doModelValidation()); }
+    return issues;
   }
 }

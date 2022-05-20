@@ -155,6 +155,6 @@ export declare class DeviceUseStatement extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=DeviceUseStatement.d.ts.map

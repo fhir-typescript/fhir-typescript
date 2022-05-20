@@ -21,10 +21,6 @@ import { EventTimingCodes,  EventTimingCodeType } from '../fhirValueSets/EventTi
 import { TimingAbbreviationCodings, TimingAbbreviationCodingType,} from '../fhirValueSets/TimingAbbreviationCodings.js';
 // @ts-ignore
 import { TimingAbbreviationCodes,  TimingAbbreviationCodeType } from '../fhirValueSets/TimingAbbreviationCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the TimingRepeat type.
  */
@@ -110,7 +106,7 @@ export class TimingRepeat extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'TimingRepeat';
+  public static override readonly _fts_dataType:string = 'TimingRepeat';
   /**
    * Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule.
    */
@@ -229,20 +225,20 @@ export class TimingRepeat extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["count"]) { outcome.issue!.push(...this.count.doModelValidation().issue!); }
-    if (this["countMax"]) { outcome.issue!.push(...this.countMax.doModelValidation().issue!); }
-    if (this["duration"]) { outcome.issue!.push(...this.duration.doModelValidation().issue!); }
-    if (this["durationMax"]) { outcome.issue!.push(...this.durationMax.doModelValidation().issue!); }
-    if (this["frequency"]) { outcome.issue!.push(...this.frequency.doModelValidation().issue!); }
-    if (this["frequencyMax"]) { outcome.issue!.push(...this.frequencyMax.doModelValidation().issue!); }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    if (this["periodMax"]) { outcome.issue!.push(...this.periodMax.doModelValidation().issue!); }
-    if (this["timeOfDay"]) { this.timeOfDay.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["when"]) { this.when.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["offset"]) { outcome.issue!.push(...this.offset.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["count"]) { issues.push(...this.count.doModelValidation()); }
+    if (this["countMax"]) { issues.push(...this.countMax.doModelValidation()); }
+    if (this["duration"]) { issues.push(...this.duration.doModelValidation()); }
+    if (this["durationMax"]) { issues.push(...this.durationMax.doModelValidation()); }
+    if (this["frequency"]) { issues.push(...this.frequency.doModelValidation()); }
+    if (this["frequencyMax"]) { issues.push(...this.frequencyMax.doModelValidation()); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["periodMax"]) { issues.push(...this.periodMax.doModelValidation()); }
+    if (this["timeOfDay"]) { this.timeOfDay.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["when"]) { this.when.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["offset"]) { issues.push(...this.offset.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -270,7 +266,7 @@ export class Timing extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Timing';
+  public static override readonly _fts_dataType:string = 'Timing';
   /**
    * Identifies specific times when the event occurs.
    */
@@ -302,11 +298,11 @@ export class Timing extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["event"]) { this.event.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["repeat"]) { outcome.issue!.push(...this.repeat.doModelValidation().issue!); }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["event"]) { this.event.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["repeat"]) { issues.push(...this.repeat.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    return issues;
   }
 }

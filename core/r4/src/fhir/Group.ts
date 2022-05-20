@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { GroupTypeCodings, GroupTypeCodingType,} from '../fhirValueSets/GroupTypeCodings.js';
 // @ts-ignore
 import { GroupTypeCodes,  GroupTypeCodeType } from '../fhirValueSets/GroupTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the GroupCharacteristic type.
  */
@@ -62,7 +58,7 @@ export class GroupCharacteristic extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'GroupCharacteristic';
+  public static override readonly _fts_dataType:string = 'GroupCharacteristic';
   /**
    * A code that identifies the kind of trait being asserted.
    */
@@ -104,21 +100,21 @@ export class GroupCharacteristic extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Group.characteristic.code:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Group.characteristic.code:CodeableConcept', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['value']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property value: fhir: Group.characteristic.value[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value: fhir: Group.characteristic.value[x]:', });
     }
     if (!this['exclude']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property exclude:fhir.FhirBoolean fhir: Group.characteristic.exclude:boolean', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property exclude:fhir.FhirBoolean fhir: Group.characteristic.exclude:boolean', });
     }
-    if (this["exclude"]) { outcome.issue!.push(...this.exclude.doModelValidation().issue!); }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    return outcome;
+    if (this["exclude"]) { issues.push(...this.exclude.doModelValidation()); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -146,7 +142,7 @@ export class GroupMember extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'GroupMember';
+  public static override readonly _fts_dataType:string = 'GroupMember';
   /**
    * A reference to the entity that is a member of the group. Must be consistent with Group.type. If the entity is another group, then the type must be the same.
    */
@@ -172,15 +168,15 @@ export class GroupMember extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['entity']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property entity:fhir.Reference fhir: Group.member.entity:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property entity:fhir.Reference fhir: Group.member.entity:Reference', });
     }
-    if (this["entity"]) { outcome.issue!.push(...this.entity.doModelValidation().issue!); }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    if (this["inactive"]) { outcome.issue!.push(...this.inactive.doModelValidation().issue!); }
-    return outcome;
+    if (this["entity"]) { issues.push(...this.entity.doModelValidation()); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["inactive"]) { issues.push(...this.inactive.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -240,11 +236,11 @@ export class Group extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Group';
+  public static override readonly _fts_dataType:string = 'Group';
   /**
    * Resource Type Name
    */
-  public resourceType: "Group";
+  public override resourceType: "Group";
   /**
    * A unique business identifier for this group.
    */
@@ -316,26 +312,26 @@ export class Group extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Group" fhir: Group.resourceType:"Group"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Group" fhir: Group.resourceType:"Group"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["active"]) { outcome.issue!.push(...this.active.doModelValidation().issue!); }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["active"]) { issues.push(...this.active.doModelValidation()); }
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:GroupTypeCodeType fhir: Group.type:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:GroupTypeCodeType fhir: Group.type:code', });
     }
     if (!this['actual']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property actual:fhir.FhirBoolean fhir: Group.actual:boolean', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actual:fhir.FhirBoolean fhir: Group.actual:boolean', });
     }
-    if (this["actual"]) { outcome.issue!.push(...this.actual.doModelValidation().issue!); }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["quantity"]) { outcome.issue!.push(...this.quantity.doModelValidation().issue!); }
-    if (this["managingEntity"]) { outcome.issue!.push(...this.managingEntity.doModelValidation().issue!); }
-    if (this["characteristic"]) { this.characteristic.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["member"]) { this.member.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["actual"]) { issues.push(...this.actual.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
+    if (this["managingEntity"]) { issues.push(...this.managingEntity.doModelValidation()); }
+    if (this["characteristic"]) { this.characteristic.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["member"]) { this.member.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

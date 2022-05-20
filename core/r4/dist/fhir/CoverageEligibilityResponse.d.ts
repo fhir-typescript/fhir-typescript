@@ -81,7 +81,7 @@ export declare class CoverageEligibilityResponseInsuranceItemBenefit extends fhi
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CoverageEligibilityResponseInsuranceItem type.
@@ -215,7 +215,7 @@ export declare class CoverageEligibilityResponseInsuranceItem extends fhir.Backb
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CoverageEligibilityResponseInsurance type.
@@ -269,7 +269,7 @@ export declare class CoverageEligibilityResponseInsurance extends fhir.BackboneE
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CoverageEligibilityResponseError type.
@@ -299,7 +299,7 @@ export declare class CoverageEligibilityResponseError extends fhir.BackboneEleme
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CoverageEligibilityResponse type.
@@ -473,6 +473,6 @@ export declare class CoverageEligibilityResponse extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=CoverageEligibilityResponse.d.ts.map

@@ -81,10 +81,6 @@ import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValue
 import { DefinitionTopicCodings, DefinitionTopicCodingType,} from '../fhirValueSets/DefinitionTopicCodings.js';
 // @ts-ignore
 import { DefinitionTopicCodes,  DefinitionTopicCodeType } from '../fhirValueSets/DefinitionTopicCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the PlanDefinitionGoalTarget type.
  */
@@ -122,7 +118,7 @@ export class PlanDefinitionGoalTarget extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'PlanDefinitionGoalTarget';
+  public static override readonly _fts_dataType:string = 'PlanDefinitionGoalTarget';
   /**
    * The parameter whose value is to be tracked, e.g. body weight, blood pressure, or hemoglobin A1c level.
    */
@@ -154,11 +150,11 @@ export class PlanDefinitionGoalTarget extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["measure"]) { outcome.issue!.push(...this.measure.doModelValidation().issue!); }
-    if (this["due"]) { outcome.issue!.push(...this.due.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["measure"]) { issues.push(...this.measure.doModelValidation()); }
+    if (this["due"]) { issues.push(...this.due.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -202,7 +198,7 @@ export class PlanDefinitionGoal extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'PlanDefinitionGoal';
+  public static override readonly _fts_dataType:string = 'PlanDefinitionGoal';
   /**
    * Indicates a category the goal falls within.
    */
@@ -257,19 +253,19 @@ export class PlanDefinitionGoal extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["category"]) { outcome.issue!.push(...this.category.doModelValidation().issue!); }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (!this['description']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property description:fhir.CodeableConcept fhir: PlanDefinition.goal.description:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property description:fhir.CodeableConcept fhir: PlanDefinition.goal.description:CodeableConcept', });
     }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["priority"]) { outcome.issue!.push(...this.priority.doModelValidation().issue!); }
-    if (this["start"]) { outcome.issue!.push(...this.start.doModelValidation().issue!); }
-    if (this["addresses"]) { this.addresses.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["documentation"]) { this.documentation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["target"]) { this.target.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
+    if (this["start"]) { issues.push(...this.start.doModelValidation()); }
+    if (this["addresses"]) { this.addresses.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["documentation"]) { this.documentation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["target"]) { this.target.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -293,7 +289,7 @@ export class PlanDefinitionActionCondition extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'PlanDefinitionActionCondition';
+  public static override readonly _fts_dataType:string = 'PlanDefinitionActionCondition';
   /**
    * Applicability criteria are used to determine immediate applicability when a plan definition is applied to a given context. Start and stop criteria are carried through application and used to describe enter/exit criteria for an action.
    */
@@ -320,13 +316,13 @@ export class PlanDefinitionActionCondition extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['kind']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property kind:ActionConditionKindCodeType fhir: PlanDefinition.action.condition.kind:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property kind:ActionConditionKindCodeType fhir: PlanDefinition.action.condition.kind:code', });
     }
-    if (this["expression"]) { outcome.issue!.push(...this.expression.doModelValidation().issue!); }
-    return outcome;
+    if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -362,7 +358,7 @@ export class PlanDefinitionActionRelatedAction extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'PlanDefinitionActionRelatedAction';
+  public static override readonly _fts_dataType:string = 'PlanDefinitionActionRelatedAction';
   /**
    * The element id of the related action.
    */
@@ -401,16 +397,16 @@ export class PlanDefinitionActionRelatedAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['actionId']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property actionId:fhir.FhirId fhir: PlanDefinition.action.relatedAction.actionId:id', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actionId:fhir.FhirId fhir: PlanDefinition.action.relatedAction.actionId:id', });
     }
-    if (this["actionId"]) { outcome.issue!.push(...this.actionId.doModelValidation().issue!); }
+    if (this["actionId"]) { issues.push(...this.actionId.doModelValidation()); }
     if (!this['relationship']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property relationship:ActionRelationshipTypeCodeType fhir: PlanDefinition.action.relatedAction.relationship:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property relationship:ActionRelationshipTypeCodeType fhir: PlanDefinition.action.relatedAction.relationship:code', });
     }
-    return outcome;
+    return issues;
   }
 }
 /**
@@ -434,7 +430,7 @@ export class PlanDefinitionActionParticipant extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'PlanDefinitionActionParticipant';
+  public static override readonly _fts_dataType:string = 'PlanDefinitionActionParticipant';
   /**
    * The type of participant in the action.
    */
@@ -461,13 +457,13 @@ export class PlanDefinitionActionParticipant extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:ActionParticipantTypeCodeType fhir: PlanDefinition.action.participant.type:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:ActionParticipantTypeCodeType fhir: PlanDefinition.action.participant.type:code', });
     }
-    if (this["role"]) { outcome.issue!.push(...this.role.doModelValidation().issue!); }
-    return outcome;
+    if (this["role"]) { issues.push(...this.role.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -491,7 +487,7 @@ export class PlanDefinitionActionDynamicValue extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'PlanDefinitionActionDynamicValue';
+  public static override readonly _fts_dataType:string = 'PlanDefinitionActionDynamicValue';
   /**
    * To specify the path to the current action being realized, the %action environment variable is available in this path. For example, to specify the description element of the target action, the path would be %action.description. The path attribute contains a [Simple FHIRPath Subset](fhirpath.html#simple) that allows path traversal, but not calculation.
    */
@@ -511,11 +507,11 @@ export class PlanDefinitionActionDynamicValue extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["path"]) { outcome.issue!.push(...this.path.doModelValidation().issue!); }
-    if (this["expression"]) { outcome.issue!.push(...this.expression.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["path"]) { issues.push(...this.path.doModelValidation()); }
+    if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -682,7 +678,7 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'PlanDefinitionAction';
+  public static override readonly _fts_dataType:string = 'PlanDefinitionAction';
   /**
    * A user-visible prefix for the action.
    */
@@ -904,27 +900,27 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["prefix"]) { outcome.issue!.push(...this.prefix.doModelValidation().issue!); }
-    if (this["title"]) { outcome.issue!.push(...this.title.doModelValidation().issue!); }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["textEquivalent"]) { outcome.issue!.push(...this.textEquivalent.doModelValidation().issue!); }
-    if (this["code"]) { this.code.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["reason"]) { this.reason.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["documentation"]) { this.documentation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["goalId"]) { this.goalId.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["trigger"]) { this.trigger.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["condition"]) { this.condition.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["input"]) { this.input.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["output"]) { this.output.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["relatedAction"]) { this.relatedAction.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["participant"]) { this.participant.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["transform"]) { outcome.issue!.push(...this.transform.doModelValidation().issue!); }
-    if (this["dynamicValue"]) { this.dynamicValue.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["action"]) { this.action.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["prefix"]) { issues.push(...this.prefix.doModelValidation()); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["textEquivalent"]) { issues.push(...this.textEquivalent.doModelValidation()); }
+    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["reason"]) { this.reason.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["documentation"]) { this.documentation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["goalId"]) { this.goalId.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["trigger"]) { this.trigger.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["condition"]) { this.condition.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["input"]) { this.input.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["output"]) { this.output.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["relatedAction"]) { this.relatedAction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["participant"]) { this.participant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["transform"]) { issues.push(...this.transform.doModelValidation()); }
+    if (this["dynamicValue"]) { this.dynamicValue.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -1078,11 +1074,11 @@ export class PlanDefinition extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'PlanDefinition';
+  public static override readonly _fts_dataType:string = 'PlanDefinition';
   /**
    * Resource Type Name
    */
-  public resourceType: "PlanDefinition";
+  public override resourceType: "PlanDefinition";
   /**
    * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
    * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions). 
@@ -1282,43 +1278,43 @@ export class PlanDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"PlanDefinition" fhir: PlanDefinition.resourceType:"PlanDefinition"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"PlanDefinition" fhir: PlanDefinition.resourceType:"PlanDefinition"', });
     }
-    if (this["url"]) { outcome.issue!.push(...this.url.doModelValidation().issue!); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["version"]) { outcome.issue!.push(...this.version.doModelValidation().issue!); }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["title"]) { outcome.issue!.push(...this.title.doModelValidation().issue!); }
-    if (this["subtitle"]) { outcome.issue!.push(...this.subtitle.doModelValidation().issue!); }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
+    if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: PlanDefinition.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: PlanDefinition.status:code', });
     }
-    if (this["experimental"]) { outcome.issue!.push(...this.experimental.doModelValidation().issue!); }
-    if (this["date"]) { outcome.issue!.push(...this.date.doModelValidation().issue!); }
-    if (this["publisher"]) { outcome.issue!.push(...this.publisher.doModelValidation().issue!); }
-    if (this["contact"]) { this.contact.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["useContext"]) { this.useContext.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["purpose"]) { outcome.issue!.push(...this.purpose.doModelValidation().issue!); }
-    if (this["usage"]) { outcome.issue!.push(...this.usage.doModelValidation().issue!); }
-    if (this["copyright"]) { outcome.issue!.push(...this.copyright.doModelValidation().issue!); }
-    if (this["approvalDate"]) { outcome.issue!.push(...this.approvalDate.doModelValidation().issue!); }
-    if (this["lastReviewDate"]) { outcome.issue!.push(...this.lastReviewDate.doModelValidation().issue!); }
-    if (this["effectivePeriod"]) { outcome.issue!.push(...this.effectivePeriod.doModelValidation().issue!); }
-    if (this["topic"]) { this.topic.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["author"]) { this.author.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["editor"]) { this.editor.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["reviewer"]) { this.reviewer.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["endorser"]) { this.endorser.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["library"]) { this.library.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["goal"]) { this.goal.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["action"]) { this.action.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
+    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
+    if (this["usage"]) { issues.push(...this.usage.doModelValidation()); }
+    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
+    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation()); }
+    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation()); }
+    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation()); }
+    if (this["topic"]) { this.topic.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["author"]) { this.author.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["editor"]) { this.editor.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["reviewer"]) { this.reviewer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["endorser"]) { this.endorser.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["library"]) { this.library.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["goal"]) { this.goal.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

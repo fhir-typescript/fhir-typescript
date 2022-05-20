@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Range type.
  */
@@ -30,7 +26,7 @@ export class Range extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Range';
+  public static override readonly _fts_dataType:string = 'Range';
   /**
    * If the low element is missing, the low boundary is not known.
    */
@@ -50,10 +46,10 @@ export class Range extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["low"]) { outcome.issue!.push(...this.low.doModelValidation().issue!); }
-    if (this["high"]) { outcome.issue!.push(...this.high.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["low"]) { issues.push(...this.low.doModelValidation()); }
+    if (this["high"]) { issues.push(...this.high.doModelValidation()); }
+    return issues;
   }
 }

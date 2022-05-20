@@ -17,10 +17,6 @@ import { PractitionerRoleCodes,  PractitionerRoleCodeType } from '../fhirValueSe
 import { C80PracticeCodesCodings, C80PracticeCodesCodingType,} from '../fhirValueSets/C80PracticeCodesCodings.js';
 // @ts-ignore
 import { C80PracticeCodesCodes,  C80PracticeCodesCodeType } from '../fhirValueSets/C80PracticeCodesCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the PractitionerRoleAvailableTime type.
  */
@@ -50,7 +46,7 @@ export class PractitionerRoleAvailableTime extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'PractitionerRoleAvailableTime';
+  public static override readonly _fts_dataType:string = 'PractitionerRoleAvailableTime';
   /**
    * Indicates which days of the week are available between the start and end Times.
    */
@@ -87,12 +83,12 @@ export class PractitionerRoleAvailableTime extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["allDay"]) { outcome.issue!.push(...this.allDay.doModelValidation().issue!); }
-    if (this["availableStartTime"]) { outcome.issue!.push(...this.availableStartTime.doModelValidation().issue!); }
-    if (this["availableEndTime"]) { outcome.issue!.push(...this.availableEndTime.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["allDay"]) { issues.push(...this.allDay.doModelValidation()); }
+    if (this["availableStartTime"]) { issues.push(...this.availableStartTime.doModelValidation()); }
+    if (this["availableEndTime"]) { issues.push(...this.availableEndTime.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -116,7 +112,7 @@ export class PractitionerRoleNotAvailable extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'PractitionerRoleNotAvailable';
+  public static override readonly _fts_dataType:string = 'PractitionerRoleNotAvailable';
   /**
    * The reason that can be presented to the user as to why this time is not available.
    */
@@ -137,14 +133,14 @@ export class PractitionerRoleNotAvailable extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['description']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property description:fhir.FhirString fhir: PractitionerRole.notAvailable.description:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property description:fhir.FhirString fhir: PractitionerRole.notAvailable.description:string', });
     }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["during"]) { outcome.issue!.push(...this.during.doModelValidation().issue!); }
-    return outcome;
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["during"]) { issues.push(...this.during.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -220,11 +216,11 @@ export class PractitionerRole extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'PractitionerRole';
+  public static override readonly _fts_dataType:string = 'PractitionerRole';
   /**
    * Resource Type Name
    */
-  public resourceType: "PractitionerRole";
+  public override resourceType: "PractitionerRole";
   /**
    * Business Identifiers that are specific to a role/location.
    */
@@ -320,25 +316,25 @@ export class PractitionerRole extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"PractitionerRole" fhir: PractitionerRole.resourceType:"PractitionerRole"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"PractitionerRole" fhir: PractitionerRole.resourceType:"PractitionerRole"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["active"]) { outcome.issue!.push(...this.active.doModelValidation().issue!); }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    if (this["practitioner"]) { outcome.issue!.push(...this.practitioner.doModelValidation().issue!); }
-    if (this["organization"]) { outcome.issue!.push(...this.organization.doModelValidation().issue!); }
-    if (this["code"]) { this.code.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["specialty"]) { this.specialty.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["location"]) { this.location.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["healthcareService"]) { this.healthcareService.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["telecom"]) { this.telecom.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["availableTime"]) { this.availableTime.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["notAvailable"]) { this.notAvailable.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["availabilityExceptions"]) { outcome.issue!.push(...this.availabilityExceptions.doModelValidation().issue!); }
-    if (this["endpoint"]) { this.endpoint.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["active"]) { issues.push(...this.active.doModelValidation()); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["practitioner"]) { issues.push(...this.practitioner.doModelValidation()); }
+    if (this["organization"]) { issues.push(...this.organization.doModelValidation()); }
+    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["specialty"]) { this.specialty.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["location"]) { this.location.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["healthcareService"]) { this.healthcareService.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["availableTime"]) { this.availableTime.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["notAvailable"]) { this.notAvailable.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["availabilityExceptions"]) { issues.push(...this.availabilityExceptions.doModelValidation()); }
+    if (this["endpoint"]) { this.endpoint.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

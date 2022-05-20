@@ -45,10 +45,6 @@ import { V20276Codes,  V20276CodeType } from '../fhirValueSets/V20276Codes.js';
 import { EncounterReasonCodings, EncounterReasonCodingType,} from '../fhirValueSets/EncounterReasonCodings.js';
 // @ts-ignore
 import { EncounterReasonCodes,  EncounterReasonCodeType } from '../fhirValueSets/EncounterReasonCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the AppointmentParticipant type.
  */
@@ -84,7 +80,7 @@ export class AppointmentParticipant extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'AppointmentParticipant';
+  public static override readonly _fts_dataType:string = 'AppointmentParticipant';
   /**
    * The role of the participant can be used to declare what the actor will be doing in the scope of this appointment.
    * If the actor is not specified, then it is expected that the actor will be filled in at a later stage of planning.
@@ -141,15 +137,15 @@ export class AppointmentParticipant extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["type"]) { this.type.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["actor"]) { outcome.issue!.push(...this.actor.doModelValidation().issue!); }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["actor"]) { issues.push(...this.actor.doModelValidation()); }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:ParticipationstatusCodeType fhir: Appointment.participant.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ParticipationstatusCodeType fhir: Appointment.participant.status:code', });
     }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    return outcome;
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -260,11 +256,11 @@ export class Appointment extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Appointment';
+  public static override readonly _fts_dataType:string = 'Appointment';
   /**
    * Resource Type Name
    */
-  public resourceType: "Appointment";
+  public override resourceType: "Appointment";
   /**
    * This records identifiers associated with this appointment concern that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
    */
@@ -424,42 +420,42 @@ export class Appointment extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Appointment" fhir: Appointment.resourceType:"Appointment"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Appointment" fhir: Appointment.resourceType:"Appointment"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:AppointmentstatusCodeType fhir: Appointment.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:AppointmentstatusCodeType fhir: Appointment.status:code', });
     }
-    if (this["cancelationReason"]) { outcome.issue!.push(...this.cancelationReason.doModelValidation().issue!); }
-    if (this["serviceCategory"]) { this.serviceCategory.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["serviceType"]) { this.serviceType.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["specialty"]) { this.specialty.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["appointmentType"]) { outcome.issue!.push(...this.appointmentType.doModelValidation().issue!); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["priority"]) { outcome.issue!.push(...this.priority.doModelValidation().issue!); }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["supportingInformation"]) { this.supportingInformation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["start"]) { outcome.issue!.push(...this.start.doModelValidation().issue!); }
-    if (this["end"]) { outcome.issue!.push(...this.end.doModelValidation().issue!); }
-    if (this["minutesDuration"]) { outcome.issue!.push(...this.minutesDuration.doModelValidation().issue!); }
-    if (this["slot"]) { this.slot.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["created"]) { outcome.issue!.push(...this.created.doModelValidation().issue!); }
-    if (this["comment"]) { outcome.issue!.push(...this.comment.doModelValidation().issue!); }
-    if (this["patientInstruction"]) { outcome.issue!.push(...this.patientInstruction.doModelValidation().issue!); }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["cancelationReason"]) { issues.push(...this.cancelationReason.doModelValidation()); }
+    if (this["serviceCategory"]) { this.serviceCategory.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["serviceType"]) { this.serviceType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["specialty"]) { this.specialty.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["appointmentType"]) { issues.push(...this.appointmentType.doModelValidation()); }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["supportingInformation"]) { this.supportingInformation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["start"]) { issues.push(...this.start.doModelValidation()); }
+    if (this["end"]) { issues.push(...this.end.doModelValidation()); }
+    if (this["minutesDuration"]) { issues.push(...this.minutesDuration.doModelValidation()); }
+    if (this["slot"]) { this.slot.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["created"]) { issues.push(...this.created.doModelValidation()); }
+    if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
+    if (this["patientInstruction"]) { issues.push(...this.patientInstruction.doModelValidation()); }
+    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['participant']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property participant:fhir.AppointmentParticipant[] fhir: Appointment.participant:participant', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property participant:fhir.AppointmentParticipant[] fhir: Appointment.participant:participant', });
     } else if (!Array.isArray(this.participant)) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.StructuralIssue,  diagnostics: 'Found scalar in array property participant:fhir.AppointmentParticipant[] fhir: Appointment.participant:participant', }));
+      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property participant:fhir.AppointmentParticipant[] fhir: Appointment.participant:participant', });
     } else if (this.participant.length === 0) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property participant:fhir.AppointmentParticipant[] fhir: Appointment.participant:participant', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property participant:fhir.AppointmentParticipant[] fhir: Appointment.participant:participant', });
     }
-    if (this["participant"]) { this.participant.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["requestedPeriod"]) { this.requestedPeriod.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["participant"]) { this.participant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["requestedPeriod"]) { this.requestedPeriod.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

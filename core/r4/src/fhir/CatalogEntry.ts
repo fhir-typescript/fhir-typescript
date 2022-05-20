@@ -13,10 +13,6 @@ import { RelationTypeCodes,  RelationTypeCodeType } from '../fhirValueSets/Relat
 import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the CatalogEntryRelatedEntry type.
  */
@@ -38,7 +34,7 @@ export class CatalogEntryRelatedEntry extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'CatalogEntryRelatedEntry';
+  public static override readonly _fts_dataType:string = 'CatalogEntryRelatedEntry';
   /**
    * The type of relation to the related item: child, parent, packageContent, containerPackage, usedIn, uses, requires, etc.
    */
@@ -66,16 +62,16 @@ export class CatalogEntryRelatedEntry extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['relationtype']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property relationtype:RelationTypeCodeType fhir: CatalogEntry.relatedEntry.relationtype:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property relationtype:RelationTypeCodeType fhir: CatalogEntry.relatedEntry.relationtype:code', });
     }
     if (!this['item']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property item:fhir.Reference fhir: CatalogEntry.relatedEntry.item:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property item:fhir.Reference fhir: CatalogEntry.relatedEntry.item:Reference', });
     }
-    if (this["item"]) { outcome.issue!.push(...this.item.doModelValidation().issue!); }
-    return outcome;
+    if (this["item"]) { issues.push(...this.item.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -147,11 +143,11 @@ export class CatalogEntry extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'CatalogEntry';
+  public static override readonly _fts_dataType:string = 'CatalogEntry';
   /**
    * Resource Type Name
    */
-  public resourceType: "CatalogEntry";
+  public override resourceType: "CatalogEntry";
   /**
    * Used in supporting different identifiers for the same product, e.g. manufacturer code and retailer code.
    */
@@ -241,29 +237,29 @@ export class CatalogEntry extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"CatalogEntry" fhir: CatalogEntry.resourceType:"CatalogEntry"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"CatalogEntry" fhir: CatalogEntry.resourceType:"CatalogEntry"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['orderable']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property orderable:fhir.FhirBoolean fhir: CatalogEntry.orderable:boolean', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property orderable:fhir.FhirBoolean fhir: CatalogEntry.orderable:boolean', });
     }
-    if (this["orderable"]) { outcome.issue!.push(...this.orderable.doModelValidation().issue!); }
+    if (this["orderable"]) { issues.push(...this.orderable.doModelValidation()); }
     if (!this['referencedItem']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property referencedItem:fhir.Reference fhir: CatalogEntry.referencedItem:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property referencedItem:fhir.Reference fhir: CatalogEntry.referencedItem:Reference', });
     }
-    if (this["referencedItem"]) { outcome.issue!.push(...this.referencedItem.doModelValidation().issue!); }
-    if (this["additionalIdentifier"]) { this.additionalIdentifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["classification"]) { this.classification.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["validityPeriod"]) { outcome.issue!.push(...this.validityPeriod.doModelValidation().issue!); }
-    if (this["validTo"]) { outcome.issue!.push(...this.validTo.doModelValidation().issue!); }
-    if (this["lastUpdated"]) { outcome.issue!.push(...this.lastUpdated.doModelValidation().issue!); }
-    if (this["additionalCharacteristic"]) { this.additionalCharacteristic.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["additionalClassification"]) { this.additionalClassification.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["relatedEntry"]) { this.relatedEntry.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["referencedItem"]) { issues.push(...this.referencedItem.doModelValidation()); }
+    if (this["additionalIdentifier"]) { this.additionalIdentifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["classification"]) { this.classification.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["validityPeriod"]) { issues.push(...this.validityPeriod.doModelValidation()); }
+    if (this["validTo"]) { issues.push(...this.validTo.doModelValidation()); }
+    if (this["lastUpdated"]) { issues.push(...this.lastUpdated.doModelValidation()); }
+    if (this["additionalCharacteristic"]) { this.additionalCharacteristic.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["additionalClassification"]) { this.additionalClassification.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["relatedEntry"]) { this.relatedEntry.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

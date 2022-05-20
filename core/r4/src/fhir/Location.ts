@@ -29,10 +29,6 @@ import { V3ServiceDeliveryLocationRoleTypeCodes,  V3ServiceDeliveryLocationRoleT
 import { LocationPhysicalTypeCodings, LocationPhysicalTypeCodingType,} from '../fhirValueSets/LocationPhysicalTypeCodings.js';
 // @ts-ignore
 import { LocationPhysicalTypeCodes,  LocationPhysicalTypeCodeType } from '../fhirValueSets/LocationPhysicalTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the LocationPosition type.
  */
@@ -58,7 +54,7 @@ export class LocationPosition extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'LocationPosition';
+  public static override readonly _fts_dataType:string = 'LocationPosition';
   /**
    * Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below).
    */
@@ -85,18 +81,18 @@ export class LocationPosition extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['longitude']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property longitude:fhir.FhirDecimal fhir: Location.position.longitude:decimal', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property longitude:fhir.FhirDecimal fhir: Location.position.longitude:decimal', });
     }
-    if (this["longitude"]) { outcome.issue!.push(...this.longitude.doModelValidation().issue!); }
+    if (this["longitude"]) { issues.push(...this.longitude.doModelValidation()); }
     if (!this['latitude']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property latitude:fhir.FhirDecimal fhir: Location.position.latitude:decimal', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property latitude:fhir.FhirDecimal fhir: Location.position.latitude:decimal', });
     }
-    if (this["latitude"]) { outcome.issue!.push(...this.latitude.doModelValidation().issue!); }
-    if (this["altitude"]) { outcome.issue!.push(...this.altitude.doModelValidation().issue!); }
-    return outcome;
+    if (this["latitude"]) { issues.push(...this.latitude.doModelValidation()); }
+    if (this["altitude"]) { issues.push(...this.altitude.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -129,7 +125,7 @@ export class LocationHoursOfOperation extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'LocationHoursOfOperation';
+  public static override readonly _fts_dataType:string = 'LocationHoursOfOperation';
   /**
    * Indicates which days of the week are available between the start and end Times.
    */
@@ -166,12 +162,12 @@ export class LocationHoursOfOperation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["allDay"]) { outcome.issue!.push(...this.allDay.doModelValidation().issue!); }
-    if (this["openingTime"]) { outcome.issue!.push(...this.openingTime.doModelValidation().issue!); }
-    if (this["closingTime"]) { outcome.issue!.push(...this.closingTime.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["allDay"]) { issues.push(...this.allDay.doModelValidation()); }
+    if (this["openingTime"]) { issues.push(...this.openingTime.doModelValidation()); }
+    if (this["closingTime"]) { issues.push(...this.closingTime.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -260,11 +256,11 @@ export class Location extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Location';
+  public static override readonly _fts_dataType:string = 'Location';
   /**
    * Resource Type Name
    */
-  public resourceType: "Location";
+  public override resourceType: "Location";
   /**
    * Unique code or number identifying the location to its users.
    */
@@ -391,26 +387,26 @@ export class Location extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Location" fhir: Location.resourceType:"Location"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Location" fhir: Location.resourceType:"Location"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["operationalStatus"]) { outcome.issue!.push(...this.operationalStatus.doModelValidation().issue!); }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["alias"]) { this.alias.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["type"]) { this.type.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["telecom"]) { this.telecom.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["address"]) { outcome.issue!.push(...this.address.doModelValidation().issue!); }
-    if (this["physicalType"]) { outcome.issue!.push(...this.physicalType.doModelValidation().issue!); }
-    if (this["position"]) { outcome.issue!.push(...this.position.doModelValidation().issue!); }
-    if (this["managingOrganization"]) { outcome.issue!.push(...this.managingOrganization.doModelValidation().issue!); }
-    if (this["partOf"]) { outcome.issue!.push(...this.partOf.doModelValidation().issue!); }
-    if (this["hoursOfOperation"]) { this.hoursOfOperation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["availabilityExceptions"]) { outcome.issue!.push(...this.availabilityExceptions.doModelValidation().issue!); }
-    if (this["endpoint"]) { this.endpoint.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["operationalStatus"]) { issues.push(...this.operationalStatus.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["alias"]) { this.alias.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["address"]) { issues.push(...this.address.doModelValidation()); }
+    if (this["physicalType"]) { issues.push(...this.physicalType.doModelValidation()); }
+    if (this["position"]) { issues.push(...this.position.doModelValidation()); }
+    if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation()); }
+    if (this["partOf"]) { issues.push(...this.partOf.doModelValidation()); }
+    if (this["hoursOfOperation"]) { this.hoursOfOperation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["availabilityExceptions"]) { issues.push(...this.availabilityExceptions.doModelValidation()); }
+    if (this["endpoint"]) { this.endpoint.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

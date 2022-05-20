@@ -21,10 +21,6 @@ import { RequestPriorityCodes,  RequestPriorityCodeType } from '../fhirValueSets
 import { SupplyrequestReasonCodings, SupplyrequestReasonCodingType,} from '../fhirValueSets/SupplyrequestReasonCodings.js';
 // @ts-ignore
 import { SupplyrequestReasonCodes,  SupplyrequestReasonCodeType } from '../fhirValueSets/SupplyrequestReasonCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the SupplyRequestParameter type.
  */
@@ -62,7 +58,7 @@ export class SupplyRequestParameter extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SupplyRequestParameter';
+  public static override readonly _fts_dataType:string = 'SupplyRequestParameter';
   /**
    * A code or string that identifies the device detail being asserted.
    */
@@ -90,10 +86,10 @@ export class SupplyRequestParameter extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -193,11 +189,11 @@ export class SupplyRequest extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SupplyRequest';
+  public static override readonly _fts_dataType:string = 'SupplyRequest';
   /**
    * Resource Type Name
    */
-  public resourceType: "SupplyRequest";
+  public override resourceType: "SupplyRequest";
   /**
    * The identifier.type element is used to distinguish between the identifiers assigned by the requester/placer and the performer/filler.
    */
@@ -315,28 +311,28 @@ export class SupplyRequest extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"SupplyRequest" fhir: SupplyRequest.resourceType:"SupplyRequest"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"SupplyRequest" fhir: SupplyRequest.resourceType:"SupplyRequest"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["category"]) { outcome.issue!.push(...this.category.doModelValidation().issue!); }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (!this['item']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property item: fhir: SupplyRequest.item[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property item: fhir: SupplyRequest.item[x]:', });
     }
     if (!this['quantity']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property quantity:fhir.Quantity fhir: SupplyRequest.quantity:Quantity', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property quantity:fhir.Quantity fhir: SupplyRequest.quantity:Quantity', });
     }
-    if (this["quantity"]) { outcome.issue!.push(...this.quantity.doModelValidation().issue!); }
-    if (this["parameter"]) { this.parameter.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["authoredOn"]) { outcome.issue!.push(...this.authoredOn.doModelValidation().issue!); }
-    if (this["requester"]) { outcome.issue!.push(...this.requester.doModelValidation().issue!); }
-    if (this["supplier"]) { this.supplier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["deliverFrom"]) { outcome.issue!.push(...this.deliverFrom.doModelValidation().issue!); }
-    if (this["deliverTo"]) { outcome.issue!.push(...this.deliverTo.doModelValidation().issue!); }
-    return outcome;
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
+    if (this["parameter"]) { this.parameter.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["authoredOn"]) { issues.push(...this.authoredOn.doModelValidation()); }
+    if (this["requester"]) { issues.push(...this.requester.doModelValidation()); }
+    if (this["supplier"]) { this.supplier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["deliverFrom"]) { issues.push(...this.deliverFrom.doModelValidation()); }
+    if (this["deliverTo"]) { issues.push(...this.deliverTo.doModelValidation()); }
+    return issues;
   }
 }

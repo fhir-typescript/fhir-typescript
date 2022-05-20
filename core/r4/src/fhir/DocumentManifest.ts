@@ -13,10 +13,6 @@ import { DocumentReferenceStatusCodes,  DocumentReferenceStatusCodeType } from '
 import { V3ActCodeCodings, V3ActCodeCodingType,} from '../fhirValueSets/V3ActCodeCodings.js';
 // @ts-ignore
 import { V3ActCodeCodes,  V3ActCodeCodeType } from '../fhirValueSets/V3ActCodeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the DocumentManifestRelated type.
  */
@@ -38,7 +34,7 @@ export class DocumentManifestRelated extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DocumentManifestRelated';
+  public static override readonly _fts_dataType:string = 'DocumentManifestRelated';
   /**
    * If both identifier and ref elements are present they shall refer to the same thing.
    */
@@ -58,11 +54,11 @@ export class DocumentManifestRelated extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["identifier"]) { outcome.issue!.push(...this.identifier.doModelValidation().issue!); }
-    if (this["ref"]) { outcome.issue!.push(...this.ref.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
+    if (this["ref"]) { issues.push(...this.ref.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -130,11 +126,11 @@ export class DocumentManifest extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DocumentManifest';
+  public static override readonly _fts_dataType:string = 'DocumentManifest';
   /**
    * Resource Type Name
    */
-  public resourceType: "DocumentManifest";
+  public override resourceType: "DocumentManifest";
   /**
    * A single identifier that uniquely identifies this manifest. Principally used to refer to the manifest in non-FHIR contexts.
    */
@@ -217,32 +213,32 @@ export class DocumentManifest extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"DocumentManifest" fhir: DocumentManifest.resourceType:"DocumentManifest"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"DocumentManifest" fhir: DocumentManifest.resourceType:"DocumentManifest"', });
     }
-    if (this["masterIdentifier"]) { outcome.issue!.push(...this.masterIdentifier.doModelValidation().issue!); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["masterIdentifier"]) { issues.push(...this.masterIdentifier.doModelValidation()); }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:DocumentReferenceStatusCodeType fhir: DocumentManifest.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:DocumentReferenceStatusCodeType fhir: DocumentManifest.status:code', });
     }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["created"]) { outcome.issue!.push(...this.created.doModelValidation().issue!); }
-    if (this["author"]) { this.author.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["recipient"]) { this.recipient.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["source"]) { outcome.issue!.push(...this.source.doModelValidation().issue!); }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["created"]) { issues.push(...this.created.doModelValidation()); }
+    if (this["author"]) { this.author.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["recipient"]) { this.recipient.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["source"]) { issues.push(...this.source.doModelValidation()); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (!this['content']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property content:fhir.Reference[] fhir: DocumentManifest.content:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property content:fhir.Reference[] fhir: DocumentManifest.content:Reference', });
     } else if (!Array.isArray(this.content)) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.StructuralIssue,  diagnostics: 'Found scalar in array property content:fhir.Reference[] fhir: DocumentManifest.content:Reference', }));
+      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property content:fhir.Reference[] fhir: DocumentManifest.content:Reference', });
     } else if (this.content.length === 0) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property content:fhir.Reference[] fhir: DocumentManifest.content:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property content:fhir.Reference[] fhir: DocumentManifest.content:Reference', });
     }
-    if (this["content"]) { this.content.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["related"]) { this.related.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["content"]) { this.content.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["related"]) { this.related.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

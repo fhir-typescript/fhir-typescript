@@ -57,10 +57,6 @@ import { AuditEventActionCodes,  AuditEventActionCodeType } from '../fhirValueSe
 import { AuditEventOutcomeCodings, AuditEventOutcomeCodingType,} from '../fhirValueSets/AuditEventOutcomeCodings.js';
 // @ts-ignore
 import { AuditEventOutcomeCodes,  AuditEventOutcomeCodeType } from '../fhirValueSets/AuditEventOutcomeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the AuditEventAgentNetwork type.
  */
@@ -82,7 +78,7 @@ export class AuditEventAgentNetwork extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'AuditEventAgentNetwork';
+  public static override readonly _fts_dataType:string = 'AuditEventAgentNetwork';
   /**
    * This could be a device id, IP address or some other identifier associated with a device.
    */
@@ -108,11 +104,11 @@ export class AuditEventAgentNetwork extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["address"]) { outcome.issue!.push(...this.address.doModelValidation().issue!); }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["address"]) { issues.push(...this.address.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -173,7 +169,7 @@ export class AuditEventAgent extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'AuditEventAgent';
+  public static override readonly _fts_dataType:string = 'AuditEventAgent';
   /**
    * Specification of the participation type the user plays when performing the event.
    */
@@ -260,23 +256,23 @@ export class AuditEventAgent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["role"]) { this.role.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["who"]) { outcome.issue!.push(...this.who.doModelValidation().issue!); }
-    if (this["altId"]) { outcome.issue!.push(...this.altId.doModelValidation().issue!); }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["role"]) { this.role.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["who"]) { issues.push(...this.who.doModelValidation()); }
+    if (this["altId"]) { issues.push(...this.altId.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (!this['requestor']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property requestor:fhir.FhirBoolean fhir: AuditEvent.agent.requestor:boolean', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property requestor:fhir.FhirBoolean fhir: AuditEvent.agent.requestor:boolean', });
     }
-    if (this["requestor"]) { outcome.issue!.push(...this.requestor.doModelValidation().issue!); }
-    if (this["location"]) { outcome.issue!.push(...this.location.doModelValidation().issue!); }
-    if (this["policy"]) { this.policy.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["media"]) { outcome.issue!.push(...this.media.doModelValidation().issue!); }
-    if (this["network"]) { outcome.issue!.push(...this.network.doModelValidation().issue!); }
-    if (this["purposeOfUse"]) { this.purposeOfUse.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["requestor"]) { issues.push(...this.requestor.doModelValidation()); }
+    if (this["location"]) { issues.push(...this.location.doModelValidation()); }
+    if (this["policy"]) { this.policy.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["media"]) { issues.push(...this.media.doModelValidation()); }
+    if (this["network"]) { issues.push(...this.network.doModelValidation()); }
+    if (this["purposeOfUse"]) { this.purposeOfUse.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -304,7 +300,7 @@ export class AuditEventSource extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'AuditEventSource';
+  public static override readonly _fts_dataType:string = 'AuditEventSource';
   /**
    * Logical source location within the healthcare enterprise network.  For example, a hospital or other provider location within a multi-entity provider group.
    */
@@ -337,15 +333,15 @@ export class AuditEventSource extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["site"]) { outcome.issue!.push(...this.site.doModelValidation().issue!); }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["site"]) { issues.push(...this.site.doModelValidation()); }
     if (!this['observer']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property observer:fhir.Reference fhir: AuditEvent.source.observer:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property observer:fhir.Reference fhir: AuditEvent.source.observer:Reference', });
     }
-    if (this["observer"]) { outcome.issue!.push(...this.observer.doModelValidation().issue!); }
-    if (this["type"]) { this.type.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["observer"]) { issues.push(...this.observer.doModelValidation()); }
+    if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -377,7 +373,7 @@ export class AuditEventEntityDetail extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'AuditEventEntityDetail';
+  public static override readonly _fts_dataType:string = 'AuditEventEntityDetail';
   /**
    * The type of extra detail provided in the value.
    */
@@ -405,16 +401,16 @@ export class AuditEventEntityDetail extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:fhir.FhirString fhir: AuditEvent.entity.detail.type:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.FhirString fhir: AuditEvent.entity.detail.type:string', });
     }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['value']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property value: fhir: AuditEvent.entity.detail.value[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value: fhir: AuditEvent.entity.detail.value[x]:', });
     }
-    return outcome;
+    return issues;
   }
 }
 /**
@@ -466,7 +462,7 @@ export class AuditEventEntity extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'AuditEventEntity';
+  public static override readonly _fts_dataType:string = 'AuditEventEntity';
   /**
    * Identifies a specific instance of the entity. The reference should be version specific.
    */
@@ -541,18 +537,18 @@ export class AuditEventEntity extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["what"]) { outcome.issue!.push(...this.what.doModelValidation().issue!); }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["role"]) { outcome.issue!.push(...this.role.doModelValidation().issue!); }
-    if (this["lifecycle"]) { outcome.issue!.push(...this.lifecycle.doModelValidation().issue!); }
-    if (this["securityLabel"]) { this.securityLabel.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["query"]) { outcome.issue!.push(...this.query.doModelValidation().issue!); }
-    if (this["detail"]) { this.detail.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["what"]) { issues.push(...this.what.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["role"]) { issues.push(...this.role.doModelValidation()); }
+    if (this["lifecycle"]) { issues.push(...this.lifecycle.doModelValidation()); }
+    if (this["securityLabel"]) { this.securityLabel.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["query"]) { issues.push(...this.query.doModelValidation()); }
+    if (this["detail"]) { this.detail.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -617,11 +613,11 @@ export class AuditEvent extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'AuditEvent';
+  public static override readonly _fts_dataType:string = 'AuditEvent';
   /**
    * Resource Type Name
    */
-  public resourceType: "AuditEvent";
+  public override resourceType: "AuditEvent";
   /**
    * Identifier for a family of the event.  For example, a menu item, program, rule, policy, function code, application name or URL. It identifies the performed function.
    */
@@ -725,38 +721,38 @@ export class AuditEvent extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"AuditEvent" fhir: AuditEvent.resourceType:"AuditEvent"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"AuditEvent" fhir: AuditEvent.resourceType:"AuditEvent"', });
     }
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:fhir.Coding fhir: AuditEvent.type:Coding', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.Coding fhir: AuditEvent.type:Coding', });
     }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["subtype"]) { this.subtype.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["action"]) { outcome.issue!.push(...this.action.doModelValidation().issue!); }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["subtype"]) { this.subtype.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["action"]) { issues.push(...this.action.doModelValidation()); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
     if (!this['recorded']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property recorded:fhir.FhirInstant fhir: AuditEvent.recorded:instant', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property recorded:fhir.FhirInstant fhir: AuditEvent.recorded:instant', });
     }
-    if (this["recorded"]) { outcome.issue!.push(...this.recorded.doModelValidation().issue!); }
-    if (this["outcome"]) { outcome.issue!.push(...this.outcome.doModelValidation().issue!); }
-    if (this["outcomeDesc"]) { outcome.issue!.push(...this.outcomeDesc.doModelValidation().issue!); }
-    if (this["purposeOfEvent"]) { this.purposeOfEvent.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["recorded"]) { issues.push(...this.recorded.doModelValidation()); }
+    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation()); }
+    if (this["outcomeDesc"]) { issues.push(...this.outcomeDesc.doModelValidation()); }
+    if (this["purposeOfEvent"]) { this.purposeOfEvent.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['agent']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property agent:fhir.AuditEventAgent[] fhir: AuditEvent.agent:agent', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property agent:fhir.AuditEventAgent[] fhir: AuditEvent.agent:agent', });
     } else if (!Array.isArray(this.agent)) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.StructuralIssue,  diagnostics: 'Found scalar in array property agent:fhir.AuditEventAgent[] fhir: AuditEvent.agent:agent', }));
+      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property agent:fhir.AuditEventAgent[] fhir: AuditEvent.agent:agent', });
     } else if (this.agent.length === 0) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property agent:fhir.AuditEventAgent[] fhir: AuditEvent.agent:agent', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property agent:fhir.AuditEventAgent[] fhir: AuditEvent.agent:agent', });
     }
-    if (this["agent"]) { this.agent.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["agent"]) { this.agent.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['source']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property source:fhir.AuditEventSource fhir: AuditEvent.source:source', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property source:fhir.AuditEventSource fhir: AuditEvent.source:source', });
     }
-    if (this["source"]) { outcome.issue!.push(...this.source.doModelValidation().issue!); }
-    if (this["entity"]) { this.entity.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["source"]) { issues.push(...this.source.doModelValidation()); }
+    if (this["entity"]) { this.entity.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

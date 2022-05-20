@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the SubstanceNucleicAcidSubunitLinkage type.
  */
@@ -38,7 +34,7 @@ export class SubstanceNucleicAcidSubunitLinkage extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceNucleicAcidSubunitLinkage';
+  public static override readonly _fts_dataType:string = 'SubstanceNucleicAcidSubunitLinkage';
   /**
    * The entity that links the sugar residues together should also be captured for nearly all naturally occurring nucleic acid the linkage is a phosphate group. For many synthetic oligonucleotides phosphorothioate linkages are often seen. Linkage connectivity is assumed to be 3’-5’. If the linkage is either 3’-3’ or 5’-5’ this should be specified.
    */
@@ -68,13 +64,13 @@ export class SubstanceNucleicAcidSubunitLinkage extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["connectivity"]) { outcome.issue!.push(...this.connectivity.doModelValidation().issue!); }
-    if (this["identifier"]) { outcome.issue!.push(...this.identifier.doModelValidation().issue!); }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["residueSite"]) { outcome.issue!.push(...this.residueSite.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["connectivity"]) { issues.push(...this.connectivity.doModelValidation()); }
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["residueSite"]) { issues.push(...this.residueSite.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -102,7 +98,7 @@ export class SubstanceNucleicAcidSubunitSugar extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceNucleicAcidSubunitSugar';
+  public static override readonly _fts_dataType:string = 'SubstanceNucleicAcidSubunitSugar';
   /**
    * The Substance ID of the sugar or sugar-like component that make up the nucleotide.
    */
@@ -127,12 +123,12 @@ export class SubstanceNucleicAcidSubunitSugar extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["identifier"]) { outcome.issue!.push(...this.identifier.doModelValidation().issue!); }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["residueSite"]) { outcome.issue!.push(...this.residueSite.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["residueSite"]) { issues.push(...this.residueSite.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -180,7 +176,7 @@ export class SubstanceNucleicAcidSubunit extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceNucleicAcidSubunit';
+  public static override readonly _fts_dataType:string = 'SubstanceNucleicAcidSubunit';
   /**
    * Index of linear sequences of nucleic acids in order of decreasing length. Sequences of the same length will be ordered by molecular weight. Subunits that have identical sequences will be repeated and have sequential subscripts.
    */
@@ -232,17 +228,17 @@ export class SubstanceNucleicAcidSubunit extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["subunit"]) { outcome.issue!.push(...this.subunit.doModelValidation().issue!); }
-    if (this["sequence"]) { outcome.issue!.push(...this.sequence.doModelValidation().issue!); }
-    if (this["length"]) { outcome.issue!.push(...this.length.doModelValidation().issue!); }
-    if (this["sequenceAttachment"]) { outcome.issue!.push(...this.sequenceAttachment.doModelValidation().issue!); }
-    if (this["fivePrime"]) { outcome.issue!.push(...this.fivePrime.doModelValidation().issue!); }
-    if (this["threePrime"]) { outcome.issue!.push(...this.threePrime.doModelValidation().issue!); }
-    if (this["linkage"]) { this.linkage.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["sugar"]) { this.sugar.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["subunit"]) { issues.push(...this.subunit.doModelValidation()); }
+    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
+    if (this["length"]) { issues.push(...this.length.doModelValidation()); }
+    if (this["sequenceAttachment"]) { issues.push(...this.sequenceAttachment.doModelValidation()); }
+    if (this["fivePrime"]) { issues.push(...this.fivePrime.doModelValidation()); }
+    if (this["threePrime"]) { issues.push(...this.threePrime.doModelValidation()); }
+    if (this["linkage"]) { this.linkage.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["sugar"]) { this.sugar.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -282,11 +278,11 @@ export class SubstanceNucleicAcid extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceNucleicAcid';
+  public static override readonly _fts_dataType:string = 'SubstanceNucleicAcid';
   /**
    * Resource Type Name
    */
-  public resourceType: "SubstanceNucleicAcid";
+  public override resourceType: "SubstanceNucleicAcid";
   /**
    * The type of the sequence shall be specified based on a controlled vocabulary.
    */
@@ -323,16 +319,16 @@ export class SubstanceNucleicAcid extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"SubstanceNucleicAcid" fhir: SubstanceNucleicAcid.resourceType:"SubstanceNucleicAcid"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"SubstanceNucleicAcid" fhir: SubstanceNucleicAcid.resourceType:"SubstanceNucleicAcid"', });
     }
-    if (this["sequenceType"]) { outcome.issue!.push(...this.sequenceType.doModelValidation().issue!); }
-    if (this["numberOfSubunits"]) { outcome.issue!.push(...this.numberOfSubunits.doModelValidation().issue!); }
-    if (this["areaOfHybridisation"]) { outcome.issue!.push(...this.areaOfHybridisation.doModelValidation().issue!); }
-    if (this["oligoNucleotideType"]) { outcome.issue!.push(...this.oligoNucleotideType.doModelValidation().issue!); }
-    if (this["subunit"]) { this.subunit.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["sequenceType"]) { issues.push(...this.sequenceType.doModelValidation()); }
+    if (this["numberOfSubunits"]) { issues.push(...this.numberOfSubunits.doModelValidation()); }
+    if (this["areaOfHybridisation"]) { issues.push(...this.areaOfHybridisation.doModelValidation()); }
+    if (this["oligoNucleotideType"]) { issues.push(...this.oligoNucleotideType.doModelValidation()); }
+    if (this["subunit"]) { this.subunit.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

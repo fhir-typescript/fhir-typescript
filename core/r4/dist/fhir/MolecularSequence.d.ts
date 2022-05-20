@@ -109,7 +109,7 @@ export declare class MolecularSequenceReferenceSeq extends fhir.BackboneElement 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MolecularSequenceVariant type.
@@ -179,7 +179,7 @@ export declare class MolecularSequenceVariant extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MolecularSequenceQualityRoc type.
@@ -257,7 +257,7 @@ export declare class MolecularSequenceQualityRoc extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MolecularSequenceQuality type.
@@ -403,7 +403,7 @@ export declare class MolecularSequenceQuality extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MolecularSequenceRepository type.
@@ -477,7 +477,7 @@ export declare class MolecularSequenceRepository extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MolecularSequenceStructureVariantOuter type.
@@ -515,7 +515,7 @@ export declare class MolecularSequenceStructureVariantOuter extends fhir.Backbon
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MolecularSequenceStructureVariantInner type.
@@ -553,7 +553,7 @@ export declare class MolecularSequenceStructureVariantInner extends fhir.Backbon
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MolecularSequenceStructureVariant type.
@@ -615,7 +615,7 @@ export declare class MolecularSequenceStructureVariant extends fhir.BackboneElem
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MolecularSequence type.
@@ -777,6 +777,6 @@ export declare class MolecularSequence extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=MolecularSequence.d.ts.map

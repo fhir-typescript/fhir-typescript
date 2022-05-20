@@ -1,17 +1,10 @@
-/*! @fhir-typescript/r4-core v0.0.11-beta.2 2022-05-18 */
-'use strict';
-import { __extends } from '../_virtual/_tslib.js';
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
-import { OperationOutcomeIssue } from './OperationOutcome.js';
-import { FhirString } from './FhirString.js';
-
 // Minimum TypeScript Version: 3.7
+// FHIR Primitive: base64Binary
+import * as fhir from '../fhir.js';
 /**
  * A stream of bytes, base64 encoded
  */
-var FhirBase64Binary = /** @class */ (function (_super) {
-    __extends(FhirBase64Binary, _super);
+export class FhirBase64Binary extends fhir.FhirPrimitive {
     /**
        * Create a FhirBase64Binary
        * @param value A stream of bytes, base64 encoded
@@ -19,33 +12,28 @@ var FhirBase64Binary = /** @class */ (function (_super) {
        * @param extension Additional content defined by implementations
        * @param options Options to pass to extension constructors
     */
-    function FhirBase64Binary(source, options) {
-        if (source === void 0) { source = {}; }
-        if (options === void 0) { options = {}; }
-        return _super.call(this, source, options) || this;
+    constructor(source = {}, options = {}) {
+        super(source, options);
     }
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    FhirBase64Binary.prototype.doModelValidation = function () {
-        var outcome = _super.prototype.doModelValidation.call(this);
+    doModelValidation() {
+        let issues = super.doModelValidation();
         if ((this.value) && (!FhirBase64Binary._fts_regex.test(this.value))) {
-            outcome.issue.push(new OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.InvalidContent, diagnostics: "Invalid value in primitive type base64Binary", }));
+            issues.push({ severity: 'error', code: 'invalid', diagnostics: 'Invalid value in primitive type base64Binary', });
         }
-        return outcome;
-    };
-    /**
-     * Mapping of this datatype to a FHIR equivalent
-     */
-    FhirBase64Binary._fts_dataType = 'Base64Binary';
-    /**
-     * Mapping of this datatype to a JSON equivalent
-     */
-    FhirBase64Binary._fts_jsonType = 'string';
-    // published regex: (\s*([0-9a-zA-Z\+/=]){4}\s*)+
-    FhirBase64Binary._fts_regex = /^(\s*([0-9a-zA-Z\+/=]){4}\s*)+$/;
-    return FhirBase64Binary;
-}(FhirString));
-
-export { FhirBase64Binary };
-//# sourceMappingURL=FhirBase64Binary.js.map
+        return issues;
+    }
+}
+/**
+ * Mapping of this datatype to a FHIR equivalent
+ */
+FhirBase64Binary._fts_dataType = 'Base64Binary';
+/**
+ * Mapping of this datatype to a JSON equivalent
+ */
+FhirBase64Binary._fts_jsonType = 'string';
+// published regex: (\s*([0-9a-zA-Z\+/=]){4}\s*)+
+FhirBase64Binary._fts_regex = /^(\s*([0-9a-zA-Z\+/=]){4}\s*)+$/;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRmhpckJhc2U2NEJpbmFyeS5qcyIsInNvdXJjZVJvb3QiOiIuL3NyYy8iLCJzb3VyY2VzIjpbImZoaXIvRmhpckJhc2U2NEJpbmFyeS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxrQ0FBa0M7QUFDbEMsK0JBQStCO0FBRS9CLE9BQU8sS0FBSyxJQUFJLE1BQU0sWUFBWSxDQUFDO0FBWW5DOztHQUVHO0FBQ0gsTUFBTSxPQUFPLGdCQUFpQixTQUFRLElBQUksQ0FBQyxhQUFhO0lBZXREOzs7Ozs7TUFNRTtJQUNGLFlBQVksU0FBdUMsRUFBRSxFQUFFLFVBQXNDLEVBQUc7UUFDOUYsS0FBSyxDQUFDLE1BQU0sRUFBRSxPQUFPLENBQUMsQ0FBQztJQUN6QixDQUFDO0lBQ0Q7O09BRUc7SUFDYSxpQkFBaUI7UUFDL0IsSUFBSSxNQUFNLEdBQW1CLEtBQUssQ0FBQyxpQkFBaUIsRUFBRSxDQUFDO1FBQ3ZELElBQUksQ0FBQyxJQUFJLENBQUMsS0FBSyxDQUFDLElBQUksQ0FBQyxDQUFDLGdCQUFnQixDQUFDLFVBQVUsQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLEtBQUssQ0FBQyxDQUFDLEVBQUU7WUFDbkUsTUFBTSxDQUFDLElBQUksQ0FBQyxFQUFFLFFBQVEsRUFBRSxPQUFPLEVBQUUsSUFBSSxFQUFFLFNBQVMsRUFBRyxXQUFXLEVBQUUsOENBQThDLEdBQUcsQ0FBQyxDQUFDO1NBQ3BIO1FBQ0QsT0FBTyxNQUFNLENBQUM7SUFDaEIsQ0FBQzs7QUFqQ0Q7O0dBRUc7QUFDNkIsOEJBQWEsR0FBVSxjQUFjLENBQUM7QUFDdEU7O0dBRUc7QUFDNkIsOEJBQWEsR0FBVSxRQUFRLENBQUM7QUFDaEUsaURBQWlEO0FBQ2pCLDJCQUFVLEdBQVUsaUNBQWlDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBNaW5pbXVtIFR5cGVTY3JpcHQgVmVyc2lvbjogMy43XHJcbi8vIEZISVIgUHJpbWl0aXZlOiBiYXNlNjRCaW5hcnlcclxuXHJcbmltcG9ydCAqIGFzIGZoaXIgZnJvbSAnLi4vZmhpci5qcyc7XHJcblxyXG4vKipcclxuICogQSBzdHJlYW0gb2YgYnl0ZXMsIGJhc2U2NCBlbmNvZGVkXHJcbiAqL1xyXG5leHBvcnQgaW50ZXJmYWNlIEZoaXJCYXNlNjRCaW5hcnlBcmdzIGV4dGVuZHMgZmhpci5GaGlyUHJpbWl0aXZlQXJncyB7XHJcbiAgLyoqXHJcbiAgICogQSBzdHJlYW0gb2YgYnl0ZXMsIGJhc2U2NCBlbmNvZGVkXHJcbiAgICovXHJcbiAgdmFsdWU/OkZoaXJCYXNlNjRCaW5hcnl8c3RyaW5nfHVuZGVmaW5lZDtcclxufVxyXG5cclxuLyoqXHJcbiAqIEEgc3RyZWFtIG9mIGJ5dGVzLCBiYXNlNjQgZW5jb2RlZFxyXG4gKi9cclxuZXhwb3J0IGNsYXNzIEZoaXJCYXNlNjRCaW5hcnkgZXh0ZW5kcyBmaGlyLkZoaXJQcmltaXRpdmUge1xyXG4gIC8qKlxyXG4gICAqIE1hcHBpbmcgb2YgdGhpcyBkYXRhdHlwZSB0byBhIEZISVIgZXF1aXZhbGVudFxyXG4gICAqL1xyXG4gIHB1YmxpYyBzdGF0aWMgb3ZlcnJpZGUgcmVhZG9ubHkgX2Z0c19kYXRhVHlwZTpzdHJpbmcgPSAnQmFzZTY0QmluYXJ5JztcclxuICAvKipcclxuICAgKiBNYXBwaW5nIG9mIHRoaXMgZGF0YXR5cGUgdG8gYSBKU09OIGVxdWl2YWxlbnRcclxuICAgKi9cclxuICBwdWJsaWMgc3RhdGljIG92ZXJyaWRlIHJlYWRvbmx5IF9mdHNfanNvblR5cGU6c3RyaW5nID0gJ3N0cmluZyc7XHJcbiAgLy8gcHVibGlzaGVkIHJlZ2V4OiAoXFxzKihbMC05YS16QS1aXFwrLz1dKXs0fVxccyopK1xyXG4gIHB1YmxpYyBzdGF0aWMgb3ZlcnJpZGUgcmVhZG9ubHkgX2Z0c19yZWdleDpSZWdFeHAgPSAvXihcXHMqKFswLTlhLXpBLVpcXCsvPV0pezR9XFxzKikrJC9cclxuICAvKipcclxuICAgKiBBIGJhc2U2NEJpbmFyeSB2YWx1ZSwgcmVwcmVzZW50ZWQgYXMgYSBKUyBzdHJpbmdcclxuICAgKi9cclxuICBkZWNsYXJlIHZhbHVlPzpzdHJpbmd8bnVsbHx1bmRlZmluZWQ7XHJcbiAgLyoqXHJcbiAgICAgKiBDcmVhdGUgYSBGaGlyQmFzZTY0QmluYXJ5XHJcbiAgICAgKiBAcGFyYW0gdmFsdWUgQSBzdHJlYW0gb2YgYnl0ZXMsIGJhc2U2NCBlbmNvZGVkXHJcbiAgICAgKiBAcGFyYW0gaWQgVW5pcXVlIGlkIGZvciBpbnRlci1lbGVtZW50IHJlZmVyZW5jaW5nICh1bmNvbW1vbiBvbiBwcmltaXRpdmVzKVxyXG4gICAgICogQHBhcmFtIGV4dGVuc2lvbiBBZGRpdGlvbmFsIGNvbnRlbnQgZGVmaW5lZCBieSBpbXBsZW1lbnRhdGlvbnNcclxuICAgICAqIEBwYXJhbSBvcHRpb25zIE9wdGlvbnMgdG8gcGFzcyB0byBleHRlbnNpb24gY29uc3RydWN0b3JzXHJcbiAgKi9cclxuICBjb25zdHJ1Y3Rvcihzb3VyY2U6UGFydGlhbDxGaGlyQmFzZTY0QmluYXJ5QXJncz4gPSB7fSwgb3B0aW9uczpmaGlyLkZoaXJDb25zdHJ1Y3Rvck9wdGlvbnMgPSB7IH0gKSB7XHJcbiAgICBzdXBlcihzb3VyY2UsIG9wdGlvbnMpO1xyXG4gIH1cclxuICAvKipcclxuICAgKiBGdW5jdGlvbiB0byBwZXJmb3JtIGJhc2ljIG1vZGVsIHZhbGlkYXRpb24gKGUuZy4sIGNoZWNrIGlmIHJlcXVpcmVkIGVsZW1lbnRzIGFyZSBwcmVzZW50KS5cclxuICAgKi9cclxuICBwdWJsaWMgb3ZlcnJpZGUgZG9Nb2RlbFZhbGlkYXRpb24oKTpmaGlyLkZ0c0lzc3VlW10ge1xyXG4gICAgbGV0IGlzc3VlczpmaGlyLkZ0c0lzc3VlW10gPSBzdXBlci5kb01vZGVsVmFsaWRhdGlvbigpO1xyXG4gICAgaWYgKCh0aGlzLnZhbHVlKSAmJiAoIUZoaXJCYXNlNjRCaW5hcnkuX2Z0c19yZWdleC50ZXN0KHRoaXMudmFsdWUpKSkge1xyXG4gICAgICBpc3N1ZXMucHVzaCh7IHNldmVyaXR5OiAnZXJyb3InLCBjb2RlOiAnaW52YWxpZCcsICBkaWFnbm9zdGljczogJ0ludmFsaWQgdmFsdWUgaW4gcHJpbWl0aXZlIHR5cGUgYmFzZTY0QmluYXJ5JywgfSk7XHJcbiAgICB9XHJcbiAgICByZXR1cm4gaXNzdWVzO1xyXG4gIH1cclxufVxyXG4iXX0=

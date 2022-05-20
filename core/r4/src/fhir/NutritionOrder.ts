@@ -41,10 +41,6 @@ import { EncounterDietCodes,  EncounterDietCodeType } from '../fhirValueSets/Enc
 import { FoodTypeCodings, FoodTypeCodingType,} from '../fhirValueSets/FoodTypeCodings.js';
 // @ts-ignore
 import { FoodTypeCodes,  FoodTypeCodeType } from '../fhirValueSets/FoodTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the NutritionOrderOralDietNutrient type.
  */
@@ -66,7 +62,7 @@ export class NutritionOrderOralDietNutrient extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'NutritionOrderOralDietNutrient';
+  public static override readonly _fts_dataType:string = 'NutritionOrderOralDietNutrient';
   /**
    * The nutrient that is being modified such as carbohydrate or sodium.
    */
@@ -86,11 +82,11 @@ export class NutritionOrderOralDietNutrient extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["modifier"]) { outcome.issue!.push(...this.modifier.doModelValidation().issue!); }
-    if (this["amount"]) { outcome.issue!.push(...this.amount.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["modifier"]) { issues.push(...this.modifier.doModelValidation()); }
+    if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -114,7 +110,7 @@ export class NutritionOrderOralDietTexture extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'NutritionOrderOralDietTexture';
+  public static override readonly _fts_dataType:string = 'NutritionOrderOralDietTexture';
   /**
    * Coupled with the foodType (Meat).
    */
@@ -134,11 +130,11 @@ export class NutritionOrderOralDietTexture extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["modifier"]) { outcome.issue!.push(...this.modifier.doModelValidation().issue!); }
-    if (this["foodType"]) { outcome.issue!.push(...this.foodType.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["modifier"]) { issues.push(...this.modifier.doModelValidation()); }
+    if (this["foodType"]) { issues.push(...this.foodType.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -178,7 +174,7 @@ export class NutritionOrderOralDiet extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'NutritionOrderOralDiet';
+  public static override readonly _fts_dataType:string = 'NutritionOrderOralDiet';
   /**
    * The kind of diet or dietary restriction such as fiber restricted diet or diabetic diet.
    */
@@ -223,15 +219,15 @@ export class NutritionOrderOralDiet extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["type"]) { this.type.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["schedule"]) { this.schedule.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["nutrient"]) { this.nutrient.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["texture"]) { this.texture.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["fluidConsistencyType"]) { this.fluidConsistencyType.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["instruction"]) { outcome.issue!.push(...this.instruction.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["schedule"]) { this.schedule.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["nutrient"]) { this.nutrient.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["texture"]) { this.texture.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["fluidConsistencyType"]) { this.fluidConsistencyType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["instruction"]) { issues.push(...this.instruction.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -267,7 +263,7 @@ export class NutritionOrderSupplement extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'NutritionOrderSupplement';
+  public static override readonly _fts_dataType:string = 'NutritionOrderSupplement';
   /**
    * The kind of nutritional supplement product required such as a high protein or pediatric clear liquid supplement.
    */
@@ -303,14 +299,14 @@ export class NutritionOrderSupplement extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["productName"]) { outcome.issue!.push(...this.productName.doModelValidation().issue!); }
-    if (this["schedule"]) { this.schedule.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["quantity"]) { outcome.issue!.push(...this.quantity.doModelValidation().issue!); }
-    if (this["instruction"]) { outcome.issue!.push(...this.instruction.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["productName"]) { issues.push(...this.productName.doModelValidation()); }
+    if (this["schedule"]) { this.schedule.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
+    if (this["instruction"]) { issues.push(...this.instruction.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -346,7 +342,7 @@ export class NutritionOrderEnteralFormulaAdministration extends fhir.BackboneEle
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'NutritionOrderEnteralFormulaAdministration';
+  public static override readonly _fts_dataType:string = 'NutritionOrderEnteralFormulaAdministration';
   /**
    * The time period and frequency at which the enteral formula should be delivered to the patient.
    */
@@ -377,11 +373,11 @@ export class NutritionOrderEnteralFormulaAdministration extends fhir.BackboneEle
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["schedule"]) { outcome.issue!.push(...this.schedule.doModelValidation().issue!); }
-    if (this["quantity"]) { outcome.issue!.push(...this.quantity.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["schedule"]) { issues.push(...this.schedule.doModelValidation()); }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -433,7 +429,7 @@ export class NutritionOrderEnteralFormula extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'NutritionOrderEnteralFormula';
+  public static override readonly _fts_dataType:string = 'NutritionOrderEnteralFormula';
   /**
    * The type of enteral or infant formula such as an adult standard formula with fiber or a soy-based infant formula.
    */
@@ -495,18 +491,18 @@ export class NutritionOrderEnteralFormula extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["baseFormulaType"]) { outcome.issue!.push(...this.baseFormulaType.doModelValidation().issue!); }
-    if (this["baseFormulaProductName"]) { outcome.issue!.push(...this.baseFormulaProductName.doModelValidation().issue!); }
-    if (this["additiveType"]) { outcome.issue!.push(...this.additiveType.doModelValidation().issue!); }
-    if (this["additiveProductName"]) { outcome.issue!.push(...this.additiveProductName.doModelValidation().issue!); }
-    if (this["caloricDensity"]) { outcome.issue!.push(...this.caloricDensity.doModelValidation().issue!); }
-    if (this["routeofAdministration"]) { outcome.issue!.push(...this.routeofAdministration.doModelValidation().issue!); }
-    if (this["administration"]) { this.administration.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["maxVolumeToDeliver"]) { outcome.issue!.push(...this.maxVolumeToDeliver.doModelValidation().issue!); }
-    if (this["administrationInstruction"]) { outcome.issue!.push(...this.administrationInstruction.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["baseFormulaType"]) { issues.push(...this.baseFormulaType.doModelValidation()); }
+    if (this["baseFormulaProductName"]) { issues.push(...this.baseFormulaProductName.doModelValidation()); }
+    if (this["additiveType"]) { issues.push(...this.additiveType.doModelValidation()); }
+    if (this["additiveProductName"]) { issues.push(...this.additiveProductName.doModelValidation()); }
+    if (this["caloricDensity"]) { issues.push(...this.caloricDensity.doModelValidation()); }
+    if (this["routeofAdministration"]) { issues.push(...this.routeofAdministration.doModelValidation()); }
+    if (this["administration"]) { this.administration.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["maxVolumeToDeliver"]) { issues.push(...this.maxVolumeToDeliver.doModelValidation()); }
+    if (this["administrationInstruction"]) { issues.push(...this.administrationInstruction.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -594,11 +590,11 @@ export class NutritionOrder extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'NutritionOrder';
+  public static override readonly _fts_dataType:string = 'NutritionOrder';
   /**
    * Resource Type Name
    */
-  public resourceType: "NutritionOrder";
+  public override resourceType: "NutritionOrder";
   /**
    * The Identifier.type element can be to indicate filler vs. placer if needed.  This is explained in further detail [here](servicerequest.html#notes).
    */
@@ -719,38 +715,38 @@ export class NutritionOrder extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"NutritionOrder" fhir: NutritionOrder.resourceType:"NutritionOrder"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"NutritionOrder" fhir: NutritionOrder.resourceType:"NutritionOrder"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["instantiates"]) { this.instantiates.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["instantiates"]) { this.instantiates.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:RequestStatusCodeType fhir: NutritionOrder.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:RequestStatusCodeType fhir: NutritionOrder.status:code', });
     }
     if (!this['intent']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property intent:RequestIntentCodeType fhir: NutritionOrder.intent:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property intent:RequestIntentCodeType fhir: NutritionOrder.intent:code', });
     }
     if (!this['patient']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property patient:fhir.Reference fhir: NutritionOrder.patient:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: NutritionOrder.patient:Reference', });
     }
-    if (this["patient"]) { outcome.issue!.push(...this.patient.doModelValidation().issue!); }
-    if (this["encounter"]) { outcome.issue!.push(...this.encounter.doModelValidation().issue!); }
+    if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
     if (!this['dateTime']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property dateTime:fhir.FhirDateTime fhir: NutritionOrder.dateTime:dateTime', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property dateTime:fhir.FhirDateTime fhir: NutritionOrder.dateTime:dateTime', });
     }
-    if (this["dateTime"]) { outcome.issue!.push(...this.dateTime.doModelValidation().issue!); }
-    if (this["orderer"]) { outcome.issue!.push(...this.orderer.doModelValidation().issue!); }
-    if (this["allergyIntolerance"]) { this.allergyIntolerance.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["foodPreferenceModifier"]) { this.foodPreferenceModifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["excludeFoodModifier"]) { this.excludeFoodModifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["oralDiet"]) { outcome.issue!.push(...this.oralDiet.doModelValidation().issue!); }
-    if (this["supplement"]) { this.supplement.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["enteralFormula"]) { outcome.issue!.push(...this.enteralFormula.doModelValidation().issue!); }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["dateTime"]) { issues.push(...this.dateTime.doModelValidation()); }
+    if (this["orderer"]) { issues.push(...this.orderer.doModelValidation()); }
+    if (this["allergyIntolerance"]) { this.allergyIntolerance.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["foodPreferenceModifier"]) { this.foodPreferenceModifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["excludeFoodModifier"]) { this.excludeFoodModifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["oralDiet"]) { issues.push(...this.oralDiet.doModelValidation()); }
+    if (this["supplement"]) { this.supplement.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["enteralFormula"]) { issues.push(...this.enteralFormula.doModelValidation()); }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

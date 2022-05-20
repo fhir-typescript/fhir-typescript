@@ -21,10 +21,6 @@ import { DefinitionTopicCodes,  DefinitionTopicCodeType } from '../fhirValueSets
 import { VariableTypeCodings, VariableTypeCodingType,} from '../fhirValueSets/VariableTypeCodings.js';
 // @ts-ignore
 import { VariableTypeCodes,  VariableTypeCodeType } from '../fhirValueSets/VariableTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the EvidenceVariableCharacteristic type.
  */
@@ -106,7 +102,7 @@ export class EvidenceVariableCharacteristic extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'EvidenceVariableCharacteristic';
+  public static override readonly _fts_dataType:string = 'EvidenceVariableCharacteristic';
   /**
    * A short, natural language description of the characteristic that could be used to communicate the criteria to an end-user.
    */
@@ -177,16 +173,16 @@ export class EvidenceVariableCharacteristic extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (!this['definition']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property definition: fhir: EvidenceVariable.characteristic.definition[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property definition: fhir: EvidenceVariable.characteristic.definition[x]:', });
     }
-    if (this["usageContext"]) { this.usageContext.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["exclude"]) { outcome.issue!.push(...this.exclude.doModelValidation().issue!); }
-    if (this["timeFromStart"]) { outcome.issue!.push(...this.timeFromStart.doModelValidation().issue!); }
-    return outcome;
+    if (this["usageContext"]) { this.usageContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["exclude"]) { issues.push(...this.exclude.doModelValidation()); }
+    if (this["timeFromStart"]) { issues.push(...this.timeFromStart.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -316,11 +312,11 @@ export class EvidenceVariable extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'EvidenceVariable';
+  public static override readonly _fts_dataType:string = 'EvidenceVariable';
   /**
    * Resource Type Name
    */
-  public resourceType: "EvidenceVariable";
+  public override resourceType: "EvidenceVariable";
   /**
    * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
    * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions). 
@@ -493,46 +489,46 @@ export class EvidenceVariable extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"EvidenceVariable" fhir: EvidenceVariable.resourceType:"EvidenceVariable"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"EvidenceVariable" fhir: EvidenceVariable.resourceType:"EvidenceVariable"', });
     }
-    if (this["url"]) { outcome.issue!.push(...this.url.doModelValidation().issue!); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["version"]) { outcome.issue!.push(...this.version.doModelValidation().issue!); }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["title"]) { outcome.issue!.push(...this.title.doModelValidation().issue!); }
-    if (this["shortTitle"]) { outcome.issue!.push(...this.shortTitle.doModelValidation().issue!); }
-    if (this["subtitle"]) { outcome.issue!.push(...this.subtitle.doModelValidation().issue!); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
+    if (this["shortTitle"]) { issues.push(...this.shortTitle.doModelValidation()); }
+    if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation()); }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: EvidenceVariable.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: EvidenceVariable.status:code', });
     }
-    if (this["date"]) { outcome.issue!.push(...this.date.doModelValidation().issue!); }
-    if (this["publisher"]) { outcome.issue!.push(...this.publisher.doModelValidation().issue!); }
-    if (this["contact"]) { this.contact.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["useContext"]) { this.useContext.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["copyright"]) { outcome.issue!.push(...this.copyright.doModelValidation().issue!); }
-    if (this["approvalDate"]) { outcome.issue!.push(...this.approvalDate.doModelValidation().issue!); }
-    if (this["lastReviewDate"]) { outcome.issue!.push(...this.lastReviewDate.doModelValidation().issue!); }
-    if (this["effectivePeriod"]) { outcome.issue!.push(...this.effectivePeriod.doModelValidation().issue!); }
-    if (this["topic"]) { this.topic.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["author"]) { this.author.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["editor"]) { this.editor.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["reviewer"]) { this.reviewer.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["endorser"]) { this.endorser.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
+    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
+    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation()); }
+    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation()); }
+    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation()); }
+    if (this["topic"]) { this.topic.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["author"]) { this.author.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["editor"]) { this.editor.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["reviewer"]) { this.reviewer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["endorser"]) { this.endorser.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['characteristic']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property characteristic:fhir.EvidenceVariableCharacteristic[] fhir: EvidenceVariable.characteristic:characteristic', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property characteristic:fhir.EvidenceVariableCharacteristic[] fhir: EvidenceVariable.characteristic:characteristic', });
     } else if (!Array.isArray(this.characteristic)) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.StructuralIssue,  diagnostics: 'Found scalar in array property characteristic:fhir.EvidenceVariableCharacteristic[] fhir: EvidenceVariable.characteristic:characteristic', }));
+      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property characteristic:fhir.EvidenceVariableCharacteristic[] fhir: EvidenceVariable.characteristic:characteristic', });
     } else if (this.characteristic.length === 0) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property characteristic:fhir.EvidenceVariableCharacteristic[] fhir: EvidenceVariable.characteristic:characteristic', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property characteristic:fhir.EvidenceVariableCharacteristic[] fhir: EvidenceVariable.characteristic:characteristic', });
     }
-    if (this["characteristic"]) { this.characteristic.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["characteristic"]) { this.characteristic.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

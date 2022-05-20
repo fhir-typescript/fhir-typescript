@@ -29,10 +29,6 @@ import { ConditionCodeCodes,  ConditionCodeCodeType } from '../fhirValueSets/Con
 import { ResearchStudyReasonStoppedCodings, ResearchStudyReasonStoppedCodingType,} from '../fhirValueSets/ResearchStudyReasonStoppedCodings.js';
 // @ts-ignore
 import { ResearchStudyReasonStoppedCodes,  ResearchStudyReasonStoppedCodeType } from '../fhirValueSets/ResearchStudyReasonStoppedCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the ResearchStudyArm type.
  */
@@ -58,7 +54,7 @@ export class ResearchStudyArm extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ResearchStudyArm';
+  public static override readonly _fts_dataType:string = 'ResearchStudyArm';
   /**
    * Unique, human-readable label for this arm of the study.
    */
@@ -84,15 +80,15 @@ export class ResearchStudyArm extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property name:fhir.FhirString fhir: ResearchStudy.arm.name:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: ResearchStudy.arm.name:string', });
     }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    return outcome;
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -116,7 +112,7 @@ export class ResearchStudyObjective extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ResearchStudyObjective';
+  public static override readonly _fts_dataType:string = 'ResearchStudyObjective';
   /**
    * Unique, human-readable label for this objective of the study.
    */
@@ -142,11 +138,11 @@ export class ResearchStudyObjective extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -262,11 +258,11 @@ export class ResearchStudy extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ResearchStudy';
+  public static override readonly _fts_dataType:string = 'ResearchStudy';
   /**
    * Resource Type Name
    */
-  public resourceType: "ResearchStudy";
+  public override resourceType: "ResearchStudy";
   /**
    * Identifiers assigned to this research study by the sponsor or other systems.
    */
@@ -425,37 +421,37 @@ export class ResearchStudy extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"ResearchStudy" fhir: ResearchStudy.resourceType:"ResearchStudy"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ResearchStudy" fhir: ResearchStudy.resourceType:"ResearchStudy"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["title"]) { outcome.issue!.push(...this.title.doModelValidation().issue!); }
-    if (this["protocol"]) { this.protocol.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["partOf"]) { this.partOf.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
+    if (this["protocol"]) { this.protocol.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:ResearchStudyStatusCodeType fhir: ResearchStudy.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ResearchStudyStatusCodeType fhir: ResearchStudy.status:code', });
     }
-    if (this["primaryPurposeType"]) { outcome.issue!.push(...this.primaryPurposeType.doModelValidation().issue!); }
-    if (this["phase"]) { outcome.issue!.push(...this.phase.doModelValidation().issue!); }
-    if (this["category"]) { this.category.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["focus"]) { this.focus.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["condition"]) { this.condition.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["contact"]) { this.contact.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["keyword"]) { this.keyword.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["location"]) { this.location.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["enrollment"]) { this.enrollment.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    if (this["sponsor"]) { outcome.issue!.push(...this.sponsor.doModelValidation().issue!); }
-    if (this["principalInvestigator"]) { outcome.issue!.push(...this.principalInvestigator.doModelValidation().issue!); }
-    if (this["site"]) { this.site.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["reasonStopped"]) { outcome.issue!.push(...this.reasonStopped.doModelValidation().issue!); }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["arm"]) { this.arm.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["objective"]) { this.objective.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["primaryPurposeType"]) { issues.push(...this.primaryPurposeType.doModelValidation()); }
+    if (this["phase"]) { issues.push(...this.phase.doModelValidation()); }
+    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["focus"]) { this.focus.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["condition"]) { this.condition.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["keyword"]) { this.keyword.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["location"]) { this.location.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["enrollment"]) { this.enrollment.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["sponsor"]) { issues.push(...this.sponsor.doModelValidation()); }
+    if (this["principalInvestigator"]) { issues.push(...this.principalInvestigator.doModelValidation()); }
+    if (this["site"]) { this.site.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["reasonStopped"]) { issues.push(...this.reasonStopped.doModelValidation()); }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["arm"]) { this.arm.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["objective"]) { this.objective.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

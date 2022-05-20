@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the SubstanceProteinSubunit type.
  */
@@ -54,7 +50,7 @@ export class SubstanceProteinSubunit extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceProteinSubunit';
+  public static override readonly _fts_dataType:string = 'SubstanceProteinSubunit';
   /**
    * Index of primary sequences of amino acids linked through peptide bonds in order of decreasing length. Sequences of the same length will be ordered by molecular weight. Subunits that have identical sequences will be repeated and have sequential subscripts.
    */
@@ -104,17 +100,17 @@ export class SubstanceProteinSubunit extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["subunit"]) { outcome.issue!.push(...this.subunit.doModelValidation().issue!); }
-    if (this["sequence"]) { outcome.issue!.push(...this.sequence.doModelValidation().issue!); }
-    if (this["length"]) { outcome.issue!.push(...this.length.doModelValidation().issue!); }
-    if (this["sequenceAttachment"]) { outcome.issue!.push(...this.sequenceAttachment.doModelValidation().issue!); }
-    if (this["nTerminalModificationId"]) { outcome.issue!.push(...this.nTerminalModificationId.doModelValidation().issue!); }
-    if (this["nTerminalModification"]) { outcome.issue!.push(...this.nTerminalModification.doModelValidation().issue!); }
-    if (this["cTerminalModificationId"]) { outcome.issue!.push(...this.cTerminalModificationId.doModelValidation().issue!); }
-    if (this["cTerminalModification"]) { outcome.issue!.push(...this.cTerminalModification.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["subunit"]) { issues.push(...this.subunit.doModelValidation()); }
+    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
+    if (this["length"]) { issues.push(...this.length.doModelValidation()); }
+    if (this["sequenceAttachment"]) { issues.push(...this.sequenceAttachment.doModelValidation()); }
+    if (this["nTerminalModificationId"]) { issues.push(...this.nTerminalModificationId.doModelValidation()); }
+    if (this["nTerminalModification"]) { issues.push(...this.nTerminalModification.doModelValidation()); }
+    if (this["cTerminalModificationId"]) { issues.push(...this.cTerminalModificationId.doModelValidation()); }
+    if (this["cTerminalModification"]) { issues.push(...this.cTerminalModification.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -150,11 +146,11 @@ export class SubstanceProtein extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceProtein';
+  public static override readonly _fts_dataType:string = 'SubstanceProtein';
   /**
    * Resource Type Name
    */
-  public resourceType: "SubstanceProtein";
+  public override resourceType: "SubstanceProtein";
   /**
    * The SubstanceProtein descriptive elements will only be used when a complete or partial amino acid sequence is available or derivable from a nucleic acid sequence.
    */
@@ -187,15 +183,15 @@ export class SubstanceProtein extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"SubstanceProtein" fhir: SubstanceProtein.resourceType:"SubstanceProtein"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"SubstanceProtein" fhir: SubstanceProtein.resourceType:"SubstanceProtein"', });
     }
-    if (this["sequenceType"]) { outcome.issue!.push(...this.sequenceType.doModelValidation().issue!); }
-    if (this["numberOfSubunits"]) { outcome.issue!.push(...this.numberOfSubunits.doModelValidation().issue!); }
-    if (this["disulfideLinkage"]) { this.disulfideLinkage.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["subunit"]) { this.subunit.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["sequenceType"]) { issues.push(...this.sequenceType.doModelValidation()); }
+    if (this["numberOfSubunits"]) { issues.push(...this.numberOfSubunits.doModelValidation()); }
+    if (this["disulfideLinkage"]) { this.disulfideLinkage.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["subunit"]) { this.subunit.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

@@ -29,10 +29,6 @@ import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValue
 import { ResourceTypesCodings, ResourceTypesCodingType,} from '../fhirValueSets/ResourceTypesCodings.js';
 // @ts-ignore
 import { ResourceTypesCodes,  ResourceTypesCodeType } from '../fhirValueSets/ResourceTypesCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the QuestionnaireItemEnableWhen type.
  */
@@ -98,7 +94,7 @@ export class QuestionnaireItemEnableWhen extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'QuestionnaireItemEnableWhen';
+  public static override readonly _fts_dataType:string = 'QuestionnaireItemEnableWhen';
   /**
    * If multiple question occurrences are present for the same question (same linkId), then this refers to the nearest question occurrence reachable by tracing first the "ancestor" axis and then the "preceding" axis and then the "following" axis.
    */
@@ -146,19 +142,19 @@ export class QuestionnaireItemEnableWhen extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['question']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property question:fhir.FhirString fhir: Questionnaire.item.enableWhen.question:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property question:fhir.FhirString fhir: Questionnaire.item.enableWhen.question:string', });
     }
-    if (this["question"]) { outcome.issue!.push(...this.question.doModelValidation().issue!); }
+    if (this["question"]) { issues.push(...this.question.doModelValidation()); }
     if (!this['operator']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property operator:QuestionnaireEnableOperatorCodeType fhir: Questionnaire.item.enableWhen.operator:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property operator:QuestionnaireEnableOperatorCodeType fhir: Questionnaire.item.enableWhen.operator:code', });
     }
     if (!this['answer']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property answer: fhir: Questionnaire.item.enableWhen.answer[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property answer: fhir: Questionnaire.item.enableWhen.answer[x]:', });
     }
-    return outcome;
+    return issues;
   }
 }
 /**
@@ -206,7 +202,7 @@ export class QuestionnaireItemAnswerOption extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'QuestionnaireItemAnswerOption';
+  public static override readonly _fts_dataType:string = 'QuestionnaireItemAnswerOption';
   /**
    * The data type of the value must agree with the item.type.
    */
@@ -237,13 +233,13 @@ export class QuestionnaireItemAnswerOption extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['value']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property value: fhir: Questionnaire.item.answerOption.value[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value: fhir: Questionnaire.item.answerOption.value[x]:', });
     }
-    if (this["initialSelected"]) { outcome.issue!.push(...this.initialSelected.doModelValidation().issue!); }
-    return outcome;
+    if (this["initialSelected"]) { issues.push(...this.initialSelected.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -311,7 +307,7 @@ export class QuestionnaireItemInitial extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'QuestionnaireItemInitial';
+  public static override readonly _fts_dataType:string = 'QuestionnaireItemInitial';
   /**
    * The type of the initial value must be consistent with the type of the item.
    */
@@ -343,12 +339,12 @@ export class QuestionnaireItemInitial extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['value']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property value: fhir: Questionnaire.item.initial.value[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value: fhir: Questionnaire.item.initial.value[x]:', });
     }
-    return outcome;
+    return issues;
   }
 }
 /**
@@ -430,7 +426,7 @@ export class QuestionnaireItem extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'QuestionnaireItem';
+  public static override readonly _fts_dataType:string = 'QuestionnaireItem';
   /**
    * This ''can'' be a meaningful identifier (e.g. a LOINC code) but is not intended to have any meaning.  GUIDs or sequential numbers are appropriate here.
    */
@@ -541,29 +537,29 @@ export class QuestionnaireItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['linkId']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property linkId:fhir.FhirString fhir: Questionnaire.item.linkId:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property linkId:fhir.FhirString fhir: Questionnaire.item.linkId:string', });
     }
-    if (this["linkId"]) { outcome.issue!.push(...this.linkId.doModelValidation().issue!); }
-    if (this["definition"]) { outcome.issue!.push(...this.definition.doModelValidation().issue!); }
-    if (this["code"]) { this.code.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["prefix"]) { outcome.issue!.push(...this.prefix.doModelValidation().issue!); }
-    if (this["text"]) { outcome.issue!.push(...this.text.doModelValidation().issue!); }
+    if (this["linkId"]) { issues.push(...this.linkId.doModelValidation()); }
+    if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
+    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["prefix"]) { issues.push(...this.prefix.doModelValidation()); }
+    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:ItemTypeCodeType fhir: Questionnaire.item.type:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:ItemTypeCodeType fhir: Questionnaire.item.type:code', });
     }
-    if (this["enableWhen"]) { this.enableWhen.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["required"]) { outcome.issue!.push(...this.required.doModelValidation().issue!); }
-    if (this["repeats"]) { outcome.issue!.push(...this.repeats.doModelValidation().issue!); }
-    if (this["readOnly"]) { outcome.issue!.push(...this.readOnly.doModelValidation().issue!); }
-    if (this["maxLength"]) { outcome.issue!.push(...this.maxLength.doModelValidation().issue!); }
-    if (this["answerValueSet"]) { outcome.issue!.push(...this.answerValueSet.doModelValidation().issue!); }
-    if (this["answerOption"]) { this.answerOption.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["initial"]) { this.initial.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["item"]) { this.item.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["enableWhen"]) { this.enableWhen.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["required"]) { issues.push(...this.required.doModelValidation()); }
+    if (this["repeats"]) { issues.push(...this.repeats.doModelValidation()); }
+    if (this["readOnly"]) { issues.push(...this.readOnly.doModelValidation()); }
+    if (this["maxLength"]) { issues.push(...this.maxLength.doModelValidation()); }
+    if (this["answerValueSet"]) { issues.push(...this.answerValueSet.doModelValidation()); }
+    if (this["answerOption"]) { this.answerOption.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["initial"]) { this.initial.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["item"]) { this.item.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -671,11 +667,11 @@ export class Questionnaire extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Questionnaire';
+  public static override readonly _fts_dataType:string = 'Questionnaire';
   /**
    * Resource Type Name
    */
-  public resourceType: "Questionnaire";
+  public override resourceType: "Questionnaire";
   /**
    * The name of the referenced questionnaire can be conveyed using the http://hl7.org/fhir/StructureDefinition/display extension.
    */
@@ -817,35 +813,35 @@ export class Questionnaire extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Questionnaire" fhir: Questionnaire.resourceType:"Questionnaire"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Questionnaire" fhir: Questionnaire.resourceType:"Questionnaire"', });
     }
-    if (this["url"]) { outcome.issue!.push(...this.url.doModelValidation().issue!); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["version"]) { outcome.issue!.push(...this.version.doModelValidation().issue!); }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["title"]) { outcome.issue!.push(...this.title.doModelValidation().issue!); }
-    if (this["derivedFrom"]) { this.derivedFrom.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
+    if (this["derivedFrom"]) { this.derivedFrom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: Questionnaire.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: Questionnaire.status:code', });
     }
-    if (this["experimental"]) { outcome.issue!.push(...this.experimental.doModelValidation().issue!); }
-    if (this["subjectType"]) { this.subjectType.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["date"]) { outcome.issue!.push(...this.date.doModelValidation().issue!); }
-    if (this["publisher"]) { outcome.issue!.push(...this.publisher.doModelValidation().issue!); }
-    if (this["contact"]) { this.contact.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["useContext"]) { this.useContext.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["purpose"]) { outcome.issue!.push(...this.purpose.doModelValidation().issue!); }
-    if (this["copyright"]) { outcome.issue!.push(...this.copyright.doModelValidation().issue!); }
-    if (this["approvalDate"]) { outcome.issue!.push(...this.approvalDate.doModelValidation().issue!); }
-    if (this["lastReviewDate"]) { outcome.issue!.push(...this.lastReviewDate.doModelValidation().issue!); }
-    if (this["effectivePeriod"]) { outcome.issue!.push(...this.effectivePeriod.doModelValidation().issue!); }
-    if (this["code"]) { this.code.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["item"]) { this.item.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
+    if (this["subjectType"]) { this.subjectType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
+    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
+    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
+    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation()); }
+    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation()); }
+    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation()); }
+    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["item"]) { this.item.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

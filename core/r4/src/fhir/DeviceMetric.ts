@@ -25,10 +25,6 @@ import { MetricColorCodes,  MetricColorCodeType } from '../fhirValueSets/MetricC
 import { MetricCategoryCodings, MetricCategoryCodingType,} from '../fhirValueSets/MetricCategoryCodings.js';
 // @ts-ignore
 import { MetricCategoryCodes,  MetricCategoryCodeType } from '../fhirValueSets/MetricCategoryCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the DeviceMetricCalibration type.
  */
@@ -54,7 +50,7 @@ export class DeviceMetricCalibration extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DeviceMetricCalibration';
+  public static override readonly _fts_dataType:string = 'DeviceMetricCalibration';
   /**
    * Describes the type of the calibration method.
    */
@@ -91,10 +87,10 @@ export class DeviceMetricCalibration extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["time"]) { outcome.issue!.push(...this.time.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["time"]) { issues.push(...this.time.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -154,11 +150,11 @@ export class DeviceMetric extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DeviceMetric';
+  public static override readonly _fts_dataType:string = 'DeviceMetric';
   /**
    * Resource Type Name
    */
-  public resourceType: "DeviceMetric";
+  public override resourceType: "DeviceMetric";
   /**
    * For identifiers assigned to a device by the device or gateway software, the `system` element of the identifier should be set to the unique identifier of the device.
    */
@@ -241,24 +237,24 @@ export class DeviceMetric extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"DeviceMetric" fhir: DeviceMetric.resourceType:"DeviceMetric"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"DeviceMetric" fhir: DeviceMetric.resourceType:"DeviceMetric"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: DeviceMetric.type:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: DeviceMetric.type:CodeableConcept', });
     }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["unit"]) { outcome.issue!.push(...this.unit.doModelValidation().issue!); }
-    if (this["source"]) { outcome.issue!.push(...this.source.doModelValidation().issue!); }
-    if (this["parent"]) { outcome.issue!.push(...this.parent.doModelValidation().issue!); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["unit"]) { issues.push(...this.unit.doModelValidation()); }
+    if (this["source"]) { issues.push(...this.source.doModelValidation()); }
+    if (this["parent"]) { issues.push(...this.parent.doModelValidation()); }
     if (!this['category']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property category:MetricCategoryCodeType fhir: DeviceMetric.category:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property category:MetricCategoryCodeType fhir: DeviceMetric.category:code', });
     }
-    if (this["measurementPeriod"]) { outcome.issue!.push(...this.measurementPeriod.doModelValidation().issue!); }
-    if (this["calibration"]) { this.calibration.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["measurementPeriod"]) { issues.push(...this.measurementPeriod.doModelValidation()); }
+    if (this["calibration"]) { this.calibration.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

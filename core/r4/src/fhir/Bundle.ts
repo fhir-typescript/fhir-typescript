@@ -17,10 +17,6 @@ import { HttpVerbCodes,  HttpVerbCodeType } from '../fhirValueSets/HttpVerbCodes
 import { BundleTypeCodings, BundleTypeCodingType,} from '../fhirValueSets/BundleTypeCodings.js';
 // @ts-ignore
 import { BundleTypeCodes,  BundleTypeCodeType } from '../fhirValueSets/BundleTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the BundleLink type.
  */
@@ -44,7 +40,7 @@ export class BundleLink extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'BundleLink';
+  public static override readonly _fts_dataType:string = 'BundleLink';
   /**
    * A name which details the functional use for this link - see [http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1](http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1).
    */
@@ -66,17 +62,17 @@ export class BundleLink extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['relation']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property relation:fhir.FhirString fhir: Bundle.link.relation:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property relation:fhir.FhirString fhir: Bundle.link.relation:string', });
     }
-    if (this["relation"]) { outcome.issue!.push(...this.relation.doModelValidation().issue!); }
+    if (this["relation"]) { issues.push(...this.relation.doModelValidation()); }
     if (!this['url']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property url:fhir.FhirUri fhir: Bundle.link.url:uri', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property url:fhir.FhirUri fhir: Bundle.link.url:uri', });
     }
-    if (this["url"]) { outcome.issue!.push(...this.url.doModelValidation().issue!); }
-    return outcome;
+    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -101,7 +97,7 @@ export class BundleEntrySearch extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'BundleEntrySearch';
+  public static override readonly _fts_dataType:string = 'BundleEntrySearch';
   /**
    * There is only one mode. In some corner cases, a resource may be included because it is both a match and an include. In these circumstances, 'match' takes precedence.
    */
@@ -128,10 +124,10 @@ export class BundleEntrySearch extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["score"]) { outcome.issue!.push(...this.score.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["score"]) { issues.push(...this.score.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -171,7 +167,7 @@ export class BundleEntryRequest extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'BundleEntryRequest';
+  public static override readonly _fts_dataType:string = 'BundleEntryRequest';
   /**
    * In a transaction or batch, this is the HTTP action to be executed for this entry. In a history bundle, this indicates the HTTP action that occurred.
    */
@@ -219,20 +215,20 @@ export class BundleEntryRequest extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['method']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property method:HttpVerbCodeType fhir: Bundle.entry.request.method:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property method:HttpVerbCodeType fhir: Bundle.entry.request.method:code', });
     }
     if (!this['url']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property url:fhir.FhirUri fhir: Bundle.entry.request.url:uri', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property url:fhir.FhirUri fhir: Bundle.entry.request.url:uri', });
     }
-    if (this["url"]) { outcome.issue!.push(...this.url.doModelValidation().issue!); }
-    if (this["ifNoneMatch"]) { outcome.issue!.push(...this.ifNoneMatch.doModelValidation().issue!); }
-    if (this["ifModifiedSince"]) { outcome.issue!.push(...this.ifModifiedSince.doModelValidation().issue!); }
-    if (this["ifMatch"]) { outcome.issue!.push(...this.ifMatch.doModelValidation().issue!); }
-    if (this["ifNoneExist"]) { outcome.issue!.push(...this.ifNoneExist.doModelValidation().issue!); }
-    return outcome;
+    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
+    if (this["ifNoneMatch"]) { issues.push(...this.ifNoneMatch.doModelValidation()); }
+    if (this["ifModifiedSince"]) { issues.push(...this.ifModifiedSince.doModelValidation()); }
+    if (this["ifMatch"]) { issues.push(...this.ifMatch.doModelValidation()); }
+    if (this["ifNoneExist"]) { issues.push(...this.ifNoneExist.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -269,7 +265,7 @@ export class BundleEntryResponse extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'BundleEntryResponse';
+  public static override readonly _fts_dataType:string = 'BundleEntryResponse';
   /**
    * The status code returned by processing this entry. The status SHALL start with a 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description associated with the status code.
    */
@@ -306,17 +302,17 @@ export class BundleEntryResponse extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:fhir.FhirString fhir: Bundle.entry.response.status:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:fhir.FhirString fhir: Bundle.entry.response.status:string', });
     }
-    if (this["status"]) { outcome.issue!.push(...this.status.doModelValidation().issue!); }
-    if (this["location"]) { outcome.issue!.push(...this.location.doModelValidation().issue!); }
-    if (this["etag"]) { outcome.issue!.push(...this.etag.doModelValidation().issue!); }
-    if (this["lastModified"]) { outcome.issue!.push(...this.lastModified.doModelValidation().issue!); }
-    if (this["outcome"]) { outcome.issue!.push(...this.outcome.doModelValidation().issue!); }
-    return outcome;
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (this["location"]) { issues.push(...this.location.doModelValidation()); }
+    if (this["etag"]) { issues.push(...this.etag.doModelValidation()); }
+    if (this["lastModified"]) { issues.push(...this.lastModified.doModelValidation()); }
+    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -357,7 +353,7 @@ export class BundleEntry extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'BundleEntry';
+  public static override readonly _fts_dataType:string = 'BundleEntry';
   /**
    * A series of links that provide context to this entry.
    */
@@ -399,15 +395,15 @@ export class BundleEntry extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["link"]) { this.link.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["fullUrl"]) { outcome.issue!.push(...this.fullUrl.doModelValidation().issue!); }
-    if (this["resource"]) { outcome.issue!.push(...this.resource.doModelValidation().issue!); }
-    if (this["search"]) { outcome.issue!.push(...this.search.doModelValidation().issue!); }
-    if (this["request"]) { outcome.issue!.push(...this.request.doModelValidation().issue!); }
-    if (this["response"]) { outcome.issue!.push(...this.response.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["link"]) { this.link.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["fullUrl"]) { issues.push(...this.fullUrl.doModelValidation()); }
+    if (this["resource"]) { issues.push(...this.resource.doModelValidation()); }
+    if (this["search"]) { issues.push(...this.search.doModelValidation()); }
+    if (this["request"]) { issues.push(...this.request.doModelValidation()); }
+    if (this["response"]) { issues.push(...this.response.doModelValidation()); }
+    return issues;
   }
 
 /**
@@ -471,11 +467,11 @@ export class Bundle extends fhir.Resource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Bundle';
+  public static override readonly _fts_dataType:string = 'Bundle';
   /**
    * Resource Type Name
    */
-  public resourceType: "Bundle";
+  public override resourceType: "Bundle";
   /**
    * Persistent identity generally only matters for batches of type Document, Message, and Collection. It would not normally be populated for search and history results and servers ignore Bundle.identifier when processing batches and transactions. For Documents  the .identifier SHALL be populated such that the .identifier is globally unique.
    */
@@ -539,20 +535,20 @@ export class Bundle extends fhir.Resource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Bundle" fhir: Bundle.resourceType:"Bundle"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Bundle" fhir: Bundle.resourceType:"Bundle"', });
     }
-    if (this["identifier"]) { outcome.issue!.push(...this.identifier.doModelValidation().issue!); }
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:BundleTypeCodeType fhir: Bundle.type:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:BundleTypeCodeType fhir: Bundle.type:code', });
     }
-    if (this["timestamp"]) { outcome.issue!.push(...this.timestamp.doModelValidation().issue!); }
-    if (this["total"]) { outcome.issue!.push(...this.total.doModelValidation().issue!); }
-    if (this["link"]) { this.link.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["entry"]) { this.entry.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["signature"]) { outcome.issue!.push(...this.signature.doModelValidation().issue!); }
-    return outcome;
+    if (this["timestamp"]) { issues.push(...this.timestamp.doModelValidation()); }
+    if (this["total"]) { issues.push(...this.total.doModelValidation()); }
+    if (this["link"]) { this.link.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["entry"]) { this.entry.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["signature"]) { issues.push(...this.signature.doModelValidation()); }
+    return issues;
   }
 }

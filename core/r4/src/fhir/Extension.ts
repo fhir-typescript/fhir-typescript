@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Extension type.
  */
@@ -230,7 +226,7 @@ export class Extension extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Extension';
+  public static override readonly _fts_dataType:string = 'Extension';
   /**
    * The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.
    */
@@ -305,13 +301,13 @@ export class Extension extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['url']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property url:fhir.FhirString fhir: Extension.url:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property url:fhir.FhirString fhir: Extension.url:string', });
     }
-    if (this["url"]) { outcome.issue!.push(...this.url.doModelValidation().issue!); }
-    return outcome;
+    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
+    return issues;
   }
 
   /**
@@ -327,7 +323,7 @@ export class Extension extends fhir.FhirElement {
       return ext;
     }
 
-    const vName = 'value' + (value._fts_dataType) ? value._fts_dataType : value.constructor.name;
+    const vName = 'value' + (Object.getPrototypeOf(value).constructor._fts_dataType ?? Object.getPrototypeOf(value).constructor.name);
     (ext as any)[vName] = value;
     return ext;
   }

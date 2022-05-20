@@ -1,17 +1,10 @@
-/*! @fhir-typescript/r4-core v0.0.11-beta.2 2022-05-18 */
-'use strict';
-import { __extends } from '../_virtual/_tslib.js';
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
-import { OperationOutcomeIssue } from './OperationOutcome.js';
-import { FhirPrimitive } from './FhirPrimitive.js';
-
 // Minimum TypeScript Version: 3.7
+// FHIR Primitive: integer
+import * as fhir from '../fhir.js';
 /**
  * 32 bit number; for values larger than this, use decimal
  */
-var FhirInteger = /** @class */ (function (_super) {
-    __extends(FhirInteger, _super);
+export class FhirInteger extends fhir.FhirPrimitive {
     /**
        * Create a FhirInteger
        * @param value 32 bit number; for values larger than this, use decimal
@@ -19,57 +12,52 @@ var FhirInteger = /** @class */ (function (_super) {
        * @param extension Additional content defined by implementations
        * @param options Options to pass to extension constructors
     */
-    function FhirInteger(source, options) {
-        if (source === void 0) { source = {}; }
-        if (options === void 0) { options = {}; }
-        return _super.call(this, source, options) || this;
+    constructor(source = {}, options = {}) {
+        super(source, options);
     }
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    FhirInteger.prototype.doModelValidation = function () {
-        var outcome = _super.prototype.doModelValidation.call(this);
+    doModelValidation() {
+        let issues = super.doModelValidation();
         if ((this.value) && (!FhirInteger._fts_regex.test(this.value.toString()))) {
-            outcome.issue.push(new OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.InvalidContent, diagnostics: "Invalid value in primitive type integer", }));
+            issues.push({ severity: 'error', code: 'invalid', diagnostics: 'Invalid value in primitive type integer', });
         }
-        return outcome;
-    };
+        return issues;
+    }
     /**
      * Returns a string representation of an object.
      * @param radix Specifies a radix for converting numeric values to strings. This value is only used for numbers.
      */
-    FhirInteger.prototype.toString = function (radix) { var _a; return ((_a = this.value) !== null && _a !== void 0 ? _a : NaN).toString(radix); };
+    toString(radix) { return (this.value ?? NaN).toString(radix); }
     /**
      * Returns a string representing a number in fixed-point notation.
      * @param fractionDigits Number of digits after the decimal point. Must be in the range 0 - 20, inclusive.
      */
-    FhirInteger.prototype.toFixed = function (fractionDigits) { var _a; return ((_a = this.value) !== null && _a !== void 0 ? _a : NaN).toFixed(fractionDigits); };
+    toFixed(fractionDigits) { return (this.value ?? NaN).toFixed(fractionDigits); }
     /**
      * Returns a string containing a number represented in exponential notation.
      * @param fractionDigits Number of digits after the decimal point. Must be in the range 0 - 20, inclusive.
      */
-    FhirInteger.prototype.toExponential = function (fractionDigits) { var _a; return ((_a = this.value) !== null && _a !== void 0 ? _a : NaN).toExponential(fractionDigits); };
+    toExponential(fractionDigits) { return (this.value ?? NaN).toExponential(fractionDigits); }
     /**
      * Returns a string containing a number represented either in exponential or fixed-point notation with a specified number of digits.
      * @param precision Number of significant digits. Must be in the range 1 - 21, inclusive.
      */
-    FhirInteger.prototype.toPrecision = function (precision) { var _a; return ((_a = this.value) !== null && _a !== void 0 ? _a : NaN).toPrecision(precision); };
+    toPrecision(precision) { return (this.value ?? NaN).toPrecision(precision); }
     /**
      * Returns the primitive value of the specified object.
      */
-    FhirInteger.prototype.valueOf = function () { var _a; return ((_a = this.value) !== null && _a !== void 0 ? _a : NaN); };
-    /**
-     * Mapping of this datatype to a FHIR equivalent
-     */
-    FhirInteger._fts_dataType = 'Integer';
-    /**
-     * Mapping of this datatype to a JSON equivalent
-     */
-    FhirInteger._fts_jsonType = 'number';
-    // published regex: -?([0]|([1-9][0-9]*))
-    FhirInteger._fts_regex = /^-?([0]|([1-9][0-9]*))$/;
-    return FhirInteger;
-}(FhirPrimitive));
-
-export { FhirInteger };
-//# sourceMappingURL=FhirInteger.js.map
+    valueOf() { return (this.value ?? NaN); }
+}
+/**
+ * Mapping of this datatype to a FHIR equivalent
+ */
+FhirInteger._fts_dataType = 'Integer';
+/**
+ * Mapping of this datatype to a JSON equivalent
+ */
+FhirInteger._fts_jsonType = 'number';
+// published regex: -?([0]|([1-9][0-9]*))
+FhirInteger._fts_regex = /^-?([0]|([1-9][0-9]*))$/;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRmhpckludGVnZXIuanMiLCJzb3VyY2VSb290IjoiLi9zcmMvIiwic291cmNlcyI6WyJmaGlyL0ZoaXJJbnRlZ2VyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGtDQUFrQztBQUNsQywwQkFBMEI7QUFFMUIsT0FBTyxLQUFLLElBQUksTUFBTSxZQUFZLENBQUM7QUFZbkM7O0dBRUc7QUFDSCxNQUFNLE9BQU8sV0FBWSxTQUFRLElBQUksQ0FBQyxhQUFhO0lBZWpEOzs7Ozs7TUFNRTtJQUNGLFlBQVksU0FBa0MsRUFBRSxFQUFFLFVBQXNDLEVBQUc7UUFDekYsS0FBSyxDQUFDLE1BQU0sRUFBRSxPQUFPLENBQUMsQ0FBQztJQUN6QixDQUFDO0lBQ0Q7O09BRUc7SUFDYSxpQkFBaUI7UUFDL0IsSUFBSSxNQUFNLEdBQW1CLEtBQUssQ0FBQyxpQkFBaUIsRUFBRSxDQUFDO1FBQ3ZELElBQUksQ0FBQyxJQUFJLENBQUMsS0FBSyxDQUFDLElBQUksQ0FBQyxDQUFDLFdBQVcsQ0FBQyxVQUFVLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxLQUFLLENBQUMsUUFBUSxFQUFFLENBQUMsQ0FBQyxFQUFFO1lBQ3pFLE1BQU0sQ0FBQyxJQUFJLENBQUMsRUFBRSxRQUFRLEVBQUUsT0FBTyxFQUFFLElBQUksRUFBRSxTQUFTLEVBQUcsV0FBVyxFQUFFLHlDQUF5QyxHQUFHLENBQUMsQ0FBQztTQUMvRztRQUNELE9BQU8sTUFBTSxDQUFDO0lBQ2hCLENBQUM7SUFDRDs7O09BR0c7SUFDYSxRQUFRLENBQUMsS0FBYSxJQUFXLE9BQU8sQ0FBQyxJQUFJLENBQUMsS0FBSyxJQUFJLEdBQUcsQ0FBQyxDQUFDLFFBQVEsQ0FBQyxLQUFLLENBQUMsQ0FBQyxDQUFDLENBQUM7SUFDOUY7OztPQUdHO0lBQ0ksT0FBTyxDQUFDLGNBQXNCLElBQVcsT0FBTyxDQUFDLElBQUksQ0FBQyxLQUFLLElBQUksR0FBRyxDQUFDLENBQUMsT0FBTyxDQUFDLGNBQWMsQ0FBQyxDQUFDLENBQUMsQ0FBQztJQUNyRzs7O09BR0c7SUFDSSxhQUFhLENBQUMsY0FBc0IsSUFBVyxPQUFPLENBQUMsSUFBSSxDQUFDLEtBQUssSUFBSSxHQUFHLENBQUMsQ0FBQyxhQUFhLENBQUMsY0FBYyxDQUFDLENBQUMsQ0FBQyxDQUFDO0lBQ2pIOzs7T0FHRztJQUNJLFdBQVcsQ0FBQyxTQUFpQixJQUFXLE9BQU8sQ0FBQyxJQUFJLENBQUMsS0FBSyxJQUFJLEdBQUcsQ0FBQyxDQUFDLFdBQVcsQ0FBQyxTQUFTLENBQUMsQ0FBQyxDQUFDLENBQUM7SUFDbkc7O09BRUc7SUFDYSxPQUFPLEtBQVksT0FBTyxDQUFDLElBQUksQ0FBQyxLQUFLLElBQUksR0FBRyxDQUFDLENBQUMsQ0FBQyxDQUFDOztBQXpEaEU7O0dBRUc7QUFDNkIseUJBQWEsR0FBVSxTQUFTLENBQUM7QUFDakU7O0dBRUc7QUFDNkIseUJBQWEsR0FBVSxRQUFRLENBQUM7QUFDaEUseUNBQXlDO0FBQ1Qsc0JBQVUsR0FBVSx5QkFBeUIsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbIi8vIE1pbmltdW0gVHlwZVNjcmlwdCBWZXJzaW9uOiAzLjdcclxuLy8gRkhJUiBQcmltaXRpdmU6IGludGVnZXJcclxuXHJcbmltcG9ydCAqIGFzIGZoaXIgZnJvbSAnLi4vZmhpci5qcyc7XHJcblxyXG4vKipcclxuICogMzIgYml0IG51bWJlcjsgZm9yIHZhbHVlcyBsYXJnZXIgdGhhbiB0aGlzLCB1c2UgZGVjaW1hbFxyXG4gKi9cclxuZXhwb3J0IGludGVyZmFjZSBGaGlySW50ZWdlckFyZ3MgZXh0ZW5kcyBmaGlyLkZoaXJQcmltaXRpdmVBcmdzIHtcclxuICAvKipcclxuICAgKiAzMiBiaXQgbnVtYmVyOyBmb3IgdmFsdWVzIGxhcmdlciB0aGFuIHRoaXMsIHVzZSBkZWNpbWFsXHJcbiAgICovXHJcbiAgdmFsdWU/OkZoaXJJbnRlZ2VyfG51bWJlcnx1bmRlZmluZWQ7XHJcbn1cclxuXHJcbi8qKlxyXG4gKiAzMiBiaXQgbnVtYmVyOyBmb3IgdmFsdWVzIGxhcmdlciB0aGFuIHRoaXMsIHVzZSBkZWNpbWFsXHJcbiAqL1xyXG5leHBvcnQgY2xhc3MgRmhpckludGVnZXIgZXh0ZW5kcyBmaGlyLkZoaXJQcmltaXRpdmUge1xyXG4gIC8qKlxyXG4gICAqIE1hcHBpbmcgb2YgdGhpcyBkYXRhdHlwZSB0byBhIEZISVIgZXF1aXZhbGVudFxyXG4gICAqL1xyXG4gIHB1YmxpYyBzdGF0aWMgb3ZlcnJpZGUgcmVhZG9ubHkgX2Z0c19kYXRhVHlwZTpzdHJpbmcgPSAnSW50ZWdlcic7XHJcbiAgLyoqXHJcbiAgICogTWFwcGluZyBvZiB0aGlzIGRhdGF0eXBlIHRvIGEgSlNPTiBlcXVpdmFsZW50XHJcbiAgICovXHJcbiAgcHVibGljIHN0YXRpYyBvdmVycmlkZSByZWFkb25seSBfZnRzX2pzb25UeXBlOnN0cmluZyA9ICdudW1iZXInO1xyXG4gIC8vIHB1Ymxpc2hlZCByZWdleDogLT8oWzBdfChbMS05XVswLTldKikpXHJcbiAgcHVibGljIHN0YXRpYyBvdmVycmlkZSByZWFkb25seSBfZnRzX3JlZ2V4OlJlZ0V4cCA9IC9eLT8oWzBdfChbMS05XVswLTldKikpJC9cclxuICAvKipcclxuICAgKiBBIGludGVnZXIgdmFsdWUsIHJlcHJlc2VudGVkIGFzIGEgSlMgbnVtYmVyXHJcbiAgICovXHJcbiAgZGVjbGFyZSB2YWx1ZT86bnVtYmVyfG51bGx8dW5kZWZpbmVkO1xyXG4gIC8qKlxyXG4gICAgICogQ3JlYXRlIGEgRmhpckludGVnZXJcclxuICAgICAqIEBwYXJhbSB2YWx1ZSAzMiBiaXQgbnVtYmVyOyBmb3IgdmFsdWVzIGxhcmdlciB0aGFuIHRoaXMsIHVzZSBkZWNpbWFsXHJcbiAgICAgKiBAcGFyYW0gaWQgVW5pcXVlIGlkIGZvciBpbnRlci1lbGVtZW50IHJlZmVyZW5jaW5nICh1bmNvbW1vbiBvbiBwcmltaXRpdmVzKVxyXG4gICAgICogQHBhcmFtIGV4dGVuc2lvbiBBZGRpdGlvbmFsIGNvbnRlbnQgZGVmaW5lZCBieSBpbXBsZW1lbnRhdGlvbnNcclxuICAgICAqIEBwYXJhbSBvcHRpb25zIE9wdGlvbnMgdG8gcGFzcyB0byBleHRlbnNpb24gY29uc3RydWN0b3JzXHJcbiAgKi9cclxuICBjb25zdHJ1Y3Rvcihzb3VyY2U6UGFydGlhbDxGaGlySW50ZWdlckFyZ3M+ID0ge30sIG9wdGlvbnM6Zmhpci5GaGlyQ29uc3RydWN0b3JPcHRpb25zID0geyB9ICkge1xyXG4gICAgc3VwZXIoc291cmNlLCBvcHRpb25zKTtcclxuICB9XHJcbiAgLyoqXHJcbiAgICogRnVuY3Rpb24gdG8gcGVyZm9ybSBiYXNpYyBtb2RlbCB2YWxpZGF0aW9uIChlLmcuLCBjaGVjayBpZiByZXF1aXJlZCBlbGVtZW50cyBhcmUgcHJlc2VudCkuXHJcbiAgICovXHJcbiAgcHVibGljIG92ZXJyaWRlIGRvTW9kZWxWYWxpZGF0aW9uKCk6Zmhpci5GdHNJc3N1ZVtdIHtcclxuICAgIGxldCBpc3N1ZXM6Zmhpci5GdHNJc3N1ZVtdID0gc3VwZXIuZG9Nb2RlbFZhbGlkYXRpb24oKTtcclxuICAgIGlmICgodGhpcy52YWx1ZSkgJiYgKCFGaGlySW50ZWdlci5fZnRzX3JlZ2V4LnRlc3QodGhpcy52YWx1ZS50b1N0cmluZygpKSkpIHtcclxuICAgICAgaXNzdWVzLnB1c2goeyBzZXZlcml0eTogJ2Vycm9yJywgY29kZTogJ2ludmFsaWQnLCAgZGlhZ25vc3RpY3M6ICdJbnZhbGlkIHZhbHVlIGluIHByaW1pdGl2ZSB0eXBlIGludGVnZXInLCB9KTtcclxuICAgIH1cclxuICAgIHJldHVybiBpc3N1ZXM7XHJcbiAgfVxyXG4gIC8qKlxyXG4gICAqIFJldHVybnMgYSBzdHJpbmcgcmVwcmVzZW50YXRpb24gb2YgYW4gb2JqZWN0LlxyXG4gICAqIEBwYXJhbSByYWRpeCBTcGVjaWZpZXMgYSByYWRpeCBmb3IgY29udmVydGluZyBudW1lcmljIHZhbHVlcyB0byBzdHJpbmdzLiBUaGlzIHZhbHVlIGlzIG9ubHkgdXNlZCBmb3IgbnVtYmVycy5cclxuICAgKi9cclxuICBwdWJsaWMgb3ZlcnJpZGUgdG9TdHJpbmcocmFkaXg/Om51bWJlcik6c3RyaW5nIHsgcmV0dXJuICh0aGlzLnZhbHVlID8/IE5hTikudG9TdHJpbmcocmFkaXgpOyB9XHJcbiAgLyoqXHJcbiAgICogUmV0dXJucyBhIHN0cmluZyByZXByZXNlbnRpbmcgYSBudW1iZXIgaW4gZml4ZWQtcG9pbnQgbm90YXRpb24uXHJcbiAgICogQHBhcmFtIGZyYWN0aW9uRGlnaXRzIE51bWJlciBvZiBkaWdpdHMgYWZ0ZXIgdGhlIGRlY2ltYWwgcG9pbnQuIE11c3QgYmUgaW4gdGhlIHJhbmdlIDAgLSAyMCwgaW5jbHVzaXZlLlxyXG4gICAqL1xyXG4gIHB1YmxpYyB0b0ZpeGVkKGZyYWN0aW9uRGlnaXRzPzpudW1iZXIpOnN0cmluZyB7IHJldHVybiAodGhpcy52YWx1ZSA/PyBOYU4pLnRvRml4ZWQoZnJhY3Rpb25EaWdpdHMpOyB9XHJcbiAgLyoqXHJcbiAgICogUmV0dXJucyBhIHN0cmluZyBjb250YWluaW5nIGEgbnVtYmVyIHJlcHJlc2VudGVkIGluIGV4cG9uZW50aWFsIG5vdGF0aW9uLlxyXG4gICAqIEBwYXJhbSBmcmFjdGlvbkRpZ2l0cyBOdW1iZXIgb2YgZGlnaXRzIGFmdGVyIHRoZSBkZWNpbWFsIHBvaW50LiBNdXN0IGJlIGluIHRoZSByYW5nZSAwIC0gMjAsIGluY2x1c2l2ZS5cclxuICAgKi9cclxuICBwdWJsaWMgdG9FeHBvbmVudGlhbChmcmFjdGlvbkRpZ2l0cz86bnVtYmVyKTpzdHJpbmcgeyByZXR1cm4gKHRoaXMudmFsdWUgPz8gTmFOKS50b0V4cG9uZW50aWFsKGZyYWN0aW9uRGlnaXRzKTsgfVxyXG4gIC8qKlxyXG4gICAqIFJldHVybnMgYSBzdHJpbmcgY29udGFpbmluZyBhIG51bWJlciByZXByZXNlbnRlZCBlaXRoZXIgaW4gZXhwb25lbnRpYWwgb3IgZml4ZWQtcG9pbnQgbm90YXRpb24gd2l0aCBhIHNwZWNpZmllZCBudW1iZXIgb2YgZGlnaXRzLlxyXG4gICAqIEBwYXJhbSBwcmVjaXNpb24gTnVtYmVyIG9mIHNpZ25pZmljYW50IGRpZ2l0cy4gTXVzdCBiZSBpbiB0aGUgcmFuZ2UgMSAtIDIxLCBpbmNsdXNpdmUuXHJcbiAgICovXHJcbiAgcHVibGljIHRvUHJlY2lzaW9uKHByZWNpc2lvbj86bnVtYmVyKTpzdHJpbmcgeyByZXR1cm4gKHRoaXMudmFsdWUgPz8gTmFOKS50b1ByZWNpc2lvbihwcmVjaXNpb24pOyB9XHJcbiAgLyoqXHJcbiAgICogUmV0dXJucyB0aGUgcHJpbWl0aXZlIHZhbHVlIG9mIHRoZSBzcGVjaWZpZWQgb2JqZWN0LlxyXG4gICAqL1xyXG4gIHB1YmxpYyBvdmVycmlkZSB2YWx1ZU9mKCk6bnVtYmVyIHsgcmV0dXJuICh0aGlzLnZhbHVlID8/IE5hTik7IH1cclxufVxyXG4iXX0=

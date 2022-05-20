@@ -47,7 +47,7 @@ export declare class MedicinalProductIndicationOtherTherapy extends fhir.Backbon
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductIndication type.
@@ -149,6 +149,6 @@ export declare class MedicinalProductIndication extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=MedicinalProductIndication.d.ts.map

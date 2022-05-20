@@ -25,10 +25,6 @@ import { DetectedissueCategoryCodes,  DetectedissueCategoryCodeType } from '../f
 import { DetectedissueSeverityCodings, DetectedissueSeverityCodingType,} from '../fhirValueSets/DetectedissueSeverityCodings.js';
 // @ts-ignore
 import { DetectedissueSeverityCodes,  DetectedissueSeverityCodeType } from '../fhirValueSets/DetectedissueSeverityCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the DetectedIssueEvidence type.
  */
@@ -50,7 +46,7 @@ export class DetectedIssueEvidence extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DetectedIssueEvidence';
+  public static override readonly _fts_dataType:string = 'DetectedIssueEvidence';
   /**
    * A manifestation that led to the recording of this detected issue.
    */
@@ -72,11 +68,11 @@ export class DetectedIssueEvidence extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["code"]) { this.code.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["detail"]) { this.detail.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["detail"]) { this.detail.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -104,7 +100,7 @@ export class DetectedIssueMitigation extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DetectedIssueMitigation';
+  public static override readonly _fts_dataType:string = 'DetectedIssueMitigation';
   /**
    * The "text" component can be used for detail or when no appropriate code exists.
    */
@@ -136,15 +132,15 @@ export class DetectedIssueMitigation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['action']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property action:fhir.CodeableConcept fhir: DetectedIssue.mitigation.action:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property action:fhir.CodeableConcept fhir: DetectedIssue.mitigation.action:CodeableConcept', });
     }
-    if (this["action"]) { outcome.issue!.push(...this.action.doModelValidation().issue!); }
-    if (this["date"]) { outcome.issue!.push(...this.date.doModelValidation().issue!); }
-    if (this["author"]) { outcome.issue!.push(...this.author.doModelValidation().issue!); }
-    return outcome;
+    if (this["action"]) { issues.push(...this.action.doModelValidation()); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
+    if (this["author"]) { issues.push(...this.author.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -220,11 +216,11 @@ export class DetectedIssue extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DetectedIssue';
+  public static override readonly _fts_dataType:string = 'DetectedIssue';
   /**
    * Resource Type Name
    */
-  public resourceType: "DetectedIssue";
+  public override resourceType: "DetectedIssue";
   /**
    * Business identifier associated with the detected issue record.
    */
@@ -324,23 +320,23 @@ export class DetectedIssue extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"DetectedIssue" fhir: DetectedIssue.resourceType:"DetectedIssue"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"DetectedIssue" fhir: DetectedIssue.resourceType:"DetectedIssue"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:ObservationStatusCodeType fhir: DetectedIssue.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ObservationStatusCodeType fhir: DetectedIssue.status:code', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["patient"]) { outcome.issue!.push(...this.patient.doModelValidation().issue!); }
-    if (this["author"]) { outcome.issue!.push(...this.author.doModelValidation().issue!); }
-    if (this["implicated"]) { this.implicated.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["evidence"]) { this.evidence.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["detail"]) { outcome.issue!.push(...this.detail.doModelValidation().issue!); }
-    if (this["reference"]) { outcome.issue!.push(...this.reference.doModelValidation().issue!); }
-    if (this["mitigation"]) { this.mitigation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
+    if (this["author"]) { issues.push(...this.author.doModelValidation()); }
+    if (this["implicated"]) { this.implicated.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["evidence"]) { this.evidence.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["detail"]) { issues.push(...this.detail.doModelValidation()); }
+    if (this["reference"]) { issues.push(...this.reference.doModelValidation()); }
+    if (this["mitigation"]) { this.mitigation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

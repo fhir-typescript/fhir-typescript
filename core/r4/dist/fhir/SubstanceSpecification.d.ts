@@ -87,7 +87,7 @@ export declare class SubstanceSpecificationMoiety extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceSpecificationProperty type.
@@ -173,7 +173,7 @@ export declare class SubstanceSpecificationProperty extends fhir.BackboneElement
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceSpecificationStructureIsotopeMolecularWeight type.
@@ -219,7 +219,7 @@ export declare class SubstanceSpecificationStructureIsotopeMolecularWeight exten
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceSpecificationStructureIsotope type.
@@ -281,7 +281,7 @@ export declare class SubstanceSpecificationStructureIsotope extends fhir.Backbon
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceSpecificationStructureRepresentation type.
@@ -327,7 +327,7 @@ export declare class SubstanceSpecificationStructureRepresentation extends fhir.
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceSpecificationStructure type.
@@ -413,7 +413,7 @@ export declare class SubstanceSpecificationStructure extends fhir.BackboneElemen
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceSpecificationCode type.
@@ -475,7 +475,7 @@ export declare class SubstanceSpecificationCode extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceSpecificationNameOfficial type.
@@ -521,7 +521,7 @@ export declare class SubstanceSpecificationNameOfficial extends fhir.BackboneEle
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceSpecificationName type.
@@ -631,7 +631,7 @@ export declare class SubstanceSpecificationName extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceSpecificationRelationship type.
@@ -741,7 +741,7 @@ export declare class SubstanceSpecificationRelationship extends fhir.BackboneEle
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceSpecification type.
@@ -923,6 +923,6 @@ export declare class SubstanceSpecification extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=SubstanceSpecification.d.ts.map

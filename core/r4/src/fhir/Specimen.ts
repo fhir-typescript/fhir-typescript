@@ -33,10 +33,6 @@ import { V20487Codes,  V20487CodeType } from '../fhirValueSets/V20487Codes.js';
 import { V20493Codings, V20493CodingType,} from '../fhirValueSets/V20493Codings.js';
 // @ts-ignore
 import { V20493Codes,  V20493CodeType } from '../fhirValueSets/V20493Codes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the SpecimenCollection type.
  */
@@ -94,7 +90,7 @@ export class SpecimenCollection extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SpecimenCollection';
+  public static override readonly _fts_dataType:string = 'SpecimenCollection';
   /**
    * Person who collected the specimen.
    */
@@ -151,14 +147,14 @@ export class SpecimenCollection extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["collector"]) { outcome.issue!.push(...this.collector.doModelValidation().issue!); }
-    if (this["duration"]) { outcome.issue!.push(...this.duration.doModelValidation().issue!); }
-    if (this["quantity"]) { outcome.issue!.push(...this.quantity.doModelValidation().issue!); }
-    if (this["method"]) { outcome.issue!.push(...this.method.doModelValidation().issue!); }
-    if (this["bodySite"]) { outcome.issue!.push(...this.bodySite.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["collector"]) { issues.push(...this.collector.doModelValidation()); }
+    if (this["duration"]) { issues.push(...this.duration.doModelValidation()); }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
+    if (this["method"]) { issues.push(...this.method.doModelValidation()); }
+    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -198,7 +194,7 @@ export class SpecimenProcessing extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SpecimenProcessing';
+  public static override readonly _fts_dataType:string = 'SpecimenProcessing';
   /**
    * Textual description of procedure.
    */
@@ -235,12 +231,12 @@ export class SpecimenProcessing extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["procedure"]) { outcome.issue!.push(...this.procedure.doModelValidation().issue!); }
-    if (this["additive"]) { this.additive.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["procedure"]) { issues.push(...this.procedure.doModelValidation()); }
+    if (this["additive"]) { this.additive.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -288,7 +284,7 @@ export class SpecimenContainer extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SpecimenContainer';
+  public static override readonly _fts_dataType:string = 'SpecimenContainer';
   /**
    * Id for container. There may be multiple; a manufacturer's bar code, lab assigned identifier, etc. The container ID may differ from the specimen id in some circumstances.
    */
@@ -335,14 +331,14 @@ export class SpecimenContainer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["capacity"]) { outcome.issue!.push(...this.capacity.doModelValidation().issue!); }
-    if (this["specimenQuantity"]) { outcome.issue!.push(...this.specimenQuantity.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["capacity"]) { issues.push(...this.capacity.doModelValidation()); }
+    if (this["specimenQuantity"]) { issues.push(...this.specimenQuantity.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -414,11 +410,11 @@ export class Specimen extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Specimen';
+  public static override readonly _fts_dataType:string = 'Specimen';
   /**
    * Resource Type Name
    */
-  public resourceType: "Specimen";
+  public override resourceType: "Specimen";
   /**
    * Id for specimen.
    */
@@ -513,23 +509,23 @@ export class Specimen extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Specimen" fhir: Specimen.resourceType:"Specimen"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Specimen" fhir: Specimen.resourceType:"Specimen"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["accessionIdentifier"]) { outcome.issue!.push(...this.accessionIdentifier.doModelValidation().issue!); }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["receivedTime"]) { outcome.issue!.push(...this.receivedTime.doModelValidation().issue!); }
-    if (this["parent"]) { this.parent.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["request"]) { this.request.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["collection"]) { outcome.issue!.push(...this.collection.doModelValidation().issue!); }
-    if (this["processing"]) { this.processing.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["container"]) { this.container.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["condition"]) { this.condition.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["accessionIdentifier"]) { issues.push(...this.accessionIdentifier.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["receivedTime"]) { issues.push(...this.receivedTime.doModelValidation()); }
+    if (this["parent"]) { this.parent.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["request"]) { this.request.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["collection"]) { issues.push(...this.collection.doModelValidation()); }
+    if (this["processing"]) { this.processing.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["container"]) { this.container.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["condition"]) { this.condition.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

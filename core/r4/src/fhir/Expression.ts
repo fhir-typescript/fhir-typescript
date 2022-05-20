@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { ExpressionLanguageCodings, ExpressionLanguageCodingType,} from '../fhirValueSets/ExpressionLanguageCodings.js';
 // @ts-ignore
 import { ExpressionLanguageCodes,  ExpressionLanguageCodeType } from '../fhirValueSets/ExpressionLanguageCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Expression type.
  */
@@ -46,7 +42,7 @@ export class Expression extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Expression';
+  public static override readonly _fts_dataType:string = 'Expression';
   /**
    * A brief, natural language description of the condition that effectively communicates the intended semantics.
    */
@@ -88,16 +84,16 @@ export class Expression extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (!this['language']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property language:fhir.FhirCode fhir: Expression.language:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property language:fhir.FhirCode fhir: Expression.language:code', });
     }
-    if (this["language"]) { outcome.issue!.push(...this.language.doModelValidation().issue!); }
-    if (this["expression"]) { outcome.issue!.push(...this.expression.doModelValidation().issue!); }
-    if (this["reference"]) { outcome.issue!.push(...this.reference.doModelValidation().issue!); }
-    return outcome;
+    if (this["language"]) { issues.push(...this.language.doModelValidation()); }
+    if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
+    if (this["reference"]) { issues.push(...this.reference.doModelValidation()); }
+    return issues;
   }
 }

@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the FhirElement type.
  */
@@ -30,7 +26,7 @@ export class FhirElement extends fhir.FhirBase {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Element';
+  public static override readonly _fts_dataType:string = 'Element';
   /**
    * Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.
    */
@@ -51,10 +47,10 @@ export class FhirElement extends fhir.FhirBase {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["id"]) { outcome.issue!.push(...this.id.doModelValidation().issue!); }
-    if (this["extension"]) { this.extension.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["id"]) { issues.push(...this.id.doModelValidation()); }
+    if (this["extension"]) { this.extension.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

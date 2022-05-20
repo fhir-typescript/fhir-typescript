@@ -2,7 +2,7 @@ import * as fhir from '../fhir.js';
 /**
  * XHTML
  */
-export interface FhirXhtmlArgs extends fhir.FhirStringArgs {
+export interface FhirXhtmlArgs extends fhir.FhirPrimitiveArgs {
     /**
      * XHTML
      */
@@ -11,7 +11,7 @@ export interface FhirXhtmlArgs extends fhir.FhirStringArgs {
 /**
  * XHTML
  */
-export declare class FhirXhtml extends fhir.FhirString {
+export declare class FhirXhtml extends fhir.FhirPrimitive {
     /**
      * Mapping of this datatype to a FHIR equivalent
      */
@@ -35,6 +35,6 @@ export declare class FhirXhtml extends fhir.FhirString {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=FhirXhtml.d.ts.map

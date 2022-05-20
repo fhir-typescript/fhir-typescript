@@ -13,10 +13,6 @@ import { ContactPointSystemCodes,  ContactPointSystemCodeType } from '../fhirVal
 import { ContactPointUseCodings, ContactPointUseCodingType,} from '../fhirValueSets/ContactPointUseCodings.js';
 // @ts-ignore
 import { ContactPointUseCodes,  ContactPointUseCodeType } from '../fhirValueSets/ContactPointUseCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the ContactPoint type.
  */
@@ -50,7 +46,7 @@ export class ContactPoint extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ContactPoint';
+  public static override readonly _fts_dataType:string = 'ContactPoint';
   /**
    * Telecommunications form for contact point - what communications system is required to make use of the contact.
    */
@@ -97,11 +93,11 @@ export class ContactPoint extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["value"]) { outcome.issue!.push(...this.value.doModelValidation().issue!); }
-    if (this["rank"]) { outcome.issue!.push(...this.rank.doModelValidation().issue!); }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
+    if (this["rank"]) { issues.push(...this.rank.doModelValidation()); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    return issues;
   }
 }

@@ -41,10 +41,6 @@ import { ConditionCodeCodes,  ConditionCodeCodeType } from '../fhirValueSets/Con
 import { MedicationrequestCourseOfTherapyCodings, MedicationrequestCourseOfTherapyCodingType,} from '../fhirValueSets/MedicationrequestCourseOfTherapyCodings.js';
 // @ts-ignore
 import { MedicationrequestCourseOfTherapyCodes,  MedicationrequestCourseOfTherapyCodeType } from '../fhirValueSets/MedicationrequestCourseOfTherapyCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the MedicationRequestDispenseRequestInitialFill type.
  */
@@ -66,7 +62,7 @@ export class MedicationRequestDispenseRequestInitialFill extends fhir.BackboneEl
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MedicationRequestDispenseRequestInitialFill';
+  public static override readonly _fts_dataType:string = 'MedicationRequestDispenseRequestInitialFill';
   /**
    * The amount or quantity to provide as part of the first dispense.
    */
@@ -86,11 +82,11 @@ export class MedicationRequestDispenseRequestInitialFill extends fhir.BackboneEl
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["quantity"]) { outcome.issue!.push(...this.quantity.doModelValidation().issue!); }
-    if (this["duration"]) { outcome.issue!.push(...this.duration.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
+    if (this["duration"]) { issues.push(...this.duration.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -134,7 +130,7 @@ export class MedicationRequestDispenseRequest extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MedicationRequestDispenseRequest';
+  public static override readonly _fts_dataType:string = 'MedicationRequestDispenseRequest';
   /**
    * If populating this element, either the quantity or the duration must be included.
    */
@@ -179,16 +175,16 @@ export class MedicationRequestDispenseRequest extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["initialFill"]) { outcome.issue!.push(...this.initialFill.doModelValidation().issue!); }
-    if (this["dispenseInterval"]) { outcome.issue!.push(...this.dispenseInterval.doModelValidation().issue!); }
-    if (this["validityPeriod"]) { outcome.issue!.push(...this.validityPeriod.doModelValidation().issue!); }
-    if (this["numberOfRepeatsAllowed"]) { outcome.issue!.push(...this.numberOfRepeatsAllowed.doModelValidation().issue!); }
-    if (this["quantity"]) { outcome.issue!.push(...this.quantity.doModelValidation().issue!); }
-    if (this["expectedSupplyDuration"]) { outcome.issue!.push(...this.expectedSupplyDuration.doModelValidation().issue!); }
-    if (this["performer"]) { outcome.issue!.push(...this.performer.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["initialFill"]) { issues.push(...this.initialFill.doModelValidation()); }
+    if (this["dispenseInterval"]) { issues.push(...this.dispenseInterval.doModelValidation()); }
+    if (this["validityPeriod"]) { issues.push(...this.validityPeriod.doModelValidation()); }
+    if (this["numberOfRepeatsAllowed"]) { issues.push(...this.numberOfRepeatsAllowed.doModelValidation()); }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
+    if (this["expectedSupplyDuration"]) { issues.push(...this.expectedSupplyDuration.doModelValidation()); }
+    if (this["performer"]) { issues.push(...this.performer.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -220,7 +216,7 @@ export class MedicationRequestSubstitution extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MedicationRequestSubstitution';
+  public static override readonly _fts_dataType:string = 'MedicationRequestSubstitution';
   /**
    * This element is labeled as a modifier because whether substitution is allow or not, it cannot be ignored.
    */
@@ -247,13 +243,13 @@ export class MedicationRequestSubstitution extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['allowed']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property allowed: fhir: MedicationRequest.substitution.allowed[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property allowed: fhir: MedicationRequest.substitution.allowed[x]:', });
     }
-    if (this["reason"]) { outcome.issue!.push(...this.reason.doModelValidation().issue!); }
-    return outcome;
+    if (this["reason"]) { issues.push(...this.reason.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -419,11 +415,11 @@ export class MedicationRequest extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MedicationRequest';
+  public static override readonly _fts_dataType:string = 'MedicationRequest';
   /**
    * Resource Type Name
    */
-  public resourceType: "MedicationRequest";
+  public override resourceType: "MedicationRequest";
   /**
    * This is a business identifier, not a resource identifier.
    */
@@ -643,50 +639,50 @@ export class MedicationRequest extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"MedicationRequest" fhir: MedicationRequest.resourceType:"MedicationRequest"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicationRequest" fhir: MedicationRequest.resourceType:"MedicationRequest"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:MedicationrequestStatusCodeType fhir: MedicationRequest.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:MedicationrequestStatusCodeType fhir: MedicationRequest.status:code', });
     }
-    if (this["statusReason"]) { outcome.issue!.push(...this.statusReason.doModelValidation().issue!); }
+    if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation()); }
     if (!this['intent']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property intent:MedicationrequestIntentCodeType fhir: MedicationRequest.intent:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property intent:MedicationrequestIntentCodeType fhir: MedicationRequest.intent:code', });
     }
-    if (this["category"]) { this.category.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["doNotPerform"]) { outcome.issue!.push(...this.doNotPerform.doModelValidation().issue!); }
+    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["doNotPerform"]) { issues.push(...this.doNotPerform.doModelValidation()); }
     if (!this['medication']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property medication: fhir: MedicationRequest.medication[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property medication: fhir: MedicationRequest.medication[x]:', });
     }
     if (!this['subject']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property subject:fhir.Reference fhir: MedicationRequest.subject:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: MedicationRequest.subject:Reference', });
     }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["encounter"]) { outcome.issue!.push(...this.encounter.doModelValidation().issue!); }
-    if (this["supportingInformation"]) { this.supportingInformation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["authoredOn"]) { outcome.issue!.push(...this.authoredOn.doModelValidation().issue!); }
-    if (this["requester"]) { outcome.issue!.push(...this.requester.doModelValidation().issue!); }
-    if (this["performer"]) { outcome.issue!.push(...this.performer.doModelValidation().issue!); }
-    if (this["performerType"]) { outcome.issue!.push(...this.performerType.doModelValidation().issue!); }
-    if (this["recorder"]) { outcome.issue!.push(...this.recorder.doModelValidation().issue!); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["groupIdentifier"]) { outcome.issue!.push(...this.groupIdentifier.doModelValidation().issue!); }
-    if (this["courseOfTherapyType"]) { outcome.issue!.push(...this.courseOfTherapyType.doModelValidation().issue!); }
-    if (this["insurance"]) { this.insurance.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["dosageInstruction"]) { this.dosageInstruction.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["dispenseRequest"]) { outcome.issue!.push(...this.dispenseRequest.doModelValidation().issue!); }
-    if (this["substitution"]) { outcome.issue!.push(...this.substitution.doModelValidation().issue!); }
-    if (this["priorPrescription"]) { outcome.issue!.push(...this.priorPrescription.doModelValidation().issue!); }
-    if (this["detectedIssue"]) { this.detectedIssue.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["eventHistory"]) { this.eventHistory.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
+    if (this["supportingInformation"]) { this.supportingInformation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["authoredOn"]) { issues.push(...this.authoredOn.doModelValidation()); }
+    if (this["requester"]) { issues.push(...this.requester.doModelValidation()); }
+    if (this["performer"]) { issues.push(...this.performer.doModelValidation()); }
+    if (this["performerType"]) { issues.push(...this.performerType.doModelValidation()); }
+    if (this["recorder"]) { issues.push(...this.recorder.doModelValidation()); }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["groupIdentifier"]) { issues.push(...this.groupIdentifier.doModelValidation()); }
+    if (this["courseOfTherapyType"]) { issues.push(...this.courseOfTherapyType.doModelValidation()); }
+    if (this["insurance"]) { this.insurance.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["dosageInstruction"]) { this.dosageInstruction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["dispenseRequest"]) { issues.push(...this.dispenseRequest.doModelValidation()); }
+    if (this["substitution"]) { issues.push(...this.substitution.doModelValidation()); }
+    if (this["priorPrescription"]) { issues.push(...this.priorPrescription.doModelValidation()); }
+    if (this["detectedIssue"]) { this.detectedIssue.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["eventHistory"]) { this.eventHistory.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

@@ -21,10 +21,6 @@ import { MessageSignificanceCategoryCodes,  MessageSignificanceCategoryCodeType 
 import { MessageheaderResponseRequestCodings, MessageheaderResponseRequestCodingType,} from '../fhirValueSets/MessageheaderResponseRequestCodings.js';
 // @ts-ignore
 import { MessageheaderResponseRequestCodes,  MessageheaderResponseRequestCodeType } from '../fhirValueSets/MessageheaderResponseRequestCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the MessageDefinitionFocus type.
  */
@@ -54,7 +50,7 @@ export class MessageDefinitionFocus extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MessageDefinitionFocus';
+  public static override readonly _fts_dataType:string = 'MessageDefinitionFocus';
   /**
    * Multiple focuses addressing different resources may occasionally occur.  E.g. to link or unlink a resource from a particular account or encounter, etc.
    */
@@ -92,19 +88,19 @@ export class MessageDefinitionFocus extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:fhir.FhirCode fhir: MessageDefinition.focus.code:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.FhirCode fhir: MessageDefinition.focus.code:code', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["profile"]) { outcome.issue!.push(...this.profile.doModelValidation().issue!); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["profile"]) { issues.push(...this.profile.doModelValidation()); }
     if (!this['min']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property min:fhir.FhirUnsignedInt fhir: MessageDefinition.focus.min:unsignedInt', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property min:fhir.FhirUnsignedInt fhir: MessageDefinition.focus.min:unsignedInt', });
     }
-    if (this["min"]) { outcome.issue!.push(...this.min.doModelValidation().issue!); }
-    if (this["max"]) { outcome.issue!.push(...this.max.doModelValidation().issue!); }
-    return outcome;
+    if (this["min"]) { issues.push(...this.min.doModelValidation()); }
+    if (this["max"]) { issues.push(...this.max.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -128,7 +124,7 @@ export class MessageDefinitionAllowedResponse extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MessageDefinitionAllowedResponse';
+  public static override readonly _fts_dataType:string = 'MessageDefinitionAllowedResponse';
   /**
    * A reference to the message definition that must be adhered to by this supported response.
    */
@@ -149,14 +145,14 @@ export class MessageDefinitionAllowedResponse extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['message']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property message:fhir.FhirCanonical fhir: MessageDefinition.allowedResponse.message:canonical', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property message:fhir.FhirCanonical fhir: MessageDefinition.allowedResponse.message:canonical', });
     }
-    if (this["message"]) { outcome.issue!.push(...this.message.doModelValidation().issue!); }
-    if (this["situation"]) { outcome.issue!.push(...this.situation.doModelValidation().issue!); }
-    return outcome;
+    if (this["message"]) { issues.push(...this.message.doModelValidation()); }
+    if (this["situation"]) { issues.push(...this.situation.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -282,11 +278,11 @@ export class MessageDefinition extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MessageDefinition';
+  public static override readonly _fts_dataType:string = 'MessageDefinition';
   /**
    * Resource Type Name
    */
-  public resourceType: "MessageDefinition";
+  public override resourceType: "MessageDefinition";
   /**
    * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
    * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions). 
@@ -455,40 +451,40 @@ export class MessageDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"MessageDefinition" fhir: MessageDefinition.resourceType:"MessageDefinition"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MessageDefinition" fhir: MessageDefinition.resourceType:"MessageDefinition"', });
     }
-    if (this["url"]) { outcome.issue!.push(...this.url.doModelValidation().issue!); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["version"]) { outcome.issue!.push(...this.version.doModelValidation().issue!); }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["title"]) { outcome.issue!.push(...this.title.doModelValidation().issue!); }
-    if (this["replaces"]) { this.replaces.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
+    if (this["replaces"]) { this.replaces.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: MessageDefinition.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: MessageDefinition.status:code', });
     }
-    if (this["experimental"]) { outcome.issue!.push(...this.experimental.doModelValidation().issue!); }
+    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (!this['date']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: MessageDefinition.date:dateTime', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: MessageDefinition.date:dateTime', });
     }
-    if (this["date"]) { outcome.issue!.push(...this.date.doModelValidation().issue!); }
-    if (this["publisher"]) { outcome.issue!.push(...this.publisher.doModelValidation().issue!); }
-    if (this["contact"]) { this.contact.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["useContext"]) { this.useContext.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["purpose"]) { outcome.issue!.push(...this.purpose.doModelValidation().issue!); }
-    if (this["copyright"]) { outcome.issue!.push(...this.copyright.doModelValidation().issue!); }
-    if (this["base"]) { outcome.issue!.push(...this.base.doModelValidation().issue!); }
-    if (this["parent"]) { this.parent.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
+    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
+    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
+    if (this["base"]) { issues.push(...this.base.doModelValidation()); }
+    if (this["parent"]) { this.parent.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['event']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property event: fhir: MessageDefinition.event[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property event: fhir: MessageDefinition.event[x]:', });
     }
-    if (this["focus"]) { this.focus.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["allowedResponse"]) { this.allowedResponse.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["graph"]) { this.graph.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["focus"]) { this.focus.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["allowedResponse"]) { this.allowedResponse.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["graph"]) { this.graph.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

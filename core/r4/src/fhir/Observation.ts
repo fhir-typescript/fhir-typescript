@@ -41,10 +41,6 @@ import { BodySiteCodes,  BodySiteCodeType } from '../fhirValueSets/BodySiteCodes
 import { ObservationMethodsCodings, ObservationMethodsCodingType,} from '../fhirValueSets/ObservationMethodsCodings.js';
 // @ts-ignore
 import { ObservationMethodsCodes,  ObservationMethodsCodeType } from '../fhirValueSets/ObservationMethodsCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the ObservationReferenceRange type.
  */
@@ -82,7 +78,7 @@ export class ObservationReferenceRange extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ObservationReferenceRange';
+  public static override readonly _fts_dataType:string = 'ObservationReferenceRange';
   /**
    * The value of the low bound of the reference range.  The low bound of the reference range endpoint is inclusive of the value (e.g.  reference range is &gt;=5 - &lt;=9). If the low bound is omitted,  it is assumed to be meaningless (e.g. reference range is &lt;=2.3).
    */
@@ -129,15 +125,15 @@ export class ObservationReferenceRange extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["low"]) { outcome.issue!.push(...this.low.doModelValidation().issue!); }
-    if (this["high"]) { outcome.issue!.push(...this.high.doModelValidation().issue!); }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["appliesTo"]) { this.appliesTo.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["age"]) { outcome.issue!.push(...this.age.doModelValidation().issue!); }
-    if (this["text"]) { outcome.issue!.push(...this.text.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["low"]) { issues.push(...this.low.doModelValidation()); }
+    if (this["high"]) { issues.push(...this.high.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["appliesTo"]) { this.appliesTo.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["age"]) { issues.push(...this.age.doModelValidation()); }
+    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -218,7 +214,7 @@ export class ObservationComponent extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ObservationComponent';
+  public static override readonly _fts_dataType:string = 'ObservationComponent';
   /**
    * *All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.
    */
@@ -284,16 +280,16 @@ export class ObservationComponent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Observation.component.code:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Observation.component.code:CodeableConcept', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["dataAbsentReason"]) { outcome.issue!.push(...this.dataAbsentReason.doModelValidation().issue!); }
-    if (this["interpretation"]) { this.interpretation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["referenceRange"]) { this.referenceRange.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["dataAbsentReason"]) { issues.push(...this.dataAbsentReason.doModelValidation()); }
+    if (this["interpretation"]) { this.interpretation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["referenceRange"]) { this.referenceRange.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -471,11 +467,11 @@ export class Observation extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Observation';
+  public static override readonly _fts_dataType:string = 'Observation';
   /**
    * Resource Type Name
    */
-  public resourceType: "Observation";
+  public override resourceType: "Observation";
   /**
    * A unique identifier assigned to this observation.
    */
@@ -669,38 +665,38 @@ export class Observation extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Observation" fhir: Observation.resourceType:"Observation"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Observation" fhir: Observation.resourceType:"Observation"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["partOf"]) { this.partOf.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:ObservationStatusCodeType fhir: Observation.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ObservationStatusCodeType fhir: Observation.status:code', });
     }
-    if (this["category"]) { this.category.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Observation.code:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Observation.code:CodeableConcept', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["focus"]) { this.focus.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["encounter"]) { outcome.issue!.push(...this.encounter.doModelValidation().issue!); }
-    if (this["issued"]) { outcome.issue!.push(...this.issued.doModelValidation().issue!); }
-    if (this["performer"]) { this.performer.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["dataAbsentReason"]) { outcome.issue!.push(...this.dataAbsentReason.doModelValidation().issue!); }
-    if (this["interpretation"]) { this.interpretation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["note"]) { this.note.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["bodySite"]) { outcome.issue!.push(...this.bodySite.doModelValidation().issue!); }
-    if (this["method"]) { outcome.issue!.push(...this.method.doModelValidation().issue!); }
-    if (this["specimen"]) { outcome.issue!.push(...this.specimen.doModelValidation().issue!); }
-    if (this["device"]) { outcome.issue!.push(...this.device.doModelValidation().issue!); }
-    if (this["referenceRange"]) { this.referenceRange.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["hasMember"]) { this.hasMember.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["derivedFrom"]) { this.derivedFrom.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["component"]) { this.component.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["focus"]) { this.focus.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
+    if (this["issued"]) { issues.push(...this.issued.doModelValidation()); }
+    if (this["performer"]) { this.performer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["dataAbsentReason"]) { issues.push(...this.dataAbsentReason.doModelValidation()); }
+    if (this["interpretation"]) { this.interpretation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation()); }
+    if (this["method"]) { issues.push(...this.method.doModelValidation()); }
+    if (this["specimen"]) { issues.push(...this.specimen.doModelValidation()); }
+    if (this["device"]) { issues.push(...this.device.doModelValidation()); }
+    if (this["referenceRange"]) { this.referenceRange.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["hasMember"]) { this.hasMember.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["derivedFrom"]) { this.derivedFrom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["component"]) { this.component.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

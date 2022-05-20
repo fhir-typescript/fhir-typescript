@@ -2,7 +2,7 @@ import * as fhir from '../fhir.js';
 /**
  * A URI that is a literal reference
  */
-export interface FhirUrlArgs extends fhir.FhirUriArgs {
+export interface FhirUrlArgs extends fhir.FhirPrimitiveArgs {
     /**
      * A URI that is a literal reference
      */
@@ -11,7 +11,7 @@ export interface FhirUrlArgs extends fhir.FhirUriArgs {
 /**
  * A URI that is a literal reference
  */
-export declare class FhirUrl extends fhir.FhirUri {
+export declare class FhirUrl extends fhir.FhirPrimitive {
     /**
      * Mapping of this datatype to a FHIR equivalent
      */
@@ -36,6 +36,6 @@ export declare class FhirUrl extends fhir.FhirUri {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=FhirUrl.d.ts.map

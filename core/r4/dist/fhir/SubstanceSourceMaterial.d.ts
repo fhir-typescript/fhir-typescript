@@ -35,7 +35,7 @@ export declare class SubstanceSourceMaterialFractionDescription extends fhir.Bac
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceSourceMaterialOrganismAuthor type.
@@ -73,7 +73,7 @@ export declare class SubstanceSourceMaterialOrganismAuthor extends fhir.Backbone
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceSourceMaterialOrganismHybrid type.
@@ -135,7 +135,7 @@ export declare class SubstanceSourceMaterialOrganismHybrid extends fhir.Backbone
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceSourceMaterialOrganismOrganismGeneral type.
@@ -189,7 +189,7 @@ export declare class SubstanceSourceMaterialOrganismOrganismGeneral extends fhir
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceSourceMaterialOrganism type.
@@ -275,7 +275,7 @@ export declare class SubstanceSourceMaterialOrganism extends fhir.BackboneElemen
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceSourceMaterialPartDescription type.
@@ -313,7 +313,7 @@ export declare class SubstanceSourceMaterialPartDescription extends fhir.Backbon
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceSourceMaterial type.
@@ -447,6 +447,6 @@ export declare class SubstanceSourceMaterial extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=SubstanceSourceMaterial.d.ts.map

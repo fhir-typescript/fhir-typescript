@@ -13,10 +13,6 @@ import { IdentifierUseCodes,  IdentifierUseCodeType } from '../fhirValueSets/Ide
 import { IdentifierTypeCodings, IdentifierTypeCodingType,} from '../fhirValueSets/IdentifierTypeCodings.js';
 // @ts-ignore
 import { IdentifierTypeCodes,  IdentifierTypeCodeType } from '../fhirValueSets/IdentifierTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Identifier type.
  */
@@ -54,7 +50,7 @@ export class Identifier extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Identifier';
+  public static override readonly _fts_dataType:string = 'Identifier';
   /**
    * Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.
    */
@@ -106,13 +102,13 @@ export class Identifier extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["system"]) { outcome.issue!.push(...this.system.doModelValidation().issue!); }
-    if (this["value"]) { outcome.issue!.push(...this.value.doModelValidation().issue!); }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    if (this["assigner"]) { outcome.issue!.push(...this.assigner.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["system"]) { issues.push(...this.system.doModelValidation()); }
+    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["assigner"]) { issues.push(...this.assigner.doModelValidation()); }
+    return issues;
   }
 }

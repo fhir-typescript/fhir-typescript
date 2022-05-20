@@ -51,7 +51,7 @@ export declare class SubstanceNucleicAcidSubunitLinkage extends fhir.BackboneEle
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceNucleicAcidSubunitSugar type.
@@ -97,7 +97,7 @@ export declare class SubstanceNucleicAcidSubunitSugar extends fhir.BackboneEleme
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceNucleicAcidSubunit type.
@@ -183,7 +183,7 @@ export declare class SubstanceNucleicAcidSubunit extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceNucleicAcid type.
@@ -253,6 +253,6 @@ export declare class SubstanceNucleicAcid extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=SubstanceNucleicAcid.d.ts.map

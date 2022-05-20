@@ -2,7 +2,7 @@ import * as fhir from '../fhir.js';
 /**
  * Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/
  */
-export interface FhirMarkdownArgs extends fhir.FhirStringArgs {
+export interface FhirMarkdownArgs extends fhir.FhirPrimitiveArgs {
     /**
      * Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/
      */
@@ -11,7 +11,7 @@ export interface FhirMarkdownArgs extends fhir.FhirStringArgs {
 /**
  * Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/
  */
-export declare class FhirMarkdown extends fhir.FhirString {
+export declare class FhirMarkdown extends fhir.FhirPrimitive {
     /**
      * Mapping of this datatype to a FHIR equivalent
      */
@@ -36,6 +36,6 @@ export declare class FhirMarkdown extends fhir.FhirString {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=FhirMarkdown.d.ts.map

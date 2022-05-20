@@ -13,10 +13,6 @@ import { EndpointStatusCodes,  EndpointStatusCodeType } from '../fhirValueSets/E
 import { EndpointConnectionTypeCodings, EndpointConnectionTypeCodingType,} from '../fhirValueSets/EndpointConnectionTypeCodings.js';
 // @ts-ignore
 import { EndpointConnectionTypeCodes,  EndpointConnectionTypeCodeType } from '../fhirValueSets/EndpointConnectionTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Endpoint type.
  */
@@ -81,11 +77,11 @@ export class Endpoint extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Endpoint';
+  public static override readonly _fts_dataType:string = 'Endpoint';
   /**
    * Resource Type Name
    */
-  public resourceType: "Endpoint";
+  public override resourceType: "Endpoint";
   /**
    * Identifier for the organization that is used to identify the endpoint across multiple disparate systems.
    */
@@ -174,37 +170,37 @@ export class Endpoint extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Endpoint" fhir: Endpoint.resourceType:"Endpoint"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Endpoint" fhir: Endpoint.resourceType:"Endpoint"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:EndpointStatusCodeType fhir: Endpoint.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:EndpointStatusCodeType fhir: Endpoint.status:code', });
     }
     if (!this['connectionType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property connectionType:fhir.Coding fhir: Endpoint.connectionType:Coding', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property connectionType:fhir.Coding fhir: Endpoint.connectionType:Coding', });
     }
-    if (this["connectionType"]) { outcome.issue!.push(...this.connectionType.doModelValidation().issue!); }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["managingOrganization"]) { outcome.issue!.push(...this.managingOrganization.doModelValidation().issue!); }
-    if (this["contact"]) { this.contact.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
+    if (this["connectionType"]) { issues.push(...this.connectionType.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation()); }
+    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
     if (!this['payloadType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property payloadType:fhir.CodeableConcept[] fhir: Endpoint.payloadType:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property payloadType:fhir.CodeableConcept[] fhir: Endpoint.payloadType:CodeableConcept', });
     } else if (!Array.isArray(this.payloadType)) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.StructuralIssue,  diagnostics: 'Found scalar in array property payloadType:fhir.CodeableConcept[] fhir: Endpoint.payloadType:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property payloadType:fhir.CodeableConcept[] fhir: Endpoint.payloadType:CodeableConcept', });
     } else if (this.payloadType.length === 0) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property payloadType:fhir.CodeableConcept[] fhir: Endpoint.payloadType:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property payloadType:fhir.CodeableConcept[] fhir: Endpoint.payloadType:CodeableConcept', });
     }
-    if (this["payloadType"]) { this.payloadType.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["payloadMimeType"]) { this.payloadMimeType.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["payloadType"]) { this.payloadType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["payloadMimeType"]) { this.payloadMimeType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['address']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property address:fhir.FhirUrl fhir: Endpoint.address:url', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property address:fhir.FhirUrl fhir: Endpoint.address:url', });
     }
-    if (this["address"]) { outcome.issue!.push(...this.address.doModelValidation().issue!); }
-    if (this["header"]) { this.header.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["address"]) { issues.push(...this.address.doModelValidation()); }
+    if (this["header"]) { this.header.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

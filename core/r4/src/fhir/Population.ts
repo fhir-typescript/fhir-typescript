@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Population type.
  */
@@ -46,7 +42,7 @@ export class Population extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Population';
+  public static override readonly _fts_dataType:string = 'Population';
   /**
    * The age of the specific population.
    */
@@ -82,11 +78,11 @@ export class Population extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["gender"]) { outcome.issue!.push(...this.gender.doModelValidation().issue!); }
-    if (this["race"]) { outcome.issue!.push(...this.race.doModelValidation().issue!); }
-    if (this["physiologicalCondition"]) { outcome.issue!.push(...this.physiologicalCondition.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["gender"]) { issues.push(...this.gender.doModelValidation()); }
+    if (this["race"]) { issues.push(...this.race.doModelValidation()); }
+    if (this["physiologicalCondition"]) { issues.push(...this.physiologicalCondition.doModelValidation()); }
+    return issues;
   }
 }

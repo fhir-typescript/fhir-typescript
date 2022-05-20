@@ -13,10 +13,6 @@ import { ResourceTypesValueSetCodes,  ResourceTypesValueSetCodeType } from '../f
 import { LanguagesCodings, LanguagesCodingType,} from '../fhirValueSets/LanguagesCodings.js';
 // @ts-ignore
 import { LanguagesCodes,  LanguagesCodeType } from '../fhirValueSets/LanguagesCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Resource type.
  */
@@ -50,7 +46,7 @@ export class Resource extends fhir.FhirBase {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Resource';
+  public static override readonly _fts_dataType:string = 'Resource';
   /**
    * Resource Type Name
    */
@@ -91,15 +87,15 @@ export class Resource extends fhir.FhirBase {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:string fhir: Resource.resourceType:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:string fhir: Resource.resourceType:string', });
     }
-    if (this["id"]) { outcome.issue!.push(...this.id.doModelValidation().issue!); }
-    if (this["meta"]) { outcome.issue!.push(...this.meta.doModelValidation().issue!); }
-    if (this["implicitRules"]) { outcome.issue!.push(...this.implicitRules.doModelValidation().issue!); }
-    if (this["language"]) { outcome.issue!.push(...this.language.doModelValidation().issue!); }
-    return outcome;
+    if (this["id"]) { issues.push(...this.id.doModelValidation()); }
+    if (this["meta"]) { issues.push(...this.meta.doModelValidation()); }
+    if (this["implicitRules"]) { issues.push(...this.implicitRules.doModelValidation()); }
+    if (this["language"]) { issues.push(...this.language.doModelValidation()); }
+    return issues;
   }
 }

@@ -2,7 +2,7 @@ import * as fhir from '../fhir.js';
 /**
  * see [Canonical References](references.html#canonical)
  */
-export interface FhirCanonicalArgs extends fhir.FhirUriArgs {
+export interface FhirCanonicalArgs extends fhir.FhirPrimitiveArgs {
     /**
      * see [Canonical References](references.html#canonical)
      */
@@ -11,7 +11,7 @@ export interface FhirCanonicalArgs extends fhir.FhirUriArgs {
 /**
  * see [Canonical References](references.html#canonical)
  */
-export declare class FhirCanonical extends fhir.FhirUri {
+export declare class FhirCanonical extends fhir.FhirPrimitive {
     /**
      * Mapping of this datatype to a FHIR equivalent
      */
@@ -36,6 +36,6 @@ export declare class FhirCanonical extends fhir.FhirUri {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=FhirCanonical.d.ts.map

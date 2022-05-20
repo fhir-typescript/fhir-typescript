@@ -13,10 +13,6 @@ import { EncounterParticipantTypeCodes,  EncounterParticipantTypeCodeType } from
 import { ParticipationstatusCodings, ParticipationstatusCodingType,} from '../fhirValueSets/ParticipationstatusCodings.js';
 // @ts-ignore
 import { ParticipationstatusCodes,  ParticipationstatusCodeType } from '../fhirValueSets/ParticipationstatusCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the AppointmentResponse type.
  */
@@ -68,11 +64,11 @@ export class AppointmentResponse extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'AppointmentResponse';
+  public static override readonly _fts_dataType:string = 'AppointmentResponse';
   /**
    * Resource Type Name
    */
-  public resourceType: "AppointmentResponse";
+  public override resourceType: "AppointmentResponse";
   /**
    * This records identifiers associated with this appointment response concern that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate.
    */
@@ -141,24 +137,24 @@ export class AppointmentResponse extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"AppointmentResponse" fhir: AppointmentResponse.resourceType:"AppointmentResponse"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"AppointmentResponse" fhir: AppointmentResponse.resourceType:"AppointmentResponse"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['appointment']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property appointment:fhir.Reference fhir: AppointmentResponse.appointment:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property appointment:fhir.Reference fhir: AppointmentResponse.appointment:Reference', });
     }
-    if (this["appointment"]) { outcome.issue!.push(...this.appointment.doModelValidation().issue!); }
-    if (this["start"]) { outcome.issue!.push(...this.start.doModelValidation().issue!); }
-    if (this["end"]) { outcome.issue!.push(...this.end.doModelValidation().issue!); }
-    if (this["participantType"]) { this.participantType.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["actor"]) { outcome.issue!.push(...this.actor.doModelValidation().issue!); }
+    if (this["appointment"]) { issues.push(...this.appointment.doModelValidation()); }
+    if (this["start"]) { issues.push(...this.start.doModelValidation()); }
+    if (this["end"]) { issues.push(...this.end.doModelValidation()); }
+    if (this["participantType"]) { this.participantType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["actor"]) { issues.push(...this.actor.doModelValidation()); }
     if (!this['participantStatus']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property participantStatus:ParticipationstatusCodeType fhir: AppointmentResponse.participantStatus:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property participantStatus:ParticipationstatusCodeType fhir: AppointmentResponse.participantStatus:code', });
     }
-    if (this["comment"]) { outcome.issue!.push(...this.comment.doModelValidation().issue!); }
-    return outcome;
+    if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
+    return issues;
   }
 }

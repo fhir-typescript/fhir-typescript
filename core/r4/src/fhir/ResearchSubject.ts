@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { ResearchSubjectStatusCodings, ResearchSubjectStatusCodingType,} from '../fhirValueSets/ResearchSubjectStatusCodings.js';
 // @ts-ignore
 import { ResearchSubjectStatusCodes,  ResearchSubjectStatusCodeType } from '../fhirValueSets/ResearchSubjectStatusCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the ResearchSubject type.
  */
@@ -62,11 +58,11 @@ export class ResearchSubject extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ResearchSubject';
+  public static override readonly _fts_dataType:string = 'ResearchSubject';
   /**
    * Resource Type Name
    */
-  public resourceType: "ResearchSubject";
+  public override resourceType: "ResearchSubject";
   /**
    * Identifiers assigned to this research subject for a study.
    */
@@ -127,27 +123,27 @@ export class ResearchSubject extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"ResearchSubject" fhir: ResearchSubject.resourceType:"ResearchSubject"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ResearchSubject" fhir: ResearchSubject.resourceType:"ResearchSubject"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:ResearchSubjectStatusCodeType fhir: ResearchSubject.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ResearchSubjectStatusCodeType fhir: ResearchSubject.status:code', });
     }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
     if (!this['study']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property study:fhir.Reference fhir: ResearchSubject.study:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property study:fhir.Reference fhir: ResearchSubject.study:Reference', });
     }
-    if (this["study"]) { outcome.issue!.push(...this.study.doModelValidation().issue!); }
+    if (this["study"]) { issues.push(...this.study.doModelValidation()); }
     if (!this['individual']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property individual:fhir.Reference fhir: ResearchSubject.individual:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property individual:fhir.Reference fhir: ResearchSubject.individual:Reference', });
     }
-    if (this["individual"]) { outcome.issue!.push(...this.individual.doModelValidation().issue!); }
-    if (this["assignedArm"]) { outcome.issue!.push(...this.assignedArm.doModelValidation().issue!); }
-    if (this["actualArm"]) { outcome.issue!.push(...this.actualArm.doModelValidation().issue!); }
-    if (this["consent"]) { outcome.issue!.push(...this.consent.doModelValidation().issue!); }
-    return outcome;
+    if (this["individual"]) { issues.push(...this.individual.doModelValidation()); }
+    if (this["assignedArm"]) { issues.push(...this.assignedArm.doModelValidation()); }
+    if (this["actualArm"]) { issues.push(...this.actualArm.doModelValidation()); }
+    if (this["consent"]) { issues.push(...this.consent.doModelValidation()); }
+    return issues;
   }
 }

@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { LanguagesCodings, LanguagesCodingType,} from '../fhirValueSets/LanguagesCodings.js';
 // @ts-ignore
 import { LanguagesCodes,  LanguagesCodeType } from '../fhirValueSets/LanguagesCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Attachment type.
  */
@@ -58,7 +54,7 @@ export class Attachment extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Attachment';
+  public static override readonly _fts_dataType:string = 'Attachment';
   /**
    * Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.
    */
@@ -114,16 +110,16 @@ export class Attachment extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["contentType"]) { outcome.issue!.push(...this.contentType.doModelValidation().issue!); }
-    if (this["language"]) { outcome.issue!.push(...this.language.doModelValidation().issue!); }
-    if (this["data"]) { outcome.issue!.push(...this.data.doModelValidation().issue!); }
-    if (this["url"]) { outcome.issue!.push(...this.url.doModelValidation().issue!); }
-    if (this["size"]) { outcome.issue!.push(...this.size.doModelValidation().issue!); }
-    if (this["hash"]) { outcome.issue!.push(...this.hash.doModelValidation().issue!); }
-    if (this["title"]) { outcome.issue!.push(...this.title.doModelValidation().issue!); }
-    if (this["creation"]) { outcome.issue!.push(...this.creation.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["contentType"]) { issues.push(...this.contentType.doModelValidation()); }
+    if (this["language"]) { issues.push(...this.language.doModelValidation()); }
+    if (this["data"]) { issues.push(...this.data.doModelValidation()); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
+    if (this["size"]) { issues.push(...this.size.doModelValidation()); }
+    if (this["hash"]) { issues.push(...this.hash.doModelValidation()); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
+    if (this["creation"]) { issues.push(...this.creation.doModelValidation()); }
+    return issues;
   }
 }

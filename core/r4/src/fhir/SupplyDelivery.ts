@@ -13,10 +13,6 @@ import { SupplydeliveryStatusCodes,  SupplydeliveryStatusCodeType } from '../fhi
 import { SupplydeliveryTypeCodings, SupplydeliveryTypeCodingType,} from '../fhirValueSets/SupplydeliveryTypeCodings.js';
 // @ts-ignore
 import { SupplydeliveryTypeCodes,  SupplydeliveryTypeCodeType } from '../fhirValueSets/SupplydeliveryTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the SupplyDeliverySuppliedItem type.
  */
@@ -46,7 +42,7 @@ export class SupplyDeliverySuppliedItem extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SupplyDeliverySuppliedItem';
+  public static override readonly _fts_dataType:string = 'SupplyDeliverySuppliedItem';
   /**
    * The amount of supply that has been dispensed. Includes unit of measure.
    */
@@ -72,10 +68,10 @@ export class SupplyDeliverySuppliedItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["quantity"]) { outcome.issue!.push(...this.quantity.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -152,11 +148,11 @@ export class SupplyDelivery extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SupplyDelivery';
+  public static override readonly _fts_dataType:string = 'SupplyDelivery';
   /**
    * Resource Type Name
    */
-  public resourceType: "SupplyDelivery";
+  public override resourceType: "SupplyDelivery";
   /**
    * This identifier is typically assigned by the dispenser, and may be used to reference the delivery when exchanging information about it with other systems.
    */
@@ -246,20 +242,20 @@ export class SupplyDelivery extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"SupplyDelivery" fhir: SupplyDelivery.resourceType:"SupplyDelivery"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"SupplyDelivery" fhir: SupplyDelivery.resourceType:"SupplyDelivery"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["partOf"]) { this.partOf.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["patient"]) { outcome.issue!.push(...this.patient.doModelValidation().issue!); }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["suppliedItem"]) { outcome.issue!.push(...this.suppliedItem.doModelValidation().issue!); }
-    if (this["supplier"]) { outcome.issue!.push(...this.supplier.doModelValidation().issue!); }
-    if (this["destination"]) { outcome.issue!.push(...this.destination.doModelValidation().issue!); }
-    if (this["receiver"]) { this.receiver.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["suppliedItem"]) { issues.push(...this.suppliedItem.doModelValidation()); }
+    if (this["supplier"]) { issues.push(...this.supplier.doModelValidation()); }
+    if (this["destination"]) { issues.push(...this.destination.doModelValidation()); }
+    if (this["receiver"]) { this.receiver.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

@@ -35,7 +35,7 @@ export declare class MedicinalProductPackagedBatchIdentifier extends fhir.Backbo
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductPackagedPackageItem type.
@@ -153,7 +153,7 @@ export declare class MedicinalProductPackagedPackageItem extends fhir.BackboneEl
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductPackaged type.
@@ -255,6 +255,6 @@ export declare class MedicinalProductPackaged extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=MedicinalProductPackaged.d.ts.map

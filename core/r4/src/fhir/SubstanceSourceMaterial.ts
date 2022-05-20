@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the SubstanceSourceMaterialFractionDescription type.
  */
@@ -30,7 +26,7 @@ export class SubstanceSourceMaterialFractionDescription extends fhir.BackboneEle
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceSourceMaterialFractionDescription';
+  public static override readonly _fts_dataType:string = 'SubstanceSourceMaterialFractionDescription';
   /**
    * This element is capturing information about the fraction of a plant part, or human plasma for fractionation.
    */
@@ -50,11 +46,11 @@ export class SubstanceSourceMaterialFractionDescription extends fhir.BackboneEle
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["fraction"]) { outcome.issue!.push(...this.fraction.doModelValidation().issue!); }
-    if (this["materialType"]) { outcome.issue!.push(...this.materialType.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["fraction"]) { issues.push(...this.fraction.doModelValidation()); }
+    if (this["materialType"]) { issues.push(...this.materialType.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -78,7 +74,7 @@ export class SubstanceSourceMaterialOrganismAuthor extends fhir.BackboneElement 
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceSourceMaterialOrganismAuthor';
+  public static override readonly _fts_dataType:string = 'SubstanceSourceMaterialOrganismAuthor';
   /**
    * The type of author of an organism species shall be specified. The parenthetical author of an organism species refers to the first author who published the plant/animal name (of any rank). The primary author of an organism species refers to the first author(s), who validly published the plant/animal name.
    */
@@ -98,11 +94,11 @@ export class SubstanceSourceMaterialOrganismAuthor extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["authorType"]) { outcome.issue!.push(...this.authorType.doModelValidation().issue!); }
-    if (this["authorDescription"]) { outcome.issue!.push(...this.authorDescription.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["authorType"]) { issues.push(...this.authorType.doModelValidation()); }
+    if (this["authorDescription"]) { issues.push(...this.authorDescription.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -138,7 +134,7 @@ export class SubstanceSourceMaterialOrganismHybrid extends fhir.BackboneElement 
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceSourceMaterialOrganismHybrid';
+  public static override readonly _fts_dataType:string = 'SubstanceSourceMaterialOrganismHybrid';
   /**
    * The identifier of the maternal species constituting the hybrid organism shall be specified based on a controlled vocabulary. For plants, the parents aren’t always known, and it is unlikely that it will be known which is maternal and which is paternal.
    */
@@ -173,14 +169,14 @@ export class SubstanceSourceMaterialOrganismHybrid extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["maternalOrganismId"]) { outcome.issue!.push(...this.maternalOrganismId.doModelValidation().issue!); }
-    if (this["maternalOrganismName"]) { outcome.issue!.push(...this.maternalOrganismName.doModelValidation().issue!); }
-    if (this["paternalOrganismId"]) { outcome.issue!.push(...this.paternalOrganismId.doModelValidation().issue!); }
-    if (this["paternalOrganismName"]) { outcome.issue!.push(...this.paternalOrganismName.doModelValidation().issue!); }
-    if (this["hybridType"]) { outcome.issue!.push(...this.hybridType.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["maternalOrganismId"]) { issues.push(...this.maternalOrganismId.doModelValidation()); }
+    if (this["maternalOrganismName"]) { issues.push(...this.maternalOrganismName.doModelValidation()); }
+    if (this["paternalOrganismId"]) { issues.push(...this.paternalOrganismId.doModelValidation()); }
+    if (this["paternalOrganismName"]) { issues.push(...this.paternalOrganismName.doModelValidation()); }
+    if (this["hybridType"]) { issues.push(...this.hybridType.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -212,7 +208,7 @@ export class SubstanceSourceMaterialOrganismOrganismGeneral extends fhir.Backbon
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceSourceMaterialOrganismOrganismGeneral';
+  public static override readonly _fts_dataType:string = 'SubstanceSourceMaterialOrganismOrganismGeneral';
   /**
    * The kingdom of an organism shall be specified.
    */
@@ -242,13 +238,13 @@ export class SubstanceSourceMaterialOrganismOrganismGeneral extends fhir.Backbon
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["kingdom"]) { outcome.issue!.push(...this.kingdom.doModelValidation().issue!); }
-    if (this["phylum"]) { outcome.issue!.push(...this.phylum.doModelValidation().issue!); }
-    if (this["class"]) { outcome.issue!.push(...this.class.doModelValidation().issue!); }
-    if (this["order"]) { outcome.issue!.push(...this.order.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["kingdom"]) { issues.push(...this.kingdom.doModelValidation()); }
+    if (this["phylum"]) { issues.push(...this.phylum.doModelValidation()); }
+    if (this["class"]) { issues.push(...this.class.doModelValidation()); }
+    if (this["order"]) { issues.push(...this.order.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -296,7 +292,7 @@ export class SubstanceSourceMaterialOrganism extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceSourceMaterialOrganism';
+  public static override readonly _fts_dataType:string = 'SubstanceSourceMaterialOrganism';
   /**
    * The family of an organism shall be specified.
    */
@@ -347,17 +343,17 @@ export class SubstanceSourceMaterialOrganism extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["family"]) { outcome.issue!.push(...this.family.doModelValidation().issue!); }
-    if (this["genus"]) { outcome.issue!.push(...this.genus.doModelValidation().issue!); }
-    if (this["species"]) { outcome.issue!.push(...this.species.doModelValidation().issue!); }
-    if (this["intraspecificType"]) { outcome.issue!.push(...this.intraspecificType.doModelValidation().issue!); }
-    if (this["intraspecificDescription"]) { outcome.issue!.push(...this.intraspecificDescription.doModelValidation().issue!); }
-    if (this["author"]) { this.author.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["hybrid"]) { outcome.issue!.push(...this.hybrid.doModelValidation().issue!); }
-    if (this["organismGeneral"]) { outcome.issue!.push(...this.organismGeneral.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["family"]) { issues.push(...this.family.doModelValidation()); }
+    if (this["genus"]) { issues.push(...this.genus.doModelValidation()); }
+    if (this["species"]) { issues.push(...this.species.doModelValidation()); }
+    if (this["intraspecificType"]) { issues.push(...this.intraspecificType.doModelValidation()); }
+    if (this["intraspecificDescription"]) { issues.push(...this.intraspecificDescription.doModelValidation()); }
+    if (this["author"]) { this.author.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["hybrid"]) { issues.push(...this.hybrid.doModelValidation()); }
+    if (this["organismGeneral"]) { issues.push(...this.organismGeneral.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -381,7 +377,7 @@ export class SubstanceSourceMaterialPartDescription extends fhir.BackboneElement
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceSourceMaterialPartDescription';
+  public static override readonly _fts_dataType:string = 'SubstanceSourceMaterialPartDescription';
   /**
    * Entity of anatomical origin of source material within an organism.
    */
@@ -401,11 +397,11 @@ export class SubstanceSourceMaterialPartDescription extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["part"]) { outcome.issue!.push(...this.part.doModelValidation().issue!); }
-    if (this["partLocation"]) { outcome.issue!.push(...this.partLocation.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["part"]) { issues.push(...this.part.doModelValidation()); }
+    if (this["partLocation"]) { issues.push(...this.partLocation.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -477,11 +473,11 @@ export class SubstanceSourceMaterial extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceSourceMaterial';
+  public static override readonly _fts_dataType:string = 'SubstanceSourceMaterial';
   /**
    * Resource Type Name
    */
-  public resourceType: "SubstanceSourceMaterial";
+  public override resourceType: "SubstanceSourceMaterial";
   /**
    * General high level classification of the source material specific to the origin of the material.
    */
@@ -563,24 +559,24 @@ export class SubstanceSourceMaterial extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"SubstanceSourceMaterial" fhir: SubstanceSourceMaterial.resourceType:"SubstanceSourceMaterial"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"SubstanceSourceMaterial" fhir: SubstanceSourceMaterial.resourceType:"SubstanceSourceMaterial"', });
     }
-    if (this["sourceMaterialClass"]) { outcome.issue!.push(...this.sourceMaterialClass.doModelValidation().issue!); }
-    if (this["sourceMaterialType"]) { outcome.issue!.push(...this.sourceMaterialType.doModelValidation().issue!); }
-    if (this["sourceMaterialState"]) { outcome.issue!.push(...this.sourceMaterialState.doModelValidation().issue!); }
-    if (this["organismId"]) { outcome.issue!.push(...this.organismId.doModelValidation().issue!); }
-    if (this["organismName"]) { outcome.issue!.push(...this.organismName.doModelValidation().issue!); }
-    if (this["parentSubstanceId"]) { this.parentSubstanceId.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["parentSubstanceName"]) { this.parentSubstanceName.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["countryOfOrigin"]) { this.countryOfOrigin.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["geographicalLocation"]) { this.geographicalLocation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["developmentStage"]) { outcome.issue!.push(...this.developmentStage.doModelValidation().issue!); }
-    if (this["fractionDescription"]) { this.fractionDescription.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["organism"]) { outcome.issue!.push(...this.organism.doModelValidation().issue!); }
-    if (this["partDescription"]) { this.partDescription.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["sourceMaterialClass"]) { issues.push(...this.sourceMaterialClass.doModelValidation()); }
+    if (this["sourceMaterialType"]) { issues.push(...this.sourceMaterialType.doModelValidation()); }
+    if (this["sourceMaterialState"]) { issues.push(...this.sourceMaterialState.doModelValidation()); }
+    if (this["organismId"]) { issues.push(...this.organismId.doModelValidation()); }
+    if (this["organismName"]) { issues.push(...this.organismName.doModelValidation()); }
+    if (this["parentSubstanceId"]) { this.parentSubstanceId.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["parentSubstanceName"]) { this.parentSubstanceName.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["countryOfOrigin"]) { this.countryOfOrigin.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["geographicalLocation"]) { this.geographicalLocation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["developmentStage"]) { issues.push(...this.developmentStage.doModelValidation()); }
+    if (this["fractionDescription"]) { this.fractionDescription.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["organism"]) { issues.push(...this.organism.doModelValidation()); }
+    if (this["partDescription"]) { this.partDescription.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

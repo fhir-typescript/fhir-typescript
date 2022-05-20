@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the MedicinalProductUndesirableEffect type.
  */
@@ -46,11 +42,11 @@ export class MedicinalProductUndesirableEffect extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MedicinalProductUndesirableEffect';
+  public static override readonly _fts_dataType:string = 'MedicinalProductUndesirableEffect';
   /**
    * Resource Type Name
    */
-  public resourceType: "MedicinalProductUndesirableEffect";
+  public override resourceType: "MedicinalProductUndesirableEffect";
   /**
    * The medication for which this is an indication.
    */
@@ -88,16 +84,16 @@ export class MedicinalProductUndesirableEffect extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"MedicinalProductUndesirableEffect" fhir: MedicinalProductUndesirableEffect.resourceType:"MedicinalProductUndesirableEffect"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicinalProductUndesirableEffect" fhir: MedicinalProductUndesirableEffect.resourceType:"MedicinalProductUndesirableEffect"', });
     }
-    if (this["subject"]) { this.subject.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["symptomConditionEffect"]) { outcome.issue!.push(...this.symptomConditionEffect.doModelValidation().issue!); }
-    if (this["classification"]) { outcome.issue!.push(...this.classification.doModelValidation().issue!); }
-    if (this["frequencyOfOccurrence"]) { outcome.issue!.push(...this.frequencyOfOccurrence.doModelValidation().issue!); }
-    if (this["population"]) { this.population.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["subject"]) { this.subject.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["symptomConditionEffect"]) { issues.push(...this.symptomConditionEffect.doModelValidation()); }
+    if (this["classification"]) { issues.push(...this.classification.doModelValidation()); }
+    if (this["frequencyOfOccurrence"]) { issues.push(...this.frequencyOfOccurrence.doModelValidation()); }
+    if (this["population"]) { this.population.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

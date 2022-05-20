@@ -13,10 +13,6 @@ import { FmStatusCodes,  FmStatusCodeType } from '../fhirValueSets/FmStatusCodes
 import { RemittanceOutcomeCodings, RemittanceOutcomeCodingType,} from '../fhirValueSets/RemittanceOutcomeCodings.js';
 // @ts-ignore
 import { RemittanceOutcomeCodes,  RemittanceOutcomeCodeType } from '../fhirValueSets/RemittanceOutcomeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the EnrollmentResponse type.
  */
@@ -66,11 +62,11 @@ export class EnrollmentResponse extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'EnrollmentResponse';
+  public static override readonly _fts_dataType:string = 'EnrollmentResponse';
   /**
    * Resource Type Name
    */
-  public resourceType: "EnrollmentResponse";
+  public override resourceType: "EnrollmentResponse";
   /**
    * The Response business identifier.
    */
@@ -134,17 +130,17 @@ export class EnrollmentResponse extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"EnrollmentResponse" fhir: EnrollmentResponse.resourceType:"EnrollmentResponse"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"EnrollmentResponse" fhir: EnrollmentResponse.resourceType:"EnrollmentResponse"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["request"]) { outcome.issue!.push(...this.request.doModelValidation().issue!); }
-    if (this["disposition"]) { outcome.issue!.push(...this.disposition.doModelValidation().issue!); }
-    if (this["created"]) { outcome.issue!.push(...this.created.doModelValidation().issue!); }
-    if (this["organization"]) { outcome.issue!.push(...this.organization.doModelValidation().issue!); }
-    if (this["requestProvider"]) { outcome.issue!.push(...this.requestProvider.doModelValidation().issue!); }
-    return outcome;
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["request"]) { issues.push(...this.request.doModelValidation()); }
+    if (this["disposition"]) { issues.push(...this.disposition.doModelValidation()); }
+    if (this["created"]) { issues.push(...this.created.doModelValidation()); }
+    if (this["organization"]) { issues.push(...this.organization.doModelValidation()); }
+    if (this["requestProvider"]) { issues.push(...this.requestProvider.doModelValidation()); }
+    return issues;
   }
 }

@@ -2,7 +2,7 @@ import * as fhir from '../fhir.js';
 /**
  * RFC 3001. See also ISO/IEC 8824:1990 €
  */
-export interface FhirOidArgs extends fhir.FhirUriArgs {
+export interface FhirOidArgs extends fhir.FhirPrimitiveArgs {
     /**
      * RFC 3001. See also ISO/IEC 8824:1990 €
      */
@@ -11,7 +11,7 @@ export interface FhirOidArgs extends fhir.FhirUriArgs {
 /**
  * RFC 3001. See also ISO/IEC 8824:1990 €
  */
-export declare class FhirOid extends fhir.FhirUri {
+export declare class FhirOid extends fhir.FhirPrimitive {
     /**
      * Mapping of this datatype to a FHIR equivalent
      */
@@ -36,6 +36,6 @@ export declare class FhirOid extends fhir.FhirUri {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=FhirOid.d.ts.map

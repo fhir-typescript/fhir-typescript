@@ -49,10 +49,6 @@ import { DocumentClasscodesCodes,  DocumentClasscodesCodeType } from '../fhirVal
 import { V3ConfidentialityClassificationCodings, V3ConfidentialityClassificationCodingType,} from '../fhirValueSets/V3ConfidentialityClassificationCodings.js';
 // @ts-ignore
 import { V3ConfidentialityClassificationCodes,  V3ConfidentialityClassificationCodeType } from '../fhirValueSets/V3ConfidentialityClassificationCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the CompositionAttester type.
  */
@@ -78,7 +74,7 @@ export class CompositionAttester extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'CompositionAttester';
+  public static override readonly _fts_dataType:string = 'CompositionAttester';
   /**
    * The type of attestation the authenticator offers.
    */
@@ -110,14 +106,14 @@ export class CompositionAttester extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['mode']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property mode:CompositionAttestationModeCodeType fhir: Composition.attester.mode:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property mode:CompositionAttestationModeCodeType fhir: Composition.attester.mode:code', });
     }
-    if (this["time"]) { outcome.issue!.push(...this.time.doModelValidation().issue!); }
-    if (this["party"]) { outcome.issue!.push(...this.party.doModelValidation().issue!); }
-    return outcome;
+    if (this["time"]) { issues.push(...this.time.doModelValidation()); }
+    if (this["party"]) { issues.push(...this.party.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -149,7 +145,7 @@ export class CompositionRelatesTo extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'CompositionRelatesTo';
+  public static override readonly _fts_dataType:string = 'CompositionRelatesTo';
   /**
    * If this document appends another document, then the document cannot be fully understood without also accessing the referenced document.
    */
@@ -183,15 +179,15 @@ export class CompositionRelatesTo extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:DocumentRelationshipTypeCodeType fhir: Composition.relatesTo.code:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:DocumentRelationshipTypeCodeType fhir: Composition.relatesTo.code:code', });
     }
     if (!this['target']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property target: fhir: Composition.relatesTo.target[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property target: fhir: Composition.relatesTo.target[x]:', });
     }
-    return outcome;
+    return issues;
   }
 }
 /**
@@ -219,7 +215,7 @@ export class CompositionEvent extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'CompositionEvent';
+  public static override readonly _fts_dataType:string = 'CompositionEvent';
   /**
    * An event can further specialize the act inherent in the typeCode, such as where it is simply "Procedure Report" and the procedure was a "colonoscopy". If one or more eventCodes are included, they SHALL NOT conflict with the values inherent in the classCode, practiceSettingCode or typeCode, as such a conflict would create an ambiguous situation. This short list of codes is provided to be used as key words for certain types of queries.
    */
@@ -246,12 +242,12 @@ export class CompositionEvent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["code"]) { this.code.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    if (this["detail"]) { this.detail.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["detail"]) { this.detail.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -308,7 +304,7 @@ export class CompositionSection extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'CompositionSection';
+  public static override readonly _fts_dataType:string = 'CompositionSection';
   /**
    * The title identifies the section for a human reader. The title must be consistent with the narrative of the resource that is the target of the section.content reference. Generally, sections SHOULD have titles, but in some documents, it is unnecessary or inappropriate. Typically, this is where a section has subsections that have their own adequately distinguishing title,  or documents that only have a single section. Most Implementation Guides will make section title to be a required element.
    */
@@ -390,18 +386,18 @@ export class CompositionSection extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["title"]) { outcome.issue!.push(...this.title.doModelValidation().issue!); }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["author"]) { this.author.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["focus"]) { outcome.issue!.push(...this.focus.doModelValidation().issue!); }
-    if (this["text"]) { outcome.issue!.push(...this.text.doModelValidation().issue!); }
-    if (this["orderedBy"]) { outcome.issue!.push(...this.orderedBy.doModelValidation().issue!); }
-    if (this["entry"]) { this.entry.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["emptyReason"]) { outcome.issue!.push(...this.emptyReason.doModelValidation().issue!); }
-    if (this["section"]) { this.section.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["author"]) { this.author.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["focus"]) { issues.push(...this.focus.doModelValidation()); }
+    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
+    if (this["orderedBy"]) { issues.push(...this.orderedBy.doModelValidation()); }
+    if (this["entry"]) { this.entry.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["emptyReason"]) { issues.push(...this.emptyReason.doModelValidation()); }
+    if (this["section"]) { this.section.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -482,11 +478,11 @@ export class Composition extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Composition';
+  public static override readonly _fts_dataType:string = 'Composition';
   /**
    * Resource Type Name
    */
-  public resourceType: "Composition";
+  public override resourceType: "Composition";
   /**
    * Similar to ClinicalDocument/setId in CDA. See discussion in resource definition for how these relate.
    */
@@ -601,44 +597,44 @@ export class Composition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Composition" fhir: Composition.resourceType:"Composition"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Composition" fhir: Composition.resourceType:"Composition"', });
     }
-    if (this["identifier"]) { outcome.issue!.push(...this.identifier.doModelValidation().issue!); }
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:CompositionStatusCodeType fhir: Composition.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:CompositionStatusCodeType fhir: Composition.status:code', });
     }
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Composition.type:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Composition.type:CodeableConcept', });
     }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["category"]) { this.category.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["encounter"]) { outcome.issue!.push(...this.encounter.doModelValidation().issue!); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
     if (!this['date']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: Composition.date:dateTime', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: Composition.date:dateTime', });
     }
-    if (this["date"]) { outcome.issue!.push(...this.date.doModelValidation().issue!); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (!this['author']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property author:fhir.Reference[] fhir: Composition.author:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property author:fhir.Reference[] fhir: Composition.author:Reference', });
     } else if (!Array.isArray(this.author)) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.StructuralIssue,  diagnostics: 'Found scalar in array property author:fhir.Reference[] fhir: Composition.author:Reference', }));
+      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property author:fhir.Reference[] fhir: Composition.author:Reference', });
     } else if (this.author.length === 0) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property author:fhir.Reference[] fhir: Composition.author:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property author:fhir.Reference[] fhir: Composition.author:Reference', });
     }
-    if (this["author"]) { this.author.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["author"]) { this.author.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['title']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property title:fhir.FhirString fhir: Composition.title:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property title:fhir.FhirString fhir: Composition.title:string', });
     }
-    if (this["title"]) { outcome.issue!.push(...this.title.doModelValidation().issue!); }
-    if (this["confidentiality"]) { outcome.issue!.push(...this.confidentiality.doModelValidation().issue!); }
-    if (this["attester"]) { this.attester.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["custodian"]) { outcome.issue!.push(...this.custodian.doModelValidation().issue!); }
-    if (this["relatesTo"]) { this.relatesTo.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["event"]) { this.event.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["section"]) { this.section.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
+    if (this["confidentiality"]) { issues.push(...this.confidentiality.doModelValidation()); }
+    if (this["attester"]) { this.attester.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["custodian"]) { issues.push(...this.custodian.doModelValidation()); }
+    if (this["relatesTo"]) { this.relatesTo.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["event"]) { this.event.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["section"]) { this.section.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

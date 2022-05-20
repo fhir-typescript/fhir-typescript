@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the MedicinalProductIndicationOtherTherapy type.
  */
@@ -38,7 +34,7 @@ export class MedicinalProductIndicationOtherTherapy extends fhir.BackboneElement
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MedicinalProductIndicationOtherTherapy';
+  public static override readonly _fts_dataType:string = 'MedicinalProductIndicationOtherTherapy';
   /**
    * The type of relationship between the medicinal product indication or contraindication and another therapy.
    */
@@ -66,16 +62,16 @@ export class MedicinalProductIndicationOtherTherapy extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['therapyRelationshipType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property therapyRelationshipType:fhir.CodeableConcept fhir: MedicinalProductIndication.otherTherapy.therapyRelationshipType:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property therapyRelationshipType:fhir.CodeableConcept fhir: MedicinalProductIndication.otherTherapy.therapyRelationshipType:CodeableConcept', });
     }
-    if (this["therapyRelationshipType"]) { outcome.issue!.push(...this.therapyRelationshipType.doModelValidation().issue!); }
+    if (this["therapyRelationshipType"]) { issues.push(...this.therapyRelationshipType.doModelValidation()); }
     if (!this['medication']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property medication: fhir: MedicinalProductIndication.otherTherapy.medication[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property medication: fhir: MedicinalProductIndication.otherTherapy.medication[x]:', });
     }
-    return outcome;
+    return issues;
   }
 }
 /**
@@ -131,11 +127,11 @@ export class MedicinalProductIndication extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MedicinalProductIndication';
+  public static override readonly _fts_dataType:string = 'MedicinalProductIndication';
   /**
    * Resource Type Name
    */
-  public resourceType: "MedicinalProductIndication";
+  public override resourceType: "MedicinalProductIndication";
   /**
    * The medication for which this is an indication.
    */
@@ -196,20 +192,20 @@ export class MedicinalProductIndication extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"MedicinalProductIndication" fhir: MedicinalProductIndication.resourceType:"MedicinalProductIndication"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicinalProductIndication" fhir: MedicinalProductIndication.resourceType:"MedicinalProductIndication"', });
     }
-    if (this["subject"]) { this.subject.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["diseaseSymptomProcedure"]) { outcome.issue!.push(...this.diseaseSymptomProcedure.doModelValidation().issue!); }
-    if (this["diseaseStatus"]) { outcome.issue!.push(...this.diseaseStatus.doModelValidation().issue!); }
-    if (this["comorbidity"]) { this.comorbidity.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["intendedEffect"]) { outcome.issue!.push(...this.intendedEffect.doModelValidation().issue!); }
-    if (this["duration"]) { outcome.issue!.push(...this.duration.doModelValidation().issue!); }
-    if (this["otherTherapy"]) { this.otherTherapy.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["undesirableEffect"]) { this.undesirableEffect.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["population"]) { this.population.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["subject"]) { this.subject.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["diseaseSymptomProcedure"]) { issues.push(...this.diseaseSymptomProcedure.doModelValidation()); }
+    if (this["diseaseStatus"]) { issues.push(...this.diseaseStatus.doModelValidation()); }
+    if (this["comorbidity"]) { this.comorbidity.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["intendedEffect"]) { issues.push(...this.intendedEffect.doModelValidation()); }
+    if (this["duration"]) { issues.push(...this.duration.doModelValidation()); }
+    if (this["otherTherapy"]) { this.otherTherapy.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["undesirableEffect"]) { this.undesirableEffect.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["population"]) { this.population.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

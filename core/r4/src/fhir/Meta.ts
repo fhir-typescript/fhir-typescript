@@ -13,10 +13,6 @@ import { SecurityLabelsCodes,  SecurityLabelsCodeType } from '../fhirValueSets/S
 import { CommonTagsCodings, CommonTagsCodingType,} from '../fhirValueSets/CommonTagsCodings.js';
 // @ts-ignore
 import { CommonTagsCodes,  CommonTagsCodeType } from '../fhirValueSets/CommonTagsCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Meta type.
  */
@@ -55,7 +51,7 @@ export class Meta extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Meta';
+  public static override readonly _fts_dataType:string = 'Meta';
   /**
    * The server assigns this value, and ignores what the client specifies, except in the case that the server is imposing version integrity on updates/deletes.
    */
@@ -105,14 +101,14 @@ export class Meta extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["versionId"]) { outcome.issue!.push(...this.versionId.doModelValidation().issue!); }
-    if (this["lastUpdated"]) { outcome.issue!.push(...this.lastUpdated.doModelValidation().issue!); }
-    if (this["source"]) { outcome.issue!.push(...this.source.doModelValidation().issue!); }
-    if (this["profile"]) { this.profile.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["security"]) { this.security.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["tag"]) { this.tag.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["versionId"]) { issues.push(...this.versionId.doModelValidation()); }
+    if (this["lastUpdated"]) { issues.push(...this.lastUpdated.doModelValidation()); }
+    if (this["source"]) { issues.push(...this.source.doModelValidation()); }
+    if (this["profile"]) { this.profile.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["security"]) { this.security.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["tag"]) { this.tag.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Annotation type.
  */
@@ -42,7 +38,7 @@ export class Annotation extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Annotation';
+  public static override readonly _fts_dataType:string = 'Annotation';
   /**
    * Organization is used when there's no need for specific attribution as to who made the comment.
    */
@@ -74,13 +70,13 @@ export class Annotation extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["time"]) { outcome.issue!.push(...this.time.doModelValidation().issue!); }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["time"]) { issues.push(...this.time.doModelValidation()); }
     if (!this['text']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property text:fhir.FhirMarkdown fhir: Annotation.text:markdown', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property text:fhir.FhirMarkdown fhir: Annotation.text:markdown', });
     }
-    if (this["text"]) { outcome.issue!.push(...this.text.doModelValidation().issue!); }
-    return outcome;
+    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
+    return issues;
   }
 }

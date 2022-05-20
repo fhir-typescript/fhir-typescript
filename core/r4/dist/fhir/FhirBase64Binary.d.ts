@@ -2,7 +2,7 @@ import * as fhir from '../fhir.js';
 /**
  * A stream of bytes, base64 encoded
  */
-export interface FhirBase64BinaryArgs extends fhir.FhirStringArgs {
+export interface FhirBase64BinaryArgs extends fhir.FhirPrimitiveArgs {
     /**
      * A stream of bytes, base64 encoded
      */
@@ -11,7 +11,7 @@ export interface FhirBase64BinaryArgs extends fhir.FhirStringArgs {
 /**
  * A stream of bytes, base64 encoded
  */
-export declare class FhirBase64Binary extends fhir.FhirString {
+export declare class FhirBase64Binary extends fhir.FhirPrimitive {
     /**
      * Mapping of this datatype to a FHIR equivalent
      */
@@ -36,6 +36,6 @@ export declare class FhirBase64Binary extends fhir.FhirString {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=FhirBase64Binary.d.ts.map

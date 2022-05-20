@@ -43,7 +43,7 @@ export declare class SubstanceReferenceInformationGene extends fhir.BackboneElem
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceReferenceInformationGeneElement type.
@@ -89,7 +89,7 @@ export declare class SubstanceReferenceInformationGeneElement extends fhir.Backb
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceReferenceInformationClassification type.
@@ -143,7 +143,7 @@ export declare class SubstanceReferenceInformationClassification extends fhir.Ba
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceReferenceInformationTarget type.
@@ -245,7 +245,7 @@ export declare class SubstanceReferenceInformationTarget extends fhir.BackboneEl
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceReferenceInformation type.
@@ -315,6 +315,6 @@ export declare class SubstanceReferenceInformation extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=SubstanceReferenceInformation.d.ts.map

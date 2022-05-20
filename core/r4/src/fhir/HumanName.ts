@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { NameUseCodings, NameUseCodingType,} from '../fhirValueSets/NameUseCodings.js';
 // @ts-ignore
 import { NameUseCodes,  NameUseCodeType } from '../fhirValueSets/NameUseCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the HumanName type.
  */
@@ -54,7 +50,7 @@ export class HumanName extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'HumanName';
+  public static override readonly _fts_dataType:string = 'HumanName';
   /**
    * Applications can assume that a name is current unless it explicitly says that it is temporary or old.
    */
@@ -108,15 +104,15 @@ export class HumanName extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["text"]) { outcome.issue!.push(...this.text.doModelValidation().issue!); }
-    if (this["family"]) { outcome.issue!.push(...this.family.doModelValidation().issue!); }
-    if (this["given"]) { this.given.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["prefix"]) { this.prefix.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["suffix"]) { this.suffix.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
+    if (this["family"]) { issues.push(...this.family.doModelValidation()); }
+    if (this["given"]) { this.given.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["prefix"]) { this.prefix.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["suffix"]) { this.suffix.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    return issues;
   }
 
 /**

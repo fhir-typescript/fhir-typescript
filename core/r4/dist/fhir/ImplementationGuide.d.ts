@@ -52,7 +52,7 @@ export declare class ImplementationGuideDependsOn extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideGlobal type.
@@ -94,7 +94,7 @@ export declare class ImplementationGuideGlobal extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideDefinitionGrouping type.
@@ -132,7 +132,7 @@ export declare class ImplementationGuideDefinitionGrouping extends fhir.Backbone
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideDefinitionResource type.
@@ -234,7 +234,7 @@ export declare class ImplementationGuideDefinitionResource extends fhir.Backbone
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideDefinitionPage type.
@@ -304,7 +304,7 @@ export declare class ImplementationGuideDefinitionPage extends fhir.BackboneElem
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideDefinitionParameter type.
@@ -346,7 +346,7 @@ export declare class ImplementationGuideDefinitionParameter extends fhir.Backbon
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideDefinitionTemplate type.
@@ -392,7 +392,7 @@ export declare class ImplementationGuideDefinitionTemplate extends fhir.Backbone
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideDefinition type.
@@ -454,7 +454,7 @@ export declare class ImplementationGuideDefinition extends fhir.BackboneElement 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideManifestResource type.
@@ -512,7 +512,7 @@ export declare class ImplementationGuideManifestResource extends fhir.BackboneEl
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideManifestPage type.
@@ -558,7 +558,7 @@ export declare class ImplementationGuideManifestPage extends fhir.BackboneElemen
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideManifest type.
@@ -620,7 +620,7 @@ export declare class ImplementationGuideManifest extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuide type.
@@ -826,6 +826,6 @@ export declare class ImplementationGuide extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=ImplementationGuide.d.ts.map

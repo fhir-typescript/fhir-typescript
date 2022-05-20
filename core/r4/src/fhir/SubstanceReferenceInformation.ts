@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the SubstanceReferenceInformationGene type.
  */
@@ -34,7 +30,7 @@ export class SubstanceReferenceInformationGene extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceReferenceInformationGene';
+  public static override readonly _fts_dataType:string = 'SubstanceReferenceInformationGene';
   /**
    * Todo.
    */
@@ -60,12 +56,12 @@ export class SubstanceReferenceInformationGene extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["geneSequenceOrigin"]) { outcome.issue!.push(...this.geneSequenceOrigin.doModelValidation().issue!); }
-    if (this["gene"]) { outcome.issue!.push(...this.gene.doModelValidation().issue!); }
-    if (this["source"]) { this.source.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["geneSequenceOrigin"]) { issues.push(...this.geneSequenceOrigin.doModelValidation()); }
+    if (this["gene"]) { issues.push(...this.gene.doModelValidation()); }
+    if (this["source"]) { this.source.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -93,7 +89,7 @@ export class SubstanceReferenceInformationGeneElement extends fhir.BackboneEleme
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceReferenceInformationGeneElement';
+  public static override readonly _fts_dataType:string = 'SubstanceReferenceInformationGeneElement';
   /**
    * Todo.
    */
@@ -119,12 +115,12 @@ export class SubstanceReferenceInformationGeneElement extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["element"]) { outcome.issue!.push(...this.element.doModelValidation().issue!); }
-    if (this["source"]) { this.source.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["element"]) { issues.push(...this.element.doModelValidation()); }
+    if (this["source"]) { this.source.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -156,7 +152,7 @@ export class SubstanceReferenceInformationClassification extends fhir.BackboneEl
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceReferenceInformationClassification';
+  public static override readonly _fts_dataType:string = 'SubstanceReferenceInformationClassification';
   /**
    * Todo.
    */
@@ -188,13 +184,13 @@ export class SubstanceReferenceInformationClassification extends fhir.BackboneEl
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["domain"]) { outcome.issue!.push(...this.domain.doModelValidation().issue!); }
-    if (this["classification"]) { outcome.issue!.push(...this.classification.doModelValidation().issue!); }
-    if (this["subtype"]) { this.subtype.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["source"]) { this.source.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["domain"]) { issues.push(...this.domain.doModelValidation()); }
+    if (this["classification"]) { issues.push(...this.classification.doModelValidation()); }
+    if (this["subtype"]) { this.subtype.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["source"]) { this.source.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -254,7 +250,7 @@ export class SubstanceReferenceInformationTarget extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceReferenceInformationTarget';
+  public static override readonly _fts_dataType:string = 'SubstanceReferenceInformationTarget';
   /**
    * Todo.
    */
@@ -312,16 +308,16 @@ export class SubstanceReferenceInformationTarget extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["target"]) { outcome.issue!.push(...this.target.doModelValidation().issue!); }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["interaction"]) { outcome.issue!.push(...this.interaction.doModelValidation().issue!); }
-    if (this["organism"]) { outcome.issue!.push(...this.organism.doModelValidation().issue!); }
-    if (this["organismType"]) { outcome.issue!.push(...this.organismType.doModelValidation().issue!); }
-    if (this["amountType"]) { outcome.issue!.push(...this.amountType.doModelValidation().issue!); }
-    if (this["source"]) { this.source.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["target"]) { issues.push(...this.target.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["interaction"]) { issues.push(...this.interaction.doModelValidation()); }
+    if (this["organism"]) { issues.push(...this.organism.doModelValidation()); }
+    if (this["organismType"]) { issues.push(...this.organismType.doModelValidation()); }
+    if (this["amountType"]) { issues.push(...this.amountType.doModelValidation()); }
+    if (this["source"]) { this.source.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -361,11 +357,11 @@ export class SubstanceReferenceInformation extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubstanceReferenceInformation';
+  public static override readonly _fts_dataType:string = 'SubstanceReferenceInformation';
   /**
    * Resource Type Name
    */
-  public resourceType: "SubstanceReferenceInformation";
+  public override resourceType: "SubstanceReferenceInformation";
   /**
    * Todo.
    */
@@ -405,16 +401,16 @@ export class SubstanceReferenceInformation extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"SubstanceReferenceInformation" fhir: SubstanceReferenceInformation.resourceType:"SubstanceReferenceInformation"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"SubstanceReferenceInformation" fhir: SubstanceReferenceInformation.resourceType:"SubstanceReferenceInformation"', });
     }
-    if (this["comment"]) { outcome.issue!.push(...this.comment.doModelValidation().issue!); }
-    if (this["gene"]) { this.gene.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["geneElement"]) { this.geneElement.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["classification"]) { this.classification.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["target"]) { this.target.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
+    if (this["gene"]) { this.gene.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["geneElement"]) { this.geneElement.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["classification"]) { this.classification.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["target"]) { this.target.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

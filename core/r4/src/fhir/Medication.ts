@@ -17,10 +17,6 @@ import { MedicationStatusCodes,  MedicationStatusCodeType } from '../fhirValueSe
 import { MedicationFormCodesCodings, MedicationFormCodesCodingType,} from '../fhirValueSets/MedicationFormCodesCodings.js';
 // @ts-ignore
 import { MedicationFormCodesCodes,  MedicationFormCodesCodeType } from '../fhirValueSets/MedicationFormCodesCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the MedicationIngredient type.
  */
@@ -54,7 +50,7 @@ export class MedicationIngredient extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MedicationIngredient';
+  public static override readonly _fts_dataType:string = 'MedicationIngredient';
   /**
    * The actual ingredient - either a substance (simple ingredient) or another medication of a medication.
    */
@@ -86,14 +82,14 @@ export class MedicationIngredient extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['item']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property item: fhir: Medication.ingredient.item[x]:', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property item: fhir: Medication.ingredient.item[x]:', });
     }
-    if (this["isActive"]) { outcome.issue!.push(...this.isActive.doModelValidation().issue!); }
-    if (this["strength"]) { outcome.issue!.push(...this.strength.doModelValidation().issue!); }
-    return outcome;
+    if (this["isActive"]) { issues.push(...this.isActive.doModelValidation()); }
+    if (this["strength"]) { issues.push(...this.strength.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -117,7 +113,7 @@ export class MedicationBatch extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MedicationBatch';
+  public static override readonly _fts_dataType:string = 'MedicationBatch';
   /**
    * The assigned lot number of a batch of the specified product.
    */
@@ -137,11 +133,11 @@ export class MedicationBatch extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["lotNumber"]) { outcome.issue!.push(...this.lotNumber.doModelValidation().issue!); }
-    if (this["expirationDate"]) { outcome.issue!.push(...this.expirationDate.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["lotNumber"]) { issues.push(...this.lotNumber.doModelValidation()); }
+    if (this["expirationDate"]) { issues.push(...this.expirationDate.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -193,11 +189,11 @@ export class Medication extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Medication';
+  public static override readonly _fts_dataType:string = 'Medication';
   /**
    * Resource Type Name
    */
-  public resourceType: "Medication";
+  public override resourceType: "Medication";
   /**
    * The serial number could be included as an identifier.
    */
@@ -256,18 +252,18 @@ export class Medication extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Medication" fhir: Medication.resourceType:"Medication"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Medication" fhir: Medication.resourceType:"Medication"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["manufacturer"]) { outcome.issue!.push(...this.manufacturer.doModelValidation().issue!); }
-    if (this["form"]) { outcome.issue!.push(...this.form.doModelValidation().issue!); }
-    if (this["amount"]) { outcome.issue!.push(...this.amount.doModelValidation().issue!); }
-    if (this["ingredient"]) { this.ingredient.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["batch"]) { outcome.issue!.push(...this.batch.doModelValidation().issue!); }
-    return outcome;
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["manufacturer"]) { issues.push(...this.manufacturer.doModelValidation()); }
+    if (this["form"]) { issues.push(...this.form.doModelValidation()); }
+    if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
+    if (this["ingredient"]) { this.ingredient.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["batch"]) { issues.push(...this.batch.doModelValidation()); }
+    return issues;
   }
 }

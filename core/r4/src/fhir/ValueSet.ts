@@ -21,10 +21,6 @@ import { FilterOperatorCodes,  FilterOperatorCodeType } from '../fhirValueSets/F
 import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the ValueSetComposeIncludeConceptDesignation type.
  */
@@ -50,7 +46,7 @@ export class ValueSetComposeIncludeConceptDesignation extends fhir.BackboneEleme
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ValueSetComposeIncludeConceptDesignation';
+  public static override readonly _fts_dataType:string = 'ValueSetComposeIncludeConceptDesignation';
   /**
    * In the absence of a language, the resource language applies.
    */
@@ -88,15 +84,15 @@ export class ValueSetComposeIncludeConceptDesignation extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["language"]) { outcome.issue!.push(...this.language.doModelValidation().issue!); }
-    if (this["use"]) { outcome.issue!.push(...this.use.doModelValidation().issue!); }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["language"]) { issues.push(...this.language.doModelValidation()); }
+    if (this["use"]) { issues.push(...this.use.doModelValidation()); }
     if (!this['value']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property value:fhir.FhirString fhir: ValueSet.compose.include.concept.designation.value:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value:fhir.FhirString fhir: ValueSet.compose.include.concept.designation.value:string', });
     }
-    if (this["value"]) { outcome.issue!.push(...this.value.doModelValidation().issue!); }
-    return outcome;
+    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -124,7 +120,7 @@ export class ValueSetComposeIncludeConcept extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ValueSetComposeIncludeConcept';
+  public static override readonly _fts_dataType:string = 'ValueSetComposeIncludeConcept';
   /**
    * Expressions are allowed if defined by the underlying code system.
    */
@@ -151,15 +147,15 @@ export class ValueSetComposeIncludeConcept extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:fhir.FhirCode fhir: ValueSet.compose.include.concept.code:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.FhirCode fhir: ValueSet.compose.include.concept.code:code', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["display"]) { outcome.issue!.push(...this.display.doModelValidation().issue!); }
-    if (this["designation"]) { this.designation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["display"]) { issues.push(...this.display.doModelValidation()); }
+    if (this["designation"]) { this.designation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -187,7 +183,7 @@ export class ValueSetComposeIncludeFilter extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ValueSetComposeIncludeFilter';
+  public static override readonly _fts_dataType:string = 'ValueSetComposeIncludeFilter';
   /**
    * A code that identifies a property or a filter defined in the code system.
    */
@@ -221,20 +217,20 @@ export class ValueSetComposeIncludeFilter extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['property']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property property:fhir.FhirCode fhir: ValueSet.compose.include.filter.property:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property property:fhir.FhirCode fhir: ValueSet.compose.include.filter.property:code', });
     }
-    if (this["property"]) { outcome.issue!.push(...this.property.doModelValidation().issue!); }
+    if (this["property"]) { issues.push(...this.property.doModelValidation()); }
     if (!this['op']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property op:FilterOperatorCodeType fhir: ValueSet.compose.include.filter.op:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property op:FilterOperatorCodeType fhir: ValueSet.compose.include.filter.op:code', });
     }
     if (!this['value']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property value:fhir.FhirString fhir: ValueSet.compose.include.filter.value:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value:fhir.FhirString fhir: ValueSet.compose.include.filter.value:string', });
     }
-    if (this["value"]) { outcome.issue!.push(...this.value.doModelValidation().issue!); }
-    return outcome;
+    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -270,7 +266,7 @@ export class ValueSetComposeInclude extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ValueSetComposeInclude';
+  public static override readonly _fts_dataType:string = 'ValueSetComposeInclude';
   /**
    * If there are no codes or filters, the entire code system is included. Note that the set of codes that are included may contain abstract codes. See ''Coding.system'' for further documentation about the correct value for the system element.
    */
@@ -308,14 +304,14 @@ export class ValueSetComposeInclude extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["system"]) { outcome.issue!.push(...this.system.doModelValidation().issue!); }
-    if (this["version"]) { outcome.issue!.push(...this.version.doModelValidation().issue!); }
-    if (this["concept"]) { this.concept.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["filter"]) { this.filter.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["valueSet"]) { this.valueSet.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["system"]) { issues.push(...this.system.doModelValidation()); }
+    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
+    if (this["concept"]) { this.concept.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["filter"]) { this.filter.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["valueSet"]) { this.valueSet.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -348,7 +344,7 @@ export class ValueSetCompose extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ValueSetCompose';
+  public static override readonly _fts_dataType:string = 'ValueSetCompose';
   /**
    * With a defined lockedDate the value set is considered "Locked". Otherwise, the value set may have different expansions as underlying code systems and/or value sets evolve.  The interpretation of lockedDate is often dependent on the context - e.g. a SNOMED CT derived value set with a lockedDate will have a different expansion in USA than in UK.  If a value set specifies a version for include and exclude statements, and also specifies a locked date, the specified versions need to be available that date, or the value set will not be usable.
    */
@@ -381,20 +377,20 @@ export class ValueSetCompose extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["lockedDate"]) { outcome.issue!.push(...this.lockedDate.doModelValidation().issue!); }
-    if (this["inactive"]) { outcome.issue!.push(...this.inactive.doModelValidation().issue!); }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["lockedDate"]) { issues.push(...this.lockedDate.doModelValidation()); }
+    if (this["inactive"]) { issues.push(...this.inactive.doModelValidation()); }
     if (!this['include']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property include:fhir.ValueSetComposeInclude[] fhir: ValueSet.compose.include:include', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property include:fhir.ValueSetComposeInclude[] fhir: ValueSet.compose.include:include', });
     } else if (!Array.isArray(this.include)) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.StructuralIssue,  diagnostics: 'Found scalar in array property include:fhir.ValueSetComposeInclude[] fhir: ValueSet.compose.include:include', }));
+      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property include:fhir.ValueSetComposeInclude[] fhir: ValueSet.compose.include:include', });
     } else if (this.include.length === 0) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property include:fhir.ValueSetComposeInclude[] fhir: ValueSet.compose.include:include', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property include:fhir.ValueSetComposeInclude[] fhir: ValueSet.compose.include:include', });
     }
-    if (this["include"]) { this.include.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["exclude"]) { this.exclude.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["include"]) { this.include.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["exclude"]) { this.exclude.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -446,7 +442,7 @@ export class ValueSetExpansionParameter extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ValueSetExpansionParameter';
+  public static override readonly _fts_dataType:string = 'ValueSetExpansionParameter';
   /**
    * The names are assigned at the discretion of the server.
    */
@@ -478,13 +474,13 @@ export class ValueSetExpansionParameter extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property name:fhir.FhirString fhir: ValueSet.expansion.parameter.name:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: ValueSet.expansion.parameter.name:string', });
     }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    return outcome;
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -532,7 +528,7 @@ export class ValueSetExpansionContains extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ValueSetExpansionContains';
+  public static override readonly _fts_dataType:string = 'ValueSetExpansionContains';
   /**
    * An absolute URI which is the code system in which the code for this item in the expansion is defined.
    */
@@ -584,17 +580,17 @@ export class ValueSetExpansionContains extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["system"]) { outcome.issue!.push(...this.system.doModelValidation().issue!); }
-    if (this["abstract"]) { outcome.issue!.push(...this.abstract.doModelValidation().issue!); }
-    if (this["inactive"]) { outcome.issue!.push(...this.inactive.doModelValidation().issue!); }
-    if (this["version"]) { outcome.issue!.push(...this.version.doModelValidation().issue!); }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["display"]) { outcome.issue!.push(...this.display.doModelValidation().issue!); }
-    if (this["designation"]) { this.designation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["contains"]) { this.contains.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["system"]) { issues.push(...this.system.doModelValidation()); }
+    if (this["abstract"]) { issues.push(...this.abstract.doModelValidation()); }
+    if (this["inactive"]) { issues.push(...this.inactive.doModelValidation()); }
+    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["display"]) { issues.push(...this.display.doModelValidation()); }
+    if (this["designation"]) { this.designation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["contains"]) { this.contains.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -635,7 +631,7 @@ export class ValueSetExpansion extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ValueSetExpansion';
+  public static override readonly _fts_dataType:string = 'ValueSetExpansion';
   /**
    * Typically, this uri is a UUID (e.g. urn:uuid:8230ff20-c97a-4167-a59d-dc2cb9df16dd).
    */
@@ -678,18 +674,18 @@ export class ValueSetExpansion extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["identifier"]) { outcome.issue!.push(...this.identifier.doModelValidation().issue!); }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (!this['timestamp']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property timestamp:fhir.FhirDateTime fhir: ValueSet.expansion.timestamp:dateTime', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property timestamp:fhir.FhirDateTime fhir: ValueSet.expansion.timestamp:dateTime', });
     }
-    if (this["timestamp"]) { outcome.issue!.push(...this.timestamp.doModelValidation().issue!); }
-    if (this["total"]) { outcome.issue!.push(...this.total.doModelValidation().issue!); }
-    if (this["offset"]) { outcome.issue!.push(...this.offset.doModelValidation().issue!); }
-    if (this["parameter"]) { this.parameter.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["contains"]) { this.contains.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["timestamp"]) { issues.push(...this.timestamp.doModelValidation()); }
+    if (this["total"]) { issues.push(...this.total.doModelValidation()); }
+    if (this["offset"]) { issues.push(...this.offset.doModelValidation()); }
+    if (this["parameter"]) { this.parameter.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["contains"]) { this.contains.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -784,11 +780,11 @@ export class ValueSet extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ValueSet';
+  public static override readonly _fts_dataType:string = 'ValueSet';
   /**
    * Resource Type Name
    */
-  public resourceType: "ValueSet";
+  public override resourceType: "ValueSet";
   /**
    * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
    * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions). 
@@ -903,31 +899,31 @@ export class ValueSet extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"ValueSet" fhir: ValueSet.resourceType:"ValueSet"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ValueSet" fhir: ValueSet.resourceType:"ValueSet"', });
     }
-    if (this["url"]) { outcome.issue!.push(...this.url.doModelValidation().issue!); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["version"]) { outcome.issue!.push(...this.version.doModelValidation().issue!); }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["title"]) { outcome.issue!.push(...this.title.doModelValidation().issue!); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: ValueSet.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: ValueSet.status:code', });
     }
-    if (this["experimental"]) { outcome.issue!.push(...this.experimental.doModelValidation().issue!); }
-    if (this["date"]) { outcome.issue!.push(...this.date.doModelValidation().issue!); }
-    if (this["publisher"]) { outcome.issue!.push(...this.publisher.doModelValidation().issue!); }
-    if (this["contact"]) { this.contact.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["useContext"]) { this.useContext.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["immutable"]) { outcome.issue!.push(...this.immutable.doModelValidation().issue!); }
-    if (this["purpose"]) { outcome.issue!.push(...this.purpose.doModelValidation().issue!); }
-    if (this["copyright"]) { outcome.issue!.push(...this.copyright.doModelValidation().issue!); }
-    if (this["compose"]) { outcome.issue!.push(...this.compose.doModelValidation().issue!); }
-    if (this["expansion"]) { outcome.issue!.push(...this.expansion.doModelValidation().issue!); }
-    return outcome;
+    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
+    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["immutable"]) { issues.push(...this.immutable.doModelValidation()); }
+    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
+    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
+    if (this["compose"]) { issues.push(...this.compose.doModelValidation()); }
+    if (this["expansion"]) { issues.push(...this.expansion.doModelValidation()); }
+    return issues;
   }
 }

@@ -17,10 +17,6 @@ import { BodySiteCodes,  BodySiteCodeType } from '../fhirValueSets/BodySiteCodes
 import { BodystructureRelativeLocationCodings, BodystructureRelativeLocationCodingType,} from '../fhirValueSets/BodystructureRelativeLocationCodings.js';
 // @ts-ignore
 import { BodystructureRelativeLocationCodes,  BodystructureRelativeLocationCodeType } from '../fhirValueSets/BodystructureRelativeLocationCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the BodyStructure type.
  */
@@ -70,11 +66,11 @@ export class BodyStructure extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'BodyStructure';
+  public static override readonly _fts_dataType:string = 'BodyStructure';
   /**
    * Resource Type Name
    */
-  public resourceType: "BodyStructure";
+  public override resourceType: "BodyStructure";
   /**
    * Identifier for this instance of the anatomical structure.
    */
@@ -129,22 +125,22 @@ export class BodyStructure extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"BodyStructure" fhir: BodyStructure.resourceType:"BodyStructure"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"BodyStructure" fhir: BodyStructure.resourceType:"BodyStructure"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["active"]) { outcome.issue!.push(...this.active.doModelValidation().issue!); }
-    if (this["morphology"]) { outcome.issue!.push(...this.morphology.doModelValidation().issue!); }
-    if (this["location"]) { outcome.issue!.push(...this.location.doModelValidation().issue!); }
-    if (this["locationQualifier"]) { this.locationQualifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["image"]) { this.image.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["active"]) { issues.push(...this.active.doModelValidation()); }
+    if (this["morphology"]) { issues.push(...this.morphology.doModelValidation()); }
+    if (this["location"]) { issues.push(...this.location.doModelValidation()); }
+    if (this["locationQualifier"]) { this.locationQualifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["image"]) { this.image.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['patient']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property patient:fhir.Reference fhir: BodyStructure.patient:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: BodyStructure.patient:Reference', });
     }
-    if (this["patient"]) { outcome.issue!.push(...this.patient.doModelValidation().issue!); }
-    return outcome;
+    if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
+    return issues;
   }
 }

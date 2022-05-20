@@ -25,10 +25,6 @@ import { ImmunizationRecommendationStatusCodes,  ImmunizationRecommendationStatu
 import { ImmunizationRecommendationReasonCodings, ImmunizationRecommendationReasonCodingType,} from '../fhirValueSets/ImmunizationRecommendationReasonCodings.js';
 // @ts-ignore
 import { ImmunizationRecommendationReasonCodes,  ImmunizationRecommendationReasonCodeType } from '../fhirValueSets/ImmunizationRecommendationReasonCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the ImmunizationRecommendationRecommendationDateCriterion type.
  */
@@ -50,7 +46,7 @@ export class ImmunizationRecommendationRecommendationDateCriterion extends fhir.
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ImmunizationRecommendationRecommendationDateCriterion';
+  public static override readonly _fts_dataType:string = 'ImmunizationRecommendationRecommendationDateCriterion';
   /**
    * Date classification of recommendation.  For example, earliest date to give, latest date to give, etc.
    */
@@ -72,17 +68,17 @@ export class ImmunizationRecommendationRecommendationDateCriterion extends fhir.
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: ImmunizationRecommendation.recommendation.dateCriterion.code:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: ImmunizationRecommendation.recommendation.dateCriterion.code:CodeableConcept', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['value']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property value:fhir.FhirDateTime fhir: ImmunizationRecommendation.recommendation.dateCriterion.value:dateTime', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value:fhir.FhirDateTime fhir: ImmunizationRecommendation.recommendation.dateCriterion.value:dateTime', });
     }
-    if (this["value"]) { outcome.issue!.push(...this.value.doModelValidation().issue!); }
-    return outcome;
+    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -162,7 +158,7 @@ export class ImmunizationRecommendationRecommendation extends fhir.BackboneEleme
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ImmunizationRecommendationRecommendation';
+  public static override readonly _fts_dataType:string = 'ImmunizationRecommendationRecommendation';
   /**
    * Vaccine(s) or vaccine group that pertain to the recommendation.
    */
@@ -251,22 +247,22 @@ export class ImmunizationRecommendationRecommendation extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["vaccineCode"]) { this.vaccineCode.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["targetDisease"]) { outcome.issue!.push(...this.targetDisease.doModelValidation().issue!); }
-    if (this["contraindicatedVaccineCode"]) { this.contraindicatedVaccineCode.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["vaccineCode"]) { this.vaccineCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["targetDisease"]) { issues.push(...this.targetDisease.doModelValidation()); }
+    if (this["contraindicatedVaccineCode"]) { this.contraindicatedVaccineCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['forecastStatus']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property forecastStatus:fhir.CodeableConcept fhir: ImmunizationRecommendation.recommendation.forecastStatus:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property forecastStatus:fhir.CodeableConcept fhir: ImmunizationRecommendation.recommendation.forecastStatus:CodeableConcept', });
     }
-    if (this["forecastStatus"]) { outcome.issue!.push(...this.forecastStatus.doModelValidation().issue!); }
-    if (this["forecastReason"]) { this.forecastReason.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["dateCriterion"]) { this.dateCriterion.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["description"]) { outcome.issue!.push(...this.description.doModelValidation().issue!); }
-    if (this["series"]) { outcome.issue!.push(...this.series.doModelValidation().issue!); }
-    if (this["supportingImmunization"]) { this.supportingImmunization.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["supportingPatientInformation"]) { this.supportingPatientInformation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["forecastStatus"]) { issues.push(...this.forecastStatus.doModelValidation()); }
+    if (this["forecastReason"]) { this.forecastReason.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["dateCriterion"]) { this.dateCriterion.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["series"]) { issues.push(...this.series.doModelValidation()); }
+    if (this["supportingImmunization"]) { this.supportingImmunization.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["supportingPatientInformation"]) { this.supportingPatientInformation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -306,11 +302,11 @@ export class ImmunizationRecommendation extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ImmunizationRecommendation';
+  public static override readonly _fts_dataType:string = 'ImmunizationRecommendation';
   /**
    * Resource Type Name
    */
-  public resourceType: "ImmunizationRecommendation";
+  public override resourceType: "ImmunizationRecommendation";
   /**
    * A unique identifier assigned to this particular recommendation record.
    */
@@ -350,29 +346,29 @@ export class ImmunizationRecommendation extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"ImmunizationRecommendation" fhir: ImmunizationRecommendation.resourceType:"ImmunizationRecommendation"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ImmunizationRecommendation" fhir: ImmunizationRecommendation.resourceType:"ImmunizationRecommendation"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['patient']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property patient:fhir.Reference fhir: ImmunizationRecommendation.patient:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: ImmunizationRecommendation.patient:Reference', });
     }
-    if (this["patient"]) { outcome.issue!.push(...this.patient.doModelValidation().issue!); }
+    if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
     if (!this['date']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: ImmunizationRecommendation.date:dateTime', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: ImmunizationRecommendation.date:dateTime', });
     }
-    if (this["date"]) { outcome.issue!.push(...this.date.doModelValidation().issue!); }
-    if (this["authority"]) { outcome.issue!.push(...this.authority.doModelValidation().issue!); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
+    if (this["authority"]) { issues.push(...this.authority.doModelValidation()); }
     if (!this['recommendation']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property recommendation:fhir.ImmunizationRecommendationRecommendation[] fhir: ImmunizationRecommendation.recommendation:recommendation', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property recommendation:fhir.ImmunizationRecommendationRecommendation[] fhir: ImmunizationRecommendation.recommendation:recommendation', });
     } else if (!Array.isArray(this.recommendation)) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.StructuralIssue,  diagnostics: 'Found scalar in array property recommendation:fhir.ImmunizationRecommendationRecommendation[] fhir: ImmunizationRecommendation.recommendation:recommendation', }));
+      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property recommendation:fhir.ImmunizationRecommendationRecommendation[] fhir: ImmunizationRecommendation.recommendation:recommendation', });
     } else if (this.recommendation.length === 0) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property recommendation:fhir.ImmunizationRecommendationRecommendation[] fhir: ImmunizationRecommendation.recommendation:recommendation', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property recommendation:fhir.ImmunizationRecommendationRecommendation[] fhir: ImmunizationRecommendation.recommendation:recommendation', });
     }
-    if (this["recommendation"]) { this.recommendation.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["recommendation"]) { this.recommendation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

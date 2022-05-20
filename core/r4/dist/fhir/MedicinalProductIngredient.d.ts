@@ -59,7 +59,7 @@ export declare class MedicinalProductIngredientSpecifiedSubstanceStrengthReferen
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductIngredientSpecifiedSubstanceStrength type.
@@ -137,7 +137,7 @@ export declare class MedicinalProductIngredientSpecifiedSubstanceStrength extend
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductIngredientSpecifiedSubstance type.
@@ -191,7 +191,7 @@ export declare class MedicinalProductIngredientSpecifiedSubstance extends fhir.B
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductIngredientSubstance type.
@@ -229,7 +229,7 @@ export declare class MedicinalProductIngredientSubstance extends fhir.BackboneEl
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductIngredient type.
@@ -307,6 +307,6 @@ export declare class MedicinalProductIngredient extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=MedicinalProductIngredient.d.ts.map

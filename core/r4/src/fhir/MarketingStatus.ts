@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the MarketingStatus type.
  */
@@ -42,7 +38,7 @@ export class MarketingStatus extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'MarketingStatus';
+  public static override readonly _fts_dataType:string = 'MarketingStatus';
   /**
    * The country in which the marketing authorisation has been granted shall be specified It should be specified using the ISO 3166 ‑ 1 alpha-2 code elements.
    */
@@ -80,22 +76,22 @@ export class MarketingStatus extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['country']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property country:fhir.CodeableConcept fhir: MarketingStatus.country:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property country:fhir.CodeableConcept fhir: MarketingStatus.country:CodeableConcept', });
     }
-    if (this["country"]) { outcome.issue!.push(...this.country.doModelValidation().issue!); }
-    if (this["jurisdiction"]) { outcome.issue!.push(...this.jurisdiction.doModelValidation().issue!); }
+    if (this["country"]) { issues.push(...this.country.doModelValidation()); }
+    if (this["jurisdiction"]) { issues.push(...this.jurisdiction.doModelValidation()); }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:fhir.CodeableConcept fhir: MarketingStatus.status:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:fhir.CodeableConcept fhir: MarketingStatus.status:CodeableConcept', });
     }
-    if (this["status"]) { outcome.issue!.push(...this.status.doModelValidation().issue!); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['dateRange']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property dateRange:fhir.Period fhir: MarketingStatus.dateRange:Period', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property dateRange:fhir.Period fhir: MarketingStatus.dateRange:Period', });
     }
-    if (this["dateRange"]) { outcome.issue!.push(...this.dateRange.doModelValidation().issue!); }
-    if (this["restoreDate"]) { outcome.issue!.push(...this.restoreDate.doModelValidation().issue!); }
-    return outcome;
+    if (this["dateRange"]) { issues.push(...this.dateRange.doModelValidation()); }
+    if (this["restoreDate"]) { issues.push(...this.restoreDate.doModelValidation()); }
+    return issues;
   }
 }

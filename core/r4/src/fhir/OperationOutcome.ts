@@ -54,7 +54,7 @@ export class OperationOutcomeIssue extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'OperationOutcomeIssue';
+  public static override readonly _fts_dataType:string = 'OperationOutcomeIssue';
   /**
    * This is labeled as "Is Modifier" because applications should not confuse hints and warnings with errors.
    */
@@ -110,20 +110,20 @@ export class OperationOutcomeIssue extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['severity']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property severity:IssueSeverityCodeType fhir: OperationOutcome.issue.severity:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property severity:IssueSeverityCodeType fhir: OperationOutcome.issue.severity:code', });
     }
     if (!this['code']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property code:fhir.FhirCode fhir: OperationOutcome.issue.code:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.FhirCode fhir: OperationOutcome.issue.code:code', });
     }
-    if (this["code"]) { outcome.issue!.push(...this.code.doModelValidation().issue!); }
-    if (this["details"]) { outcome.issue!.push(...this.details.doModelValidation().issue!); }
-    if (this["diagnostics"]) { outcome.issue!.push(...this.diagnostics.doModelValidation().issue!); }
-    if (this["location"]) { this.location.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["expression"]) { this.expression.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["details"]) { issues.push(...this.details.doModelValidation()); }
+    if (this["diagnostics"]) { issues.push(...this.diagnostics.doModelValidation()); }
+    if (this["location"]) { this.location.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["expression"]) { this.expression.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -147,11 +147,11 @@ export class OperationOutcome extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'OperationOutcome';
+  public static override readonly _fts_dataType:string = 'OperationOutcome';
   /**
    * Resource Type Name
    */
-  public resourceType: "OperationOutcome";
+  public override resourceType: "OperationOutcome";
   /**
    * An error, warning, or information message that results from a system action.
    */
@@ -168,19 +168,19 @@ export class OperationOutcome extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"OperationOutcome" fhir: OperationOutcome.resourceType:"OperationOutcome"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"OperationOutcome" fhir: OperationOutcome.resourceType:"OperationOutcome"', });
     }
     if (!this['issue']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property issue:fhir.OperationOutcomeIssue[] fhir: OperationOutcome.issue:issue', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property issue:fhir.OperationOutcomeIssue[] fhir: OperationOutcome.issue:issue', });
     } else if (!Array.isArray(this.issue)) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.StructuralIssue,  diagnostics: 'Found scalar in array property issue:fhir.OperationOutcomeIssue[] fhir: OperationOutcome.issue:issue', }));
+      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property issue:fhir.OperationOutcomeIssue[] fhir: OperationOutcome.issue:issue', });
     } else if (this.issue.length === 0) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property issue:fhir.OperationOutcomeIssue[] fhir: OperationOutcome.issue:issue', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property issue:fhir.OperationOutcomeIssue[] fhir: OperationOutcome.issue:issue', });
     }
-    if (this["issue"]) { this.issue.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["issue"]) { this.issue.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

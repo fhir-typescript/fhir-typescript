@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { QuestionnaireAnswersStatusCodings, QuestionnaireAnswersStatusCodingType,} from '../fhirValueSets/QuestionnaireAnswersStatusCodings.js';
 // @ts-ignore
 import { QuestionnaireAnswersStatusCodes,  QuestionnaireAnswersStatusCodeType } from '../fhirValueSets/QuestionnaireAnswersStatusCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the QuestionnaireResponseItemAnswer type.
  */
@@ -82,7 +78,7 @@ export class QuestionnaireResponseItemAnswer extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'QuestionnaireResponseItemAnswer';
+  public static override readonly _fts_dataType:string = 'QuestionnaireResponseItemAnswer';
   /**
    * More complex structures (Attachment, Resource and Quantity) will typically be limited to electronic forms that can expose an appropriate user interface to capture the components and enforce the constraints of a complex data type.  Additional complex types can be introduced through extensions. Must match the datatype specified by Questionnaire.item.type in the corresponding Questionnaire.
    */
@@ -119,10 +115,10 @@ export class QuestionnaireResponseItemAnswer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["item"]) { this.item.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["item"]) { this.item.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -159,7 +155,7 @@ export class QuestionnaireResponseItem extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'QuestionnaireResponseItem';
+  public static override readonly _fts_dataType:string = 'QuestionnaireResponseItem';
   /**
    * The item from the Questionnaire that corresponds to this item in the QuestionnaireResponse resource.
    */
@@ -198,17 +194,17 @@ export class QuestionnaireResponseItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['linkId']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property linkId:fhir.FhirString fhir: QuestionnaireResponse.item.linkId:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property linkId:fhir.FhirString fhir: QuestionnaireResponse.item.linkId:string', });
     }
-    if (this["linkId"]) { outcome.issue!.push(...this.linkId.doModelValidation().issue!); }
-    if (this["definition"]) { outcome.issue!.push(...this.definition.doModelValidation().issue!); }
-    if (this["text"]) { outcome.issue!.push(...this.text.doModelValidation().issue!); }
-    if (this["answer"]) { this.answer.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["item"]) { this.item.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["linkId"]) { issues.push(...this.linkId.doModelValidation()); }
+    if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
+    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
+    if (this["answer"]) { this.answer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["item"]) { this.item.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -273,11 +269,11 @@ export class QuestionnaireResponse extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'QuestionnaireResponse';
+  public static override readonly _fts_dataType:string = 'QuestionnaireResponse';
   /**
    * Resource Type Name
    */
-  public resourceType: "QuestionnaireResponse";
+  public override resourceType: "QuestionnaireResponse";
   /**
    * A business identifier assigned to a particular completed (or partially completed) questionnaire.
    */
@@ -354,24 +350,24 @@ export class QuestionnaireResponse extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"QuestionnaireResponse" fhir: QuestionnaireResponse.resourceType:"QuestionnaireResponse"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"QuestionnaireResponse" fhir: QuestionnaireResponse.resourceType:"QuestionnaireResponse"', });
     }
-    if (this["identifier"]) { outcome.issue!.push(...this.identifier.doModelValidation().issue!); }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["partOf"]) { this.partOf.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["questionnaire"]) { outcome.issue!.push(...this.questionnaire.doModelValidation().issue!); }
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
+    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["questionnaire"]) { issues.push(...this.questionnaire.doModelValidation()); }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:QuestionnaireAnswersStatusCodeType fhir: QuestionnaireResponse.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:QuestionnaireAnswersStatusCodeType fhir: QuestionnaireResponse.status:code', });
     }
-    if (this["subject"]) { outcome.issue!.push(...this.subject.doModelValidation().issue!); }
-    if (this["encounter"]) { outcome.issue!.push(...this.encounter.doModelValidation().issue!); }
-    if (this["authored"]) { outcome.issue!.push(...this.authored.doModelValidation().issue!); }
-    if (this["author"]) { outcome.issue!.push(...this.author.doModelValidation().issue!); }
-    if (this["source"]) { outcome.issue!.push(...this.source.doModelValidation().issue!); }
-    if (this["item"]) { this.item.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
+    if (this["authored"]) { issues.push(...this.authored.doModelValidation()); }
+    if (this["author"]) { issues.push(...this.author.doModelValidation()); }
+    if (this["source"]) { issues.push(...this.source.doModelValidation()); }
+    if (this["item"]) { this.item.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

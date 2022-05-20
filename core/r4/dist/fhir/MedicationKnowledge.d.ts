@@ -37,7 +37,7 @@ export declare class MedicationKnowledgeRelatedMedicationKnowledge extends fhir.
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationKnowledgeMonograph type.
@@ -75,7 +75,7 @@ export declare class MedicationKnowledgeMonograph extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationKnowledgeIngredient type.
@@ -133,7 +133,7 @@ export declare class MedicationKnowledgeIngredient extends fhir.BackboneElement 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationKnowledgeCost type.
@@ -179,7 +179,7 @@ export declare class MedicationKnowledgeCost extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationKnowledgeMonitoringProgram type.
@@ -217,7 +217,7 @@ export declare class MedicationKnowledgeMonitoringProgram extends fhir.BackboneE
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationKnowledgeAdministrationGuidelinesDosage type.
@@ -255,7 +255,7 @@ export declare class MedicationKnowledgeAdministrationGuidelinesDosage extends f
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics type.
@@ -305,7 +305,7 @@ export declare class MedicationKnowledgeAdministrationGuidelinesPatientCharacter
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationKnowledgeAdministrationGuidelines type.
@@ -363,7 +363,7 @@ export declare class MedicationKnowledgeAdministrationGuidelines extends fhir.Ba
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationKnowledgeMedicineClassification type.
@@ -401,7 +401,7 @@ export declare class MedicationKnowledgeMedicineClassification extends fhir.Back
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationKnowledgePackaging type.
@@ -439,7 +439,7 @@ export declare class MedicationKnowledgePackaging extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationKnowledgeDrugCharacteristic type.
@@ -497,7 +497,7 @@ export declare class MedicationKnowledgeDrugCharacteristic extends fhir.Backbone
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationKnowledgeRegulatorySubstitution type.
@@ -535,7 +535,7 @@ export declare class MedicationKnowledgeRegulatorySubstitution extends fhir.Back
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationKnowledgeRegulatorySchedule type.
@@ -565,7 +565,7 @@ export declare class MedicationKnowledgeRegulatorySchedule extends fhir.Backbone
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationKnowledgeRegulatoryMaxDispense type.
@@ -603,7 +603,7 @@ export declare class MedicationKnowledgeRegulatoryMaxDispense extends fhir.Backb
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationKnowledgeRegulatory type.
@@ -657,7 +657,7 @@ export declare class MedicationKnowledgeRegulatory extends fhir.BackboneElement 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationKnowledgeKinetics type.
@@ -703,7 +703,7 @@ export declare class MedicationKnowledgeKinetics extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicationKnowledge type.
@@ -913,6 +913,6 @@ export declare class MedicationKnowledge extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=MedicationKnowledge.d.ts.map

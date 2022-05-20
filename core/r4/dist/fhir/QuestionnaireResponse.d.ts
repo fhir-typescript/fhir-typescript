@@ -89,7 +89,7 @@ export declare class QuestionnaireResponseItemAnswer extends fhir.BackboneElemen
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the QuestionnaireResponseItem type.
@@ -153,7 +153,7 @@ export declare class QuestionnaireResponseItem extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the QuestionnaireResponse type.
@@ -277,6 +277,6 @@ export declare class QuestionnaireResponse extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=QuestionnaireResponse.d.ts.map

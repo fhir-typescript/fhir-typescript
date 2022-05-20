@@ -53,7 +53,7 @@ export declare class RiskEvidenceSynthesisSampleSize extends fhir.BackboneElemen
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the RiskEvidenceSynthesisRiskEstimatePrecisionEstimate type.
@@ -111,7 +111,7 @@ export declare class RiskEvidenceSynthesisRiskEstimatePrecisionEstimate extends 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the RiskEvidenceSynthesisRiskEstimate type.
@@ -197,7 +197,7 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the RiskEvidenceSynthesisCertaintyCertaintySubcomponent type.
@@ -251,7 +251,7 @@ export declare class RiskEvidenceSynthesisCertaintyCertaintySubcomponent extends
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the RiskEvidenceSynthesisCertainty type.
@@ -301,7 +301,7 @@ export declare class RiskEvidenceSynthesisCertainty extends fhir.BackboneElement
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the RiskEvidenceSynthesis type.
@@ -595,6 +595,6 @@ export declare class RiskEvidenceSynthesis extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=RiskEvidenceSynthesis.d.ts.map

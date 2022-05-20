@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { CurrenciesCodings, CurrenciesCodingType,} from '../fhirValueSets/CurrenciesCodings.js';
 // @ts-ignore
 import { CurrenciesCodes,  CurrenciesCodeType } from '../fhirValueSets/CurrenciesCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Money type.
  */
@@ -34,7 +30,7 @@ export class Money extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Money';
+  public static override readonly _fts_dataType:string = 'Money';
   /**
    * Monetary values have their own rules for handling precision (refer to standard accounting text books).
    */
@@ -60,10 +56,10 @@ export class Money extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["value"]) { outcome.issue!.push(...this.value.doModelValidation().issue!); }
-    if (this["currency"]) { outcome.issue!.push(...this.currency.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
+    if (this["currency"]) { issues.push(...this.currency.doModelValidation()); }
+    return issues;
   }
 }

@@ -13,10 +13,6 @@ import { AddressUseCodes,  AddressUseCodeType } from '../fhirValueSets/AddressUs
 import { AddressTypeCodings, AddressTypeCodingType,} from '../fhirValueSets/AddressTypeCodings.js';
 // @ts-ignore
 import { AddressTypeCodes,  AddressTypeCodeType } from '../fhirValueSets/AddressTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the Address type.
  */
@@ -70,7 +66,7 @@ export class Address extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Address';
+  public static override readonly _fts_dataType:string = 'Address';
   /**
    * Applications can assume that an address is current unless it explicitly says that it is temporary or old.
    */
@@ -143,16 +139,16 @@ export class Address extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["text"]) { outcome.issue!.push(...this.text.doModelValidation().issue!); }
-    if (this["line"]) { this.line.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["city"]) { outcome.issue!.push(...this.city.doModelValidation().issue!); }
-    if (this["district"]) { outcome.issue!.push(...this.district.doModelValidation().issue!); }
-    if (this["state"]) { outcome.issue!.push(...this.state.doModelValidation().issue!); }
-    if (this["postalCode"]) { outcome.issue!.push(...this.postalCode.doModelValidation().issue!); }
-    if (this["country"]) { outcome.issue!.push(...this.country.doModelValidation().issue!); }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
+    if (this["line"]) { this.line.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["city"]) { issues.push(...this.city.doModelValidation()); }
+    if (this["district"]) { issues.push(...this.district.doModelValidation()); }
+    if (this["state"]) { issues.push(...this.state.doModelValidation()); }
+    if (this["postalCode"]) { issues.push(...this.postalCode.doModelValidation()); }
+    if (this["country"]) { issues.push(...this.country.doModelValidation()); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    return issues;
   }
 }

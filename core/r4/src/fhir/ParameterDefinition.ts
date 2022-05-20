@@ -13,10 +13,6 @@ import { OperationParameterUseCodes,  OperationParameterUseCodeType } from '../f
 import { AllTypesCodings, AllTypesCodingType,} from '../fhirValueSets/AllTypesCodings.js';
 // @ts-ignore
 import { AllTypesCodes,  AllTypesCodeType } from '../fhirValueSets/AllTypesCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the ParameterDefinition type.
  */
@@ -58,7 +54,7 @@ export class ParameterDefinition extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ParameterDefinition';
+  public static override readonly _fts_dataType:string = 'ParameterDefinition';
   /**
    * The name of the parameter used to allow access to the value of the parameter in evaluation contexts.
    */
@@ -117,20 +113,20 @@ export class ParameterDefinition extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (!this['use']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property use:OperationParameterUseCodeType fhir: ParameterDefinition.use:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property use:OperationParameterUseCodeType fhir: ParameterDefinition.use:code', });
     }
-    if (this["min"]) { outcome.issue!.push(...this.min.doModelValidation().issue!); }
-    if (this["max"]) { outcome.issue!.push(...this.max.doModelValidation().issue!); }
-    if (this["documentation"]) { outcome.issue!.push(...this.documentation.doModelValidation().issue!); }
+    if (this["min"]) { issues.push(...this.min.doModelValidation()); }
+    if (this["max"]) { issues.push(...this.max.doModelValidation()); }
+    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:fhir.FhirCode fhir: ParameterDefinition.type:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.FhirCode fhir: ParameterDefinition.type:code', });
     }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["profile"]) { outcome.issue!.push(...this.profile.doModelValidation().issue!); }
-    return outcome;
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["profile"]) { issues.push(...this.profile.doModelValidation()); }
+    return issues;
   }
 }

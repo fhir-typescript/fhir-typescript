@@ -59,7 +59,7 @@ export declare class MedicinalProductAuthorizationJurisdictionalAuthorization ex
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductAuthorizationProcedure type.
@@ -125,7 +125,7 @@ export declare class MedicinalProductAuthorizationProcedure extends fhir.Backbon
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductAuthorization type.
@@ -283,6 +283,6 @@ export declare class MedicinalProductAuthorization extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=MedicinalProductAuthorization.d.ts.map

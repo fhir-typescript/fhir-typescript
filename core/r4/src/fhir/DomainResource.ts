@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the DomainResource type.
  */
@@ -38,7 +34,7 @@ export class DomainResource extends fhir.Resource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DomainResource';
+  public static override readonly _fts_dataType:string = 'DomainResource';
   /**
    * Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative. In some cases, a resource may only have text with little or no additional discrete data (as long as all minOccurs=1 elements are satisfied).  This may be necessary for data from legacy systems where information is captured as a "text blob" or where text is additionally entered raw or narrated and encoded information is added later.
    */
@@ -77,12 +73,12 @@ export class DomainResource extends fhir.Resource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["text"]) { outcome.issue!.push(...this.text.doModelValidation().issue!); }
-    if (this["contained"]) { this.contained.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["extension"]) { this.extension.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["modifierExtension"]) { this.modifierExtension.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
+    if (this["contained"]) { this.contained.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["extension"]) { this.extension.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["modifierExtension"]) { this.modifierExtension.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

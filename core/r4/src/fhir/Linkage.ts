@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { LinkageTypeCodings, LinkageTypeCodingType,} from '../fhirValueSets/LinkageTypeCodings.js';
 // @ts-ignore
 import { LinkageTypeCodes,  LinkageTypeCodeType } from '../fhirValueSets/LinkageTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the LinkageItem type.
  */
@@ -34,7 +30,7 @@ export class LinkageItem extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'LinkageItem';
+  public static override readonly _fts_dataType:string = 'LinkageItem';
   /**
    * Distinguishes which item is "source of truth" (if any) and which items are no longer considered to be current representations.
    */
@@ -62,16 +58,16 @@ export class LinkageItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:LinkageTypeCodeType fhir: Linkage.item.type:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:LinkageTypeCodeType fhir: Linkage.item.type:code', });
     }
     if (!this['resource']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resource:fhir.Reference fhir: Linkage.item.resource:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resource:fhir.Reference fhir: Linkage.item.resource:Reference', });
     }
-    if (this["resource"]) { outcome.issue!.push(...this.resource.doModelValidation().issue!); }
-    return outcome;
+    if (this["resource"]) { issues.push(...this.resource.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -103,11 +99,11 @@ export class Linkage extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Linkage';
+  public static override readonly _fts_dataType:string = 'Linkage';
   /**
    * Resource Type Name
    */
-  public resourceType: "Linkage";
+  public override resourceType: "Linkage";
   /**
    * If false, any asserted linkages should not be considered current/relevant/applicable.
    */
@@ -134,21 +130,21 @@ export class Linkage extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Linkage" fhir: Linkage.resourceType:"Linkage"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Linkage" fhir: Linkage.resourceType:"Linkage"', });
     }
-    if (this["active"]) { outcome.issue!.push(...this.active.doModelValidation().issue!); }
-    if (this["author"]) { outcome.issue!.push(...this.author.doModelValidation().issue!); }
+    if (this["active"]) { issues.push(...this.active.doModelValidation()); }
+    if (this["author"]) { issues.push(...this.author.doModelValidation()); }
     if (!this['item']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property item:fhir.LinkageItem[] fhir: Linkage.item:item', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property item:fhir.LinkageItem[] fhir: Linkage.item:item', });
     } else if (!Array.isArray(this.item)) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.StructuralIssue,  diagnostics: 'Found scalar in array property item:fhir.LinkageItem[] fhir: Linkage.item:item', }));
+      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property item:fhir.LinkageItem[] fhir: Linkage.item:item', });
     } else if (this.item.length === 0) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property item:fhir.LinkageItem[] fhir: Linkage.item:item', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property item:fhir.LinkageItem[] fhir: Linkage.item:item', });
     }
-    if (this["item"]) { this.item.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["item"]) { this.item.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

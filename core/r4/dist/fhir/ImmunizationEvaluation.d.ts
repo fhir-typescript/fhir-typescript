@@ -161,6 +161,6 @@ export declare class ImmunizationEvaluation extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
 }
 //# sourceMappingURL=ImmunizationEvaluation.d.ts.map

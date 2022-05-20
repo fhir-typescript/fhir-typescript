@@ -14,12 +14,12 @@ export interface FhirPrimitiveArgs {
     extension?: (fhir.Extension | null)[] | undefined;
 }
 export declare class FhirPrimitive extends fhir.FhirBase {
-    readonly _fts_isPrimitive: boolean;
+    static readonly _fts_isPrimitive: boolean;
     /**
      * Mapping of this datatype to a FHIR equivalent
      */
-    readonly _fts_dataType: string;
-    readonly _fts_jsonType: string;
+    static readonly _fts_dataType: string;
+    static readonly _fts_jsonType: string;
     /**
      * Value of the primitive - constrained by decendant classes.
      */
@@ -43,7 +43,7 @@ export declare class FhirPrimitive extends fhir.FhirBase {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.OperationOutcome;
+    doModelValidation(): fhir.FtsIssue[];
     /**
      * Add an extension with the desired URL and FHIR value
      * @param url

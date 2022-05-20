@@ -13,10 +13,6 @@ import { SubscriptionChannelTypeCodes,  SubscriptionChannelTypeCodeType } from '
 import { SubscriptionStatusCodings, SubscriptionStatusCodingType,} from '../fhirValueSets/SubscriptionStatusCodings.js';
 // @ts-ignore
 import { SubscriptionStatusCodes,  SubscriptionStatusCodeType } from '../fhirValueSets/SubscriptionStatusCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the SubscriptionChannel type.
  */
@@ -46,7 +42,7 @@ export class SubscriptionChannel extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'SubscriptionChannel';
+  public static override readonly _fts_dataType:string = 'SubscriptionChannel';
   /**
    * The type of channel to send notifications on.
    */
@@ -84,15 +80,15 @@ export class SubscriptionChannel extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:SubscriptionChannelTypeCodeType fhir: Subscription.channel.type:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:SubscriptionChannelTypeCodeType fhir: Subscription.channel.type:code', });
     }
-    if (this["endpoint"]) { outcome.issue!.push(...this.endpoint.doModelValidation().issue!); }
-    if (this["payload"]) { outcome.issue!.push(...this.payload.doModelValidation().issue!); }
-    if (this["header"]) { this.header.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["endpoint"]) { issues.push(...this.endpoint.doModelValidation()); }
+    if (this["payload"]) { issues.push(...this.payload.doModelValidation()); }
+    if (this["header"]) { this.header.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -141,11 +137,11 @@ export class Subscription extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Subscription';
+  public static override readonly _fts_dataType:string = 'Subscription';
   /**
    * Resource Type Name
    */
-  public resourceType: "Subscription";
+  public override resourceType: "Subscription";
   /**
    * A client can only submit subscription resources in the requested or off state. Only the server can  move a subscription from requested to active, and then to error. Either the server or the client can turn a subscription off.
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
@@ -203,29 +199,29 @@ export class Subscription extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Subscription" fhir: Subscription.resourceType:"Subscription"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Subscription" fhir: Subscription.resourceType:"Subscription"', });
     }
     if (!this['status']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property status:SubscriptionStatusCodeType fhir: Subscription.status:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:SubscriptionStatusCodeType fhir: Subscription.status:code', });
     }
-    if (this["contact"]) { this.contact.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["end"]) { outcome.issue!.push(...this.end.doModelValidation().issue!); }
+    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["end"]) { issues.push(...this.end.doModelValidation()); }
     if (!this['reason']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property reason:fhir.FhirString fhir: Subscription.reason:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property reason:fhir.FhirString fhir: Subscription.reason:string', });
     }
-    if (this["reason"]) { outcome.issue!.push(...this.reason.doModelValidation().issue!); }
+    if (this["reason"]) { issues.push(...this.reason.doModelValidation()); }
     if (!this['criteria']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property criteria:fhir.FhirString fhir: Subscription.criteria:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property criteria:fhir.FhirString fhir: Subscription.criteria:string', });
     }
-    if (this["criteria"]) { outcome.issue!.push(...this.criteria.doModelValidation().issue!); }
-    if (this["error"]) { outcome.issue!.push(...this.error.doModelValidation().issue!); }
+    if (this["criteria"]) { issues.push(...this.criteria.doModelValidation()); }
+    if (this["error"]) { issues.push(...this.error.doModelValidation()); }
     if (!this['channel']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property channel:fhir.SubscriptionChannel fhir: Subscription.channel:channel', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property channel:fhir.SubscriptionChannel fhir: Subscription.channel:channel', });
     }
-    if (this["channel"]) { outcome.issue!.push(...this.channel.doModelValidation().issue!); }
-    return outcome;
+    if (this["channel"]) { issues.push(...this.channel.doModelValidation()); }
+    return issues;
   }
 }

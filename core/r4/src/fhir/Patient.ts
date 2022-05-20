@@ -25,10 +25,6 @@ import { LinkTypeCodes,  LinkTypeCodeType } from '../fhirValueSets/LinkTypeCodes
 import { MaritalStatusCodings, MaritalStatusCodingType,} from '../fhirValueSets/MaritalStatusCodings.js';
 // @ts-ignore
 import { MaritalStatusCodes,  MaritalStatusCodeType } from '../fhirValueSets/MaritalStatusCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the PatientContact type.
  */
@@ -70,7 +66,7 @@ export class PatientContact extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'PatientContact';
+  public static override readonly _fts_dataType:string = 'PatientContact';
   /**
    * The nature of the relationship between the patient and the contact person.
    */
@@ -129,15 +125,15 @@ export class PatientContact extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["relationship"]) { this.relationship.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["telecom"]) { this.telecom.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["address"]) { outcome.issue!.push(...this.address.doModelValidation().issue!); }
-    if (this["organization"]) { outcome.issue!.push(...this.organization.doModelValidation().issue!); }
-    if (this["period"]) { outcome.issue!.push(...this.period.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["relationship"]) { this.relationship.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["address"]) { issues.push(...this.address.doModelValidation()); }
+    if (this["organization"]) { issues.push(...this.organization.doModelValidation()); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -161,7 +157,7 @@ export class PatientCommunication extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'PatientCommunication';
+  public static override readonly _fts_dataType:string = 'PatientCommunication';
   /**
    * The structure aa-BB with this exact casing is one the most widely used notations for locale. However not all systems actually code this but instead have it as free text. Hence CodeableConcept instead of code as the data type.
    */
@@ -188,14 +184,14 @@ export class PatientCommunication extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['language']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property language:fhir.CodeableConcept fhir: Patient.communication.language:CodeableConcept', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property language:fhir.CodeableConcept fhir: Patient.communication.language:CodeableConcept', });
     }
-    if (this["language"]) { outcome.issue!.push(...this.language.doModelValidation().issue!); }
-    if (this["preferred"]) { outcome.issue!.push(...this.preferred.doModelValidation().issue!); }
-    return outcome;
+    if (this["language"]) { issues.push(...this.language.doModelValidation()); }
+    if (this["preferred"]) { issues.push(...this.preferred.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -219,7 +215,7 @@ export class PatientLink extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'PatientLink';
+  public static override readonly _fts_dataType:string = 'PatientLink';
   /**
    * Referencing a RelatedPerson here removes the need to use a Person record to associate a Patient and RelatedPerson as the same individual.
    */
@@ -247,16 +243,16 @@ export class PatientLink extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['other']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property other:fhir.Reference fhir: Patient.link.other:Reference', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property other:fhir.Reference fhir: Patient.link.other:Reference', });
     }
-    if (this["other"]) { outcome.issue!.push(...this.other.doModelValidation().issue!); }
+    if (this["other"]) { issues.push(...this.other.doModelValidation()); }
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:LinkTypeCodeType fhir: Patient.link.type:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:LinkTypeCodeType fhir: Patient.link.type:code', });
     }
-    return outcome;
+    return issues;
   }
 }
 /**
@@ -361,11 +357,11 @@ export class Patient extends fhir.DomainResource {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'Patient';
+  public static override readonly _fts_dataType:string = 'Patient';
   /**
    * Resource Type Name
    */
-  public resourceType: "Patient";
+  public override resourceType: "Patient";
   /**
    * An identifier for this patient.
    */
@@ -494,24 +490,24 @@ export class Patient extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property resourceType:"Patient" fhir: Patient.resourceType:"Patient"', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Patient" fhir: Patient.resourceType:"Patient"', });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["active"]) { outcome.issue!.push(...this.active.doModelValidation().issue!); }
-    if (this["name"]) { this.name.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["telecom"]) { this.telecom.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["birthDate"]) { outcome.issue!.push(...this.birthDate.doModelValidation().issue!); }
-    if (this["address"]) { this.address.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["maritalStatus"]) { outcome.issue!.push(...this.maritalStatus.doModelValidation().issue!); }
-    if (this["photo"]) { this.photo.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["contact"]) { this.contact.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["communication"]) { this.communication.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["generalPractitioner"]) { this.generalPractitioner.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["managingOrganization"]) { outcome.issue!.push(...this.managingOrganization.doModelValidation().issue!); }
-    if (this["link"]) { this.link.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["active"]) { issues.push(...this.active.doModelValidation()); }
+    if (this["name"]) { this.name.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation()); }
+    if (this["address"]) { this.address.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["maritalStatus"]) { issues.push(...this.maritalStatus.doModelValidation()); }
+    if (this["photo"]) { this.photo.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["communication"]) { this.communication.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["generalPractitioner"]) { this.generalPractitioner.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation()); }
+    if (this["link"]) { this.link.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

@@ -13,10 +13,6 @@ import { SortDirectionCodes,  SortDirectionCodeType } from '../fhirValueSets/Sor
 import { AllTypesCodings, AllTypesCodingType,} from '../fhirValueSets/AllTypesCodings.js';
 // @ts-ignore
 import { AllTypesCodes,  AllTypesCodeType } from '../fhirValueSets/AllTypesCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the DataRequirementCodeFilter type.
  */
@@ -46,7 +42,7 @@ export class DataRequirementCodeFilter extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DataRequirementCodeFilter';
+  public static override readonly _fts_dataType:string = 'DataRequirementCodeFilter';
   /**
    * The path attribute contains a [Simple FHIRPath Subset](fhirpath.html#simple) that allows path traversal, but not calculation.
    */
@@ -77,13 +73,13 @@ export class DataRequirementCodeFilter extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["path"]) { outcome.issue!.push(...this.path.doModelValidation().issue!); }
-    if (this["searchParam"]) { outcome.issue!.push(...this.searchParam.doModelValidation().issue!); }
-    if (this["valueSet"]) { outcome.issue!.push(...this.valueSet.doModelValidation().issue!); }
-    if (this["code"]) { this.code.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["path"]) { issues.push(...this.path.doModelValidation()); }
+    if (this["searchParam"]) { issues.push(...this.searchParam.doModelValidation()); }
+    if (this["valueSet"]) { issues.push(...this.valueSet.doModelValidation()); }
+    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }
 /**
@@ -123,7 +119,7 @@ export class DataRequirementDateFilter extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DataRequirementDateFilter';
+  public static override readonly _fts_dataType:string = 'DataRequirementDateFilter';
   /**
    * The path attribute contains a [Simple FHIR Subset](fhirpath.html#simple) that allows path traversal, but not calculation.
    */
@@ -155,11 +151,11 @@ export class DataRequirementDateFilter extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["path"]) { outcome.issue!.push(...this.path.doModelValidation().issue!); }
-    if (this["searchParam"]) { outcome.issue!.push(...this.searchParam.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["path"]) { issues.push(...this.path.doModelValidation()); }
+    if (this["searchParam"]) { issues.push(...this.searchParam.doModelValidation()); }
+    return issues;
   }
 }
 /**
@@ -183,7 +179,7 @@ export class DataRequirementSort extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DataRequirementSort';
+  public static override readonly _fts_dataType:string = 'DataRequirementSort';
   /**
    * The attribute of the sort. The specified path must be resolvable from the type of the required data. The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements. Note that the index must be an integer constant.
    */
@@ -211,16 +207,16 @@ export class DataRequirementSort extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['path']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property path:fhir.FhirString fhir: DataRequirement.sort.path:string', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property path:fhir.FhirString fhir: DataRequirement.sort.path:string', });
     }
-    if (this["path"]) { outcome.issue!.push(...this.path.doModelValidation().issue!); }
+    if (this["path"]) { issues.push(...this.path.doModelValidation()); }
     if (!this['direction']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property direction:SortDirectionCodeType fhir: DataRequirement.sort.direction:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property direction:SortDirectionCodeType fhir: DataRequirement.sort.direction:code', });
     }
-    return outcome;
+    return issues;
   }
 }
 /**
@@ -277,7 +273,7 @@ export class DataRequirement extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'DataRequirement';
+  public static override readonly _fts_dataType:string = 'DataRequirement';
   /**
    * The type of the required data, specified as the type name of a resource. For profiles, this value is set to the type of the base resource of the profile.
    */
@@ -346,18 +342,18 @@ export class DataRequirement extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:fhir.FhirCode fhir: DataRequirement.type:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.FhirCode fhir: DataRequirement.type:code', });
     }
-    if (this["type"]) { outcome.issue!.push(...this.type.doModelValidation().issue!); }
-    if (this["profile"]) { this.profile.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["mustSupport"]) { this.mustSupport.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["codeFilter"]) { this.codeFilter.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["dateFilter"]) { this.dateFilter.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["limit"]) { outcome.issue!.push(...this.limit.doModelValidation().issue!); }
-    if (this["sort"]) { this.sort.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    return outcome;
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["profile"]) { this.profile.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["mustSupport"]) { this.mustSupport.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["codeFilter"]) { this.codeFilter.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["dateFilter"]) { this.dateFilter.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["limit"]) { issues.push(...this.limit.doModelValidation()); }
+    if (this["sort"]) { this.sort.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    return issues;
   }
 }

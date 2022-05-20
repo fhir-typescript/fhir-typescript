@@ -5,10 +5,6 @@
 
 import * as fhir from '../fhir.js';
 
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the ProdCharacteristic type.
  */
@@ -66,7 +62,7 @@ export class ProdCharacteristic extends fhir.BackboneElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'ProdCharacteristic';
+  public static override readonly _fts_dataType:string = 'ProdCharacteristic';
   /**
    * Where applicable, the height can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
    */
@@ -134,19 +130,19 @@ export class ProdCharacteristic extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
-    if (this["height"]) { outcome.issue!.push(...this.height.doModelValidation().issue!); }
-    if (this["width"]) { outcome.issue!.push(...this.width.doModelValidation().issue!); }
-    if (this["depth"]) { outcome.issue!.push(...this.depth.doModelValidation().issue!); }
-    if (this["weight"]) { outcome.issue!.push(...this.weight.doModelValidation().issue!); }
-    if (this["nominalVolume"]) { outcome.issue!.push(...this.nominalVolume.doModelValidation().issue!); }
-    if (this["externalDiameter"]) { outcome.issue!.push(...this.externalDiameter.doModelValidation().issue!); }
-    if (this["shape"]) { outcome.issue!.push(...this.shape.doModelValidation().issue!); }
-    if (this["color"]) { this.color.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["imprint"]) { this.imprint.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["image"]) { this.image.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["scoring"]) { outcome.issue!.push(...this.scoring.doModelValidation().issue!); }
-    return outcome;
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this["height"]) { issues.push(...this.height.doModelValidation()); }
+    if (this["width"]) { issues.push(...this.width.doModelValidation()); }
+    if (this["depth"]) { issues.push(...this.depth.doModelValidation()); }
+    if (this["weight"]) { issues.push(...this.weight.doModelValidation()); }
+    if (this["nominalVolume"]) { issues.push(...this.nominalVolume.doModelValidation()); }
+    if (this["externalDiameter"]) { issues.push(...this.externalDiameter.doModelValidation()); }
+    if (this["shape"]) { issues.push(...this.shape.doModelValidation()); }
+    if (this["color"]) { this.color.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["imprint"]) { this.imprint.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["image"]) { this.image.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["scoring"]) { issues.push(...this.scoring.doModelValidation()); }
+    return issues;
   }
 }

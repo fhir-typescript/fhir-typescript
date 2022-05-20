@@ -9,10 +9,6 @@ import * as fhir from '../fhir.js';
 import { TriggerTypeCodings, TriggerTypeCodingType,} from '../fhirValueSets/TriggerTypeCodings.js';
 // @ts-ignore
 import { TriggerTypeCodes,  TriggerTypeCodeType } from '../fhirValueSets/TriggerTypeCodes.js';
-// @ts-ignore
-import { IssueTypeCodes } from '../fhirValueSets/IssueTypeCodes.js';
-// @ts-ignore
-import { IssueSeverityCodes } from '../fhirValueSets/IssueSeverityCodes.js';
 /**
  * Valid arguments for the TriggerDefinition type.
  */
@@ -62,7 +58,7 @@ export class TriggerDefinition extends fhir.FhirElement {
   /**
    * Mapping of this datatype to a FHIR equivalent
    */
-  public static readonly _fts_dataType:string = 'TriggerDefinition';
+  public static override readonly _fts_dataType:string = 'TriggerDefinition';
   /**
    * The type of triggering event.
    */
@@ -113,14 +109,14 @@ export class TriggerDefinition extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.OperationOutcome {
-    var outcome:fhir.OperationOutcome = super.doModelValidation();
+  public override doModelValidation():fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      outcome.issue!.push(new fhir.OperationOutcomeIssue({ severity: IssueSeverityCodes.Error, code: IssueTypeCodes.RequiredElementMissing,  diagnostics: 'Missing required property type:TriggerTypeCodeType fhir: TriggerDefinition.type:code', }));
+      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:TriggerTypeCodeType fhir: TriggerDefinition.type:code', });
     }
-    if (this["name"]) { outcome.issue!.push(...this.name.doModelValidation().issue!); }
-    if (this["data"]) { this.data.forEach((x) => { outcome.issue!.push(...x.doModelValidation().issue!); }) }
-    if (this["condition"]) { outcome.issue!.push(...this.condition.doModelValidation().issue!); }
-    return outcome;
+    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["data"]) { this.data.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["condition"]) { issues.push(...this.condition.doModelValidation()); }
+    return issues;
   }
 }
