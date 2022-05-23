@@ -8,6 +8,10 @@ export interface Identifier extends fhir.FhirElement {
      */
     use?: 'official' | 'old' | 'secondary' | 'temp' | 'usual' | undefined;
     /**
+     * Extended properties for primitive element: Identifier.use
+     */
+    _use?: fhir.FhirElement;
+    /**
      * This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.
      */
     type?: fhir.CodeableConcept | undefined;

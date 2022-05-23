@@ -1,8 +1,5 @@
 import * as fhir from '../fhir.js';
-import { ExamplescenarioActorTypeCodingType } from '../fhirValueSets/ExamplescenarioActorTypeCodings.js';
 import { ExamplescenarioActorTypeCodeType } from '../fhirValueSets/ExamplescenarioActorTypeCodes.js';
-import { ResourceTypesCodingType } from '../fhirValueSets/ResourceTypesCodings.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 /**
  * Valid arguments for the ExampleScenarioActor type.
@@ -15,7 +12,7 @@ export interface ExampleScenarioActorArgs extends fhir.BackboneElementArgs {
     /**
      * The type of actor - person or system.
      */
-    type: ExamplescenarioActorTypeCodeType | null;
+    type: fhir.FhirCode<ExamplescenarioActorTypeCodeType> | string | undefined;
     /**
      * Cardinality: is name and description 1..1?
      */
@@ -40,7 +37,7 @@ export declare class ExampleScenarioActor extends fhir.BackboneElement {
     /**
      * The type of actor - person or system.
      */
-    type: ExamplescenarioActorTypeCodeType | null;
+    type: fhir.FhirCode<ExamplescenarioActorTypeCodeType> | null;
     /**
      * Cardinality: is name and description 1..1?
      */
@@ -56,7 +53,10 @@ export declare class ExampleScenarioActor extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for type (ExampleScenario.actor.type)
      */
-    static typeRequiredCoding(): ExamplescenarioActorTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly System: "entity";
+        readonly Person: "person";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -194,11 +194,11 @@ export declare class ExampleScenarioInstance extends fhir.BackboneElement {
     /**
      * A specific version of the resource.
      */
-    version?: fhir.ExampleScenarioInstanceVersion[];
+    version: fhir.ExampleScenarioInstanceVersion[];
     /**
      * Resources contained in the instance (e.g. the observations contained in a bundle).
      */
-    containedInstance?: fhir.ExampleScenarioInstanceContainedInstance[];
+    containedInstance: fhir.ExampleScenarioInstanceContainedInstance[];
     /**
      * Default constructor for ExampleScenarioInstance - initializes any required elements to null if a value is not provided.
      */
@@ -206,7 +206,163 @@ export declare class ExampleScenarioInstance extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for resourceType (ExampleScenario.instance.resourceType)
      */
-    static resourceTypeRequiredCoding(): ResourceTypesCodingType;
+    static get resourceTypeRequiredCodes(): {
+        readonly Account: "Account";
+        readonly ActivityDefinition: "ActivityDefinition";
+        readonly AdverseEvent: "AdverseEvent";
+        readonly AllergyIntolerance: "AllergyIntolerance";
+        readonly Appointment: "Appointment";
+        readonly AppointmentResponse: "AppointmentResponse";
+        readonly AuditEvent: "AuditEvent";
+        readonly Basic: "Basic"; /**
+         * Cardinality: is name and description 1..1?
+         */
+        readonly Binary: "Binary";
+        readonly BiologicallyDerivedProduct: "BiologicallyDerivedProduct";
+        readonly BodyStructure: "BodyStructure";
+        readonly Bundle: "Bundle";
+        readonly CapabilityStatement: "CapabilityStatement";
+        readonly CarePlan: "CarePlan";
+        readonly CareTeam: "CareTeam";
+        readonly CatalogEntry: "CatalogEntry";
+        readonly ChargeItem: "ChargeItem";
+        readonly ChargeItemDefinition: "ChargeItemDefinition";
+        readonly Claim: "Claim";
+        readonly ClaimResponse: "ClaimResponse";
+        readonly ClinicalImpression: "ClinicalImpression";
+        readonly CodeSystem: "CodeSystem";
+        readonly Communication: "Communication";
+        readonly CommunicationRequest: "CommunicationRequest";
+        readonly CompartmentDefinition: "CompartmentDefinition";
+        readonly Composition: "Composition";
+        readonly ConceptMap: "ConceptMap";
+        readonly Condition: "Condition";
+        readonly Consent: "Consent";
+        readonly Contract: "Contract";
+        readonly Coverage: "Coverage";
+        readonly CoverageEligibilityRequest: "CoverageEligibilityRequest";
+        readonly CoverageEligibilityResponse: "CoverageEligibilityResponse";
+        readonly DetectedIssue: "DetectedIssue";
+        readonly Device: "Device";
+        readonly DeviceDefinition: "DeviceDefinition";
+        readonly DeviceMetric: "DeviceMetric";
+        readonly DeviceRequest: "DeviceRequest";
+        readonly DeviceUseStatement: "DeviceUseStatement";
+        readonly DiagnosticReport: "DiagnosticReport";
+        readonly DocumentManifest: "DocumentManifest";
+        readonly DocumentReference: "DocumentReference";
+        readonly DomainResource: "DomainResource";
+        readonly EffectEvidenceSynthesis: "EffectEvidenceSynthesis";
+        readonly Encounter: "Encounter";
+        readonly Endpoint: "Endpoint";
+        readonly EnrollmentRequest: "EnrollmentRequest";
+        readonly EnrollmentResponse: "EnrollmentResponse";
+        readonly EpisodeOfCare: "EpisodeOfCare";
+        readonly EventDefinition: "EventDefinition";
+        readonly Evidence: "Evidence";
+        readonly EvidenceVariable: "EvidenceVariable";
+        readonly ExampleScenario: "ExampleScenario";
+        readonly ExplanationOfBenefit: "ExplanationOfBenefit";
+        readonly FamilyMemberHistory: "FamilyMemberHistory";
+        readonly Flag: "Flag";
+        readonly Goal: "Goal";
+        readonly GraphDefinition: "GraphDefinition";
+        readonly Group: "Group";
+        readonly GuidanceResponse: "GuidanceResponse";
+        readonly HealthcareService: "HealthcareService";
+        readonly ImagingStudy: "ImagingStudy";
+        readonly Immunization: "Immunization";
+        readonly ImmunizationEvaluation: "ImmunizationEvaluation";
+        readonly ImmunizationRecommendation: "ImmunizationRecommendation";
+        readonly ImplementationGuide: "ImplementationGuide";
+        readonly InsurancePlan: "InsurancePlan";
+        readonly Invoice: "Invoice";
+        readonly Library: "Library";
+        readonly Linkage: "Linkage";
+        readonly List: "List";
+        readonly Location: "Location";
+        readonly Measure: "Measure";
+        readonly MeasureReport: "MeasureReport";
+        readonly Media: "Media";
+        readonly Medication: "Medication";
+        readonly MedicationAdministration: "MedicationAdministration";
+        readonly MedicationDispense: "MedicationDispense";
+        readonly MedicationKnowledge: "MedicationKnowledge";
+        readonly MedicationRequest: "MedicationRequest";
+        readonly MedicationStatement: "MedicationStatement";
+        readonly MedicinalProduct: "MedicinalProduct";
+        readonly MedicinalProductAuthorization: "MedicinalProductAuthorization";
+        readonly MedicinalProductContraindication: "MedicinalProductContraindication";
+        readonly MedicinalProductIndication: "MedicinalProductIndication";
+        readonly MedicinalProductIngredient: "MedicinalProductIngredient";
+        readonly MedicinalProductInteraction: "MedicinalProductInteraction";
+        readonly MedicinalProductManufactured: "MedicinalProductManufactured";
+        readonly MedicinalProductPackaged: "MedicinalProductPackaged";
+        readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
+        readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
+        readonly MessageDefinition: "MessageDefinition";
+        readonly MessageHeader: "MessageHeader";
+        readonly MolecularSequence: "MolecularSequence";
+        readonly NamingSystem: "NamingSystem";
+        readonly NutritionOrder: "NutritionOrder";
+        readonly Observation: "Observation";
+        readonly ObservationDefinition: "ObservationDefinition";
+        /**
+         * A longer description of the group of operations.
+         */
+        readonly OperationDefinition: "OperationDefinition";
+        readonly OperationOutcome: "OperationOutcome";
+        readonly Organization: "Organization";
+        readonly OrganizationAffiliation: "OrganizationAffiliation";
+        readonly Parameters: "Parameters";
+        readonly Patient: "Patient";
+        readonly PaymentNotice: "PaymentNotice";
+        readonly PaymentReconciliation: "PaymentReconciliation";
+        readonly Person: "Person";
+        readonly PlanDefinition: "PlanDefinition";
+        readonly Practitioner: "Practitioner";
+        readonly PractitionerRole: "PractitionerRole";
+        readonly Procedure: "Procedure";
+        readonly Provenance: "Provenance";
+        readonly Questionnaire: "Questionnaire";
+        readonly QuestionnaireResponse: "QuestionnaireResponse";
+        readonly RelatedPerson: "RelatedPerson";
+        readonly RequestGroup: "RequestGroup";
+        readonly ResearchDefinition: "ResearchDefinition";
+        readonly ResearchElementDefinition: "ResearchElementDefinition";
+        readonly ResearchStudy: "ResearchStudy";
+        readonly ResearchSubject: "ResearchSubject";
+        readonly Resource: "Resource";
+        readonly RiskAssessment: "RiskAssessment";
+        readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
+        readonly Schedule: "Schedule";
+        readonly SearchParameter: "SearchParameter";
+        readonly ServiceRequest: "ServiceRequest";
+        readonly Slot: "Slot";
+        readonly Specimen: "Specimen";
+        readonly SpecimenDefinition: "SpecimenDefinition";
+        readonly StructureDefinition: "StructureDefinition";
+        readonly StructureMap: "StructureMap";
+        readonly Subscription: "Subscription";
+        readonly Substance: "Substance";
+        readonly SubstanceNucleicAcid: "SubstanceNucleicAcid";
+        readonly SubstancePolymer: "SubstancePolymer";
+        readonly SubstanceProtein: "SubstanceProtein";
+        readonly SubstanceReferenceInformation: "SubstanceReferenceInformation";
+        readonly SubstanceSourceMaterial: "SubstanceSourceMaterial";
+        readonly SubstanceSpecification: "SubstanceSpecification";
+        readonly SupplyDelivery: "SupplyDelivery";
+        readonly SupplyRequest: "SupplyRequest";
+        readonly Task: "Task";
+        readonly TerminologyCapabilities: "TerminologyCapabilities";
+        readonly TestReport: "TestReport";
+        readonly TestScript: "TestScript";
+        readonly ValueSet: "ValueSet";
+        readonly VerificationResult: "VerificationResult"; /**
+         * Each major process - a group of operations.
+         */
+        readonly VisionPrescription: "VisionPrescription";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -350,7 +506,7 @@ export declare class ExampleScenarioProcessStepAlternative extends fhir.Backbone
     /**
      * What happens in each alternative option.
      */
-    step?: fhir.ExampleScenarioProcessStep[];
+    step: fhir.ExampleScenarioProcessStep[];
     /**
      * Default constructor for ExampleScenarioProcessStepAlternative - initializes any required elements to null if a value is not provided.
      */
@@ -392,7 +548,7 @@ export declare class ExampleScenarioProcessStep extends fhir.BackboneElement {
     /**
      * Nested process.
      */
-    process?: fhir.ExampleScenarioProcess[];
+    process: fhir.ExampleScenarioProcess[];
     /**
      * If there is a pause in the flow.
      */
@@ -404,7 +560,7 @@ export declare class ExampleScenarioProcessStep extends fhir.BackboneElement {
     /**
      * Indicates an alternative step that can be taken instead of the operations on the base step in exceptional/atypical circumstances.
      */
-    alternative?: fhir.ExampleScenarioProcessStepAlternative[];
+    alternative: fhir.ExampleScenarioProcessStepAlternative[];
     /**
      * Default constructor for ExampleScenarioProcessStep - initializes any required elements to null if a value is not provided.
      */
@@ -466,7 +622,7 @@ export declare class ExampleScenarioProcess extends fhir.BackboneElement {
     /**
      * Each step of the process.
      */
-    step?: fhir.ExampleScenarioProcessStep[];
+    step: fhir.ExampleScenarioProcessStep[];
     /**
      * Default constructor for ExampleScenarioProcess - initializes any required elements to null if a value is not provided.
      */
@@ -505,7 +661,7 @@ export interface ExampleScenarioArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of example scenarios that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Allows filtering of example scenarios that are appropriate for use versus not.
      */
@@ -576,7 +732,7 @@ export declare class ExampleScenario extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this example scenario outside of FHIR, where it is not possible to use the logical URI.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * There may be different example scenario instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the example scenario with the format [url]|[version].
      */
@@ -588,7 +744,7 @@ export declare class ExampleScenario extends fhir.DomainResource {
     /**
      * Allows filtering of example scenarios that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Allows filtering of example scenarios that are appropriate for use versus not.
      */
@@ -604,15 +760,15 @@ export declare class ExampleScenario extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the example scenario to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * nullFrequently, the copyright differs between the value set and the codes that are included. The copyright statement should clearly differentiate between these when required.
      */
@@ -624,19 +780,19 @@ export declare class ExampleScenario extends fhir.DomainResource {
     /**
      * Actor participating in the resource.
      */
-    actor?: fhir.ExampleScenarioActor[];
+    actor: fhir.ExampleScenarioActor[];
     /**
      * Each resource and each version that is present in the workflow.
      */
-    instance?: fhir.ExampleScenarioInstance[];
+    instance: fhir.ExampleScenarioInstance[];
     /**
      * Each major process - a group of operations.
      */
-    process?: fhir.ExampleScenarioProcess[];
+    process: fhir.ExampleScenarioProcess[];
     /**
      * Another nested workflow.
      */
-    workflow?: fhir.FhirCanonical[];
+    workflow: fhir.FhirCanonical[];
     /**
      * Default constructor for ExampleScenario - initializes any required elements to null if a value is not provided.
      */
@@ -644,7 +800,12 @@ export declare class ExampleScenario extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (ExampleScenario.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

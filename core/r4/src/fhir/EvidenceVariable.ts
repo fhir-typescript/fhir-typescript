@@ -92,7 +92,7 @@ export interface EvidenceVariableCharacteristicArgs extends fhir.BackboneElement
   /**
    * Indicates how elements are aggregated within the study effective period.
    */
-  groupMeasure?: GroupMeasureCodeType|undefined;
+  groupMeasure?: fhir.FhirCode<GroupMeasureCodeType>|string|undefined;
 }
 
 /**
@@ -118,7 +118,7 @@ export class EvidenceVariableCharacteristic extends fhir.BackboneElement {
   /**
    * Use UsageContext to define the members of the population, such as Age Ranges, Genders, Settings.
    */
-  public usageContext?: fhir.UsageContext[];
+  public usageContext: fhir.UsageContext[];
   /**
    * When true, members with this characteristic are excluded from the element.
    */
@@ -138,7 +138,7 @@ export class EvidenceVariableCharacteristic extends fhir.BackboneElement {
   /**
    * Indicates how elements are aggregated within the study effective period.
    */
-  public groupMeasure?: GroupMeasureCodeType|undefined;
+  public groupMeasure?: fhir.FhirCode<GroupMeasureCodeType>|undefined;
   /**
    * Default constructor for EvidenceVariableCharacteristic - initializes any required elements to null if a value is not provided.
    */
@@ -162,13 +162,13 @@ export class EvidenceVariableCharacteristic extends fhir.BackboneElement {
     else if (source['participantEffectiveDuration']) { this.participantEffective = new fhir.Duration(source.participantEffectiveDuration); }
     else if (source['participantEffectiveTiming']) { this.participantEffective = new fhir.Timing(source.participantEffectiveTiming); }
     if (source['timeFromStart']) { this.timeFromStart = new fhir.Duration(source.timeFromStart); }
-    if (source['groupMeasure']) { this.groupMeasure = source.groupMeasure; }
+    if (source['groupMeasure']) { this.groupMeasure = new fhir.FhirCode<GroupMeasureCodeType>({value: source.groupMeasure}); }
   }
   /**
    * Required-bound Value Set for groupMeasure (EvidenceVariable.characteristic.groupMeasure)
    */
-  public static groupMeasureRequiredCoding():GroupMeasureCodingType {
-    return GroupMeasureCodings;
+  public static get groupMeasureRequiredCodes() {
+    return GroupMeasureCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -177,11 +177,15 @@ export class EvidenceVariableCharacteristic extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (!this['definition']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property definition: fhir: EvidenceVariable.characteristic.definition[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property definition: fhir: EvidenceVariable.characteristic.definition[x]:' });
     }
     if (this["usageContext"]) { this.usageContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["exclude"]) { issues.push(...this.exclude.doModelValidation()); }
     if (this["timeFromStart"]) { issues.push(...this.timeFromStart.doModelValidation()); }
+    if (this['groupMeasure'] && (!Object.values(GroupMeasureCodes).includes(this.groupMeasure as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property groupMeasure?:fhir.FhirCode<GroupMeasureCodeType> fhir: EvidenceVariable.characteristic.groupMeasure:code Required binding to: GroupMeasure' });
+    }
+    if (this["groupMeasure"]) { issues.push(...this.groupMeasure.doModelValidation()); }
     return issues;
   }
 }
@@ -226,7 +230,7 @@ export interface EvidenceVariableArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of evidence variables that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the evidence variable. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
@@ -298,7 +302,7 @@ export interface EvidenceVariableArgs extends fhir.DomainResourceArgs {
   /**
    * The type of evidence element, a population, an exposure, or an outcome.
    */
-  type?: VariableTypeCodeType|undefined;
+  type?: fhir.FhirCode<VariableTypeCodeType>|string|undefined;
   /**
    * Characteristics can be defined flexibly to accommodate different use cases for membership criteria, ranging from simple codes, all the way to using an expression language to express the criteria.
    */
@@ -326,7 +330,7 @@ export class EvidenceVariable extends fhir.DomainResource {
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this evidence variable outside of FHIR, where it is not possible to use the logical URI.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * There may be different evidence variable instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the evidence variable with the format [url]|[version].
    */
@@ -350,7 +354,7 @@ export class EvidenceVariable extends fhir.DomainResource {
   /**
    * Allows filtering of evidence variables that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the evidence variable. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
@@ -362,7 +366,7 @@ export class EvidenceVariable extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the evidence variable was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the evidence variable as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the evidence variable is presumed to be the predominant language in the place the evidence variable was created).
    */
@@ -370,15 +374,15 @@ export class EvidenceVariable extends fhir.DomainResource {
   /**
    * A human-readable string to clarify or explain concepts about the resource.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the evidence variable to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * A copyright statement relating to the evidence variable and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the evidence variable.
    */
@@ -398,31 +402,31 @@ export class EvidenceVariable extends fhir.DomainResource {
   /**
    * Descriptive topics related to the content of the EvidenceVariable. Topics provide a high-level categorization grouping types of EvidenceVariables that can be useful for filtering and searching.
    */
-  public topic?: fhir.CodeableConcept[];
+  public topic: fhir.CodeableConcept[];
   /**
    * An individiual or organization primarily involved in the creation and maintenance of the content.
    */
-  public author?: fhir.ContactDetail[];
+  public author: fhir.ContactDetail[];
   /**
    * An individual or organization primarily responsible for internal coherence of the content.
    */
-  public editor?: fhir.ContactDetail[];
+  public editor: fhir.ContactDetail[];
   /**
    * An individual or organization primarily responsible for review of some aspect of the content.
    */
-  public reviewer?: fhir.ContactDetail[];
+  public reviewer: fhir.ContactDetail[];
   /**
    * An individual or organization responsible for officially endorsing the content for use in some setting.
    */
-  public endorser?: fhir.ContactDetail[];
+  public endorser: fhir.ContactDetail[];
   /**
    * Each related artifact is either an attachment, or a reference to another resource, but not both.
    */
-  public relatedArtifact?: fhir.RelatedArtifact[];
+  public relatedArtifact: fhir.RelatedArtifact[];
   /**
    * The type of evidence element, a population, an exposure, or an outcome.
    */
-  public type?: VariableTypeCodeType|undefined;
+  public type?: fhir.FhirCode<VariableTypeCodeType>|undefined;
   /**
    * Characteristics can be defined flexibly to accommodate different use cases for membership criteria, ranging from simple codes, all the way to using an expression language to express the criteria.
    */
@@ -441,7 +445,7 @@ export class EvidenceVariable extends fhir.DomainResource {
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
     if (source['shortTitle']) { this.shortTitle = new fhir.FhirString({value: source.shortTitle}); }
     if (source['subtitle']) { this.subtitle = new fhir.FhirString({value: source.subtitle}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
@@ -470,21 +474,21 @@ export class EvidenceVariable extends fhir.DomainResource {
     else { this.endorser = []; }
     if (source['relatedArtifact']) { this.relatedArtifact = source.relatedArtifact.map((x) => new fhir.RelatedArtifact(x)); }
     else { this.relatedArtifact = []; }
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<VariableTypeCodeType>({value: source.type}); }
     if (source['characteristic']) { this.characteristic = source.characteristic.map((x) => new fhir.EvidenceVariableCharacteristic(x)); }
     else { this.characteristic = []; }
   }
   /**
    * Required-bound Value Set for status (EvidenceVariable.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Required-bound Value Set for type (EvidenceVariable.type)
    */
-  public static typeRequiredCoding():VariableTypeCodingType {
-    return VariableTypeCodings;
+  public static get typeRequiredCodes() {
+    return VariableTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -492,7 +496,7 @@ export class EvidenceVariable extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"EvidenceVariable" fhir: EvidenceVariable.resourceType:"EvidenceVariable"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"EvidenceVariable" fhir: EvidenceVariable.resourceType:"EvidenceVariable"' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -502,8 +506,12 @@ export class EvidenceVariable extends fhir.DomainResource {
     if (this["shortTitle"]) { issues.push(...this.shortTitle.doModelValidation()); }
     if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: EvidenceVariable.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: EvidenceVariable.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: EvidenceVariable.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
     if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -521,12 +529,16 @@ export class EvidenceVariable extends fhir.DomainResource {
     if (this["reviewer"]) { this.reviewer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["endorser"]) { this.endorser.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['type'] && (!Object.values(VariableTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type?:fhir.FhirCode<VariableTypeCodeType> fhir: EvidenceVariable.type:code Required binding to: VariableType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['characteristic']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property characteristic:fhir.EvidenceVariableCharacteristic[] fhir: EvidenceVariable.characteristic:characteristic', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property characteristic:fhir.EvidenceVariableCharacteristic[] fhir: EvidenceVariable.characteristic:characteristic' });
     } else if (!Array.isArray(this.characteristic)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property characteristic:fhir.EvidenceVariableCharacteristic[] fhir: EvidenceVariable.characteristic:characteristic', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property characteristic:fhir.EvidenceVariableCharacteristic[] fhir: EvidenceVariable.characteristic:characteristic' });
     } else if (this.characteristic.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property characteristic:fhir.EvidenceVariableCharacteristic[] fhir: EvidenceVariable.characteristic:characteristic', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property characteristic:fhir.EvidenceVariableCharacteristic[] fhir: EvidenceVariable.characteristic:characteristic' });
     }
     if (this["characteristic"]) { this.characteristic.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;

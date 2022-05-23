@@ -15,6 +15,10 @@ export interface HumanName extends fhir.FhirElement {
    */
   use?: 'anonymous'|'maiden'|'nickname'|'official'|'old'|'temp'|'usual'|undefined;
   /**
+   * Extended properties for primitive element: HumanName.use
+   */
+  _use?:fhir.FhirElement;
+  /**
    * Can provide both a text representation and parts. Applications updating a name SHALL ensure that when both text and parts are present,  no content is included in the text that isn't found in a part.
    */
   text?: string|undefined;

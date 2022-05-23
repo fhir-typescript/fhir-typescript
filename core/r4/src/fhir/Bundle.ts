@@ -65,11 +65,11 @@ export class BundleLink extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['relation']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property relation:fhir.FhirString fhir: Bundle.link.relation:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property relation:fhir.FhirString fhir: Bundle.link.relation:string' });
     }
     if (this["relation"]) { issues.push(...this.relation.doModelValidation()); }
     if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property url:fhir.FhirUri fhir: Bundle.link.url:uri', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url:fhir.FhirUri fhir: Bundle.link.url:uri' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     return issues;
@@ -82,7 +82,7 @@ export interface BundleEntrySearchArgs extends fhir.BackboneElementArgs {
   /**
    * There is only one mode. In some corner cases, a resource may be included because it is both a match and an include. In these circumstances, 'match' takes precedence.
    */
-  mode?: SearchEntryModeCodeType|undefined;
+  mode?: fhir.FhirCode<SearchEntryModeCodeType>|string|undefined;
   /**
    * Servers are not required to return a ranking score. 1 is most relevant, and 0 is least relevant. Often, search results are sorted by score, but the client may specify a different sort order.
    * See [Patient Match](patient-operation-match.html) for the EMPI search which relates to this element.
@@ -101,7 +101,7 @@ export class BundleEntrySearch extends fhir.BackboneElement {
   /**
    * There is only one mode. In some corner cases, a resource may be included because it is both a match and an include. In these circumstances, 'match' takes precedence.
    */
-  public mode?: SearchEntryModeCodeType|undefined;
+  public mode?: fhir.FhirCode<SearchEntryModeCodeType>|undefined;
   /**
    * Servers are not required to return a ranking score. 1 is most relevant, and 0 is least relevant. Often, search results are sorted by score, but the client may specify a different sort order.
    * See [Patient Match](patient-operation-match.html) for the EMPI search which relates to this element.
@@ -112,20 +112,24 @@ export class BundleEntrySearch extends fhir.BackboneElement {
    */
   constructor(source:Partial<BundleEntrySearchArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['mode']) { this.mode = source.mode; }
+    if (source['mode']) { this.mode = new fhir.FhirCode<SearchEntryModeCodeType>({value: source.mode}); }
     if (source['score']) { this.score = new fhir.FhirDecimal({value: source.score}); }
   }
   /**
    * Required-bound Value Set for mode (Bundle.entry.search.mode)
    */
-  public static modeRequiredCoding():SearchEntryModeCodingType {
-    return SearchEntryModeCodings;
+  public static get modeRequiredCodes() {
+    return SearchEntryModeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this['mode'] && (!Object.values(SearchEntryModeCodes).includes(this.mode as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode?:fhir.FhirCode<SearchEntryModeCodeType> fhir: Bundle.entry.search.mode:code Required binding to: SearchEntryMode' });
+    }
+    if (this["mode"]) { issues.push(...this.mode.doModelValidation()); }
     if (this["score"]) { issues.push(...this.score.doModelValidation()); }
     return issues;
   }
@@ -137,7 +141,7 @@ export interface BundleEntryRequestArgs extends fhir.BackboneElementArgs {
   /**
    * In a transaction or batch, this is the HTTP action to be executed for this entry. In a history bundle, this indicates the HTTP action that occurred.
    */
-  method: HttpVerbCodeType|null;
+  method: fhir.FhirCode<HttpVerbCodeType>|string|undefined;
   /**
    * E.g. for a Patient Create, the method would be "POST" and the URL would be "Patient". For a Patient Update, the method would be PUT and the URL would be "Patient/[id]".
    */
@@ -171,7 +175,7 @@ export class BundleEntryRequest extends fhir.BackboneElement {
   /**
    * In a transaction or batch, this is the HTTP action to be executed for this entry. In a history bundle, this indicates the HTTP action that occurred.
    */
-  public method: HttpVerbCodeType|null;
+  public method: fhir.FhirCode<HttpVerbCodeType>|null;
   /**
    * E.g. for a Patient Create, the method would be "POST" and the URL would be "Patient". For a Patient Update, the method would be PUT and the URL would be "Patient/[id]".
    */
@@ -197,7 +201,7 @@ export class BundleEntryRequest extends fhir.BackboneElement {
    */
   constructor(source:Partial<BundleEntryRequestArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['method']) { this.method = source.method; }
+    if (source['method']) { this.method = new fhir.FhirCode<HttpVerbCodeType>({value: source.method}); }
     else { this.method = null; }
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
     else { this.url = null; }
@@ -209,8 +213,8 @@ export class BundleEntryRequest extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for method (Bundle.entry.request.method)
    */
-  public static methodRequiredCoding():HttpVerbCodingType {
-    return HttpVerbCodings;
+  public static get methodRequiredCodes() {
+    return HttpVerbCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -218,10 +222,14 @@ export class BundleEntryRequest extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['method']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property method:HttpVerbCodeType fhir: Bundle.entry.request.method:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property method:fhir.FhirCode<HttpVerbCodeType> fhir: Bundle.entry.request.method:code' });
     }
+    if (this['method'] && (!Object.values(HttpVerbCodes).includes(this.method as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property method:fhir.FhirCode<HttpVerbCodeType> fhir: Bundle.entry.request.method:code Required binding to: HttpVerb' });
+    }
+    if (this["method"]) { issues.push(...this.method.doModelValidation()); }
     if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property url:fhir.FhirUri fhir: Bundle.entry.request.url:uri', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url:fhir.FhirUri fhir: Bundle.entry.request.url:uri' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["ifNoneMatch"]) { issues.push(...this.ifNoneMatch.doModelValidation()); }
@@ -305,7 +313,7 @@ export class BundleEntryResponse extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:fhir.FhirString fhir: Bundle.entry.response.status:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirString fhir: Bundle.entry.response.status:string' });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["location"]) { issues.push(...this.location.doModelValidation()); }
@@ -357,7 +365,7 @@ export class BundleEntry extends fhir.BackboneElement {
   /**
    * A series of links that provide context to this entry.
    */
-  public link?: fhir.BundleLink[];
+  public link: fhir.BundleLink[];
   /**
    * fullUrl might not be [unique in the context of a resource](bundle.html#bundle-unique). Note that since [FHIR resources do not need to be served through the FHIR API](references.html), the fullURL might be a URN or an absolute URL that does not end with the logical id of the resource (Resource.id). However, but if the fullUrl does look like a RESTful server URL (e.g. meets the [regex](references.html#regex), then the 'id' portion of the fullUrl SHALL end with the Resource.id.
    * Note that the fullUrl is not the same as the canonical URL - it's an absolute url for an endpoint serving the resource (these will happen to have the same value on the canonical server for the resource with the canonical URL).
@@ -428,7 +436,7 @@ export interface BundleArgs extends fhir.ResourceArgs {
   /**
    * It's possible to use a bundle for other purposes (e.g. a document can be accepted as a transaction). This is primarily defined so that there can be specific rules for some of the bundle types.
    */
-  type: BundleTypeCodeType|null;
+  type: fhir.FhirCode<BundleTypeCodeType>|string|undefined;
   /**
    * For many bundles, the timestamp is equal to .meta.lastUpdated, because they are not stored (e.g. search results). When a bundle is placed in a persistent store, .meta.lastUpdated will be usually be changed by the server. When the bundle is a message, a middleware agent altering the message (even if not stored) SHOULD update .meta.lastUpdated. .timestamp is used to track the original time of the Bundle, and SHOULD be populated.  
    * Usage:
@@ -479,7 +487,7 @@ export class Bundle extends fhir.Resource {
   /**
    * It's possible to use a bundle for other purposes (e.g. a document can be accepted as a transaction). This is primarily defined so that there can be specific rules for some of the bundle types.
    */
-  public type: BundleTypeCodeType|null;
+  public type: fhir.FhirCode<BundleTypeCodeType>|null;
   /**
    * For many bundles, the timestamp is equal to .meta.lastUpdated, because they are not stored (e.g. search results). When a bundle is placed in a persistent store, .meta.lastUpdated will be usually be changed by the server. When the bundle is a message, a middleware agent altering the message (even if not stored) SHOULD update .meta.lastUpdated. .timestamp is used to track the original time of the Bundle, and SHOULD be populated.  
    * Usage:
@@ -500,11 +508,11 @@ export class Bundle extends fhir.Resource {
    * Bundle.entry.link corresponds to links found in the HTTP header if the resource in the entry was [read](http.html#read) directly.
    * This specification defines some specific uses of Bundle.link for [searching](search.html#conformance) and [paging](http.html#paging), but no specific uses for Bundle.entry.link, and no defined function in a transaction - the meaning is implementation specific.
    */
-  public link?: fhir.BundleLink[];
+  public link: fhir.BundleLink[];
   /**
    * An entry in a bundle resource - will either contain a resource or information about a resource (transactions and history only).
    */
-  public entry?: fhir.BundleEntry[];
+  public entry: fhir.BundleEntry[];
   /**
    * The signature could be created by the "author" of the bundle or by the originating device.   Requirements around inclusion of a signature, verification of signatures and treatment of signed/non-signed bundles is implementation-environment specific.
    */
@@ -516,7 +524,7 @@ export class Bundle extends fhir.Resource {
     super(source, options);
     this.resourceType = 'Bundle';
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<BundleTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['timestamp']) { this.timestamp = new fhir.FhirInstant({value: source.timestamp}); }
     if (source['total']) { this.total = new fhir.FhirUnsignedInt({value: source.total}); }
@@ -529,8 +537,8 @@ export class Bundle extends fhir.Resource {
   /**
    * Required-bound Value Set for type (Bundle.type)
    */
-  public static typeRequiredCoding():BundleTypeCodingType {
-    return BundleTypeCodings;
+  public static get typeRequiredCodes() {
+    return BundleTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -538,12 +546,16 @@ export class Bundle extends fhir.Resource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Bundle" fhir: Bundle.resourceType:"Bundle"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Bundle" fhir: Bundle.resourceType:"Bundle"' });
     }
     if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:BundleTypeCodeType fhir: Bundle.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<BundleTypeCodeType> fhir: Bundle.type:code' });
     }
+    if (this['type'] && (!Object.values(BundleTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<BundleTypeCodeType> fhir: Bundle.type:code Required binding to: BundleType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["timestamp"]) { issues.push(...this.timestamp.doModelValidation()); }
     if (this["total"]) { issues.push(...this.total.doModelValidation()); }
     if (this["link"]) { this.link.forEach((x) => { issues.push(...x.doModelValidation()); }) }

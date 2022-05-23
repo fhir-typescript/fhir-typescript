@@ -48,7 +48,7 @@ export interface ElementDefinitionSlicingDiscriminatorArgs extends fhir.FhirElem
   /**
    * How the element value is interpreted when discrimination is evaluated.
    */
-  type: DiscriminatorTypeCodeType|null;
+  type: fhir.FhirCode<DiscriminatorTypeCodeType>|string|undefined;
   /**
    * The only FHIRPath functions that are allowed are as(type), resolve(), and extension(url).
    */
@@ -66,7 +66,7 @@ export class ElementDefinitionSlicingDiscriminator extends fhir.FhirElement {
   /**
    * How the element value is interpreted when discrimination is evaluated.
    */
-  public type: DiscriminatorTypeCodeType|null;
+  public type: fhir.FhirCode<DiscriminatorTypeCodeType>|null;
   /**
    * The only FHIRPath functions that are allowed are as(type), resolve(), and extension(url).
    */
@@ -76,7 +76,7 @@ export class ElementDefinitionSlicingDiscriminator extends fhir.FhirElement {
    */
   constructor(source:Partial<ElementDefinitionSlicingDiscriminatorArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<DiscriminatorTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
     else { this.path = null; }
@@ -84,8 +84,8 @@ export class ElementDefinitionSlicingDiscriminator extends fhir.FhirElement {
   /**
    * Required-bound Value Set for type (ElementDefinition.slicing.discriminator.type)
    */
-  public static typeRequiredCoding():DiscriminatorTypeCodingType {
-    return DiscriminatorTypeCodings;
+  public static get typeRequiredCodes() {
+    return DiscriminatorTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -93,10 +93,14 @@ export class ElementDefinitionSlicingDiscriminator extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:DiscriminatorTypeCodeType fhir: ElementDefinition.slicing.discriminator.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<DiscriminatorTypeCodeType> fhir: ElementDefinition.slicing.discriminator.type:code' });
     }
+    if (this['type'] && (!Object.values(DiscriminatorTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<DiscriminatorTypeCodeType> fhir: ElementDefinition.slicing.discriminator.type:code Required binding to: DiscriminatorType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['path']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property path:fhir.FhirString fhir: ElementDefinition.slicing.discriminator.path:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property path:fhir.FhirString fhir: ElementDefinition.slicing.discriminator.path:string' });
     }
     if (this["path"]) { issues.push(...this.path.doModelValidation()); }
     return issues;
@@ -121,7 +125,7 @@ export interface ElementDefinitionSlicingArgs extends fhir.FhirElementArgs {
   /**
    * Allowing additional elements makes for a much for flexible template - it's open for use in wider contexts, but also means that the content of the resource is not closed, and applications have to decide how to handle content not described by the profile.
    */
-  rules: ResourceSlicingRulesCodeType|null;
+  rules: fhir.FhirCode<ResourceSlicingRulesCodeType>|string|undefined;
 }
 
 /**
@@ -135,7 +139,7 @@ export class ElementDefinitionSlicing extends fhir.FhirElement {
   /**
    * If there is no discriminator, the content is hard to process, so this should be avoided.
    */
-  public discriminator?: fhir.ElementDefinitionSlicingDiscriminator[];
+  public discriminator: fhir.ElementDefinitionSlicingDiscriminator[];
   /**
    * If it's really not possible to differentiate them, the design should be re-evaluated to make the content usable.
    */
@@ -147,7 +151,7 @@ export class ElementDefinitionSlicing extends fhir.FhirElement {
   /**
    * Allowing additional elements makes for a much for flexible template - it's open for use in wider contexts, but also means that the content of the resource is not closed, and applications have to decide how to handle content not described by the profile.
    */
-  public rules: ResourceSlicingRulesCodeType|null;
+  public rules: fhir.FhirCode<ResourceSlicingRulesCodeType>|null;
   /**
    * Default constructor for ElementDefinitionSlicing - initializes any required elements to null if a value is not provided.
    */
@@ -157,14 +161,14 @@ export class ElementDefinitionSlicing extends fhir.FhirElement {
     else { this.discriminator = []; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
     if (source['ordered']) { this.ordered = new fhir.FhirBoolean({value: source.ordered}); }
-    if (source['rules']) { this.rules = source.rules; }
+    if (source['rules']) { this.rules = new fhir.FhirCode<ResourceSlicingRulesCodeType>({value: source.rules}); }
     else { this.rules = null; }
   }
   /**
    * Required-bound Value Set for rules (ElementDefinition.slicing.rules)
    */
-  public static rulesRequiredCoding():ResourceSlicingRulesCodingType {
-    return ResourceSlicingRulesCodings;
+  public static get rulesRequiredCodes() {
+    return ResourceSlicingRulesCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -175,8 +179,12 @@ export class ElementDefinitionSlicing extends fhir.FhirElement {
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["ordered"]) { issues.push(...this.ordered.doModelValidation()); }
     if (!this['rules']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property rules:ResourceSlicingRulesCodeType fhir: ElementDefinition.slicing.rules:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property rules:fhir.FhirCode<ResourceSlicingRulesCodeType> fhir: ElementDefinition.slicing.rules:code' });
     }
+    if (this['rules'] && (!Object.values(ResourceSlicingRulesCodes).includes(this.rules as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property rules:fhir.FhirCode<ResourceSlicingRulesCodeType> fhir: ElementDefinition.slicing.rules:code Required binding to: ResourceSlicingRules' });
+    }
+    if (this["rules"]) { issues.push(...this.rules.doModelValidation()); }
     return issues;
   }
 }
@@ -236,15 +244,15 @@ export class ElementDefinitionBase extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['path']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property path:fhir.FhirString fhir: ElementDefinition.base.path:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property path:fhir.FhirString fhir: ElementDefinition.base.path:string' });
     }
     if (this["path"]) { issues.push(...this.path.doModelValidation()); }
     if (!this['min']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property min:fhir.FhirUnsignedInt fhir: ElementDefinition.base.min:unsignedInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property min:fhir.FhirUnsignedInt fhir: ElementDefinition.base.min:unsignedInt' });
     }
     if (this["min"]) { issues.push(...this.min.doModelValidation()); }
     if (!this['max']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property max:fhir.FhirString fhir: ElementDefinition.base.max:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property max:fhir.FhirString fhir: ElementDefinition.base.max:string' });
     }
     if (this["max"]) { issues.push(...this.max.doModelValidation()); }
     return issues;
@@ -269,11 +277,11 @@ export interface ElementDefinitionTypeArgs extends fhir.FhirElementArgs {
   /**
    * See [Aggregation Rules](elementdefinition.html#aggregation) for further clarification.
    */
-  aggregation?: ResourceAggregationModeCodeType[]|undefined;
+  aggregation?: fhir.FhirCode<ResourceAggregationModeCodeType>[]|string[]|undefined;
   /**
    * The base specification never makes a rule as to which form is allowed, but implementation guides may do this. See [Aggregation Rules](elementdefinition.html#aggregation) for further clarification.
    */
-  versioning?: ReferenceVersionRulesCodeType|undefined;
+  versioning?: fhir.FhirCode<ReferenceVersionRulesCodeType>|string|undefined;
 }
 
 /**
@@ -291,19 +299,19 @@ export class ElementDefinitionType extends fhir.FhirElement {
   /**
    * It is possible to profile  backbone element (e.g. part of a resource), using the [profile-element](extension-elementdefinition-profile-element.html) extension.
    */
-  public profile?: fhir.FhirCanonical[];
+  public profile: fhir.FhirCanonical[];
   /**
    * Used when the type is "Reference" or "canonical", and identifies a profile structure or implementation Guide that applies to the target of the reference this element refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.
    */
-  public targetProfile?: fhir.FhirCanonical[];
+  public targetProfile: fhir.FhirCanonical[];
   /**
    * See [Aggregation Rules](elementdefinition.html#aggregation) for further clarification.
    */
-  public aggregation?: ResourceAggregationModeCodeType[];
+  public aggregation: fhir.FhirCode<ResourceAggregationModeCodeType>[];
   /**
    * The base specification never makes a rule as to which form is allowed, but implementation guides may do this. See [Aggregation Rules](elementdefinition.html#aggregation) for further clarification.
    */
-  public versioning?: ReferenceVersionRulesCodeType|undefined;
+  public versioning?: fhir.FhirCode<ReferenceVersionRulesCodeType>|undefined;
   /**
    * Default constructor for ElementDefinitionType - initializes any required elements to null if a value is not provided.
    */
@@ -315,27 +323,27 @@ export class ElementDefinitionType extends fhir.FhirElement {
     else { this.profile = []; }
     if (source['targetProfile']) { this.targetProfile = source.targetProfile.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.targetProfile = []; }
-    if (source['aggregation']) { this.aggregation = source.aggregation.map((x) => x); }
+    if (source['aggregation']) { this.aggregation = source.aggregation.map((x) => new fhir.FhirCode<ResourceAggregationModeCodeType>({value: x})); }
     else { this.aggregation = []; }
-    if (source['versioning']) { this.versioning = source.versioning; }
+    if (source['versioning']) { this.versioning = new fhir.FhirCode<ReferenceVersionRulesCodeType>({value: source.versioning}); }
   }
   /**
    * Extensible-bound Value Set for code (ElementDefinition.type.code)
    */
-  public static codeExtensibleCoding():DefinedTypesCodingType {
+  public static get codeExtensibleCodings() {
     return DefinedTypesCodings;
   }
   /**
    * Required-bound Value Set for aggregation (ElementDefinition.type.aggregation)
    */
-  public static aggregationRequiredCoding():ResourceAggregationModeCodingType {
-    return ResourceAggregationModeCodings;
+  public static get aggregationRequiredCodes() {
+    return ResourceAggregationModeCodes;
   }
   /**
    * Required-bound Value Set for versioning (ElementDefinition.type.versioning)
    */
-  public static versioningRequiredCoding():ReferenceVersionRulesCodingType {
-    return ReferenceVersionRulesCodings;
+  public static get versioningRequiredCodes() {
+    return ReferenceVersionRulesCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -343,11 +351,23 @@ export class ElementDefinitionType extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.FhirUri fhir: ElementDefinition.type.code:uri', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirUri fhir: ElementDefinition.type.code:uri' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["profile"]) { this.profile.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["targetProfile"]) { this.targetProfile.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['aggregation']) {
+      this.aggregation.forEach((v) => {
+        if (!Object.values(ResourceAggregationModeCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property aggregation?:fhir.FhirCode<ResourceAggregationModeCodeType>[] fhir: ElementDefinition.type.aggregation:code Required binding to: ResourceAggregationMode' });
+        }
+      });
+    }
+    if (this["aggregation"]) { this.aggregation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['versioning'] && (!Object.values(ReferenceVersionRulesCodes).includes(this.versioning as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property versioning?:fhir.FhirCode<ReferenceVersionRulesCodeType> fhir: ElementDefinition.type.versioning:code Required binding to: ReferenceVersionRules' });
+    }
+    if (this["versioning"]) { issues.push(...this.versioning.doModelValidation()); }
     return issues;
   }
 }
@@ -651,11 +671,11 @@ export class ElementDefinitionExample extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['label']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property label:fhir.FhirString fhir: ElementDefinition.example.label:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property label:fhir.FhirString fhir: ElementDefinition.example.label:string' });
     }
     if (this["label"]) { issues.push(...this.label.doModelValidation()); }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value: fhir: ElementDefinition.example.value[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value: fhir: ElementDefinition.example.value[x]:' });
     }
     return issues;
   }
@@ -675,7 +695,7 @@ export interface ElementDefinitionConstraintArgs extends fhir.FhirElementArgs {
   /**
    * This allows constraints to be asserted as "shall" (error) and "should" (warning).
    */
-  severity: ConstraintSeverityCodeType|null;
+  severity: fhir.FhirCode<ConstraintSeverityCodeType>|string|undefined;
   /**
    * Should be expressed in business terms as much as possible.
    */
@@ -713,7 +733,7 @@ export class ElementDefinitionConstraint extends fhir.FhirElement {
   /**
    * This allows constraints to be asserted as "shall" (error) and "should" (warning).
    */
-  public severity: ConstraintSeverityCodeType|null;
+  public severity: fhir.FhirCode<ConstraintSeverityCodeType>|null;
   /**
    * Should be expressed in business terms as much as possible.
    */
@@ -738,7 +758,7 @@ export class ElementDefinitionConstraint extends fhir.FhirElement {
     if (source['key']) { this.key = new fhir.FhirId({value: source.key}); }
     else { this.key = null; }
     if (source['requirements']) { this.requirements = new fhir.FhirString({value: source.requirements}); }
-    if (source['severity']) { this.severity = source.severity; }
+    if (source['severity']) { this.severity = new fhir.FhirCode<ConstraintSeverityCodeType>({value: source.severity}); }
     else { this.severity = null; }
     if (source['human']) { this.human = new fhir.FhirString({value: source.human}); }
     else { this.human = null; }
@@ -749,8 +769,8 @@ export class ElementDefinitionConstraint extends fhir.FhirElement {
   /**
    * Required-bound Value Set for severity (ElementDefinition.constraint.severity)
    */
-  public static severityRequiredCoding():ConstraintSeverityCodingType {
-    return ConstraintSeverityCodings;
+  public static get severityRequiredCodes() {
+    return ConstraintSeverityCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -758,15 +778,19 @@ export class ElementDefinitionConstraint extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['key']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property key:fhir.FhirId fhir: ElementDefinition.constraint.key:id', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property key:fhir.FhirId fhir: ElementDefinition.constraint.key:id' });
     }
     if (this["key"]) { issues.push(...this.key.doModelValidation()); }
     if (this["requirements"]) { issues.push(...this.requirements.doModelValidation()); }
     if (!this['severity']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property severity:ConstraintSeverityCodeType fhir: ElementDefinition.constraint.severity:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property severity:fhir.FhirCode<ConstraintSeverityCodeType> fhir: ElementDefinition.constraint.severity:code' });
     }
+    if (this['severity'] && (!Object.values(ConstraintSeverityCodes).includes(this.severity as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property severity:fhir.FhirCode<ConstraintSeverityCodeType> fhir: ElementDefinition.constraint.severity:code Required binding to: ConstraintSeverity' });
+    }
+    if (this["severity"]) { issues.push(...this.severity.doModelValidation()); }
     if (!this['human']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property human:fhir.FhirString fhir: ElementDefinition.constraint.human:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property human:fhir.FhirString fhir: ElementDefinition.constraint.human:string' });
     }
     if (this["human"]) { issues.push(...this.human.doModelValidation()); }
     if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
@@ -782,7 +806,7 @@ export interface ElementDefinitionBindingArgs extends fhir.FhirElementArgs {
   /**
    * For further discussion, see [Using Terminologies](terminologies.html).
    */
-  strength: BindingStrengthCodeType|null;
+  strength: fhir.FhirCode<BindingStrengthCodeType>|string|undefined;
   /**
    * Describes the intended use of this particular set of codes.
    */
@@ -804,7 +828,7 @@ export class ElementDefinitionBinding extends fhir.FhirElement {
   /**
    * For further discussion, see [Using Terminologies](terminologies.html).
    */
-  public strength: BindingStrengthCodeType|null;
+  public strength: fhir.FhirCode<BindingStrengthCodeType>|null;
   /**
    * Describes the intended use of this particular set of codes.
    */
@@ -818,7 +842,7 @@ export class ElementDefinitionBinding extends fhir.FhirElement {
    */
   constructor(source:Partial<ElementDefinitionBindingArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['strength']) { this.strength = source.strength; }
+    if (source['strength']) { this.strength = new fhir.FhirCode<BindingStrengthCodeType>({value: source.strength}); }
     else { this.strength = null; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
     if (source['valueSet']) { this.valueSet = new fhir.FhirCanonical({value: source.valueSet}); }
@@ -826,8 +850,8 @@ export class ElementDefinitionBinding extends fhir.FhirElement {
   /**
    * Required-bound Value Set for strength (ElementDefinition.binding.strength)
    */
-  public static strengthRequiredCoding():BindingStrengthCodingType {
-    return BindingStrengthCodings;
+  public static get strengthRequiredCodes() {
+    return BindingStrengthCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -835,8 +859,12 @@ export class ElementDefinitionBinding extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['strength']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property strength:BindingStrengthCodeType fhir: ElementDefinition.binding.strength:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property strength:fhir.FhirCode<BindingStrengthCodeType> fhir: ElementDefinition.binding.strength:code' });
     }
+    if (this['strength'] && (!Object.values(BindingStrengthCodes).includes(this.strength as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property strength:fhir.FhirCode<BindingStrengthCodeType> fhir: ElementDefinition.binding.strength:code Required binding to: BindingStrength' });
+    }
+    if (this["strength"]) { issues.push(...this.strength.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["valueSet"]) { issues.push(...this.valueSet.doModelValidation()); }
     return issues;
@@ -906,12 +934,12 @@ export class ElementDefinitionMapping extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['identity']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property identity:fhir.FhirId fhir: ElementDefinition.mapping.identity:id', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property identity:fhir.FhirId fhir: ElementDefinition.mapping.identity:id' });
     }
     if (this["identity"]) { issues.push(...this.identity.doModelValidation()); }
     if (this["language"]) { issues.push(...this.language.doModelValidation()); }
     if (!this['map']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property map:fhir.FhirString fhir: ElementDefinition.mapping.map:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property map:fhir.FhirString fhir: ElementDefinition.mapping.map:string' });
     }
     if (this["map"]) { issues.push(...this.map.doModelValidation()); }
     if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
@@ -929,7 +957,7 @@ export interface ElementDefinitionArgs extends fhir.BackboneElementArgs {
   /**
    * In resources, this is rarely used except for special cases where the representation deviates from the normal, and can only be done in the base standard (and profiles must reproduce what the base standard does). This element is used quite commonly in Logical models when the logical models represent a specific serialization format (e.g. CDA, v2 etc.).
    */
-  representation?: PropertyRepresentationCodeType[]|undefined;
+  representation?: fhir.FhirCode<PropertyRepresentationCodeType>[]|string[]|undefined;
   /**
    * The name SHALL be unique within the structure within the context of the constrained resource element.  (Though to avoid confusion, uniqueness across all elements is recommended.).
    */
@@ -1798,7 +1826,7 @@ export class ElementDefinition extends fhir.BackboneElement {
   /**
    * In resources, this is rarely used except for special cases where the representation deviates from the normal, and can only be done in the base standard (and profiles must reproduce what the base standard does). This element is used quite commonly in Logical models when the logical models represent a specific serialization format (e.g. CDA, v2 etc.).
    */
-  public representation?: PropertyRepresentationCodeType[];
+  public representation: fhir.FhirCode<PropertyRepresentationCodeType>[];
   /**
    * The name SHALL be unique within the structure within the context of the constrained resource element.  (Though to avoid confusion, uniqueness across all elements is recommended.).
    */
@@ -1814,7 +1842,7 @@ export class ElementDefinition extends fhir.BackboneElement {
   /**
    * The concept SHALL be properly aligned with the data element definition and other constraints, as defined in the code system, including relationships, of any code listed here.  Where multiple codes exist in a terminology that could correspond to the data element, the most granular code(s) should be selected, so long as they are not more restrictive than the data element itself. The mappings may be used to provide more or less granular or structured equivalences in the code system.
    */
-  public code?: fhir.Coding[];
+  public code: fhir.Coding[];
   /**
    * The first element in the sequence, the one that carries the slicing, is the definition that applies to all the slices. This is based on the unconstrained element, but can apply any constraints as appropriate. This may include the common constraints on the children of the element.
    */
@@ -1838,7 +1866,7 @@ export class ElementDefinition extends fhir.BackboneElement {
   /**
    * Identifies additional names by which this element might also be known.
    */
-  public alias?: fhir.FhirString[];
+  public alias: fhir.FhirString[];
   /**
    * The minimum number of times this element SHALL appear in the instance.
    */
@@ -1858,7 +1886,7 @@ export class ElementDefinition extends fhir.BackboneElement {
   /**
    * The Type of the element can be left blank in a differential constraint, in which case the type is inherited from the resource. Abstract types are not permitted to appear as a type when multiple types are listed.  (I.e. Abstract types cannot be part of a choice).
    */
-  public type?: fhir.ElementDefinitionType[];
+  public type: fhir.ElementDefinitionType[];
   /**
    * Specifying a default value means that the property can never been unknown - it must always have a value. Further, the default value can never be changed, or changed in constraints on content models. Defining default values creates many difficulties in implementation (e.g. when is a value missing?). For these reasons, default values are (and should be) used extremely sparingly. 
    * No default values are ever defined in the FHIR specification, nor can they be defined in constraints ("profiles") on data types or resources. This element only exists so that default values may be defined in logical models.
@@ -1895,7 +1923,7 @@ export class ElementDefinition extends fhir.BackboneElement {
   /**
    * Examples will most commonly be present for data where it's not implicitly obvious from either the data type or value set what the values might be.  (I.e. Example values for dates or quantities would generally be unnecessary.)  If the example value is fully populated, the publication tool can generate an instance automatically.
    */
-  public example?: fhir.ElementDefinitionExample[];
+  public example: fhir.ElementDefinitionExample[];
   /**
    * Except for date/date/instant, the type of the minValue[x] SHALL be the same as the specified type of the element. For the date/dateTime/instant values, the type of minValue[x] SHALL be either the same, or a [Duration](datatypes.html#Duration) which specifies a relative time limit to the current time. The duration value is positive, and is subtracted from the current clock to determine the minimum allowable value.   A minimum value for a Quantity is interpreted as an canonical minimum - e.g. you cannot provide 100mg if the minimum value is 10g.
    */
@@ -1919,11 +1947,11 @@ export class ElementDefinition extends fhir.BackboneElement {
   /**
    * A reference to an invariant that may make additional statements about the cardinality or value in the instance.
    */
-  public condition?: fhir.FhirId[];
+  public condition: fhir.FhirId[];
   /**
    * Constraints should be declared on the "context" element - the lowest element in the hierarchy that is common to all nodes referenced by the constraint.
    */
-  public constraint?: fhir.ElementDefinitionConstraint[];
+  public constraint: fhir.ElementDefinitionConstraint[];
   /**
    * "Something useful" is context dependent and impossible to describe in the base FHIR specification. For this reason, tue mustSupport flag is never set to true by the FHIR specification itself - it is only set to true in profiles.  A profile on a type can always make musSupport = true if it is false in the base type but cannot make mustSupport = false if it is true in the base type.   This is done in [Resource Profiles](profiling.html#mustsupport), where the profile labels an element as mustSupport=true. When a profile does this, it SHALL also make clear exactly what kind of "support" is required, as this can mean many things.    Note that an element that has the property IsModifier is not necessarily a "key" element (e.g. one of the important elements to make use of the resource), nor is it automatically mustSupport - however both of these things are more likely to be true for IsModifier elements than for other elements.
    */
@@ -1947,7 +1975,7 @@ export class ElementDefinition extends fhir.BackboneElement {
   /**
    * Mappings are not necessarily specific enough for safe translation.
    */
-  public mapping?: fhir.ElementDefinitionMapping[];
+  public mapping: fhir.ElementDefinitionMapping[];
   /**
    * Default constructor for ElementDefinition - initializes any required elements to null if a value is not provided.
    */
@@ -1955,7 +1983,7 @@ export class ElementDefinition extends fhir.BackboneElement {
     super(source, options);
     if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
     else { this.path = null; }
-    if (source['representation']) { this.representation = source.representation.map((x) => x); }
+    if (source['representation']) { this.representation = source.representation.map((x) => new fhir.FhirCode<PropertyRepresentationCodeType>({value: x})); }
     else { this.representation = []; }
     if (source['sliceName']) { this.sliceName = new fhir.FhirString({value: source.sliceName}); }
     if (source['sliceIsConstraining']) { this.sliceIsConstraining = new fhir.FhirBoolean({value: source.sliceIsConstraining}); }
@@ -2168,8 +2196,8 @@ export class ElementDefinition extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for representation (ElementDefinition.representation)
    */
-  public static representationRequiredCoding():PropertyRepresentationCodingType {
-    return PropertyRepresentationCodings;
+  public static get representationRequiredCodes() {
+    return PropertyRepresentationCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -2177,9 +2205,17 @@ export class ElementDefinition extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['path']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property path:fhir.FhirString fhir: ElementDefinition.path:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property path:fhir.FhirString fhir: ElementDefinition.path:string' });
     }
     if (this["path"]) { issues.push(...this.path.doModelValidation()); }
+    if (this['representation']) {
+      this.representation.forEach((v) => {
+        if (!Object.values(PropertyRepresentationCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property representation?:fhir.FhirCode<PropertyRepresentationCodeType>[] fhir: ElementDefinition.representation:code Required binding to: PropertyRepresentation' });
+        }
+      });
+    }
+    if (this["representation"]) { this.representation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["sliceName"]) { issues.push(...this.sliceName.doModelValidation()); }
     if (this["sliceIsConstraining"]) { issues.push(...this.sliceIsConstraining.doModelValidation()); }
     if (this["label"]) { issues.push(...this.label.doModelValidation()); }

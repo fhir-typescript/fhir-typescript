@@ -95,7 +95,7 @@ export class ImmunizationPerformer extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for function (Immunization.performer.function)
    */
-  public static functionExtensibleCoding():ImmunizationFunctionCodingType {
+  public static get functionExtensibleCodings() {
     return ImmunizationFunctionCodings;
   }
   /**
@@ -105,7 +105,7 @@ export class ImmunizationPerformer extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["function"]) { issues.push(...this.function.doModelValidation()); }
     if (!this['actor']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actor:fhir.Reference fhir: Immunization.performer.actor:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor:fhir.Reference fhir: Immunization.performer.actor:Reference' });
     }
     if (this["actor"]) { issues.push(...this.actor.doModelValidation()); }
     return issues;
@@ -298,7 +298,7 @@ export class ImmunizationProtocolApplied extends fhir.BackboneElement {
   /**
    * The vaccine preventable disease the dose is being administered against.
    */
-  public targetDisease?: fhir.CodeableConcept[];
+  public targetDisease: fhir.CodeableConcept[];
   /**
    * The use of an integer is preferred if known. A string should only be used in cases where an integer is not available (such as when documenting a recurring booster dose).
    */
@@ -341,7 +341,7 @@ export class ImmunizationProtocolApplied extends fhir.BackboneElement {
     if (this["authority"]) { issues.push(...this.authority.doModelValidation()); }
     if (this["targetDisease"]) { this.targetDisease.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['doseNumber']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property doseNumber: fhir: Immunization.protocolApplied.doseNumber[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property doseNumber: fhir: Immunization.protocolApplied.doseNumber[x]:' });
     }
     return issues;
   }
@@ -361,7 +361,7 @@ export interface ImmunizationArgs extends fhir.DomainResourceArgs {
   /**
    * Will generally be set to show that the immunization has been completed or not done.  This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status: ImmunizationStatusCodeType|null;
+  status: fhir.FhirCode<ImmunizationStatusCodeType>|string|undefined;
   /**
    * This is generally only used for the status of "not-done". The reason for performing the immunization event is captured in reasonCode, not here.
    */
@@ -491,11 +491,11 @@ export class Immunization extends fhir.DomainResource {
   /**
    * A unique identifier assigned to this immunization record.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Will generally be set to show that the immunization has been completed or not done.  This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status: ImmunizationStatusCodeType|null;
+  public status: fhir.FhirCode<ImmunizationStatusCodeType>|null;
   /**
    * This is generally only used for the status of "not-done". The reason for performing the immunization event is captured in reasonCode, not here.
    */
@@ -563,19 +563,19 @@ export class Immunization extends fhir.DomainResource {
   /**
    * Indicates who performed the immunization event.
    */
-  public performer?: fhir.ImmunizationPerformer[];
+  public performer: fhir.ImmunizationPerformer[];
   /**
    * Extra information about the immunization that is not conveyed by the other attributes.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Reasons why the vaccine was administered.
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * Condition, Observation or DiagnosticReport that supports why the immunization was administered.
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * Typically, the recognition of the dose being sub-potent is retrospective, after the administration (ex. notification of a manufacturer recall after administration). However, in the case of a partial administration (the patient moves unexpectedly and only some of the dose is actually administered), subpotency may be recognized immediately, but it is still important to record the event.
    */
@@ -583,15 +583,15 @@ export class Immunization extends fhir.DomainResource {
   /**
    * Reason why a dose is considered to be subpotent.
    */
-  public subpotentReason?: fhir.CodeableConcept[];
+  public subpotentReason: fhir.CodeableConcept[];
   /**
    * Educational material presented to the patient (or guardian) at the time of vaccine administration.
    */
-  public education?: fhir.ImmunizationEducation[];
+  public education: fhir.ImmunizationEducation[];
   /**
    * Indicates a patient's eligibility for a funding program.
    */
-  public programEligibility?: fhir.CodeableConcept[];
+  public programEligibility: fhir.CodeableConcept[];
   /**
    * Indicates the source of the vaccine actually administered. This may be different than the patient eligibility (e.g. the patient may be eligible for a publically purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered).
    */
@@ -599,11 +599,11 @@ export class Immunization extends fhir.DomainResource {
   /**
    * A reaction may be an indication of an allergy or intolerance and, if this is determined to be the case, it should be recorded as a new AllergyIntolerance resource instance as most systems will not query against past Immunization.reaction elements.
    */
-  public reaction?: fhir.ImmunizationReaction[];
+  public reaction: fhir.ImmunizationReaction[];
   /**
    * The protocol (set of recommendations) being followed by the provider who administered the dose.
    */
-  public protocolApplied?: fhir.ImmunizationProtocolApplied[];
+  public protocolApplied: fhir.ImmunizationProtocolApplied[];
   /**
    * Default constructor for Immunization - initializes any required elements to null if a value is not provided.
    */
@@ -612,7 +612,7 @@ export class Immunization extends fhir.DomainResource {
     this.resourceType = 'Immunization';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<ImmunizationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['statusReason']) { this.statusReason = new fhir.CodeableConcept(source.statusReason); }
     if (source['vaccineCode']) { this.vaccineCode = new fhir.CodeableConcept(source.vaccineCode); }
@@ -658,8 +658,8 @@ export class Immunization extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Immunization.status)
    */
-  public static statusRequiredCoding():ImmunizationStatusCodingType {
-    return ImmunizationStatusCodings;
+  public static get statusRequiredCodes() {
+    return ImmunizationStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -667,24 +667,28 @@ export class Immunization extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Immunization" fhir: Immunization.resourceType:"Immunization"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Immunization" fhir: Immunization.resourceType:"Immunization"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ImmunizationStatusCodeType fhir: Immunization.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ImmunizationStatusCodeType> fhir: Immunization.status:code' });
     }
+    if (this['status'] && (!Object.values(ImmunizationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ImmunizationStatusCodeType> fhir: Immunization.status:code Required binding to: ImmunizationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation()); }
     if (!this['vaccineCode']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property vaccineCode:fhir.CodeableConcept fhir: Immunization.vaccineCode:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property vaccineCode:fhir.CodeableConcept fhir: Immunization.vaccineCode:CodeableConcept' });
     }
     if (this["vaccineCode"]) { issues.push(...this.vaccineCode.doModelValidation()); }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: Immunization.patient:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: Immunization.patient:Reference' });
     }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
     if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
     if (!this['occurrence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property occurrence: fhir: Immunization.occurrence[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property occurrence: fhir: Immunization.occurrence[x]:' });
     }
     if (this["recorded"]) { issues.push(...this.recorded.doModelValidation()); }
     if (this["primarySource"]) { issues.push(...this.primarySource.doModelValidation()); }

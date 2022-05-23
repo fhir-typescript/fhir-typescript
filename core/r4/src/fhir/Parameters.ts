@@ -254,7 +254,7 @@ export class ParametersParameter extends fhir.BackboneElement {
   /**
    * Only one level of nested parameters is allowed.
    */
-  public part?: fhir.ParametersParameter[];
+  public part: fhir.ParametersParameter[];
   /**
    * Default constructor for ParametersParameter - initializes any required elements to null if a value is not provided.
    */
@@ -323,7 +323,7 @@ export class ParametersParameter extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: Parameters.parameter.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: Parameters.parameter.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["resource"]) { issues.push(...this.resource.doModelValidation()); }
@@ -360,7 +360,7 @@ export class Parameters extends fhir.Resource {
   /**
    * A parameter passed to or received from the operation.
    */
-  public parameter?: fhir.ParametersParameter[];
+  public parameter: fhir.ParametersParameter[];
   /**
    * Default constructor for Parameters - initializes any required elements to null if a value is not provided.
    */
@@ -376,7 +376,7 @@ export class Parameters extends fhir.Resource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Parameters" fhir: Parameters.resourceType:"Parameters"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Parameters" fhir: Parameters.resourceType:"Parameters"' });
     }
     if (this["parameter"]) { this.parameter.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;

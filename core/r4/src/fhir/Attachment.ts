@@ -104,7 +104,7 @@ export class Attachment extends fhir.FhirElement {
   /**
    * Preferred-bound Value Set for language (Attachment.language)
    */
-  public static languagePreferredCoding():LanguagesCodingType {
+  public static get languagePreferredCodings() {
     return LanguagesCodings;
   }
   /**

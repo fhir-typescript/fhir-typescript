@@ -479,7 +479,7 @@ export class SubstanceSpecificationStructure extends fhir.BackboneElement {
   /**
    * Applicable for single substances that contain a radionuclide or a non-natural isotopic ratio.
    */
-  public isotope?: fhir.SubstanceSpecificationStructureIsotope[];
+  public isotope: fhir.SubstanceSpecificationStructureIsotope[];
   /**
    * The molecular weight or weight range (for proteins, polymers or nucleic acids).
    */
@@ -487,11 +487,11 @@ export class SubstanceSpecificationStructure extends fhir.BackboneElement {
   /**
    * Supporting literature.
    */
-  public source?: fhir.Reference[];
+  public source: fhir.Reference[];
   /**
    * Molecular structural representation.
    */
-  public representation?: fhir.SubstanceSpecificationStructureRepresentation[];
+  public representation: fhir.SubstanceSpecificationStructureRepresentation[];
   /**
    * Default constructor for SubstanceSpecificationStructure - initializes any required elements to null if a value is not provided.
    */
@@ -578,7 +578,7 @@ export class SubstanceSpecificationCode extends fhir.BackboneElement {
   /**
    * Supporting literature.
    */
-  public source?: fhir.Reference[];
+  public source: fhir.Reference[];
   /**
    * Default constructor for SubstanceSpecificationCode - initializes any required elements to null if a value is not provided.
    */
@@ -739,31 +739,31 @@ export class SubstanceSpecificationName extends fhir.BackboneElement {
   /**
    * Language of the name.
    */
-  public language?: fhir.CodeableConcept[];
+  public language: fhir.CodeableConcept[];
   /**
    * The use context of this name for example if there is a different name a drug active ingredient as opposed to a food colour additive.
    */
-  public domain?: fhir.CodeableConcept[];
+  public domain: fhir.CodeableConcept[];
   /**
    * The jurisdiction where this name applies.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * A synonym of this name.
    */
-  public synonym?: fhir.SubstanceSpecificationName[];
+  public synonym: fhir.SubstanceSpecificationName[];
   /**
    * A translation for this name.
    */
-  public translation?: fhir.SubstanceSpecificationName[];
+  public translation: fhir.SubstanceSpecificationName[];
   /**
    * Details of the official nature of this name.
    */
-  public official?: fhir.SubstanceSpecificationNameOfficial[];
+  public official: fhir.SubstanceSpecificationNameOfficial[];
   /**
    * Supporting literature.
    */
-  public source?: fhir.Reference[];
+  public source: fhir.Reference[];
   /**
    * Default constructor for SubstanceSpecificationName - initializes any required elements to null if a value is not provided.
    */
@@ -795,7 +795,7 @@ export class SubstanceSpecificationName extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: SubstanceSpecification.name.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: SubstanceSpecification.name.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
@@ -912,7 +912,7 @@ export class SubstanceSpecificationRelationship extends fhir.BackboneElement {
   /**
    * Supporting literature.
    */
-  public source?: fhir.Reference[];
+  public source: fhir.Reference[];
   /**
    * Default constructor for SubstanceSpecificationRelationship - initializes any required elements to null if a value is not provided.
    */
@@ -1067,7 +1067,7 @@ export class SubstanceSpecification extends fhir.DomainResource {
   /**
    * Supporting literature.
    */
-  public source?: fhir.Reference[];
+  public source: fhir.Reference[];
   /**
    * Textual comment about this record of a substance.
    */
@@ -1075,11 +1075,11 @@ export class SubstanceSpecification extends fhir.DomainResource {
   /**
    * Moiety, for structural modifications.
    */
-  public moiety?: fhir.SubstanceSpecificationMoiety[];
+  public moiety: fhir.SubstanceSpecificationMoiety[];
   /**
    * General specifications for this substance, including how it is related to other substances.
    */
-  public property?: fhir.SubstanceSpecificationProperty[];
+  public property: fhir.SubstanceSpecificationProperty[];
   /**
    * General information detailing this substance.
    */
@@ -1091,19 +1091,19 @@ export class SubstanceSpecification extends fhir.DomainResource {
   /**
    * Codes associated with the substance.
    */
-  public code?: fhir.SubstanceSpecificationCode[];
+  public code: fhir.SubstanceSpecificationCode[];
   /**
    * Names applicable to this substance.
    */
-  public name?: fhir.SubstanceSpecificationName[];
+  public name: fhir.SubstanceSpecificationName[];
   /**
    * The molecular weight or weight range (for proteins, polymers or nucleic acids).
    */
-  public molecularWeight?: fhir.SubstanceSpecificationStructureIsotopeMolecularWeight[];
+  public molecularWeight: fhir.SubstanceSpecificationStructureIsotopeMolecularWeight[];
   /**
    * A link between this substance and another, with details of the relationship.
    */
-  public relationship?: fhir.SubstanceSpecificationRelationship[];
+  public relationship: fhir.SubstanceSpecificationRelationship[];
   /**
    * Data items specific to nucleic acids.
    */
@@ -1159,7 +1159,7 @@ export class SubstanceSpecification extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"SubstanceSpecification" fhir: SubstanceSpecification.resourceType:"SubstanceSpecification"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"SubstanceSpecification" fhir: SubstanceSpecification.resourceType:"SubstanceSpecification"' });
     }
     if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }

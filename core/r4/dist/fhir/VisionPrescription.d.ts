@@ -1,9 +1,6 @@
 import * as fhir from '../fhir.js';
-import { VisionBaseCodesCodingType } from '../fhirValueSets/VisionBaseCodesCodings.js';
 import { VisionBaseCodesCodeType } from '../fhirValueSets/VisionBaseCodesCodes.js';
-import { VisionEyeCodesCodingType } from '../fhirValueSets/VisionEyeCodesCodings.js';
 import { VisionEyeCodesCodeType } from '../fhirValueSets/VisionEyeCodesCodes.js';
-import { FmStatusCodingType } from '../fhirValueSets/FmStatusCodings.js';
 import { FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
 /**
  * Valid arguments for the VisionPrescriptionLensSpecificationPrism type.
@@ -16,7 +13,7 @@ export interface VisionPrescriptionLensSpecificationPrismArgs extends fhir.Backb
     /**
      * The relative base, or reference lens edge, for the prism.
      */
-    base: VisionBaseCodesCodeType | null;
+    base: fhir.FhirCode<VisionBaseCodesCodeType> | string | undefined;
 }
 /**
  * Allows for adjustment on two axis.
@@ -33,7 +30,7 @@ export declare class VisionPrescriptionLensSpecificationPrism extends fhir.Backb
     /**
      * The relative base, or reference lens edge, for the prism.
      */
-    base: VisionBaseCodesCodeType | null;
+    base: fhir.FhirCode<VisionBaseCodesCodeType> | null;
     /**
      * Default constructor for VisionPrescriptionLensSpecificationPrism - initializes any required elements to null if a value is not provided.
      */
@@ -41,7 +38,12 @@ export declare class VisionPrescriptionLensSpecificationPrism extends fhir.Backb
     /**
      * Required-bound Value Set for base (VisionPrescription.lensSpecification.prism.base)
      */
-    static baseRequiredCoding(): VisionBaseCodesCodingType;
+    static get baseRequiredCodes(): {
+        readonly Down: "down";
+        readonly In: "in";
+        readonly Out: "out";
+        readonly Up: "up";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -58,7 +60,7 @@ export interface VisionPrescriptionLensSpecificationArgs extends fhir.BackboneEl
     /**
      * May also appear as OD (oculus dexter) for the right eye and OS (oculus siniter) for the left eye.
      */
-    eye: VisionEyeCodesCodeType | null;
+    eye: fhir.FhirCode<VisionEyeCodesCodeType> | string | undefined;
     /**
      * The value is negative for near-sighted and positive for far sighted.
      * Often insurance will not cover a lens with power between +75 and -75.
@@ -124,7 +126,7 @@ export declare class VisionPrescriptionLensSpecification extends fhir.BackboneEl
     /**
      * May also appear as OD (oculus dexter) for the right eye and OS (oculus siniter) for the left eye.
      */
-    eye: VisionEyeCodesCodeType | null;
+    eye: fhir.FhirCode<VisionEyeCodesCodeType> | null;
     /**
      * The value is negative for near-sighted and positive for far sighted.
      * Often insurance will not cover a lens with power between +75 and -75.
@@ -141,7 +143,7 @@ export declare class VisionPrescriptionLensSpecification extends fhir.BackboneEl
     /**
      * Allows for adjustment on two axis.
      */
-    prism?: fhir.VisionPrescriptionLensSpecificationPrism[];
+    prism: fhir.VisionPrescriptionLensSpecificationPrism[];
     /**
      * Power adjustment for multifocal lenses measured in dioptres (0.25 units).
      */
@@ -173,7 +175,7 @@ export declare class VisionPrescriptionLensSpecification extends fhir.BackboneEl
     /**
      * Notes for special requirements such as coatings and lens materials.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Default constructor for VisionPrescriptionLensSpecification - initializes any required elements to null if a value is not provided.
      */
@@ -181,7 +183,10 @@ export declare class VisionPrescriptionLensSpecification extends fhir.BackboneEl
     /**
      * Required-bound Value Set for eye (VisionPrescription.lensSpecification.eye)
      */
-    static eyeRequiredCoding(): VisionEyeCodesCodingType;
+    static get eyeRequiredCodes(): {
+        readonly LeftEye: "left";
+        readonly RightEye: "right";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -202,7 +207,7 @@ export interface VisionPrescriptionArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: FmStatusCodeType | null;
+    status: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
      * The date this resource was created.
      */
@@ -243,11 +248,11 @@ export declare class VisionPrescription extends fhir.DomainResource {
     /**
      * A unique identifier assigned to this vision prescription.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: FmStatusCodeType | null;
+    status: fhir.FhirCode<FmStatusCodeType> | null;
     /**
      * The date this resource was created.
      */
@@ -279,7 +284,12 @@ export declare class VisionPrescription extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (VisionPrescription.status)
      */
-    static statusRequiredCoding(): FmStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Cancelled: "cancelled";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

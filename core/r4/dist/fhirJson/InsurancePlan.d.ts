@@ -193,6 +193,10 @@ export interface InsurancePlan extends fhir.DomainResource {
      */
     status?: 'active' | 'draft' | 'retired' | 'unknown' | undefined;
     /**
+     * Extended properties for primitive element: InsurancePlan.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * The kind of health insurance product.
      */
     type?: fhir.CodeableConcept[] | undefined;

@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { InvoicePriceComponentTypeCodingType } from '../fhirValueSets/InvoicePriceComponentTypeCodings.js';
 import { InvoicePriceComponentTypeCodeType } from '../fhirValueSets/InvoicePriceComponentTypeCodes.js';
-import { InvoiceStatusCodingType } from '../fhirValueSets/InvoiceStatusCodings.js';
 import { InvoiceStatusCodeType } from '../fhirValueSets/InvoiceStatusCodes.js';
 /**
  * Valid arguments for the InvoiceParticipant type.
@@ -48,7 +46,7 @@ export interface InvoiceLineItemPriceComponentArgs extends fhir.BackboneElementA
     /**
      * This code identifies the type of the component.
      */
-    type: InvoicePriceComponentTypeCodeType | null;
+    type: fhir.FhirCode<InvoicePriceComponentTypeCodeType> | string | undefined;
     /**
      * A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.
      */
@@ -73,7 +71,7 @@ export declare class InvoiceLineItemPriceComponent extends fhir.BackboneElement 
     /**
      * This code identifies the type of the component.
      */
-    type: InvoicePriceComponentTypeCodeType | null;
+    type: fhir.FhirCode<InvoicePriceComponentTypeCodeType> | null;
     /**
      * A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.
      */
@@ -93,7 +91,14 @@ export declare class InvoiceLineItemPriceComponent extends fhir.BackboneElement 
     /**
      * Required-bound Value Set for type (Invoice.lineItem.priceComponent.type)
      */
-    static typeRequiredCoding(): InvoicePriceComponentTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly BasePrice: "base";
+        readonly Deduction: "deduction";
+        readonly Discount: "discount";
+        readonly Informational: "informational";
+        readonly Surcharge: "surcharge";
+        readonly Tax: "tax";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -147,7 +152,7 @@ export declare class InvoiceLineItem extends fhir.BackboneElement {
     /**
      * The price for a ChargeItem may be calculated as a base price with surcharges/deductions that apply in certain conditions. A ChargeItemDefinition resource that defines the prices, factors and conditions that apply to a billing code is currently under development. The priceComponent element can be used to offer transparency to the recipient of the Invoice as to how the prices have been calculated.
      */
-    priceComponent?: fhir.InvoiceLineItemPriceComponent[];
+    priceComponent: fhir.InvoiceLineItemPriceComponent[];
     /**
      * Default constructor for InvoiceLineItem - initializes any required elements to null if a value is not provided.
      */
@@ -172,7 +177,7 @@ export interface InvoiceArgs extends fhir.DomainResourceArgs {
     /**
      * The current state of the Invoice.
      */
-    status: InvoiceStatusCodeType | null;
+    status: fhir.FhirCode<InvoiceStatusCodeType> | string | undefined;
     /**
      * Derived Profiles may choose to add invariants requiring this field to be populated if either priceOverride or factorOverride have been filled.
      */
@@ -245,11 +250,11 @@ export declare class Invoice extends fhir.DomainResource {
     /**
      * Identifier of this Invoice, often used for reference in correspondence about this invoice or for tracking of payments.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * The current state of the Invoice.
      */
-    status: InvoiceStatusCodeType | null;
+    status: fhir.FhirCode<InvoiceStatusCodeType> | null;
     /**
      * Derived Profiles may choose to add invariants requiring this field to be populated if either priceOverride or factorOverride have been filled.
      */
@@ -273,7 +278,7 @@ export declare class Invoice extends fhir.DomainResource {
     /**
      * Indicates who or what performed or participated in the charged service.
      */
-    participant?: fhir.InvoiceParticipant[];
+    participant: fhir.InvoiceParticipant[];
     /**
      * Practitioners and Devices can be associated with multiple organizations. It has to be made clear, on behalf of which Organization the services have been rendered.
      */
@@ -285,11 +290,11 @@ export declare class Invoice extends fhir.DomainResource {
     /**
      * Each line item represents one charge for goods and services rendered. Details such as date, code and amount are found in the referenced ChargeItem resource.
      */
-    lineItem?: fhir.InvoiceLineItem[];
+    lineItem: fhir.InvoiceLineItem[];
     /**
      * The total amount for the Invoice may be calculated as the sum of the line items with surcharges/deductions that apply in certain conditions.  The priceComponent element can be used to offer transparency to the recipient of the Invoice of how the total price was calculated.
      */
-    totalPriceComponent?: fhir.InvoiceLineItemPriceComponent[];
+    totalPriceComponent: fhir.InvoiceLineItemPriceComponent[];
     /**
      * There is no reason to carry the price in the instance of a ChargeItem unless circumstances require a manual override. The list prices or are usually defined in a back catalogue of the billing codes  (see ChargeItem.definition). Derived profiles may require a ChargeItem.overrideReason to be provided if either factor or price are manually overridden.
      */
@@ -305,7 +310,7 @@ export declare class Invoice extends fhir.DomainResource {
     /**
      * Comments made about the invoice by the issuer, subject, or other participants.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Default constructor for Invoice - initializes any required elements to null if a value is not provided.
      */
@@ -313,7 +318,13 @@ export declare class Invoice extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (Invoice.status)
      */
-    static statusRequiredCoding(): InvoiceStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Balanced: "balanced";
+        readonly Cancelled: "cancelled";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+        readonly Issued: "issued";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -53,6 +53,10 @@ export interface DeviceDefinitionDeviceName extends fhir.BackboneElement {
    * UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.
    */
   type: 'manufacturer-name'|'model-name'|'other'|'patient-reported-name'|'udi-label-name'|'user-friendly-name'|null;
+  /**
+   * Extended properties for primitive element: DeviceDefinition.deviceName.type
+   */
+  _type?:fhir.FhirElement;
 }
 
 /**

@@ -84,11 +84,11 @@ export class LocationPosition extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['longitude']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property longitude:fhir.FhirDecimal fhir: Location.position.longitude:decimal', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property longitude:fhir.FhirDecimal fhir: Location.position.longitude:decimal' });
     }
     if (this["longitude"]) { issues.push(...this.longitude.doModelValidation()); }
     if (!this['latitude']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property latitude:fhir.FhirDecimal fhir: Location.position.latitude:decimal', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property latitude:fhir.FhirDecimal fhir: Location.position.latitude:decimal' });
     }
     if (this["latitude"]) { issues.push(...this.latitude.doModelValidation()); }
     if (this["altitude"]) { issues.push(...this.altitude.doModelValidation()); }
@@ -102,7 +102,7 @@ export interface LocationHoursOfOperationArgs extends fhir.BackboneElementArgs {
   /**
    * Indicates which days of the week are available between the start and end Times.
    */
-  daysOfWeek?: DaysOfWeekCodeType[]|undefined;
+  daysOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[]|string[]|undefined;
   /**
    * The Location is open all day.
    */
@@ -129,7 +129,7 @@ export class LocationHoursOfOperation extends fhir.BackboneElement {
   /**
    * Indicates which days of the week are available between the start and end Times.
    */
-  public daysOfWeek?: DaysOfWeekCodeType[];
+  public daysOfWeek: fhir.FhirCode<DaysOfWeekCodeType>[];
   /**
    * The Location is open all day.
    */
@@ -147,7 +147,7 @@ export class LocationHoursOfOperation extends fhir.BackboneElement {
    */
   constructor(source:Partial<LocationHoursOfOperationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['daysOfWeek']) { this.daysOfWeek = source.daysOfWeek.map((x) => x); }
+    if (source['daysOfWeek']) { this.daysOfWeek = source.daysOfWeek.map((x) => new fhir.FhirCode<DaysOfWeekCodeType>({value: x})); }
     else { this.daysOfWeek = []; }
     if (source['allDay']) { this.allDay = new fhir.FhirBoolean({value: source.allDay}); }
     if (source['openingTime']) { this.openingTime = new fhir.FhirTime({value: source.openingTime}); }
@@ -156,14 +156,22 @@ export class LocationHoursOfOperation extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for daysOfWeek (Location.hoursOfOperation.daysOfWeek)
    */
-  public static daysOfWeekRequiredCoding():DaysOfWeekCodingType {
-    return DaysOfWeekCodings;
+  public static get daysOfWeekRequiredCodes() {
+    return DaysOfWeekCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this['daysOfWeek']) {
+      this.daysOfWeek.forEach((v) => {
+        if (!Object.values(DaysOfWeekCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property daysOfWeek?:fhir.FhirCode<DaysOfWeekCodeType>[] fhir: Location.hoursOfOperation.daysOfWeek:code Required binding to: DaysOfWeek' });
+        }
+      });
+    }
+    if (this["daysOfWeek"]) { this.daysOfWeek.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["allDay"]) { issues.push(...this.allDay.doModelValidation()); }
     if (this["openingTime"]) { issues.push(...this.openingTime.doModelValidation()); }
     if (this["closingTime"]) { issues.push(...this.closingTime.doModelValidation()); }
@@ -185,7 +193,7 @@ export interface LocationArgs extends fhir.DomainResourceArgs {
   /**
    * The status property covers the general availability of the resource, not the current value which may be covered by the operationStatus, or by a schedule/slots if they are configured for the location.
    */
-  status?: LocationStatusCodeType|undefined;
+  status?: fhir.FhirCode<LocationStatusCodeType>|string|undefined;
   /**
    * The operational status covers operation values most relevant to beds (but can also apply to rooms/units/chairs/etc. such as an isolation unit/dialysis chair). This typically covers concepts such as contamination, housekeeping, and other activities like maintenance.
    */
@@ -205,7 +213,7 @@ export interface LocationArgs extends fhir.DomainResourceArgs {
   /**
    * This is labeled as a modifier because whether or not the location is a class of locations changes how it can be used and understood.
    */
-  mode?: LocationModeCodeType|undefined;
+  mode?: fhir.FhirCode<LocationModeCodeType>|string|undefined;
   /**
    * Indicates the type of function performed at the location.
    */
@@ -264,11 +272,11 @@ export class Location extends fhir.DomainResource {
   /**
    * Unique code or number identifying the location to its users.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The status property covers the general availability of the resource, not the current value which may be covered by the operationStatus, or by a schedule/slots if they are configured for the location.
    */
-  public status?: LocationStatusCodeType|undefined;
+  public status?: fhir.FhirCode<LocationStatusCodeType>|undefined;
   /**
    * The operational status covers operation values most relevant to beds (but can also apply to rooms/units/chairs/etc. such as an isolation unit/dialysis chair). This typically covers concepts such as contamination, housekeeping, and other activities like maintenance.
    */
@@ -280,7 +288,7 @@ export class Location extends fhir.DomainResource {
   /**
    * There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the location.
    */
-  public alias?: fhir.FhirString[];
+  public alias: fhir.FhirString[];
   /**
    * Description of the Location, which helps in finding or referencing the place.
    */
@@ -288,15 +296,15 @@ export class Location extends fhir.DomainResource {
   /**
    * This is labeled as a modifier because whether or not the location is a class of locations changes how it can be used and understood.
    */
-  public mode?: LocationModeCodeType|undefined;
+  public mode?: fhir.FhirCode<LocationModeCodeType>|undefined;
   /**
    * Indicates the type of function performed at the location.
    */
-  public type?: fhir.CodeableConcept[];
+  public type: fhir.CodeableConcept[];
   /**
    * The contact details of communication devices available at the location. This can include phone numbers, fax numbers, mobile numbers, email addresses and web sites.
    */
-  public telecom?: fhir.ContactPoint[];
+  public telecom: fhir.ContactPoint[];
   /**
    * Additional addresses should be recorded using another instance of the Location resource, or via the Organization.
    */
@@ -321,7 +329,7 @@ export class Location extends fhir.DomainResource {
    * This type of information is commonly found published in directories and on websites informing customers when the facility is available.
    * Specific services within the location may have their own hours which could be shorter (or longer) than the locations hours.
    */
-  public hoursOfOperation?: fhir.LocationHoursOfOperation[];
+  public hoursOfOperation: fhir.LocationHoursOfOperation[];
   /**
    * A description of when the locations opening ours are different to normal, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as detailed in the opening hours Times.
    */
@@ -329,7 +337,7 @@ export class Location extends fhir.DomainResource {
   /**
    * Technical endpoints providing access to services operated for the location.
    */
-  public endpoint?: fhir.Reference[];
+  public endpoint: fhir.Reference[];
   /**
    * Default constructor for Location - initializes any required elements to null if a value is not provided.
    */
@@ -338,13 +346,13 @@ export class Location extends fhir.DomainResource {
     this.resourceType = 'Location';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<LocationStatusCodeType>({value: source.status}); }
     if (source['operationalStatus']) { this.operationalStatus = new fhir.Coding(source.operationalStatus); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     if (source['alias']) { this.alias = source.alias.map((x) => new fhir.FhirString({value: x})); }
     else { this.alias = []; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
-    if (source['mode']) { this.mode = source.mode; }
+    if (source['mode']) { this.mode = new fhir.FhirCode<LocationModeCodeType>({value: source.mode}); }
     if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x)); }
     else { this.type = []; }
     if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
@@ -363,25 +371,25 @@ export class Location extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Location.status)
    */
-  public static statusRequiredCoding():LocationStatusCodingType {
-    return LocationStatusCodings;
+  public static get statusRequiredCodes() {
+    return LocationStatusCodes;
   }
   /**
    * Preferred-bound Value Set for operationalStatus (Location.operationalStatus)
    */
-  public static operationalStatusPreferredCoding():V20116CodingType {
+  public static get operationalStatusPreferredCodings() {
     return V20116Codings;
   }
   /**
    * Required-bound Value Set for mode (Location.mode)
    */
-  public static modeRequiredCoding():LocationModeCodingType {
-    return LocationModeCodings;
+  public static get modeRequiredCodes() {
+    return LocationModeCodes;
   }
   /**
    * Extensible-bound Value Set for type (Location.type)
    */
-  public static typeExtensibleCoding():V3ServiceDeliveryLocationRoleTypeCodingType {
+  public static get typeExtensibleCodings() {
     return V3ServiceDeliveryLocationRoleTypeCodings;
   }
   /**
@@ -390,13 +398,21 @@ export class Location extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Location" fhir: Location.resourceType:"Location"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Location" fhir: Location.resourceType:"Location"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['status'] && (!Object.values(LocationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<LocationStatusCodeType> fhir: Location.status:code Required binding to: LocationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["operationalStatus"]) { issues.push(...this.operationalStatus.doModelValidation()); }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["alias"]) { this.alias.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this['mode'] && (!Object.values(LocationModeCodes).includes(this.mode as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode?:fhir.FhirCode<LocationModeCodeType> fhir: Location.mode:code Required binding to: LocationMode' });
+    }
+    if (this["mode"]) { issues.push(...this.mode.doModelValidation()); }
     if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["address"]) { issues.push(...this.address.doModelValidation()); }

@@ -1,19 +1,11 @@
 import * as fhir from '../fhir.js';
-import { MapModelModeCodingType } from '../fhirValueSets/MapModelModeCodings.js';
 import { MapModelModeCodeType } from '../fhirValueSets/MapModelModeCodes.js';
-import { MapInputModeCodingType } from '../fhirValueSets/MapInputModeCodings.js';
 import { MapInputModeCodeType } from '../fhirValueSets/MapInputModeCodes.js';
-import { MapSourceListModeCodingType } from '../fhirValueSets/MapSourceListModeCodings.js';
 import { MapSourceListModeCodeType } from '../fhirValueSets/MapSourceListModeCodes.js';
-import { MapContextTypeCodingType } from '../fhirValueSets/MapContextTypeCodings.js';
 import { MapContextTypeCodeType } from '../fhirValueSets/MapContextTypeCodes.js';
-import { MapTargetListModeCodingType } from '../fhirValueSets/MapTargetListModeCodings.js';
 import { MapTargetListModeCodeType } from '../fhirValueSets/MapTargetListModeCodes.js';
-import { MapTransformCodingType } from '../fhirValueSets/MapTransformCodings.js';
 import { MapTransformCodeType } from '../fhirValueSets/MapTransformCodes.js';
-import { MapGroupTypeModeCodingType } from '../fhirValueSets/MapGroupTypeModeCodings.js';
 import { MapGroupTypeModeCodeType } from '../fhirValueSets/MapGroupTypeModeCodes.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 /**
  * Valid arguments for the StructureMapStructure type.
@@ -26,7 +18,7 @@ export interface StructureMapStructureArgs extends fhir.BackboneElementArgs {
     /**
      * How the referenced structure is used in this mapping.
      */
-    mode: MapModelModeCodeType | null;
+    mode: fhir.FhirCode<MapModelModeCodeType> | string | undefined;
     /**
      * This is needed if both types have the same name (e.g. version conversion).
      */
@@ -51,7 +43,7 @@ export declare class StructureMapStructure extends fhir.BackboneElement {
     /**
      * How the referenced structure is used in this mapping.
      */
-    mode: MapModelModeCodeType | null;
+    mode: fhir.FhirCode<MapModelModeCodeType> | null;
     /**
      * This is needed if both types have the same name (e.g. version conversion).
      */
@@ -67,7 +59,12 @@ export declare class StructureMapStructure extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for mode (StructureMap.structure.mode)
      */
-    static modeRequiredCoding(): MapModelModeCodingType;
+    static get modeRequiredCodes(): {
+        readonly ProducedStructureDefinition: "produced";
+        readonly QueriedStructureDefinition: "queried";
+        readonly SourceStructureDefinition: "source";
+        readonly TargetStructureDefinition: "target";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -88,7 +85,7 @@ export interface StructureMapGroupInputArgs extends fhir.BackboneElementArgs {
     /**
      * Mode for this instance of data.
      */
-    mode: MapInputModeCodeType | null;
+    mode: fhir.FhirCode<MapInputModeCodeType> | string | undefined;
     /**
      * Documentation for this instance of data.
      */
@@ -113,7 +110,7 @@ export declare class StructureMapGroupInput extends fhir.BackboneElement {
     /**
      * Mode for this instance of data.
      */
-    mode: MapInputModeCodeType | null;
+    mode: fhir.FhirCode<MapInputModeCodeType> | null;
     /**
      * Documentation for this instance of data.
      */
@@ -125,7 +122,10 @@ export declare class StructureMapGroupInput extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for mode (StructureMap.group.input.mode)
      */
-    static modeRequiredCoding(): MapInputModeCodingType;
+    static get modeRequiredCodes(): {
+        readonly SourceInstance: "source";
+        readonly TargetInstance: "target";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -362,7 +362,7 @@ export interface StructureMapGroupRuleSourceArgs extends fhir.BackboneElementArg
     /**
      * How to handle the list mode for this element.
      */
-    listMode?: MapSourceListModeCodeType | undefined;
+    listMode?: fhir.FhirCode<MapSourceListModeCodeType> | string | undefined;
     /**
      * Named context for field, if a field is specified.
      */
@@ -419,7 +419,7 @@ export declare class StructureMapGroupRuleSource extends fhir.BackboneElement {
     /**
      * How to handle the list mode for this element.
      */
-    listMode?: MapSourceListModeCodeType | undefined;
+    listMode?: fhir.FhirCode<MapSourceListModeCodeType> | undefined;
     /**
      * Named context for field, if a field is specified.
      */
@@ -443,7 +443,13 @@ export declare class StructureMapGroupRuleSource extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for listMode (StructureMap.group.rule.source.listMode)
      */
-    static listModeRequiredCoding(): MapSourceListModeCodingType;
+    static get listModeRequiredCodes(): {
+        readonly First: "first";
+        readonly Last: "last";
+        readonly AllButTheFirst: "not_first";
+        readonly AllButTheLast: "not_last";
+        readonly EnforceOnlyOne: "only_one";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -514,7 +520,7 @@ export interface StructureMapGroupRuleTargetArgs extends fhir.BackboneElementArg
     /**
      * How to interpret the context.
      */
-    contextType?: MapContextTypeCodeType | undefined;
+    contextType?: fhir.FhirCode<MapContextTypeCodeType> | string | undefined;
     /**
      * Field to create in the context.
      */
@@ -526,7 +532,7 @@ export interface StructureMapGroupRuleTargetArgs extends fhir.BackboneElementArg
     /**
      * If field is a list, how to manage the list.
      */
-    listMode?: MapTargetListModeCodeType[] | undefined;
+    listMode?: fhir.FhirCode<MapTargetListModeCodeType>[] | string[] | undefined;
     /**
      * Internal rule reference for shared list items.
      */
@@ -534,7 +540,7 @@ export interface StructureMapGroupRuleTargetArgs extends fhir.BackboneElementArg
     /**
      * How the data is copied / created.
      */
-    transform?: MapTransformCodeType | undefined;
+    transform?: fhir.FhirCode<MapTransformCodeType> | string | undefined;
     /**
      * Parameters to the transform.
      */
@@ -555,7 +561,7 @@ export declare class StructureMapGroupRuleTarget extends fhir.BackboneElement {
     /**
      * How to interpret the context.
      */
-    contextType?: MapContextTypeCodeType | undefined;
+    contextType?: fhir.FhirCode<MapContextTypeCodeType> | undefined;
     /**
      * Field to create in the context.
      */
@@ -567,7 +573,7 @@ export declare class StructureMapGroupRuleTarget extends fhir.BackboneElement {
     /**
      * If field is a list, how to manage the list.
      */
-    listMode?: MapTargetListModeCodeType[];
+    listMode: fhir.FhirCode<MapTargetListModeCodeType>[];
     /**
      * Internal rule reference for shared list items.
      */
@@ -575,11 +581,11 @@ export declare class StructureMapGroupRuleTarget extends fhir.BackboneElement {
     /**
      * How the data is copied / created.
      */
-    transform?: MapTransformCodeType | undefined;
+    transform?: fhir.FhirCode<MapTransformCodeType> | undefined;
     /**
      * Parameters to the transform.
      */
-    parameter?: fhir.StructureMapGroupRuleTargetParameter[];
+    parameter: fhir.StructureMapGroupRuleTargetParameter[];
     /**
      * Default constructor for StructureMapGroupRuleTarget - initializes any required elements to null if a value is not provided.
      */
@@ -587,15 +593,41 @@ export declare class StructureMapGroupRuleTarget extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for contextType (StructureMap.group.rule.target.contextType)
      */
-    static contextTypeRequiredCoding(): MapContextTypeCodingType;
+    static get contextTypeRequiredCodes(): {
+        readonly Type: "type";
+        readonly Variable: "variable";
+    };
     /**
      * Required-bound Value Set for listMode (StructureMap.group.rule.target.listMode)
      */
-    static listModeRequiredCoding(): MapTargetListModeCodingType;
+    static get listModeRequiredCodes(): {
+        readonly Collate: "collate";
+        readonly First: "first";
+        readonly Last: "last";
+        readonly Share: "share";
+    };
     /**
      * Required-bound Value Set for transform (StructureMap.group.rule.target.transform)
      */
-    static transformRequiredCoding(): MapTransformCodingType;
+    static get transformRequiredCodes(): {
+        readonly Append: "append";
+        readonly C: "c";
+        readonly Cast: "cast";
+        readonly Cc: "cc";
+        readonly Copy: "copy";
+        readonly Cp: "cp";
+        readonly Create: "create";
+        readonly DateOp: "dateOp";
+        readonly Escape: "escape";
+        readonly Evaluate: "evaluate";
+        readonly Id: "id";
+        readonly Pointer: "pointer";
+        readonly Qty: "qty";
+        readonly Reference: "reference";
+        readonly Translate: "translate";
+        readonly Truncate: "truncate";
+        readonly Uuid: "uuid";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -687,15 +719,15 @@ export declare class StructureMapGroupRule extends fhir.BackboneElement {
     /**
      * Content to create because of this mapping rule.
      */
-    target?: fhir.StructureMapGroupRuleTarget[];
+    target: fhir.StructureMapGroupRuleTarget[];
     /**
      * Rules contained in this rule.
      */
-    rule?: fhir.StructureMapGroupRule[];
+    rule: fhir.StructureMapGroupRule[];
     /**
      * Which other rules to apply in the context of this rule.
      */
-    dependent?: fhir.StructureMapGroupRuleDependent[];
+    dependent: fhir.StructureMapGroupRuleDependent[];
     /**
      * Documentation for this instance of data.
      */
@@ -724,7 +756,7 @@ export interface StructureMapGroupArgs extends fhir.BackboneElementArgs {
     /**
      * Not applicable if the underlying model is untyped. There can only be one default mapping for any particular type combination.
      */
-    typeMode: MapGroupTypeModeCodeType | null;
+    typeMode: fhir.FhirCode<MapGroupTypeModeCodeType> | string | undefined;
     /**
      * Additional supporting documentation that explains the purpose of the group and the types of mappings within it.
      */
@@ -757,7 +789,7 @@ export declare class StructureMapGroup extends fhir.BackboneElement {
     /**
      * Not applicable if the underlying model is untyped. There can only be one default mapping for any particular type combination.
      */
-    typeMode: MapGroupTypeModeCodeType | null;
+    typeMode: fhir.FhirCode<MapGroupTypeModeCodeType> | null;
     /**
      * Additional supporting documentation that explains the purpose of the group and the types of mappings within it.
      */
@@ -777,7 +809,11 @@ export declare class StructureMapGroup extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for typeMode (StructureMap.group.typeMode)
      */
-    static typeModeRequiredCoding(): MapGroupTypeModeCodingType;
+    static get typeModeRequiredCodes(): {
+        readonly NotADefault: "none";
+        readonly DefaultForTypePlusCombination: "type-and-types";
+        readonly DefaultForTypeCombination: "types";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -816,7 +852,7 @@ export interface StructureMapArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of structure maps that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Allows filtering of structure maps that are appropriate for use versus not.
      */
@@ -887,7 +923,7 @@ export declare class StructureMap extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this structure map outside of FHIR, where it is not possible to use the logical URI.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * There may be different structure map instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the structure map with the format [url]|[version].
      */
@@ -903,7 +939,7 @@ export declare class StructureMap extends fhir.DomainResource {
     /**
      * Allows filtering of structure maps that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Allows filtering of structure maps that are appropriate for use versus not.
      */
@@ -919,7 +955,7 @@ export declare class StructureMap extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * This description can be used to capture details such as why the structure map was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the structure map as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the structure map is presumed to be the predominant language in the place the structure map was created).
      */
@@ -927,11 +963,11 @@ export declare class StructureMap extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the structure map to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * This element does not describe the usage of the structure map. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this structure map.
      */
@@ -943,11 +979,11 @@ export declare class StructureMap extends fhir.DomainResource {
     /**
      * It is not necessary for a structure map to identify any dependent structures, though not listing them may restrict its usefulness.
      */
-    structure?: fhir.StructureMapStructure[];
+    structure: fhir.StructureMapStructure[];
     /**
      * Other maps used by this map (canonical URLs).
      */
-    import?: fhir.FhirCanonical[];
+    import: fhir.FhirCanonical[];
     /**
      * Organizes the mapping into manageable chunks for human review/ease of maintenance.
      */
@@ -959,7 +995,12 @@ export declare class StructureMap extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (StructureMap.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

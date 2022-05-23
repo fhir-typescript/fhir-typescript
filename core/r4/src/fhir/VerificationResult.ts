@@ -94,11 +94,11 @@ export class VerificationResultPrimarySource extends fhir.BackboneElement {
   /**
    * Type of primary source (License Board; Primary Education; Continuing Education; Postal Service; Relationship owner; Registration Authority; legal source; issuing source; authoritative source).
    */
-  public type?: fhir.CodeableConcept[];
+  public type: fhir.CodeableConcept[];
   /**
    * Method for communicating with the primary source (manual; API; Push).
    */
-  public communicationMethod?: fhir.CodeableConcept[];
+  public communicationMethod: fhir.CodeableConcept[];
   /**
    * Status of the validation of the target against the primary source (successful; failed; unknown).
    */
@@ -114,7 +114,7 @@ export class VerificationResultPrimarySource extends fhir.BackboneElement {
   /**
    * Type of alerts/updates the primary source can send (specific requested changes; any changes; as defined by source).
    */
-  public pushTypeAvailable?: fhir.CodeableConcept[];
+  public pushTypeAvailable: fhir.CodeableConcept[];
   /**
    * Default constructor for VerificationResultPrimarySource - initializes any required elements to null if a value is not provided.
    */
@@ -134,19 +134,19 @@ export class VerificationResultPrimarySource extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for validationStatus (VerificationResult.primarySource.validationStatus)
    */
-  public static validationStatusPreferredCoding():VerificationresultValidationStatusCodingType {
+  public static get validationStatusPreferredCodings() {
     return VerificationresultValidationStatusCodings;
   }
   /**
    * Preferred-bound Value Set for canPushUpdates (VerificationResult.primarySource.canPushUpdates)
    */
-  public static canPushUpdatesPreferredCoding():VerificationresultCanPushUpdatesCodingType {
+  public static get canPushUpdatesPreferredCodings() {
     return VerificationresultCanPushUpdatesCodings;
   }
   /**
    * Preferred-bound Value Set for pushTypeAvailable (VerificationResult.primarySource.pushTypeAvailable)
    */
-  public static pushTypeAvailablePreferredCoding():VerificationresultPushTypeAvailableCodingType {
+  public static get pushTypeAvailablePreferredCodings() {
     return VerificationresultPushTypeAvailableCodings;
   }
   /**
@@ -326,7 +326,7 @@ export class VerificationResultValidator extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['organization']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property organization:fhir.Reference fhir: VerificationResult.validator.organization:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property organization:fhir.Reference fhir: VerificationResult.validator.organization:Reference' });
     }
     if (this["organization"]) { issues.push(...this.organization.doModelValidation()); }
     if (this["identityCertificate"]) { issues.push(...this.identityCertificate.doModelValidation()); }
@@ -357,7 +357,7 @@ export interface VerificationResultArgs extends fhir.DomainResourceArgs {
   /**
    * The validation status of the target (attested; validated; in process; requires revalidation; validation failed; revalidation failed).
    */
-  status: VerificationresultStatusCodeType|null;
+  status: fhir.FhirCode<VerificationresultStatusCodeType>|string|undefined;
   /**
    * When the validation status was updated.
    */
@@ -415,11 +415,11 @@ export class VerificationResult extends fhir.DomainResource {
   /**
    * A resource that was validated.
    */
-  public target?: fhir.Reference[];
+  public target: fhir.Reference[];
   /**
    * The fhirpath location(s) within the resource that was validated.
    */
-  public targetLocation?: fhir.FhirString[];
+  public targetLocation: fhir.FhirString[];
   /**
    * The frequency with which the target must be validated (none; initial; periodic).
    */
@@ -427,7 +427,7 @@ export class VerificationResult extends fhir.DomainResource {
   /**
    * The validation status of the target (attested; validated; in process; requires revalidation; validation failed; revalidation failed).
    */
-  public status: VerificationresultStatusCodeType|null;
+  public status: fhir.FhirCode<VerificationresultStatusCodeType>|null;
   /**
    * When the validation status was updated.
    */
@@ -439,7 +439,7 @@ export class VerificationResult extends fhir.DomainResource {
   /**
    * The primary process by which the target is validated (edit check; value set; primary source; multiple sources; standalone; in context).
    */
-  public validationProcess?: fhir.CodeableConcept[];
+  public validationProcess: fhir.CodeableConcept[];
   /**
    * Frequency of revalidation.
    */
@@ -459,7 +459,7 @@ export class VerificationResult extends fhir.DomainResource {
   /**
    * Information about the primary source(s) involved in validation.
    */
-  public primarySource?: fhir.VerificationResultPrimarySource[];
+  public primarySource: fhir.VerificationResultPrimarySource[];
   /**
    * Information about the entity attesting to information.
    */
@@ -467,7 +467,7 @@ export class VerificationResult extends fhir.DomainResource {
   /**
    * Information about the entity validating information.
    */
-  public validator?: fhir.VerificationResultValidator[];
+  public validator: fhir.VerificationResultValidator[];
   /**
    * Default constructor for VerificationResult - initializes any required elements to null if a value is not provided.
    */
@@ -479,7 +479,7 @@ export class VerificationResult extends fhir.DomainResource {
     if (source['targetLocation']) { this.targetLocation = source.targetLocation.map((x) => new fhir.FhirString({value: x})); }
     else { this.targetLocation = []; }
     if (source['need']) { this.need = new fhir.CodeableConcept(source.need); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<VerificationresultStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['statusDate']) { this.statusDate = new fhir.FhirDateTime({value: source.statusDate}); }
     if (source['validationType']) { this.validationType = new fhir.CodeableConcept(source.validationType); }
@@ -498,25 +498,25 @@ export class VerificationResult extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for need (VerificationResult.need)
    */
-  public static needPreferredCoding():VerificationresultNeedCodingType {
+  public static get needPreferredCodings() {
     return VerificationresultNeedCodings;
   }
   /**
    * Required-bound Value Set for status (VerificationResult.status)
    */
-  public static statusRequiredCoding():VerificationresultStatusCodingType {
-    return VerificationresultStatusCodings;
+  public static get statusRequiredCodes() {
+    return VerificationresultStatusCodes;
   }
   /**
    * Preferred-bound Value Set for validationType (VerificationResult.validationType)
    */
-  public static validationTypePreferredCoding():VerificationresultValidationTypeCodingType {
+  public static get validationTypePreferredCodings() {
     return VerificationresultValidationTypeCodings;
   }
   /**
    * Preferred-bound Value Set for failureAction (VerificationResult.failureAction)
    */
-  public static failureActionPreferredCoding():VerificationresultFailureActionCodingType {
+  public static get failureActionPreferredCodings() {
     return VerificationresultFailureActionCodings;
   }
   /**
@@ -525,14 +525,18 @@ export class VerificationResult extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"VerificationResult" fhir: VerificationResult.resourceType:"VerificationResult"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"VerificationResult" fhir: VerificationResult.resourceType:"VerificationResult"' });
     }
     if (this["target"]) { this.target.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["targetLocation"]) { this.targetLocation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["need"]) { issues.push(...this.need.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:VerificationresultStatusCodeType fhir: VerificationResult.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<VerificationresultStatusCodeType> fhir: VerificationResult.status:code' });
     }
+    if (this['status'] && (!Object.values(VerificationresultStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<VerificationresultStatusCodeType> fhir: VerificationResult.status:code Required binding to: VerificationresultStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["statusDate"]) { issues.push(...this.statusDate.doModelValidation()); }
     if (this["validationType"]) { issues.push(...this.validationType.doModelValidation()); }
     if (this["validationProcess"]) { this.validationProcess.forEach((x) => { issues.push(...x.doModelValidation()); }) }

@@ -86,7 +86,7 @@ export class OrganizationAffiliation extends fhir.DomainResource {
   /**
    * Business identifiers that are specific to this role.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * If this value is false, you may refer to the period to see when the role was in active use. If there is no period specified, no inference can be made about when it was active.
    */
@@ -106,31 +106,31 @@ export class OrganizationAffiliation extends fhir.DomainResource {
   /**
    * Health insurance provider network in which the participatingOrganization provides the role's services (if defined) at the indicated locations (if defined).
    */
-  public network?: fhir.Reference[];
+  public network: fhir.Reference[];
   /**
    * Definition of the role the participatingOrganization plays in the association.
    */
-  public code?: fhir.CodeableConcept[];
+  public code: fhir.CodeableConcept[];
   /**
    * Specific specialty of the participatingOrganization in the context of the role.
    */
-  public specialty?: fhir.CodeableConcept[];
+  public specialty: fhir.CodeableConcept[];
   /**
    * The location(s) at which the role occurs.
    */
-  public location?: fhir.Reference[];
+  public location: fhir.Reference[];
   /**
    * Healthcare services provided through the role.
    */
-  public healthcareService?: fhir.Reference[];
+  public healthcareService: fhir.Reference[];
   /**
    * Contact details at the participatingOrganization relevant to this Affiliation.
    */
-  public telecom?: fhir.ContactPoint[];
+  public telecom: fhir.ContactPoint[];
   /**
    * Technical endpoints providing access to services operated for this role.
    */
-  public endpoint?: fhir.Reference[];
+  public endpoint: fhir.Reference[];
   /**
    * Default constructor for OrganizationAffiliation - initializes any required elements to null if a value is not provided.
    */
@@ -161,7 +161,7 @@ export class OrganizationAffiliation extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for specialty (OrganizationAffiliation.specialty)
    */
-  public static specialtyPreferredCoding():C80PracticeCodesCodingType {
+  public static get specialtyPreferredCodings() {
     return C80PracticeCodesCodings;
   }
   /**
@@ -170,7 +170,7 @@ export class OrganizationAffiliation extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"OrganizationAffiliation" fhir: OrganizationAffiliation.resourceType:"OrganizationAffiliation"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"OrganizationAffiliation" fhir: OrganizationAffiliation.resourceType:"OrganizationAffiliation"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["active"]) { issues.push(...this.active.doModelValidation()); }

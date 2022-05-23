@@ -73,6 +73,10 @@ export interface Evidence extends fhir.DomainResource {
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
   /**
+   * Extended properties for primitive element: Evidence.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the evidence. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
   date?: string|undefined;

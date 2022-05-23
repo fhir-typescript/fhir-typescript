@@ -8,6 +8,10 @@ export interface LinkageItem extends fhir.BackboneElement {
      */
     type: 'alternate' | 'historical' | 'source' | null;
     /**
+     * Extended properties for primitive element: Linkage.item.type
+     */
+    _type?: fhir.FhirElement;
+    /**
      * The resource instance being linked as part of the group.
      */
     resource: fhir.Reference | null;

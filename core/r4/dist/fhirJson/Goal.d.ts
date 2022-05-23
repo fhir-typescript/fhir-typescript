@@ -77,6 +77,10 @@ export interface Goal extends fhir.DomainResource {
      */
     lifecycleStatus: 'accepted' | 'active' | 'cancelled' | 'completed' | 'entered-in-error' | 'on-hold' | 'planned' | 'proposed' | 'rejected' | null;
     /**
+     * Extended properties for primitive element: Goal.lifecycleStatus
+     */
+    _lifecycleStatus?: fhir.FhirElement;
+    /**
      * Describes the progression, or lack thereof, towards the goal against the target.
      */
     achievementStatus?: fhir.CodeableConcept | undefined;

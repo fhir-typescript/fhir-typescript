@@ -59,7 +59,7 @@ export class RelatedPersonCommunication extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for language (RelatedPerson.communication.language)
    */
-  public static languagePreferredCoding():LanguagesCodingType {
+  public static get languagePreferredCodings() {
     return LanguagesCodings;
   }
   /**
@@ -68,7 +68,7 @@ export class RelatedPersonCommunication extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['language']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property language:fhir.CodeableConcept fhir: RelatedPerson.communication.language:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property language:fhir.CodeableConcept fhir: RelatedPerson.communication.language:CodeableConcept' });
     }
     if (this["language"]) { issues.push(...this.language.doModelValidation()); }
     if (this["preferred"]) { issues.push(...this.preferred.doModelValidation()); }
@@ -110,7 +110,7 @@ export interface RelatedPersonArgs extends fhir.DomainResourceArgs {
   /**
    * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
    */
-  gender?: AdministrativeGenderCodeType|undefined;
+  gender?: fhir.FhirCode<AdministrativeGenderCodeType>|string|undefined;
   /**
    * The date on which the related person was born.
    */
@@ -148,7 +148,7 @@ export class RelatedPerson extends fhir.DomainResource {
   /**
    * Identifier for a person within a particular scope.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because it may be used to mark that the resource was created in error.
    */
@@ -160,19 +160,19 @@ export class RelatedPerson extends fhir.DomainResource {
   /**
    * The nature of the relationship between a patient and the related person.
    */
-  public relationship?: fhir.CodeableConcept[];
+  public relationship: fhir.CodeableConcept[];
   /**
    * A name associated with the person.
    */
-  public name?: fhir.HumanName[];
+  public name: fhir.HumanName[];
   /**
    * Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently, and also to help with identification.
    */
-  public telecom?: fhir.ContactPoint[];
+  public telecom: fhir.ContactPoint[];
   /**
    * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
    */
-  public gender?: AdministrativeGenderCodeType|undefined;
+  public gender?: fhir.FhirCode<AdministrativeGenderCodeType>|undefined;
   /**
    * The date on which the related person was born.
    */
@@ -180,11 +180,11 @@ export class RelatedPerson extends fhir.DomainResource {
   /**
    * Address where the related person can be contacted or visited.
    */
-  public address?: fhir.Address[];
+  public address: fhir.Address[];
   /**
    * Image of the person.
    */
-  public photo?: fhir.Attachment[];
+  public photo: fhir.Attachment[];
   /**
    * The period of time during which this relationship is or was active. If there are no dates defined, then the interval is unknown.
    */
@@ -192,7 +192,7 @@ export class RelatedPerson extends fhir.DomainResource {
   /**
    * If no language is specified, this *implies* that the default local language is spoken.  If you need to convey proficiency for multiple modes, then you need multiple RelatedPerson.Communication associations.   If the RelatedPerson does not speak the default local language, then the Interpreter Required Standard can be used to explicitly declare that an interpreter is required.
    */
-  public communication?: fhir.RelatedPersonCommunication[];
+  public communication: fhir.RelatedPersonCommunication[];
   /**
    * Default constructor for RelatedPerson - initializes any required elements to null if a value is not provided.
    */
@@ -210,7 +210,7 @@ export class RelatedPerson extends fhir.DomainResource {
     else { this.name = []; }
     if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
     else { this.telecom = []; }
-    if (source['gender']) { this.gender = source.gender; }
+    if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
     if (source['birthDate']) { this.birthDate = new fhir.FhirDate({value: source.birthDate}); }
     if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x)); }
     else { this.address = []; }
@@ -223,14 +223,14 @@ export class RelatedPerson extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for relationship (RelatedPerson.relationship)
    */
-  public static relationshipPreferredCoding():RelatedpersonRelationshiptypeCodingType {
+  public static get relationshipPreferredCodings() {
     return RelatedpersonRelationshiptypeCodings;
   }
   /**
    * Required-bound Value Set for gender (RelatedPerson.gender)
    */
-  public static genderRequiredCoding():AdministrativeGenderCodingType {
-    return AdministrativeGenderCodings;
+  public static get genderRequiredCodes() {
+    return AdministrativeGenderCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -238,17 +238,21 @@ export class RelatedPerson extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"RelatedPerson" fhir: RelatedPerson.resourceType:"RelatedPerson"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"RelatedPerson" fhir: RelatedPerson.resourceType:"RelatedPerson"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["active"]) { issues.push(...this.active.doModelValidation()); }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: RelatedPerson.patient:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: RelatedPerson.patient:Reference' });
     }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
     if (this["relationship"]) { this.relationship.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["name"]) { this.name.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender?:fhir.FhirCode<AdministrativeGenderCodeType> fhir: RelatedPerson.gender:code Required binding to: AdministrativeGender' });
+    }
+    if (this["gender"]) { issues.push(...this.gender.doModelValidation()); }
     if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation()); }
     if (this["address"]) { this.address.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["photo"]) { this.photo.forEach((x) => { issues.push(...x.doModelValidation()); }) }

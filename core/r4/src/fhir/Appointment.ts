@@ -62,11 +62,11 @@ export interface AppointmentParticipantArgs extends fhir.BackboneElementArgs {
   /**
    * Whether this participant is required to be present at the meeting. This covers a use-case where two doctors need to meet to discuss the results for a specific patient, and the patient is not required to be present.
    */
-  required?: ParticipantrequiredCodeType|undefined;
+  required?: fhir.FhirCode<ParticipantrequiredCodeType>|string|undefined;
   /**
    * Participation status of the actor.
    */
-  status: ParticipationstatusCodeType|null;
+  status: fhir.FhirCode<ParticipationstatusCodeType>|string|undefined;
   /**
    * Participation period of the actor.
    */
@@ -86,7 +86,7 @@ export class AppointmentParticipant extends fhir.BackboneElement {
    * If the actor is not specified, then it is expected that the actor will be filled in at a later stage of planning.
    * This value SHALL be the same when creating an AppointmentResponse so that they can be matched, and subsequently update the Appointment.
    */
-  public type?: fhir.CodeableConcept[];
+  public type: fhir.CodeableConcept[];
   /**
    * A Person, Location/HealthcareService or Device that is participating in the appointment.
    */
@@ -94,11 +94,11 @@ export class AppointmentParticipant extends fhir.BackboneElement {
   /**
    * Whether this participant is required to be present at the meeting. This covers a use-case where two doctors need to meet to discuss the results for a specific patient, and the patient is not required to be present.
    */
-  public required?: ParticipantrequiredCodeType|undefined;
+  public required?: fhir.FhirCode<ParticipantrequiredCodeType>|undefined;
   /**
    * Participation status of the actor.
    */
-  public status: ParticipationstatusCodeType|null;
+  public status: fhir.FhirCode<ParticipationstatusCodeType>|null;
   /**
    * Participation period of the actor.
    */
@@ -111,28 +111,28 @@ export class AppointmentParticipant extends fhir.BackboneElement {
     if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x)); }
     else { this.type = []; }
     if (source['actor']) { this.actor = new fhir.Reference(source.actor); }
-    if (source['required']) { this.required = source.required; }
-    if (source['status']) { this.status = source.status; }
+    if (source['required']) { this.required = new fhir.FhirCode<ParticipantrequiredCodeType>({value: source.required}); }
+    if (source['status']) { this.status = new fhir.FhirCode<ParticipationstatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['period']) { this.period = new fhir.Period(source.period); }
   }
   /**
    * Extensible-bound Value Set for type (Appointment.participant.type)
    */
-  public static typeExtensibleCoding():EncounterParticipantTypeCodingType {
+  public static get typeExtensibleCodings() {
     return EncounterParticipantTypeCodings;
   }
   /**
    * Required-bound Value Set for required (Appointment.participant.required)
    */
-  public static requiredRequiredCoding():ParticipantrequiredCodingType {
-    return ParticipantrequiredCodings;
+  public static get requiredRequiredCodes() {
+    return ParticipantrequiredCodes;
   }
   /**
    * Required-bound Value Set for status (Appointment.participant.status)
    */
-  public static statusRequiredCoding():ParticipationstatusCodingType {
-    return ParticipationstatusCodings;
+  public static get statusRequiredCodes() {
+    return ParticipationstatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -141,9 +141,17 @@ export class AppointmentParticipant extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["actor"]) { issues.push(...this.actor.doModelValidation()); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ParticipationstatusCodeType fhir: Appointment.participant.status:code', });
+    if (this['required'] && (!Object.values(ParticipantrequiredCodes).includes(this.required as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property required?:fhir.FhirCode<ParticipantrequiredCodeType> fhir: Appointment.participant.required:code Required binding to: Participantrequired' });
     }
+    if (this["required"]) { issues.push(...this.required.doModelValidation()); }
+    if (!this['status']) {
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ParticipationstatusCodeType> fhir: Appointment.participant.status:code' });
+    }
+    if (this['status'] && (!Object.values(ParticipationstatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ParticipationstatusCodeType> fhir: Appointment.participant.status:code Required binding to: Participationstatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["period"]) { issues.push(...this.period.doModelValidation()); }
     return issues;
   }
@@ -164,7 +172,7 @@ export interface AppointmentArgs extends fhir.DomainResourceArgs {
    * If the Appointment's status is "cancelled" then all participants are expected to have their calendars released for the appointment period, and as such any Slots that were marked as BUSY can be re-set to FREE.
    * This element is labeled as a modifier because the status contains the code entered-in-error that mark the Appointment as not currently valid.
    */
-  status: AppointmentstatusCodeType|null;
+  status: fhir.FhirCode<AppointmentstatusCodeType>|string|undefined;
   /**
    * The coded reason for the appointment being cancelled. This is often used in reporting/billing/futher processing to determine if further actions are required, or specific fees apply.
    */
@@ -264,12 +272,12 @@ export class Appointment extends fhir.DomainResource {
   /**
    * This records identifiers associated with this appointment concern that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * If the Appointment's status is "cancelled" then all participants are expected to have their calendars released for the appointment period, and as such any Slots that were marked as BUSY can be re-set to FREE.
    * This element is labeled as a modifier because the status contains the code entered-in-error that mark the Appointment as not currently valid.
    */
-  public status: AppointmentstatusCodeType|null;
+  public status: fhir.FhirCode<AppointmentstatusCodeType>|null;
   /**
    * The coded reason for the appointment being cancelled. This is often used in reporting/billing/futher processing to determine if further actions are required, or specific fees apply.
    */
@@ -277,15 +285,15 @@ export class Appointment extends fhir.DomainResource {
   /**
    * A broad categorization of the service that is to be performed during this appointment.
    */
-  public serviceCategory?: fhir.CodeableConcept[];
+  public serviceCategory: fhir.CodeableConcept[];
   /**
    * For a provider to provider appointment the code "FOLLOWUP" may be appropriate, as this is expected to be discussing some patient that was seen in the past.
    */
-  public serviceType?: fhir.CodeableConcept[];
+  public serviceType: fhir.CodeableConcept[];
   /**
    * The specialty of a practitioner that would be required to perform the service requested in this appointment.
    */
-  public specialty?: fhir.CodeableConcept[];
+  public specialty: fhir.CodeableConcept[];
   /**
    * The style of appointment or patient that has been booked in the slot (not service type).
    */
@@ -293,11 +301,11 @@ export class Appointment extends fhir.DomainResource {
   /**
    * The coded reason that this appointment is being scheduled. This is more clinical than administrative.
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * Reason the appointment has been scheduled to take place, as specified using information from another resource. When the patient arrives and the encounter begins it may be used as the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * Seeking implementer feedback on this property and how interoperable it is.
    * Using an extension to record a CodeableConcept for named values may be tested at a future connectathon.
@@ -310,7 +318,7 @@ export class Appointment extends fhir.DomainResource {
   /**
    * Additional information to support the appointment provided when making the appointment.
    */
-  public supportingInformation?: fhir.Reference[];
+  public supportingInformation: fhir.Reference[];
   /**
    * Date/Time that the appointment is to take place.
    */
@@ -326,7 +334,7 @@ export class Appointment extends fhir.DomainResource {
   /**
    * The slots from the participants' schedules that will be filled by the appointment.
    */
-  public slot?: fhir.Reference[];
+  public slot: fhir.Reference[];
   /**
    * This property is required for many use cases where the age of an appointment is considered in processing workflows for scheduling and billing of appointments.
    */
@@ -343,7 +351,7 @@ export class Appointment extends fhir.DomainResource {
   /**
    * The service request this appointment is allocated to assess (e.g. incoming referral or procedure request).
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * List of participants involved in the appointment.
    */
@@ -351,7 +359,7 @@ export class Appointment extends fhir.DomainResource {
   /**
    * This does not introduce a capacity for recurring appointments.
    */
-  public requestedPeriod?: fhir.Period[];
+  public requestedPeriod: fhir.Period[];
   /**
    * Default constructor for Appointment - initializes any required elements to null if a value is not provided.
    */
@@ -360,7 +368,7 @@ export class Appointment extends fhir.DomainResource {
     this.resourceType = 'Appointment';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<AppointmentstatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['cancelationReason']) { this.cancelationReason = new fhir.CodeableConcept(source.cancelationReason); }
     if (source['serviceCategory']) { this.serviceCategory = source.serviceCategory.map((x) => new fhir.CodeableConcept(x)); }
@@ -396,25 +404,25 @@ export class Appointment extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Appointment.status)
    */
-  public static statusRequiredCoding():AppointmentstatusCodingType {
-    return AppointmentstatusCodings;
+  public static get statusRequiredCodes() {
+    return AppointmentstatusCodes;
   }
   /**
    * Preferred-bound Value Set for specialty (Appointment.specialty)
    */
-  public static specialtyPreferredCoding():C80PracticeCodesCodingType {
+  public static get specialtyPreferredCodings() {
     return C80PracticeCodesCodings;
   }
   /**
    * Preferred-bound Value Set for appointmentType (Appointment.appointmentType)
    */
-  public static appointmentTypePreferredCoding():V20276CodingType {
+  public static get appointmentTypePreferredCodings() {
     return V20276Codings;
   }
   /**
    * Preferred-bound Value Set for reasonCode (Appointment.reasonCode)
    */
-  public static reasonCodePreferredCoding():EncounterReasonCodingType {
+  public static get reasonCodePreferredCodings() {
     return EncounterReasonCodings;
   }
   /**
@@ -423,12 +431,16 @@ export class Appointment extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Appointment" fhir: Appointment.resourceType:"Appointment"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Appointment" fhir: Appointment.resourceType:"Appointment"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:AppointmentstatusCodeType fhir: Appointment.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<AppointmentstatusCodeType> fhir: Appointment.status:code' });
     }
+    if (this['status'] && (!Object.values(AppointmentstatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<AppointmentstatusCodeType> fhir: Appointment.status:code Required binding to: Appointmentstatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["cancelationReason"]) { issues.push(...this.cancelationReason.doModelValidation()); }
     if (this["serviceCategory"]) { this.serviceCategory.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["serviceType"]) { this.serviceType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -448,11 +460,11 @@ export class Appointment extends fhir.DomainResource {
     if (this["patientInstruction"]) { issues.push(...this.patientInstruction.doModelValidation()); }
     if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['participant']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property participant:fhir.AppointmentParticipant[] fhir: Appointment.participant:participant', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property participant:fhir.AppointmentParticipant[] fhir: Appointment.participant:participant' });
     } else if (!Array.isArray(this.participant)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property participant:fhir.AppointmentParticipant[] fhir: Appointment.participant:participant', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property participant:fhir.AppointmentParticipant[] fhir: Appointment.participant:participant' });
     } else if (this.participant.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property participant:fhir.AppointmentParticipant[] fhir: Appointment.participant:participant', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property participant:fhir.AppointmentParticipant[] fhir: Appointment.participant:participant' });
     }
     if (this["participant"]) { this.participant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["requestedPeriod"]) { this.requestedPeriod.forEach((x) => { issues.push(...x.doModelValidation()); }) }

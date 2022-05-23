@@ -1,6 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ImmunizationFunctionCodingType } from '../fhirValueSets/ImmunizationFunctionCodings.js';
-import { ImmunizationStatusCodingType } from '../fhirValueSets/ImmunizationStatusCodings.js';
 import { ImmunizationStatusCodeType } from '../fhirValueSets/ImmunizationStatusCodes.js';
 /**
  * Valid arguments for the ImmunizationPerformer type.
@@ -38,7 +36,10 @@ export declare class ImmunizationPerformer extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for function (Immunization.performer.function)
      */
-    static functionExtensibleCoding(): ImmunizationFunctionCodingType;
+    static get functionExtensibleCodings(): {
+        readonly AdministeringProvider: fhir.Coding;
+        readonly OrderingProvider: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -204,7 +205,7 @@ export declare class ImmunizationProtocolApplied extends fhir.BackboneElement {
     /**
      * The vaccine preventable disease the dose is being administered against.
      */
-    targetDisease?: fhir.CodeableConcept[];
+    targetDisease: fhir.CodeableConcept[];
     /**
      * The use of an integer is preferred if known. A string should only be used in cases where an integer is not available (such as when documenting a recurring booster dose).
      */
@@ -245,7 +246,7 @@ export interface ImmunizationArgs extends fhir.DomainResourceArgs {
     /**
      * Will generally be set to show that the immunization has been completed or not done.  This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: ImmunizationStatusCodeType | null;
+    status: fhir.FhirCode<ImmunizationStatusCodeType> | string | undefined;
     /**
      * This is generally only used for the status of "not-done". The reason for performing the immunization event is captured in reasonCode, not here.
      */
@@ -374,11 +375,11 @@ export declare class Immunization extends fhir.DomainResource {
     /**
      * A unique identifier assigned to this immunization record.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Will generally be set to show that the immunization has been completed or not done.  This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: ImmunizationStatusCodeType | null;
+    status: fhir.FhirCode<ImmunizationStatusCodeType> | null;
     /**
      * This is generally only used for the status of "not-done". The reason for performing the immunization event is captured in reasonCode, not here.
      */
@@ -446,19 +447,19 @@ export declare class Immunization extends fhir.DomainResource {
     /**
      * Indicates who performed the immunization event.
      */
-    performer?: fhir.ImmunizationPerformer[];
+    performer: fhir.ImmunizationPerformer[];
     /**
      * Extra information about the immunization that is not conveyed by the other attributes.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Reasons why the vaccine was administered.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * Condition, Observation or DiagnosticReport that supports why the immunization was administered.
      */
-    reasonReference?: fhir.Reference[];
+    reasonReference: fhir.Reference[];
     /**
      * Typically, the recognition of the dose being sub-potent is retrospective, after the administration (ex. notification of a manufacturer recall after administration). However, in the case of a partial administration (the patient moves unexpectedly and only some of the dose is actually administered), subpotency may be recognized immediately, but it is still important to record the event.
      */
@@ -466,15 +467,15 @@ export declare class Immunization extends fhir.DomainResource {
     /**
      * Reason why a dose is considered to be subpotent.
      */
-    subpotentReason?: fhir.CodeableConcept[];
+    subpotentReason: fhir.CodeableConcept[];
     /**
      * Educational material presented to the patient (or guardian) at the time of vaccine administration.
      */
-    education?: fhir.ImmunizationEducation[];
+    education: fhir.ImmunizationEducation[];
     /**
      * Indicates a patient's eligibility for a funding program.
      */
-    programEligibility?: fhir.CodeableConcept[];
+    programEligibility: fhir.CodeableConcept[];
     /**
      * Indicates the source of the vaccine actually administered. This may be different than the patient eligibility (e.g. the patient may be eligible for a publically purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered).
      */
@@ -482,11 +483,11 @@ export declare class Immunization extends fhir.DomainResource {
     /**
      * A reaction may be an indication of an allergy or intolerance and, if this is determined to be the case, it should be recorded as a new AllergyIntolerance resource instance as most systems will not query against past Immunization.reaction elements.
      */
-    reaction?: fhir.ImmunizationReaction[];
+    reaction: fhir.ImmunizationReaction[];
     /**
      * The protocol (set of recommendations) being followed by the provider who administered the dose.
      */
-    protocolApplied?: fhir.ImmunizationProtocolApplied[];
+    protocolApplied: fhir.ImmunizationProtocolApplied[];
     /**
      * Default constructor for Immunization - initializes any required elements to null if a value is not provided.
      */
@@ -494,7 +495,11 @@ export declare class Immunization extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (Immunization.status)
      */
-    static statusRequiredCoding(): ImmunizationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Completed: "completed";
+        readonly EnteredInError: "entered-in-error";
+        readonly NotDone: "not-done";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -50,11 +50,11 @@ export class DetectedIssueEvidence extends fhir.BackboneElement {
   /**
    * A manifestation that led to the recording of this detected issue.
    */
-  public code?: fhir.CodeableConcept[];
+  public code: fhir.CodeableConcept[];
   /**
    * Links to resources that constitute evidence for the detected issue such as a GuidanceResponse or MeasureReport.
    */
-  public detail?: fhir.Reference[];
+  public detail: fhir.Reference[];
   /**
    * Default constructor for DetectedIssueEvidence - initializes any required elements to null if a value is not provided.
    */
@@ -126,7 +126,7 @@ export class DetectedIssueMitigation extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for action (DetectedIssue.mitigation.action)
    */
-  public static actionPreferredCoding():DetectedissueMitigationActionCodingType {
+  public static get actionPreferredCodings() {
     return DetectedissueMitigationActionCodings;
   }
   /**
@@ -135,7 +135,7 @@ export class DetectedIssueMitigation extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['action']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property action:fhir.CodeableConcept fhir: DetectedIssue.mitigation.action:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action:fhir.CodeableConcept fhir: DetectedIssue.mitigation.action:CodeableConcept' });
     }
     if (this["action"]) { issues.push(...this.action.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
@@ -158,7 +158,7 @@ export interface DetectedIssueArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains the codes cancelled and entered-in-error that mark the issue as not currently valid.
    */
-  status: ObservationStatusCodeType|null;
+  status: fhir.FhirCode<ObservationStatusCodeType>|string|undefined;
   /**
    * Identifies the general type of issue identified.
    */
@@ -166,7 +166,7 @@ export interface DetectedIssueArgs extends fhir.DomainResourceArgs {
   /**
    * Indicates the degree of importance associated with the identified issue based on the potential impact on the patient.
    */
-  severity?: DetectedissueSeverityCodeType|undefined;
+  severity?: fhir.FhirCode<DetectedissueSeverityCodeType>|string|undefined;
   /**
    * Indicates the patient whose record the detected issue is associated with.
    */
@@ -224,11 +224,11 @@ export class DetectedIssue extends fhir.DomainResource {
   /**
    * Business identifier associated with the detected issue record.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the status contains the codes cancelled and entered-in-error that mark the issue as not currently valid.
    */
-  public status: ObservationStatusCodeType|null;
+  public status: fhir.FhirCode<ObservationStatusCodeType>|null;
   /**
    * Identifies the general type of issue identified.
    */
@@ -236,7 +236,7 @@ export class DetectedIssue extends fhir.DomainResource {
   /**
    * Indicates the degree of importance associated with the identified issue based on the potential impact on the patient.
    */
-  public severity?: DetectedissueSeverityCodeType|undefined;
+  public severity?: fhir.FhirCode<DetectedissueSeverityCodeType>|undefined;
   /**
    * Indicates the patient whose record the detected issue is associated with.
    */
@@ -256,11 +256,11 @@ export class DetectedIssue extends fhir.DomainResource {
   /**
    * There's an implicit constraint on the number of implicated resources based on DetectedIssue.type; e.g. For drug-drug, there would be more than one.  For timing, there would typically only be one.
    */
-  public implicated?: fhir.Reference[];
+  public implicated: fhir.Reference[];
   /**
    * Supporting evidence or manifestations that provide the basis for identifying the detected issue such as a GuidanceResponse or MeasureReport.
    */
-  public evidence?: fhir.DetectedIssueEvidence[];
+  public evidence: fhir.DetectedIssueEvidence[];
   /**
    * Should focus on information not covered elsewhere as discrete data - no need to duplicate the narrative.
    */
@@ -272,7 +272,7 @@ export class DetectedIssue extends fhir.DomainResource {
   /**
    * Indicates an action that has been taken or is committed to reduce or eliminate the likelihood of the risk identified by the detected issue from manifesting.  Can also reflect an observation of known mitigating factors that may reduce/eliminate the need for any action.
    */
-  public mitigation?: fhir.DetectedIssueMitigation[];
+  public mitigation: fhir.DetectedIssueMitigation[];
   /**
    * Default constructor for DetectedIssue - initializes any required elements to null if a value is not provided.
    */
@@ -281,10 +281,10 @@ export class DetectedIssue extends fhir.DomainResource {
     this.resourceType = 'DetectedIssue';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<ObservationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['severity']) { this.severity = source.severity; }
+    if (source['severity']) { this.severity = new fhir.FhirCode<DetectedissueSeverityCodeType>({value: source.severity}); }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     if (source['identified']) { this.identified = source.identified; }
     else if (source['identifiedDateTime']) { this.identified = new fhir.FhirDateTime({value: source.identifiedDateTime}); }
@@ -302,20 +302,20 @@ export class DetectedIssue extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (DetectedIssue.status)
    */
-  public static statusRequiredCoding():ObservationStatusCodingType {
-    return ObservationStatusCodings;
+  public static get statusRequiredCodes() {
+    return ObservationStatusCodes;
   }
   /**
    * Preferred-bound Value Set for code (DetectedIssue.code)
    */
-  public static codePreferredCoding():DetectedissueCategoryCodingType {
+  public static get codePreferredCodings() {
     return DetectedissueCategoryCodings;
   }
   /**
    * Required-bound Value Set for severity (DetectedIssue.severity)
    */
-  public static severityRequiredCoding():DetectedissueSeverityCodingType {
-    return DetectedissueSeverityCodings;
+  public static get severityRequiredCodes() {
+    return DetectedissueSeverityCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -323,13 +323,21 @@ export class DetectedIssue extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"DetectedIssue" fhir: DetectedIssue.resourceType:"DetectedIssue"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"DetectedIssue" fhir: DetectedIssue.resourceType:"DetectedIssue"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ObservationStatusCodeType fhir: DetectedIssue.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ObservationStatusCodeType> fhir: DetectedIssue.status:code' });
     }
+    if (this['status'] && (!Object.values(ObservationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ObservationStatusCodeType> fhir: DetectedIssue.status:code Required binding to: ObservationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this['severity'] && (!Object.values(DetectedissueSeverityCodes).includes(this.severity as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property severity?:fhir.FhirCode<DetectedissueSeverityCodeType> fhir: DetectedIssue.severity:code Required binding to: DetectedissueSeverity' });
+    }
+    if (this["severity"]) { issues.push(...this.severity.doModelValidation()); }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
     if (this["author"]) { issues.push(...this.author.doModelValidation()); }
     if (this["implicated"]) { this.implicated.forEach((x) => { issues.push(...x.doModelValidation()); }) }

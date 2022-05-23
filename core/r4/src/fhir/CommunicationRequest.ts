@@ -80,7 +80,7 @@ export class CommunicationRequestPayload extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property content: fhir: CommunicationRequest.payload.content[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content: fhir: CommunicationRequest.payload.content[x]:' });
     }
     return issues;
   }
@@ -112,7 +112,7 @@ export interface CommunicationRequestArgs extends fhir.DomainResourceArgs {
   /**
    * The status of the proposal or order.
    */
-  status: RequestStatusCodeType|null;
+  status: fhir.FhirCode<RequestStatusCodeType>|string|undefined;
   /**
    * This is generally only used for "exception" statuses such as "suspended" or "cancelled".  The reason why the CommunicationRequest was created at all is captured in reasonCode, not here.  [distinct reason codes for different statuses can be enforced using invariants if they are universal bindings].
    */
@@ -124,7 +124,7 @@ export interface CommunicationRequestArgs extends fhir.DomainResourceArgs {
   /**
    * Characterizes how quickly the proposed act must be initiated. Includes concepts such as stat, urgent, routine.
    */
-  priority?: RequestPriorityCodeType|undefined;
+  priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
   /**
    * The attributes provided with the request qualify what is not to be done.
    */
@@ -206,15 +206,15 @@ export class CommunicationRequest extends fhir.DomainResource {
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * A plan or proposal that is fulfilled in whole or in part by this request.
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * The replacement could be because the initial request was immediately rejected (due to an issue) or because the previous request was completed, but the need for the action described by the request remains ongoing.
    */
-  public replaces?: fhir.Reference[];
+  public replaces: fhir.Reference[];
   /**
    * Requests are linked either by a "basedOn" relationship (i.e. one request is fulfilling another) or by having a common requisition.  Requests that are part of the same requisition are generally treated independently from the perspective of changing their state or maintaining them after initial creation.
    */
@@ -222,7 +222,7 @@ export class CommunicationRequest extends fhir.DomainResource {
   /**
    * The status of the proposal or order.
    */
-  public status: RequestStatusCodeType|null;
+  public status: fhir.FhirCode<RequestStatusCodeType>|null;
   /**
    * This is generally only used for "exception" statuses such as "suspended" or "cancelled".  The reason why the CommunicationRequest was created at all is captured in reasonCode, not here.  [distinct reason codes for different statuses can be enforced using invariants if they are universal bindings].
    */
@@ -230,11 +230,11 @@ export class CommunicationRequest extends fhir.DomainResource {
   /**
    * There may be multiple axes of categorization and one communication request may serve multiple purposes.
    */
-  public category?: fhir.CodeableConcept[];
+  public category: fhir.CodeableConcept[];
   /**
    * Characterizes how quickly the proposed act must be initiated. Includes concepts such as stat, urgent, routine.
    */
-  public priority?: RequestPriorityCodeType|undefined;
+  public priority?: fhir.FhirCode<RequestPriorityCodeType>|undefined;
   /**
    * The attributes provided with the request qualify what is not to be done.
    */
@@ -242,7 +242,7 @@ export class CommunicationRequest extends fhir.DomainResource {
   /**
    * A channel that was used for this communication (e.g. email, fax).
    */
-  public medium?: fhir.CodeableConcept[];
+  public medium: fhir.CodeableConcept[];
   /**
    * The patient or group that is the focus of this communication request.
    */
@@ -250,7 +250,7 @@ export class CommunicationRequest extends fhir.DomainResource {
   /**
    * Don't use CommunicationRequest.about element when a more specific element exists, such as basedOn, reasonReference, or replaces.
    */
-  public about?: fhir.Reference[];
+  public about: fhir.Reference[];
   /**
    * This will typically be the encounter the event occurred within, but some activities may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter.
    */
@@ -258,7 +258,7 @@ export class CommunicationRequest extends fhir.DomainResource {
   /**
    * Text, attachment(s), or resource(s) to be communicated to the recipient.
    */
-  public payload?: fhir.CommunicationRequestPayload[];
+  public payload: fhir.CommunicationRequestPayload[];
   /**
    * The time when this communication is to occur.
    */
@@ -278,7 +278,7 @@ export class CommunicationRequest extends fhir.DomainResource {
   /**
    * The entity (e.g. person, organization, clinical information system, device, group, or care team) which is the intended target of the communication.
    */
-  public recipient?: fhir.Reference[];
+  public recipient: fhir.Reference[];
   /**
    * The entity (e.g. person, organization, clinical information system, or device) which is to be the source of the communication.
    */
@@ -286,15 +286,15 @@ export class CommunicationRequest extends fhir.DomainResource {
   /**
    * Textual reasons can be captured using reasonCode.text.
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * Indicates another resource whose existence justifies this request.
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * Comments made about the request by the requester, sender, recipient, subject or other participants.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Default constructor for CommunicationRequest - initializes any required elements to null if a value is not provided.
    */
@@ -308,12 +308,12 @@ export class CommunicationRequest extends fhir.DomainResource {
     if (source['replaces']) { this.replaces = source.replaces.map((x) => new fhir.Reference(x)); }
     else { this.replaces = []; }
     if (source['groupIdentifier']) { this.groupIdentifier = new fhir.Identifier(source.groupIdentifier); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<RequestStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['statusReason']) { this.statusReason = new fhir.CodeableConcept(source.statusReason); }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
-    if (source['priority']) { this.priority = source.priority; }
+    if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
     if (source['doNotPerform']) { this.doNotPerform = new fhir.FhirBoolean({value: source.doNotPerform}); }
     if (source['medium']) { this.medium = source.medium.map((x) => new fhir.CodeableConcept(x)); }
     else { this.medium = []; }
@@ -341,14 +341,14 @@ export class CommunicationRequest extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (CommunicationRequest.status)
    */
-  public static statusRequiredCoding():RequestStatusCodingType {
-    return RequestStatusCodings;
+  public static get statusRequiredCodes() {
+    return RequestStatusCodes;
   }
   /**
    * Required-bound Value Set for priority (CommunicationRequest.priority)
    */
-  public static priorityRequiredCoding():RequestPriorityCodingType {
-    return RequestPriorityCodings;
+  public static get priorityRequiredCodes() {
+    return RequestPriorityCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -356,17 +356,25 @@ export class CommunicationRequest extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"CommunicationRequest" fhir: CommunicationRequest.resourceType:"CommunicationRequest"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"CommunicationRequest" fhir: CommunicationRequest.resourceType:"CommunicationRequest"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["replaces"]) { this.replaces.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["groupIdentifier"]) { issues.push(...this.groupIdentifier.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:RequestStatusCodeType fhir: CommunicationRequest.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<RequestStatusCodeType> fhir: CommunicationRequest.status:code' });
     }
+    if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<RequestStatusCodeType> fhir: CommunicationRequest.status:code Required binding to: RequestStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation()); }
     if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority?:fhir.FhirCode<RequestPriorityCodeType> fhir: CommunicationRequest.priority:code Required binding to: RequestPriority' });
+    }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
     if (this["doNotPerform"]) { issues.push(...this.doNotPerform.doModelValidation()); }
     if (this["medium"]) { this.medium.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }

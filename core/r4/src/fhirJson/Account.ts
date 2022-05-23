@@ -66,6 +66,10 @@ export interface Account extends fhir.DomainResource {
    */
   status: 'active'|'entered-in-error'|'inactive'|'on-hold'|'unknown'|null;
   /**
+   * Extended properties for primitive element: Account.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Categorizes the account for reporting and searching purposes.
    */
   type?: fhir.CodeableConcept|undefined;

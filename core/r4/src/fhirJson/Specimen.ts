@@ -145,6 +145,10 @@ export interface Specimen extends fhir.DomainResource {
    */
   status?: 'available'|'entered-in-error'|'unavailable'|'unsatisfactory'|undefined;
   /**
+   * Extended properties for primitive element: Specimen.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * The type can change the way that a specimen is handled and drives what kind of analyses can properly be performed on the specimen. It is frequently used in diagnostic work flow decision making systems.
    */
   type?: fhir.CodeableConcept|undefined;

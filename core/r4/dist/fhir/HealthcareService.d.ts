@@ -1,8 +1,5 @@
 import * as fhir from '../fhir.js';
-import { DaysOfWeekCodingType } from '../fhirValueSets/DaysOfWeekCodings.js';
 import { DaysOfWeekCodeType } from '../fhirValueSets/DaysOfWeekCodes.js';
-import { C80PracticeCodesCodingType } from '../fhirValueSets/C80PracticeCodesCodings.js';
-import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
 /**
  * Valid arguments for the HealthcareServiceEligibility type.
  */
@@ -48,7 +45,7 @@ export interface HealthcareServiceAvailableTimeArgs extends fhir.BackboneElement
     /**
      * Indicates which days of the week are available between the start and end Times.
      */
-    daysOfWeek?: DaysOfWeekCodeType[] | undefined;
+    daysOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[] | string[] | undefined;
     /**
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
      */
@@ -73,7 +70,7 @@ export declare class HealthcareServiceAvailableTime extends fhir.BackboneElement
     /**
      * Indicates which days of the week are available between the start and end Times.
      */
-    daysOfWeek?: DaysOfWeekCodeType[];
+    daysOfWeek: fhir.FhirCode<DaysOfWeekCodeType>[];
     /**
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
      */
@@ -93,7 +90,15 @@ export declare class HealthcareServiceAvailableTime extends fhir.BackboneElement
     /**
      * Required-bound Value Set for daysOfWeek (HealthcareService.availableTime.daysOfWeek)
      */
-    static daysOfWeekRequiredCoding(): DaysOfWeekCodingType;
+    static get daysOfWeekRequiredCodes(): {
+        readonly Friday: "fri";
+        readonly Monday: "mon";
+        readonly Saturday: "sat";
+        readonly Sunday: "sun";
+        readonly Thursday: "thu";
+        readonly Tuesday: "tue";
+        readonly Wednesday: "wed";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -257,7 +262,7 @@ export declare class HealthcareService extends fhir.DomainResource {
     /**
      * External identifiers for this item.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because it may be used to mark that the resource was created in error.
      */
@@ -269,19 +274,19 @@ export declare class HealthcareService extends fhir.DomainResource {
     /**
      * Selecting a Service Category then determines the list of relevant service types that can be selected in the primary service type.
      */
-    category?: fhir.CodeableConcept[];
+    category: fhir.CodeableConcept[];
     /**
      * The specific type of service that may be delivered or performed.
      */
-    type?: fhir.CodeableConcept[];
+    type: fhir.CodeableConcept[];
     /**
      * Collection of specialties handled by the service site. This is more of a medical term.
      */
-    specialty?: fhir.CodeableConcept[];
+    specialty: fhir.CodeableConcept[];
     /**
      * The location(s) where this healthcare service may be provided.
      */
-    location?: fhir.Reference[];
+    location: fhir.Reference[];
     /**
      * Further description of the service as it would be presented to a consumer while searching.
      */
@@ -301,35 +306,35 @@ export declare class HealthcareService extends fhir.DomainResource {
     /**
      * If this is empty, then refer to the location's contacts.
      */
-    telecom?: fhir.ContactPoint[];
+    telecom: fhir.ContactPoint[];
     /**
      * The locations referenced by the coverage area can include both specific locations, including areas, and also conceptual domains too (mode = kind), such as a physical area (tri-state area) and some other attribute (covered by Example Care Organization). These types of Locations are often not managed by any specific organization. This could also include generic locations such as "in-home".
      */
-    coverageArea?: fhir.Reference[];
+    coverageArea: fhir.Reference[];
     /**
      * The provision means being commissioned by, contractually obliged or financially sourced. Types of costings that may apply to this healthcare service, such if the service may be available for free, some discounts available, or fees apply.
      */
-    serviceProvisionCode?: fhir.CodeableConcept[];
+    serviceProvisionCode: fhir.CodeableConcept[];
     /**
      * Does this service have specific eligibility requirements that need to be met in order to use the service?
      */
-    eligibility?: fhir.HealthcareServiceEligibility[];
+    eligibility: fhir.HealthcareServiceEligibility[];
     /**
      * Programs are often defined externally to an Organization, commonly by governments; e.g. Home and Community Care Programs, Homeless Program, ….
      */
-    program?: fhir.CodeableConcept[];
+    program: fhir.CodeableConcept[];
     /**
      * These could be such things as is wheelchair accessible.
      */
-    characteristic?: fhir.CodeableConcept[];
+    characteristic: fhir.CodeableConcept[];
     /**
      * When using this property it indicates that the service is available with this language, it is not derived from the practitioners, and not all are required to use this language, just that this language is available while scheduling.
      */
-    communication?: fhir.CodeableConcept[];
+    communication: fhir.CodeableConcept[];
     /**
      * Ways that the service accepts referrals, if this is not provided then it is implied that no referral is required.
      */
-    referralMethod?: fhir.CodeableConcept[];
+    referralMethod: fhir.CodeableConcept[];
     /**
      * Indicates whether or not a prospective consumer will require an appointment for a particular service at a site to be provided by the Organization. Indicates if an appointment is required for access to this service.
      */
@@ -337,11 +342,11 @@ export declare class HealthcareService extends fhir.DomainResource {
     /**
      * More detailed availability information may be provided in associated Schedule/Slot resources.
      */
-    availableTime?: fhir.HealthcareServiceAvailableTime[];
+    availableTime: fhir.HealthcareServiceAvailableTime[];
     /**
      * The HealthcareService is not available during this period of time due to the provided reason.
      */
-    notAvailable?: fhir.HealthcareServiceNotAvailable[];
+    notAvailable: fhir.HealthcareServiceNotAvailable[];
     /**
      * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
      */
@@ -349,7 +354,7 @@ export declare class HealthcareService extends fhir.DomainResource {
     /**
      * Technical endpoints providing access to services operated for the specific healthcare services defined at this resource.
      */
-    endpoint?: fhir.Reference[];
+    endpoint: fhir.Reference[];
     /**
      * Default constructor for HealthcareService - initializes any required elements to null if a value is not provided.
      */
@@ -357,11 +362,192 @@ export declare class HealthcareService extends fhir.DomainResource {
     /**
      * Preferred-bound Value Set for specialty (HealthcareService.specialty)
      */
-    static specialtyPreferredCoding(): C80PracticeCodesCodingType;
+    static get specialtyPreferredCodings(): {
+        readonly PediatricSurgery: fhir.Coding;
+        readonly SurgicalAccidentAndEmergency: fhir.Coding;
+        readonly Anesthetics: fhir.Coding;
+        readonly AudiologicalMedicine: fhir.Coding;
+        readonly Cardiology: fhir.Coding;
+        readonly ClinicalGenetics: fhir.Coding;
+        readonly CommunityMedicine: fhir.Coding;
+        readonly Dermatology: fhir.Coding;
+        readonly Endocrinology: fhir.Coding;
+        readonly Gastroenterology: fhir.Coding;
+        readonly ObstetricsAndGynecology: fhir.Coding;
+        readonly Gynecology: fhir.Coding;
+        readonly Psychiatry: fhir.Coding;
+        readonly PediatricChildAndAdolescentPsychiatry: fhir.Coding;
+        readonly Nephrology: fhir.Coding;
+        readonly ThoracicMedicine: fhir.Coding;
+        readonly Neurology: fhir.Coding;
+        readonly ClinicalOncology: fhir.Coding;
+        readonly MedicalOncology: fhir.Coding;
+        readonly Ophthalmology: fhir.Coding;
+        readonly Histopathology: fhir.Coding;
+        readonly Immunopathology: fhir.Coding;
+        readonly Neuropathology: fhir.Coding;
+        readonly ClinicalPharmacology: fhir.Coding;
+        readonly ClinicalPhysiology: fhir.Coding;
+        readonly Rehabilitation: fhir.Coding;
+        readonly SurgeryEarNoseAndThroatSurgery: fhir.Coding;
+        readonly SurgeryDentalOralSurgery: fhir.Coding;
+        readonly SurgeryDentistryRestorativeDentistry: fhir.Coding;
+        /**
+         * More detailed availability information may be provided in associated Schedule/Slot resources.
+         */
+        readonly PediatricDentistry: fhir.Coding;
+        readonly SurgeryDentalOrthodontics: fhir.Coding;
+        readonly SurgeryGeneral: fhir.Coding;
+        readonly SurgeryNeurosurgery: fhir.Coding;
+        readonly SurgeryPlasticSurgery: fhir.Coding;
+        readonly Urology: fhir.Coding;
+        readonly NuclearMedicine: fhir.Coding;
+        readonly SurgicalSpecialtyOTHERNOTLISTED: fhir.Coding;
+        readonly MedicalSpecialtyOTHERNOTLISTED: fhir.Coding;
+        readonly SurgeryTraumaAndOrthopedics: fhir.Coding;
+        readonly GeneralMedicine: fhir.Coding;
+        readonly ClinicalHematology: fhir.Coding;
+        readonly ClinicalCytogeneticsAndMolecularGenetics: fhir.Coding;
+        readonly PalliativeMedicine: fhir.Coding;
+        readonly InfectiousDiseases: fhir.Coding;
+        readonly GenitoUrinaryMedicine: fhir.Coding;
+        readonly ClinicalNeuroPhysiology: fhir.Coding;
+        readonly Rheumatology: fhir.Coding;
+        readonly GeriatricMedicine: fhir.Coding;
+        readonly DentalMedicineSpecialties: fhir.Coding;
+        readonly MedicalOphthalmology: fhir.Coding;
+        readonly GeneralPractice: fhir.Coding;
+        readonly OccupationalMedicine: fhir.Coding;
+        readonly PainManagement: fhir.Coding;
+        readonly Psychotherapy: fhir.Coding;
+        readonly Radiology: fhir.Coding;
+        readonly GeneralPathology: fhir.Coding;
+        readonly Hematopathology: fhir.Coding;
+        readonly PublicHealthMedicine: fhir.Coding;
+        readonly SurgeryDentalEndodontics: fhir.Coding;
+        readonly GeneralMedicalPractice: fhir.Coding;
+        readonly DentalGeneralDentalPractice: fhir.Coding;
+        readonly GynecologicalOncology: fhir.Coding;
+        readonly RespiteCare: fhir.Coding;
+        readonly TropicalMedicine: fhir.Coding;
+        readonly SurgeryDentistrySurgical: fhir.Coding;
+        readonly SleepStudies: fhir.Coding;
+        readonly ClinicalMicrobiology: fhir.Coding;
+        readonly RadiologyInterventionalRadiology: fhir.Coding;
+        readonly PediatricCardiology: fhir.Coding;
+        readonly SurgeryDentalProstheticDentistryProsthodontics: fhir.Coding;
+        readonly SurgeryDentalPeriodontalSurgery: fhir.Coding;
+        readonly BurnsCare: fhir.Coding;
+        readonly SurgeryVascular: fhir.Coding;
+        readonly SurgeryColorectalSurgery: fhir.Coding;
+        readonly SurgeryDentalOralAndMaxillofacialSurgery: fhir.Coding;
+        readonly SurgeryCardiacSurgery: fhir.Coding;
+        readonly AdultMentalIllness: fhir.Coding;
+        readonly LearningDisability: fhir.Coding;
+        readonly SurgeryBreastSurgery: fhir.Coding;
+        readonly Obstetrics: fhir.Coding;
+        readonly SurgeryCardiothoracicTransplantation: fhir.Coding;
+        readonly Hepatology: fhir.Coding;
+        readonly SurgeryHepatobiliaryAndPancreaticSurgery: fhir.Coding;
+        readonly DiabeticMedicine: fhir.Coding;
+        readonly SurgeryBoneAndMarrowTransplantation: fhir.Coding;
+        readonly SurgeryTransplantationSurgery: fhir.Coding;
+        readonly CriticalCareMedicine: fhir.Coding;
+        readonly ClinicalImmunology: fhir.Coding;
+        readonly Toxicology: fhir.Coding;
+        readonly PreventiveMedicine: fhir.Coding;
+        readonly MilitaryMedicine: fhir.Coding;
+        readonly DiveMedicine: fhir.Coding;
+        readonly OsteopathicManipulativeMedicine: fhir.Coding;
+        readonly PediatricOncology: fhir.Coding;
+        readonly SurgeryDermatologicSurgery: fhir.Coding;
+        readonly PediatricGastroenterology: fhir.Coding;
+        readonly PulmonaryMedicine: fhir.Coding;
+        readonly PediatricImmunology: fhir.Coding;
+        readonly PediatricHematology: fhir.Coding;
+        readonly PediatricInfectiousDiseases: fhir.Coding;
+        readonly Otolaryngology: fhir.Coding;
+        readonly UrologicalOncology: fhir.Coding;
+        readonly PediatricPulmonology: fhir.Coding;
+        readonly InternalMedicine: fhir.Coding;
+        readonly SurgicalOncology: fhir.Coding;
+        readonly PediatricNephrology: fhir.Coding;
+        readonly PediatricRheumatology: fhir.Coding;
+        readonly PediatricEndocrinology: fhir.Coding;
+        readonly FamilyPractice: fhir.Coding;
+        readonly RadiationOncology: fhir.Coding;
+        readonly PediatricOphthalmology: fhir.Coding;
+        readonly PediatricSurgeryBoneMarrowTransplantation: fhir.Coding;
+        readonly PediatricGenetics: fhir.Coding;
+        readonly BloodBankingAndTransfusionMedicine: fhir.Coding;
+        readonly OphthalmicSurgery: fhir.Coding;
+    };
     /**
      * Preferred-bound Value Set for communication (HealthcareService.communication)
      */
-    static communicationPreferredCoding(): LanguagesCodingType;
+    static get communicationPreferredCodings(): {
+        readonly Arabic: fhir.Coding;
+        readonly Bengali: fhir.Coding;
+        readonly Czech: fhir.Coding;
+        readonly Danish: fhir.Coding;
+        readonly German: fhir.Coding;
+        readonly GermanAustria: fhir.Coding;
+        readonly GermanSwitzerland: fhir.Coding;
+        readonly GermanGermany: fhir.Coding;
+        readonly Greek: fhir.Coding;
+        readonly English: fhir.Coding;
+        readonly EnglishAustralia: fhir.Coding;
+        readonly EnglishCanada: fhir.Coding;
+        readonly EnglishGreatBritain: fhir.Coding;
+        readonly EnglishIndia: fhir.Coding;
+        readonly EnglishNewZeland: fhir.Coding;
+        readonly EnglishSingapore: fhir.Coding;
+        readonly EnglishUnitedStates: fhir.Coding;
+        readonly Spanish: fhir.Coding; /**
+         * Does this service have specific eligibility requirements that need to be met in order to use the service?
+         */
+        readonly SpanishArgentina: fhir.Coding;
+        readonly SpanishSpain: fhir.Coding;
+        readonly SpanishUruguay: fhir.Coding;
+        readonly Finnish: fhir.Coding;
+        readonly French: fhir.Coding;
+        readonly FrenchBelgium: fhir.Coding;
+        readonly FrenchSwitzerland: fhir.Coding;
+        readonly FrenchFrance: fhir.Coding;
+        readonly Frysian: fhir.Coding;
+        readonly FrysianNetherlands: fhir.Coding;
+        /**
+         * Function to perform basic model validation (e.g., check if required elements are present).
+         */
+        readonly Hindi: fhir.Coding;
+        readonly Croatian: fhir.Coding;
+        readonly Italian: fhir.Coding;
+        readonly ItalianSwitzerland: fhir.Coding;
+        readonly ItalianItaly: fhir.Coding;
+        readonly Japanese: fhir.Coding;
+        readonly Korean: fhir.Coding;
+        readonly Dutch: fhir.Coding;
+        readonly DutchBelgium: fhir.Coding;
+        readonly DutchNetherlands: fhir.Coding;
+        readonly Norwegian: fhir.Coding;
+        readonly NorwegianNorway: fhir.Coding;
+        readonly Punjabi: fhir.Coding;
+        readonly Polish: fhir.Coding;
+        readonly Portuguese: fhir.Coding;
+        readonly PortugueseBrazil: fhir.Coding;
+        readonly Russian: fhir.Coding;
+        readonly RussianRussia: fhir.Coding;
+        readonly Serbian: fhir.Coding;
+        readonly SerbianSerbia: fhir.Coding;
+        readonly Swedish: fhir.Coding;
+        readonly SwedishSweden: fhir.Coding;
+        readonly Telegu: fhir.Coding;
+        readonly Chinese: fhir.Coding;
+        readonly ChineseChina: fhir.Coding;
+        readonly ChineseHongKong: fhir.Coding;
+        readonly ChineseSingapore: fhir.Coding;
+        readonly ChineseTaiwan: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

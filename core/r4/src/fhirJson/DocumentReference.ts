@@ -15,6 +15,10 @@ export interface DocumentReferenceRelatesTo extends fhir.BackboneElement {
    */
   code: 'appends'|'replaces'|'signs'|'transforms'|null;
   /**
+   * Extended properties for primitive element: DocumentReference.relatesTo.code
+   */
+  _code?:fhir.FhirElement;
+  /**
    * The target document of this relationship.
    */
   target: fhir.Reference|null;
@@ -90,9 +94,17 @@ export interface DocumentReference extends fhir.DomainResource {
    */
   status: 'current'|'entered-in-error'|'superseded'|null;
   /**
+   * Extended properties for primitive element: DocumentReference.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * The document that is pointed to might be in various lifecycle states.
    */
   docStatus?: 'amended'|'entered-in-error'|'final'|'preliminary'|undefined;
+  /**
+   * Extended properties for primitive element: DocumentReference.docStatus
+   */
+  _docStatus?:fhir.FhirElement;
   /**
    * Key metadata element describing the document that describes he exact type of document. Helps humans to assess whether the document is of interest when viewing a list of documents.
    */

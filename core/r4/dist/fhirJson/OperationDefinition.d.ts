@@ -8,6 +8,10 @@ export interface OperationDefinitionParameterBinding extends fhir.BackboneElemen
      */
     strength: 'example' | 'extensible' | 'preferred' | 'required' | null;
     /**
+     * Extended properties for primitive element: OperationDefinition.parameter.binding.strength
+     */
+    _strength?: fhir.FhirElement;
+    /**
      * For value sets with a referenceResource, the display can contain the value set description.  The reference may be version-specific or not.
      */
     valueSet: string | null;
@@ -54,6 +58,10 @@ export interface OperationDefinitionParameter extends fhir.BackboneElement {
      */
     use: 'in' | 'out' | null;
     /**
+     * Extended properties for primitive element: OperationDefinition.parameter.use
+     */
+    _use?: fhir.FhirElement;
+    /**
      * The minimum number of times this parameter SHALL appear in the request or response.
      */
     min: number | null;
@@ -97,6 +105,10 @@ export interface OperationDefinitionParameter extends fhir.BackboneElement {
      * How the parameter is understood as a search parameter. This is only used if the parameter type is 'string'.
      */
     searchType?: 'composite' | 'date' | 'number' | 'quantity' | 'reference' | 'special' | 'string' | 'token' | 'uri' | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.parameter.searchType
+     */
+    _searchType?: fhir.FhirElement;
     /**
      * Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).
      */
@@ -178,9 +190,17 @@ export interface OperationDefinition extends fhir.DomainResource {
      */
     status: 'active' | 'draft' | 'retired' | 'unknown' | null;
     /**
+     * Extended properties for primitive element: OperationDefinition.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * Named queries are invoked differently, and have different capabilities.
      */
     kind: 'operation' | 'query' | null;
+    /**
+     * Extended properties for primitive element: OperationDefinition.kind
+     */
+    _kind?: fhir.FhirElement;
     /**
      * Allows filtering of operation definitions that are appropriate for use versus not.
      */

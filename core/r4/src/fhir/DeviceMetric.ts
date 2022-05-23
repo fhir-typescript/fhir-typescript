@@ -32,11 +32,11 @@ export interface DeviceMetricCalibrationArgs extends fhir.BackboneElementArgs {
   /**
    * Describes the type of the calibration method.
    */
-  type?: MetricCalibrationTypeCodeType|undefined;
+  type?: fhir.FhirCode<MetricCalibrationTypeCodeType>|string|undefined;
   /**
    * Describes the state of the calibration.
    */
-  state?: MetricCalibrationStateCodeType|undefined;
+  state?: fhir.FhirCode<MetricCalibrationStateCodeType>|string|undefined;
   /**
    * Describes the time last calibration has been performed.
    */
@@ -54,11 +54,11 @@ export class DeviceMetricCalibration extends fhir.BackboneElement {
   /**
    * Describes the type of the calibration method.
    */
-  public type?: MetricCalibrationTypeCodeType|undefined;
+  public type?: fhir.FhirCode<MetricCalibrationTypeCodeType>|undefined;
   /**
    * Describes the state of the calibration.
    */
-  public state?: MetricCalibrationStateCodeType|undefined;
+  public state?: fhir.FhirCode<MetricCalibrationStateCodeType>|undefined;
   /**
    * Describes the time last calibration has been performed.
    */
@@ -68,27 +68,35 @@ export class DeviceMetricCalibration extends fhir.BackboneElement {
    */
   constructor(source:Partial<DeviceMetricCalibrationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type; }
-    if (source['state']) { this.state = source.state; }
+    if (source['type']) { this.type = new fhir.FhirCode<MetricCalibrationTypeCodeType>({value: source.type}); }
+    if (source['state']) { this.state = new fhir.FhirCode<MetricCalibrationStateCodeType>({value: source.state}); }
     if (source['time']) { this.time = new fhir.FhirInstant({value: source.time}); }
   }
   /**
    * Required-bound Value Set for type (DeviceMetric.calibration.type)
    */
-  public static typeRequiredCoding():MetricCalibrationTypeCodingType {
-    return MetricCalibrationTypeCodings;
+  public static get typeRequiredCodes() {
+    return MetricCalibrationTypeCodes;
   }
   /**
    * Required-bound Value Set for state (DeviceMetric.calibration.state)
    */
-  public static stateRequiredCoding():MetricCalibrationStateCodingType {
-    return MetricCalibrationStateCodings;
+  public static get stateRequiredCodes() {
+    return MetricCalibrationStateCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this['type'] && (!Object.values(MetricCalibrationTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type?:fhir.FhirCode<MetricCalibrationTypeCodeType> fhir: DeviceMetric.calibration.type:code Required binding to: MetricCalibrationType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this['state'] && (!Object.values(MetricCalibrationStateCodes).includes(this.state as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property state?:fhir.FhirCode<MetricCalibrationStateCodeType> fhir: DeviceMetric.calibration.state:code Required binding to: MetricCalibrationState' });
+    }
+    if (this["state"]) { issues.push(...this.state.doModelValidation()); }
     if (this["time"]) { issues.push(...this.time.doModelValidation()); }
     return issues;
   }
@@ -124,15 +132,15 @@ export interface DeviceMetricArgs extends fhir.DomainResourceArgs {
   /**
    * Indicates current operational state of the device. For example: On, Off, Standby, etc.
    */
-  operationalStatus?: MetricOperationalStatusCodeType|undefined;
+  operationalStatus?: fhir.FhirCode<MetricOperationalStatusCodeType>|string|undefined;
   /**
    * Describes the color representation for the metric. This is often used to aid clinicians to track and identify parameter types by color. In practice, consider a Patient Monitor that has ECG/HR and Pleth for example; the parameters are displayed in different characteristic colors, such as HR-blue, BP-green, and PR and SpO2- magenta.
    */
-  color?: MetricColorCodeType|undefined;
+  color?: fhir.FhirCode<MetricColorCodeType>|string|undefined;
   /**
    * Indicates the category of the observation generation process. A DeviceMetric can be for example a setting, measurement, or calculation.
    */
-  category: MetricCategoryCodeType|null;
+  category: fhir.FhirCode<MetricCategoryCodeType>|string|undefined;
   /**
    * Describes the measurement repetition time. This is not necessarily the same as the update period. The measurement repetition time can range from milliseconds up to hours. An example for a measurement repetition time in the range of milliseconds is the sampling rate of an ECG. An example for a measurement repetition time in the range of hours is a NIBP that is triggered automatically every hour. The update period may be different than the measurement repetition time, if the device does not update the published observed value with the same frequency as it was measured.
    */
@@ -158,7 +166,7 @@ export class DeviceMetric extends fhir.DomainResource {
   /**
    * For identifiers assigned to a device by the device or gateway software, the `system` element of the identifier should be set to the unique identifier of the device.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * DeviceMetric.type can be referred to either IEEE 11073-10101 or LOINC.
    */
@@ -178,15 +186,15 @@ export class DeviceMetric extends fhir.DomainResource {
   /**
    * Indicates current operational state of the device. For example: On, Off, Standby, etc.
    */
-  public operationalStatus?: MetricOperationalStatusCodeType|undefined;
+  public operationalStatus?: fhir.FhirCode<MetricOperationalStatusCodeType>|undefined;
   /**
    * Describes the color representation for the metric. This is often used to aid clinicians to track and identify parameter types by color. In practice, consider a Patient Monitor that has ECG/HR and Pleth for example; the parameters are displayed in different characteristic colors, such as HR-blue, BP-green, and PR and SpO2- magenta.
    */
-  public color?: MetricColorCodeType|undefined;
+  public color?: fhir.FhirCode<MetricColorCodeType>|undefined;
   /**
    * Indicates the category of the observation generation process. A DeviceMetric can be for example a setting, measurement, or calculation.
    */
-  public category: MetricCategoryCodeType|null;
+  public category: fhir.FhirCode<MetricCategoryCodeType>|null;
   /**
    * Describes the measurement repetition time. This is not necessarily the same as the update period. The measurement repetition time can range from milliseconds up to hours. An example for a measurement repetition time in the range of milliseconds is the sampling rate of an ECG. An example for a measurement repetition time in the range of hours is a NIBP that is triggered automatically every hour. The update period may be different than the measurement repetition time, if the device does not update the published observed value with the same frequency as it was measured.
    */
@@ -194,7 +202,7 @@ export class DeviceMetric extends fhir.DomainResource {
   /**
    * Describes the calibrations that have been performed or that are required to be performed.
    */
-  public calibration?: fhir.DeviceMetricCalibration[];
+  public calibration: fhir.DeviceMetricCalibration[];
   /**
    * Default constructor for DeviceMetric - initializes any required elements to null if a value is not provided.
    */
@@ -208,9 +216,9 @@ export class DeviceMetric extends fhir.DomainResource {
     if (source['unit']) { this.unit = new fhir.CodeableConcept(source.unit); }
     if (source['source']) { this.source = new fhir.Reference(source.source); }
     if (source['parent']) { this.parent = new fhir.Reference(source.parent); }
-    if (source['operationalStatus']) { this.operationalStatus = source.operationalStatus; }
-    if (source['color']) { this.color = source.color; }
-    if (source['category']) { this.category = source.category; }
+    if (source['operationalStatus']) { this.operationalStatus = new fhir.FhirCode<MetricOperationalStatusCodeType>({value: source.operationalStatus}); }
+    if (source['color']) { this.color = new fhir.FhirCode<MetricColorCodeType>({value: source.color}); }
+    if (source['category']) { this.category = new fhir.FhirCode<MetricCategoryCodeType>({value: source.category}); }
     else { this.category = null; }
     if (source['measurementPeriod']) { this.measurementPeriod = new fhir.Timing(source.measurementPeriod); }
     if (source['calibration']) { this.calibration = source.calibration.map((x) => new fhir.DeviceMetricCalibration(x)); }
@@ -219,20 +227,20 @@ export class DeviceMetric extends fhir.DomainResource {
   /**
    * Required-bound Value Set for operationalStatus (DeviceMetric.operationalStatus)
    */
-  public static operationalStatusRequiredCoding():MetricOperationalStatusCodingType {
-    return MetricOperationalStatusCodings;
+  public static get operationalStatusRequiredCodes() {
+    return MetricOperationalStatusCodes;
   }
   /**
    * Required-bound Value Set for color (DeviceMetric.color)
    */
-  public static colorRequiredCoding():MetricColorCodingType {
-    return MetricColorCodings;
+  public static get colorRequiredCodes() {
+    return MetricColorCodes;
   }
   /**
    * Required-bound Value Set for category (DeviceMetric.category)
    */
-  public static categoryRequiredCoding():MetricCategoryCodingType {
-    return MetricCategoryCodings;
+  public static get categoryRequiredCodes() {
+    return MetricCategoryCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -240,19 +248,31 @@ export class DeviceMetric extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"DeviceMetric" fhir: DeviceMetric.resourceType:"DeviceMetric"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"DeviceMetric" fhir: DeviceMetric.resourceType:"DeviceMetric"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: DeviceMetric.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: DeviceMetric.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["unit"]) { issues.push(...this.unit.doModelValidation()); }
     if (this["source"]) { issues.push(...this.source.doModelValidation()); }
     if (this["parent"]) { issues.push(...this.parent.doModelValidation()); }
-    if (!this['category']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property category:MetricCategoryCodeType fhir: DeviceMetric.category:code', });
+    if (this['operationalStatus'] && (!Object.values(MetricOperationalStatusCodes).includes(this.operationalStatus as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property operationalStatus?:fhir.FhirCode<MetricOperationalStatusCodeType> fhir: DeviceMetric.operationalStatus:code Required binding to: MetricOperationalStatus' });
     }
+    if (this["operationalStatus"]) { issues.push(...this.operationalStatus.doModelValidation()); }
+    if (this['color'] && (!Object.values(MetricColorCodes).includes(this.color as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property color?:fhir.FhirCode<MetricColorCodeType> fhir: DeviceMetric.color:code Required binding to: MetricColor' });
+    }
+    if (this["color"]) { issues.push(...this.color.doModelValidation()); }
+    if (!this['category']) {
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category:fhir.FhirCode<MetricCategoryCodeType> fhir: DeviceMetric.category:code' });
+    }
+    if (this['category'] && (!Object.values(MetricCategoryCodes).includes(this.category as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property category:fhir.FhirCode<MetricCategoryCodeType> fhir: DeviceMetric.category:code Required binding to: MetricCategory' });
+    }
+    if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (this["measurementPeriod"]) { issues.push(...this.measurementPeriod.doModelValidation()); }
     if (this["calibration"]) { this.calibration.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;

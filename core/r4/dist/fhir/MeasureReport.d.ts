@@ -1,10 +1,6 @@
 import * as fhir from '../fhir.js';
-import { MeasurePopulationCodingType } from '../fhirValueSets/MeasurePopulationCodings.js';
-import { MeasureReportStatusCodingType } from '../fhirValueSets/MeasureReportStatusCodings.js';
 import { MeasureReportStatusCodeType } from '../fhirValueSets/MeasureReportStatusCodes.js';
-import { MeasureReportTypeCodingType } from '../fhirValueSets/MeasureReportTypeCodings.js';
 import { MeasureReportTypeCodeType } from '../fhirValueSets/MeasureReportTypeCodes.js';
-import { MeasureImprovementNotationCodingType } from '../fhirValueSets/MeasureImprovementNotationCodings.js';
 /**
  * Valid arguments for the MeasureReportGroupPopulation type.
  */
@@ -49,7 +45,17 @@ export declare class MeasureReportGroupPopulation extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for code (MeasureReport.group.population.code)
      */
-    static codeExtensibleCoding(): MeasurePopulationCodingType;
+    static get codeExtensibleCodings(): {
+        readonly Denominator: fhir.Coding;
+        readonly DenominatorException: fhir.Coding;
+        readonly DenominatorExclusion: fhir.Coding;
+        readonly InitialPopulation: fhir.Coding;
+        readonly MeasureObservation: fhir.Coding;
+        readonly MeasurePopulation: fhir.Coding;
+        readonly MeasurePopulationExclusion: fhir.Coding;
+        readonly Numerator: fhir.Coding;
+        readonly NumeratorExclusion: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -137,7 +143,17 @@ export declare class MeasureReportGroupStratifierStratumPopulation extends fhir.
     /**
      * Extensible-bound Value Set for code (MeasureReport.group.stratifier.stratum.population.code)
      */
-    static codeExtensibleCoding(): MeasurePopulationCodingType;
+    static get codeExtensibleCodings(): {
+        readonly Denominator: fhir.Coding;
+        readonly DenominatorException: fhir.Coding;
+        readonly DenominatorExclusion: fhir.Coding;
+        readonly InitialPopulation: fhir.Coding;
+        readonly MeasureObservation: fhir.Coding;
+        readonly MeasurePopulation: fhir.Coding;
+        readonly MeasurePopulationExclusion: fhir.Coding;
+        readonly Numerator: fhir.Coding;
+        readonly NumeratorExclusion: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -179,11 +195,11 @@ export declare class MeasureReportGroupStratifierStratum extends fhir.BackboneEl
     /**
      * A stratifier component value.
      */
-    component?: fhir.MeasureReportGroupStratifierStratumComponent[];
+    component: fhir.MeasureReportGroupStratifierStratumComponent[];
     /**
      * The populations that make up the stratum, one for each type of population appropriate to the measure.
      */
-    population?: fhir.MeasureReportGroupStratifierStratumPopulation[];
+    population: fhir.MeasureReportGroupStratifierStratumPopulation[];
     /**
      * The measure score for this stratum, calculated as appropriate for the measure type and scoring method, and based on only the members of this stratum.
      */
@@ -221,11 +237,11 @@ export declare class MeasureReportGroupStratifier extends fhir.BackboneElement {
     /**
      * The meaning of this stratifier, as defined in the measure definition.
      */
-    code?: fhir.CodeableConcept[];
+    code: fhir.CodeableConcept[];
     /**
      * This element contains the results for a single stratum within the stratifier. For example, when stratifying on administrative gender, there will be four strata, one for each possible gender value.
      */
-    stratum?: fhir.MeasureReportGroupStratifierStratum[];
+    stratum: fhir.MeasureReportGroupStratifierStratum[];
     /**
      * Default constructor for MeasureReportGroupStratifier - initializes any required elements to null if a value is not provided.
      */
@@ -271,7 +287,7 @@ export declare class MeasureReportGroup extends fhir.BackboneElement {
     /**
      * The populations that make up the population group, one for each type of population appropriate for the measure.
      */
-    population?: fhir.MeasureReportGroupPopulation[];
+    population: fhir.MeasureReportGroupPopulation[];
     /**
      * The measure score for this population group, calculated as appropriate for the measure type and scoring method, and based on the contents of the populations defined in the group.
      */
@@ -279,7 +295,7 @@ export declare class MeasureReportGroup extends fhir.BackboneElement {
     /**
      * When a measure includes multiple stratifiers, there will be a stratifier group for each stratifier defined by the measure.
      */
-    stratifier?: fhir.MeasureReportGroupStratifier[];
+    stratifier: fhir.MeasureReportGroupStratifier[];
     /**
      * Default constructor for MeasureReportGroup - initializes any required elements to null if a value is not provided.
      */
@@ -304,11 +320,11 @@ export interface MeasureReportArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: MeasureReportStatusCodeType | null;
+    status: fhir.FhirCode<MeasureReportStatusCodeType> | string | undefined;
     /**
      * Data-collection reports are used only to communicate data-of-interest for a measure. They do not necessarily include all the data for a particular subject or population, but they may.
      */
-    type: MeasureReportTypeCodeType | null;
+    type: fhir.FhirCode<MeasureReportTypeCodeType> | string | undefined;
     /**
      * A reference to the Measure that was calculated to produce this report.
      */
@@ -357,15 +373,15 @@ export declare class MeasureReport extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II data type - e.g. to identify this {{title}} outside of FHIR, where the logical URL is not possible to use.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: MeasureReportStatusCodeType | null;
+    status: fhir.FhirCode<MeasureReportStatusCodeType> | null;
     /**
      * Data-collection reports are used only to communicate data-of-interest for a measure. They do not necessarily include all the data for a particular subject or population, but they may.
      */
-    type: MeasureReportTypeCodeType | null;
+    type: fhir.FhirCode<MeasureReportTypeCodeType> | null;
     /**
      * A reference to the Measure that was calculated to produce this report.
      */
@@ -393,11 +409,11 @@ export declare class MeasureReport extends fhir.DomainResource {
     /**
      * The results of the calculation, one for each population group in the measure.
      */
-    group?: fhir.MeasureReportGroup[];
+    group: fhir.MeasureReportGroup[];
     /**
      * A reference to a Bundle containing the Resources that were used in the calculation of this measure.
      */
-    evaluatedResource?: fhir.Reference[];
+    evaluatedResource: fhir.Reference[];
     /**
      * Default constructor for MeasureReport - initializes any required elements to null if a value is not provided.
      */
@@ -405,15 +421,27 @@ export declare class MeasureReport extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (MeasureReport.status)
      */
-    static statusRequiredCoding(): MeasureReportStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Complete: "complete";
+        readonly Error: "error";
+        readonly Pending: "pending";
+    };
     /**
      * Required-bound Value Set for type (MeasureReport.type)
      */
-    static typeRequiredCoding(): MeasureReportTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly DataCollection: "data-collection";
+        readonly Individual: "individual";
+        readonly SubjectList: "subject-list";
+        readonly Summary: "summary";
+    };
     /**
      * Required-bound Value Set for improvementNotation (MeasureReport.improvementNotation)
      */
-    static improvementNotationRequiredCoding(): MeasureImprovementNotationCodingType;
+    static get improvementNotationRequiredCodes(): {
+        readonly DecreasedScoreIndicatesImprovement: "decrease";
+        readonly IncreasedScoreIndicatesImprovement: "increase";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

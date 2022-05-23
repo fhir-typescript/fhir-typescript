@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { AdministrativeGenderCodingType } from '../fhirValueSets/AdministrativeGenderCodings.js';
 import { AdministrativeGenderCodeType } from '../fhirValueSets/AdministrativeGenderCodes.js';
-import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
 /**
  * Valid arguments for the PractitionerQualification type.
  */
@@ -34,7 +32,7 @@ export declare class PractitionerQualification extends fhir.BackboneElement {
     /**
      * An identifier that applies to this person's qualification in this role.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Coded representation of the qualification.
      */
@@ -93,7 +91,7 @@ export interface PractitionerArgs extends fhir.DomainResourceArgs {
     /**
      * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
      */
-    gender?: AdministrativeGenderCodeType | undefined;
+    gender?: fhir.FhirCode<AdministrativeGenderCodeType> | string | undefined;
     /**
      * The date of birth for the practitioner.
      */
@@ -126,7 +124,7 @@ export declare class Practitioner extends fhir.DomainResource {
     /**
      * An identifier that applies to this person in this role.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * If the practitioner is not in use by one organization, then it should mark the period on the PractitonerRole with an end date (even if they are active) as they may be active in another role.
      */
@@ -140,19 +138,19 @@ export declare class Practitioner extends fhir.DomainResource {
      * 4. Use = official
      * 5. Other order as decided by internal business rules.
      */
-    name?: fhir.HumanName[];
+    name: fhir.HumanName[];
     /**
      * Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and to help with identification.  These typically will have home numbers, or mobile numbers that are not role specific.
      */
-    telecom?: fhir.ContactPoint[];
+    telecom: fhir.ContactPoint[];
     /**
      * The PractitionerRole does not have an address value on it, as it is expected that the location property be used for this purpose (which has an address).
      */
-    address?: fhir.Address[];
+    address: fhir.Address[];
     /**
      * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
      */
-    gender?: AdministrativeGenderCodeType | undefined;
+    gender?: fhir.FhirCode<AdministrativeGenderCodeType> | undefined;
     /**
      * The date of birth for the practitioner.
      */
@@ -160,15 +158,15 @@ export declare class Practitioner extends fhir.DomainResource {
     /**
      * Image of the person.
      */
-    photo?: fhir.Attachment[];
+    photo: fhir.Attachment[];
     /**
      * The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner.  For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certian locality.
      */
-    qualification?: fhir.PractitionerQualification[];
+    qualification: fhir.PractitionerQualification[];
     /**
      * The structure aa-BB with this exact casing is one the most widely used notations for locale. However not all systems code this but instead have it as free text. Hence CodeableConcept instead of code as the data type.
      */
-    communication?: fhir.CodeableConcept[];
+    communication: fhir.CodeableConcept[];
     /**
      * Default constructor for Practitioner - initializes any required elements to null if a value is not provided.
      */
@@ -176,11 +174,79 @@ export declare class Practitioner extends fhir.DomainResource {
     /**
      * Required-bound Value Set for gender (Practitioner.gender)
      */
-    static genderRequiredCoding(): AdministrativeGenderCodingType;
+    static get genderRequiredCodes(): {
+        readonly Female: "female";
+        readonly Male: "male";
+        readonly Other: "other";
+        readonly Unknown: "unknown";
+    };
     /**
      * Preferred-bound Value Set for communication (Practitioner.communication)
      */
-    static communicationPreferredCoding(): LanguagesCodingType;
+    static get communicationPreferredCodings(): {
+        readonly Arabic: fhir.Coding;
+        readonly Bengali: fhir.Coding;
+        readonly Czech: fhir.Coding;
+        readonly Danish: fhir.Coding;
+        readonly German: fhir.Coding;
+        readonly GermanAustria: fhir.Coding;
+        readonly GermanSwitzerland: fhir.Coding;
+        readonly GermanGermany: fhir.Coding;
+        readonly Greek: fhir.Coding;
+        readonly English: fhir.Coding;
+        readonly EnglishAustralia: fhir.Coding;
+        readonly EnglishCanada: fhir.Coding;
+        readonly EnglishGreatBritain: fhir.Coding;
+        readonly EnglishIndia: fhir.Coding;
+        readonly EnglishNewZeland: fhir.Coding;
+        readonly EnglishSingapore: fhir.Coding;
+        readonly EnglishUnitedStates: fhir.Coding;
+        readonly Spanish: fhir.Coding;
+        readonly SpanishArgentina: fhir.Coding;
+        readonly SpanishSpain: fhir.Coding;
+        readonly SpanishUruguay: fhir.Coding;
+        readonly Finnish: fhir.Coding;
+        readonly French: fhir.Coding;
+        readonly FrenchBelgium: fhir.Coding;
+        readonly FrenchSwitzerland: fhir.Coding;
+        readonly FrenchFrance: fhir.Coding;
+        readonly Frysian: fhir.Coding;
+        readonly FrysianNetherlands: fhir.Coding;
+        readonly Hindi: fhir.Coding;
+        readonly Croatian: fhir.Coding;
+        readonly Italian: fhir.Coding;
+        readonly ItalianSwitzerland: fhir.Coding; /**
+         * Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and to help with identification.  These typically will have home numbers, or mobile numbers that are not role specific.
+         */
+        readonly ItalianItaly: fhir.Coding;
+        readonly Japanese: fhir.Coding;
+        readonly Korean: fhir.Coding;
+        readonly Dutch: fhir.Coding; /**
+         * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
+         */
+        readonly DutchBelgium: fhir.Coding;
+        readonly DutchNetherlands: fhir.Coding;
+        readonly Norwegian: fhir.Coding;
+        readonly NorwegianNorway: fhir.Coding;
+        readonly Punjabi: fhir.Coding;
+        readonly Polish: fhir.Coding;
+        readonly Portuguese: fhir.Coding;
+        readonly PortugueseBrazil: fhir.Coding;
+        readonly Russian: fhir.Coding;
+        readonly RussianRussia: fhir.Coding;
+        readonly Serbian: fhir.Coding;
+        readonly SerbianSerbia: fhir.Coding;
+        readonly Swedish: fhir.Coding;
+        readonly SwedishSweden: fhir.Coding;
+        readonly Telegu: fhir.Coding;
+        readonly Chinese: fhir.Coding; /**
+         * Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and to help with identification.  These typically will have home numbers, or mobile numbers that are not role specific.
+         */
+        readonly ChineseChina: fhir.Coding;
+        readonly ChineseHongKong: fhir.Coding;
+        readonly ChineseSingapore: fhir.Coding;
+        readonly ChineseTaiwan: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

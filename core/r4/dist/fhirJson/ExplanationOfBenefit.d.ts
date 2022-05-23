@@ -825,6 +825,10 @@ export interface ExplanationOfBenefitProcessNote extends fhir.BackboneElement {
      */
     type?: 'display' | 'print' | 'printoper' | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.processNote.type
+     */
+    _type?: fhir.FhirElement;
+    /**
      * The explanation or description associated with the processing.
      */
     text?: string | undefined;
@@ -944,6 +948,10 @@ export interface ExplanationOfBenefit extends fhir.DomainResource {
      */
     status: 'active' | 'cancelled' | 'draft' | 'entered-in-error' | null;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * The majority of jurisdictions use: oral, pharmacy, vision, professional and institutional, or variants on those terms, as the general styles of claims. The valueset is extensible to accommodate other jurisdictional requirements.
      */
     type: fhir.CodeableConcept | null;
@@ -955,6 +963,10 @@ export interface ExplanationOfBenefit extends fhir.DomainResource {
      * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
      */
     use: 'claim' | 'preauthorization' | 'predetermination' | null;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.use
+     */
+    _use?: fhir.FhirElement;
     /**
      * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for forecast reimbursement is sought.
      */
@@ -1031,6 +1043,10 @@ export interface ExplanationOfBenefit extends fhir.DomainResource {
      * The resource may be used to indicate that: the request has been held (queued) for processing; that it has been processed and errors found (error); that no errors were found and that some of the adjudication has been undertaken (partial) or that all of the adjudication has been undertaken (complete).
      */
     outcome: 'complete' | 'error' | 'partial' | 'queued' | null;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.outcome
+     */
+    _outcome?: fhir.FhirElement;
     /**
      * A human readable description of the status of the adjudication.
      */

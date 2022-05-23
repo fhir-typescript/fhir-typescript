@@ -100,13 +100,13 @@ export class ObservationDefinitionQuantitativeDetails extends fhir.BackboneEleme
   /**
    * Extensible-bound Value Set for customaryUnit (ObservationDefinition.quantitativeDetails.customaryUnit)
    */
-  public static customaryUnitExtensibleCoding():UcumUnitsCodingType {
+  public static get customaryUnitExtensibleCodings() {
     return UcumUnitsCodings;
   }
   /**
    * Extensible-bound Value Set for unit (ObservationDefinition.quantitativeDetails.unit)
    */
-  public static unitExtensibleCoding():UcumUnitsCodingType {
+  public static get unitExtensibleCodings() {
     return UcumUnitsCodings;
   }
   /**
@@ -128,7 +128,7 @@ export interface ObservationDefinitionQualifiedIntervalArgs extends fhir.Backbon
   /**
    * The category of interval of values for continuous or ordinal observations conforming to this ObservationDefinition.
    */
-  category?: ObservationRangeCategoryCodeType|undefined;
+  category?: fhir.FhirCode<ObservationRangeCategoryCodeType>|string|undefined;
   /**
    * The low and high values determining the interval. There may be only one of the two.
    */
@@ -144,7 +144,7 @@ export interface ObservationDefinitionQualifiedIntervalArgs extends fhir.Backbon
   /**
    * Sex of the population the range applies to.
    */
-  gender?: AdministrativeGenderCodeType|undefined;
+  gender?: fhir.FhirCode<AdministrativeGenderCodeType>|string|undefined;
   /**
    * Some analytes vary greatly over age.
    */
@@ -170,7 +170,7 @@ export class ObservationDefinitionQualifiedInterval extends fhir.BackboneElement
   /**
    * The category of interval of values for continuous or ordinal observations conforming to this ObservationDefinition.
    */
-  public category?: ObservationRangeCategoryCodeType|undefined;
+  public category?: fhir.FhirCode<ObservationRangeCategoryCodeType>|undefined;
   /**
    * The low and high values determining the interval. There may be only one of the two.
    */
@@ -182,11 +182,11 @@ export class ObservationDefinitionQualifiedInterval extends fhir.BackboneElement
   /**
    * If this element is not present then the global population is assumed.
    */
-  public appliesTo?: fhir.CodeableConcept[];
+  public appliesTo: fhir.CodeableConcept[];
   /**
    * Sex of the population the range applies to.
    */
-  public gender?: AdministrativeGenderCodeType|undefined;
+  public gender?: fhir.FhirCode<AdministrativeGenderCodeType>|undefined;
   /**
    * Some analytes vary greatly over age.
    */
@@ -204,12 +204,12 @@ export class ObservationDefinitionQualifiedInterval extends fhir.BackboneElement
    */
   constructor(source:Partial<ObservationDefinitionQualifiedIntervalArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['category']) { this.category = source.category; }
+    if (source['category']) { this.category = new fhir.FhirCode<ObservationRangeCategoryCodeType>({value: source.category}); }
     if (source['range']) { this.range = new fhir.Range(source.range); }
     if (source['context']) { this.context = new fhir.CodeableConcept(source.context); }
     if (source['appliesTo']) { this.appliesTo = source.appliesTo.map((x) => new fhir.CodeableConcept(x)); }
     else { this.appliesTo = []; }
-    if (source['gender']) { this.gender = source.gender; }
+    if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
     if (source['age']) { this.age = new fhir.Range(source.age); }
     if (source['gestationalAge']) { this.gestationalAge = new fhir.Range(source.gestationalAge); }
     if (source['condition']) { this.condition = new fhir.FhirString({value: source.condition}); }
@@ -217,29 +217,37 @@ export class ObservationDefinitionQualifiedInterval extends fhir.BackboneElement
   /**
    * Required-bound Value Set for category (ObservationDefinition.qualifiedInterval.category)
    */
-  public static categoryRequiredCoding():ObservationRangeCategoryCodingType {
-    return ObservationRangeCategoryCodings;
+  public static get categoryRequiredCodes() {
+    return ObservationRangeCategoryCodes;
   }
   /**
    * Extensible-bound Value Set for context (ObservationDefinition.qualifiedInterval.context)
    */
-  public static contextExtensibleCoding():ReferencerangeMeaningCodingType {
+  public static get contextExtensibleCodings() {
     return ReferencerangeMeaningCodings;
   }
   /**
    * Required-bound Value Set for gender (ObservationDefinition.qualifiedInterval.gender)
    */
-  public static genderRequiredCoding():AdministrativeGenderCodingType {
-    return AdministrativeGenderCodings;
+  public static get genderRequiredCodes() {
+    return AdministrativeGenderCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this['category'] && (!Object.values(ObservationRangeCategoryCodes).includes(this.category as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property category?:fhir.FhirCode<ObservationRangeCategoryCodeType> fhir: ObservationDefinition.qualifiedInterval.category:code Required binding to: ObservationRangeCategory' });
+    }
+    if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (this["range"]) { issues.push(...this.range.doModelValidation()); }
     if (this["context"]) { issues.push(...this.context.doModelValidation()); }
     if (this["appliesTo"]) { this.appliesTo.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender?:fhir.FhirCode<AdministrativeGenderCodeType> fhir: ObservationDefinition.qualifiedInterval.gender:code Required binding to: AdministrativeGender' });
+    }
+    if (this["gender"]) { issues.push(...this.gender.doModelValidation()); }
     if (this["age"]) { issues.push(...this.age.doModelValidation()); }
     if (this["gestationalAge"]) { issues.push(...this.gestationalAge.doModelValidation()); }
     if (this["condition"]) { issues.push(...this.condition.doModelValidation()); }
@@ -269,7 +277,7 @@ export interface ObservationDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * The data types allowed for the value element of the instance observations conforming to this ObservationDefinition.
    */
-  permittedDataType?: PermittedDataTypeCodeType[]|undefined;
+  permittedDataType?: fhir.FhirCode<PermittedDataTypeCodeType>[]|string[]|undefined;
   /**
    * An example of observation allowing multiple results is "bacteria identified by culture". Conversely, the measurement of a potassium level allows a single result.
    */
@@ -323,7 +331,7 @@ export class ObservationDefinition extends fhir.DomainResource {
   /**
    * This element allows various categorization schemes based on the owner’s definition of the category and effectively multiple categories can be used for one instance of ObservationDefinition. The level of granularity is defined by the category concepts in the value set.
    */
-  public category?: fhir.CodeableConcept[];
+  public category: fhir.CodeableConcept[];
   /**
    * Describes what will be observed. Sometimes this is called the observation "name".
    */
@@ -331,11 +339,11 @@ export class ObservationDefinition extends fhir.DomainResource {
   /**
    * A unique identifier assigned to this ObservationDefinition artifact.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The data types allowed for the value element of the instance observations conforming to this ObservationDefinition.
    */
-  public permittedDataType?: PermittedDataTypeCodeType[];
+  public permittedDataType: fhir.FhirCode<PermittedDataTypeCodeType>[];
   /**
    * An example of observation allowing multiple results is "bacteria identified by culture". Conversely, the measurement of a potassium level allows a single result.
    */
@@ -355,7 +363,7 @@ export class ObservationDefinition extends fhir.DomainResource {
   /**
    * Multiple  ranges of results qualified by different contexts for ordinal or continuous observations conforming to this ObservationDefinition.
    */
-  public qualifiedInterval?: fhir.ObservationDefinitionQualifiedInterval[];
+  public qualifiedInterval: fhir.ObservationDefinitionQualifiedInterval[];
   /**
    * The set of valid coded results for the observations  conforming to this ObservationDefinition.
    */
@@ -384,7 +392,7 @@ export class ObservationDefinition extends fhir.DomainResource {
     else { this.code = null; }
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['permittedDataType']) { this.permittedDataType = source.permittedDataType.map((x) => x); }
+    if (source['permittedDataType']) { this.permittedDataType = source.permittedDataType.map((x) => new fhir.FhirCode<PermittedDataTypeCodeType>({value: x})); }
     else { this.permittedDataType = []; }
     if (source['multipleResultsAllowed']) { this.multipleResultsAllowed = new fhir.FhirBoolean({value: source.multipleResultsAllowed}); }
     if (source['method']) { this.method = new fhir.CodeableConcept(source.method); }
@@ -400,8 +408,8 @@ export class ObservationDefinition extends fhir.DomainResource {
   /**
    * Required-bound Value Set for permittedDataType (ObservationDefinition.permittedDataType)
    */
-  public static permittedDataTypeRequiredCoding():PermittedDataTypeCodingType {
-    return PermittedDataTypeCodings;
+  public static get permittedDataTypeRequiredCodes() {
+    return PermittedDataTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -409,14 +417,22 @@ export class ObservationDefinition extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ObservationDefinition" fhir: ObservationDefinition.resourceType:"ObservationDefinition"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ObservationDefinition" fhir: ObservationDefinition.resourceType:"ObservationDefinition"' });
     }
     if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: ObservationDefinition.code:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: ObservationDefinition.code:CodeableConcept' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['permittedDataType']) {
+      this.permittedDataType.forEach((v) => {
+        if (!Object.values(PermittedDataTypeCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property permittedDataType?:fhir.FhirCode<PermittedDataTypeCodeType>[] fhir: ObservationDefinition.permittedDataType:code Required binding to: PermittedDataType' });
+        }
+      });
+    }
+    if (this["permittedDataType"]) { this.permittedDataType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["multipleResultsAllowed"]) { issues.push(...this.multipleResultsAllowed.doModelValidation()); }
     if (this["method"]) { issues.push(...this.method.doModelValidation()); }
     if (this["preferredReportName"]) { issues.push(...this.preferredReportName.doModelValidation()); }

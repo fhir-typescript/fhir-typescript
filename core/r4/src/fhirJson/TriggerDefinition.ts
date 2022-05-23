@@ -15,6 +15,10 @@ export interface TriggerDefinition extends fhir.FhirElement {
    */
   type: 'data-access-ended'|'data-accessed'|'data-added'|'data-changed'|'data-modified'|'data-removed'|'named-event'|'periodic'|null;
   /**
+   * Extended properties for primitive element: TriggerDefinition.type
+   */
+  _type?:fhir.FhirElement;
+  /**
    * An event name can be provided for all event types, but is required for named events. If a name is provided for a type other than named events, it is considered to be a shorthand for the semantics described by the formal description of the event.
    */
   name?: string|undefined;

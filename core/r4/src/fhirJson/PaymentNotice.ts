@@ -23,6 +23,10 @@ export interface PaymentNotice extends fhir.DomainResource {
    */
   status: 'active'|'cancelled'|'draft'|'entered-in-error'|null;
   /**
+   * Extended properties for primitive element: PaymentNotice.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Reference of resource for which payment is being made.
    */
   request?: fhir.Reference|undefined;

@@ -96,7 +96,7 @@ export interface ResearchElementDefinitionCharacteristicArgs extends fhir.Backbo
   /**
    * Indicates how elements are aggregated within the study effective period.
    */
-  studyEffectiveGroupMeasure?: GroupMeasureCodeType|undefined;
+  studyEffectiveGroupMeasure?: fhir.FhirCode<GroupMeasureCodeType>|string|undefined;
   /**
    * A narrative description of the time period the study covers.
    */
@@ -128,7 +128,7 @@ export interface ResearchElementDefinitionCharacteristicArgs extends fhir.Backbo
   /**
    * Indicates how elements are aggregated within the study effective period.
    */
-  participantEffectiveGroupMeasure?: GroupMeasureCodeType|undefined;
+  participantEffectiveGroupMeasure?: fhir.FhirCode<GroupMeasureCodeType>|string|undefined;
 }
 
 /**
@@ -150,7 +150,7 @@ export class ResearchElementDefinitionCharacteristic extends fhir.BackboneElemen
   /**
    * Use UsageContext to define the members of the population, such as Age Ranges, Genders, Settings.
    */
-  public usageContext?: fhir.UsageContext[];
+  public usageContext: fhir.UsageContext[];
   /**
    * When true, members with this characteristic are excluded from the element.
    */
@@ -178,7 +178,7 @@ export class ResearchElementDefinitionCharacteristic extends fhir.BackboneElemen
   /**
    * Indicates how elements are aggregated within the study effective period.
    */
-  public studyEffectiveGroupMeasure?: GroupMeasureCodeType|undefined;
+  public studyEffectiveGroupMeasure?: fhir.FhirCode<GroupMeasureCodeType>|undefined;
   /**
    * A narrative description of the time period the study covers.
    */
@@ -198,7 +198,7 @@ export class ResearchElementDefinitionCharacteristic extends fhir.BackboneElemen
   /**
    * Indicates how elements are aggregated within the study effective period.
    */
-  public participantEffectiveGroupMeasure?: GroupMeasureCodeType|undefined;
+  public participantEffectiveGroupMeasure?: fhir.FhirCode<GroupMeasureCodeType>|undefined;
   /**
    * Default constructor for ResearchElementDefinitionCharacteristic - initializes any required elements to null if a value is not provided.
    */
@@ -221,7 +221,7 @@ export class ResearchElementDefinitionCharacteristic extends fhir.BackboneElemen
     else if (source['studyEffectiveDuration']) { this.studyEffective = new fhir.Duration(source.studyEffectiveDuration); }
     else if (source['studyEffectiveTiming']) { this.studyEffective = new fhir.Timing(source.studyEffectiveTiming); }
     if (source['studyEffectiveTimeFromStart']) { this.studyEffectiveTimeFromStart = new fhir.Duration(source.studyEffectiveTimeFromStart); }
-    if (source['studyEffectiveGroupMeasure']) { this.studyEffectiveGroupMeasure = source.studyEffectiveGroupMeasure; }
+    if (source['studyEffectiveGroupMeasure']) { this.studyEffectiveGroupMeasure = new fhir.FhirCode<GroupMeasureCodeType>({value: source.studyEffectiveGroupMeasure}); }
     if (source['participantEffectiveDescription']) { this.participantEffectiveDescription = new fhir.FhirString({value: source.participantEffectiveDescription}); }
     if (source['participantEffective']) { this.participantEffective = source.participantEffective; }
     else if (source['participantEffectiveDateTime']) { this.participantEffective = new fhir.FhirDateTime({value: source.participantEffectiveDateTime}); }
@@ -229,25 +229,25 @@ export class ResearchElementDefinitionCharacteristic extends fhir.BackboneElemen
     else if (source['participantEffectiveDuration']) { this.participantEffective = new fhir.Duration(source.participantEffectiveDuration); }
     else if (source['participantEffectiveTiming']) { this.participantEffective = new fhir.Timing(source.participantEffectiveTiming); }
     if (source['participantEffectiveTimeFromStart']) { this.participantEffectiveTimeFromStart = new fhir.Duration(source.participantEffectiveTimeFromStart); }
-    if (source['participantEffectiveGroupMeasure']) { this.participantEffectiveGroupMeasure = source.participantEffectiveGroupMeasure; }
+    if (source['participantEffectiveGroupMeasure']) { this.participantEffectiveGroupMeasure = new fhir.FhirCode<GroupMeasureCodeType>({value: source.participantEffectiveGroupMeasure}); }
   }
   /**
    * Required-bound Value Set for unitOfMeasure (ResearchElementDefinition.characteristic.unitOfMeasure)
    */
-  public static unitOfMeasureRequiredCoding():UcumUnitsCodingType {
-    return UcumUnitsCodings;
+  public static get unitOfMeasureRequiredCodes() {
+    return UcumUnitsCodes;
   }
   /**
    * Required-bound Value Set for studyEffectiveGroupMeasure (ResearchElementDefinition.characteristic.studyEffectiveGroupMeasure)
    */
-  public static studyEffectiveGroupMeasureRequiredCoding():GroupMeasureCodingType {
-    return GroupMeasureCodings;
+  public static get studyEffectiveGroupMeasureRequiredCodes() {
+    return GroupMeasureCodes;
   }
   /**
    * Required-bound Value Set for participantEffectiveGroupMeasure (ResearchElementDefinition.characteristic.participantEffectiveGroupMeasure)
    */
-  public static participantEffectiveGroupMeasureRequiredCoding():GroupMeasureCodingType {
-    return GroupMeasureCodings;
+  public static get participantEffectiveGroupMeasureRequiredCodes() {
+    return GroupMeasureCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -255,15 +255,26 @@ export class ResearchElementDefinitionCharacteristic extends fhir.BackboneElemen
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['definition']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property definition: fhir: ResearchElementDefinition.characteristic.definition[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property definition: fhir: ResearchElementDefinition.characteristic.definition[x]:' });
     }
     if (this["usageContext"]) { this.usageContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["exclude"]) { issues.push(...this.exclude.doModelValidation()); }
+    if (this['unitOfMeasure'] && (!Object.values(UcumUnitsCodes).includes(this.unitOfMeasure as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property unitOfMeasure?:fhir.CodeableConcept fhir: ResearchElementDefinition.characteristic.unitOfMeasure:CodeableConcept Required binding to: UcumUnits' });
+    }
     if (this["unitOfMeasure"]) { issues.push(...this.unitOfMeasure.doModelValidation()); }
     if (this["studyEffectiveDescription"]) { issues.push(...this.studyEffectiveDescription.doModelValidation()); }
     if (this["studyEffectiveTimeFromStart"]) { issues.push(...this.studyEffectiveTimeFromStart.doModelValidation()); }
+    if (this['studyEffectiveGroupMeasure'] && (!Object.values(GroupMeasureCodes).includes(this.studyEffectiveGroupMeasure as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property studyEffectiveGroupMeasure?:fhir.FhirCode<GroupMeasureCodeType> fhir: ResearchElementDefinition.characteristic.studyEffectiveGroupMeasure:code Required binding to: GroupMeasure' });
+    }
+    if (this["studyEffectiveGroupMeasure"]) { issues.push(...this.studyEffectiveGroupMeasure.doModelValidation()); }
     if (this["participantEffectiveDescription"]) { issues.push(...this.participantEffectiveDescription.doModelValidation()); }
     if (this["participantEffectiveTimeFromStart"]) { issues.push(...this.participantEffectiveTimeFromStart.doModelValidation()); }
+    if (this['participantEffectiveGroupMeasure'] && (!Object.values(GroupMeasureCodes).includes(this.participantEffectiveGroupMeasure as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property participantEffectiveGroupMeasure?:fhir.FhirCode<GroupMeasureCodeType> fhir: ResearchElementDefinition.characteristic.participantEffectiveGroupMeasure:code Required binding to: GroupMeasure' });
+    }
+    if (this["participantEffectiveGroupMeasure"]) { issues.push(...this.participantEffectiveGroupMeasure.doModelValidation()); }
     return issues;
   }
 }
@@ -308,7 +319,7 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of research element definitions that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of research element definitions that are appropriate for use versus not.
    */
@@ -408,11 +419,11 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * The type of research element, a population, an exposure, or an outcome.
    */
-  type: ResearchElementTypeCodeType|null;
+  type: fhir.FhirCode<ResearchElementTypeCodeType>|string|undefined;
   /**
    * The type of the outcome (e.g. Dichotomous, Continuous, or Descriptive).
    */
-  variableType?: VariableTypeCodeType|undefined;
+  variableType?: fhir.FhirCode<VariableTypeCodeType>|string|undefined;
   /**
    * Characteristics can be defined flexibly to accommodate different use cases for membership criteria, ranging from simple codes, all the way to using an expression language to express the criteria.
    */
@@ -440,7 +451,7 @@ export class ResearchElementDefinition extends fhir.DomainResource {
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this research element definition outside of FHIR, where it is not possible to use the logical URI.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * There may be different research element definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the research element definition with the format [url]|[version].
    */
@@ -464,7 +475,7 @@ export class ResearchElementDefinition extends fhir.DomainResource {
   /**
    * Allows filtering of research element definitions that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of research element definitions that are appropriate for use versus not.
    */
@@ -488,7 +499,7 @@ export class ResearchElementDefinition extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the research element definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the research element definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the research element definition is presumed to be the predominant language in the place the research element definition was created).
    */
@@ -496,15 +507,15 @@ export class ResearchElementDefinition extends fhir.DomainResource {
   /**
    * A human-readable string to clarify or explain concepts about the resource.
    */
-  public comment?: fhir.FhirString[];
+  public comment: fhir.FhirString[];
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the research element definition to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * This element does not describe the usage of the research element definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this research element definition.
    */
@@ -532,39 +543,39 @@ export class ResearchElementDefinition extends fhir.DomainResource {
   /**
    * Descriptive topics related to the content of the ResearchElementDefinition. Topics provide a high-level categorization grouping types of ResearchElementDefinitions that can be useful for filtering and searching.
    */
-  public topic?: fhir.CodeableConcept[];
+  public topic: fhir.CodeableConcept[];
   /**
    * An individiual or organization primarily involved in the creation and maintenance of the content.
    */
-  public author?: fhir.ContactDetail[];
+  public author: fhir.ContactDetail[];
   /**
    * An individual or organization primarily responsible for internal coherence of the content.
    */
-  public editor?: fhir.ContactDetail[];
+  public editor: fhir.ContactDetail[];
   /**
    * An individual or organization primarily responsible for review of some aspect of the content.
    */
-  public reviewer?: fhir.ContactDetail[];
+  public reviewer: fhir.ContactDetail[];
   /**
    * An individual or organization responsible for officially endorsing the content for use in some setting.
    */
-  public endorser?: fhir.ContactDetail[];
+  public endorser: fhir.ContactDetail[];
   /**
    * Each related artifact is either an attachment, or a reference to another resource, but not both.
    */
-  public relatedArtifact?: fhir.RelatedArtifact[];
+  public relatedArtifact: fhir.RelatedArtifact[];
   /**
    * A reference to a Library resource containing the formal logic used by the ResearchElementDefinition.
    */
-  public library?: fhir.FhirCanonical[];
+  public library: fhir.FhirCanonical[];
   /**
    * The type of research element, a population, an exposure, or an outcome.
    */
-  public type: ResearchElementTypeCodeType|null;
+  public type: fhir.FhirCode<ResearchElementTypeCodeType>|null;
   /**
    * The type of the outcome (e.g. Dichotomous, Continuous, or Descriptive).
    */
-  public variableType?: VariableTypeCodeType|undefined;
+  public variableType?: fhir.FhirCode<VariableTypeCodeType>|undefined;
   /**
    * Characteristics can be defined flexibly to accommodate different use cases for membership criteria, ranging from simple codes, all the way to using an expression language to express the criteria.
    */
@@ -583,7 +594,7 @@ export class ResearchElementDefinition extends fhir.DomainResource {
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
     if (source['shortTitle']) { this.shortTitle = new fhir.FhirString({value: source.shortTitle}); }
     if (source['subtitle']) { this.subtitle = new fhir.FhirString({value: source.subtitle}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['subject']) { this.subject = source.subject; }
@@ -620,29 +631,29 @@ export class ResearchElementDefinition extends fhir.DomainResource {
     else { this.relatedArtifact = []; }
     if (source['library']) { this.library = source.library.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.library = []; }
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<ResearchElementTypeCodeType>({value: source.type}); }
     else { this.type = null; }
-    if (source['variableType']) { this.variableType = source.variableType; }
+    if (source['variableType']) { this.variableType = new fhir.FhirCode<VariableTypeCodeType>({value: source.variableType}); }
     if (source['characteristic']) { this.characteristic = source.characteristic.map((x) => new fhir.ResearchElementDefinitionCharacteristic(x)); }
     else { this.characteristic = []; }
   }
   /**
    * Required-bound Value Set for status (ResearchElementDefinition.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Required-bound Value Set for type (ResearchElementDefinition.type)
    */
-  public static typeRequiredCoding():ResearchElementTypeCodingType {
-    return ResearchElementTypeCodings;
+  public static get typeRequiredCodes() {
+    return ResearchElementTypeCodes;
   }
   /**
    * Required-bound Value Set for variableType (ResearchElementDefinition.variableType)
    */
-  public static variableTypeRequiredCoding():VariableTypeCodingType {
-    return VariableTypeCodings;
+  public static get variableTypeRequiredCodes() {
+    return VariableTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -650,7 +661,7 @@ export class ResearchElementDefinition extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ResearchElementDefinition" fhir: ResearchElementDefinition.resourceType:"ResearchElementDefinition"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ResearchElementDefinition" fhir: ResearchElementDefinition.resourceType:"ResearchElementDefinition"' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -660,8 +671,12 @@ export class ResearchElementDefinition extends fhir.DomainResource {
     if (this["shortTitle"]) { issues.push(...this.shortTitle.doModelValidation()); }
     if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: ResearchElementDefinition.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: ResearchElementDefinition.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: ResearchElementDefinition.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
@@ -684,14 +699,22 @@ export class ResearchElementDefinition extends fhir.DomainResource {
     if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["library"]) { this.library.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:ResearchElementTypeCodeType fhir: ResearchElementDefinition.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<ResearchElementTypeCodeType> fhir: ResearchElementDefinition.type:code' });
     }
+    if (this['type'] && (!Object.values(ResearchElementTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<ResearchElementTypeCodeType> fhir: ResearchElementDefinition.type:code Required binding to: ResearchElementType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this['variableType'] && (!Object.values(VariableTypeCodes).includes(this.variableType as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property variableType?:fhir.FhirCode<VariableTypeCodeType> fhir: ResearchElementDefinition.variableType:code Required binding to: VariableType' });
+    }
+    if (this["variableType"]) { issues.push(...this.variableType.doModelValidation()); }
     if (!this['characteristic']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property characteristic:fhir.ResearchElementDefinitionCharacteristic[] fhir: ResearchElementDefinition.characteristic:characteristic', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property characteristic:fhir.ResearchElementDefinitionCharacteristic[] fhir: ResearchElementDefinition.characteristic:characteristic' });
     } else if (!Array.isArray(this.characteristic)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property characteristic:fhir.ResearchElementDefinitionCharacteristic[] fhir: ResearchElementDefinition.characteristic:characteristic', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property characteristic:fhir.ResearchElementDefinitionCharacteristic[] fhir: ResearchElementDefinition.characteristic:characteristic' });
     } else if (this.characteristic.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property characteristic:fhir.ResearchElementDefinitionCharacteristic[] fhir: ResearchElementDefinition.characteristic:characteristic', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property characteristic:fhir.ResearchElementDefinitionCharacteristic[] fhir: ResearchElementDefinition.characteristic:characteristic' });
     }
     if (this["characteristic"]) { this.characteristic.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;

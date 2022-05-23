@@ -85,6 +85,10 @@ export interface Coverage extends fhir.DomainResource {
    */
   status: 'active'|'cancelled'|'draft'|'entered-in-error'|null;
   /**
+   * Extended properties for primitive element: Coverage.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * The type of coverage: social program, medical plan, accident coverage (workers compensation, auto), group health or payment by an individual or organization.
    */
   type?: fhir.CodeableConcept|undefined;

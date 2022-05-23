@@ -59,6 +59,10 @@ export interface TimingRepeat extends fhir.FhirElement {
    */
   durationUnit?: 'a'|'d'|'h'|'min'|'mo'|'s'|'wk'|undefined;
   /**
+   * Extended properties for primitive element: Timing.repeat.durationUnit
+   */
+  _durationUnit?:fhir.FhirElement;
+  /**
    * The number of times to repeat the action within the specified period. If frequencyMax is present, this element indicates the lower bound of the allowed range of the frequency.
    */
   frequency?: number|undefined;
@@ -95,9 +99,17 @@ export interface TimingRepeat extends fhir.FhirElement {
    */
   periodUnit?: 'a'|'d'|'h'|'min'|'mo'|'s'|'wk'|undefined;
   /**
+   * Extended properties for primitive element: Timing.repeat.periodUnit
+   */
+  _periodUnit?:fhir.FhirElement;
+  /**
    * If no days are specified, the action is assumed to happen every day as otherwise specified. The elements frequency and period cannot be used as well as dayOfWeek.
    */
   dayOfWeek?: ('fri'|'mon'|'sat'|'sun'|'thu'|'tue'|'wed')[]|undefined;
+  /**
+   * Extended properties for primitive element: Timing.repeat.dayOfWeek
+   */
+  _dayOfWeek?:(fhir.FhirElement|null)[];
   /**
    * When time of day is specified, it is inferred that the action happens every day (as filtered by dayofWeek) on the specified times. The elements when, frequency and period cannot be used as well as timeOfDay.
    */

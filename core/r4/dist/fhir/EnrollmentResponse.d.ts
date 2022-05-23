@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { FmStatusCodingType } from '../fhirValueSets/FmStatusCodings.js';
 import { FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
-import { RemittanceOutcomeCodingType } from '../fhirValueSets/RemittanceOutcomeCodings.js';
 import { RemittanceOutcomeCodeType } from '../fhirValueSets/RemittanceOutcomeCodes.js';
 /**
  * Valid arguments for the EnrollmentResponse type.
@@ -18,7 +16,7 @@ export interface EnrollmentResponseArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the response as not currently valid.
      */
-    status?: FmStatusCodeType | undefined;
+    status?: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
      * Original request resource reference.
      */
@@ -26,7 +24,7 @@ export interface EnrollmentResponseArgs extends fhir.DomainResourceArgs {
     /**
      * Processing status: error, complete.
      */
-    outcome?: RemittanceOutcomeCodeType | undefined;
+    outcome?: fhir.FhirCode<RemittanceOutcomeCodeType> | string | undefined;
     /**
      * A description of the status of the adjudication.
      */
@@ -59,11 +57,11 @@ export declare class EnrollmentResponse extends fhir.DomainResource {
     /**
      * The Response business identifier.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the response as not currently valid.
      */
-    status?: FmStatusCodeType | undefined;
+    status?: fhir.FhirCode<FmStatusCodeType> | undefined;
     /**
      * Original request resource reference.
      */
@@ -71,7 +69,7 @@ export declare class EnrollmentResponse extends fhir.DomainResource {
     /**
      * Processing status: error, complete.
      */
-    outcome?: RemittanceOutcomeCodeType | undefined;
+    outcome?: fhir.FhirCode<RemittanceOutcomeCodeType> | undefined;
     /**
      * A description of the status of the adjudication.
      */
@@ -95,11 +93,21 @@ export declare class EnrollmentResponse extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (EnrollmentResponse.status)
      */
-    static statusRequiredCoding(): FmStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Cancelled: "cancelled";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+    };
     /**
      * Required-bound Value Set for outcome (EnrollmentResponse.outcome)
      */
-    static outcomeRequiredCoding(): RemittanceOutcomeCodingType;
+    static get outcomeRequiredCodes(): {
+        readonly ProcessingComplete: "complete";
+        readonly Error: "error";
+        readonly PartialProcessing: "partial";
+        readonly Queued: "queued";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -8,9 +8,17 @@ export interface DeviceMetricCalibration extends fhir.BackboneElement {
      */
     type?: 'gain' | 'offset' | 'two-point' | 'unspecified' | undefined;
     /**
+     * Extended properties for primitive element: DeviceMetric.calibration.type
+     */
+    _type?: fhir.FhirElement;
+    /**
      * Describes the state of the calibration.
      */
     state?: 'calibrated' | 'calibration-required' | 'not-calibrated' | 'unspecified' | undefined;
+    /**
+     * Extended properties for primitive element: DeviceMetric.calibration.state
+     */
+    _state?: fhir.FhirElement;
     /**
      * Describes the time last calibration has been performed.
      */
@@ -53,13 +61,25 @@ export interface DeviceMetric extends fhir.DomainResource {
      */
     operationalStatus?: 'entered-in-error' | 'off' | 'on' | 'standby' | undefined;
     /**
+     * Extended properties for primitive element: DeviceMetric.operationalStatus
+     */
+    _operationalStatus?: fhir.FhirElement;
+    /**
      * Describes the color representation for the metric. This is often used to aid clinicians to track and identify parameter types by color. In practice, consider a Patient Monitor that has ECG/HR and Pleth for example; the parameters are displayed in different characteristic colors, such as HR-blue, BP-green, and PR and SpO2- magenta.
      */
     color?: 'black' | 'blue' | 'cyan' | 'green' | 'magenta' | 'red' | 'white' | 'yellow' | undefined;
     /**
+     * Extended properties for primitive element: DeviceMetric.color
+     */
+    _color?: fhir.FhirElement;
+    /**
      * Indicates the category of the observation generation process. A DeviceMetric can be for example a setting, measurement, or calculation.
      */
     category: 'calculation' | 'measurement' | 'setting' | 'unspecified' | null;
+    /**
+     * Extended properties for primitive element: DeviceMetric.category
+     */
+    _category?: fhir.FhirElement;
     /**
      * Describes the measurement repetition time. This is not necessarily the same as the update period. The measurement repetition time can range from milliseconds up to hours. An example for a measurement repetition time in the range of milliseconds is the sampling rate of an ECG. An example for a measurement repetition time in the range of hours is a NIBP that is triggered automatically every hour. The update period may be different than the measurement repetition time, if the device does not update the published observed value with the same frequency as it was measured.
      */

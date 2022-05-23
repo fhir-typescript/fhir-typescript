@@ -88,7 +88,7 @@ export class TestScriptOrigin extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for profile (TestScript.origin.profile)
    */
-  public static profileExtensibleCoding():TestscriptProfileOriginTypesCodingType {
+  public static get profileExtensibleCodings() {
     return TestscriptProfileOriginTypesCodings;
   }
   /**
@@ -97,11 +97,11 @@ export class TestScriptOrigin extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['index']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property index:fhir.FhirInteger fhir: TestScript.origin.index:integer', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property index:fhir.FhirInteger fhir: TestScript.origin.index:integer' });
     }
     if (this["index"]) { issues.push(...this.index.doModelValidation()); }
     if (!this['profile']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property profile:fhir.Coding fhir: TestScript.origin.profile:Coding', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property profile:fhir.Coding fhir: TestScript.origin.profile:Coding' });
     }
     if (this["profile"]) { issues.push(...this.profile.doModelValidation()); }
     return issues;
@@ -154,7 +154,7 @@ export class TestScriptDestination extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for profile (TestScript.destination.profile)
    */
-  public static profileExtensibleCoding():TestscriptProfileDestinationTypesCodingType {
+  public static get profileExtensibleCodings() {
     return TestscriptProfileDestinationTypesCodings;
   }
   /**
@@ -163,11 +163,11 @@ export class TestScriptDestination extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['index']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property index:fhir.FhirInteger fhir: TestScript.destination.index:integer', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property index:fhir.FhirInteger fhir: TestScript.destination.index:integer' });
     }
     if (this["index"]) { issues.push(...this.index.doModelValidation()); }
     if (!this['profile']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property profile:fhir.Coding fhir: TestScript.destination.profile:Coding', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property profile:fhir.Coding fhir: TestScript.destination.profile:Coding' });
     }
     if (this["profile"]) { issues.push(...this.profile.doModelValidation()); }
     return issues;
@@ -218,7 +218,7 @@ export class TestScriptMetadataLink extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property url:fhir.FhirUri fhir: TestScript.metadata.link.url:uri', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url:fhir.FhirUri fhir: TestScript.metadata.link.url:uri' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
@@ -282,7 +282,7 @@ export class TestScriptMetadataCapability extends fhir.BackboneElement {
   /**
    * Which origin server these requirements apply to.
    */
-  public origin?: fhir.FhirInteger[];
+  public origin: fhir.FhirInteger[];
   /**
    * Which server these requirements apply to.
    */
@@ -290,7 +290,7 @@ export class TestScriptMetadataCapability extends fhir.BackboneElement {
   /**
    * Links to the FHIR specification that describes this interaction and the resources involved in more detail.
    */
-  public link?: fhir.FhirUri[];
+  public link: fhir.FhirUri[];
   /**
    * The conformance statement of the server has to contain at a minimum the contents of the reference pointed to by this element.
    */
@@ -319,11 +319,11 @@ export class TestScriptMetadataCapability extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['required']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property required:fhir.FhirBoolean fhir: TestScript.metadata.capability.required:boolean', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property required:fhir.FhirBoolean fhir: TestScript.metadata.capability.required:boolean' });
     }
     if (this["required"]) { issues.push(...this.required.doModelValidation()); }
     if (!this['validated']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property validated:fhir.FhirBoolean fhir: TestScript.metadata.capability.validated:boolean', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property validated:fhir.FhirBoolean fhir: TestScript.metadata.capability.validated:boolean' });
     }
     if (this["validated"]) { issues.push(...this.validated.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
@@ -331,7 +331,7 @@ export class TestScriptMetadataCapability extends fhir.BackboneElement {
     if (this["destination"]) { issues.push(...this.destination.doModelValidation()); }
     if (this["link"]) { this.link.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['capabilities']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property capabilities:fhir.FhirCanonical fhir: TestScript.metadata.capability.capabilities:canonical', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property capabilities:fhir.FhirCanonical fhir: TestScript.metadata.capability.capabilities:canonical' });
     }
     if (this["capabilities"]) { issues.push(...this.capabilities.doModelValidation()); }
     return issues;
@@ -362,7 +362,7 @@ export class TestScriptMetadata extends fhir.BackboneElement {
   /**
    * A link to the FHIR specification that this test is covering.
    */
-  public link?: fhir.TestScriptMetadataLink[];
+  public link: fhir.TestScriptMetadataLink[];
   /**
    * When the metadata capabilities section is defined at TestScript.metadata or at TestScript.setup.metadata, and the server's conformance statement does not contain the elements defined in the minimal conformance statement, then all the tests in the TestScript are skipped.  When the metadata capabilities section is defined at TestScript.test.metadata and the server's conformance statement does not contain the elements defined in the minimal conformance statement, then only that test is skipped.  The "metadata.capabilities.required" and "metadata.capabilities.validated" elements only indicate whether the capabilities are the primary focus of the test script or not.  They do not impact the skipping logic.  Capabilities whose "metadata.capabilities.validated" flag is true are the primary focus of the test script.
    */
@@ -384,11 +384,11 @@ export class TestScriptMetadata extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["link"]) { this.link.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['capability']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property capability:fhir.TestScriptMetadataCapability[] fhir: TestScript.metadata.capability:capability', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property capability:fhir.TestScriptMetadataCapability[] fhir: TestScript.metadata.capability:capability' });
     } else if (!Array.isArray(this.capability)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property capability:fhir.TestScriptMetadataCapability[] fhir: TestScript.metadata.capability:capability', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property capability:fhir.TestScriptMetadataCapability[] fhir: TestScript.metadata.capability:capability' });
     } else if (this.capability.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property capability:fhir.TestScriptMetadataCapability[] fhir: TestScript.metadata.capability:capability', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property capability:fhir.TestScriptMetadataCapability[] fhir: TestScript.metadata.capability:capability' });
     }
     if (this["capability"]) { this.capability.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -449,11 +449,11 @@ export class TestScriptFixture extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['autocreate']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property autocreate:fhir.FhirBoolean fhir: TestScript.fixture.autocreate:boolean', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property autocreate:fhir.FhirBoolean fhir: TestScript.fixture.autocreate:boolean' });
     }
     if (this["autocreate"]) { issues.push(...this.autocreate.doModelValidation()); }
     if (!this['autodelete']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property autodelete:fhir.FhirBoolean fhir: TestScript.fixture.autodelete:boolean', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property autodelete:fhir.FhirBoolean fhir: TestScript.fixture.autodelete:boolean' });
     }
     if (this["autodelete"]) { issues.push(...this.autodelete.doModelValidation()); }
     if (this["resource"]) { issues.push(...this.resource.doModelValidation()); }
@@ -559,7 +559,7 @@ export class TestScriptVariable extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: TestScript.variable.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: TestScript.variable.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["defaultValue"]) { issues.push(...this.defaultValue.doModelValidation()); }
@@ -618,11 +618,11 @@ export class TestScriptSetupActionOperationRequestHeader extends fhir.BackboneEl
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['field']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property field:fhir.FhirString fhir: TestScript.setup.action.operation.requestHeader.field:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property field:fhir.FhirString fhir: TestScript.setup.action.operation.requestHeader.field:string' });
     }
     if (this["field"]) { issues.push(...this.field.doModelValidation()); }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value:fhir.FhirString fhir: TestScript.setup.action.operation.requestHeader.value:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value:fhir.FhirString fhir: TestScript.setup.action.operation.requestHeader.value:string' });
     }
     if (this["value"]) { issues.push(...this.value.doModelValidation()); }
     return issues;
@@ -667,7 +667,7 @@ export interface TestScriptSetupActionOperationArgs extends fhir.BackboneElement
   /**
    * The primary purpose of the explicit HTTP method is support of  HTTP POST method invocation of the FHIR search. Other uses will include support of negative testing.
    */
-  method?: HttpOperationsCodeType|undefined;
+  method?: fhir.FhirCode<HttpOperationsCodeType>|string|undefined;
   /**
    * If absent, test engine will send the message.  When present, test engine will not send the request message but will wait for the request message to be sent from this origin server.
    */
@@ -745,7 +745,7 @@ export class TestScriptSetupActionOperation extends fhir.BackboneElement {
   /**
    * The primary purpose of the explicit HTTP method is support of  HTTP POST method invocation of the FHIR search. Other uses will include support of negative testing.
    */
-  public method?: HttpOperationsCodeType|undefined;
+  public method?: fhir.FhirCode<HttpOperationsCodeType>|undefined;
   /**
    * If absent, test engine will send the message.  When present, test engine will not send the request message but will wait for the request message to be sent from this origin server.
    */
@@ -757,7 +757,7 @@ export class TestScriptSetupActionOperation extends fhir.BackboneElement {
   /**
    * This gives control to test-script writers to set headers explicitly based on test requirements.  It will allow for testing using:  - "If-Modified-Since" and "If-None-Match" headers.  See http://build.fhir.org/http.html#2.1.0.5.1 - "If-Match" header.  See http://build.fhir.org/http.html#2.1.0.11 - Conditional Create using "If-None-Exist".  See http://build.fhir.org/http.html#2.1.0.13.1 - Invalid "Content-Type" header for negative testing. - etc.
    */
-  public requestHeader?: fhir.TestScriptSetupActionOperationRequestHeader[];
+  public requestHeader: fhir.TestScriptSetupActionOperationRequestHeader[];
   /**
    * If a requestId is supplied, then the resulting request (both headers and body) is mapped to the fixture ID (which may be entirely new and previously undeclared) designated by "requestId".  If requestId is not specified, it is the test engine's responsibility to store the request and use it as the requestId in subsequent assertions when assertion path and/or headerField is specified, direction is equal to request, and the requestId in not specified.
    */
@@ -792,7 +792,7 @@ export class TestScriptSetupActionOperation extends fhir.BackboneElement {
     if (source['destination']) { this.destination = new fhir.FhirInteger({value: source.destination}); }
     if (source['encodeRequestUrl']) { this.encodeRequestUrl = new fhir.FhirBoolean({value: source.encodeRequestUrl}); }
     else { this.encodeRequestUrl = null; }
-    if (source['method']) { this.method = source.method; }
+    if (source['method']) { this.method = new fhir.FhirCode<HttpOperationsCodeType>({value: source.method}); }
     if (source['origin']) { this.origin = new fhir.FhirInteger({value: source.origin}); }
     if (source['params']) { this.params = new fhir.FhirString({value: source.params}); }
     if (source['requestHeader']) { this.requestHeader = source.requestHeader.map((x) => new fhir.TestScriptSetupActionOperationRequestHeader(x)); }
@@ -806,20 +806,20 @@ export class TestScriptSetupActionOperation extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (TestScript.setup.action.operation.type)
    */
-  public static typeExtensibleCoding():TestscriptOperationCodesCodingType {
+  public static get typeExtensibleCodings() {
     return TestscriptOperationCodesCodings;
   }
   /**
    * Required-bound Value Set for resource (TestScript.setup.action.operation.resource)
    */
-  public static resourceRequiredCoding():DefinedTypesCodingType {
-    return DefinedTypesCodings;
+  public static get resourceRequiredCodes() {
+    return DefinedTypesCodes;
   }
   /**
    * Required-bound Value Set for method (TestScript.setup.action.operation.method)
    */
-  public static methodRequiredCoding():HttpOperationsCodingType {
-    return HttpOperationsCodings;
+  public static get methodRequiredCodes() {
+    return HttpOperationsCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -827,6 +827,9 @@ export class TestScriptSetupActionOperation extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this['resource'] && (!Object.values(DefinedTypesCodes).includes(this.resource as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property resource?:fhir.FhirCode fhir: TestScript.setup.action.operation.resource:code Required binding to: DefinedTypes' });
+    }
     if (this["resource"]) { issues.push(...this.resource.doModelValidation()); }
     if (this["label"]) { issues.push(...this.label.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
@@ -834,9 +837,13 @@ export class TestScriptSetupActionOperation extends fhir.BackboneElement {
     if (this["contentType"]) { issues.push(...this.contentType.doModelValidation()); }
     if (this["destination"]) { issues.push(...this.destination.doModelValidation()); }
     if (!this['encodeRequestUrl']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property encodeRequestUrl:fhir.FhirBoolean fhir: TestScript.setup.action.operation.encodeRequestUrl:boolean', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property encodeRequestUrl:fhir.FhirBoolean fhir: TestScript.setup.action.operation.encodeRequestUrl:boolean' });
     }
     if (this["encodeRequestUrl"]) { issues.push(...this.encodeRequestUrl.doModelValidation()); }
+    if (this['method'] && (!Object.values(HttpOperationsCodes).includes(this.method as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property method?:fhir.FhirCode<HttpOperationsCodeType> fhir: TestScript.setup.action.operation.method:code Required binding to: HttpOperations' });
+    }
+    if (this["method"]) { issues.push(...this.method.doModelValidation()); }
     if (this["origin"]) { issues.push(...this.origin.doModelValidation()); }
     if (this["params"]) { issues.push(...this.params.doModelValidation()); }
     if (this["requestHeader"]) { this.requestHeader.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -863,7 +870,7 @@ export interface TestScriptSetupActionAssertArgs extends fhir.BackboneElementArg
   /**
    * If the direction is specified as "response" (the default), then the processing of this assert is against the received response message. If the direction is specified as "request", then the processing of this assert is against the sent request message.
    */
-  direction?: AssertDirectionCodesCodeType|undefined;
+  direction?: fhir.FhirCode<AssertDirectionCodesCodeType>|string|undefined;
   /**
    * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
    */
@@ -899,7 +906,7 @@ export interface TestScriptSetupActionAssertArgs extends fhir.BackboneElementArg
   /**
    * Operators are useful especially for negative testing.  If operator is not specified, then the "equals" operator is assumed; e.g. ```&lt;code&gt;   &lt;assert&gt;  &lt;operator value="in" /&gt;  &lt;responseCode value="200,201,204" /&gt;    &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="notEquals" /&gt;  &lt;response value="okay"/&gt;   &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="greaterThan" /&gt;    &lt;responseHeader&gt;     &lt;field value="Content-Length" /&gt;     &lt;value value="0" /&gt;    &lt;/responseHeader/&gt;   &lt;/assert&gt; &lt;/code&gt; ```.
    */
-  operator?: AssertOperatorCodesCodeType|undefined;
+  operator?: fhir.FhirCode<AssertOperatorCodesCodeType>|string|undefined;
   /**
    * If both "path" and a "fixtureId" are specified, then the path will be evaluated against the request or response body mapped to the fixtureId.  If "path" is specified and a "fixtureId" is not, then the path will be evaluated against the response body of the last operation.  Test engines are to store the request and response body and headers of the last operation at all times for subsequent assertions.
    */
@@ -907,7 +914,7 @@ export interface TestScriptSetupActionAssertArgs extends fhir.BackboneElementArg
   /**
    * If "requestMethod" is specified then it will be used in place of "value". The "requestMethod" will evaluate against the last operation's request HTTP operation.
    */
-  requestMethod?: HttpOperationsCodeType|undefined;
+  requestMethod?: fhir.FhirCode<HttpOperationsCodeType>|string|undefined;
   /**
    * If "requestURL" is specified then it will be used in place of "value". The "requestURL" will evaluate against the last operation's full request URL path string.
    */
@@ -919,7 +926,7 @@ export interface TestScriptSetupActionAssertArgs extends fhir.BackboneElementArg
   /**
    * This is a shorter way of achieving similar verifications via "assert.responseCode".  If you need more control, then use "assert.responseCode"  e.g. &lt;assert&gt;  &lt;contentType value="json" /&gt;  &lt;response value="okay"/&gt; &lt;/assert&gt;.
    */
-  response?: AssertResponseCodeTypesCodeType|undefined;
+  response?: fhir.FhirCode<AssertResponseCodeTypesCodeType>|string|undefined;
   /**
    * To be used with "operator" attribute value. Asserts that the response code equals this value if "operator" is not specified.   If the operator is "in" or "notIn" then the responseCode would be a comma-separated list of values e.g. "200,201". Otherwise, it's expected to be a numeric value.   If "fixture" is not specified, then the "responseBodyId" value of the last operation is assumed.
    */
@@ -961,7 +968,7 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
   /**
    * If the direction is specified as "response" (the default), then the processing of this assert is against the received response message. If the direction is specified as "request", then the processing of this assert is against the sent request message.
    */
-  public direction?: AssertDirectionCodesCodeType|undefined;
+  public direction?: fhir.FhirCode<AssertDirectionCodesCodeType>|undefined;
   /**
    * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
    */
@@ -997,7 +1004,7 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
   /**
    * Operators are useful especially for negative testing.  If operator is not specified, then the "equals" operator is assumed; e.g. ```&lt;code&gt;   &lt;assert&gt;  &lt;operator value="in" /&gt;  &lt;responseCode value="200,201,204" /&gt;    &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="notEquals" /&gt;  &lt;response value="okay"/&gt;   &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="greaterThan" /&gt;    &lt;responseHeader&gt;     &lt;field value="Content-Length" /&gt;     &lt;value value="0" /&gt;    &lt;/responseHeader/&gt;   &lt;/assert&gt; &lt;/code&gt; ```.
    */
-  public operator?: AssertOperatorCodesCodeType|undefined;
+  public operator?: fhir.FhirCode<AssertOperatorCodesCodeType>|undefined;
   /**
    * If both "path" and a "fixtureId" are specified, then the path will be evaluated against the request or response body mapped to the fixtureId.  If "path" is specified and a "fixtureId" is not, then the path will be evaluated against the response body of the last operation.  Test engines are to store the request and response body and headers of the last operation at all times for subsequent assertions.
    */
@@ -1005,7 +1012,7 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
   /**
    * If "requestMethod" is specified then it will be used in place of "value". The "requestMethod" will evaluate against the last operation's request HTTP operation.
    */
-  public requestMethod?: HttpOperationsCodeType|undefined;
+  public requestMethod?: fhir.FhirCode<HttpOperationsCodeType>|undefined;
   /**
    * If "requestURL" is specified then it will be used in place of "value". The "requestURL" will evaluate against the last operation's full request URL path string.
    */
@@ -1017,7 +1024,7 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
   /**
    * This is a shorter way of achieving similar verifications via "assert.responseCode".  If you need more control, then use "assert.responseCode"  e.g. &lt;assert&gt;  &lt;contentType value="json" /&gt;  &lt;response value="okay"/&gt; &lt;/assert&gt;.
    */
-  public response?: AssertResponseCodeTypesCodeType|undefined;
+  public response?: fhir.FhirCode<AssertResponseCodeTypesCodeType>|undefined;
   /**
    * To be used with "operator" attribute value. Asserts that the response code equals this value if "operator" is not specified.   If the operator is "in" or "notIn" then the responseCode would be a comma-separated list of values e.g. "200,201". Otherwise, it's expected to be a numeric value.   If "fixture" is not specified, then the "responseBodyId" value of the last operation is assumed.
    */
@@ -1045,7 +1052,7 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
     super(source, options);
     if (source['label']) { this.label = new fhir.FhirString({value: source.label}); }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
-    if (source['direction']) { this.direction = source.direction; }
+    if (source['direction']) { this.direction = new fhir.FhirCode<AssertDirectionCodesCodeType>({value: source.direction}); }
     if (source['compareToSourceId']) { this.compareToSourceId = new fhir.FhirString({value: source.compareToSourceId}); }
     if (source['compareToSourceExpression']) { this.compareToSourceExpression = new fhir.FhirString({value: source.compareToSourceExpression}); }
     if (source['compareToSourcePath']) { this.compareToSourcePath = new fhir.FhirString({value: source.compareToSourcePath}); }
@@ -1054,12 +1061,12 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
     if (source['headerField']) { this.headerField = new fhir.FhirString({value: source.headerField}); }
     if (source['minimumId']) { this.minimumId = new fhir.FhirString({value: source.minimumId}); }
     if (source['navigationLinks']) { this.navigationLinks = new fhir.FhirBoolean({value: source.navigationLinks}); }
-    if (source['operator']) { this.operator = source.operator; }
+    if (source['operator']) { this.operator = new fhir.FhirCode<AssertOperatorCodesCodeType>({value: source.operator}); }
     if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
-    if (source['requestMethod']) { this.requestMethod = source.requestMethod; }
+    if (source['requestMethod']) { this.requestMethod = new fhir.FhirCode<HttpOperationsCodeType>({value: source.requestMethod}); }
     if (source['requestURL']) { this.requestURL = new fhir.FhirString({value: source.requestURL}); }
     if (source['resource']) { this.resource = new fhir.FhirCode({value: source.resource}); }
-    if (source['response']) { this.response = source.response; }
+    if (source['response']) { this.response = new fhir.FhirCode<AssertResponseCodeTypesCodeType>({value: source.response}); }
     if (source['responseCode']) { this.responseCode = new fhir.FhirString({value: source.responseCode}); }
     if (source['sourceId']) { this.sourceId = new fhir.FhirId({value: source.sourceId}); }
     if (source['validateProfileId']) { this.validateProfileId = new fhir.FhirId({value: source.validateProfileId}); }
@@ -1070,32 +1077,32 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for direction (TestScript.setup.action.assert.direction)
    */
-  public static directionRequiredCoding():AssertDirectionCodesCodingType {
-    return AssertDirectionCodesCodings;
+  public static get directionRequiredCodes() {
+    return AssertDirectionCodesCodes;
   }
   /**
    * Required-bound Value Set for operator (TestScript.setup.action.assert.operator)
    */
-  public static operatorRequiredCoding():AssertOperatorCodesCodingType {
-    return AssertOperatorCodesCodings;
+  public static get operatorRequiredCodes() {
+    return AssertOperatorCodesCodes;
   }
   /**
    * Required-bound Value Set for requestMethod (TestScript.setup.action.assert.requestMethod)
    */
-  public static requestMethodRequiredCoding():HttpOperationsCodingType {
-    return HttpOperationsCodings;
+  public static get requestMethodRequiredCodes() {
+    return HttpOperationsCodes;
   }
   /**
    * Required-bound Value Set for resource (TestScript.setup.action.assert.resource)
    */
-  public static resourceRequiredCoding():DefinedTypesCodingType {
-    return DefinedTypesCodings;
+  public static get resourceRequiredCodes() {
+    return DefinedTypesCodes;
   }
   /**
    * Required-bound Value Set for response (TestScript.setup.action.assert.response)
    */
-  public static responseRequiredCoding():AssertResponseCodeTypesCodingType {
-    return AssertResponseCodeTypesCodings;
+  public static get responseRequiredCodes() {
+    return AssertResponseCodeTypesCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -1104,6 +1111,10 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["label"]) { issues.push(...this.label.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this['direction'] && (!Object.values(AssertDirectionCodesCodes).includes(this.direction as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property direction?:fhir.FhirCode<AssertDirectionCodesCodeType> fhir: TestScript.setup.action.assert.direction:code Required binding to: AssertDirectionCodes' });
+    }
+    if (this["direction"]) { issues.push(...this.direction.doModelValidation()); }
     if (this["compareToSourceId"]) { issues.push(...this.compareToSourceId.doModelValidation()); }
     if (this["compareToSourceExpression"]) { issues.push(...this.compareToSourceExpression.doModelValidation()); }
     if (this["compareToSourcePath"]) { issues.push(...this.compareToSourcePath.doModelValidation()); }
@@ -1112,15 +1123,30 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
     if (this["headerField"]) { issues.push(...this.headerField.doModelValidation()); }
     if (this["minimumId"]) { issues.push(...this.minimumId.doModelValidation()); }
     if (this["navigationLinks"]) { issues.push(...this.navigationLinks.doModelValidation()); }
+    if (this['operator'] && (!Object.values(AssertOperatorCodesCodes).includes(this.operator as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property operator?:fhir.FhirCode<AssertOperatorCodesCodeType> fhir: TestScript.setup.action.assert.operator:code Required binding to: AssertOperatorCodes' });
+    }
+    if (this["operator"]) { issues.push(...this.operator.doModelValidation()); }
     if (this["path"]) { issues.push(...this.path.doModelValidation()); }
+    if (this['requestMethod'] && (!Object.values(HttpOperationsCodes).includes(this.requestMethod as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property requestMethod?:fhir.FhirCode<HttpOperationsCodeType> fhir: TestScript.setup.action.assert.requestMethod:code Required binding to: HttpOperations' });
+    }
+    if (this["requestMethod"]) { issues.push(...this.requestMethod.doModelValidation()); }
     if (this["requestURL"]) { issues.push(...this.requestURL.doModelValidation()); }
+    if (this['resource'] && (!Object.values(DefinedTypesCodes).includes(this.resource as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property resource?:fhir.FhirCode fhir: TestScript.setup.action.assert.resource:code Required binding to: DefinedTypes' });
+    }
     if (this["resource"]) { issues.push(...this.resource.doModelValidation()); }
+    if (this['response'] && (!Object.values(AssertResponseCodeTypesCodes).includes(this.response as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property response?:fhir.FhirCode<AssertResponseCodeTypesCodeType> fhir: TestScript.setup.action.assert.response:code Required binding to: AssertResponseCodeTypes' });
+    }
+    if (this["response"]) { issues.push(...this.response.doModelValidation()); }
     if (this["responseCode"]) { issues.push(...this.responseCode.doModelValidation()); }
     if (this["sourceId"]) { issues.push(...this.sourceId.doModelValidation()); }
     if (this["validateProfileId"]) { issues.push(...this.validateProfileId.doModelValidation()); }
     if (this["value"]) { issues.push(...this.value.doModelValidation()); }
     if (!this['warningOnly']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property warningOnly:fhir.FhirBoolean fhir: TestScript.setup.action.assert.warningOnly:boolean', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property warningOnly:fhir.FhirBoolean fhir: TestScript.setup.action.assert.warningOnly:boolean' });
     }
     if (this["warningOnly"]) { issues.push(...this.warningOnly.doModelValidation()); }
     return issues;
@@ -1210,11 +1236,11 @@ export class TestScriptSetup extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['action']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property action:fhir.TestScriptSetupAction[] fhir: TestScript.setup.action:action', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action:fhir.TestScriptSetupAction[] fhir: TestScript.setup.action:action' });
     } else if (!Array.isArray(this.action)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property action:fhir.TestScriptSetupAction[] fhir: TestScript.setup.action:action', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property action:fhir.TestScriptSetupAction[] fhir: TestScript.setup.action:action' });
     } else if (this.action.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property action:fhir.TestScriptSetupAction[] fhir: TestScript.setup.action:action', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action:fhir.TestScriptSetupAction[] fhir: TestScript.setup.action:action' });
     }
     if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -1324,11 +1350,11 @@ export class TestScriptTest extends fhir.BackboneElement {
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (!this['action']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property action:fhir.TestScriptTestAction[] fhir: TestScript.test.action:action', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action:fhir.TestScriptTestAction[] fhir: TestScript.test.action:action' });
     } else if (!Array.isArray(this.action)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property action:fhir.TestScriptTestAction[] fhir: TestScript.test.action:action', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property action:fhir.TestScriptTestAction[] fhir: TestScript.test.action:action' });
     } else if (this.action.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property action:fhir.TestScriptTestAction[] fhir: TestScript.test.action:action', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action:fhir.TestScriptTestAction[] fhir: TestScript.test.action:action' });
     }
     if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -1370,7 +1396,7 @@ export class TestScriptTeardownAction extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['operation']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property operation:fhir.TestScriptSetupActionOperation fhir: TestScript.teardown.action.operation:TestScript.setup.action.operation', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property operation:fhir.TestScriptSetupActionOperation fhir: TestScript.teardown.action.operation:TestScript.setup.action.operation' });
     }
     if (this["operation"]) { issues.push(...this.operation.doModelValidation()); }
     return issues;
@@ -1412,11 +1438,11 @@ export class TestScriptTeardown extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['action']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property action:fhir.TestScriptTeardownAction[] fhir: TestScript.teardown.action:action', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action:fhir.TestScriptTeardownAction[] fhir: TestScript.teardown.action:action' });
     } else if (!Array.isArray(this.action)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property action:fhir.TestScriptTeardownAction[] fhir: TestScript.teardown.action:action', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property action:fhir.TestScriptTeardownAction[] fhir: TestScript.teardown.action:action' });
     } else if (this.action.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property action:fhir.TestScriptTeardownAction[] fhir: TestScript.teardown.action:action', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action:fhir.TestScriptTeardownAction[] fhir: TestScript.teardown.action:action' });
     }
     if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -1455,7 +1481,7 @@ export interface TestScriptArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of test scripts that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of test scripts that are appropriate for use versus not.
    */
@@ -1567,7 +1593,7 @@ export class TestScript extends fhir.DomainResource {
   /**
    * Allows filtering of test scripts that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of test scripts that are appropriate for use versus not.
    */
@@ -1583,7 +1609,7 @@ export class TestScript extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the test script was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the test script as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the test script is presumed to be the predominant language in the place the test script was created).
    */
@@ -1591,11 +1617,11 @@ export class TestScript extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the test script to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * This element does not describe the usage of the test script. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this test script.
    */
@@ -1607,11 +1633,11 @@ export class TestScript extends fhir.DomainResource {
   /**
    * The purpose of this element is to define the profile of an origin element used elsewhere in the script.  Test engines could then use the origin-profile mapping to offer a filtered list of test systems that can serve as the sender for the interaction.
    */
-  public origin?: fhir.TestScriptOrigin[];
+  public origin: fhir.TestScriptOrigin[];
   /**
    * The purpose of this element is to define the profile of a destination element used elsewhere in the script.  Test engines could then use the destination-profile mapping to offer a filtered list of test systems that can serve as the receiver for the interaction.
    */
-  public destination?: fhir.TestScriptDestination[];
+  public destination: fhir.TestScriptDestination[];
   /**
    * The required capability must exist and are assumed to function correctly on the FHIR server being tested.
    */
@@ -1619,15 +1645,15 @@ export class TestScript extends fhir.DomainResource {
   /**
    * Fixture in the test script - by reference (uri). All fixtures are required for the test script to execute.
    */
-  public fixture?: fhir.TestScriptFixture[];
+  public fixture: fhir.TestScriptFixture[];
   /**
    * See http://build.fhir.org/resourcelist.html for complete list of resource types.
    */
-  public profile?: fhir.Reference[];
+  public profile: fhir.Reference[];
   /**
    * Variables would be set based either on XPath/JSONPath expressions against fixtures (static and response), or headerField evaluations against response headers. If variable evaluates to nodelist or anything other than a primitive value, then test engine would report an error.  Variables would be used to perform clean replacements in "operation.params", "operation.requestHeader.value", and "operation.url" element values during operation calls and in "assert.value" during assertion evaluations. This limits the places that test engines would need to look for placeholders "${}".  Variables are scoped to the whole script. They are NOT evaluated at declaration. They are evaluated by test engine when used for substitutions in "operation.params", "operation.requestHeader.value", and "operation.url" element values during operation calls and in "assert.value" during assertion evaluations.  See example testscript-search.xml.
    */
-  public variable?: fhir.TestScriptVariable[];
+  public variable: fhir.TestScriptVariable[];
   /**
    * A series of required setup operations before tests are executed.
    */
@@ -1635,7 +1661,7 @@ export class TestScript extends fhir.DomainResource {
   /**
    * A test in this script.
    */
-  public test?: fhir.TestScriptTest[];
+  public test: fhir.TestScriptTest[];
   /**
    * A series of operations required to clean up after all the tests are executed (successfully or otherwise).
    */
@@ -1653,7 +1679,7 @@ export class TestScript extends fhir.DomainResource {
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
@@ -1686,8 +1712,8 @@ export class TestScript extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (TestScript.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -1695,22 +1721,26 @@ export class TestScript extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"TestScript" fhir: TestScript.resourceType:"TestScript"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"TestScript" fhir: TestScript.resourceType:"TestScript"' });
     }
     if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property url:fhir.FhirUri fhir: TestScript.url:uri', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url:fhir.FhirUri fhir: TestScript.url:uri' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (this["version"]) { issues.push(...this.version.doModelValidation()); }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: TestScript.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: TestScript.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: TestScript.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: TestScript.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: TestScript.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }

@@ -206,7 +206,7 @@ export class SpecimenProcessing extends fhir.BackboneElement {
   /**
    * Material used in the processing step.
    */
-  public additive?: fhir.Reference[];
+  public additive: fhir.Reference[];
   /**
    * A record of the time or period when the specimen processing occurred.  For example the time of sample fixation or the period of time the sample was in formalin.
    */
@@ -288,7 +288,7 @@ export class SpecimenContainer extends fhir.BackboneElement {
   /**
    * Id for container. There may be multiple; a manufacturer's bar code, lab assigned identifier, etc. The container ID may differ from the specimen id in some circumstances.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Textual description of the container.
    */
@@ -360,7 +360,7 @@ export interface SpecimenArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status?: SpecimenStatusCodeType|undefined;
+  status?: fhir.FhirCode<SpecimenStatusCodeType>|string|undefined;
   /**
    * The type can change the way that a specimen is handled and drives what kind of analyses can properly be performed on the specimen. It is frequently used in diagnostic work flow decision making systems.
    */
@@ -418,7 +418,7 @@ export class Specimen extends fhir.DomainResource {
   /**
    * Id for specimen.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.
    */
@@ -426,7 +426,7 @@ export class Specimen extends fhir.DomainResource {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status?: SpecimenStatusCodeType|undefined;
+  public status?: fhir.FhirCode<SpecimenStatusCodeType>|undefined;
   /**
    * The type can change the way that a specimen is handled and drives what kind of analyses can properly be performed on the specimen. It is frequently used in diagnostic work flow decision making systems.
    */
@@ -442,11 +442,11 @@ export class Specimen extends fhir.DomainResource {
   /**
    * The parent specimen could be the source from which the current specimen is derived by some processing step (e.g. an aliquot or isolate or extracted nucleic acids from clinical samples) or one of many specimens that were combined to create a pooled sample.
    */
-  public parent?: fhir.Reference[];
+  public parent: fhir.Reference[];
   /**
    * The request may be explicit or implied such with a ServiceRequest that requires a blood draw.
    */
-  public request?: fhir.Reference[];
+  public request: fhir.Reference[];
   /**
    * Details concerning the specimen collection.
    */
@@ -454,19 +454,19 @@ export class Specimen extends fhir.DomainResource {
   /**
    * Details concerning processing and processing steps for the specimen.
    */
-  public processing?: fhir.SpecimenProcessing[];
+  public processing: fhir.SpecimenProcessing[];
   /**
    * The container holding the specimen.  The recursive nature of containers; i.e. blood in tube in tray in rack is not addressed here.
    */
-  public container?: fhir.SpecimenContainer[];
+  public container: fhir.SpecimenContainer[];
   /**
    * Specimen condition is an observation made about the specimen.  It's a point-in-time assessment.  It can be used to assess its quality or appropriateness for a specific test.
    */
-  public condition?: fhir.CodeableConcept[];
+  public condition: fhir.CodeableConcept[];
   /**
    * To communicate any details or issues about the specimen or during the specimen collection. (for example: broken vial, sent with patient, frozen).
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Default constructor for Specimen - initializes any required elements to null if a value is not provided.
    */
@@ -476,7 +476,7 @@ export class Specimen extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['accessionIdentifier']) { this.accessionIdentifier = new fhir.Identifier(source.accessionIdentifier); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<SpecimenStatusCodeType>({value: source.status}); }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     if (source['receivedTime']) { this.receivedTime = new fhir.FhirDateTime({value: source.receivedTime}); }
@@ -497,13 +497,13 @@ export class Specimen extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Specimen.status)
    */
-  public static statusRequiredCoding():SpecimenStatusCodingType {
-    return SpecimenStatusCodings;
+  public static get statusRequiredCodes() {
+    return SpecimenStatusCodes;
   }
   /**
    * Extensible-bound Value Set for condition (Specimen.condition)
    */
-  public static conditionExtensibleCoding():V20493CodingType {
+  public static get conditionExtensibleCodings() {
     return V20493Codings;
   }
   /**
@@ -512,10 +512,14 @@ export class Specimen extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Specimen" fhir: Specimen.resourceType:"Specimen"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Specimen" fhir: Specimen.resourceType:"Specimen"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["accessionIdentifier"]) { issues.push(...this.accessionIdentifier.doModelValidation()); }
+    if (this['status'] && (!Object.values(SpecimenStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<SpecimenStatusCodeType> fhir: Specimen.status:code Required binding to: SpecimenStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["receivedTime"]) { issues.push(...this.receivedTime.doModelValidation()); }

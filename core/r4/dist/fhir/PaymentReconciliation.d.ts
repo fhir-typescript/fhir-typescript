@@ -1,9 +1,6 @@
 import * as fhir from '../fhir.js';
-import { NoteTypeCodingType } from '../fhirValueSets/NoteTypeCodings.js';
 import { NoteTypeCodeType } from '../fhirValueSets/NoteTypeCodes.js';
-import { FmStatusCodingType } from '../fhirValueSets/FmStatusCodings.js';
 import { FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
-import { RemittanceOutcomeCodingType } from '../fhirValueSets/RemittanceOutcomeCodings.js';
 import { RemittanceOutcomeCodeType } from '../fhirValueSets/RemittanceOutcomeCodes.js';
 /**
  * Valid arguments for the PaymentReconciliationDetail type.
@@ -114,7 +111,7 @@ export interface PaymentReconciliationProcessNoteArgs extends fhir.BackboneEleme
     /**
      * The business purpose of the note text.
      */
-    type?: NoteTypeCodeType | undefined;
+    type?: fhir.FhirCode<NoteTypeCodeType> | string | undefined;
     /**
      * The explanation or description associated with the processing.
      */
@@ -131,7 +128,7 @@ export declare class PaymentReconciliationProcessNote extends fhir.BackboneEleme
     /**
      * The business purpose of the note text.
      */
-    type?: NoteTypeCodeType | undefined;
+    type?: fhir.FhirCode<NoteTypeCodeType> | undefined;
     /**
      * The explanation or description associated with the processing.
      */
@@ -143,7 +140,11 @@ export declare class PaymentReconciliationProcessNote extends fhir.BackboneEleme
     /**
      * Required-bound Value Set for type (PaymentReconciliation.processNote.type)
      */
-    static typeRequiredCoding(): NoteTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Display: "display";
+        readonly PrintForm: "print";
+        readonly PrintOperator: "printoper";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -164,7 +165,7 @@ export interface PaymentReconciliationArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: FmStatusCodeType | null;
+    status: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
      * The period of time for which payments have been gathered into this bulk payment for settlement.
      */
@@ -188,7 +189,7 @@ export interface PaymentReconciliationArgs extends fhir.DomainResourceArgs {
     /**
      * The resource may be used to indicate that: the request has been held (queued) for processing; that it has been processed and errors found (error); that no errors were found and that some of the adjudication has been undertaken (partial) or that all of the adjudication has been undertaken (complete).
      */
-    outcome?: RemittanceOutcomeCodeType | undefined;
+    outcome?: fhir.FhirCode<RemittanceOutcomeCodeType> | string | undefined;
     /**
      * A human readable description of the status of the request for the reconciliation.
      */
@@ -233,11 +234,11 @@ export declare class PaymentReconciliation extends fhir.DomainResource {
     /**
      * A unique identifier assigned to this payment reconciliation.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: FmStatusCodeType | null;
+    status: fhir.FhirCode<FmStatusCodeType> | null;
     /**
      * The period of time for which payments have been gathered into this bulk payment for settlement.
      */
@@ -261,7 +262,7 @@ export declare class PaymentReconciliation extends fhir.DomainResource {
     /**
      * The resource may be used to indicate that: the request has been held (queued) for processing; that it has been processed and errors found (error); that no errors were found and that some of the adjudication has been undertaken (partial) or that all of the adjudication has been undertaken (complete).
      */
-    outcome?: RemittanceOutcomeCodeType | undefined;
+    outcome?: fhir.FhirCode<RemittanceOutcomeCodeType> | undefined;
     /**
      * A human readable description of the status of the request for the reconciliation.
      */
@@ -281,7 +282,7 @@ export declare class PaymentReconciliation extends fhir.DomainResource {
     /**
      * Distribution of the payment amount for a previously acknowledged payable.
      */
-    detail?: fhir.PaymentReconciliationDetail[];
+    detail: fhir.PaymentReconciliationDetail[];
     /**
      * May be needed to identify specific jurisdictional forms.
      */
@@ -289,7 +290,7 @@ export declare class PaymentReconciliation extends fhir.DomainResource {
     /**
      * A note that describes or explains the processing in a human readable form.
      */
-    processNote?: fhir.PaymentReconciliationProcessNote[];
+    processNote: fhir.PaymentReconciliationProcessNote[];
     /**
      * Default constructor for PaymentReconciliation - initializes any required elements to null if a value is not provided.
      */
@@ -297,11 +298,21 @@ export declare class PaymentReconciliation extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (PaymentReconciliation.status)
      */
-    static statusRequiredCoding(): FmStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Cancelled: "cancelled";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+    };
     /**
      * Required-bound Value Set for outcome (PaymentReconciliation.outcome)
      */
-    static outcomeRequiredCoding(): RemittanceOutcomeCodingType;
+    static get outcomeRequiredCodes(): {
+        readonly ProcessingComplete: "complete";
+        readonly Error: "error";
+        readonly PartialProcessing: "partial";
+        readonly Queued: "queued";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

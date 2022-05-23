@@ -30,7 +30,7 @@ export class CodeableConcept extends fhir.FhirElement {
   /**
    * Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.
    */
-  public coding?: fhir.Coding[];
+  public coding: fhir.Coding[];
   /**
    * Very often the text is the same as a displayName of one of the codings.
    */

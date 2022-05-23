@@ -168,6 +168,10 @@ export interface QuestionnaireResponse extends fhir.DomainResource {
    */
   status: 'amended'|'completed'|'entered-in-error'|'in-progress'|'stopped'|null;
   /**
+   * Extended properties for primitive element: QuestionnaireResponse.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * If the Questionnaire declared a subjectType, the resource pointed to by this element must be an instance of one of the listed types.
    */
   subject?: fhir.Reference|undefined;

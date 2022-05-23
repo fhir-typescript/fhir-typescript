@@ -50,7 +50,7 @@ export class MedicinalProductPackagedBatchIdentifier extends fhir.BackboneElemen
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['outerPackaging']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property outerPackaging:fhir.Identifier fhir: MedicinalProductPackaged.batchIdentifier.outerPackaging:Identifier', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property outerPackaging:fhir.Identifier fhir: MedicinalProductPackaged.batchIdentifier.outerPackaging:Identifier' });
     }
     if (this["outerPackaging"]) { issues.push(...this.outerPackaging.doModelValidation()); }
     if (this["immediatePackaging"]) { issues.push(...this.immediatePackaging.doModelValidation()); }
@@ -122,7 +122,7 @@ export class MedicinalProductPackagedPackageItem extends fhir.BackboneElement {
   /**
    * Including possibly Data Carrier Identifier.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The physical type of the container of the medicine.
    */
@@ -134,23 +134,23 @@ export class MedicinalProductPackagedPackageItem extends fhir.BackboneElement {
   /**
    * Material type of the package item.
    */
-  public material?: fhir.CodeableConcept[];
+  public material: fhir.CodeableConcept[];
   /**
    * A possible alternate material for the packaging.
    */
-  public alternateMaterial?: fhir.CodeableConcept[];
+  public alternateMaterial: fhir.CodeableConcept[];
   /**
    * A device accompanying a medicinal product.
    */
-  public device?: fhir.Reference[];
+  public device: fhir.Reference[];
   /**
    * The manufactured item as contained in the packaged medicinal product.
    */
-  public manufacturedItem?: fhir.Reference[];
+  public manufacturedItem: fhir.Reference[];
   /**
    * Allows containers within containers.
    */
-  public packageItem?: fhir.MedicinalProductPackagedPackageItem[];
+  public packageItem: fhir.MedicinalProductPackagedPackageItem[];
   /**
    * Dimensions, color etc.
    */
@@ -158,15 +158,15 @@ export class MedicinalProductPackagedPackageItem extends fhir.BackboneElement {
   /**
    * Other codeable characteristics.
    */
-  public otherCharacteristics?: fhir.CodeableConcept[];
+  public otherCharacteristics: fhir.CodeableConcept[];
   /**
    * Shelf Life and storage information.
    */
-  public shelfLifeStorage?: fhir.ProductShelfLife[];
+  public shelfLifeStorage: fhir.ProductShelfLife[];
   /**
    * Manufacturer of this Package Item.
    */
-  public manufacturer?: fhir.Reference[];
+  public manufacturer: fhir.Reference[];
   /**
    * Default constructor for MedicinalProductPackagedPackageItem - initializes any required elements to null if a value is not provided.
    */
@@ -203,11 +203,11 @@ export class MedicinalProductPackagedPackageItem extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: MedicinalProductPackaged.packageItem.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: MedicinalProductPackaged.packageItem.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['quantity']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property quantity:fhir.Quantity fhir: MedicinalProductPackaged.packageItem.quantity:Quantity', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property quantity:fhir.Quantity fhir: MedicinalProductPackaged.packageItem.quantity:Quantity' });
     }
     if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
     if (this["material"]) { this.material.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -283,11 +283,11 @@ export class MedicinalProductPackaged extends fhir.DomainResource {
   /**
    * Unique identifier.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The product with this is a pack for.
    */
-  public subject?: fhir.Reference[];
+  public subject: fhir.Reference[];
   /**
    * Textual description.
    */
@@ -299,7 +299,7 @@ export class MedicinalProductPackaged extends fhir.DomainResource {
   /**
    * Marketing information.
    */
-  public marketingStatus?: fhir.MarketingStatus[];
+  public marketingStatus: fhir.MarketingStatus[];
   /**
    * Manufacturer of this Package Item.
    */
@@ -307,11 +307,11 @@ export class MedicinalProductPackaged extends fhir.DomainResource {
   /**
    * Manufacturer of this Package Item.
    */
-  public manufacturer?: fhir.Reference[];
+  public manufacturer: fhir.Reference[];
   /**
    * Batch numbering.
    */
-  public batchIdentifier?: fhir.MedicinalProductPackagedBatchIdentifier[];
+  public batchIdentifier: fhir.MedicinalProductPackagedBatchIdentifier[];
   /**
    * A packaging item, as a contained for medicine, possibly with other packaging items within.
    */
@@ -344,7 +344,7 @@ export class MedicinalProductPackaged extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicinalProductPackaged" fhir: MedicinalProductPackaged.resourceType:"MedicinalProductPackaged"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicinalProductPackaged" fhir: MedicinalProductPackaged.resourceType:"MedicinalProductPackaged"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["subject"]) { this.subject.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -355,11 +355,11 @@ export class MedicinalProductPackaged extends fhir.DomainResource {
     if (this["manufacturer"]) { this.manufacturer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["batchIdentifier"]) { this.batchIdentifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['packageItem']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property packageItem:fhir.MedicinalProductPackagedPackageItem[] fhir: MedicinalProductPackaged.packageItem:packageItem', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property packageItem:fhir.MedicinalProductPackagedPackageItem[] fhir: MedicinalProductPackaged.packageItem:packageItem' });
     } else if (!Array.isArray(this.packageItem)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property packageItem:fhir.MedicinalProductPackagedPackageItem[] fhir: MedicinalProductPackaged.packageItem:packageItem', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property packageItem:fhir.MedicinalProductPackagedPackageItem[] fhir: MedicinalProductPackaged.packageItem:packageItem' });
     } else if (this.packageItem.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property packageItem:fhir.MedicinalProductPackagedPackageItem[] fhir: MedicinalProductPackaged.packageItem:packageItem', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property packageItem:fhir.MedicinalProductPackagedPackageItem[] fhir: MedicinalProductPackaged.packageItem:packageItem' });
     }
     if (this["packageItem"]) { this.packageItem.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;

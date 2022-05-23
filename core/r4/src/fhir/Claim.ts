@@ -208,7 +208,7 @@ export class ClaimPayee extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Claim.payee.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Claim.payee.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["party"]) { issues.push(...this.party.doModelValidation()); }
@@ -288,11 +288,11 @@ export class ClaimCareTeam extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: Claim.careTeam.sequence:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: Claim.careTeam.sequence:positiveInt' });
     }
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (!this['provider']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property provider:fhir.Reference fhir: Claim.careTeam.provider:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property provider:fhir.Reference fhir: Claim.careTeam.provider:Reference' });
     }
     if (this["provider"]) { issues.push(...this.provider.doModelValidation()); }
     if (this["responsible"]) { issues.push(...this.responsible.doModelValidation()); }
@@ -426,11 +426,11 @@ export class ClaimSupportingInfo extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: Claim.supportingInfo.sequence:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: Claim.supportingInfo.sequence:positiveInt' });
     }
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (!this['category']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property category:fhir.CodeableConcept fhir: Claim.supportingInfo.category:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category:fhir.CodeableConcept fhir: Claim.supportingInfo.category:CodeableConcept' });
     }
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
@@ -495,7 +495,7 @@ export class ClaimDiagnosis extends fhir.BackboneElement {
   /**
    * For example: admitting, primary, secondary, discharge.
    */
-  public type?: fhir.CodeableConcept[];
+  public type: fhir.CodeableConcept[];
   /**
    * Indication of whether the diagnosis was present on admission to a facility.
    */
@@ -526,11 +526,11 @@ export class ClaimDiagnosis extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: Claim.diagnosis.sequence:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: Claim.diagnosis.sequence:positiveInt' });
     }
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (!this['diagnosis']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property diagnosis: fhir: Claim.diagnosis.diagnosis[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property diagnosis: fhir: Claim.diagnosis.diagnosis[x]:' });
     }
     if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["onAdmission"]) { issues.push(...this.onAdmission.doModelValidation()); }
@@ -587,7 +587,7 @@ export class ClaimProcedure extends fhir.BackboneElement {
   /**
    * For example: primary, secondary.
    */
-  public type?: fhir.CodeableConcept[];
+  public type: fhir.CodeableConcept[];
   /**
    * Date and optionally time the procedure was performed.
    */
@@ -603,7 +603,7 @@ export class ClaimProcedure extends fhir.BackboneElement {
   /**
    * Unique Device Identifiers associated with this line item.
    */
-  public udi?: fhir.Reference[];
+  public udi: fhir.Reference[];
   /**
    * Default constructor for ClaimProcedure - initializes any required elements to null if a value is not provided.
    */
@@ -627,13 +627,13 @@ export class ClaimProcedure extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: Claim.procedure.sequence:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: Claim.procedure.sequence:positiveInt' });
     }
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (!this['procedure']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property procedure: fhir: Claim.procedure.procedure[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property procedure: fhir: Claim.procedure.procedure[x]:' });
     }
     if (this["udi"]) { this.udi.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -704,7 +704,7 @@ export class ClaimInsurance extends fhir.BackboneElement {
   /**
    * This value is an alphanumeric string that may be provided over the phone, via text, via paper, or within a ClaimResponse resource and is not a FHIR Identifier.
    */
-  public preAuthRef?: fhir.FhirString[];
+  public preAuthRef: fhir.FhirString[];
   /**
    * Must not be specified when 'focal=true' for this insurance.
    */
@@ -732,16 +732,16 @@ export class ClaimInsurance extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: Claim.insurance.sequence:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: Claim.insurance.sequence:positiveInt' });
     }
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (!this['focal']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property focal:fhir.FhirBoolean fhir: Claim.insurance.focal:boolean', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property focal:fhir.FhirBoolean fhir: Claim.insurance.focal:boolean' });
     }
     if (this["focal"]) { issues.push(...this.focal.doModelValidation()); }
     if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (!this['coverage']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property coverage:fhir.Reference fhir: Claim.insurance.coverage:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property coverage:fhir.Reference fhir: Claim.insurance.coverage:Reference' });
     }
     if (this["coverage"]) { issues.push(...this.coverage.doModelValidation()); }
     if (this["businessArrangement"]) { issues.push(...this.businessArrangement.doModelValidation()); }
@@ -815,7 +815,7 @@ export class ClaimAccident extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (Claim.accident.type)
    */
-  public static typeExtensibleCoding():V3ActIncidentCodeCodingType {
+  public static get typeExtensibleCodings() {
     return V3ActIncidentCodeCodings;
   }
   /**
@@ -824,7 +824,7 @@ export class ClaimAccident extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['date']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property date:fhir.FhirDate fhir: Claim.accident.date:date', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property date:fhir.FhirDate fhir: Claim.accident.date:date' });
     }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
@@ -908,11 +908,11 @@ export class ClaimItemDetailSubDetail extends fhir.BackboneElement {
   /**
    * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  public modifier?: fhir.CodeableConcept[];
+  public modifier: fhir.CodeableConcept[];
   /**
    * For example: Neonatal program, child dental program or drug users recovery program.
    */
-  public programCode?: fhir.CodeableConcept[];
+  public programCode: fhir.CodeableConcept[];
   /**
    * The number of repetitions of a service or product.
    */
@@ -932,7 +932,7 @@ export class ClaimItemDetailSubDetail extends fhir.BackboneElement {
   /**
    * Unique Device Identifiers associated with this line item.
    */
-  public udi?: fhir.Reference[];
+  public udi: fhir.Reference[];
   /**
    * Default constructor for ClaimItemDetailSubDetail - initializes any required elements to null if a value is not provided.
    */
@@ -961,13 +961,13 @@ export class ClaimItemDetailSubDetail extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: Claim.item.detail.subDetail.sequence:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: Claim.item.detail.subDetail.sequence:positiveInt' });
     }
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (this["revenue"]) { issues.push(...this.revenue.doModelValidation()); }
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (!this['productOrService']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: Claim.item.detail.subDetail.productOrService:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: Claim.item.detail.subDetail.productOrService:CodeableConcept' });
     }
     if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation()); }
     if (this["modifier"]) { this.modifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -1061,11 +1061,11 @@ export class ClaimItemDetail extends fhir.BackboneElement {
   /**
    * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  public modifier?: fhir.CodeableConcept[];
+  public modifier: fhir.CodeableConcept[];
   /**
    * For example: Neonatal program, child dental program or drug users recovery program.
    */
-  public programCode?: fhir.CodeableConcept[];
+  public programCode: fhir.CodeableConcept[];
   /**
    * The number of repetitions of a service or product.
    */
@@ -1085,11 +1085,11 @@ export class ClaimItemDetail extends fhir.BackboneElement {
   /**
    * Unique Device Identifiers associated with this line item.
    */
-  public udi?: fhir.Reference[];
+  public udi: fhir.Reference[];
   /**
    * A claim detail line. Either a simple (a product or service) or a 'group' of sub-details which are simple items.
    */
-  public subDetail?: fhir.ClaimItemDetailSubDetail[];
+  public subDetail: fhir.ClaimItemDetailSubDetail[];
   /**
    * Default constructor for ClaimItemDetail - initializes any required elements to null if a value is not provided.
    */
@@ -1120,13 +1120,13 @@ export class ClaimItemDetail extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: Claim.item.detail.sequence:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: Claim.item.detail.sequence:positiveInt' });
     }
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (this["revenue"]) { issues.push(...this.revenue.doModelValidation()); }
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (!this['productOrService']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: Claim.item.detail.productOrService:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: Claim.item.detail.productOrService:CodeableConcept' });
     }
     if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation()); }
     if (this["modifier"]) { this.modifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -1265,19 +1265,19 @@ export class ClaimItem extends fhir.BackboneElement {
   /**
    * CareTeam members related to this service or product.
    */
-  public careTeamSequence?: fhir.FhirPositiveInt[];
+  public careTeamSequence: fhir.FhirPositiveInt[];
   /**
    * Diagnosis applicable for this service or product.
    */
-  public diagnosisSequence?: fhir.FhirPositiveInt[];
+  public diagnosisSequence: fhir.FhirPositiveInt[];
   /**
    * Procedures applicable for this service or product.
    */
-  public procedureSequence?: fhir.FhirPositiveInt[];
+  public procedureSequence: fhir.FhirPositiveInt[];
   /**
    * Exceptions, special conditions and supporting information applicable for this service or product.
    */
-  public informationSequence?: fhir.FhirPositiveInt[];
+  public informationSequence: fhir.FhirPositiveInt[];
   /**
    * The type of revenue or cost center providing the product and/or service.
    */
@@ -1293,11 +1293,11 @@ export class ClaimItem extends fhir.BackboneElement {
   /**
    * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or outside of office hours.
    */
-  public modifier?: fhir.CodeableConcept[];
+  public modifier: fhir.CodeableConcept[];
   /**
    * For example: Neonatal program, child dental program or drug users recovery program.
    */
-  public programCode?: fhir.CodeableConcept[];
+  public programCode: fhir.CodeableConcept[];
   /**
    * The date or dates when the service or product was supplied, performed or completed.
    */
@@ -1333,7 +1333,7 @@ export class ClaimItem extends fhir.BackboneElement {
   /**
    * Unique Device Identifiers associated with this line item.
    */
-  public udi?: fhir.Reference[];
+  public udi: fhir.Reference[];
   /**
    * For example: Providing a tooth code, allows an insurer to identify a provider performing a filling on a tooth that was previously removed.
    */
@@ -1341,15 +1341,15 @@ export class ClaimItem extends fhir.BackboneElement {
   /**
    * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
    */
-  public subSite?: fhir.CodeableConcept[];
+  public subSite: fhir.CodeableConcept[];
   /**
    * This will typically be the encounter the event occurred within, but some activities may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter.
    */
-  public encounter?: fhir.Reference[];
+  public encounter: fhir.Reference[];
   /**
    * A claim detail line. Either a simple (a product or service) or a 'group' of sub-details which are simple items.
    */
-  public detail?: fhir.ClaimItemDetail[];
+  public detail: fhir.ClaimItemDetail[];
   /**
    * Default constructor for ClaimItem - initializes any required elements to null if a value is not provided.
    */
@@ -1400,7 +1400,7 @@ export class ClaimItem extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: Claim.item.sequence:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: Claim.item.sequence:positiveInt' });
     }
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (this["careTeamSequence"]) { this.careTeamSequence.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -1410,7 +1410,7 @@ export class ClaimItem extends fhir.BackboneElement {
     if (this["revenue"]) { issues.push(...this.revenue.doModelValidation()); }
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (!this['productOrService']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: Claim.item.productOrService:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: Claim.item.productOrService:CodeableConcept' });
     }
     if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation()); }
     if (this["modifier"]) { this.modifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -1442,7 +1442,7 @@ export interface ClaimArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status: FmStatusCodeType|null;
+  status: fhir.FhirCode<FmStatusCodeType>|string|undefined;
   /**
    * The majority of jurisdictions use: oral, pharmacy, vision, professional and institutional, or variants on those terms, as the general styles of claims. The valueset is extensible to accommodate other jurisdictional requirements.
    */
@@ -1454,7 +1454,7 @@ export interface ClaimArgs extends fhir.DomainResourceArgs {
   /**
    * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
    */
-  use: ClaimUseCodeType|null;
+  use: fhir.FhirCode<ClaimUseCodeType>|string|undefined;
   /**
    * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual or forecast reimbursement is sought.
    */
@@ -1560,11 +1560,11 @@ export class Claim extends fhir.DomainResource {
   /**
    * A unique identifier assigned to this claim.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status: FmStatusCodeType|null;
+  public status: fhir.FhirCode<FmStatusCodeType>|null;
   /**
    * The majority of jurisdictions use: oral, pharmacy, vision, professional and institutional, or variants on those terms, as the general styles of claims. The valueset is extensible to accommodate other jurisdictional requirements.
    */
@@ -1576,7 +1576,7 @@ export class Claim extends fhir.DomainResource {
   /**
    * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
    */
-  public use: ClaimUseCodeType|null;
+  public use: fhir.FhirCode<ClaimUseCodeType>|null;
   /**
    * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual or forecast reimbursement is sought.
    */
@@ -1612,7 +1612,7 @@ export class Claim extends fhir.DomainResource {
   /**
    * For example,  for the original treatment and follow-up exams.
    */
-  public related?: fhir.ClaimRelated[];
+  public related: fhir.ClaimRelated[];
   /**
    * Prescription to support the dispensing of pharmacy, device or vision products.
    */
@@ -1636,19 +1636,19 @@ export class Claim extends fhir.DomainResource {
   /**
    * The members of the team who provided the products and services.
    */
-  public careTeam?: fhir.ClaimCareTeam[];
+  public careTeam: fhir.ClaimCareTeam[];
   /**
    * Often there are multiple jurisdiction specific valuesets which are required.
    */
-  public supportingInfo?: fhir.ClaimSupportingInfo[];
+  public supportingInfo: fhir.ClaimSupportingInfo[];
   /**
    * Information about diagnoses relevant to the claim items.
    */
-  public diagnosis?: fhir.ClaimDiagnosis[];
+  public diagnosis: fhir.ClaimDiagnosis[];
   /**
    * Procedures performed on the patient relevant to the billing items with the claim.
    */
-  public procedure?: fhir.ClaimProcedure[];
+  public procedure: fhir.ClaimProcedure[];
   /**
    * All insurance coverages for the patient which may be applicable for reimbursement, of the products and services listed in the claim, are typically provided in the claim to allow insurers to confirm the ordering of the insurance coverages relative to local 'coordination of benefit' rules. One coverage (and only one) with 'focal=true' is to be used in the adjudication of this claim. Coverages appearing before the focal Coverage in the list, and where 'Coverage.subrogation=false', should provide a reference to the ClaimResponse containing the adjudication results of the prior claim.
    */
@@ -1660,7 +1660,7 @@ export class Claim extends fhir.DomainResource {
   /**
    * A claim line. Either a simple  product or service or a 'group' of details which can each be a simple items or groups of sub-details.
    */
-  public item?: fhir.ClaimItem[];
+  public item: fhir.ClaimItem[];
   /**
    * The total value of the all the items in the claim.
    */
@@ -1673,12 +1673,12 @@ export class Claim extends fhir.DomainResource {
     this.resourceType = 'Claim';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     else { this.type = null; }
     if (source['subType']) { this.subType = new fhir.CodeableConcept(source.subType); }
-    if (source['use']) { this.use = source.use; }
+    if (source['use']) { this.use = new fhir.FhirCode<ClaimUseCodeType>({value: source.use}); }
     else { this.use = null; }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     else { this.patient = null; }
@@ -1717,20 +1717,20 @@ export class Claim extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Claim.status)
    */
-  public static statusRequiredCoding():FmStatusCodingType {
-    return FmStatusCodings;
+  public static get statusRequiredCodes() {
+    return FmStatusCodes;
   }
   /**
    * Extensible-bound Value Set for type (Claim.type)
    */
-  public static typeExtensibleCoding():ClaimTypeCodingType {
+  public static get typeExtensibleCodings() {
     return ClaimTypeCodings;
   }
   /**
    * Required-bound Value Set for use (Claim.use)
    */
-  public static useRequiredCoding():ClaimUseCodingType {
-    return ClaimUseCodings;
+  public static get useRequiredCodes() {
+    return ClaimUseCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -1738,37 +1738,45 @@ export class Claim extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Claim" fhir: Claim.resourceType:"Claim"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Claim" fhir: Claim.resourceType:"Claim"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:FmStatusCodeType fhir: Claim.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<FmStatusCodeType> fhir: Claim.status:code' });
     }
+    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<FmStatusCodeType> fhir: Claim.status:code Required binding to: FmStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Claim.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Claim.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["subType"]) { issues.push(...this.subType.doModelValidation()); }
     if (!this['use']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property use:ClaimUseCodeType fhir: Claim.use:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property use:fhir.FhirCode<ClaimUseCodeType> fhir: Claim.use:code' });
     }
+    if (this['use'] && (!Object.values(ClaimUseCodes).includes(this.use as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use:fhir.FhirCode<ClaimUseCodeType> fhir: Claim.use:code Required binding to: ClaimUse' });
+    }
+    if (this["use"]) { issues.push(...this.use.doModelValidation()); }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: Claim.patient:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: Claim.patient:Reference' });
     }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
     if (this["billablePeriod"]) { issues.push(...this.billablePeriod.doModelValidation()); }
     if (!this['created']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property created:fhir.FhirDateTime fhir: Claim.created:dateTime', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property created:fhir.FhirDateTime fhir: Claim.created:dateTime' });
     }
     if (this["created"]) { issues.push(...this.created.doModelValidation()); }
     if (this["enterer"]) { issues.push(...this.enterer.doModelValidation()); }
     if (this["insurer"]) { issues.push(...this.insurer.doModelValidation()); }
     if (!this['provider']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property provider:fhir.Reference fhir: Claim.provider:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property provider:fhir.Reference fhir: Claim.provider:Reference' });
     }
     if (this["provider"]) { issues.push(...this.provider.doModelValidation()); }
     if (!this['priority']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property priority:fhir.CodeableConcept fhir: Claim.priority:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property priority:fhir.CodeableConcept fhir: Claim.priority:CodeableConcept' });
     }
     if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
     if (this["fundsReserve"]) { issues.push(...this.fundsReserve.doModelValidation()); }
@@ -1783,11 +1791,11 @@ export class Claim extends fhir.DomainResource {
     if (this["diagnosis"]) { this.diagnosis.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["procedure"]) { this.procedure.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['insurance']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property insurance:fhir.ClaimInsurance[] fhir: Claim.insurance:insurance', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property insurance:fhir.ClaimInsurance[] fhir: Claim.insurance:insurance' });
     } else if (!Array.isArray(this.insurance)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property insurance:fhir.ClaimInsurance[] fhir: Claim.insurance:insurance', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property insurance:fhir.ClaimInsurance[] fhir: Claim.insurance:insurance' });
     } else if (this.insurance.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property insurance:fhir.ClaimInsurance[] fhir: Claim.insurance:insurance', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property insurance:fhir.ClaimInsurance[] fhir: Claim.insurance:insurance' });
     }
     if (this["insurance"]) { this.insurance.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["accident"]) { issues.push(...this.accident.doModelValidation()); }

@@ -1,9 +1,6 @@
 import * as fhir from '../fhir.js';
-import { ConceptMapEquivalenceCodingType } from '../fhirValueSets/ConceptMapEquivalenceCodings.js';
 import { ConceptMapEquivalenceCodeType } from '../fhirValueSets/ConceptMapEquivalenceCodes.js';
-import { ConceptmapUnmappedModeCodingType } from '../fhirValueSets/ConceptmapUnmappedModeCodings.js';
 import { ConceptmapUnmappedModeCodeType } from '../fhirValueSets/ConceptmapUnmappedModeCodes.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 /**
  * Valid arguments for the ConceptMapGroupElementTargetDependsOn type.
@@ -74,7 +71,7 @@ export interface ConceptMapGroupElementTargetArgs extends fhir.BackboneElementAr
     /**
      * This element is labeled as a modifier because it may indicate that a target does not apply.
      */
-    equivalence: ConceptMapEquivalenceCodeType | null;
+    equivalence: fhir.FhirCode<ConceptMapEquivalenceCodeType> | string | undefined;
     /**
      * A description of status/issues in mapping that conveys additional information not represented in  the structured data.
      */
@@ -107,7 +104,7 @@ export declare class ConceptMapGroupElementTarget extends fhir.BackboneElement {
     /**
      * This element is labeled as a modifier because it may indicate that a target does not apply.
      */
-    equivalence: ConceptMapEquivalenceCodeType | null;
+    equivalence: fhir.FhirCode<ConceptMapEquivalenceCodeType> | null;
     /**
      * A description of status/issues in mapping that conveys additional information not represented in  the structured data.
      */
@@ -115,11 +112,11 @@ export declare class ConceptMapGroupElementTarget extends fhir.BackboneElement {
     /**
      * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
      */
-    dependsOn?: fhir.ConceptMapGroupElementTargetDependsOn[];
+    dependsOn: fhir.ConceptMapGroupElementTargetDependsOn[];
     /**
      * A set of additional outcomes from this mapping to other elements. To properly execute this mapping, the specified element must be mapped to some data element or source that is in context. The mapping may still be useful without a place for the additional data elements, but the equivalence cannot be relied on.
      */
-    product?: fhir.ConceptMapGroupElementTargetDependsOn[];
+    product: fhir.ConceptMapGroupElementTargetDependsOn[];
     /**
      * Default constructor for ConceptMapGroupElementTarget - initializes any required elements to null if a value is not provided.
      */
@@ -127,7 +124,20 @@ export declare class ConceptMapGroupElementTarget extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for equivalence (ConceptMap.group.element.target.equivalence)
      */
-    static equivalenceRequiredCoding(): ConceptMapEquivalenceCodingType;
+    static get equivalenceRequiredCodes(): {
+        readonly Disjoint: "disjoint";
+        readonly Equal: "equal";
+        readonly Equivalent: "equivalent";
+        readonly Inexact: "inexact";
+        readonly Narrower: "narrower";
+        readonly RelatedTo: "relatedto";
+        readonly Specializes: "specializes"; /**
+         * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
+         */
+        readonly Subsumes: "subsumes";
+        readonly Unmatched: "unmatched";
+        readonly Wider: "wider";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -169,7 +179,7 @@ export declare class ConceptMapGroupElement extends fhir.BackboneElement {
     /**
      * Ideally there would only be one map, with equal or equivalent mapping. But multiple maps are allowed for several narrower options, or to assert that other concepts are unmatched.
      */
-    target?: fhir.ConceptMapGroupElementTarget[];
+    target: fhir.ConceptMapGroupElementTarget[];
     /**
      * Default constructor for ConceptMapGroupElement - initializes any required elements to null if a value is not provided.
      */
@@ -186,7 +196,7 @@ export interface ConceptMapGroupUnmappedArgs extends fhir.BackboneElementArgs {
     /**
      * Defines which action to take if there is no match for the source concept in the target system designated for the group. One of 3 actions are possible: use the unmapped code (this is useful when doing a mapping between versions, and only a few codes have changed), use a fixed code (a default code), or alternatively, a reference to a different concept map can be provided (by canonical URL).
      */
-    mode: ConceptmapUnmappedModeCodeType | null;
+    mode: fhir.FhirCode<ConceptmapUnmappedModeCodeType> | string | undefined;
     /**
      * The fixed code to use when the mode = 'fixed'  - all unmapped codes are mapped to a single fixed code.
      */
@@ -211,7 +221,7 @@ export declare class ConceptMapGroupUnmapped extends fhir.BackboneElement {
     /**
      * Defines which action to take if there is no match for the source concept in the target system designated for the group. One of 3 actions are possible: use the unmapped code (this is useful when doing a mapping between versions, and only a few codes have changed), use a fixed code (a default code), or alternatively, a reference to a different concept map can be provided (by canonical URL).
      */
-    mode: ConceptmapUnmappedModeCodeType | null;
+    mode: fhir.FhirCode<ConceptmapUnmappedModeCodeType> | null;
     /**
      * The fixed code to use when the mode = 'fixed'  - all unmapped codes are mapped to a single fixed code.
      */
@@ -231,7 +241,11 @@ export declare class ConceptMapGroupUnmapped extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for mode (ConceptMap.group.unmapped.mode)
      */
-    static modeRequiredCoding(): ConceptmapUnmappedModeCodingType;
+    static get modeRequiredCodes(): {
+        readonly FixedCode: "fixed";
+        readonly OtherMap: "other-map";
+        readonly ProvidedCode: "provided";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -340,7 +354,7 @@ export interface ConceptMapArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of concept maps that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Allows filtering of concept maps that are appropriate for use versus not.
      */
@@ -443,7 +457,7 @@ export declare class ConceptMap extends fhir.DomainResource {
     /**
      * Allows filtering of concept maps that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Allows filtering of concept maps that are appropriate for use versus not.
      */
@@ -459,7 +473,7 @@ export declare class ConceptMap extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * The description is not intended to describe the semantics of the concept map. The description should capture its intended use, which is needed for ensuring integrity for its use in models across future changes.
      */
@@ -467,11 +481,11 @@ export declare class ConceptMap extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the concept map to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * This element does not describe the usage of the concept map. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this concept map.
      */
@@ -499,7 +513,7 @@ export declare class ConceptMap extends fhir.DomainResource {
     /**
      * A group of mappings that all have the same source and target system.
      */
-    group?: fhir.ConceptMapGroup[];
+    group: fhir.ConceptMapGroup[];
     /**
      * Default constructor for ConceptMap - initializes any required elements to null if a value is not provided.
      */
@@ -507,7 +521,12 @@ export declare class ConceptMap extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (ConceptMap.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

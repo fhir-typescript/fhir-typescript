@@ -80,11 +80,11 @@ export interface ServiceRequestArgs extends fhir.DomainResourceArgs {
   /**
    * The status is generally fully in the control of the requester - they determine whether the order is draft or active and, after it has been activated, competed, cancelled or suspended. States relating to the activities of the performer are reflected on either the corresponding event (see [Event Pattern](event.html) for general discussion) or using the [Task](task.html) resource.
    */
-  status: RequestStatusCodeType|null;
+  status: fhir.FhirCode<RequestStatusCodeType>|string|undefined;
   /**
    * This element is labeled as a modifier because the intent alters when and how the resource is actually applicable.
    */
-  intent: RequestIntentCodeType|null;
+  intent: fhir.FhirCode<RequestIntentCodeType>|string|undefined;
   /**
    * There may be multiple axis of categorization depending on the context or use case for retrieving or displaying the resource.  The level of granularity is defined by the category concepts in the value set.
    */
@@ -92,7 +92,7 @@ export interface ServiceRequestArgs extends fhir.DomainResourceArgs {
   /**
    * Indicates how quickly the ServiceRequest should be addressed with respect to other requests.
    */
-  priority?: RequestPriorityCodeType|undefined;
+  priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
   /**
    * In general, only the code and timeframe will be present, though occasional additional qualifiers such as body site or even performer could be included to narrow the scope of the prohibition.  If the ServiceRequest.code and ServiceRequest.doNotPerform both contain negation, that will reinforce prohibition and should not have a double negative interpretation.
    */
@@ -236,23 +236,23 @@ export class ServiceRequest extends fhir.DomainResource {
   /**
    * The identifier.type element is used to distinguish between the identifiers assigned by the orderer (known as the 'Placer' in HL7 v2) and the producer of the observations in response to the order (known as the 'Filler' in HL7 v2).  For further discussion and examples see the resource notes section below.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Note: This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  public instantiatesCanonical?: fhir.FhirCanonical[];
+  public instantiatesCanonical: fhir.FhirCanonical[];
   /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
-  public instantiatesUri?: fhir.FhirUri[];
+  public instantiatesUri: fhir.FhirUri[];
   /**
    * Plan/proposal/order fulfilled by this request.
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * The request takes the place of the referenced completed or terminated request(s).
    */
-  public replaces?: fhir.Reference[];
+  public replaces: fhir.Reference[];
   /**
    * Requests are linked either by a "basedOn" relationship (i.e. one request is fulfilling another) or by having a common requisition. Requests that are part of the same requisition are generally treated independently from the perspective of changing their state or maintaining them after initial creation.
    */
@@ -260,19 +260,19 @@ export class ServiceRequest extends fhir.DomainResource {
   /**
    * The status is generally fully in the control of the requester - they determine whether the order is draft or active and, after it has been activated, competed, cancelled or suspended. States relating to the activities of the performer are reflected on either the corresponding event (see [Event Pattern](event.html) for general discussion) or using the [Task](task.html) resource.
    */
-  public status: RequestStatusCodeType|null;
+  public status: fhir.FhirCode<RequestStatusCodeType>|null;
   /**
    * This element is labeled as a modifier because the intent alters when and how the resource is actually applicable.
    */
-  public intent: RequestIntentCodeType|null;
+  public intent: fhir.FhirCode<RequestIntentCodeType>|null;
   /**
    * There may be multiple axis of categorization depending on the context or use case for retrieving or displaying the resource.  The level of granularity is defined by the category concepts in the value set.
    */
-  public category?: fhir.CodeableConcept[];
+  public category: fhir.CodeableConcept[];
   /**
    * Indicates how quickly the ServiceRequest should be addressed with respect to other requests.
    */
-  public priority?: RequestPriorityCodeType|undefined;
+  public priority?: fhir.FhirCode<RequestPriorityCodeType>|undefined;
   /**
    * In general, only the code and timeframe will be present, though occasional additional qualifiers such as body site or even performer could be included to narrow the scope of the prohibition.  If the ServiceRequest.code and ServiceRequest.doNotPerform both contain negation, that will reinforce prohibition and should not have a double negative interpretation.
    */
@@ -284,7 +284,7 @@ export class ServiceRequest extends fhir.DomainResource {
   /**
    * For information from the medical record intended to support the delivery of the requested services, use the `supportingInformation` element.
    */
-  public orderDetail?: fhir.CodeableConcept[];
+  public orderDetail: fhir.CodeableConcept[];
   /**
    * An amount of service being requested which can be a quantity ( for example $1,500 home modification), a ratio ( for example, 20 half day visits per month), or a range (2.0 to 1.8 Gy per fraction).
    */
@@ -332,43 +332,43 @@ export class ServiceRequest extends fhir.DomainResource {
   /**
    * If multiple performers are present, it is interpreted as a list of *alternative* performers without any preference regardless of order.  If order of preference is needed use the [request-performerOrder extension](extension-request-performerorder.html).  Use CareTeam to represent a group of performers (for example, Practitioner A *and* Practitioner B).
    */
-  public performer?: fhir.Reference[];
+  public performer: fhir.Reference[];
   /**
    * The preferred location(s) where the procedure should actually happen in coded or free text form. E.g. at home or nursing day care center.
    */
-  public locationCode?: fhir.CodeableConcept[];
+  public locationCode: fhir.CodeableConcept[];
   /**
    * A reference to the the preferred location(s) where the procedure should actually happen. E.g. at home or nursing day care center.
    */
-  public locationReference?: fhir.Reference[];
+  public locationReference: fhir.Reference[];
   /**
    * This element represents why the referral is being made and may be used to decide how the service will be performed, or even if it will be performed at all.   Use `CodeableConcept.text` element if the data is free (uncoded) text as shown in the [CT Scan example](servicerequest-example-di.html).
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * This element represents why the referral is being made and may be used to decide how the service will be performed, or even if it will be performed at all.    To be as specific as possible,  a reference to  *Observation* or *Condition* should be used if available.  Otherwise when referencing  *DiagnosticReport*  it should contain a finding  in `DiagnosticReport.conclusion` and/or `DiagnosticReport.conclusionCode`.   When using a reference to *DocumentReference*, the target document should contain clear findings language providing the relevant reason for this service request.  Use  the CodeableConcept text element in `ServiceRequest.reasonCode` if the data is free (uncoded) text as shown in the [CT Scan example](servicerequest-example-di.html).
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be needed for delivering the requested service.
    */
-  public insurance?: fhir.Reference[];
+  public insurance: fhir.Reference[];
   /**
    * To represent information about how the services are to be delivered use the `instructions` element.
    */
-  public supportingInfo?: fhir.Reference[];
+  public supportingInfo: fhir.Reference[];
   /**
    * Many diagnostic procedures need a specimen, but the request itself is not actually about the specimen. This element is for when the diagnostic is requested on already existing specimens and the request points to the specimen it applies to.    Conversely, if the request is entered first with an unknown specimen, then the [Specimen](specimen.html) resource points to the ServiceRequest.
    */
-  public specimen?: fhir.Reference[];
+  public specimen: fhir.Reference[];
   /**
    * Only used if not implicit in the code found in ServiceRequest.code.  If the use case requires BodySite to be handled as a separate resource instead of an inline coded element (e.g. to identify and track separately)  then use the standard extension [procedure-targetBodyStructure](extension-procedure-targetbodystructure.html).
    */
-  public bodySite?: fhir.CodeableConcept[];
+  public bodySite: fhir.CodeableConcept[];
   /**
    * Any other notes and comments made about the service request. For example, internal billing notes.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Instructions in terms that are understood by the patient or consumer.
    */
@@ -378,7 +378,7 @@ export class ServiceRequest extends fhir.DomainResource {
    * This SHALL NOT include the Provenance associated with this current version of the resource.  (If that provenance is deemed to be a “relevant” change, it will need to be added as part of a later update.  Until then, it can be queried directly as the Provenance that points to this version using _revinclude
    * All Provenances should have some historical version of this Request as their subject.
    */
-  public relevantHistory?: fhir.Reference[];
+  public relevantHistory: fhir.Reference[];
   /**
    * Default constructor for ServiceRequest - initializes any required elements to null if a value is not provided.
    */
@@ -396,13 +396,13 @@ export class ServiceRequest extends fhir.DomainResource {
     if (source['replaces']) { this.replaces = source.replaces.map((x) => new fhir.Reference(x)); }
     else { this.replaces = []; }
     if (source['requisition']) { this.requisition = new fhir.Identifier(source.requisition); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<RequestStatusCodeType>({value: source.status}); }
     else { this.status = null; }
-    if (source['intent']) { this.intent = source.intent; }
+    if (source['intent']) { this.intent = new fhir.FhirCode<RequestIntentCodeType>({value: source.intent}); }
     else { this.intent = null; }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
-    if (source['priority']) { this.priority = source.priority; }
+    if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
     if (source['doNotPerform']) { this.doNotPerform = new fhir.FhirBoolean({value: source.doNotPerform}); }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['orderDetail']) { this.orderDetail = source.orderDetail.map((x) => new fhir.CodeableConcept(x)); }
@@ -451,20 +451,20 @@ export class ServiceRequest extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (ServiceRequest.status)
    */
-  public static statusRequiredCoding():RequestStatusCodingType {
-    return RequestStatusCodings;
+  public static get statusRequiredCodes() {
+    return RequestStatusCodes;
   }
   /**
    * Required-bound Value Set for intent (ServiceRequest.intent)
    */
-  public static intentRequiredCoding():RequestIntentCodingType {
-    return RequestIntentCodings;
+  public static get intentRequiredCodes() {
+    return RequestIntentCodes;
   }
   /**
    * Required-bound Value Set for priority (ServiceRequest.priority)
    */
-  public static priorityRequiredCoding():RequestPriorityCodingType {
-    return RequestPriorityCodings;
+  public static get priorityRequiredCodes() {
+    return RequestPriorityCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -472,7 +472,7 @@ export class ServiceRequest extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ServiceRequest" fhir: ServiceRequest.resourceType:"ServiceRequest"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ServiceRequest" fhir: ServiceRequest.resourceType:"ServiceRequest"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -481,17 +481,29 @@ export class ServiceRequest extends fhir.DomainResource {
     if (this["replaces"]) { this.replaces.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["requisition"]) { issues.push(...this.requisition.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:RequestStatusCodeType fhir: ServiceRequest.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<RequestStatusCodeType> fhir: ServiceRequest.status:code' });
     }
+    if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<RequestStatusCodeType> fhir: ServiceRequest.status:code Required binding to: RequestStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['intent']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property intent:RequestIntentCodeType fhir: ServiceRequest.intent:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent:fhir.FhirCode<RequestIntentCodeType> fhir: ServiceRequest.intent:code' });
     }
+    if (this['intent'] && (!Object.values(RequestIntentCodes).includes(this.intent as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent:fhir.FhirCode<RequestIntentCodeType> fhir: ServiceRequest.intent:code Required binding to: RequestIntent' });
+    }
+    if (this["intent"]) { issues.push(...this.intent.doModelValidation()); }
     if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority?:fhir.FhirCode<RequestPriorityCodeType> fhir: ServiceRequest.priority:code Required binding to: RequestPriority' });
+    }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
     if (this["doNotPerform"]) { issues.push(...this.doNotPerform.doModelValidation()); }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["orderDetail"]) { this.orderDetail.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: ServiceRequest.subject:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: ServiceRequest.subject:Reference' });
     }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }

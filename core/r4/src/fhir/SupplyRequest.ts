@@ -107,7 +107,7 @@ export interface SupplyRequestArgs extends fhir.DomainResourceArgs {
   /**
    * Status of the supply request.
    */
-  status?: SupplyrequestStatusCodeType|undefined;
+  status?: fhir.FhirCode<SupplyrequestStatusCodeType>|string|undefined;
   /**
    * Category of supply, e.g.  central, non-stock, etc. This is used to support work flows associated with the supply process.
    */
@@ -115,7 +115,7 @@ export interface SupplyRequestArgs extends fhir.DomainResourceArgs {
   /**
    * Indicates how quickly this SupplyRequest should be addressed with respect to other requests.
    */
-  priority?: RequestPriorityCodeType|undefined;
+  priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
   /**
    * Note that there's a difference between a prescription - an instruction to take a medication, along with a (sometimes) implicit supply, and an explicit request to supply, with no explicit instructions.
    */
@@ -197,11 +197,11 @@ export class SupplyRequest extends fhir.DomainResource {
   /**
    * The identifier.type element is used to distinguish between the identifiers assigned by the requester/placer and the performer/filler.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Status of the supply request.
    */
-  public status?: SupplyrequestStatusCodeType|undefined;
+  public status?: fhir.FhirCode<SupplyrequestStatusCodeType>|undefined;
   /**
    * Category of supply, e.g.  central, non-stock, etc. This is used to support work flows associated with the supply process.
    */
@@ -209,7 +209,7 @@ export class SupplyRequest extends fhir.DomainResource {
   /**
    * Indicates how quickly this SupplyRequest should be addressed with respect to other requests.
    */
-  public priority?: RequestPriorityCodeType|undefined;
+  public priority?: fhir.FhirCode<RequestPriorityCodeType>|undefined;
   /**
    * Note that there's a difference between a prescription - an instruction to take a medication, along with a (sometimes) implicit supply, and an explicit request to supply, with no explicit instructions.
    */
@@ -225,7 +225,7 @@ export class SupplyRequest extends fhir.DomainResource {
   /**
    * Specific parameters for the ordered item.  For example, the size of the indicated item.
    */
-  public parameter?: fhir.SupplyRequestParameter[];
+  public parameter: fhir.SupplyRequestParameter[];
   /**
    * When the request should be fulfilled.
    */
@@ -245,15 +245,15 @@ export class SupplyRequest extends fhir.DomainResource {
   /**
    * Who is intended to fulfill the request.
    */
-  public supplier?: fhir.Reference[];
+  public supplier: fhir.Reference[];
   /**
    * The reason why the supply item was requested.
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * The reason why the supply item was requested.
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * Where the supply is expected to come from.
    */
@@ -270,9 +270,9 @@ export class SupplyRequest extends fhir.DomainResource {
     this.resourceType = 'SupplyRequest';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<SupplyrequestStatusCodeType>({value: source.status}); }
     if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
-    if (source['priority']) { this.priority = source.priority; }
+    if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
     if (source['item']) { this.item = source.item; }
     else if (source['itemCodeableConcept']) { this.item = new fhir.CodeableConcept(source.itemCodeableConcept); }
     else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference); }
@@ -299,14 +299,14 @@ export class SupplyRequest extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (SupplyRequest.status)
    */
-  public static statusRequiredCoding():SupplyrequestStatusCodingType {
-    return SupplyrequestStatusCodings;
+  public static get statusRequiredCodes() {
+    return SupplyrequestStatusCodes;
   }
   /**
    * Required-bound Value Set for priority (SupplyRequest.priority)
    */
-  public static priorityRequiredCoding():RequestPriorityCodingType {
-    return RequestPriorityCodings;
+  public static get priorityRequiredCodes() {
+    return RequestPriorityCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -314,15 +314,23 @@ export class SupplyRequest extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"SupplyRequest" fhir: SupplyRequest.resourceType:"SupplyRequest"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"SupplyRequest" fhir: SupplyRequest.resourceType:"SupplyRequest"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['status'] && (!Object.values(SupplyrequestStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<SupplyrequestStatusCodeType> fhir: SupplyRequest.status:code Required binding to: SupplyrequestStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
+    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority?:fhir.FhirCode<RequestPriorityCodeType> fhir: SupplyRequest.priority:code Required binding to: RequestPriority' });
+    }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
     if (!this['item']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property item: fhir: SupplyRequest.item[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item: fhir: SupplyRequest.item[x]:' });
     }
     if (!this['quantity']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property quantity:fhir.Quantity fhir: SupplyRequest.quantity:Quantity', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property quantity:fhir.Quantity fhir: SupplyRequest.quantity:Quantity' });
     }
     if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
     if (this["parameter"]) { this.parameter.forEach((x) => { issues.push(...x.doModelValidation()); }) }

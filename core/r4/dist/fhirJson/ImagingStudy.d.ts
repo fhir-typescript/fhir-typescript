@@ -135,6 +135,10 @@ export interface ImagingStudy extends fhir.DomainResource {
      */
     status: 'available' | 'cancelled' | 'entered-in-error' | 'registered' | 'unknown' | null;
     /**
+     * Extended properties for primitive element: ImagingStudy.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * A list of all the series.modality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
      */
     modality?: fhir.Coding[] | undefined;

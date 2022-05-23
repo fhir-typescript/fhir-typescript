@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { IdentifierUseCodingType } from '../fhirValueSets/IdentifierUseCodings.js';
 import { IdentifierUseCodeType } from '../fhirValueSets/IdentifierUseCodes.js';
-import { IdentifierTypeCodingType } from '../fhirValueSets/IdentifierTypeCodings.js';
 /**
  * Valid arguments for the Identifier type.
  */
@@ -9,7 +7,7 @@ export interface IdentifierArgs extends fhir.FhirElementArgs {
     /**
      * Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.
      */
-    use?: IdentifierUseCodeType | undefined;
+    use?: fhir.FhirCode<IdentifierUseCodeType> | string | undefined;
     /**
      * This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.
      */
@@ -42,7 +40,7 @@ export declare class Identifier extends fhir.FhirElement {
     /**
      * Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.
      */
-    use?: IdentifierUseCodeType | undefined;
+    use?: fhir.FhirCode<IdentifierUseCodeType> | undefined;
     /**
      * This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.
      */
@@ -70,11 +68,36 @@ export declare class Identifier extends fhir.FhirElement {
     /**
      * Required-bound Value Set for use (Identifier.use)
      */
-    static useRequiredCoding(): IdentifierUseCodingType;
+    static get useRequiredCodes(): {
+        readonly Official: "official";
+        readonly Old: "old";
+        readonly Secondary: "secondary";
+        readonly Temp: "temp";
+        readonly Usual: "usual";
+    };
     /**
      * Extensible-bound Value Set for type (Identifier.type)
      */
-    static typeExtensibleCoding(): IdentifierTypeCodingType;
+    static get typeExtensibleCodings(): {
+        readonly AccessionID: fhir.Coding;
+        readonly BreedRegistryNumber: fhir.Coding;
+        readonly DriverQuoteSLicenseNumber: fhir.Coding;
+        readonly DonorRegistrationNumber: fhir.Coding;
+        readonly EmployerNumber: fhir.Coding;
+        readonly FillerIdentifier: fhir.Coding;
+        readonly JurisdictionalHealthNumberCanada: fhir.Coding;
+        readonly MicrochipNumber: fhir.Coding;
+        readonly MedicalLicenseNumber: fhir.Coding;
+        readonly MedicalRecordNumber: fhir.Coding;
+        readonly NationalInsurancePayorIdentifierPayor: fhir.Coding;
+        readonly PlacerIdentifier: fhir.Coding;
+        readonly PassportNumber: fhir.Coding;
+        readonly ProviderNumber: fhir.Coding;
+        readonly SocialBeneficiaryIdentifier: fhir.Coding;
+        readonly SerialNumber: fhir.Coding;
+        readonly TaxIDNumber: fhir.Coding;
+        readonly UniversalDeviceIdentifier: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

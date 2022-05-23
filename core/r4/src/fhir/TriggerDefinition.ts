@@ -16,7 +16,7 @@ export interface TriggerDefinitionArgs extends fhir.FhirElementArgs {
   /**
    * The type of triggering event.
    */
-  type: TriggerTypeCodeType|null;
+  type: fhir.FhirCode<TriggerTypeCodeType>|string|undefined;
   /**
    * An event name can be provided for all event types, but is required for named events. If a name is provided for a type other than named events, it is considered to be a shorthand for the semantics described by the formal description of the event.
    */
@@ -62,7 +62,7 @@ export class TriggerDefinition extends fhir.FhirElement {
   /**
    * The type of triggering event.
    */
-  public type: TriggerTypeCodeType|null;
+  public type: fhir.FhirCode<TriggerTypeCodeType>|null;
   /**
    * An event name can be provided for all event types, but is required for named events. If a name is provided for a type other than named events, it is considered to be a shorthand for the semantics described by the formal description of the event.
    */
@@ -78,7 +78,7 @@ export class TriggerDefinition extends fhir.FhirElement {
   /**
    * This element shall be present for any data type trigger.
    */
-  public data?: fhir.DataRequirement[];
+  public data: fhir.DataRequirement[];
   /**
    * This element can be only be specified for data type triggers and provides additional semantics for the trigger. The context available within the condition is based on the type of data event. For all events, the current resource will be available as context. In addition, for modification events, the previous resource will also be available. The expression may be inlined, or may be a simple absolute URI, which is a reference to a named expression within a logic library referenced by a library element or extension within the containing resource. If the expression is a FHIR Path expression, it evaluates in the context of a resource of one of the type identified in the data requirement, and may also refer to the variable %previous for delta comparisons on events of type data-changed, data-modified, and data-deleted which will always have the same type.
    */
@@ -88,7 +88,7 @@ export class TriggerDefinition extends fhir.FhirElement {
    */
   constructor(source:Partial<TriggerDefinitionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<TriggerTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     if (source['timing']) { this.timing = source.timing; }
@@ -103,8 +103,8 @@ export class TriggerDefinition extends fhir.FhirElement {
   /**
    * Required-bound Value Set for type (TriggerDefinition.type)
    */
-  public static typeRequiredCoding():TriggerTypeCodingType {
-    return TriggerTypeCodings;
+  public static get typeRequiredCodes() {
+    return TriggerTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -112,8 +112,12 @@ export class TriggerDefinition extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:TriggerTypeCodeType fhir: TriggerDefinition.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<TriggerTypeCodeType> fhir: TriggerDefinition.type:code' });
     }
+    if (this['type'] && (!Object.values(TriggerTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<TriggerTypeCodeType> fhir: TriggerDefinition.type:code Required binding to: TriggerType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["data"]) { this.data.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["condition"]) { issues.push(...this.condition.doModelValidation()); }

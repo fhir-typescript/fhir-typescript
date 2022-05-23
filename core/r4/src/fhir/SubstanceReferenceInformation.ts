@@ -42,7 +42,7 @@ export class SubstanceReferenceInformationGene extends fhir.BackboneElement {
   /**
    * Todo.
    */
-  public source?: fhir.Reference[];
+  public source: fhir.Reference[];
   /**
    * Default constructor for SubstanceReferenceInformationGene - initializes any required elements to null if a value is not provided.
    */
@@ -101,7 +101,7 @@ export class SubstanceReferenceInformationGeneElement extends fhir.BackboneEleme
   /**
    * Todo.
    */
-  public source?: fhir.Reference[];
+  public source: fhir.Reference[];
   /**
    * Default constructor for SubstanceReferenceInformationGeneElement - initializes any required elements to null if a value is not provided.
    */
@@ -164,11 +164,11 @@ export class SubstanceReferenceInformationClassification extends fhir.BackboneEl
   /**
    * Todo.
    */
-  public subtype?: fhir.CodeableConcept[];
+  public subtype: fhir.CodeableConcept[];
   /**
    * Todo.
    */
-  public source?: fhir.Reference[];
+  public source: fhir.Reference[];
   /**
    * Default constructor for SubstanceReferenceInformationClassification - initializes any required elements to null if a value is not provided.
    */
@@ -286,7 +286,7 @@ export class SubstanceReferenceInformationTarget extends fhir.BackboneElement {
   /**
    * Todo.
    */
-  public source?: fhir.Reference[];
+  public source: fhir.Reference[];
   /**
    * Default constructor for SubstanceReferenceInformationTarget - initializes any required elements to null if a value is not provided.
    */
@@ -369,19 +369,19 @@ export class SubstanceReferenceInformation extends fhir.DomainResource {
   /**
    * Todo.
    */
-  public gene?: fhir.SubstanceReferenceInformationGene[];
+  public gene: fhir.SubstanceReferenceInformationGene[];
   /**
    * Todo.
    */
-  public geneElement?: fhir.SubstanceReferenceInformationGeneElement[];
+  public geneElement: fhir.SubstanceReferenceInformationGeneElement[];
   /**
    * Todo.
    */
-  public classification?: fhir.SubstanceReferenceInformationClassification[];
+  public classification: fhir.SubstanceReferenceInformationClassification[];
   /**
    * Todo.
    */
-  public target?: fhir.SubstanceReferenceInformationTarget[];
+  public target: fhir.SubstanceReferenceInformationTarget[];
   /**
    * Default constructor for SubstanceReferenceInformation - initializes any required elements to null if a value is not provided.
    */
@@ -404,7 +404,7 @@ export class SubstanceReferenceInformation extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"SubstanceReferenceInformation" fhir: SubstanceReferenceInformation.resourceType:"SubstanceReferenceInformation"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"SubstanceReferenceInformation" fhir: SubstanceReferenceInformation.resourceType:"SubstanceReferenceInformation"' });
     }
     if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
     if (this["gene"]) { this.gene.forEach((x) => { issues.push(...x.doModelValidation()); }) }

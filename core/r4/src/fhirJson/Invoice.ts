@@ -29,6 +29,10 @@ export interface InvoiceLineItemPriceComponent extends fhir.BackboneElement {
    */
   type: 'base'|'deduction'|'discount'|'informational'|'surcharge'|'tax'|null;
   /**
+   * Extended properties for primitive element: Invoice.lineItem.priceComponent.type
+   */
+  _type?:fhir.FhirElement;
+  /**
    * A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.
    */
   code?: fhir.CodeableConcept|undefined;
@@ -88,6 +92,10 @@ export interface Invoice extends fhir.DomainResource {
    * The current state of the Invoice.
    */
   status: 'balanced'|'cancelled'|'draft'|'entered-in-error'|'issued'|null;
+  /**
+   * Extended properties for primitive element: Invoice.status
+   */
+  _status?:fhir.FhirElement;
   /**
    * Derived Profiles may choose to add invariants requiring this field to be populated if either priceOverride or factorOverride have been filled.
    */

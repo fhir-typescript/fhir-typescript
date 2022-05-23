@@ -66,6 +66,10 @@ export interface Medication extends fhir.DomainResource {
      */
     status?: 'active' | 'entered-in-error' | 'inactive' | undefined;
     /**
+     * Extended properties for primitive element: Medication.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
      */
     manufacturer?: fhir.Reference | undefined;

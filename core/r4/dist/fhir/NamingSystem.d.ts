@@ -1,11 +1,7 @@
 import * as fhir from '../fhir.js';
-import { NamingsystemIdentifierTypeCodingType } from '../fhirValueSets/NamingsystemIdentifierTypeCodings.js';
 import { NamingsystemIdentifierTypeCodeType } from '../fhirValueSets/NamingsystemIdentifierTypeCodes.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
-import { NamingsystemTypeCodingType } from '../fhirValueSets/NamingsystemTypeCodings.js';
 import { NamingsystemTypeCodeType } from '../fhirValueSets/NamingsystemTypeCodes.js';
-import { IdentifierTypeCodingType } from '../fhirValueSets/IdentifierTypeCodings.js';
 /**
  * Valid arguments for the NamingSystemUniqueId type.
  */
@@ -13,7 +9,7 @@ export interface NamingSystemUniqueIdArgs extends fhir.BackboneElementArgs {
     /**
      * Different identifier types may be used in different types of communications (OIDs for v3, URIs for FHIR, etc.).  Other includes RUIDs from v3, standard v2 code name strings, etc.
      */
-    type: NamingsystemIdentifierTypeCodeType | null;
+    type: fhir.FhirCode<NamingsystemIdentifierTypeCodeType> | string | undefined;
     /**
      * If the value is a URI intended for use as FHIR system identifier, the URI should not contain "\" or "?" or "," since this makes escaping very difficult.
      */
@@ -42,7 +38,7 @@ export declare class NamingSystemUniqueId extends fhir.BackboneElement {
     /**
      * Different identifier types may be used in different types of communications (OIDs for v3, URIs for FHIR, etc.).  Other includes RUIDs from v3, standard v2 code name strings, etc.
      */
-    type: NamingsystemIdentifierTypeCodeType | null;
+    type: fhir.FhirCode<NamingsystemIdentifierTypeCodeType> | null;
     /**
      * If the value is a URI intended for use as FHIR system identifier, the URI should not contain "\" or "?" or "," since this makes escaping very difficult.
      */
@@ -66,7 +62,12 @@ export declare class NamingSystemUniqueId extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for type (NamingSystem.uniqueId.type)
      */
-    static typeRequiredCoding(): NamingsystemIdentifierTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly OID: "oid";
+        readonly Other: "other";
+        readonly URI: "uri";
+        readonly UUID: "uuid";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -87,11 +88,11 @@ export interface NamingSystemArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of naming systems that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Indicates the purpose for the naming system - what kinds of things does it make unique?
      */
-    kind: NamingsystemTypeCodeType | null;
+    kind: fhir.FhirCode<NamingsystemTypeCodeType> | string | undefined;
     /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the naming system. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
@@ -152,11 +153,11 @@ export declare class NamingSystem extends fhir.DomainResource {
     /**
      * Allows filtering of naming systems that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Indicates the purpose for the naming system - what kinds of things does it make unique?
      */
-    kind: NamingsystemTypeCodeType | null;
+    kind: fhir.FhirCode<NamingsystemTypeCodeType> | null;
     /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the naming system. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
@@ -168,7 +169,7 @@ export declare class NamingSystem extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * This is the primary organization.  Responsibility for some aspects of a namespace may be delegated.
      */
@@ -184,11 +185,11 @@ export declare class NamingSystem extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the naming system to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * Provides guidance on the use of the namespace, including the handling of formatting characters, use of upper vs. lower case, etc.
      */
@@ -204,15 +205,45 @@ export declare class NamingSystem extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (NamingSystem.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Required-bound Value Set for kind (NamingSystem.kind)
      */
-    static kindRequiredCoding(): NamingsystemTypeCodingType;
+    static get kindRequiredCodes(): {
+        readonly CodeSystem: "codesystem";
+        readonly Identifier: "identifier";
+        readonly Root: "root";
+    };
     /**
      * Extensible-bound Value Set for type (NamingSystem.type)
      */
-    static typeExtensibleCoding(): IdentifierTypeCodingType;
+    static get typeExtensibleCodings(): {
+        readonly AccessionID: fhir.Coding;
+        readonly BreedRegistryNumber: fhir.Coding;
+        readonly DriverQuoteSLicenseNumber: fhir.Coding;
+        readonly DonorRegistrationNumber: fhir.Coding;
+        readonly EmployerNumber: fhir.Coding;
+        readonly FillerIdentifier: fhir.Coding;
+        readonly JurisdictionalHealthNumberCanada: fhir.Coding;
+        readonly MicrochipNumber: fhir.Coding;
+        readonly MedicalLicenseNumber: fhir.Coding;
+        readonly MedicalRecordNumber: fhir.Coding;
+        readonly NationalInsurancePayorIdentifierPayor: fhir.Coding;
+        readonly PlacerIdentifier: fhir.Coding;
+        readonly PassportNumber: fhir.Coding;
+        readonly ProviderNumber: fhir.Coding;
+        readonly SocialBeneficiaryIdentifier: fhir.Coding;
+        readonly SerialNumber: fhir.Coding;
+        readonly TaxIDNumber: fhir.Coding;
+        readonly UniversalDeviceIdentifier: fhir.Coding; /**
+         * Default constructor for NamingSystemUniqueId - initializes any required elements to null if a value is not provided.
+         */
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

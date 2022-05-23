@@ -62,7 +62,7 @@ export class AccountCoverage extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['coverage']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property coverage:fhir.Reference fhir: Account.coverage.coverage:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property coverage:fhir.Reference fhir: Account.coverage.coverage:Reference' });
     }
     if (this["coverage"]) { issues.push(...this.coverage.doModelValidation()); }
     if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
@@ -123,7 +123,7 @@ export class AccountGuarantor extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['party']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property party:fhir.Reference fhir: Account.guarantor.party:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property party:fhir.Reference fhir: Account.guarantor.party:Reference' });
     }
     if (this["party"]) { issues.push(...this.party.doModelValidation()); }
     if (this["onHold"]) { issues.push(...this.onHold.doModelValidation()); }
@@ -146,7 +146,7 @@ export interface AccountArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the Account as not currently valid.
    */
-  status: AccountStatusCodeType|null;
+  status: fhir.FhirCode<AccountStatusCodeType>|string|undefined;
   /**
    * Categorizes the account for reporting and searching purposes.
    */
@@ -202,11 +202,11 @@ export class Account extends fhir.DomainResource {
   /**
    * Unique identifier used to reference the account.  Might or might not be intended for human use (e.g. credit card number).
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the Account as not currently valid.
    */
-  public status: AccountStatusCodeType|null;
+  public status: fhir.FhirCode<AccountStatusCodeType>|null;
   /**
    * Categorizes the account for reporting and searching purposes.
    */
@@ -218,7 +218,7 @@ export class Account extends fhir.DomainResource {
   /**
    * Accounts can be applied to non-patients for tracking other non-patient related activities, such as group services (patients not tracked, and costs charged to another body), or might not be allocated.
    */
-  public subject?: fhir.Reference[];
+  public subject: fhir.Reference[];
   /**
    * It is possible for transactions to be posted outside the service period, as long as the service was provided within the defined service period.
    */
@@ -228,7 +228,7 @@ export class Account extends fhir.DomainResource {
    * Local or jurisdictional business rules may determine which coverage covers which types of billable items charged to the account, and in which order.
    * Where the order is important, a local/jurisdictional extension may be defined to specify the order for the type of charge.
    */
-  public coverage?: fhir.AccountCoverage[];
+  public coverage: fhir.AccountCoverage[];
   /**
    * Indicates the service area, hospital, department, etc. with responsibility for managing the Account.
    */
@@ -240,7 +240,7 @@ export class Account extends fhir.DomainResource {
   /**
    * The parties responsible for balancing the account if other payment options fall short.
    */
-  public guarantor?: fhir.AccountGuarantor[];
+  public guarantor: fhir.AccountGuarantor[];
   /**
    * Reference to a parent Account.
    */
@@ -253,7 +253,7 @@ export class Account extends fhir.DomainResource {
     this.resourceType = 'Account';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<AccountStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
@@ -271,8 +271,8 @@ export class Account extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Account.status)
    */
-  public static statusRequiredCoding():AccountStatusCodingType {
-    return AccountStatusCodings;
+  public static get statusRequiredCodes() {
+    return AccountStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -280,12 +280,16 @@ export class Account extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Account" fhir: Account.resourceType:"Account"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Account" fhir: Account.resourceType:"Account"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:AccountStatusCodeType fhir: Account.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<AccountStatusCodeType> fhir: Account.status:code' });
     }
+    if (this['status'] && (!Object.values(AccountStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<AccountStatusCodeType> fhir: Account.status:code Required binding to: AccountStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["subject"]) { this.subject.forEach((x) => { issues.push(...x.doModelValidation()); }) }

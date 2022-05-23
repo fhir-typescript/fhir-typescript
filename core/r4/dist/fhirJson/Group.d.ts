@@ -90,6 +90,10 @@ export interface Group extends fhir.DomainResource {
      */
     type: 'animal' | 'device' | 'medication' | 'person' | 'practitioner' | 'substance' | null;
     /**
+     * Extended properties for primitive element: Group.type
+     */
+    _type?: fhir.FhirElement;
+    /**
      * If true, indicates that the resource refers to a specific group of real individuals.  If false, the group defines a set of intended individuals.
      */
     actual: boolean | null;

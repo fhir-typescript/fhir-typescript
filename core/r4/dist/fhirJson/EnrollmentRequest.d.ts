@@ -16,6 +16,10 @@ export interface EnrollmentRequest extends fhir.DomainResource {
      */
     status?: 'active' | 'cancelled' | 'draft' | 'entered-in-error' | undefined;
     /**
+     * Extended properties for primitive element: EnrollmentRequest.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * The date when this resource was created.
      */
     created?: string | undefined;

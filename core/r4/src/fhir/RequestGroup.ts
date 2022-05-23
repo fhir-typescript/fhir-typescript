@@ -56,7 +56,7 @@ export interface RequestGroupActionConditionArgs extends fhir.BackboneElementArg
   /**
    * Applicability criteria are used to determine immediate applicability when a plan definition is applied to a given context. Start and stop criteria are carried through application and used to describe enter/exit criteria for an action.
    */
-  kind: ActionConditionKindCodeType|null;
+  kind: fhir.FhirCode<ActionConditionKindCodeType>|string|undefined;
   /**
    * The expression may be inlined, or may be a reference to a named expression within a logic library referenced by the library element.
    */
@@ -74,7 +74,7 @@ export class RequestGroupActionCondition extends fhir.BackboneElement {
   /**
    * Applicability criteria are used to determine immediate applicability when a plan definition is applied to a given context. Start and stop criteria are carried through application and used to describe enter/exit criteria for an action.
    */
-  public kind: ActionConditionKindCodeType|null;
+  public kind: fhir.FhirCode<ActionConditionKindCodeType>|null;
   /**
    * The expression may be inlined, or may be a reference to a named expression within a logic library referenced by the library element.
    */
@@ -84,15 +84,15 @@ export class RequestGroupActionCondition extends fhir.BackboneElement {
    */
   constructor(source:Partial<RequestGroupActionConditionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['kind']) { this.kind = source.kind; }
+    if (source['kind']) { this.kind = new fhir.FhirCode<ActionConditionKindCodeType>({value: source.kind}); }
     else { this.kind = null; }
     if (source['expression']) { this.expression = new fhir.Expression(source.expression); }
   }
   /**
    * Required-bound Value Set for kind (RequestGroup.action.condition.kind)
    */
-  public static kindRequiredCoding():ActionConditionKindCodingType {
-    return ActionConditionKindCodings;
+  public static get kindRequiredCodes() {
+    return ActionConditionKindCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -100,8 +100,12 @@ export class RequestGroupActionCondition extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['kind']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property kind:ActionConditionKindCodeType fhir: RequestGroup.action.condition.kind:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind:fhir.FhirCode<ActionConditionKindCodeType> fhir: RequestGroup.action.condition.kind:code' });
     }
+    if (this['kind'] && (!Object.values(ActionConditionKindCodes).includes(this.kind as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind:fhir.FhirCode<ActionConditionKindCodeType> fhir: RequestGroup.action.condition.kind:code Required binding to: ActionConditionKind' });
+    }
+    if (this["kind"]) { issues.push(...this.kind.doModelValidation()); }
     if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
     return issues;
   }
@@ -117,7 +121,7 @@ export interface RequestGroupActionRelatedActionArgs extends fhir.BackboneElemen
   /**
    * The relationship of this action to the related action.
    */
-  relationship: ActionRelationshipTypeCodeType|null;
+  relationship: fhir.FhirCode<ActionRelationshipTypeCodeType>|string|undefined;
   /**
    * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before.
    */
@@ -147,7 +151,7 @@ export class RequestGroupActionRelatedAction extends fhir.BackboneElement {
   /**
    * The relationship of this action to the related action.
    */
-  public relationship: ActionRelationshipTypeCodeType|null;
+  public relationship: fhir.FhirCode<ActionRelationshipTypeCodeType>|null;
   /**
    * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before.
    */
@@ -163,7 +167,7 @@ export class RequestGroupActionRelatedAction extends fhir.BackboneElement {
     super(source, options);
     if (source['actionId']) { this.actionId = new fhir.FhirId({value: source.actionId}); }
     else { this.actionId = null; }
-    if (source['relationship']) { this.relationship = source.relationship; }
+    if (source['relationship']) { this.relationship = new fhir.FhirCode<ActionRelationshipTypeCodeType>({value: source.relationship}); }
     else { this.relationship = null; }
     if (source['offset']) { this.offset = source.offset; }
     else if (source['offsetDuration']) { this.offset = new fhir.Duration(source.offsetDuration); }
@@ -172,8 +176,8 @@ export class RequestGroupActionRelatedAction extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for relationship (RequestGroup.action.relatedAction.relationship)
    */
-  public static relationshipRequiredCoding():ActionRelationshipTypeCodingType {
-    return ActionRelationshipTypeCodings;
+  public static get relationshipRequiredCodes() {
+    return ActionRelationshipTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -181,12 +185,16 @@ export class RequestGroupActionRelatedAction extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['actionId']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actionId:fhir.FhirId fhir: RequestGroup.action.relatedAction.actionId:id', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actionId:fhir.FhirId fhir: RequestGroup.action.relatedAction.actionId:id' });
     }
     if (this["actionId"]) { issues.push(...this.actionId.doModelValidation()); }
     if (!this['relationship']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property relationship:ActionRelationshipTypeCodeType fhir: RequestGroup.action.relatedAction.relationship:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property relationship:fhir.FhirCode<ActionRelationshipTypeCodeType> fhir: RequestGroup.action.relatedAction.relationship:code' });
     }
+    if (this['relationship'] && (!Object.values(ActionRelationshipTypeCodes).includes(this.relationship as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property relationship:fhir.FhirCode<ActionRelationshipTypeCodeType> fhir: RequestGroup.action.relatedAction.relationship:code Required binding to: ActionRelationshipType' });
+    }
+    if (this["relationship"]) { issues.push(...this.relationship.doModelValidation()); }
     return issues;
   }
 }
@@ -213,7 +221,7 @@ export interface RequestGroupActionArgs extends fhir.BackboneElementArgs {
   /**
    * Indicates how quickly the action should be addressed with respect to other actions.
    */
-  priority?: RequestPriorityCodeType|undefined;
+  priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
   /**
    * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a section of a documentation template.
    */
@@ -269,23 +277,23 @@ export interface RequestGroupActionArgs extends fhir.BackboneElementArgs {
   /**
    * Defines the grouping behavior for the action and its children.
    */
-  groupingBehavior?: ActionGroupingBehaviorCodeType|undefined;
+  groupingBehavior?: fhir.FhirCode<ActionGroupingBehaviorCodeType>|string|undefined;
   /**
    * Defines the selection behavior for the action and its children.
    */
-  selectionBehavior?: ActionSelectionBehaviorCodeType|undefined;
+  selectionBehavior?: fhir.FhirCode<ActionSelectionBehaviorCodeType>|string|undefined;
   /**
    * Defines expectations around whether an action is required.
    */
-  requiredBehavior?: ActionRequiredBehaviorCodeType|undefined;
+  requiredBehavior?: fhir.FhirCode<ActionRequiredBehaviorCodeType>|string|undefined;
   /**
    * Defines whether the action should usually be preselected.
    */
-  precheckBehavior?: ActionPrecheckBehaviorCodeType|undefined;
+  precheckBehavior?: fhir.FhirCode<ActionPrecheckBehaviorCodeType>|string|undefined;
   /**
    * Defines whether the action can be selected multiple times.
    */
-  cardinalityBehavior?: ActionCardinalityBehaviorCodeType|undefined;
+  cardinalityBehavior?: fhir.FhirCode<ActionCardinalityBehaviorCodeType>|string|undefined;
   /**
    * The target resource SHALL be a [Request](request.html) resource with a Request.intent set to "option".
    */
@@ -323,23 +331,23 @@ export class RequestGroupAction extends fhir.BackboneElement {
   /**
    * Indicates how quickly the action should be addressed with respect to other actions.
    */
-  public priority?: RequestPriorityCodeType|undefined;
+  public priority?: fhir.FhirCode<RequestPriorityCodeType>|undefined;
   /**
    * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a section of a documentation template.
    */
-  public code?: fhir.CodeableConcept[];
+  public code: fhir.CodeableConcept[];
   /**
    * Didactic or other informational resources associated with the action that can be provided to the CDS recipient. Information resources can include inline text commentary and links to web resources.
    */
-  public documentation?: fhir.RelatedArtifact[];
+  public documentation: fhir.RelatedArtifact[];
   /**
    * When multiple conditions of the same kind are present, the effects are combined using AND semantics, so the overall condition is true only if all of the conditions are true.
    */
-  public condition?: fhir.RequestGroupActionCondition[];
+  public condition: fhir.RequestGroupActionCondition[];
   /**
    * A relationship to another action such as "before" or "30-60 minutes after start of".
    */
-  public relatedAction?: fhir.RequestGroupActionRelatedAction[];
+  public relatedAction: fhir.RequestGroupActionRelatedAction[];
   /**
    * An optional value describing when the action should be performed.
    */
@@ -351,7 +359,7 @@ export class RequestGroupAction extends fhir.BackboneElement {
   /**
    * The participant that should perform or be responsible for this action.
    */
-  public participant?: fhir.Reference[];
+  public participant: fhir.Reference[];
   /**
    * The type of action to perform (create, update, remove).
    */
@@ -359,23 +367,23 @@ export class RequestGroupAction extends fhir.BackboneElement {
   /**
    * Defines the grouping behavior for the action and its children.
    */
-  public groupingBehavior?: ActionGroupingBehaviorCodeType|undefined;
+  public groupingBehavior?: fhir.FhirCode<ActionGroupingBehaviorCodeType>|undefined;
   /**
    * Defines the selection behavior for the action and its children.
    */
-  public selectionBehavior?: ActionSelectionBehaviorCodeType|undefined;
+  public selectionBehavior?: fhir.FhirCode<ActionSelectionBehaviorCodeType>|undefined;
   /**
    * Defines expectations around whether an action is required.
    */
-  public requiredBehavior?: ActionRequiredBehaviorCodeType|undefined;
+  public requiredBehavior?: fhir.FhirCode<ActionRequiredBehaviorCodeType>|undefined;
   /**
    * Defines whether the action should usually be preselected.
    */
-  public precheckBehavior?: ActionPrecheckBehaviorCodeType|undefined;
+  public precheckBehavior?: fhir.FhirCode<ActionPrecheckBehaviorCodeType>|undefined;
   /**
    * Defines whether the action can be selected multiple times.
    */
-  public cardinalityBehavior?: ActionCardinalityBehaviorCodeType|undefined;
+  public cardinalityBehavior?: fhir.FhirCode<ActionCardinalityBehaviorCodeType>|undefined;
   /**
    * The target resource SHALL be a [Request](request.html) resource with a Request.intent set to "option".
    */
@@ -383,7 +391,7 @@ export class RequestGroupAction extends fhir.BackboneElement {
   /**
    * Sub actions.
    */
-  public action?: fhir.RequestGroupAction[];
+  public action: fhir.RequestGroupAction[];
   /**
    * Default constructor for RequestGroupAction - initializes any required elements to null if a value is not provided.
    */
@@ -393,7 +401,7 @@ export class RequestGroupAction extends fhir.BackboneElement {
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
     if (source['textEquivalent']) { this.textEquivalent = new fhir.FhirString({value: source.textEquivalent}); }
-    if (source['priority']) { this.priority = source.priority; }
+    if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
     if (source['code']) { this.code = source.code.map((x) => new fhir.CodeableConcept(x)); }
     else { this.code = []; }
     if (source['documentation']) { this.documentation = source.documentation.map((x) => new fhir.RelatedArtifact(x)); }
@@ -412,11 +420,11 @@ export class RequestGroupAction extends fhir.BackboneElement {
     if (source['participant']) { this.participant = source.participant.map((x) => new fhir.Reference(x)); }
     else { this.participant = []; }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['groupingBehavior']) { this.groupingBehavior = source.groupingBehavior; }
-    if (source['selectionBehavior']) { this.selectionBehavior = source.selectionBehavior; }
-    if (source['requiredBehavior']) { this.requiredBehavior = source.requiredBehavior; }
-    if (source['precheckBehavior']) { this.precheckBehavior = source.precheckBehavior; }
-    if (source['cardinalityBehavior']) { this.cardinalityBehavior = source.cardinalityBehavior; }
+    if (source['groupingBehavior']) { this.groupingBehavior = new fhir.FhirCode<ActionGroupingBehaviorCodeType>({value: source.groupingBehavior}); }
+    if (source['selectionBehavior']) { this.selectionBehavior = new fhir.FhirCode<ActionSelectionBehaviorCodeType>({value: source.selectionBehavior}); }
+    if (source['requiredBehavior']) { this.requiredBehavior = new fhir.FhirCode<ActionRequiredBehaviorCodeType>({value: source.requiredBehavior}); }
+    if (source['precheckBehavior']) { this.precheckBehavior = new fhir.FhirCode<ActionPrecheckBehaviorCodeType>({value: source.precheckBehavior}); }
+    if (source['cardinalityBehavior']) { this.cardinalityBehavior = new fhir.FhirCode<ActionCardinalityBehaviorCodeType>({value: source.cardinalityBehavior}); }
     if (source['resource']) { this.resource = new fhir.Reference(source.resource); }
     if (source['action']) { this.action = source.action.map((x) => new fhir.RequestGroupAction(x)); }
     else { this.action = []; }
@@ -424,44 +432,44 @@ export class RequestGroupAction extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for priority (RequestGroup.action.priority)
    */
-  public static priorityRequiredCoding():RequestPriorityCodingType {
-    return RequestPriorityCodings;
+  public static get priorityRequiredCodes() {
+    return RequestPriorityCodes;
   }
   /**
    * Extensible-bound Value Set for type (RequestGroup.action.type)
    */
-  public static typeExtensibleCoding():ActionTypeCodingType {
+  public static get typeExtensibleCodings() {
     return ActionTypeCodings;
   }
   /**
    * Required-bound Value Set for groupingBehavior (RequestGroup.action.groupingBehavior)
    */
-  public static groupingBehaviorRequiredCoding():ActionGroupingBehaviorCodingType {
-    return ActionGroupingBehaviorCodings;
+  public static get groupingBehaviorRequiredCodes() {
+    return ActionGroupingBehaviorCodes;
   }
   /**
    * Required-bound Value Set for selectionBehavior (RequestGroup.action.selectionBehavior)
    */
-  public static selectionBehaviorRequiredCoding():ActionSelectionBehaviorCodingType {
-    return ActionSelectionBehaviorCodings;
+  public static get selectionBehaviorRequiredCodes() {
+    return ActionSelectionBehaviorCodes;
   }
   /**
    * Required-bound Value Set for requiredBehavior (RequestGroup.action.requiredBehavior)
    */
-  public static requiredBehaviorRequiredCoding():ActionRequiredBehaviorCodingType {
-    return ActionRequiredBehaviorCodings;
+  public static get requiredBehaviorRequiredCodes() {
+    return ActionRequiredBehaviorCodes;
   }
   /**
    * Required-bound Value Set for precheckBehavior (RequestGroup.action.precheckBehavior)
    */
-  public static precheckBehaviorRequiredCoding():ActionPrecheckBehaviorCodingType {
-    return ActionPrecheckBehaviorCodings;
+  public static get precheckBehaviorRequiredCodes() {
+    return ActionPrecheckBehaviorCodes;
   }
   /**
    * Required-bound Value Set for cardinalityBehavior (RequestGroup.action.cardinalityBehavior)
    */
-  public static cardinalityBehaviorRequiredCoding():ActionCardinalityBehaviorCodingType {
-    return ActionCardinalityBehaviorCodings;
+  public static get cardinalityBehaviorRequiredCodes() {
+    return ActionCardinalityBehaviorCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -472,12 +480,36 @@ export class RequestGroupAction extends fhir.BackboneElement {
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["textEquivalent"]) { issues.push(...this.textEquivalent.doModelValidation()); }
+    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority?:fhir.FhirCode<RequestPriorityCodeType> fhir: RequestGroup.action.priority:code Required binding to: RequestPriority' });
+    }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
     if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["documentation"]) { this.documentation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["condition"]) { this.condition.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["relatedAction"]) { this.relatedAction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["participant"]) { this.participant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this['groupingBehavior'] && (!Object.values(ActionGroupingBehaviorCodes).includes(this.groupingBehavior as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property groupingBehavior?:fhir.FhirCode<ActionGroupingBehaviorCodeType> fhir: RequestGroup.action.groupingBehavior:code Required binding to: ActionGroupingBehavior' });
+    }
+    if (this["groupingBehavior"]) { issues.push(...this.groupingBehavior.doModelValidation()); }
+    if (this['selectionBehavior'] && (!Object.values(ActionSelectionBehaviorCodes).includes(this.selectionBehavior as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property selectionBehavior?:fhir.FhirCode<ActionSelectionBehaviorCodeType> fhir: RequestGroup.action.selectionBehavior:code Required binding to: ActionSelectionBehavior' });
+    }
+    if (this["selectionBehavior"]) { issues.push(...this.selectionBehavior.doModelValidation()); }
+    if (this['requiredBehavior'] && (!Object.values(ActionRequiredBehaviorCodes).includes(this.requiredBehavior as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property requiredBehavior?:fhir.FhirCode<ActionRequiredBehaviorCodeType> fhir: RequestGroup.action.requiredBehavior:code Required binding to: ActionRequiredBehavior' });
+    }
+    if (this["requiredBehavior"]) { issues.push(...this.requiredBehavior.doModelValidation()); }
+    if (this['precheckBehavior'] && (!Object.values(ActionPrecheckBehaviorCodes).includes(this.precheckBehavior as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property precheckBehavior?:fhir.FhirCode<ActionPrecheckBehaviorCodeType> fhir: RequestGroup.action.precheckBehavior:code Required binding to: ActionPrecheckBehavior' });
+    }
+    if (this["precheckBehavior"]) { issues.push(...this.precheckBehavior.doModelValidation()); }
+    if (this['cardinalityBehavior'] && (!Object.values(ActionCardinalityBehaviorCodes).includes(this.cardinalityBehavior as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property cardinalityBehavior?:fhir.FhirCode<ActionCardinalityBehaviorCodeType> fhir: RequestGroup.action.cardinalityBehavior:code Required binding to: ActionCardinalityBehavior' });
+    }
+    if (this["cardinalityBehavior"]) { issues.push(...this.cardinalityBehavior.doModelValidation()); }
     if (this["resource"]) { issues.push(...this.resource.doModelValidation()); }
     if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -518,15 +550,15 @@ export interface RequestGroupArgs extends fhir.DomainResourceArgs {
   /**
    * The current state of the request. For request groups, the status reflects the status of all the requests in the group.
    */
-  status: RequestStatusCodeType|null;
+  status: fhir.FhirCode<RequestStatusCodeType>|string|undefined;
   /**
    * Indicates the level of authority/intentionality associated with the request and where the request fits into the workflow chain.
    */
-  intent: RequestIntentCodeType|null;
+  intent: fhir.FhirCode<RequestIntentCodeType>|string|undefined;
   /**
    * Indicates how quickly the request should be addressed with respect to other requests.
    */
-  priority?: RequestPriorityCodeType|undefined;
+  priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
   /**
    * This element can be used to provide a code that captures the meaning of the request group as a whole, as opposed to the code of the action element, which captures the meaning of the individual actions within the request group.
    */
@@ -580,23 +612,23 @@ export class RequestGroup extends fhir.DomainResource {
   /**
    * Allows a service to provide a unique, business identifier for the request.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * A canonical URL referencing a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
    */
-  public instantiatesCanonical?: fhir.FhirCanonical[];
+  public instantiatesCanonical: fhir.FhirCanonical[];
   /**
    * A URL referencing an externally defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
    */
-  public instantiatesUri?: fhir.FhirUri[];
+  public instantiatesUri: fhir.FhirUri[];
   /**
    * A plan, proposal or order that is fulfilled in whole or in part by this request.
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * The replacement could be because the initial request was immediately rejected (due to an issue) or because the previous request was completed, but the need for the action described by the request remains ongoing.
    */
-  public replaces?: fhir.Reference[];
+  public replaces: fhir.Reference[];
   /**
    * Requests are linked either by a "basedOn" relationship (i.e. one request is fulfilling another) or by having a common requisition.  Requests that are part of the same requisition are generally treated independently from the perspective of changing their state or maintaining them after initial creation.
    */
@@ -604,15 +636,15 @@ export class RequestGroup extends fhir.DomainResource {
   /**
    * The current state of the request. For request groups, the status reflects the status of all the requests in the group.
    */
-  public status: RequestStatusCodeType|null;
+  public status: fhir.FhirCode<RequestStatusCodeType>|null;
   /**
    * Indicates the level of authority/intentionality associated with the request and where the request fits into the workflow chain.
    */
-  public intent: RequestIntentCodeType|null;
+  public intent: fhir.FhirCode<RequestIntentCodeType>|null;
   /**
    * Indicates how quickly the request should be addressed with respect to other requests.
    */
-  public priority?: RequestPriorityCodeType|undefined;
+  public priority?: fhir.FhirCode<RequestPriorityCodeType>|undefined;
   /**
    * This element can be used to provide a code that captures the meaning of the request group as a whole, as opposed to the code of the action element, which captures the meaning of the individual actions within the request group.
    */
@@ -636,19 +668,19 @@ export class RequestGroup extends fhir.DomainResource {
   /**
    * Describes the reason for the request group in coded or textual form.
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * Indicates another resource whose existence justifies this request group.
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * Provides a mechanism to communicate additional information about the response.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * The actions, if any, produced by the evaluation of the artifact.
    */
-  public action?: fhir.RequestGroupAction[];
+  public action: fhir.RequestGroupAction[];
   /**
    * Default constructor for RequestGroup - initializes any required elements to null if a value is not provided.
    */
@@ -666,11 +698,11 @@ export class RequestGroup extends fhir.DomainResource {
     if (source['replaces']) { this.replaces = source.replaces.map((x) => new fhir.Reference(x)); }
     else { this.replaces = []; }
     if (source['groupIdentifier']) { this.groupIdentifier = new fhir.Identifier(source.groupIdentifier); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<RequestStatusCodeType>({value: source.status}); }
     else { this.status = null; }
-    if (source['intent']) { this.intent = source.intent; }
+    if (source['intent']) { this.intent = new fhir.FhirCode<RequestIntentCodeType>({value: source.intent}); }
     else { this.intent = null; }
-    if (source['priority']) { this.priority = source.priority; }
+    if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
@@ -688,20 +720,20 @@ export class RequestGroup extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (RequestGroup.status)
    */
-  public static statusRequiredCoding():RequestStatusCodingType {
-    return RequestStatusCodings;
+  public static get statusRequiredCodes() {
+    return RequestStatusCodes;
   }
   /**
    * Required-bound Value Set for intent (RequestGroup.intent)
    */
-  public static intentRequiredCoding():RequestIntentCodingType {
-    return RequestIntentCodings;
+  public static get intentRequiredCodes() {
+    return RequestIntentCodes;
   }
   /**
    * Required-bound Value Set for priority (RequestGroup.priority)
    */
-  public static priorityRequiredCoding():RequestPriorityCodingType {
-    return RequestPriorityCodings;
+  public static get priorityRequiredCodes() {
+    return RequestPriorityCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -709,7 +741,7 @@ export class RequestGroup extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"RequestGroup" fhir: RequestGroup.resourceType:"RequestGroup"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"RequestGroup" fhir: RequestGroup.resourceType:"RequestGroup"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -718,11 +750,23 @@ export class RequestGroup extends fhir.DomainResource {
     if (this["replaces"]) { this.replaces.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["groupIdentifier"]) { issues.push(...this.groupIdentifier.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:RequestStatusCodeType fhir: RequestGroup.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<RequestStatusCodeType> fhir: RequestGroup.status:code' });
     }
+    if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<RequestStatusCodeType> fhir: RequestGroup.status:code Required binding to: RequestStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['intent']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property intent:RequestIntentCodeType fhir: RequestGroup.intent:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent:fhir.FhirCode<RequestIntentCodeType> fhir: RequestGroup.intent:code' });
     }
+    if (this['intent'] && (!Object.values(RequestIntentCodes).includes(this.intent as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent:fhir.FhirCode<RequestIntentCodeType> fhir: RequestGroup.intent:code Required binding to: RequestIntent' });
+    }
+    if (this["intent"]) { issues.push(...this.intent.doModelValidation()); }
+    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority?:fhir.FhirCode<RequestPriorityCodeType> fhir: RequestGroup.priority:code Required binding to: RequestPriority' });
+    }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }

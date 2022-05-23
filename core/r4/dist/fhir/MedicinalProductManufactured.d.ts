@@ -63,11 +63,11 @@ export declare class MedicinalProductManufactured extends fhir.DomainResource {
     /**
      * Manufacturer of the item (Note that this should be named "manufacturer" but it currently causes technical issues).
      */
-    manufacturer?: fhir.Reference[];
+    manufacturer: fhir.Reference[];
     /**
      * Ingredient.
      */
-    ingredient?: fhir.Reference[];
+    ingredient: fhir.Reference[];
     /**
      * Dimensions, color etc.
      */
@@ -75,7 +75,7 @@ export declare class MedicinalProductManufactured extends fhir.DomainResource {
     /**
      * Other codeable characteristics.
      */
-    otherCharacteristics?: fhir.CodeableConcept[];
+    otherCharacteristics: fhir.CodeableConcept[];
     /**
      * Default constructor for MedicinalProductManufactured - initializes any required elements to null if a value is not provided.
      */

@@ -62,7 +62,7 @@ export class InsurancePlanContact extends fhir.BackboneElement {
   /**
    * A contact detail (e.g. a telephone number or an email address) by which the party may be contacted.
    */
-  public telecom?: fhir.ContactPoint[];
+  public telecom: fhir.ContactPoint[];
   /**
    * Visiting or postal addresses for the contact.
    */
@@ -81,7 +81,7 @@ export class InsurancePlanContact extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for purpose (InsurancePlan.contact.purpose)
    */
-  public static purposeExtensibleCoding():ContactentityTypeCodingType {
+  public static get purposeExtensibleCodings() {
     return ContactentityTypeCodings;
   }
   /**
@@ -181,7 +181,7 @@ export class InsurancePlanCoverageBenefit extends fhir.BackboneElement {
   /**
    * The specific limits on the benefit.
    */
-  public limit?: fhir.InsurancePlanCoverageBenefitLimit[];
+  public limit: fhir.InsurancePlanCoverageBenefitLimit[];
   /**
    * Default constructor for InsurancePlanCoverageBenefit - initializes any required elements to null if a value is not provided.
    */
@@ -199,7 +199,7 @@ export class InsurancePlanCoverageBenefit extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: InsurancePlan.coverage.benefit.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: InsurancePlan.coverage.benefit.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["requirement"]) { issues.push(...this.requirement.doModelValidation()); }
@@ -240,7 +240,7 @@ export class InsurancePlanCoverage extends fhir.BackboneElement {
   /**
    * Networks are represented as a hierarchy of organization resources.
    */
-  public network?: fhir.Reference[];
+  public network: fhir.Reference[];
   /**
    * Specific benefits under this type of coverage.
    */
@@ -263,16 +263,16 @@ export class InsurancePlanCoverage extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: InsurancePlan.coverage.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: InsurancePlan.coverage.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["network"]) { this.network.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['benefit']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property benefit:fhir.InsurancePlanCoverageBenefit[] fhir: InsurancePlan.coverage.benefit:benefit', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property benefit:fhir.InsurancePlanCoverageBenefit[] fhir: InsurancePlan.coverage.benefit:benefit' });
     } else if (!Array.isArray(this.benefit)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property benefit:fhir.InsurancePlanCoverageBenefit[] fhir: InsurancePlan.coverage.benefit:benefit', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property benefit:fhir.InsurancePlanCoverageBenefit[] fhir: InsurancePlan.coverage.benefit:benefit' });
     } else if (this.benefit.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property benefit:fhir.InsurancePlanCoverageBenefit[] fhir: InsurancePlan.coverage.benefit:benefit', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property benefit:fhir.InsurancePlanCoverageBenefit[] fhir: InsurancePlan.coverage.benefit:benefit' });
     }
     if (this["benefit"]) { this.benefit.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -387,7 +387,7 @@ export class InsurancePlanPlanSpecificCostBenefitCost extends fhir.BackboneEleme
   /**
    * Additional information about the cost, such as information about funding sources (e.g. HSA, HRA, FSA, RRA).
    */
-  public qualifiers?: fhir.CodeableConcept[];
+  public qualifiers: fhir.CodeableConcept[];
   /**
    * The actual cost value. (some of the costs may be represented as percentages rather than currency, e.g. 10% coinsurance).
    */
@@ -407,8 +407,8 @@ export class InsurancePlanPlanSpecificCostBenefitCost extends fhir.BackboneEleme
   /**
    * Required-bound Value Set for applicability (InsurancePlan.plan.specificCost.benefit.cost.applicability)
    */
-  public static applicabilityRequiredCoding():InsuranceplanApplicabilityCodingType {
-    return InsuranceplanApplicabilityCodings;
+  public static get applicabilityRequiredCodes() {
+    return InsuranceplanApplicabilityCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -416,9 +416,12 @@ export class InsurancePlanPlanSpecificCostBenefitCost extends fhir.BackboneEleme
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: InsurancePlan.plan.specificCost.benefit.cost.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: InsurancePlan.plan.specificCost.benefit.cost.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this['applicability'] && (!Object.values(InsuranceplanApplicabilityCodes).includes(this.applicability as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property applicability?:fhir.CodeableConcept fhir: InsurancePlan.plan.specificCost.benefit.cost.applicability:CodeableConcept Required binding to: InsuranceplanApplicability' });
+    }
     if (this["applicability"]) { issues.push(...this.applicability.doModelValidation()); }
     if (this["qualifiers"]) { this.qualifiers.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["value"]) { issues.push(...this.value.doModelValidation()); }
@@ -454,7 +457,7 @@ export class InsurancePlanPlanSpecificCostBenefit extends fhir.BackboneElement {
   /**
    * List of the costs associated with a specific benefit.
    */
-  public cost?: fhir.InsurancePlanPlanSpecificCostBenefitCost[];
+  public cost: fhir.InsurancePlanPlanSpecificCostBenefitCost[];
   /**
    * Default constructor for InsurancePlanPlanSpecificCostBenefit - initializes any required elements to null if a value is not provided.
    */
@@ -471,7 +474,7 @@ export class InsurancePlanPlanSpecificCostBenefit extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: InsurancePlan.plan.specificCost.benefit.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: InsurancePlan.plan.specificCost.benefit.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["cost"]) { this.cost.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -507,7 +510,7 @@ export class InsurancePlanPlanSpecificCost extends fhir.BackboneElement {
   /**
    * List of the specific benefits under this category of benefit.
    */
-  public benefit?: fhir.InsurancePlanPlanSpecificCostBenefit[];
+  public benefit: fhir.InsurancePlanPlanSpecificCostBenefit[];
   /**
    * Default constructor for InsurancePlanPlanSpecificCost - initializes any required elements to null if a value is not provided.
    */
@@ -524,7 +527,7 @@ export class InsurancePlanPlanSpecificCost extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['category']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property category:fhir.CodeableConcept fhir: InsurancePlan.plan.specificCost.category:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category:fhir.CodeableConcept fhir: InsurancePlan.plan.specificCost.category:CodeableConcept' });
     }
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (this["benefit"]) { this.benefit.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -572,7 +575,7 @@ export class InsurancePlanPlan extends fhir.BackboneElement {
   /**
    * Business identifiers assigned to this health insurance plan which remain constant as the resource is updated and propagates from server to server.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Type of plan. For example, "Platinum" or "High Deductable".
    */
@@ -580,19 +583,19 @@ export class InsurancePlanPlan extends fhir.BackboneElement {
   /**
    * The geographic region in which a health insurance plan's benefits apply.
    */
-  public coverageArea?: fhir.Reference[];
+  public coverageArea: fhir.Reference[];
   /**
    * Networks are represented as a hierarchy of organization resources.
    */
-  public network?: fhir.Reference[];
+  public network: fhir.Reference[];
   /**
    * Overall costs associated with the plan.
    */
-  public generalCost?: fhir.InsurancePlanPlanGeneralCost[];
+  public generalCost: fhir.InsurancePlanPlanGeneralCost[];
   /**
    * Costs associated with the coverage provided by the product.
    */
-  public specificCost?: fhir.InsurancePlanPlanSpecificCost[];
+  public specificCost: fhir.InsurancePlanPlanSpecificCost[];
   /**
    * Default constructor for InsurancePlanPlan - initializes any required elements to null if a value is not provided.
    */
@@ -639,7 +642,7 @@ export interface InsurancePlanArgs extends fhir.DomainResourceArgs {
   /**
    * The current state of the health insurance product.
    */
-  status?: PublicationStatusCodeType|undefined;
+  status?: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * The kind of health insurance product.
    */
@@ -705,15 +708,15 @@ export class InsurancePlan extends fhir.DomainResource {
   /**
    * Business identifiers assigned to this health insurance product which remain constant as the resource is updated and propagates from server to server.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The current state of the health insurance product.
    */
-  public status?: PublicationStatusCodeType|undefined;
+  public status?: fhir.FhirCode<PublicationStatusCodeType>|undefined;
   /**
    * The kind of health insurance product.
    */
-  public type?: fhir.CodeableConcept[];
+  public type: fhir.CodeableConcept[];
   /**
    * If the name of the product/plan changes, consider putting the old name in the alias column so that it can still be located through searches.
    */
@@ -721,7 +724,7 @@ export class InsurancePlan extends fhir.DomainResource {
   /**
    * There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the product/plan.
    */
-  public alias?: fhir.FhirString[];
+  public alias: fhir.FhirString[];
   /**
    * The period of time that the health insurance product is available.
    */
@@ -737,27 +740,27 @@ export class InsurancePlan extends fhir.DomainResource {
   /**
    * The geographic region in which a health insurance product's benefits apply.
    */
-  public coverageArea?: fhir.Reference[];
+  public coverageArea: fhir.Reference[];
   /**
    * Where multiple contacts for the same purpose are provided there is a standard extension that can be used to determine which one is the preferred contact to use.
    */
-  public contact?: fhir.InsurancePlanContact[];
+  public contact: fhir.InsurancePlanContact[];
   /**
    * The technical endpoints providing access to services operated for the health insurance product.
    */
-  public endpoint?: fhir.Reference[];
+  public endpoint: fhir.Reference[];
   /**
    * Networks are represented as a hierarchy of organization resources.
    */
-  public network?: fhir.Reference[];
+  public network: fhir.Reference[];
   /**
    * Details about the coverage offered by the insurance product.
    */
-  public coverage?: fhir.InsurancePlanCoverage[];
+  public coverage: fhir.InsurancePlanCoverage[];
   /**
    * Details about an insurance plan.
    */
-  public plan?: fhir.InsurancePlanPlan[];
+  public plan: fhir.InsurancePlanPlan[];
   /**
    * Default constructor for InsurancePlan - initializes any required elements to null if a value is not provided.
    */
@@ -766,7 +769,7 @@ export class InsurancePlan extends fhir.DomainResource {
     this.resourceType = 'InsurancePlan';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x)); }
     else { this.type = []; }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
@@ -791,8 +794,8 @@ export class InsurancePlan extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (InsurancePlan.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -800,9 +803,13 @@ export class InsurancePlan extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"InsurancePlan" fhir: InsurancePlan.resourceType:"InsurancePlan"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"InsurancePlan" fhir: InsurancePlan.resourceType:"InsurancePlan"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<PublicationStatusCodeType> fhir: InsurancePlan.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["alias"]) { this.alias.forEach((x) => { issues.push(...x.doModelValidation()); }) }

@@ -1,9 +1,6 @@
 import * as fhir from '../fhir.js';
-import { MedicationrequestStatusCodingType } from '../fhirValueSets/MedicationrequestStatusCodings.js';
 import { MedicationrequestStatusCodeType } from '../fhirValueSets/MedicationrequestStatusCodes.js';
-import { MedicationrequestIntentCodingType } from '../fhirValueSets/MedicationrequestIntentCodings.js';
 import { MedicationrequestIntentCodeType } from '../fhirValueSets/MedicationrequestIntentCodes.js';
-import { RequestPriorityCodingType } from '../fhirValueSets/RequestPriorityCodings.js';
 import { RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
 /**
  * Valid arguments for the MedicationRequestDispenseRequestInitialFill type.
@@ -186,7 +183,7 @@ export interface MedicationRequestArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: MedicationrequestStatusCodeType | null;
+    status: fhir.FhirCode<MedicationrequestStatusCodeType> | string | undefined;
     /**
      * This is generally only used for "exception" statuses such as "suspended" or "cancelled". The reason why the MedicationRequest was created at all is captured in reasonCode, not here.
      */
@@ -196,7 +193,7 @@ export interface MedicationRequestArgs extends fhir.DomainResourceArgs {
      * An instance-order is an instantiation of a request or order and may be used to populate Medication Administration Record.
      * This element is labeled as a modifier because the intent alters when and how the resource is actually applicable.
      */
-    intent: MedicationrequestIntentCodeType | null;
+    intent: fhir.FhirCode<MedicationrequestIntentCodeType> | string | undefined;
     /**
      * The category can be used to include where the medication is expected to be consumed or other types of requests.
      */
@@ -204,7 +201,7 @@ export interface MedicationRequestArgs extends fhir.DomainResourceArgs {
     /**
      * Indicates how quickly the Medication Request should be addressed with respect to other requests.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
     /**
      * If do not perform is not specified, the request is a positive request e.g. "do perform".
      */
@@ -341,11 +338,11 @@ export declare class MedicationRequest extends fhir.DomainResource {
     /**
      * This is a business identifier, not a resource identifier.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: MedicationrequestStatusCodeType | null;
+    status: fhir.FhirCode<MedicationrequestStatusCodeType> | null;
     /**
      * This is generally only used for "exception" statuses such as "suspended" or "cancelled". The reason why the MedicationRequest was created at all is captured in reasonCode, not here.
      */
@@ -355,15 +352,15 @@ export declare class MedicationRequest extends fhir.DomainResource {
      * An instance-order is an instantiation of a request or order and may be used to populate Medication Administration Record.
      * This element is labeled as a modifier because the intent alters when and how the resource is actually applicable.
      */
-    intent: MedicationrequestIntentCodeType | null;
+    intent: fhir.FhirCode<MedicationrequestIntentCodeType> | null;
     /**
      * The category can be used to include where the medication is expected to be consumed or other types of requests.
      */
-    category?: fhir.CodeableConcept[];
+    category: fhir.CodeableConcept[];
     /**
      * Indicates how quickly the Medication Request should be addressed with respect to other requests.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | undefined;
     /**
      * If do not perform is not specified, the request is a positive request e.g. "do perform".
      */
@@ -395,7 +392,7 @@ export declare class MedicationRequest extends fhir.DomainResource {
     /**
      * Include additional information (for example, patient height and weight) that supports the ordering of the medication.
      */
-    supportingInformation?: fhir.Reference[];
+    supportingInformation: fhir.Reference[];
     /**
      * The date (and perhaps time) when the prescription was initially written or authored on.
      */
@@ -419,23 +416,23 @@ export declare class MedicationRequest extends fhir.DomainResource {
     /**
      * This could be a diagnosis code. If a full condition record exists or additional detail is needed, use reasonReference.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * This is a reference to a condition or observation that is the reason for the medication order.  If only a code exists, use reasonCode.
      */
-    reasonReference?: fhir.Reference[];
+    reasonReference: fhir.Reference[];
     /**
      * The URL pointing to a protocol, guideline, orderset, or other definition that is adhered to in whole or in part by this MedicationRequest.
      */
-    instantiatesCanonical?: fhir.FhirCanonical[];
+    instantiatesCanonical: fhir.FhirCanonical[];
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this MedicationRequest.
      */
-    instantiatesUri?: fhir.FhirUri[];
+    instantiatesUri: fhir.FhirUri[];
     /**
      * A plan or request that is fulfilled in whole or in part by this medication request.
      */
-    basedOn?: fhir.Reference[];
+    basedOn: fhir.Reference[];
     /**
      * A shared identifier common to all requests that were authorized more or less simultaneously by a single author, representing the identifier of the requisition or prescription.
      */
@@ -447,15 +444,15 @@ export declare class MedicationRequest extends fhir.DomainResource {
     /**
      * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be required for delivering the requested service.
      */
-    insurance?: fhir.Reference[];
+    insurance: fhir.Reference[];
     /**
      * Extra information about the prescription that could not be conveyed by the other attributes.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * There are examples where a medication request may include the option of an oral dose or an Intravenous or Intramuscular dose.  For example, "Ondansetron 8mg orally or IV twice a day as needed for nausea" or "Compazine® (prochlorperazine) 5-10mg PO or 25mg PR bid prn nausea or vomiting".  In these cases, two medication requests would be created that could be grouped together.  The decision on which dose and route of administration to use is based on the patient's condition at the time the dose is needed.
      */
-    dosageInstruction?: fhir.Dosage[];
+    dosageInstruction: fhir.Dosage[];
     /**
      * Indicates the specific details for the dispense or medication supply part of a medication request (also known as a Medication Prescription or Medication Order).  Note that this information is not always sent with the order.  There may be in some settings (e.g. hospitals) institutional or system support for completing the dispense details in the pharmacy department.
      */
@@ -471,11 +468,11 @@ export declare class MedicationRequest extends fhir.DomainResource {
     /**
      * This element can include a detected issue that has been identified either by a decision support system or by a clinician and may include information on the steps that were taken to address the issue.
      */
-    detectedIssue?: fhir.Reference[];
+    detectedIssue: fhir.Reference[];
     /**
      * This might not include provenances for all versions of the request – only those deemed “relevant” or important. This SHALL NOT include the provenance associated with this current version of the resource. (If that provenance is deemed to be a “relevant” change, it will need to be added as part of a later update. Until then, it can be queried directly as the provenance that points to this version using _revinclude All Provenances should have some historical version of this Request as their subject.).
      */
-    eventHistory?: fhir.Reference[];
+    eventHistory: fhir.Reference[];
     /**
      * Default constructor for MedicationRequest - initializes any required elements to null if a value is not provided.
      */
@@ -483,15 +480,38 @@ export declare class MedicationRequest extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (MedicationRequest.status)
      */
-    static statusRequiredCoding(): MedicationrequestStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Cancelled: "cancelled";
+        readonly Completed: "completed";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+        readonly OnHold: "on-hold";
+        readonly Stopped: "stopped";
+        readonly Unknown: "unknown";
+    };
     /**
      * Required-bound Value Set for intent (MedicationRequest.intent)
      */
-    static intentRequiredCoding(): MedicationrequestIntentCodingType;
+    static get intentRequiredCodes(): {
+        readonly FillerOrder: "filler-order";
+        readonly InstanceOrder: "instance-order";
+        readonly Option: "option";
+        readonly Order: "order";
+        readonly OriginalOrder: "original-order";
+        readonly Plan: "plan";
+        readonly Proposal: "proposal";
+        readonly ReflexOrder: "reflex-order";
+    };
     /**
      * Required-bound Value Set for priority (MedicationRequest.priority)
      */
-    static priorityRequiredCoding(): RequestPriorityCodingType;
+    static get priorityRequiredCodes(): {
+        readonly ASAP: "asap";
+        readonly Routine: "routine";
+        readonly STAT: "stat";
+        readonly Urgent: "urgent";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

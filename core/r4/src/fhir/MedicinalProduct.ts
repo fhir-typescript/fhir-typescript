@@ -51,11 +51,11 @@ export class MedicinalProductNameNamePart extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['part']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property part:fhir.FhirString fhir: MedicinalProduct.name.namePart.part:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property part:fhir.FhirString fhir: MedicinalProduct.name.namePart.part:string' });
     }
     if (this["part"]) { issues.push(...this.part.doModelValidation()); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.Coding fhir: MedicinalProduct.name.namePart.type:Coding', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.Coding fhir: MedicinalProduct.name.namePart.type:Coding' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     return issues;
@@ -116,12 +116,12 @@ export class MedicinalProductNameCountryLanguage extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['country']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property country:fhir.CodeableConcept fhir: MedicinalProduct.name.countryLanguage.country:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property country:fhir.CodeableConcept fhir: MedicinalProduct.name.countryLanguage.country:CodeableConcept' });
     }
     if (this["country"]) { issues.push(...this.country.doModelValidation()); }
     if (this["jurisdiction"]) { issues.push(...this.jurisdiction.doModelValidation()); }
     if (!this['language']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property language:fhir.CodeableConcept fhir: MedicinalProduct.name.countryLanguage.language:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property language:fhir.CodeableConcept fhir: MedicinalProduct.name.countryLanguage.language:CodeableConcept' });
     }
     if (this["language"]) { issues.push(...this.language.doModelValidation()); }
     return issues;
@@ -160,11 +160,11 @@ export class MedicinalProductName extends fhir.BackboneElement {
   /**
    * Coding words or phrases of the name.
    */
-  public namePart?: fhir.MedicinalProductNameNamePart[];
+  public namePart: fhir.MedicinalProductNameNamePart[];
   /**
    * Country where the name applies.
    */
-  public countryLanguage?: fhir.MedicinalProductNameCountryLanguage[];
+  public countryLanguage: fhir.MedicinalProductNameCountryLanguage[];
   /**
    * Default constructor for MedicinalProductName - initializes any required elements to null if a value is not provided.
    */
@@ -183,7 +183,7 @@ export class MedicinalProductName extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['productName']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property productName:fhir.FhirString fhir: MedicinalProduct.name.productName:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productName:fhir.FhirString fhir: MedicinalProduct.name.productName:string' });
     }
     if (this["productName"]) { issues.push(...this.productName.doModelValidation()); }
     if (this["namePart"]) { this.namePart.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -248,7 +248,7 @@ export class MedicinalProductManufacturingBusinessOperation extends fhir.Backbon
   /**
    * The manufacturer or establishment associated with the process.
    */
-  public manufacturer?: fhir.Reference[];
+  public manufacturer: fhir.Reference[];
   /**
    * A regulator which oversees the operation.
    */
@@ -333,7 +333,7 @@ export class MedicinalProductSpecialDesignation extends fhir.BackboneElement {
   /**
    * Identifier for the designation, or procedure number.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The type of special designation, e.g. orphan drug, minor use.
    */
@@ -497,7 +497,7 @@ export class MedicinalProduct extends fhir.DomainResource {
   /**
    * Business identifier for this product. Could be an MPID.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Regulatory type, e.g. Investigational or Authorized.
    */
@@ -521,7 +521,7 @@ export class MedicinalProduct extends fhir.DomainResource {
   /**
    * Whether the Medicinal Product is subject to special measures for regulatory reasons.
    */
-  public specialMeasures?: fhir.FhirString[];
+  public specialMeasures: fhir.FhirString[];
   /**
    * If authorised for use in children.
    */
@@ -529,35 +529,35 @@ export class MedicinalProduct extends fhir.DomainResource {
   /**
    * Allows the product to be classified by various systems.
    */
-  public productClassification?: fhir.CodeableConcept[];
+  public productClassification: fhir.CodeableConcept[];
   /**
    * Marketing status of the medicinal product, in contrast to marketing authorizaton.
    */
-  public marketingStatus?: fhir.MarketingStatus[];
+  public marketingStatus: fhir.MarketingStatus[];
   /**
    * Pharmaceutical aspects of product.
    */
-  public pharmaceuticalProduct?: fhir.Reference[];
+  public pharmaceuticalProduct: fhir.Reference[];
   /**
    * Package representation for the product.
    */
-  public packagedMedicinalProduct?: fhir.Reference[];
+  public packagedMedicinalProduct: fhir.Reference[];
   /**
    * Supporting documentation, typically for regulatory submission.
    */
-  public attachedDocument?: fhir.Reference[];
+  public attachedDocument: fhir.Reference[];
   /**
    * A master file for to the medicinal product (e.g. Pharmacovigilance System Master File).
    */
-  public masterFile?: fhir.Reference[];
+  public masterFile: fhir.Reference[];
   /**
    * A product specific contact, person (in a role), or an organization.
    */
-  public contact?: fhir.Reference[];
+  public contact: fhir.Reference[];
   /**
    * Clinical trials or studies that this product is involved in.
    */
-  public clinicalTrial?: fhir.Reference[];
+  public clinicalTrial: fhir.Reference[];
   /**
    * The product's name, including full name and possibly coded parts.
    */
@@ -565,15 +565,15 @@ export class MedicinalProduct extends fhir.DomainResource {
   /**
    * Reference to another product, e.g. for linking authorised to investigational product.
    */
-  public crossReference?: fhir.Identifier[];
+  public crossReference: fhir.Identifier[];
   /**
    * An operation applied to the product, for manufacturing or adminsitrative purpose.
    */
-  public manufacturingBusinessOperation?: fhir.MedicinalProductManufacturingBusinessOperation[];
+  public manufacturingBusinessOperation: fhir.MedicinalProductManufacturingBusinessOperation[];
   /**
    * Indicates if the medicinal product has an orphan designation for the treatment of a rare disease.
    */
-  public specialDesignation?: fhir.MedicinalProductSpecialDesignation[];
+  public specialDesignation: fhir.MedicinalProductSpecialDesignation[];
   /**
    * Default constructor for MedicinalProduct - initializes any required elements to null if a value is not provided.
    */
@@ -621,7 +621,7 @@ export class MedicinalProduct extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicinalProduct" fhir: MedicinalProduct.resourceType:"MedicinalProduct"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicinalProduct" fhir: MedicinalProduct.resourceType:"MedicinalProduct"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
@@ -640,11 +640,11 @@ export class MedicinalProduct extends fhir.DomainResource {
     if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["clinicalTrial"]) { this.clinicalTrial.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.MedicinalProductName[] fhir: MedicinalProduct.name:name', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.MedicinalProductName[] fhir: MedicinalProduct.name:name' });
     } else if (!Array.isArray(this.name)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property name:fhir.MedicinalProductName[] fhir: MedicinalProduct.name:name', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property name:fhir.MedicinalProductName[] fhir: MedicinalProduct.name:name' });
     } else if (this.name.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.MedicinalProductName[] fhir: MedicinalProduct.name:name', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.MedicinalProductName[] fhir: MedicinalProduct.name:name' });
     }
     if (this["name"]) { this.name.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["crossReference"]) { this.crossReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }

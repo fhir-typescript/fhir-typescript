@@ -393,6 +393,10 @@ export interface ClaimResponseProcessNote extends fhir.BackboneElement {
    */
   type?: 'display'|'print'|'printoper'|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.processNote.type
+   */
+  _type?:fhir.FhirElement;
+  /**
    * The explanation or description associated with the processing.
    */
   text: string|null;
@@ -495,6 +499,10 @@ export interface ClaimResponse extends fhir.DomainResource {
    */
   status: 'active'|'cancelled'|'draft'|'entered-in-error'|null;
   /**
+   * Extended properties for primitive element: ClaimResponse.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * This may contain the local bill type codes, for example the US UB-04 bill type code or the CMS bill type.
    */
   type: fhir.CodeableConcept|null;
@@ -506,6 +514,10 @@ export interface ClaimResponse extends fhir.DomainResource {
    * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
    */
   use: 'claim'|'preauthorization'|'predetermination'|null;
+  /**
+   * Extended properties for primitive element: ClaimResponse.use
+   */
+  _use?:fhir.FhirElement;
   /**
    * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for facast reimbursement is sought.
    */
@@ -534,6 +546,10 @@ export interface ClaimResponse extends fhir.DomainResource {
    * The resource may be used to indicate that: the request has been held (queued) for processing; that it has been processed and errors found (error); that no errors were found and that some of the adjudication has been undertaken (partial) or that all of the adjudication has been undertaken (complete).
    */
   outcome: 'complete'|'error'|'partial'|'queued'|null;
+  /**
+   * Extended properties for primitive element: ClaimResponse.outcome
+   */
+  _outcome?:fhir.FhirElement;
   /**
    * A human readable description of the status of the adjudication.
    */

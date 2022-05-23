@@ -40,6 +40,10 @@ export interface GuidanceResponse extends fhir.DomainResource {
      */
     status: 'data-requested' | 'data-required' | 'entered-in-error' | 'failure' | 'in-progress' | 'success' | null;
     /**
+     * Extended properties for primitive element: GuidanceResponse.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * The patient for which the request was processed.
      */
     subject?: fhir.Reference | undefined;

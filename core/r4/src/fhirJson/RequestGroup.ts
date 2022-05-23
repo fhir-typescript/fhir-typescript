@@ -15,6 +15,10 @@ export interface RequestGroupActionCondition extends fhir.BackboneElement {
    */
   kind: 'applicability'|'start'|'stop'|null;
   /**
+   * Extended properties for primitive element: RequestGroup.action.condition.kind
+   */
+  _kind?:fhir.FhirElement;
+  /**
    * The expression may be inlined, or may be a reference to a named expression within a logic library referenced by the library element.
    */
   expression?: fhir.Expression|undefined;
@@ -36,6 +40,10 @@ export interface RequestGroupActionRelatedAction extends fhir.BackboneElement {
    * The relationship of this action to the related action.
    */
   relationship: 'after'|'after-end'|'after-start'|'before'|'before-end'|'before-start'|'concurrent'|'concurrent-with-end'|'concurrent-with-start'|null;
+  /**
+   * Extended properties for primitive element: RequestGroup.action.relatedAction.relationship
+   */
+  _relationship?:fhir.FhirElement;
   /**
    * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before.
    */
@@ -86,6 +94,10 @@ export interface RequestGroupAction extends fhir.BackboneElement {
    * Indicates how quickly the action should be addressed with respect to other actions.
    */
   priority?: 'asap'|'routine'|'stat'|'urgent'|undefined;
+  /**
+   * Extended properties for primitive element: RequestGroup.action.priority
+   */
+  _priority?:fhir.FhirElement;
   /**
    * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a section of a documentation template.
    */
@@ -143,21 +155,41 @@ export interface RequestGroupAction extends fhir.BackboneElement {
    */
   groupingBehavior?: 'logical-group'|'sentence-group'|'visual-group'|undefined;
   /**
+   * Extended properties for primitive element: RequestGroup.action.groupingBehavior
+   */
+  _groupingBehavior?:fhir.FhirElement;
+  /**
    * Defines the selection behavior for the action and its children.
    */
   selectionBehavior?: 'all'|'all-or-none'|'any'|'at-most-one'|'exactly-one'|'one-or-more'|undefined;
+  /**
+   * Extended properties for primitive element: RequestGroup.action.selectionBehavior
+   */
+  _selectionBehavior?:fhir.FhirElement;
   /**
    * Defines expectations around whether an action is required.
    */
   requiredBehavior?: 'could'|'must'|'must-unless-documented'|undefined;
   /**
+   * Extended properties for primitive element: RequestGroup.action.requiredBehavior
+   */
+  _requiredBehavior?:fhir.FhirElement;
+  /**
    * Defines whether the action should usually be preselected.
    */
   precheckBehavior?: 'no'|'yes'|undefined;
   /**
+   * Extended properties for primitive element: RequestGroup.action.precheckBehavior
+   */
+  _precheckBehavior?:fhir.FhirElement;
+  /**
    * Defines whether the action can be selected multiple times.
    */
   cardinalityBehavior?: 'multiple'|'single'|undefined;
+  /**
+   * Extended properties for primitive element: RequestGroup.action.cardinalityBehavior
+   */
+  _cardinalityBehavior?:fhir.FhirElement;
   /**
    * The target resource SHALL be a [Request](request.html) resource with a Request.intent set to "option".
    */
@@ -213,13 +245,25 @@ export interface RequestGroup extends fhir.DomainResource {
    */
   status: 'active'|'completed'|'draft'|'entered-in-error'|'on-hold'|'revoked'|'unknown'|null;
   /**
+   * Extended properties for primitive element: RequestGroup.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Indicates the level of authority/intentionality associated with the request and where the request fits into the workflow chain.
    */
   intent: 'directive'|'filler-order'|'instance-order'|'option'|'order'|'original-order'|'plan'|'proposal'|'reflex-order'|null;
   /**
+   * Extended properties for primitive element: RequestGroup.intent
+   */
+  _intent?:fhir.FhirElement;
+  /**
    * Indicates how quickly the request should be addressed with respect to other requests.
    */
   priority?: 'asap'|'routine'|'stat'|'urgent'|undefined;
+  /**
+   * Extended properties for primitive element: RequestGroup.priority
+   */
+  _priority?:fhir.FhirElement;
   /**
    * This element can be used to provide a code that captures the meaning of the request group as a whole, as opposed to the code of the action element, which captures the meaning of the individual actions within the request group.
    */

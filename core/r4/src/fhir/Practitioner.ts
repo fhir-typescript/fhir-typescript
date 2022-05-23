@@ -50,7 +50,7 @@ export class PractitionerQualification extends fhir.BackboneElement {
   /**
    * An identifier that applies to this person's qualification in this role.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Coded representation of the qualification.
    */
@@ -82,7 +82,7 @@ export class PractitionerQualification extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Practitioner.qualification.code:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Practitioner.qualification.code:CodeableConcept' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["period"]) { issues.push(...this.period.doModelValidation()); }
@@ -127,7 +127,7 @@ export interface PractitionerArgs extends fhir.DomainResourceArgs {
   /**
    * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
    */
-  gender?: AdministrativeGenderCodeType|undefined;
+  gender?: fhir.FhirCode<AdministrativeGenderCodeType>|string|undefined;
   /**
    * The date of birth for the practitioner.
    */
@@ -161,7 +161,7 @@ export class Practitioner extends fhir.DomainResource {
   /**
    * An identifier that applies to this person in this role.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * If the practitioner is not in use by one organization, then it should mark the period on the PractitonerRole with an end date (even if they are active) as they may be active in another role.
    */
@@ -175,19 +175,19 @@ export class Practitioner extends fhir.DomainResource {
    * 4. Use = official
    * 5. Other order as decided by internal business rules.
    */
-  public name?: fhir.HumanName[];
+  public name: fhir.HumanName[];
   /**
    * Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and to help with identification.  These typically will have home numbers, or mobile numbers that are not role specific.
    */
-  public telecom?: fhir.ContactPoint[];
+  public telecom: fhir.ContactPoint[];
   /**
    * The PractitionerRole does not have an address value on it, as it is expected that the location property be used for this purpose (which has an address).
    */
-  public address?: fhir.Address[];
+  public address: fhir.Address[];
   /**
    * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
    */
-  public gender?: AdministrativeGenderCodeType|undefined;
+  public gender?: fhir.FhirCode<AdministrativeGenderCodeType>|undefined;
   /**
    * The date of birth for the practitioner.
    */
@@ -195,15 +195,15 @@ export class Practitioner extends fhir.DomainResource {
   /**
    * Image of the person.
    */
-  public photo?: fhir.Attachment[];
+  public photo: fhir.Attachment[];
   /**
    * The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner.  For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certian locality.
    */
-  public qualification?: fhir.PractitionerQualification[];
+  public qualification: fhir.PractitionerQualification[];
   /**
    * The structure aa-BB with this exact casing is one the most widely used notations for locale. However not all systems code this but instead have it as free text. Hence CodeableConcept instead of code as the data type.
    */
-  public communication?: fhir.CodeableConcept[];
+  public communication: fhir.CodeableConcept[];
   /**
    * Default constructor for Practitioner - initializes any required elements to null if a value is not provided.
    */
@@ -219,7 +219,7 @@ export class Practitioner extends fhir.DomainResource {
     else { this.telecom = []; }
     if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x)); }
     else { this.address = []; }
-    if (source['gender']) { this.gender = source.gender; }
+    if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
     if (source['birthDate']) { this.birthDate = new fhir.FhirDate({value: source.birthDate}); }
     if (source['photo']) { this.photo = source.photo.map((x) => new fhir.Attachment(x)); }
     else { this.photo = []; }
@@ -231,13 +231,13 @@ export class Practitioner extends fhir.DomainResource {
   /**
    * Required-bound Value Set for gender (Practitioner.gender)
    */
-  public static genderRequiredCoding():AdministrativeGenderCodingType {
-    return AdministrativeGenderCodings;
+  public static get genderRequiredCodes() {
+    return AdministrativeGenderCodes;
   }
   /**
    * Preferred-bound Value Set for communication (Practitioner.communication)
    */
-  public static communicationPreferredCoding():LanguagesCodingType {
+  public static get communicationPreferredCodings() {
     return LanguagesCodings;
   }
   /**
@@ -246,13 +246,17 @@ export class Practitioner extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Practitioner" fhir: Practitioner.resourceType:"Practitioner"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Practitioner" fhir: Practitioner.resourceType:"Practitioner"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["active"]) { issues.push(...this.active.doModelValidation()); }
     if (this["name"]) { this.name.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["address"]) { this.address.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender?:fhir.FhirCode<AdministrativeGenderCodeType> fhir: Practitioner.gender:code Required binding to: AdministrativeGender' });
+    }
+    if (this["gender"]) { issues.push(...this.gender.doModelValidation()); }
     if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation()); }
     if (this["photo"]) { this.photo.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["qualification"]) { this.qualification.forEach((x) => { issues.push(...x.doModelValidation()); }) }

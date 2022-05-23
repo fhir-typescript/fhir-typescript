@@ -6,7 +6,7 @@ export interface FhirTimeArgs extends fhir.FhirPrimitiveArgs {
     /**
      * A time during the day, with no date specified
      */
-    value?: FhirTime | string | undefined;
+    value?: FhirTime | string | undefined | null;
 }
 /**
  * A time during the day, with no date specified

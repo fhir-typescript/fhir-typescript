@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { GroupTypeCodingType } from '../fhirValueSets/GroupTypeCodings.js';
 import { GroupTypeCodeType } from '../fhirValueSets/GroupTypeCodes.js';
 /**
  * Valid arguments for the GroupCharacteristic type.
@@ -144,7 +143,7 @@ export interface GroupArgs extends fhir.DomainResourceArgs {
     /**
      * Group members SHALL be of the appropriate resource type (Patient for person or animal; or Practitioner, Device, Medication or Substance for the other types.).
      */
-    type: GroupTypeCodeType | null;
+    type: fhir.FhirCode<GroupTypeCodeType> | string | undefined;
     /**
      * If true, indicates that the resource refers to a specific group of real individuals.  If false, the group defines a set of intended individuals.
      */
@@ -189,7 +188,7 @@ export declare class Group extends fhir.DomainResource {
     /**
      * A unique business identifier for this group.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Indicates whether the record for the group is available for use or is merely being retained for historical purposes.
      */
@@ -197,7 +196,7 @@ export declare class Group extends fhir.DomainResource {
     /**
      * Group members SHALL be of the appropriate resource type (Patient for person or animal; or Practitioner, Device, Medication or Substance for the other types.).
      */
-    type: GroupTypeCodeType | null;
+    type: fhir.FhirCode<GroupTypeCodeType> | null;
     /**
      * If true, indicates that the resource refers to a specific group of real individuals.  If false, the group defines a set of intended individuals.
      */
@@ -221,11 +220,11 @@ export declare class Group extends fhir.DomainResource {
     /**
      * All the identified characteristics must be true for an entity to a member of the group.
      */
-    characteristic?: fhir.GroupCharacteristic[];
+    characteristic: fhir.GroupCharacteristic[];
     /**
      * Identifies the resource instances that are members of the group.
      */
-    member?: fhir.GroupMember[];
+    member: fhir.GroupMember[];
     /**
      * Default constructor for Group - initializes any required elements to null if a value is not provided.
      */
@@ -233,7 +232,16 @@ export declare class Group extends fhir.DomainResource {
     /**
      * Required-bound Value Set for type (Group.type)
      */
-    static typeRequiredCoding(): GroupTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Animal: "animal";
+        readonly Device: "device";
+        readonly Medication: "medication";
+        readonly Person: "person";
+        readonly Practitioner: "practitioner";
+        readonly Substance: "substance"; /**
+         * For Range, it means members of the group have a value that falls somewhere within the specified range.
+         */
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

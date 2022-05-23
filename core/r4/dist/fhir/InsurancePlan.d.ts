@@ -1,7 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ContactentityTypeCodingType } from '../fhirValueSets/ContactentityTypeCodings.js';
-import { InsuranceplanApplicabilityCodingType } from '../fhirValueSets/InsuranceplanApplicabilityCodings.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 /**
  * Valid arguments for the InsurancePlanContact type.
@@ -43,7 +40,7 @@ export declare class InsurancePlanContact extends fhir.BackboneElement {
     /**
      * A contact detail (e.g. a telephone number or an email address) by which the party may be contacted.
      */
-    telecom?: fhir.ContactPoint[];
+    telecom: fhir.ContactPoint[];
     /**
      * Visiting or postal addresses for the contact.
      */
@@ -55,7 +52,14 @@ export declare class InsurancePlanContact extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for purpose (InsurancePlan.contact.purpose)
      */
-    static purposeExtensibleCoding(): ContactentityTypeCodingType;
+    static get purposeExtensibleCodings(): {
+        readonly Administrative: fhir.Coding;
+        readonly Billing: fhir.Coding;
+        readonly HumanResource: fhir.Coding;
+        readonly Patient: fhir.Coding;
+        readonly Payor: fhir.Coding;
+        readonly Press: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -135,7 +139,7 @@ export declare class InsurancePlanCoverageBenefit extends fhir.BackboneElement {
     /**
      * The specific limits on the benefit.
      */
-    limit?: fhir.InsurancePlanCoverageBenefitLimit[];
+    limit: fhir.InsurancePlanCoverageBenefitLimit[];
     /**
      * Default constructor for InsurancePlanCoverageBenefit - initializes any required elements to null if a value is not provided.
      */
@@ -177,7 +181,7 @@ export declare class InsurancePlanCoverage extends fhir.BackboneElement {
     /**
      * Networks are represented as a hierarchy of organization resources.
      */
-    network?: fhir.Reference[];
+    network: fhir.Reference[];
     /**
      * Specific benefits under this type of coverage.
      */
@@ -285,7 +289,7 @@ export declare class InsurancePlanPlanSpecificCostBenefitCost extends fhir.Backb
     /**
      * Additional information about the cost, such as information about funding sources (e.g. HSA, HRA, FSA, RRA).
      */
-    qualifiers?: fhir.CodeableConcept[];
+    qualifiers: fhir.CodeableConcept[];
     /**
      * The actual cost value. (some of the costs may be represented as percentages rather than currency, e.g. 10% coinsurance).
      */
@@ -297,7 +301,11 @@ export declare class InsurancePlanPlanSpecificCostBenefitCost extends fhir.Backb
     /**
      * Required-bound Value Set for applicability (InsurancePlan.plan.specificCost.benefit.cost.applicability)
      */
-    static applicabilityRequiredCoding(): InsuranceplanApplicabilityCodingType;
+    static get applicabilityRequiredCodes(): {
+        readonly InNetwork: "in-network";
+        readonly Other: "other";
+        readonly OutOfNetwork: "out-of-network";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -331,7 +339,7 @@ export declare class InsurancePlanPlanSpecificCostBenefit extends fhir.BackboneE
     /**
      * List of the costs associated with a specific benefit.
      */
-    cost?: fhir.InsurancePlanPlanSpecificCostBenefitCost[];
+    cost: fhir.InsurancePlanPlanSpecificCostBenefitCost[];
     /**
      * Default constructor for InsurancePlanPlanSpecificCostBenefit - initializes any required elements to null if a value is not provided.
      */
@@ -369,7 +377,7 @@ export declare class InsurancePlanPlanSpecificCost extends fhir.BackboneElement 
     /**
      * List of the specific benefits under this category of benefit.
      */
-    benefit?: fhir.InsurancePlanPlanSpecificCostBenefit[];
+    benefit: fhir.InsurancePlanPlanSpecificCostBenefit[];
     /**
      * Default constructor for InsurancePlanPlanSpecificCost - initializes any required elements to null if a value is not provided.
      */
@@ -419,7 +427,7 @@ export declare class InsurancePlanPlan extends fhir.BackboneElement {
     /**
      * Business identifiers assigned to this health insurance plan which remain constant as the resource is updated and propagates from server to server.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Type of plan. For example, "Platinum" or "High Deductable".
      */
@@ -427,19 +435,19 @@ export declare class InsurancePlanPlan extends fhir.BackboneElement {
     /**
      * The geographic region in which a health insurance plan's benefits apply.
      */
-    coverageArea?: fhir.Reference[];
+    coverageArea: fhir.Reference[];
     /**
      * Networks are represented as a hierarchy of organization resources.
      */
-    network?: fhir.Reference[];
+    network: fhir.Reference[];
     /**
      * Overall costs associated with the plan.
      */
-    generalCost?: fhir.InsurancePlanPlanGeneralCost[];
+    generalCost: fhir.InsurancePlanPlanGeneralCost[];
     /**
      * Costs associated with the coverage provided by the product.
      */
-    specificCost?: fhir.InsurancePlanPlanSpecificCost[];
+    specificCost: fhir.InsurancePlanPlanSpecificCost[];
     /**
      * Default constructor for InsurancePlanPlan - initializes any required elements to null if a value is not provided.
      */
@@ -464,7 +472,7 @@ export interface InsurancePlanArgs extends fhir.DomainResourceArgs {
     /**
      * The current state of the health insurance product.
      */
-    status?: PublicationStatusCodeType | undefined;
+    status?: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * The kind of health insurance product.
      */
@@ -529,15 +537,15 @@ export declare class InsurancePlan extends fhir.DomainResource {
     /**
      * Business identifiers assigned to this health insurance product which remain constant as the resource is updated and propagates from server to server.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * The current state of the health insurance product.
      */
-    status?: PublicationStatusCodeType | undefined;
+    status?: fhir.FhirCode<PublicationStatusCodeType> | undefined;
     /**
      * The kind of health insurance product.
      */
-    type?: fhir.CodeableConcept[];
+    type: fhir.CodeableConcept[];
     /**
      * If the name of the product/plan changes, consider putting the old name in the alias column so that it can still be located through searches.
      */
@@ -545,7 +553,7 @@ export declare class InsurancePlan extends fhir.DomainResource {
     /**
      * There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the product/plan.
      */
-    alias?: fhir.FhirString[];
+    alias: fhir.FhirString[];
     /**
      * The period of time that the health insurance product is available.
      */
@@ -561,27 +569,27 @@ export declare class InsurancePlan extends fhir.DomainResource {
     /**
      * The geographic region in which a health insurance product's benefits apply.
      */
-    coverageArea?: fhir.Reference[];
+    coverageArea: fhir.Reference[];
     /**
      * Where multiple contacts for the same purpose are provided there is a standard extension that can be used to determine which one is the preferred contact to use.
      */
-    contact?: fhir.InsurancePlanContact[];
+    contact: fhir.InsurancePlanContact[];
     /**
      * The technical endpoints providing access to services operated for the health insurance product.
      */
-    endpoint?: fhir.Reference[];
+    endpoint: fhir.Reference[];
     /**
      * Networks are represented as a hierarchy of organization resources.
      */
-    network?: fhir.Reference[];
+    network: fhir.Reference[];
     /**
      * Details about the coverage offered by the insurance product.
      */
-    coverage?: fhir.InsurancePlanCoverage[];
+    coverage: fhir.InsurancePlanCoverage[];
     /**
      * Details about an insurance plan.
      */
-    plan?: fhir.InsurancePlanPlan[];
+    plan: fhir.InsurancePlanPlan[];
     /**
      * Default constructor for InsurancePlan - initializes any required elements to null if a value is not provided.
      */
@@ -589,7 +597,12 @@ export declare class InsurancePlan extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (InsurancePlan.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

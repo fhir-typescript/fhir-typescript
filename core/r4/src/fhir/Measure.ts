@@ -88,7 +88,7 @@ export class MeasureGroupPopulation extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for code (Measure.group.population.code)
    */
-  public static codeExtensibleCoding():MeasurePopulationCodingType {
+  public static get codeExtensibleCodings() {
     return MeasurePopulationCodings;
   }
   /**
@@ -99,7 +99,7 @@ export class MeasureGroupPopulation extends fhir.BackboneElement {
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (!this['criteria']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property criteria:fhir.Expression fhir: Measure.group.population.criteria:Expression', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property criteria:fhir.Expression fhir: Measure.group.population.criteria:Expression' });
     }
     if (this["criteria"]) { issues.push(...this.criteria.doModelValidation()); }
     return issues;
@@ -161,7 +161,7 @@ export class MeasureGroupStratifierComponent extends fhir.BackboneElement {
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (!this['criteria']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property criteria:fhir.Expression fhir: Measure.group.stratifier.component.criteria:Expression', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property criteria:fhir.Expression fhir: Measure.group.stratifier.component.criteria:Expression' });
     }
     if (this["criteria"]) { issues.push(...this.criteria.doModelValidation()); }
     return issues;
@@ -212,7 +212,7 @@ export class MeasureGroupStratifier extends fhir.BackboneElement {
   /**
    * Stratifiers are defined either as a single criteria, or as a set of component criteria.
    */
-  public component?: fhir.MeasureGroupStratifierComponent[];
+  public component: fhir.MeasureGroupStratifierComponent[];
   /**
    * Default constructor for MeasureGroupStratifier - initializes any required elements to null if a value is not provided.
    */
@@ -277,11 +277,11 @@ export class MeasureGroup extends fhir.BackboneElement {
   /**
    * A population criteria for the measure.
    */
-  public population?: fhir.MeasureGroupPopulation[];
+  public population: fhir.MeasureGroupPopulation[];
   /**
    * The stratifier criteria for the measure report, specified as either the name of a valid CQL expression defined within a referenced library or a valid FHIR Resource Path.
    */
-  public stratifier?: fhir.MeasureGroupStratifier[];
+  public stratifier: fhir.MeasureGroupStratifier[];
   /**
    * Default constructor for MeasureGroup - initializes any required elements to null if a value is not provided.
    */
@@ -343,7 +343,7 @@ export class MeasureSupplementalData extends fhir.BackboneElement {
   /**
    * An indicator of the intended usage for the supplemental data element. Supplemental data indicates the data is additional information requested to augment the measure information. Risk adjustment factor indicates the data is additional information used to calculate risk adjustment factors when applying a risk model to the measure calculation.
    */
-  public usage?: fhir.CodeableConcept[];
+  public usage: fhir.CodeableConcept[];
   /**
    * The human readable description of this supplemental data.
    */
@@ -367,7 +367,7 @@ export class MeasureSupplementalData extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for usage (Measure.supplementalData.usage)
    */
-  public static usageExtensibleCoding():MeasureDataUsageCodingType {
+  public static get usageExtensibleCodings() {
     return MeasureDataUsageCodings;
   }
   /**
@@ -379,7 +379,7 @@ export class MeasureSupplementalData extends fhir.BackboneElement {
     if (this["usage"]) { this.usage.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (!this['criteria']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property criteria:fhir.Expression fhir: Measure.supplementalData.criteria:Expression', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property criteria:fhir.Expression fhir: Measure.supplementalData.criteria:Expression' });
     }
     if (this["criteria"]) { issues.push(...this.criteria.doModelValidation()); }
     return issues;
@@ -422,7 +422,7 @@ export interface MeasureArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of measures that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of measures that are appropriate for use versus not.
    */
@@ -590,7 +590,7 @@ export class Measure extends fhir.DomainResource {
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this measure outside of FHIR, where it is not possible to use the logical URI.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * There may be different measure instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the measure with the format [url]|[version].
    */
@@ -610,7 +610,7 @@ export class Measure extends fhir.DomainResource {
   /**
    * Allows filtering of measures that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of measures that are appropriate for use versus not.
    */
@@ -634,7 +634,7 @@ export class Measure extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the measure was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the measure as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the measure is presumed to be the predominant language in the place the measure was created).
    */
@@ -642,11 +642,11 @@ export class Measure extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the measure to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * This element does not describe the usage of the measure. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this measure.
    */
@@ -674,31 +674,31 @@ export class Measure extends fhir.DomainResource {
   /**
    * Descriptive topics related to the content of the measure. Topics provide a high-level categorization grouping types of measures that can be useful for filtering and searching.
    */
-  public topic?: fhir.CodeableConcept[];
+  public topic: fhir.CodeableConcept[];
   /**
    * An individiual or organization primarily involved in the creation and maintenance of the content.
    */
-  public author?: fhir.ContactDetail[];
+  public author: fhir.ContactDetail[];
   /**
    * An individual or organization primarily responsible for internal coherence of the content.
    */
-  public editor?: fhir.ContactDetail[];
+  public editor: fhir.ContactDetail[];
   /**
    * An individual or organization primarily responsible for review of some aspect of the content.
    */
-  public reviewer?: fhir.ContactDetail[];
+  public reviewer: fhir.ContactDetail[];
   /**
    * An individual or organization responsible for officially endorsing the content for use in some setting.
    */
-  public endorser?: fhir.ContactDetail[];
+  public endorser: fhir.ContactDetail[];
   /**
    * Each related artifact is either an attachment, or a reference to another resource, but not both.
    */
-  public relatedArtifact?: fhir.RelatedArtifact[];
+  public relatedArtifact: fhir.RelatedArtifact[];
   /**
    * A reference to a Library resource containing the formal logic used by the measure.
    */
-  public library?: fhir.FhirCanonical[];
+  public library: fhir.FhirCanonical[];
   /**
    * Notices and disclaimers regarding the use of the measure or related to intellectual property (such as code systems) referenced by the measure.
    */
@@ -714,7 +714,7 @@ export class Measure extends fhir.DomainResource {
   /**
    * Indicates whether the measure is used to examine a process, an outcome over time, a patient-reported outcome, or a structure measure such as utilization.
    */
-  public type?: fhir.CodeableConcept[];
+  public type: fhir.CodeableConcept[];
   /**
    * Describes the method of adjusting for clinical severity and conditions present at the start of care that can influence patient outcomes for making valid comparisons of outcome measures across providers. Indicates whether a measure is subject to the statistical process for reducing, removing, or clarifying the influences of confounding factors to allow for more useful comparisons.
    */
@@ -738,7 +738,7 @@ export class Measure extends fhir.DomainResource {
   /**
    * Provides a description of an individual term used within the measure.
    */
-  public definition?: fhir.FhirMarkdown[];
+  public definition: fhir.FhirMarkdown[];
   /**
    * Additional guidance for the measure including how it can be used in a clinical context, and the intent of the measure.
    */
@@ -746,11 +746,11 @@ export class Measure extends fhir.DomainResource {
   /**
    * A group of population criteria for the measure.
    */
-  public group?: fhir.MeasureGroup[];
+  public group: fhir.MeasureGroup[];
   /**
    * Note that supplemental data are reported as observations for each patient and included in the evaluatedResources bundle. See the MeasureReport resource or the Quality Reporting topic for more information.
    */
-  public supplementalData?: fhir.MeasureSupplementalData[];
+  public supplementalData: fhir.MeasureSupplementalData[];
   /**
    * Default constructor for Measure - initializes any required elements to null if a value is not provided.
    */
@@ -764,7 +764,7 @@ export class Measure extends fhir.DomainResource {
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
     if (source['subtitle']) { this.subtitle = new fhir.FhirString({value: source.subtitle}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['subject']) { this.subject = source.subject; }
@@ -820,32 +820,32 @@ export class Measure extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Measure.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Extensible-bound Value Set for scoring (Measure.scoring)
    */
-  public static scoringExtensibleCoding():MeasureScoringCodingType {
+  public static get scoringExtensibleCodings() {
     return MeasureScoringCodings;
   }
   /**
    * Extensible-bound Value Set for compositeScoring (Measure.compositeScoring)
    */
-  public static compositeScoringExtensibleCoding():CompositeMeasureScoringCodingType {
+  public static get compositeScoringExtensibleCodings() {
     return CompositeMeasureScoringCodings;
   }
   /**
    * Extensible-bound Value Set for type (Measure.type)
    */
-  public static typeExtensibleCoding():MeasureTypeCodingType {
+  public static get typeExtensibleCodings() {
     return MeasureTypeCodings;
   }
   /**
    * Required-bound Value Set for improvementNotation (Measure.improvementNotation)
    */
-  public static improvementNotationRequiredCoding():MeasureImprovementNotationCodingType {
-    return MeasureImprovementNotationCodings;
+  public static get improvementNotationRequiredCodes() {
+    return MeasureImprovementNotationCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -853,7 +853,7 @@ export class Measure extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Measure" fhir: Measure.resourceType:"Measure"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Measure" fhir: Measure.resourceType:"Measure"' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -862,8 +862,12 @@ export class Measure extends fhir.DomainResource {
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: Measure.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: Measure.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: Measure.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
@@ -892,6 +896,9 @@ export class Measure extends fhir.DomainResource {
     if (this["rateAggregation"]) { issues.push(...this.rateAggregation.doModelValidation()); }
     if (this["rationale"]) { issues.push(...this.rationale.doModelValidation()); }
     if (this["clinicalRecommendationStatement"]) { issues.push(...this.clinicalRecommendationStatement.doModelValidation()); }
+    if (this['improvementNotation'] && (!Object.values(MeasureImprovementNotationCodes).includes(this.improvementNotation as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property improvementNotation?:fhir.CodeableConcept fhir: Measure.improvementNotation:CodeableConcept Required binding to: MeasureImprovementNotation' });
+    }
     if (this["improvementNotation"]) { issues.push(...this.improvementNotation.doModelValidation()); }
     if (this["definition"]) { this.definition.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["guidance"]) { issues.push(...this.guidance.doModelValidation()); }

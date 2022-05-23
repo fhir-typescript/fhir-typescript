@@ -49,6 +49,10 @@ export interface CommunicationRequest extends fhir.DomainResource {
      */
     status: 'active' | 'completed' | 'draft' | 'entered-in-error' | 'on-hold' | 'revoked' | 'unknown' | null;
     /**
+     * Extended properties for primitive element: CommunicationRequest.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * This is generally only used for "exception" statuses such as "suspended" or "cancelled".  The reason why the CommunicationRequest was created at all is captured in reasonCode, not here.  [distinct reason codes for different statuses can be enforced using invariants if they are universal bindings].
      */
     statusReason?: fhir.CodeableConcept | undefined;
@@ -60,6 +64,10 @@ export interface CommunicationRequest extends fhir.DomainResource {
      * Characterizes how quickly the proposed act must be initiated. Includes concepts such as stat, urgent, routine.
      */
     priority?: 'asap' | 'routine' | 'stat' | 'urgent' | undefined;
+    /**
+     * Extended properties for primitive element: CommunicationRequest.priority
+     */
+    _priority?: fhir.FhirElement;
     /**
      * The attributes provided with the request qualify what is not to be done.
      */

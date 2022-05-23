@@ -24,7 +24,7 @@ export interface PractitionerRoleAvailableTimeArgs extends fhir.BackboneElementA
   /**
    * Indicates which days of the week are available between the start and end Times.
    */
-  daysOfWeek?: DaysOfWeekCodeType[]|undefined;
+  daysOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[]|string[]|undefined;
   /**
    * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
    */
@@ -50,7 +50,7 @@ export class PractitionerRoleAvailableTime extends fhir.BackboneElement {
   /**
    * Indicates which days of the week are available between the start and end Times.
    */
-  public daysOfWeek?: DaysOfWeekCodeType[];
+  public daysOfWeek: fhir.FhirCode<DaysOfWeekCodeType>[];
   /**
    * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
    */
@@ -68,7 +68,7 @@ export class PractitionerRoleAvailableTime extends fhir.BackboneElement {
    */
   constructor(source:Partial<PractitionerRoleAvailableTimeArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['daysOfWeek']) { this.daysOfWeek = source.daysOfWeek.map((x) => x); }
+    if (source['daysOfWeek']) { this.daysOfWeek = source.daysOfWeek.map((x) => new fhir.FhirCode<DaysOfWeekCodeType>({value: x})); }
     else { this.daysOfWeek = []; }
     if (source['allDay']) { this.allDay = new fhir.FhirBoolean({value: source.allDay}); }
     if (source['availableStartTime']) { this.availableStartTime = new fhir.FhirTime({value: source.availableStartTime}); }
@@ -77,14 +77,22 @@ export class PractitionerRoleAvailableTime extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for daysOfWeek (PractitionerRole.availableTime.daysOfWeek)
    */
-  public static daysOfWeekRequiredCoding():DaysOfWeekCodingType {
-    return DaysOfWeekCodings;
+  public static get daysOfWeekRequiredCodes() {
+    return DaysOfWeekCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this['daysOfWeek']) {
+      this.daysOfWeek.forEach((v) => {
+        if (!Object.values(DaysOfWeekCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property daysOfWeek?:fhir.FhirCode<DaysOfWeekCodeType>[] fhir: PractitionerRole.availableTime.daysOfWeek:code Required binding to: DaysOfWeek' });
+        }
+      });
+    }
+    if (this["daysOfWeek"]) { this.daysOfWeek.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["allDay"]) { issues.push(...this.allDay.doModelValidation()); }
     if (this["availableStartTime"]) { issues.push(...this.availableStartTime.doModelValidation()); }
     if (this["availableEndTime"]) { issues.push(...this.availableEndTime.doModelValidation()); }
@@ -136,7 +144,7 @@ export class PractitionerRoleNotAvailable extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['description']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property description:fhir.FhirString fhir: PractitionerRole.notAvailable.description:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description:fhir.FhirString fhir: PractitionerRole.notAvailable.description:string' });
     }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["during"]) { issues.push(...this.during.doModelValidation()); }
@@ -224,7 +232,7 @@ export class PractitionerRole extends fhir.DomainResource {
   /**
    * Business Identifiers that are specific to a role/location.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * If this value is false, you may refer to the period to see when the role was in active use. If there is no period specified, no inference can be made about when it was active.
    */
@@ -244,31 +252,31 @@ export class PractitionerRole extends fhir.DomainResource {
   /**
    * A person may have more than one role.
    */
-  public code?: fhir.CodeableConcept[];
+  public code: fhir.CodeableConcept[];
   /**
    * Specific specialty of the practitioner.
    */
-  public specialty?: fhir.CodeableConcept[];
+  public specialty: fhir.CodeableConcept[];
   /**
    * The location(s) at which this practitioner provides care.
    */
-  public location?: fhir.Reference[];
+  public location: fhir.Reference[];
   /**
    * The list of healthcare services that this worker provides for this role's Organization/Location(s).
    */
-  public healthcareService?: fhir.Reference[];
+  public healthcareService: fhir.Reference[];
   /**
    * Contact details that are specific to the role/location/service.
    */
-  public telecom?: fhir.ContactPoint[];
+  public telecom: fhir.ContactPoint[];
   /**
    * More detailed availability information may be provided in associated Schedule/Slot resources.
    */
-  public availableTime?: fhir.PractitionerRoleAvailableTime[];
+  public availableTime: fhir.PractitionerRoleAvailableTime[];
   /**
    * The practitioner is not available or performing this role during this period of time due to the provided reason.
    */
-  public notAvailable?: fhir.PractitionerRoleNotAvailable[];
+  public notAvailable: fhir.PractitionerRoleNotAvailable[];
   /**
    * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
    */
@@ -276,7 +284,7 @@ export class PractitionerRole extends fhir.DomainResource {
   /**
    * Technical endpoints providing access to services operated for the practitioner with this role.
    */
-  public endpoint?: fhir.Reference[];
+  public endpoint: fhir.Reference[];
   /**
    * Default constructor for PractitionerRole - initializes any required elements to null if a value is not provided.
    */
@@ -310,7 +318,7 @@ export class PractitionerRole extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for specialty (PractitionerRole.specialty)
    */
-  public static specialtyPreferredCoding():C80PracticeCodesCodingType {
+  public static get specialtyPreferredCodings() {
     return C80PracticeCodesCodings;
   }
   /**
@@ -319,7 +327,7 @@ export class PractitionerRole extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"PractitionerRole" fhir: PractitionerRole.resourceType:"PractitionerRole"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"PractitionerRole" fhir: PractitionerRole.resourceType:"PractitionerRole"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["active"]) { issues.push(...this.active.doModelValidation()); }

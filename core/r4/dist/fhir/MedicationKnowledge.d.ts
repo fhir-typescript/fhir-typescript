@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { MedicationknowledgeStatusCodingType } from '../fhirValueSets/MedicationknowledgeStatusCodings.js';
 import { MedicationknowledgeStatusCodeType } from '../fhirValueSets/MedicationknowledgeStatusCodes.js';
 /**
  * Valid arguments for the MedicationKnowledgeRelatedMedicationKnowledge type.
@@ -297,7 +296,7 @@ export declare class MedicationKnowledgeAdministrationGuidelinesPatientCharacter
     /**
      * The specific characteristic (e.g. height, weight, gender, etc.).
      */
-    value?: fhir.FhirString[];
+    value: fhir.FhirString[];
     /**
      * Default constructor for MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics - initializes any required elements to null if a value is not provided.
      */
@@ -343,7 +342,7 @@ export declare class MedicationKnowledgeAdministrationGuidelines extends fhir.Ba
     /**
      * Dosage for the medication for the specific guidelines.
      */
-    dosage?: fhir.MedicationKnowledgeAdministrationGuidelinesDosage[];
+    dosage: fhir.MedicationKnowledgeAdministrationGuidelinesDosage[];
     /**
      * Indication for use that apply to the specific administration guidelines.
      */
@@ -355,7 +354,7 @@ export declare class MedicationKnowledgeAdministrationGuidelines extends fhir.Ba
     /**
      * Characteristics of the patient that are relevant to the administration guidelines (for example, height, weight, gender, etc.).
      */
-    patientCharacteristics?: fhir.MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics[];
+    patientCharacteristics: fhir.MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics[];
     /**
      * Default constructor for MedicationKnowledgeAdministrationGuidelines - initializes any required elements to null if a value is not provided.
      */
@@ -393,7 +392,7 @@ export declare class MedicationKnowledgeMedicineClassification extends fhir.Back
     /**
      * Specific category assigned to the medication (e.g. anti-infective, anti-hypertensive, antibiotic, etc.).
      */
-    classification?: fhir.CodeableConcept[];
+    classification: fhir.CodeableConcept[];
     /**
      * Default constructor for MedicationKnowledgeMedicineClassification - initializes any required elements to null if a value is not provided.
      */
@@ -641,11 +640,11 @@ export declare class MedicationKnowledgeRegulatory extends fhir.BackboneElement 
     /**
      * Specifies if changes are allowed when dispensing a medication from a regulatory perspective.
      */
-    substitution?: fhir.MedicationKnowledgeRegulatorySubstitution[];
+    substitution: fhir.MedicationKnowledgeRegulatorySubstitution[];
     /**
      * Specifies the schedule of a medication in jurisdiction.
      */
-    schedule?: fhir.MedicationKnowledgeRegulatorySchedule[];
+    schedule: fhir.MedicationKnowledgeRegulatorySchedule[];
     /**
      * The maximum number of units of the medication that can be dispensed in a period.
      */
@@ -687,11 +686,11 @@ export declare class MedicationKnowledgeKinetics extends fhir.BackboneElement {
     /**
      * The drug concentration measured at certain discrete points in time.
      */
-    areaUnderCurve?: fhir.Quantity[];
+    areaUnderCurve: fhir.Quantity[];
     /**
      * The median lethal dose of a drug.
      */
-    lethalDose50?: fhir.Quantity[];
+    lethalDose50: fhir.Quantity[];
     /**
      * The time required for any specified property (e.g., the concentration of a substance in the body) to decrease by half.
      */
@@ -720,7 +719,7 @@ export interface MedicationKnowledgeArgs extends fhir.DomainResourceArgs {
     /**
      * This status is intended to identify if the medication in a local system is in active use within a drug database or inventory.  For example, a pharmacy system may create a new drug file record for a compounded product "ABC Hospital Special Cream" with an active status.  At some point in the future, it may be determined that the drug record was created with an error and the status is changed to "entered in error".   This status is not intended to specify if a medication is part of a particular formulary.  It is possible that the drug record may be referenced by multiple formularies or catalogues and each of those entries would have a separate status.
      */
-    status?: MedicationknowledgeStatusCodeType | undefined;
+    status?: fhir.FhirCode<MedicationknowledgeStatusCodeType> | string | undefined;
     /**
      * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
      */
@@ -821,7 +820,7 @@ export declare class MedicationKnowledge extends fhir.DomainResource {
     /**
      * This status is intended to identify if the medication in a local system is in active use within a drug database or inventory.  For example, a pharmacy system may create a new drug file record for a compounded product "ABC Hospital Special Cream" with an active status.  At some point in the future, it may be determined that the drug record was created with an error and the status is changed to "entered in error".   This status is not intended to specify if a medication is part of a particular formulary.  It is possible that the drug record may be referenced by multiple formularies or catalogues and each of those entries would have a separate status.
      */
-    status?: MedicationknowledgeStatusCodeType | undefined;
+    status?: fhir.FhirCode<MedicationknowledgeStatusCodeType> | undefined;
     /**
      * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
      */
@@ -837,27 +836,27 @@ export declare class MedicationKnowledge extends fhir.DomainResource {
     /**
      * Additional names for a medication, for example, the name(s) given to a medication in different countries.  For example, acetaminophen and paracetamol or salbutamol and albuterol.
      */
-    synonym?: fhir.FhirString[];
+    synonym: fhir.FhirString[];
     /**
      * Associated or related knowledge about a medication.
      */
-    relatedMedicationKnowledge?: fhir.MedicationKnowledgeRelatedMedicationKnowledge[];
+    relatedMedicationKnowledge: fhir.MedicationKnowledgeRelatedMedicationKnowledge[];
     /**
      * Associated or related medications.  For example, if the medication is a branded product (e.g. Crestor), this is the Therapeutic Moeity (e.g. Rosuvastatin) or if this is a generic medication (e.g. Rosuvastatin), this would link to a branded product (e.g. Crestor).
      */
-    associatedMedication?: fhir.Reference[];
+    associatedMedication: fhir.Reference[];
     /**
      * Category of the medication or product (e.g. branded product, therapeutic moeity, generic product, innovator product, etc.).
      */
-    productType?: fhir.CodeableConcept[];
+    productType: fhir.CodeableConcept[];
     /**
      * Associated documentation about the medication.
      */
-    monograph?: fhir.MedicationKnowledgeMonograph[];
+    monograph: fhir.MedicationKnowledgeMonograph[];
     /**
      * Identifies a particular constituent of interest in the product.
      */
-    ingredient?: fhir.MedicationKnowledgeIngredient[];
+    ingredient: fhir.MedicationKnowledgeIngredient[];
     /**
      * The instructions for preparing the medication.
      */
@@ -865,23 +864,23 @@ export declare class MedicationKnowledge extends fhir.DomainResource {
     /**
      * The intended or approved route of administration.
      */
-    intendedRoute?: fhir.CodeableConcept[];
+    intendedRoute: fhir.CodeableConcept[];
     /**
      * The price of the medication.
      */
-    cost?: fhir.MedicationKnowledgeCost[];
+    cost: fhir.MedicationKnowledgeCost[];
     /**
      * The program under which the medication is reviewed.
      */
-    monitoringProgram?: fhir.MedicationKnowledgeMonitoringProgram[];
+    monitoringProgram: fhir.MedicationKnowledgeMonitoringProgram[];
     /**
      * Guidelines for the administration of the medication.
      */
-    administrationGuidelines?: fhir.MedicationKnowledgeAdministrationGuidelines[];
+    administrationGuidelines: fhir.MedicationKnowledgeAdministrationGuidelines[];
     /**
      * Categorization of the medication within a formulary or classification system.
      */
-    medicineClassification?: fhir.MedicationKnowledgeMedicineClassification[];
+    medicineClassification: fhir.MedicationKnowledgeMedicineClassification[];
     /**
      * Information that only applies to packages (not products).
      */
@@ -889,19 +888,19 @@ export declare class MedicationKnowledge extends fhir.DomainResource {
     /**
      * Specifies descriptive properties of the medicine, such as color, shape, imprints, etc.
      */
-    drugCharacteristic?: fhir.MedicationKnowledgeDrugCharacteristic[];
+    drugCharacteristic: fhir.MedicationKnowledgeDrugCharacteristic[];
     /**
      * Potential clinical issue with or between medication(s) (for example, drug-drug interaction, drug-disease contraindication, drug-allergy interaction, etc.).
      */
-    contraindication?: fhir.Reference[];
+    contraindication: fhir.Reference[];
     /**
      * Regulatory information about a medication.
      */
-    regulatory?: fhir.MedicationKnowledgeRegulatory[];
+    regulatory: fhir.MedicationKnowledgeRegulatory[];
     /**
      * The time course of drug absorption, distribution, metabolism and excretion of a medication from the body.
      */
-    kinetics?: fhir.MedicationKnowledgeKinetics[];
+    kinetics: fhir.MedicationKnowledgeKinetics[];
     /**
      * Default constructor for MedicationKnowledge - initializes any required elements to null if a value is not provided.
      */
@@ -909,7 +908,11 @@ export declare class MedicationKnowledge extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (MedicationKnowledge.status)
      */
-    static statusRequiredCoding(): MedicationknowledgeStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly EnteredInError: "entered-in-error";
+        readonly Inactive: "inactive";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

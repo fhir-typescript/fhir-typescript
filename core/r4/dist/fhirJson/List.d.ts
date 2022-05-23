@@ -45,9 +45,17 @@ export interface List extends fhir.DomainResource {
      */
     status: 'current' | 'entered-in-error' | 'retired' | null;
     /**
+     * Extended properties for primitive element: List.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * This element is labeled as a modifier because a change list must not be misunderstood as a complete list.
      */
     mode: 'changes' | 'snapshot' | 'working' | null;
+    /**
+     * Extended properties for primitive element: List.mode
+     */
+    _mode?: fhir.FhirElement;
     /**
      * A label for the list assigned by the author.
      */

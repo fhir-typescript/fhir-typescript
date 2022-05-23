@@ -74,7 +74,7 @@ export class BodyStructure extends fhir.DomainResource {
   /**
    * Identifier for this instance of the anatomical structure.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because it may be used to mark that the resource was created in error.
    */
@@ -90,7 +90,7 @@ export class BodyStructure extends fhir.DomainResource {
   /**
    * Qualifier to refine the anatomical location.  These include qualifiers for laterality, relative location, directionality, number, and plane.
    */
-  public locationQualifier?: fhir.CodeableConcept[];
+  public locationQualifier: fhir.CodeableConcept[];
   /**
    * This description could include any visual markings used to orientate the viewer e.g. external reference points, special sutures, ink markings.
    */
@@ -98,7 +98,7 @@ export class BodyStructure extends fhir.DomainResource {
   /**
    * Image or images used to identify a location.
    */
-  public image?: fhir.Attachment[];
+  public image: fhir.Attachment[];
   /**
    * The person to which the body site belongs.
    */
@@ -128,7 +128,7 @@ export class BodyStructure extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"BodyStructure" fhir: BodyStructure.resourceType:"BodyStructure"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"BodyStructure" fhir: BodyStructure.resourceType:"BodyStructure"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["active"]) { issues.push(...this.active.doModelValidation()); }
@@ -138,7 +138,7 @@ export class BodyStructure extends fhir.DomainResource {
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["image"]) { this.image.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: BodyStructure.patient:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: BodyStructure.patient:Reference' });
     }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
     return issues;

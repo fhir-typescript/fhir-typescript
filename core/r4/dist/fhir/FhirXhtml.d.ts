@@ -6,7 +6,7 @@ export interface FhirXhtmlArgs extends fhir.FhirPrimitiveArgs {
     /**
      * XHTML
      */
-    value?: FhirXhtml | string | undefined;
+    value?: FhirXhtml | string | undefined | null;
 }
 /**
  * XHTML

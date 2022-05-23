@@ -28,7 +28,7 @@ export interface EnrollmentResponseArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the response as not currently valid.
    */
-  status?: FmStatusCodeType|undefined;
+  status?: fhir.FhirCode<FmStatusCodeType>|string|undefined;
   /**
    * Original request resource reference.
    */
@@ -36,7 +36,7 @@ export interface EnrollmentResponseArgs extends fhir.DomainResourceArgs {
   /**
    * Processing status: error, complete.
    */
-  outcome?: RemittanceOutcomeCodeType|undefined;
+  outcome?: fhir.FhirCode<RemittanceOutcomeCodeType>|string|undefined;
   /**
    * A description of the status of the adjudication.
    */
@@ -70,11 +70,11 @@ export class EnrollmentResponse extends fhir.DomainResource {
   /**
    * The Response business identifier.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the status contains codes that mark the response as not currently valid.
    */
-  public status?: FmStatusCodeType|undefined;
+  public status?: fhir.FhirCode<FmStatusCodeType>|undefined;
   /**
    * Original request resource reference.
    */
@@ -82,7 +82,7 @@ export class EnrollmentResponse extends fhir.DomainResource {
   /**
    * Processing status: error, complete.
    */
-  public outcome?: RemittanceOutcomeCodeType|undefined;
+  public outcome?: fhir.FhirCode<RemittanceOutcomeCodeType>|undefined;
   /**
    * A description of the status of the adjudication.
    */
@@ -107,9 +107,9 @@ export class EnrollmentResponse extends fhir.DomainResource {
     this.resourceType = 'EnrollmentResponse';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
     if (source['request']) { this.request = new fhir.Reference(source.request); }
-    if (source['outcome']) { this.outcome = source.outcome; }
+    if (source['outcome']) { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>({value: source.outcome}); }
     if (source['disposition']) { this.disposition = new fhir.FhirString({value: source.disposition}); }
     if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
     if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
@@ -118,14 +118,14 @@ export class EnrollmentResponse extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (EnrollmentResponse.status)
    */
-  public static statusRequiredCoding():FmStatusCodingType {
-    return FmStatusCodings;
+  public static get statusRequiredCodes() {
+    return FmStatusCodes;
   }
   /**
    * Required-bound Value Set for outcome (EnrollmentResponse.outcome)
    */
-  public static outcomeRequiredCoding():RemittanceOutcomeCodingType {
-    return RemittanceOutcomeCodings;
+  public static get outcomeRequiredCodes() {
+    return RemittanceOutcomeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -133,10 +133,18 @@ export class EnrollmentResponse extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"EnrollmentResponse" fhir: EnrollmentResponse.resourceType:"EnrollmentResponse"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"EnrollmentResponse" fhir: EnrollmentResponse.resourceType:"EnrollmentResponse"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<FmStatusCodeType> fhir: EnrollmentResponse.status:code Required binding to: FmStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["request"]) { issues.push(...this.request.doModelValidation()); }
+    if (this['outcome'] && (!Object.values(RemittanceOutcomeCodes).includes(this.outcome as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property outcome?:fhir.FhirCode<RemittanceOutcomeCodeType> fhir: EnrollmentResponse.outcome:code Required binding to: RemittanceOutcome' });
+    }
+    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation()); }
     if (this["disposition"]) { issues.push(...this.disposition.doModelValidation()); }
     if (this["created"]) { issues.push(...this.created.doModelValidation()); }
     if (this["organization"]) { issues.push(...this.organization.doModelValidation()); }

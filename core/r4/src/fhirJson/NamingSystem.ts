@@ -15,6 +15,10 @@ export interface NamingSystemUniqueId extends fhir.BackboneElement {
    */
   type: 'oid'|'other'|'uri'|'uuid'|null;
   /**
+   * Extended properties for primitive element: NamingSystem.uniqueId.type
+   */
+  _type?:fhir.FhirElement;
+  /**
    * If the value is a URI intended for use as FHIR system identifier, the URI should not contain "\" or "?" or "," since this makes escaping very difficult.
    */
   value: string|null;
@@ -65,9 +69,17 @@ export interface NamingSystem extends fhir.DomainResource {
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
   /**
+   * Extended properties for primitive element: NamingSystem.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Indicates the purpose for the naming system - what kinds of things does it make unique?
    */
   kind: 'codesystem'|'identifier'|'root'|null;
+  /**
+   * Extended properties for primitive element: NamingSystem.kind
+   */
+  _kind?:fhir.FhirElement;
   /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the naming system. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */

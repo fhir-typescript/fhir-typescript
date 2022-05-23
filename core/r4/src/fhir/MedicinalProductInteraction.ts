@@ -55,7 +55,7 @@ export class MedicinalProductInteractionInteractant extends fhir.BackboneElement
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['item']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property item: fhir: MedicinalProductInteraction.interactant.item[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item: fhir: MedicinalProductInteraction.interactant.item[x]:' });
     }
     return issues;
   }
@@ -113,7 +113,7 @@ export class MedicinalProductInteraction extends fhir.DomainResource {
   /**
    * The medication for which this is a described interaction.
    */
-  public subject?: fhir.Reference[];
+  public subject: fhir.Reference[];
   /**
    * The interaction described.
    */
@@ -121,7 +121,7 @@ export class MedicinalProductInteraction extends fhir.DomainResource {
   /**
    * The specific medication, food or laboratory test that interacts.
    */
-  public interactant?: fhir.MedicinalProductInteractionInteractant[];
+  public interactant: fhir.MedicinalProductInteractionInteractant[];
   /**
    * The type of the interaction e.g. drug-drug interaction, drug-food interaction, drug-lab test interaction.
    */
@@ -160,7 +160,7 @@ export class MedicinalProductInteraction extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicinalProductInteraction" fhir: MedicinalProductInteraction.resourceType:"MedicinalProductInteraction"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicinalProductInteraction" fhir: MedicinalProductInteraction.resourceType:"MedicinalProductInteraction"' });
     }
     if (this["subject"]) { this.subject.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }

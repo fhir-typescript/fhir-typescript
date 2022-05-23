@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { MedicationStatementStatusCodingType } from '../fhirValueSets/MedicationStatementStatusCodings.js';
 import { MedicationStatementStatusCodeType } from '../fhirValueSets/MedicationStatementStatusCodes.js';
-import { MedicationStatementCategoryCodingType } from '../fhirValueSets/MedicationStatementCategoryCodings.js';
 /**
  * Valid arguments for the MedicationStatement type.
  */
@@ -26,7 +24,7 @@ export interface MedicationStatementArgs extends fhir.DomainResourceArgs {
      * MedicationStatement is a statement at a point in time.  The status is only representative at the point when it was asserted.  The value set for MedicationStatement.status contains codes that assert the status of the use of the medication by the patient (for example, stopped or on hold) as well as codes that assert the status of the medication statement itself (for example, entered in error).
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: MedicationStatementStatusCodeType | null;
+    status: fhir.FhirCode<MedicationStatementStatusCodeType> | string | undefined;
     /**
      * This is generally only used for "exception" statuses such as "not-taken", "on-hold", "cancelled" or "entered-in-error". The reason for performing the event at all is captured in reasonCode, not here.
      */
@@ -112,24 +110,24 @@ export declare class MedicationStatement extends fhir.DomainResource {
     /**
      * This is a business identifier, not a resource identifier.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
      */
-    basedOn?: fhir.Reference[];
+    basedOn: fhir.Reference[];
     /**
      * A larger event of which this particular event is a component or step.
      */
-    partOf?: fhir.Reference[];
+    partOf: fhir.Reference[];
     /**
      * MedicationStatement is a statement at a point in time.  The status is only representative at the point when it was asserted.  The value set for MedicationStatement.status contains codes that assert the status of the use of the medication by the patient (for example, stopped or on hold) as well as codes that assert the status of the medication statement itself (for example, entered in error).
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: MedicationStatementStatusCodeType | null;
+    status: fhir.FhirCode<MedicationStatementStatusCodeType> | null;
     /**
      * This is generally only used for "exception" statuses such as "not-taken", "on-hold", "cancelled" or "entered-in-error". The reason for performing the event at all is captured in reasonCode, not here.
      */
-    statusReason?: fhir.CodeableConcept[];
+    statusReason: fhir.CodeableConcept[];
     /**
      * Indicates where the medication is expected to be consumed or administered.
      */
@@ -169,23 +167,23 @@ export declare class MedicationStatement extends fhir.DomainResource {
     /**
      * Likely references would be to MedicationRequest, MedicationDispense, Claim, Observation or QuestionnaireAnswers.  The most common use cases for deriving a MedicationStatement comes from creating a MedicationStatement from a MedicationRequest or from a lab observation or a claim.  it should be noted that the amount of information that is available varies from the type resource that you derive the MedicationStatement from.
      */
-    derivedFrom?: fhir.Reference[];
+    derivedFrom: fhir.Reference[];
     /**
      * This could be a diagnosis code. If a full condition record exists or additional detail is needed, use reasonForUseReference.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * This is a reference to a condition that is the reason why the medication is being/was taken.  If only a code exists, use reasonForUseCode.
      */
-    reasonReference?: fhir.Reference[];
+    reasonReference: fhir.Reference[];
     /**
      * Provides extra information about the medication statement that is not conveyed by the other attributes.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * The dates included in the dosage on a Medication Statement reflect the dates for a given dose.  For example, "from November 1, 2016 to November 3, 2016, take one tablet daily and from November 4, 2016 to November 7, 2016, take two tablets daily."  It is expected that this specificity may only be populated where the patient brings in their labeled container or where the Medication Statement is derived from a MedicationRequest.
      */
-    dosage?: fhir.Dosage[];
+    dosage: fhir.Dosage[];
     /**
      * Default constructor for MedicationStatement - initializes any required elements to null if a value is not provided.
      */
@@ -193,11 +191,25 @@ export declare class MedicationStatement extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (MedicationStatement.status)
      */
-    static statusRequiredCoding(): MedicationStatementStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Completed: "completed";
+        readonly EnteredInError: "entered-in-error";
+        readonly Intended: "intended";
+        readonly NotTaken: "not-taken";
+        readonly OnHold: "on-hold";
+        readonly Stopped: "stopped";
+        readonly Unknown: "unknown";
+    };
     /**
      * Preferred-bound Value Set for category (MedicationStatement.category)
      */
-    static categoryPreferredCoding(): MedicationStatementCategoryCodingType;
+    static get categoryPreferredCodings(): {
+        readonly Community: fhir.Coding;
+        readonly Inpatient: fhir.Coding;
+        readonly Outpatient: fhir.Coding;
+        readonly PatientSpecified: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

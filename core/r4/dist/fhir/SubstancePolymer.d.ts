@@ -81,7 +81,7 @@ export declare class SubstancePolymerMonomerSet extends fhir.BackboneElement {
     /**
      * Todo.
      */
-    startingMaterial?: fhir.SubstancePolymerMonomerSetStartingMaterial[];
+    startingMaterial: fhir.SubstancePolymerMonomerSetStartingMaterial[];
     /**
      * Default constructor for SubstancePolymerMonomerSet - initializes any required elements to null if a value is not provided.
      */
@@ -223,11 +223,11 @@ export declare class SubstancePolymerRepeatRepeatUnit extends fhir.BackboneEleme
     /**
      * Todo.
      */
-    degreeOfPolymerisation?: fhir.SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation[];
+    degreeOfPolymerisation: fhir.SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation[];
     /**
      * Todo.
      */
-    structuralRepresentation?: fhir.SubstancePolymerRepeatRepeatUnitStructuralRepresentation[];
+    structuralRepresentation: fhir.SubstancePolymerRepeatRepeatUnitStructuralRepresentation[];
     /**
      * Default constructor for SubstancePolymerRepeatRepeatUnit - initializes any required elements to null if a value is not provided.
      */
@@ -281,7 +281,7 @@ export declare class SubstancePolymerRepeat extends fhir.BackboneElement {
     /**
      * Todo.
      */
-    repeatUnit?: fhir.SubstancePolymerRepeatRepeatUnit[];
+    repeatUnit: fhir.SubstancePolymerRepeatRepeatUnit[];
     /**
      * Default constructor for SubstancePolymerRepeat - initializes any required elements to null if a value is not provided.
      */
@@ -347,19 +347,19 @@ export declare class SubstancePolymer extends fhir.DomainResource {
     /**
      * Todo.
      */
-    copolymerConnectivity?: fhir.CodeableConcept[];
+    copolymerConnectivity: fhir.CodeableConcept[];
     /**
      * Todo.
      */
-    modification?: fhir.FhirString[];
+    modification: fhir.FhirString[];
     /**
      * Todo.
      */
-    monomerSet?: fhir.SubstancePolymerMonomerSet[];
+    monomerSet: fhir.SubstancePolymerMonomerSet[];
     /**
      * Todo.
      */
-    repeat?: fhir.SubstancePolymerRepeat[];
+    repeat: fhir.SubstancePolymerRepeat[];
     /**
      * Default constructor for SubstancePolymer - initializes any required elements to null if a value is not provided.
      */

@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { SubstanceStatusCodingType } from '../fhirValueSets/SubstanceStatusCodings.js';
 import { SubstanceStatusCodeType } from '../fhirValueSets/SubstanceStatusCodes.js';
-import { SubstanceCategoryCodingType } from '../fhirValueSets/SubstanceCategoryCodings.js';
 /**
  * Valid arguments for the SubstanceInstance type.
  */
@@ -113,7 +111,7 @@ export interface SubstanceArgs extends fhir.DomainResourceArgs {
     /**
      * A code to indicate if the substance is actively used.
      */
-    status?: SubstanceStatusCodeType | undefined;
+    status?: fhir.FhirCode<SubstanceStatusCodeType> | string | undefined;
     /**
      * The level of granularity is defined by the category concepts in the value set.   More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in Substance.code.
      */
@@ -150,15 +148,15 @@ export declare class Substance extends fhir.DomainResource {
     /**
      * This identifier is associated with the kind of substance in contrast to the  Substance.instance.identifier which is associated with the package/container.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * A code to indicate if the substance is actively used.
      */
-    status?: SubstanceStatusCodeType | undefined;
+    status?: fhir.FhirCode<SubstanceStatusCodeType> | undefined;
     /**
      * The level of granularity is defined by the category concepts in the value set.   More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in Substance.code.
      */
-    category?: fhir.CodeableConcept[];
+    category: fhir.CodeableConcept[];
     /**
      * This could be a reference to an externally defined code.  It could also be a locally assigned code (e.g. a formulary),  optionally with translations to the standard drug codes.
      */
@@ -170,11 +168,11 @@ export declare class Substance extends fhir.DomainResource {
     /**
      * Substance may be used to describe a kind of substance, or a specific package/container of the substance: an instance.
      */
-    instance?: fhir.SubstanceInstance[];
+    instance: fhir.SubstanceInstance[];
     /**
      * A substance can be composed of other substances.
      */
-    ingredient?: fhir.SubstanceIngredient[];
+    ingredient: fhir.SubstanceIngredient[];
     /**
      * Default constructor for Substance - initializes any required elements to null if a value is not provided.
      */
@@ -182,11 +180,23 @@ export declare class Substance extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (Substance.status)
      */
-    static statusRequiredCoding(): SubstanceStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly EnteredInError: "entered-in-error";
+        readonly Inactive: "inactive";
+    };
     /**
      * Extensible-bound Value Set for category (Substance.category)
      */
-    static categoryExtensibleCoding(): SubstanceCategoryCodingType;
+    static get categoryExtensibleCodings(): {
+        readonly Allergen: fhir.Coding;
+        readonly BiologicalSubstance: fhir.Coding;
+        readonly BodySubstance: fhir.Coding;
+        readonly Chemical: fhir.Coding;
+        readonly DrugOrMedicament: fhir.Coding;
+        readonly DietarySubstance: fhir.Coding;
+        readonly Material: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { IdentityAssuranceLevelCodingType } from '../fhirValueSets/IdentityAssuranceLevelCodings.js';
 import { IdentityAssuranceLevelCodeType } from '../fhirValueSets/IdentityAssuranceLevelCodes.js';
-import { AdministrativeGenderCodingType } from '../fhirValueSets/AdministrativeGenderCodings.js';
 import { AdministrativeGenderCodeType } from '../fhirValueSets/AdministrativeGenderCodes.js';
 /**
  * Valid arguments for the PersonLink type.
@@ -14,7 +12,7 @@ export interface PersonLinkArgs extends fhir.BackboneElementArgs {
     /**
      * Level of assurance that this link is associated with the target resource.
      */
-    assurance?: IdentityAssuranceLevelCodeType | undefined;
+    assurance?: fhir.FhirCode<IdentityAssuranceLevelCodeType> | string | undefined;
 }
 /**
  * Link to a resource that concerns the same actual person.
@@ -31,7 +29,7 @@ export declare class PersonLink extends fhir.BackboneElement {
     /**
      * Level of assurance that this link is associated with the target resource.
      */
-    assurance?: IdentityAssuranceLevelCodeType | undefined;
+    assurance?: fhir.FhirCode<IdentityAssuranceLevelCodeType> | undefined;
     /**
      * Default constructor for PersonLink - initializes any required elements to null if a value is not provided.
      */
@@ -39,7 +37,12 @@ export declare class PersonLink extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for assurance (Person.link.assurance)
      */
-    static assuranceRequiredCoding(): IdentityAssuranceLevelCodingType;
+    static get assuranceRequiredCodes(): {
+        readonly Level1: "level1";
+        readonly Level2: "level2";
+        readonly Level3: "level3";
+        readonly Level4: "level4";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -68,7 +71,7 @@ export interface PersonArgs extends fhir.DomainResourceArgs {
     /**
      * The gender might not match the biological sex as determined by genetics, or the individual's preferred identification. Note that for both humans and particularly animals, there are other legitimate possibilities than M and F, though a clear majority of systems and contexts only support M and F.
      */
-    gender?: AdministrativeGenderCodeType | undefined;
+    gender?: fhir.FhirCode<AdministrativeGenderCodeType> | string | undefined;
     /**
      * At least an estimated year should be provided as a guess if the real DOB is unknown.
      */
@@ -109,19 +112,19 @@ export declare class Person extends fhir.DomainResource {
     /**
      * Identifier for a person within a particular scope.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Person may have multiple names with different uses or applicable periods.
      */
-    name?: fhir.HumanName[];
+    name: fhir.HumanName[];
     /**
      * Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and also to help with identification.
      */
-    telecom?: fhir.ContactPoint[];
+    telecom: fhir.ContactPoint[];
     /**
      * The gender might not match the biological sex as determined by genetics, or the individual's preferred identification. Note that for both humans and particularly animals, there are other legitimate possibilities than M and F, though a clear majority of systems and contexts only support M and F.
      */
-    gender?: AdministrativeGenderCodeType | undefined;
+    gender?: fhir.FhirCode<AdministrativeGenderCodeType> | undefined;
     /**
      * At least an estimated year should be provided as a guess if the real DOB is unknown.
      */
@@ -129,7 +132,7 @@ export declare class Person extends fhir.DomainResource {
     /**
      * Person may have multiple addresses with different uses or applicable periods.
      */
-    address?: fhir.Address[];
+    address: fhir.Address[];
     /**
      * An image that can be displayed as a thumbnail of the person to enhance the identification of the individual.
      */
@@ -145,7 +148,7 @@ export declare class Person extends fhir.DomainResource {
     /**
      * Link to a resource that concerns the same actual person.
      */
-    link?: fhir.PersonLink[];
+    link: fhir.PersonLink[];
     /**
      * Default constructor for Person - initializes any required elements to null if a value is not provided.
      */
@@ -153,7 +156,12 @@ export declare class Person extends fhir.DomainResource {
     /**
      * Required-bound Value Set for gender (Person.gender)
      */
-    static genderRequiredCoding(): AdministrativeGenderCodingType;
+    static get genderRequiredCodes(): {
+        readonly Female: "female";
+        readonly Male: "male";
+        readonly Other: "other";
+        readonly Unknown: "unknown";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

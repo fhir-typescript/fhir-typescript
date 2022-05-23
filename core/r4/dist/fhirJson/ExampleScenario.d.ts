@@ -16,6 +16,10 @@ export interface ExampleScenarioActor extends fhir.BackboneElement {
      */
     type: 'entity' | 'person' | null;
     /**
+     * Extended properties for primitive element: ExampleScenario.actor.type
+     */
+    _type?: fhir.FhirElement;
+    /**
      * Cardinality: is name and description 1..1?
      */
     name?: string | undefined;
@@ -329,6 +333,10 @@ export interface ExampleScenario extends fhir.DomainResource {
      * Allows filtering of example scenarios that are appropriate for use versus not.
      */
     status: 'active' | 'draft' | 'retired' | 'unknown' | null;
+    /**
+     * Extended properties for primitive element: ExampleScenario.status
+     */
+    _status?: fhir.FhirElement;
     /**
      * Allows filtering of example scenarios that are appropriate for use versus not.
      */

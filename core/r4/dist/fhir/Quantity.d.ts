@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { QuantityComparatorCodingType } from '../fhirValueSets/QuantityComparatorCodings.js';
 import { QuantityComparatorCodeType } from '../fhirValueSets/QuantityComparatorCodes.js';
 /**
  * Valid arguments for the Quantity type.
@@ -12,7 +11,7 @@ export interface QuantityArgs extends fhir.FhirElementArgs {
     /**
      * How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is "&lt;" , then the real value is &lt; stated value.
      */
-    comparator?: QuantityComparatorCodeType | undefined;
+    comparator?: fhir.FhirCode<QuantityComparatorCodeType> | string | undefined;
     /**
      * A human-readable form of the unit.
      */
@@ -41,7 +40,7 @@ export declare class Quantity extends fhir.FhirElement {
     /**
      * How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is "&lt;" , then the real value is &lt; stated value.
      */
-    comparator?: QuantityComparatorCodeType | undefined;
+    comparator?: fhir.FhirCode<QuantityComparatorCodeType> | undefined;
     /**
      * A human-readable form of the unit.
      */
@@ -61,7 +60,12 @@ export declare class Quantity extends fhir.FhirElement {
     /**
      * Required-bound Value Set for comparator (Quantity.comparator)
      */
-    static comparatorRequiredCoding(): QuantityComparatorCodingType;
+    static get comparatorRequiredCodes(): {
+        readonly LessThan: "<";
+        readonly LessOrEqualTo: "<=";
+        readonly GreaterThan: ">";
+        readonly GreaterOrEqualTo: ">=";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

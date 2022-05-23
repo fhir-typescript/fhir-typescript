@@ -44,9 +44,17 @@ export interface ServiceRequest extends fhir.DomainResource {
      */
     status: 'active' | 'completed' | 'draft' | 'entered-in-error' | 'on-hold' | 'revoked' | 'unknown' | null;
     /**
+     * Extended properties for primitive element: ServiceRequest.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * This element is labeled as a modifier because the intent alters when and how the resource is actually applicable.
      */
     intent: 'directive' | 'filler-order' | 'instance-order' | 'option' | 'order' | 'original-order' | 'plan' | 'proposal' | 'reflex-order' | null;
+    /**
+     * Extended properties for primitive element: ServiceRequest.intent
+     */
+    _intent?: fhir.FhirElement;
     /**
      * There may be multiple axis of categorization depending on the context or use case for retrieving or displaying the resource.  The level of granularity is defined by the category concepts in the value set.
      */
@@ -55,6 +63,10 @@ export interface ServiceRequest extends fhir.DomainResource {
      * Indicates how quickly the ServiceRequest should be addressed with respect to other requests.
      */
     priority?: 'asap' | 'routine' | 'stat' | 'urgent' | undefined;
+    /**
+     * Extended properties for primitive element: ServiceRequest.priority
+     */
+    _priority?: fhir.FhirElement;
     /**
      * In general, only the code and timeframe will be present, though occasional additional qualifiers such as body site or even performer could be included to narrow the scope of the prohibition.  If the ServiceRequest.code and ServiceRequest.doNotPerform both contain negation, that will reinforce prohibition and should not have a double negative interpretation.
      */

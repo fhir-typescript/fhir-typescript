@@ -50,8 +50,8 @@ export class Money extends fhir.FhirElement {
   /**
    * Required-bound Value Set for currency (Money.currency)
    */
-  public static currencyRequiredCoding():CurrenciesCodingType {
-    return CurrenciesCodings;
+  public static get currencyRequiredCodes() {
+    return CurrenciesCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -59,6 +59,9 @@ export class Money extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["value"]) { issues.push(...this.value.doModelValidation()); }
+    if (this['currency'] && (!Object.values(CurrenciesCodes).includes(this.currency as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property currency?:fhir.FhirCode fhir: Money.currency:code Required binding to: Currencies' });
+    }
     if (this["currency"]) { issues.push(...this.currency.doModelValidation()); }
     return issues;
   }

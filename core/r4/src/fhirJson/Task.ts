@@ -645,6 +645,10 @@ export interface Task extends fhir.DomainResource {
    */
   status: 'accepted'|'cancelled'|'completed'|'draft'|'entered-in-error'|'failed'|'in-progress'|'on-hold'|'ready'|'received'|'rejected'|'requested'|null;
   /**
+   * Extended properties for primitive element: Task.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * This applies to the current status.  Look at the history of the task to see reasons for past statuses.
    */
   statusReason?: fhir.CodeableConcept|undefined;
@@ -658,9 +662,17 @@ export interface Task extends fhir.DomainResource {
    */
   intent: 'filler-order'|'instance-order'|'option'|'order'|'original-order'|'plan'|'proposal'|'reflex-order'|'unknown'|null;
   /**
+   * Extended properties for primitive element: Task.intent
+   */
+  _intent?:fhir.FhirElement;
+  /**
    * Indicates how quickly the Task should be addressed with respect to other requests.
    */
   priority?: 'asap'|'routine'|'stat'|'urgent'|undefined;
+  /**
+   * Extended properties for primitive element: Task.priority
+   */
+  _priority?:fhir.FhirElement;
   /**
    * The title (eg "My Tasks", "Outstanding Tasks for Patient X") should go into the code.
    */

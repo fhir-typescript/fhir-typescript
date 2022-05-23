@@ -50,7 +50,7 @@ export interface AppointmentResponseArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains the code entered-in-error that marks the participant as not currently valid.
    */
-  participantStatus: ParticipationstatusCodeType|null;
+  participantStatus: fhir.FhirCode<ParticipationstatusCodeType>|string|undefined;
   /**
    * This comment is particularly important when the responder is declining, tentatively accepting or requesting another time to indicate the reasons why.
    */
@@ -72,7 +72,7 @@ export class AppointmentResponse extends fhir.DomainResource {
   /**
    * This records identifiers associated with this appointment response concern that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Appointment that this response is replying to.
    */
@@ -90,7 +90,7 @@ export class AppointmentResponse extends fhir.DomainResource {
    * If the actor is not specified, then it is expected that the actor will be filled in at a later stage of planning.
    * This value SHALL be the same as specified on the referenced Appointment so that they can be matched, and subsequently updated.
    */
-  public participantType?: fhir.CodeableConcept[];
+  public participantType: fhir.CodeableConcept[];
   /**
    * A Person, Location, HealthcareService, or Device that is participating in the appointment.
    */
@@ -98,7 +98,7 @@ export class AppointmentResponse extends fhir.DomainResource {
   /**
    * This element is labeled as a modifier because the status contains the code entered-in-error that marks the participant as not currently valid.
    */
-  public participantStatus: ParticipationstatusCodeType|null;
+  public participantStatus: fhir.FhirCode<ParticipationstatusCodeType>|null;
   /**
    * This comment is particularly important when the responder is declining, tentatively accepting or requesting another time to indicate the reasons why.
    */
@@ -118,21 +118,21 @@ export class AppointmentResponse extends fhir.DomainResource {
     if (source['participantType']) { this.participantType = source.participantType.map((x) => new fhir.CodeableConcept(x)); }
     else { this.participantType = []; }
     if (source['actor']) { this.actor = new fhir.Reference(source.actor); }
-    if (source['participantStatus']) { this.participantStatus = source.participantStatus; }
+    if (source['participantStatus']) { this.participantStatus = new fhir.FhirCode<ParticipationstatusCodeType>({value: source.participantStatus}); }
     else { this.participantStatus = null; }
     if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
   }
   /**
    * Extensible-bound Value Set for participantType (AppointmentResponse.participantType)
    */
-  public static participantTypeExtensibleCoding():EncounterParticipantTypeCodingType {
+  public static get participantTypeExtensibleCodings() {
     return EncounterParticipantTypeCodings;
   }
   /**
    * Required-bound Value Set for participantStatus (AppointmentResponse.participantStatus)
    */
-  public static participantStatusRequiredCoding():ParticipationstatusCodingType {
-    return ParticipationstatusCodings;
+  public static get participantStatusRequiredCodes() {
+    return ParticipationstatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -140,11 +140,11 @@ export class AppointmentResponse extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"AppointmentResponse" fhir: AppointmentResponse.resourceType:"AppointmentResponse"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"AppointmentResponse" fhir: AppointmentResponse.resourceType:"AppointmentResponse"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['appointment']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property appointment:fhir.Reference fhir: AppointmentResponse.appointment:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property appointment:fhir.Reference fhir: AppointmentResponse.appointment:Reference' });
     }
     if (this["appointment"]) { issues.push(...this.appointment.doModelValidation()); }
     if (this["start"]) { issues.push(...this.start.doModelValidation()); }
@@ -152,8 +152,12 @@ export class AppointmentResponse extends fhir.DomainResource {
     if (this["participantType"]) { this.participantType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["actor"]) { issues.push(...this.actor.doModelValidation()); }
     if (!this['participantStatus']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property participantStatus:ParticipationstatusCodeType fhir: AppointmentResponse.participantStatus:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property participantStatus:fhir.FhirCode<ParticipationstatusCodeType> fhir: AppointmentResponse.participantStatus:code' });
     }
+    if (this['participantStatus'] && (!Object.values(ParticipationstatusCodes).includes(this.participantStatus as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property participantStatus:fhir.FhirCode<ParticipationstatusCodeType> fhir: AppointmentResponse.participantStatus:code Required binding to: Participationstatus' });
+    }
+    if (this["participantStatus"]) { issues.push(...this.participantStatus.doModelValidation()); }
     if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
     return issues;
   }

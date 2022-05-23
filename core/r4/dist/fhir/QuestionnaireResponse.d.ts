@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { QuestionnaireAnswersStatusCodingType } from '../fhirValueSets/QuestionnaireAnswersStatusCodings.js';
 import { QuestionnaireAnswersStatusCodeType } from '../fhirValueSets/QuestionnaireAnswersStatusCodes.js';
 /**
  * Valid arguments for the QuestionnaireResponseItemAnswer type.
@@ -81,7 +80,7 @@ export declare class QuestionnaireResponseItemAnswer extends fhir.BackboneElemen
     /**
      * Nested groups and/or questions found within this particular answer.
      */
-    item?: fhir.QuestionnaireResponseItem[];
+    item: fhir.QuestionnaireResponseItem[];
     /**
      * Default constructor for QuestionnaireResponseItemAnswer - initializes any required elements to null if a value is not provided.
      */
@@ -141,11 +140,11 @@ export declare class QuestionnaireResponseItem extends fhir.BackboneElement {
     /**
      * The value is nested because we cannot have a repeating structure that has variable type.
      */
-    answer?: fhir.QuestionnaireResponseItemAnswer[];
+    answer: fhir.QuestionnaireResponseItemAnswer[];
     /**
      * Questions or sub-groups nested beneath a question or group.
      */
-    item?: fhir.QuestionnaireResponseItem[];
+    item: fhir.QuestionnaireResponseItem[];
     /**
      * Default constructor for QuestionnaireResponseItem - initializes any required elements to null if a value is not provided.
      */
@@ -182,7 +181,7 @@ export interface QuestionnaireResponseArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: QuestionnaireAnswersStatusCodeType | null;
+    status: fhir.FhirCode<QuestionnaireAnswersStatusCodeType> | string | undefined;
     /**
      * If the Questionnaire declared a subjectType, the resource pointed to by this element must be an instance of one of the listed types.
      */
@@ -228,11 +227,11 @@ export declare class QuestionnaireResponse extends fhir.DomainResource {
     /**
      * The order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.  For example, a ServiceRequest seeking an intake assessment or a decision support recommendation to assess for post-partum depression.
      */
-    basedOn?: fhir.Reference[];
+    basedOn: fhir.Reference[];
     /**
      * Composition of questionnaire responses will be handled by the parent questionnaire having answers that reference the child questionnaire.  For relationships to referrals, and other types of requests, use basedOn.
      */
-    partOf?: fhir.Reference[];
+    partOf: fhir.Reference[];
     /**
      * If a QuestionnaireResponse references a Questionnaire, then the QuestionnaireResponse structure must be consistent with the Questionnaire (i.e. questions must be organized into the same groups, nested questions must still be nested, etc.).
      */
@@ -240,7 +239,7 @@ export declare class QuestionnaireResponse extends fhir.DomainResource {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: QuestionnaireAnswersStatusCodeType | null;
+    status: fhir.FhirCode<QuestionnaireAnswersStatusCodeType> | null;
     /**
      * If the Questionnaire declared a subjectType, the resource pointed to by this element must be an instance of one of the listed types.
      */
@@ -265,7 +264,7 @@ export declare class QuestionnaireResponse extends fhir.DomainResource {
     /**
      * Groups cannot have answers and therefore must nest directly within item. When dealing with questions, nesting must occur within each answer because some questions may have multiple answers (and the nesting occurs for each answer).
      */
-    item?: fhir.QuestionnaireResponseItem[];
+    item: fhir.QuestionnaireResponseItem[];
     /**
      * Default constructor for QuestionnaireResponse - initializes any required elements to null if a value is not provided.
      */
@@ -273,7 +272,13 @@ export declare class QuestionnaireResponse extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (QuestionnaireResponse.status)
      */
-    static statusRequiredCoding(): QuestionnaireAnswersStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Amended: "amended";
+        readonly Completed: "completed";
+        readonly EnteredInError: "entered-in-error";
+        readonly InProgress: "in-progress";
+        readonly Stopped: "stopped";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

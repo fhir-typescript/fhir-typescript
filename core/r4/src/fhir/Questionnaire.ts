@@ -40,7 +40,7 @@ export interface QuestionnaireItemEnableWhenArgs extends fhir.BackboneElementArg
   /**
    * Specifies the criteria by which the question is enabled.
    */
-  operator: QuestionnaireEnableOperatorCodeType|null;
+  operator: fhir.FhirCode<QuestionnaireEnableOperatorCodeType>|string|undefined;
   /**
    * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
    */
@@ -102,7 +102,7 @@ export class QuestionnaireItemEnableWhen extends fhir.BackboneElement {
   /**
    * Specifies the criteria by which the question is enabled.
    */
-  public operator: QuestionnaireEnableOperatorCodeType|null;
+  public operator: fhir.FhirCode<QuestionnaireEnableOperatorCodeType>|null;
   /**
    * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
    */
@@ -118,7 +118,7 @@ export class QuestionnaireItemEnableWhen extends fhir.BackboneElement {
     super(source, options);
     if (source['question']) { this.question = new fhir.FhirString({value: source.question}); }
     else { this.question = null; }
-    if (source['operator']) { this.operator = source.operator; }
+    if (source['operator']) { this.operator = new fhir.FhirCode<QuestionnaireEnableOperatorCodeType>({value: source.operator}); }
     else { this.operator = null; }
     if (source['answer']) { this.answer = source.answer; }
     else if (source['answerBoolean']) { this.answer = new fhir.FhirBoolean({value: source.answerBoolean}); }
@@ -136,8 +136,8 @@ export class QuestionnaireItemEnableWhen extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for operator (Questionnaire.item.enableWhen.operator)
    */
-  public static operatorRequiredCoding():QuestionnaireEnableOperatorCodingType {
-    return QuestionnaireEnableOperatorCodings;
+  public static get operatorRequiredCodes() {
+    return QuestionnaireEnableOperatorCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -145,14 +145,18 @@ export class QuestionnaireItemEnableWhen extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['question']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property question:fhir.FhirString fhir: Questionnaire.item.enableWhen.question:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property question:fhir.FhirString fhir: Questionnaire.item.enableWhen.question:string' });
     }
     if (this["question"]) { issues.push(...this.question.doModelValidation()); }
     if (!this['operator']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property operator:QuestionnaireEnableOperatorCodeType fhir: Questionnaire.item.enableWhen.operator:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property operator:fhir.FhirCode<QuestionnaireEnableOperatorCodeType> fhir: Questionnaire.item.enableWhen.operator:code' });
     }
+    if (this['operator'] && (!Object.values(QuestionnaireEnableOperatorCodes).includes(this.operator as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property operator:fhir.FhirCode<QuestionnaireEnableOperatorCodeType> fhir: Questionnaire.item.enableWhen.operator:code Required binding to: QuestionnaireEnableOperator' });
+    }
+    if (this["operator"]) { issues.push(...this.operator.doModelValidation()); }
     if (!this['answer']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property answer: fhir: Questionnaire.item.enableWhen.answer[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property answer: fhir: Questionnaire.item.enableWhen.answer[x]:' });
     }
     return issues;
   }
@@ -236,7 +240,7 @@ export class QuestionnaireItemAnswerOption extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value: fhir: Questionnaire.item.answerOption.value[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value: fhir: Questionnaire.item.answerOption.value[x]:' });
     }
     if (this["initialSelected"]) { issues.push(...this.initialSelected.doModelValidation()); }
     return issues;
@@ -342,7 +346,7 @@ export class QuestionnaireItemInitial extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value: fhir: Questionnaire.item.initial.value[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value: fhir: Questionnaire.item.initial.value[x]:' });
     }
     return issues;
   }
@@ -374,7 +378,7 @@ export interface QuestionnaireItemArgs extends fhir.BackboneElementArgs {
   /**
    * Additional constraints on the type of answer can be conveyed by extensions. The value may come from the ElementDefinition referred to by .definition.
    */
-  type: ItemTypeCodeType|null;
+  type: fhir.FhirCode<ItemTypeCodeType>|string|undefined;
   /**
    * If multiple repetitions of this extension are present, the item should be enabled when the condition for *any* of the repetitions is true.  I.e. treat "enableWhen"s as being joined by an "or" clause.  This element is a modifier because if enableWhen is present for an item, "required" is ignored unless one of the enableWhen conditions is met. When an item is disabled, all of its descendants are disabled, regardless of what their own enableWhen logic might evaluate to.
    */
@@ -382,7 +386,7 @@ export interface QuestionnaireItemArgs extends fhir.BackboneElementArgs {
   /**
    * This element must be specified if more than one enableWhen value is provided.
    */
-  enableBehavior?: QuestionnaireEnableBehaviorCodeType|undefined;
+  enableBehavior?: fhir.FhirCode<QuestionnaireEnableBehaviorCodeType>|string|undefined;
   /**
    * Questionnaire.item.required only has meaning for elements that are conditionally enabled with enableWhen if the condition evaluates to true.  If an item that contains other items is marked as required, that does not automatically make the contained elements required (though required groups must contain at least one child element). The value may come from the ElementDefinition referred to by .definition.
    */
@@ -438,7 +442,7 @@ export class QuestionnaireItem extends fhir.BackboneElement {
   /**
    * The value may come from the ElementDefinition referred to by .definition.
    */
-  public code?: fhir.Coding[];
+  public code: fhir.Coding[];
   /**
    * These are generally unique within a questionnaire, though this is not guaranteed. Some questionnaires may have multiple questions with the same label with logic to control which gets exposed.  Typically, these won't be used for "display" items, though such use is not prohibited.  Systems SHOULD NOT generate their own prefixes if prefixes are defined for any items within a Questionnaire.
    */
@@ -450,15 +454,15 @@ export class QuestionnaireItem extends fhir.BackboneElement {
   /**
    * Additional constraints on the type of answer can be conveyed by extensions. The value may come from the ElementDefinition referred to by .definition.
    */
-  public type: ItemTypeCodeType|null;
+  public type: fhir.FhirCode<ItemTypeCodeType>|null;
   /**
    * If multiple repetitions of this extension are present, the item should be enabled when the condition for *any* of the repetitions is true.  I.e. treat "enableWhen"s as being joined by an "or" clause.  This element is a modifier because if enableWhen is present for an item, "required" is ignored unless one of the enableWhen conditions is met. When an item is disabled, all of its descendants are disabled, regardless of what their own enableWhen logic might evaluate to.
    */
-  public enableWhen?: fhir.QuestionnaireItemEnableWhen[];
+  public enableWhen: fhir.QuestionnaireItemEnableWhen[];
   /**
    * This element must be specified if more than one enableWhen value is provided.
    */
-  public enableBehavior?: QuestionnaireEnableBehaviorCodeType|undefined;
+  public enableBehavior?: fhir.FhirCode<QuestionnaireEnableBehaviorCodeType>|undefined;
   /**
    * Questionnaire.item.required only has meaning for elements that are conditionally enabled with enableWhen if the condition evaluates to true.  If an item that contains other items is marked as required, that does not automatically make the contained elements required (though required groups must contain at least one child element). The value may come from the ElementDefinition referred to by .definition.
    */
@@ -484,15 +488,15 @@ export class QuestionnaireItem extends fhir.BackboneElement {
   /**
    * This element can be used when the value set machinery of answerValueSet is deemed too cumbersome or when there's a need to capture possible answers that are not codes.
    */
-  public answerOption?: fhir.QuestionnaireItemAnswerOption[];
+  public answerOption: fhir.QuestionnaireItemAnswerOption[];
   /**
    * The user is allowed to change the value and override the default (unless marked as read-only). If the user doesn't change the value, then this initial value will be persisted when the QuestionnaireResponse is initially created.  Note that initial values can influence results.  The data type of initial[x] must agree with the item.type, and only repeating items can have more then one initial value.
    */
-  public initial?: fhir.QuestionnaireItemInitial[];
+  public initial: fhir.QuestionnaireItemInitial[];
   /**
    * There is no specified limit to the depth of nesting.  However, Questionnaire authors are encouraged to consider the impact on the user and user interface of overly deep nesting.
    */
-  public item?: fhir.QuestionnaireItem[];
+  public item: fhir.QuestionnaireItem[];
   /**
    * Default constructor for QuestionnaireItem - initializes any required elements to null if a value is not provided.
    */
@@ -505,11 +509,11 @@ export class QuestionnaireItem extends fhir.BackboneElement {
     else { this.code = []; }
     if (source['prefix']) { this.prefix = new fhir.FhirString({value: source.prefix}); }
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<ItemTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['enableWhen']) { this.enableWhen = source.enableWhen.map((x) => new fhir.QuestionnaireItemEnableWhen(x)); }
     else { this.enableWhen = []; }
-    if (source['enableBehavior']) { this.enableBehavior = source.enableBehavior; }
+    if (source['enableBehavior']) { this.enableBehavior = new fhir.FhirCode<QuestionnaireEnableBehaviorCodeType>({value: source.enableBehavior}); }
     if (source['required']) { this.required = new fhir.FhirBoolean({value: source.required}); }
     if (source['repeats']) { this.repeats = new fhir.FhirBoolean({value: source.repeats}); }
     if (source['readOnly']) { this.readOnly = new fhir.FhirBoolean({value: source.readOnly}); }
@@ -525,14 +529,14 @@ export class QuestionnaireItem extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for type (Questionnaire.item.type)
    */
-  public static typeRequiredCoding():ItemTypeCodingType {
-    return ItemTypeCodings;
+  public static get typeRequiredCodes() {
+    return ItemTypeCodes;
   }
   /**
    * Required-bound Value Set for enableBehavior (Questionnaire.item.enableBehavior)
    */
-  public static enableBehaviorRequiredCoding():QuestionnaireEnableBehaviorCodingType {
-    return QuestionnaireEnableBehaviorCodings;
+  public static get enableBehaviorRequiredCodes() {
+    return QuestionnaireEnableBehaviorCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -540,7 +544,7 @@ export class QuestionnaireItem extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['linkId']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property linkId:fhir.FhirString fhir: Questionnaire.item.linkId:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property linkId:fhir.FhirString fhir: Questionnaire.item.linkId:string' });
     }
     if (this["linkId"]) { issues.push(...this.linkId.doModelValidation()); }
     if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
@@ -548,9 +552,17 @@ export class QuestionnaireItem extends fhir.BackboneElement {
     if (this["prefix"]) { issues.push(...this.prefix.doModelValidation()); }
     if (this["text"]) { issues.push(...this.text.doModelValidation()); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:ItemTypeCodeType fhir: Questionnaire.item.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<ItemTypeCodeType> fhir: Questionnaire.item.type:code' });
     }
+    if (this['type'] && (!Object.values(ItemTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<ItemTypeCodeType> fhir: Questionnaire.item.type:code Required binding to: ItemType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["enableWhen"]) { this.enableWhen.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['enableBehavior'] && (!Object.values(QuestionnaireEnableBehaviorCodes).includes(this.enableBehavior as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property enableBehavior?:fhir.FhirCode<QuestionnaireEnableBehaviorCodeType> fhir: Questionnaire.item.enableBehavior:code Required binding to: QuestionnaireEnableBehavior' });
+    }
+    if (this["enableBehavior"]) { issues.push(...this.enableBehavior.doModelValidation()); }
     if (this["required"]) { issues.push(...this.required.doModelValidation()); }
     if (this["repeats"]) { issues.push(...this.repeats.doModelValidation()); }
     if (this["readOnly"]) { issues.push(...this.readOnly.doModelValidation()); }
@@ -597,7 +609,7 @@ export interface QuestionnaireArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of questionnaires that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of questionnaires that are appropriate for use versus not.
    */
@@ -679,7 +691,7 @@ export class Questionnaire extends fhir.DomainResource {
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this questionnaire outside of FHIR, where it is not possible to use the logical URI.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * There may be different questionnaire instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the questionnaire with the format [url]|[version].
    */
@@ -695,11 +707,11 @@ export class Questionnaire extends fhir.DomainResource {
   /**
    * The URL of a Questionnaire that this Questionnaire is based on.
    */
-  public derivedFrom?: fhir.FhirCanonical[];
+  public derivedFrom: fhir.FhirCanonical[];
   /**
    * Allows filtering of questionnaires that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of questionnaires that are appropriate for use versus not.
    */
@@ -707,7 +719,7 @@ export class Questionnaire extends fhir.DomainResource {
   /**
    * If none are specified, then the subject is unlimited.
    */
-  public subjectType?: fhir.FhirCode[];
+  public subjectType: fhir.FhirCode[];
   /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the questionnaire. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
@@ -719,7 +731,7 @@ export class Questionnaire extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the questionnaire was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the questionnaire as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the questionnaire is presumed to be the predominant language in the place the questionnaire was created).
    */
@@ -727,11 +739,11 @@ export class Questionnaire extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the questionnaire to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * This element does not describe the usage of the questionnaire. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this questionnaire.
    */
@@ -755,11 +767,11 @@ export class Questionnaire extends fhir.DomainResource {
   /**
    * An identifier for this question or group of questions in a particular terminology such as LOINC.
    */
-  public code?: fhir.Coding[];
+  public code: fhir.Coding[];
   /**
    * The content of the questionnaire is constructed from an ordered, hierarchical collection of items.
    */
-  public item?: fhir.QuestionnaireItem[];
+  public item: fhir.QuestionnaireItem[];
   /**
    * Default constructor for Questionnaire - initializes any required elements to null if a value is not provided.
    */
@@ -774,7 +786,7 @@ export class Questionnaire extends fhir.DomainResource {
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
     if (source['derivedFrom']) { this.derivedFrom = source.derivedFrom.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.derivedFrom = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['subjectType']) { this.subjectType = source.subjectType.map((x) => new fhir.FhirCode({value: x})); }
@@ -801,14 +813,14 @@ export class Questionnaire extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Questionnaire.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Required-bound Value Set for subjectType (Questionnaire.subjectType)
    */
-  public static subjectTypeRequiredCoding():ResourceTypesCodingType {
-    return ResourceTypesCodings;
+  public static get subjectTypeRequiredCodes() {
+    return ResourceTypesCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -816,7 +828,7 @@ export class Questionnaire extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Questionnaire" fhir: Questionnaire.resourceType:"Questionnaire"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Questionnaire" fhir: Questionnaire.resourceType:"Questionnaire"' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -825,9 +837,20 @@ export class Questionnaire extends fhir.DomainResource {
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (this["derivedFrom"]) { this.derivedFrom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: Questionnaire.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: Questionnaire.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: Questionnaire.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
+    if (this['subjectType']) {
+      this.subjectType.forEach((v) => {
+        if (!Object.values(ResourceTypesCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property subjectType?:fhir.FhirCode[] fhir: Questionnaire.subjectType:code Required binding to: ResourceTypes' });
+        }
+      });
+    }
     if (this["subjectType"]) { this.subjectType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }

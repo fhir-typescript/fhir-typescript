@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { HistoryStatusCodingType } from '../fhirValueSets/HistoryStatusCodings.js';
 import { HistoryStatusCodeType } from '../fhirValueSets/HistoryStatusCodes.js';
-import { AdministrativeGenderCodingType } from '../fhirValueSets/AdministrativeGenderCodings.js';
 /**
  * Valid arguments for the FamilyMemberHistoryCondition type.
  */
@@ -74,7 +72,7 @@ export declare class FamilyMemberHistoryCondition extends fhir.BackboneElement {
     /**
      * An area where general notes can be placed about this specific condition.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Default constructor for FamilyMemberHistoryCondition - initializes any required elements to null if a value is not provided.
      */
@@ -107,7 +105,7 @@ export interface FamilyMemberHistoryArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: HistoryStatusCodeType | null;
+    status: fhir.FhirCode<HistoryStatusCodeType> | string | undefined;
     /**
      * Describes why the family member's history is not available.
      */
@@ -224,19 +222,19 @@ export declare class FamilyMemberHistory extends fhir.DomainResource {
     /**
      * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this FamilyMemberHistory.
      */
-    instantiatesCanonical?: fhir.FhirCanonical[];
+    instantiatesCanonical: fhir.FhirCanonical[];
     /**
      * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
      */
-    instantiatesUri?: fhir.FhirUri[];
+    instantiatesUri: fhir.FhirUri[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: HistoryStatusCodeType | null;
+    status: fhir.FhirCode<HistoryStatusCodeType> | null;
     /**
      * Describes why the family member's history is not available.
      */
@@ -292,19 +290,19 @@ export declare class FamilyMemberHistory extends fhir.DomainResource {
     /**
      * Textual reasons can be captured using reasonCode.text.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse that justifies this family member history event.
      */
-    reasonReference?: fhir.Reference[];
+    reasonReference: fhir.Reference[];
     /**
      * This property allows a non condition-specific note to the made about the related person. Ideally, the note would be in the condition property, but this is not always possible.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * The significant Conditions (or condition) that the family member had. This is a repeating section to allow a system to represent more than one condition per resource, though there is nothing stopping multiple resources - one per condition.
      */
-    condition?: fhir.FamilyMemberHistoryCondition[];
+    condition: fhir.FamilyMemberHistoryCondition[];
     /**
      * Default constructor for FamilyMemberHistory - initializes any required elements to null if a value is not provided.
      */
@@ -312,11 +310,21 @@ export declare class FamilyMemberHistory extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (FamilyMemberHistory.status)
      */
-    static statusRequiredCoding(): HistoryStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Completed: "completed";
+        readonly EnteredInError: "entered-in-error";
+        readonly HealthUnknown: "health-unknown";
+        readonly Partial: "partial";
+    };
     /**
      * Extensible-bound Value Set for sex (FamilyMemberHistory.sex)
      */
-    static sexExtensibleCoding(): AdministrativeGenderCodingType;
+    static get sexExtensibleCodings(): {
+        readonly Female: fhir.Coding;
+        readonly Male: fhir.Coding;
+        readonly Other: fhir.Coding;
+        readonly Unknown: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

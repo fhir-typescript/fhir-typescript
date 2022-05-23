@@ -77,6 +77,10 @@ export interface ConsentProvisionData extends fhir.BackboneElement {
    */
   meaning: 'authoredby'|'dependents'|'instance'|'related'|null;
   /**
+   * Extended properties for primitive element: Consent.provision.data.meaning
+   */
+  _meaning?:fhir.FhirElement;
+  /**
    * A reference to a specific resource that defines which resources are covered by this consent.
    */
   reference: fhir.Reference|null;
@@ -90,6 +94,10 @@ export interface ConsentProvision extends fhir.BackboneElement {
    * Action  to take - permit or deny - when the rule conditions are met.  Not permitted in root rule, required in all nested rules.
    */
   type?: 'deny'|'permit'|undefined;
+  /**
+   * Extended properties for primitive element: Consent.provision.type
+   */
+  _type?:fhir.FhirElement;
   /**
    * The timeframe in this rule is valid.
    */
@@ -148,6 +156,10 @@ export interface Consent extends fhir.DomainResource {
    * This element is labeled as a modifier because the status contains the codes rejected and entered-in-error that mark the Consent as not currently valid.
    */
   status: 'active'|'draft'|'entered-in-error'|'inactive'|'proposed'|'rejected'|null;
+  /**
+   * Extended properties for primitive element: Consent.status
+   */
+  _status?:fhir.FhirElement;
   /**
    * A selector of the type of consent being presented: ADR, Privacy, Treatment, Research.  This list is now extensible.
    */

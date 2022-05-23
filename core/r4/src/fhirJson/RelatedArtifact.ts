@@ -15,6 +15,10 @@ export interface RelatedArtifact extends fhir.FhirElement {
    */
   type: 'citation'|'composed-of'|'depends-on'|'derived-from'|'documentation'|'justification'|'predecessor'|'successor'|null;
   /**
+   * Extended properties for primitive element: RelatedArtifact.type
+   */
+  _type?:fhir.FhirElement;
+  /**
    * A short label that can be used to reference the citation from elsewhere in the containing artifact, such as a footnote index.
    */
   label?: string|undefined;

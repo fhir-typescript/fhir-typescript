@@ -62,7 +62,7 @@ export class TaskRestriction extends fhir.BackboneElement {
   /**
    * For requests that are targeted to more than on potential recipient/target, for whom is fulfillment sought?
    */
-  public recipient?: fhir.Reference[];
+  public recipient: fhir.Reference[];
   /**
    * Default constructor for TaskRestriction - initializes any required elements to null if a value is not provided.
    */
@@ -384,11 +384,11 @@ export class TaskInput extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Task.input.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Task.input.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value: fhir: Task.input.value[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value: fhir: Task.input.value[x]:' });
     }
     return issues;
   }
@@ -693,11 +693,11 @@ export class TaskOutput extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Task.output.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Task.output.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value: fhir: Task.output.value[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value: fhir: Task.output.value[x]:' });
     }
     return issues;
   }
@@ -737,7 +737,7 @@ export interface TaskArgs extends fhir.DomainResourceArgs {
   /**
    * The current status of the task.
    */
-  status: TaskStatusCodeType|null;
+  status: fhir.FhirCode<TaskStatusCodeType>|string|undefined;
   /**
    * This applies to the current status.  Look at the history of the task to see reasons for past statuses.
    */
@@ -750,11 +750,11 @@ export interface TaskArgs extends fhir.DomainResourceArgs {
    * This element is immutable.  Proposed tasks, planned tasks, etc. must be distinct instances.
    * In most cases, Tasks will have an intent of "order".
    */
-  intent: TaskIntentCodeType|null;
+  intent: fhir.FhirCode<TaskIntentCodeType>|string|undefined;
   /**
    * Indicates how quickly the Task should be addressed with respect to other requests.
    */
-  priority?: RequestPriorityCodeType|undefined;
+  priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
   /**
    * The title (eg "My Tasks", "Outstanding Tasks for Patient X") should go into the code.
    */
@@ -852,7 +852,7 @@ export class Task extends fhir.DomainResource {
   /**
    * The business identifier for this task.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The URL pointing to a *FHIR*-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Task.
    */
@@ -864,7 +864,7 @@ export class Task extends fhir.DomainResource {
   /**
    * BasedOn refers to a higher-level authorization that triggered the creation of the task.  It references a "request" resource such as a ServiceRequest, MedicationRequest, ServiceRequest, CarePlan, etc. which is distinct from the "request" resource the task is seeking to fulfill.  This latter resource is referenced by FocusOn.  For example, based on a ServiceRequest (= BasedOn), a task is created to fulfill a procedureRequest ( = FocusOn ) to collect a specimen from a patient.
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * An identifier that links together multiple tasks and other requests that were created in the same context.
    */
@@ -872,11 +872,11 @@ export class Task extends fhir.DomainResource {
   /**
    * This should usually be 0..1.
    */
-  public partOf?: fhir.Reference[];
+  public partOf: fhir.Reference[];
   /**
    * The current status of the task.
    */
-  public status: TaskStatusCodeType|null;
+  public status: fhir.FhirCode<TaskStatusCodeType>|null;
   /**
    * This applies to the current status.  Look at the history of the task to see reasons for past statuses.
    */
@@ -889,11 +889,11 @@ export class Task extends fhir.DomainResource {
    * This element is immutable.  Proposed tasks, planned tasks, etc. must be distinct instances.
    * In most cases, Tasks will have an intent of "order".
    */
-  public intent: TaskIntentCodeType|null;
+  public intent: fhir.FhirCode<TaskIntentCodeType>|null;
   /**
    * Indicates how quickly the Task should be addressed with respect to other requests.
    */
-  public priority?: RequestPriorityCodeType|undefined;
+  public priority?: fhir.FhirCode<RequestPriorityCodeType>|undefined;
   /**
    * The title (eg "My Tasks", "Outstanding Tasks for Patient X") should go into the code.
    */
@@ -933,7 +933,7 @@ export class Task extends fhir.DomainResource {
   /**
    * The kind of participant that should perform the task.
    */
-  public performerType?: fhir.CodeableConcept[];
+  public performerType: fhir.CodeableConcept[];
   /**
    * Tasks may be created with an owner not yet identified.
    */
@@ -953,15 +953,15 @@ export class Task extends fhir.DomainResource {
   /**
    * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be relevant to the Task.
    */
-  public insurance?: fhir.Reference[];
+  public insurance: fhir.Reference[];
   /**
    * Free-text information captured about the task as it progresses.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * This element does not point to the Provenance associated with the *current* version of the resource - as it would be created after this version existed.  The Provenance for the current version can be retrieved with a _revinclude.
    */
-  public relevantHistory?: fhir.Reference[];
+  public relevantHistory: fhir.Reference[];
   /**
    * If the Task.focus is a request resource and the task is seeking fulfillment (i.e. is asking for the request to be actioned), this element identifies any limitations on what parts of the referenced request should be actioned.
    */
@@ -969,11 +969,11 @@ export class Task extends fhir.DomainResource {
   /**
    * Additional information that may be needed in the execution of the task.
    */
-  public input?: fhir.TaskInput[];
+  public input: fhir.TaskInput[];
   /**
    * Outputs produced by the Task.
    */
-  public output?: fhir.TaskOutput[];
+  public output: fhir.TaskOutput[];
   /**
    * Default constructor for Task - initializes any required elements to null if a value is not provided.
    */
@@ -989,13 +989,13 @@ export class Task extends fhir.DomainResource {
     if (source['groupIdentifier']) { this.groupIdentifier = new fhir.Identifier(source.groupIdentifier); }
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
     else { this.partOf = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<TaskStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['statusReason']) { this.statusReason = new fhir.CodeableConcept(source.statusReason); }
     if (source['businessStatus']) { this.businessStatus = new fhir.CodeableConcept(source.businessStatus); }
-    if (source['intent']) { this.intent = source.intent; }
+    if (source['intent']) { this.intent = new fhir.FhirCode<TaskIntentCodeType>({value: source.intent}); }
     else { this.intent = null; }
-    if (source['priority']) { this.priority = source.priority; }
+    if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
     if (source['focus']) { this.focus = new fhir.Reference(source.focus); }
@@ -1026,25 +1026,25 @@ export class Task extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Task.status)
    */
-  public static statusRequiredCoding():TaskStatusCodingType {
-    return TaskStatusCodings;
+  public static get statusRequiredCodes() {
+    return TaskStatusCodes;
   }
   /**
    * Required-bound Value Set for intent (Task.intent)
    */
-  public static intentRequiredCoding():TaskIntentCodingType {
-    return TaskIntentCodings;
+  public static get intentRequiredCodes() {
+    return TaskIntentCodes;
   }
   /**
    * Required-bound Value Set for priority (Task.priority)
    */
-  public static priorityRequiredCoding():RequestPriorityCodingType {
-    return RequestPriorityCodings;
+  public static get priorityRequiredCodes() {
+    return RequestPriorityCodes;
   }
   /**
    * Preferred-bound Value Set for performerType (Task.performerType)
    */
-  public static performerTypePreferredCoding():PerformerRoleCodingType {
+  public static get performerTypePreferredCodings() {
     return PerformerRoleCodings;
   }
   /**
@@ -1053,7 +1053,7 @@ export class Task extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Task" fhir: Task.resourceType:"Task"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Task" fhir: Task.resourceType:"Task"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["instantiatesCanonical"]) { issues.push(...this.instantiatesCanonical.doModelValidation()); }
@@ -1062,13 +1062,25 @@ export class Task extends fhir.DomainResource {
     if (this["groupIdentifier"]) { issues.push(...this.groupIdentifier.doModelValidation()); }
     if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:TaskStatusCodeType fhir: Task.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<TaskStatusCodeType> fhir: Task.status:code' });
     }
+    if (this['status'] && (!Object.values(TaskStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<TaskStatusCodeType> fhir: Task.status:code Required binding to: TaskStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation()); }
     if (this["businessStatus"]) { issues.push(...this.businessStatus.doModelValidation()); }
     if (!this['intent']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property intent:TaskIntentCodeType fhir: Task.intent:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent:fhir.FhirCode<TaskIntentCodeType> fhir: Task.intent:code' });
     }
+    if (this['intent'] && (!Object.values(TaskIntentCodes).includes(this.intent as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent:fhir.FhirCode<TaskIntentCodeType> fhir: Task.intent:code Required binding to: TaskIntent' });
+    }
+    if (this["intent"]) { issues.push(...this.intent.doModelValidation()); }
+    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority?:fhir.FhirCode<RequestPriorityCodeType> fhir: Task.priority:code Required binding to: RequestPriority' });
+    }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["focus"]) { issues.push(...this.focus.doModelValidation()); }

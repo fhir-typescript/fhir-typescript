@@ -109,7 +109,7 @@ export declare class MedicinalProductIndication extends fhir.DomainResource {
     /**
      * The medication for which this is an indication.
      */
-    subject?: fhir.Reference[];
+    subject: fhir.Reference[];
     /**
      * The disease, symptom or procedure that is the indication for treatment.
      */
@@ -121,7 +121,7 @@ export declare class MedicinalProductIndication extends fhir.DomainResource {
     /**
      * Comorbidity (concurrent condition) or co-infection as part of the indication.
      */
-    comorbidity?: fhir.CodeableConcept[];
+    comorbidity: fhir.CodeableConcept[];
     /**
      * The intended effect, aim or strategy to be achieved by the indication.
      */
@@ -133,15 +133,15 @@ export declare class MedicinalProductIndication extends fhir.DomainResource {
     /**
      * Information about the use of the medicinal product in relation to other therapies described as part of the indication.
      */
-    otherTherapy?: fhir.MedicinalProductIndicationOtherTherapy[];
+    otherTherapy: fhir.MedicinalProductIndicationOtherTherapy[];
     /**
      * Describe the undesirable effects of the medicinal product.
      */
-    undesirableEffect?: fhir.Reference[];
+    undesirableEffect: fhir.Reference[];
     /**
      * The population group to which this applies.
      */
-    population?: fhir.Population[];
+    population: fhir.Population[];
     /**
      * Default constructor for MedicinalProductIndication - initializes any required elements to null if a value is not provided.
      */

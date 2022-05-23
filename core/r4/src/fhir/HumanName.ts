@@ -16,7 +16,7 @@ export interface HumanNameArgs extends fhir.FhirElementArgs {
   /**
    * Applications can assume that a name is current unless it explicitly says that it is temporary or old.
    */
-  use?: NameUseCodeType|undefined;
+  use?: fhir.FhirCode<NameUseCodeType>|string|undefined;
   /**
    * Can provide both a text representation and parts. Applications updating a name SHALL ensure that when both text and parts are present,  no content is included in the text that isn't found in a part.
    */
@@ -54,7 +54,7 @@ export class HumanName extends fhir.FhirElement {
   /**
    * Applications can assume that a name is current unless it explicitly says that it is temporary or old.
    */
-  public use?: NameUseCodeType|undefined;
+  public use?: fhir.FhirCode<NameUseCodeType>|undefined;
   /**
    * Can provide both a text representation and parts. Applications updating a name SHALL ensure that when both text and parts are present,  no content is included in the text that isn't found in a part.
    */
@@ -66,15 +66,15 @@ export class HumanName extends fhir.FhirElement {
   /**
    * If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called "first name" since given names do not always come first.
    */
-  public given?: fhir.FhirString[];
+  public given: fhir.FhirString[];
   /**
    * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
    */
-  public prefix?: fhir.FhirString[];
+  public prefix: fhir.FhirString[];
   /**
    * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
    */
-  public suffix?: fhir.FhirString[];
+  public suffix: fhir.FhirString[];
   /**
    * Indicates the period of time when this name was valid for the named person.
    */
@@ -84,7 +84,7 @@ export class HumanName extends fhir.FhirElement {
    */
   constructor(source:Partial<HumanNameArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['use']) { this.use = source.use; }
+    if (source['use']) { this.use = new fhir.FhirCode<NameUseCodeType>({value: source.use}); }
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
     if (source['family']) { this.family = new fhir.FhirString({value: source.family}); }
     if (source['given']) { this.given = source.given.map((x) => new fhir.FhirString({value: x})); }
@@ -98,14 +98,18 @@ export class HumanName extends fhir.FhirElement {
   /**
    * Required-bound Value Set for use (HumanName.use)
    */
-  public static useRequiredCoding():NameUseCodingType {
-    return NameUseCodings;
+  public static get useRequiredCodes() {
+    return NameUseCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this['use'] && (!Object.values(NameUseCodes).includes(this.use as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use?:fhir.FhirCode<NameUseCodeType> fhir: HumanName.use:code Required binding to: NameUse' });
+    }
+    if (this["use"]) { issues.push(...this.use.doModelValidation()); }
     if (this["text"]) { issues.push(...this.text.doModelValidation()); }
     if (this["family"]) { issues.push(...this.family.doModelValidation()); }
     if (this["given"]) { this.given.forEach((x) => { issues.push(...x.doModelValidation()); }) }

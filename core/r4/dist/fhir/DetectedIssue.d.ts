@@ -1,9 +1,5 @@
 import * as fhir from '../fhir.js';
-import { DetectedissueMitigationActionCodingType } from '../fhirValueSets/DetectedissueMitigationActionCodings.js';
-import { ObservationStatusCodingType } from '../fhirValueSets/ObservationStatusCodings.js';
 import { ObservationStatusCodeType } from '../fhirValueSets/ObservationStatusCodes.js';
-import { DetectedissueCategoryCodingType } from '../fhirValueSets/DetectedissueCategoryCodings.js';
-import { DetectedissueSeverityCodingType } from '../fhirValueSets/DetectedissueSeverityCodings.js';
 import { DetectedissueSeverityCodeType } from '../fhirValueSets/DetectedissueSeverityCodes.js';
 /**
  * Valid arguments for the DetectedIssueEvidence type.
@@ -29,11 +25,11 @@ export declare class DetectedIssueEvidence extends fhir.BackboneElement {
     /**
      * A manifestation that led to the recording of this detected issue.
      */
-    code?: fhir.CodeableConcept[];
+    code: fhir.CodeableConcept[];
     /**
      * Links to resources that constitute evidence for the detected issue such as a GuidanceResponse or MeasureReport.
      */
-    detail?: fhir.Reference[];
+    detail: fhir.Reference[];
     /**
      * Default constructor for DetectedIssueEvidence - initializes any required elements to null if a value is not provided.
      */
@@ -87,7 +83,38 @@ export declare class DetectedIssueMitigation extends fhir.BackboneElement {
     /**
      * Preferred-bound Value Set for action (DetectedIssue.mitigation.action)
      */
-    static actionPreferredCoding(): DetectedissueMitigationActionCodingType;
+    static get actionPreferredCodings(): {
+        readonly ActAdministrativeDetectedIssueManagementCode: fhir.Coding;
+        readonly ActDetectedIssueManagementCode: fhir.Coding;
+        readonly AuthorizationIssueManagementCode: fhir.Coding;
+        readonly TherapyAppropriate: fhir.Coding;
+        readonly ProvidedPatientEducation: fhir.Coding;
+        readonly AddedConcurrentTherapy: fhir.Coding;
+        readonly TemporarilySuspendedConcurrentTherapy: fhir.Coding;
+        readonly StoppedConcurrentTherapy: fhir.Coding;
+        readonly SupplyAppropriate: fhir.Coding;
+        readonly Replacement: fhir.Coding;
+        readonly VacationSupply: fhir.Coding;
+        readonly WeekendSupply: fhir.Coding;
+        readonly LeaveOfAbsence: fhir.Coding;
+        /**
+         * This might not be the same as when the mitigating step was actually taken.
+         */
+        readonly ConsultedSupplier: fhir.Coding;
+        readonly AssessedPatient: fhir.Coding;
+        readonly AdditionalQuantityOnSeparateDispense: fhir.Coding;
+        readonly AuthorizationConfirmed: fhir.Coding;
+        readonly AppropriateIndicationOrDiagnosis: fhir.Coding;
+        readonly PriorTherapyDocumented: fhir.Coding;
+        readonly PatientExplanation: fhir.Coding;
+        readonly ConsultedOtherSource: fhir.Coding;
+        readonly ConsultedPrescriber: fhir.Coding;
+        readonly PrescriberDeclinedChange: fhir.Coding;
+        readonly InteractingTherapyNoLongerActivePlanned: fhir.Coding;
+        readonly OtherActionTaken: fhir.Coding;
+        readonly InstitutedOngoingMonitoringProgram: fhir.Coding;
+        readonly EmergencyAuthorizationOverride: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -108,7 +135,7 @@ export interface DetectedIssueArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains the codes cancelled and entered-in-error that mark the issue as not currently valid.
      */
-    status: ObservationStatusCodeType | null;
+    status: fhir.FhirCode<ObservationStatusCodeType> | string | undefined;
     /**
      * Identifies the general type of issue identified.
      */
@@ -116,7 +143,7 @@ export interface DetectedIssueArgs extends fhir.DomainResourceArgs {
     /**
      * Indicates the degree of importance associated with the identified issue based on the potential impact on the patient.
      */
-    severity?: DetectedissueSeverityCodeType | undefined;
+    severity?: fhir.FhirCode<DetectedissueSeverityCodeType> | string | undefined;
     /**
      * Indicates the patient whose record the detected issue is associated with.
      */
@@ -173,11 +200,11 @@ export declare class DetectedIssue extends fhir.DomainResource {
     /**
      * Business identifier associated with the detected issue record.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains the codes cancelled and entered-in-error that mark the issue as not currently valid.
      */
-    status: ObservationStatusCodeType | null;
+    status: fhir.FhirCode<ObservationStatusCodeType> | null;
     /**
      * Identifies the general type of issue identified.
      */
@@ -185,7 +212,7 @@ export declare class DetectedIssue extends fhir.DomainResource {
     /**
      * Indicates the degree of importance associated with the identified issue based on the potential impact on the patient.
      */
-    severity?: DetectedissueSeverityCodeType | undefined;
+    severity?: fhir.FhirCode<DetectedissueSeverityCodeType> | undefined;
     /**
      * Indicates the patient whose record the detected issue is associated with.
      */
@@ -205,11 +232,11 @@ export declare class DetectedIssue extends fhir.DomainResource {
     /**
      * There's an implicit constraint on the number of implicated resources based on DetectedIssue.type; e.g. For drug-drug, there would be more than one.  For timing, there would typically only be one.
      */
-    implicated?: fhir.Reference[];
+    implicated: fhir.Reference[];
     /**
      * Supporting evidence or manifestations that provide the basis for identifying the detected issue such as a GuidanceResponse or MeasureReport.
      */
-    evidence?: fhir.DetectedIssueEvidence[];
+    evidence: fhir.DetectedIssueEvidence[];
     /**
      * Should focus on information not covered elsewhere as discrete data - no need to duplicate the narrative.
      */
@@ -221,7 +248,7 @@ export declare class DetectedIssue extends fhir.DomainResource {
     /**
      * Indicates an action that has been taken or is committed to reduce or eliminate the likelihood of the risk identified by the detected issue from manifesting.  Can also reflect an observation of known mitigating factors that may reduce/eliminate the need for any action.
      */
-    mitigation?: fhir.DetectedIssueMitigation[];
+    mitigation: fhir.DetectedIssueMitigation[];
     /**
      * Default constructor for DetectedIssue - initializes any required elements to null if a value is not provided.
      */
@@ -229,15 +256,62 @@ export declare class DetectedIssue extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (DetectedIssue.status)
      */
-    static statusRequiredCoding(): ObservationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Amended: "amended";
+        readonly Cancelled: "cancelled";
+        readonly Corrected: "corrected";
+        readonly EnteredInError: "entered-in-error";
+        readonly Final: "final";
+        readonly Preliminary: "preliminary";
+        readonly Registered: "registered";
+        readonly Unknown: "unknown";
+    };
     /**
      * Preferred-bound Value Set for code (DetectedIssue.code)
      */
-    static codePreferredCoding(): DetectedissueCategoryCodingType;
+    static get codePreferredCodings(): {
+        readonly ActSuppliedItemDetectedIssueCode: fhir.Coding;
+        readonly AdministrationDetectedIssueCode: fhir.Coding;
+        readonly AppropriatenessDetectedIssueCode: fhir.Coding;
+        readonly InteractionDetectedIssueCode: fhir.Coding;
+        readonly SupplyDetectedIssueCode: fhir.Coding;
+        readonly TimingDetectedIssueCode: fhir.Coding;
+        readonly AlreadyPerformed: fhir.Coding;
+        readonly EndTooLateAlert: fhir.Coding;
+        readonly StartTooLateAlert: fhir.Coding;
+        readonly DrugActionDetectedIssue: fhir.Coding;
+        readonly DrugInteractionAlert: fhir.Coding;
+        readonly EndTooLateAlertENDLATE: fhir.Coding;
+        readonly FoodInteractionAlert: fhir.Coding;
+        readonly FulfillmentAlert: fhir.Coding;
+        readonly HeldSuspendedAlert: fhir.Coding;
+        readonly RecordRecordedAsHistorical: fhir.Coding;
+        readonly OutsideRequestedTime: fhir.Coding;
+        readonly TooSoonWithinFrequencyBasedOnTheUsage: fhir.Coding;
+        readonly NaturalHealthProductAlert: fhir.Coding;
+        readonly NonPrescriptionInteractionAlert: fhir.Coding;
+        readonly NoLongerActionable: fhir.Coding;
+        readonly NotEquivalentAlert: fhir.Coding;
+        readonly NotGenericallyEquivalentAlert: fhir.Coding;
+        readonly NotTherapeuticallyEquivalentAlert: fhir.Coding;
+        readonly ViolatesStatedPreferences: fhir.Coding;
+        readonly ViolatesStatedPreferencesAlternateAvailable: fhir.Coding;
+        readonly PreviouslyIneffective: fhir.Coding;
+        readonly StartTooLateAlertSTRTLATE: fhir.Coding;
+        readonly TimingDetectedIssue: fhir.Coding;
+        readonly EventTimingIncorrectAlert: fhir.Coding;
+        readonly RefillTooLateAlert: fhir.Coding;
+        readonly RefillTooSoonAlert: fhir.Coding;
+        readonly TherapeuticProductAlert: fhir.Coding;
+    };
     /**
      * Required-bound Value Set for severity (DetectedIssue.severity)
      */
-    static severityRequiredCoding(): DetectedissueSeverityCodingType;
+    static get severityRequiredCodes(): {
+        readonly High: "high";
+        readonly Low: "low";
+        readonly Moderate: "moderate";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

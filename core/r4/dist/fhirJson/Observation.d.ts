@@ -143,6 +143,10 @@ export interface Observation extends fhir.DomainResource {
      */
     status: 'amended' | 'cancelled' | 'corrected' | 'entered-in-error' | 'final' | 'preliminary' | 'registered' | 'unknown' | null;
     /**
+     * Extended properties for primitive element: Observation.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * In addition to the required category valueset, this element allows various categorization schemes based on the owner’s definition of the category and effectively multiple categories can be used at once.  The level of granularity is defined by the category concepts in the value set.
      */
     category?: fhir.CodeableConcept[] | undefined;

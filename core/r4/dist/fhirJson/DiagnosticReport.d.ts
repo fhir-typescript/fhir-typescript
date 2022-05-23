@@ -37,6 +37,10 @@ export interface DiagnosticReport extends fhir.DomainResource {
      */
     status: 'amended' | 'appended' | 'cancelled' | 'corrected' | 'entered-in-error' | 'final' | 'partial' | 'preliminary' | 'registered' | 'unknown' | null;
     /**
+     * Extended properties for primitive element: DiagnosticReport.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * Multiple categories are allowed using various categorization schemes.   The level of granularity is defined by the category concepts in the value set. More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in DiagnosticReport.code.
      */
     category?: fhir.CodeableConcept[] | undefined;

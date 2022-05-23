@@ -204,11 +204,11 @@ export class SubstanceNucleicAcidSubunit extends fhir.BackboneElement {
   /**
    * The linkages between sugar residues will also be captured.
    */
-  public linkage?: fhir.SubstanceNucleicAcidSubunitLinkage[];
+  public linkage: fhir.SubstanceNucleicAcidSubunitLinkage[];
   /**
    * 5.3.6.8.1 Sugar ID (Mandatory).
    */
-  public sugar?: fhir.SubstanceNucleicAcidSubunitSugar[];
+  public sugar: fhir.SubstanceNucleicAcidSubunitSugar[];
   /**
    * Default constructor for SubstanceNucleicAcidSubunit - initializes any required elements to null if a value is not provided.
    */
@@ -302,7 +302,7 @@ export class SubstanceNucleicAcid extends fhir.DomainResource {
   /**
    * Subunits are listed in order of decreasing length; sequences of the same length will be ordered by molecular weight; subunits that have identical sequences will be repeated multiple times.
    */
-  public subunit?: fhir.SubstanceNucleicAcidSubunit[];
+  public subunit: fhir.SubstanceNucleicAcidSubunit[];
   /**
    * Default constructor for SubstanceNucleicAcid - initializes any required elements to null if a value is not provided.
    */
@@ -322,7 +322,7 @@ export class SubstanceNucleicAcid extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"SubstanceNucleicAcid" fhir: SubstanceNucleicAcid.resourceType:"SubstanceNucleicAcid"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"SubstanceNucleicAcid" fhir: SubstanceNucleicAcid.resourceType:"SubstanceNucleicAcid"' });
     }
     if (this["sequenceType"]) { issues.push(...this.sequenceType.doModelValidation()); }
     if (this["numberOfSubunits"]) { issues.push(...this.numberOfSubunits.doModelValidation()); }

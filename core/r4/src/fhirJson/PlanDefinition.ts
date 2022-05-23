@@ -75,6 +75,10 @@ export interface PlanDefinitionActionCondition extends fhir.BackboneElement {
    */
   kind: 'applicability'|'start'|'stop'|null;
   /**
+   * Extended properties for primitive element: PlanDefinition.action.condition.kind
+   */
+  _kind?:fhir.FhirElement;
+  /**
    * The expression may be inlined or may be a reference to a named expression within a logic library referenced by the library element.
    */
   expression?: fhir.Expression|undefined;
@@ -97,6 +101,10 @@ export interface PlanDefinitionActionRelatedAction extends fhir.BackboneElement 
    */
   relationship: 'after'|'after-end'|'after-start'|'before'|'before-end'|'before-start'|'concurrent'|'concurrent-with-end'|'concurrent-with-start'|null;
   /**
+   * Extended properties for primitive element: PlanDefinition.action.relatedAction.relationship
+   */
+  _relationship?:fhir.FhirElement;
+  /**
    * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before.
    */
   offsetDuration?: fhir.Duration|undefined;
@@ -114,6 +122,10 @@ export interface PlanDefinitionActionParticipant extends fhir.BackboneElement {
    * The type of participant in the action.
    */
   type: 'device'|'patient'|'practitioner'|'related-person'|null;
+  /**
+   * Extended properties for primitive element: PlanDefinition.action.participant.type
+   */
+  _type?:fhir.FhirElement;
   /**
    * The role the participant should play in performing the described action.
    */
@@ -178,6 +190,10 @@ export interface PlanDefinitionAction extends fhir.BackboneElement {
    * Indicates how quickly the action should be addressed with respect to other actions.
    */
   priority?: 'asap'|'routine'|'stat'|'urgent'|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.action.priority
+   */
+  _priority?:fhir.FhirElement;
   /**
    * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for the section of a documentation template.
    */
@@ -269,21 +285,41 @@ export interface PlanDefinitionAction extends fhir.BackboneElement {
    */
   groupingBehavior?: 'logical-group'|'sentence-group'|'visual-group'|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.action.groupingBehavior
+   */
+  _groupingBehavior?:fhir.FhirElement;
+  /**
    * Defines the selection behavior for the action and its children.
    */
   selectionBehavior?: 'all'|'all-or-none'|'any'|'at-most-one'|'exactly-one'|'one-or-more'|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.action.selectionBehavior
+   */
+  _selectionBehavior?:fhir.FhirElement;
   /**
    * Defines the required behavior for the action.
    */
   requiredBehavior?: 'could'|'must'|'must-unless-documented'|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.action.requiredBehavior
+   */
+  _requiredBehavior?:fhir.FhirElement;
+  /**
    * Defines whether the action should usually be preselected.
    */
   precheckBehavior?: 'no'|'yes'|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.action.precheckBehavior
+   */
+  _precheckBehavior?:fhir.FhirElement;
+  /**
    * Defines whether the action can be selected multiple times.
    */
   cardinalityBehavior?: 'multiple'|'single'|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.action.cardinalityBehavior
+   */
+  _cardinalityBehavior?:fhir.FhirElement;
   /**
    * Note that the definition is optional, and if no definition is specified, a dynamicValue with a root ($this) path can be used to define the entire resource dynamically.
    */
@@ -380,6 +416,10 @@ export interface PlanDefinition extends fhir.DomainResource {
    * Allows filtering of plan definitions that are appropriate for use versus not.
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
+  /**
+   * Extended properties for primitive element: PlanDefinition.status
+   */
+  _status?:fhir.FhirElement;
   /**
    * Allows filtering of plan definitions that are appropriate for use versus not.
    */

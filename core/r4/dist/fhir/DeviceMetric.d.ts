@@ -1,13 +1,8 @@
 import * as fhir from '../fhir.js';
-import { MetricCalibrationTypeCodingType } from '../fhirValueSets/MetricCalibrationTypeCodings.js';
 import { MetricCalibrationTypeCodeType } from '../fhirValueSets/MetricCalibrationTypeCodes.js';
-import { MetricCalibrationStateCodingType } from '../fhirValueSets/MetricCalibrationStateCodings.js';
 import { MetricCalibrationStateCodeType } from '../fhirValueSets/MetricCalibrationStateCodes.js';
-import { MetricOperationalStatusCodingType } from '../fhirValueSets/MetricOperationalStatusCodings.js';
 import { MetricOperationalStatusCodeType } from '../fhirValueSets/MetricOperationalStatusCodes.js';
-import { MetricColorCodingType } from '../fhirValueSets/MetricColorCodings.js';
 import { MetricColorCodeType } from '../fhirValueSets/MetricColorCodes.js';
-import { MetricCategoryCodingType } from '../fhirValueSets/MetricCategoryCodings.js';
 import { MetricCategoryCodeType } from '../fhirValueSets/MetricCategoryCodes.js';
 /**
  * Valid arguments for the DeviceMetricCalibration type.
@@ -16,11 +11,11 @@ export interface DeviceMetricCalibrationArgs extends fhir.BackboneElementArgs {
     /**
      * Describes the type of the calibration method.
      */
-    type?: MetricCalibrationTypeCodeType | undefined;
+    type?: fhir.FhirCode<MetricCalibrationTypeCodeType> | string | undefined;
     /**
      * Describes the state of the calibration.
      */
-    state?: MetricCalibrationStateCodeType | undefined;
+    state?: fhir.FhirCode<MetricCalibrationStateCodeType> | string | undefined;
     /**
      * Describes the time last calibration has been performed.
      */
@@ -37,11 +32,11 @@ export declare class DeviceMetricCalibration extends fhir.BackboneElement {
     /**
      * Describes the type of the calibration method.
      */
-    type?: MetricCalibrationTypeCodeType | undefined;
+    type?: fhir.FhirCode<MetricCalibrationTypeCodeType> | undefined;
     /**
      * Describes the state of the calibration.
      */
-    state?: MetricCalibrationStateCodeType | undefined;
+    state?: fhir.FhirCode<MetricCalibrationStateCodeType> | undefined;
     /**
      * Describes the time last calibration has been performed.
      */
@@ -53,11 +48,21 @@ export declare class DeviceMetricCalibration extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for type (DeviceMetric.calibration.type)
      */
-    static typeRequiredCoding(): MetricCalibrationTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Gain: "gain";
+        readonly Offset: "offset";
+        readonly TwoPoint: "two-point";
+        readonly Unspecified: "unspecified";
+    };
     /**
      * Required-bound Value Set for state (DeviceMetric.calibration.state)
      */
-    static stateRequiredCoding(): MetricCalibrationStateCodingType;
+    static get stateRequiredCodes(): {
+        readonly Calibrated: "calibrated";
+        readonly CalibrationRequired: "calibration-required";
+        readonly NotCalibrated: "not-calibrated";
+        readonly Unspecified: "unspecified";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -94,15 +99,15 @@ export interface DeviceMetricArgs extends fhir.DomainResourceArgs {
     /**
      * Indicates current operational state of the device. For example: On, Off, Standby, etc.
      */
-    operationalStatus?: MetricOperationalStatusCodeType | undefined;
+    operationalStatus?: fhir.FhirCode<MetricOperationalStatusCodeType> | string | undefined;
     /**
      * Describes the color representation for the metric. This is often used to aid clinicians to track and identify parameter types by color. In practice, consider a Patient Monitor that has ECG/HR and Pleth for example; the parameters are displayed in different characteristic colors, such as HR-blue, BP-green, and PR and SpO2- magenta.
      */
-    color?: MetricColorCodeType | undefined;
+    color?: fhir.FhirCode<MetricColorCodeType> | string | undefined;
     /**
      * Indicates the category of the observation generation process. A DeviceMetric can be for example a setting, measurement, or calculation.
      */
-    category: MetricCategoryCodeType | null;
+    category: fhir.FhirCode<MetricCategoryCodeType> | string | undefined;
     /**
      * Describes the measurement repetition time. This is not necessarily the same as the update period. The measurement repetition time can range from milliseconds up to hours. An example for a measurement repetition time in the range of milliseconds is the sampling rate of an ECG. An example for a measurement repetition time in the range of hours is a NIBP that is triggered automatically every hour. The update period may be different than the measurement repetition time, if the device does not update the published observed value with the same frequency as it was measured.
      */
@@ -127,7 +132,7 @@ export declare class DeviceMetric extends fhir.DomainResource {
     /**
      * For identifiers assigned to a device by the device or gateway software, the `system` element of the identifier should be set to the unique identifier of the device.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * DeviceMetric.type can be referred to either IEEE 11073-10101 or LOINC.
      */
@@ -147,15 +152,15 @@ export declare class DeviceMetric extends fhir.DomainResource {
     /**
      * Indicates current operational state of the device. For example: On, Off, Standby, etc.
      */
-    operationalStatus?: MetricOperationalStatusCodeType | undefined;
+    operationalStatus?: fhir.FhirCode<MetricOperationalStatusCodeType> | undefined;
     /**
      * Describes the color representation for the metric. This is often used to aid clinicians to track and identify parameter types by color. In practice, consider a Patient Monitor that has ECG/HR and Pleth for example; the parameters are displayed in different characteristic colors, such as HR-blue, BP-green, and PR and SpO2- magenta.
      */
-    color?: MetricColorCodeType | undefined;
+    color?: fhir.FhirCode<MetricColorCodeType> | undefined;
     /**
      * Indicates the category of the observation generation process. A DeviceMetric can be for example a setting, measurement, or calculation.
      */
-    category: MetricCategoryCodeType | null;
+    category: fhir.FhirCode<MetricCategoryCodeType> | null;
     /**
      * Describes the measurement repetition time. This is not necessarily the same as the update period. The measurement repetition time can range from milliseconds up to hours. An example for a measurement repetition time in the range of milliseconds is the sampling rate of an ECG. An example for a measurement repetition time in the range of hours is a NIBP that is triggered automatically every hour. The update period may be different than the measurement repetition time, if the device does not update the published observed value with the same frequency as it was measured.
      */
@@ -163,7 +168,7 @@ export declare class DeviceMetric extends fhir.DomainResource {
     /**
      * Describes the calibrations that have been performed or that are required to be performed.
      */
-    calibration?: fhir.DeviceMetricCalibration[];
+    calibration: fhir.DeviceMetricCalibration[];
     /**
      * Default constructor for DeviceMetric - initializes any required elements to null if a value is not provided.
      */
@@ -171,15 +176,34 @@ export declare class DeviceMetric extends fhir.DomainResource {
     /**
      * Required-bound Value Set for operationalStatus (DeviceMetric.operationalStatus)
      */
-    static operationalStatusRequiredCoding(): MetricOperationalStatusCodingType;
+    static get operationalStatusRequiredCodes(): {
+        readonly EnteredInError: "entered-in-error";
+        readonly Off: "off";
+        readonly On: "on";
+        readonly Standby: "standby";
+    };
     /**
      * Required-bound Value Set for color (DeviceMetric.color)
      */
-    static colorRequiredCoding(): MetricColorCodingType;
+    static get colorRequiredCodes(): {
+        readonly ColorBlack: "black";
+        readonly ColorBlue: "blue";
+        readonly ColorCyan: "cyan";
+        readonly ColorGreen: "green";
+        readonly ColorMagenta: "magenta";
+        readonly ColorRed: "red";
+        readonly ColorWhite: "white";
+        readonly ColorYellow: "yellow";
+    };
     /**
      * Required-bound Value Set for category (DeviceMetric.category)
      */
-    static categoryRequiredCoding(): MetricCategoryCodingType;
+    static get categoryRequiredCodes(): {
+        readonly Calculation: "calculation";
+        readonly Measurement: "measurement";
+        readonly Setting: "setting";
+        readonly Unspecified: "unspecified";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

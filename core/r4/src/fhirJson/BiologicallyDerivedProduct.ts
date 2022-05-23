@@ -117,6 +117,10 @@ export interface BiologicallyDerivedProductStorage extends fhir.BackboneElement 
    */
   scale?: 'celsius'|'farenheit'|'kelvin'|undefined;
   /**
+   * Extended properties for primitive element: BiologicallyDerivedProduct.storage.scale
+   */
+  _scale?:fhir.FhirElement;
+  /**
    * Storage timeperiod.
    */
   duration?: fhir.Period|undefined;
@@ -140,6 +144,10 @@ export interface BiologicallyDerivedProduct extends fhir.DomainResource {
    */
   productCategory?: 'biologicalAgent'|'cells'|'fluid'|'organ'|'tissue'|undefined;
   /**
+   * Extended properties for primitive element: BiologicallyDerivedProduct.productCategory
+   */
+  _productCategory?:fhir.FhirElement;
+  /**
    * A code that identifies the kind of this biologically derived product (SNOMED Ctcode).
    */
   productCode?: fhir.CodeableConcept|undefined;
@@ -147,6 +155,10 @@ export interface BiologicallyDerivedProduct extends fhir.DomainResource {
    * Whether the product is currently available.
    */
   status?: 'available'|'unavailable'|undefined;
+  /**
+   * Extended properties for primitive element: BiologicallyDerivedProduct.status
+   */
+  _status?:fhir.FhirElement;
   /**
    * Procedure request to obtain this biologically derived product.
    */

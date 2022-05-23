@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { EventStatusCodingType } from '../fhirValueSets/EventStatusCodings.js';
 import { EventStatusCodeType } from '../fhirValueSets/EventStatusCodes.js';
-import { MediaTypeCodingType } from '../fhirValueSets/MediaTypeCodings.js';
 /**
  * Valid arguments for the Media type.
  */
@@ -27,7 +25,7 @@ export interface MediaArgs extends fhir.DomainResourceArgs {
      * A nominal state-transition diagram can be found in the [[event.html#statemachine | Event pattern]] documentation
      * Unknown does not represent "other" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.
      */
-    status: EventStatusCodeType | null;
+    status: fhir.FhirCode<EventStatusCodeType> | string | undefined;
     /**
      * A code that classifies whether the media is an image, video or audio recording or some other media category.
      */
@@ -125,21 +123,21 @@ export declare class Media extends fhir.DomainResource {
     /**
      * The identifier label and use can be used to determine what kind of identifier it is.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * A procedure that is fulfilled in whole or in part by the creation of this media.
      */
-    basedOn?: fhir.Reference[];
+    basedOn: fhir.Reference[];
     /**
      * Not to be used to link an event to an Encounter - use Media.encounter for that.
      * [The allowed reference resources may be adjusted as appropriate for the event resource].
      */
-    partOf?: fhir.Reference[];
+    partOf: fhir.Reference[];
     /**
      * A nominal state-transition diagram can be found in the [[event.html#statemachine | Event pattern]] documentation
      * Unknown does not represent "other" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.
      */
-    status: EventStatusCodeType | null;
+    status: fhir.FhirCode<EventStatusCodeType> | null;
     /**
      * A code that classifies whether the media is an image, video or audio recording or some other media category.
      */
@@ -179,7 +177,7 @@ export declare class Media extends fhir.DomainResource {
     /**
      * Textual reasons can be captured using reasonCode.text.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * Only used if not implicit in code found in Observation.code.  In many systems, this may be represented as a related observation instead of an inline component.
      * If the use case requires BodySite to be handled as a separate resource (e.g. to identify and track separately) then use the standard extension[ bodySite](extension-bodysite.html).
@@ -216,7 +214,7 @@ export declare class Media extends fhir.DomainResource {
     /**
      * Not to be used for observations, conclusions, etc. Instead use an [Observation](observation.html) based on the Media/ImagingStudy resource.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Default constructor for Media - initializes any required elements to null if a value is not provided.
      */
@@ -224,11 +222,24 @@ export declare class Media extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (Media.status)
      */
-    static statusRequiredCoding(): EventStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Completed: "completed";
+        readonly EnteredInError: "entered-in-error";
+        readonly InProgress: "in-progress";
+        readonly NotDone: "not-done";
+        readonly OnHold: "on-hold";
+        readonly Preparation: "preparation";
+        readonly Stopped: "stopped";
+        readonly Unknown: "unknown";
+    };
     /**
      * Extensible-bound Value Set for type (Media.type)
      */
-    static typeExtensibleCoding(): MediaTypeCodingType;
+    static get typeExtensibleCodings(): {
+        readonly Audio: fhir.Coding;
+        readonly Image: fhir.Coding;
+        readonly Video: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

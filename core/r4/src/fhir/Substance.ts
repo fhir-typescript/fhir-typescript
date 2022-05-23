@@ -135,7 +135,7 @@ export class SubstanceIngredient extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
     if (!this['substance']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property substance: fhir: Substance.ingredient.substance[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property substance: fhir: Substance.ingredient.substance[x]:' });
     }
     return issues;
   }
@@ -155,7 +155,7 @@ export interface SubstanceArgs extends fhir.DomainResourceArgs {
   /**
    * A code to indicate if the substance is actively used.
    */
-  status?: SubstanceStatusCodeType|undefined;
+  status?: fhir.FhirCode<SubstanceStatusCodeType>|string|undefined;
   /**
    * The level of granularity is defined by the category concepts in the value set.   More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in Substance.code.
    */
@@ -193,15 +193,15 @@ export class Substance extends fhir.DomainResource {
   /**
    * This identifier is associated with the kind of substance in contrast to the  Substance.instance.identifier which is associated with the package/container.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * A code to indicate if the substance is actively used.
    */
-  public status?: SubstanceStatusCodeType|undefined;
+  public status?: fhir.FhirCode<SubstanceStatusCodeType>|undefined;
   /**
    * The level of granularity is defined by the category concepts in the value set.   More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in Substance.code.
    */
-  public category?: fhir.CodeableConcept[];
+  public category: fhir.CodeableConcept[];
   /**
    * This could be a reference to an externally defined code.  It could also be a locally assigned code (e.g. a formulary),  optionally with translations to the standard drug codes.
    */
@@ -213,11 +213,11 @@ export class Substance extends fhir.DomainResource {
   /**
    * Substance may be used to describe a kind of substance, or a specific package/container of the substance: an instance.
    */
-  public instance?: fhir.SubstanceInstance[];
+  public instance: fhir.SubstanceInstance[];
   /**
    * A substance can be composed of other substances.
    */
-  public ingredient?: fhir.SubstanceIngredient[];
+  public ingredient: fhir.SubstanceIngredient[];
   /**
    * Default constructor for Substance - initializes any required elements to null if a value is not provided.
    */
@@ -226,7 +226,7 @@ export class Substance extends fhir.DomainResource {
     this.resourceType = 'Substance';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<SubstanceStatusCodeType>({value: source.status}); }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
@@ -240,13 +240,13 @@ export class Substance extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Substance.status)
    */
-  public static statusRequiredCoding():SubstanceStatusCodingType {
-    return SubstanceStatusCodings;
+  public static get statusRequiredCodes() {
+    return SubstanceStatusCodes;
   }
   /**
    * Extensible-bound Value Set for category (Substance.category)
    */
-  public static categoryExtensibleCoding():SubstanceCategoryCodingType {
+  public static get categoryExtensibleCodings() {
     return SubstanceCategoryCodings;
   }
   /**
@@ -255,12 +255,16 @@ export class Substance extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Substance" fhir: Substance.resourceType:"Substance"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Substance" fhir: Substance.resourceType:"Substance"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['status'] && (!Object.values(SubstanceStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<SubstanceStatusCodeType> fhir: Substance.status:code Required binding to: SubstanceStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Substance.code:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Substance.code:CodeableConcept' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }

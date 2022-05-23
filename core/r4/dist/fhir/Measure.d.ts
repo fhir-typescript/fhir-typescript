@@ -1,12 +1,5 @@
 import * as fhir from '../fhir.js';
-import { MeasurePopulationCodingType } from '../fhirValueSets/MeasurePopulationCodings.js';
-import { MeasureDataUsageCodingType } from '../fhirValueSets/MeasureDataUsageCodings.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
-import { MeasureScoringCodingType } from '../fhirValueSets/MeasureScoringCodings.js';
-import { CompositeMeasureScoringCodingType } from '../fhirValueSets/CompositeMeasureScoringCodings.js';
-import { MeasureTypeCodingType } from '../fhirValueSets/MeasureTypeCodings.js';
-import { MeasureImprovementNotationCodingType } from '../fhirValueSets/MeasureImprovementNotationCodings.js';
 /**
  * Valid arguments for the MeasureGroupPopulation type.
  */
@@ -51,7 +44,17 @@ export declare class MeasureGroupPopulation extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for code (Measure.group.population.code)
      */
-    static codeExtensibleCoding(): MeasurePopulationCodingType;
+    static get codeExtensibleCodings(): {
+        readonly Denominator: fhir.Coding;
+        readonly DenominatorException: fhir.Coding;
+        readonly DenominatorExclusion: fhir.Coding;
+        readonly InitialPopulation: fhir.Coding;
+        readonly MeasureObservation: fhir.Coding;
+        readonly MeasurePopulation: fhir.Coding;
+        readonly MeasurePopulationExclusion: fhir.Coding;
+        readonly Numerator: fhir.Coding;
+        readonly NumeratorExclusion: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -147,7 +150,7 @@ export declare class MeasureGroupStratifier extends fhir.BackboneElement {
     /**
      * Stratifiers are defined either as a single criteria, or as a set of component criteria.
      */
-    component?: fhir.MeasureGroupStratifierComponent[];
+    component: fhir.MeasureGroupStratifierComponent[];
     /**
      * Default constructor for MeasureGroupStratifier - initializes any required elements to null if a value is not provided.
      */
@@ -197,11 +200,11 @@ export declare class MeasureGroup extends fhir.BackboneElement {
     /**
      * A population criteria for the measure.
      */
-    population?: fhir.MeasureGroupPopulation[];
+    population: fhir.MeasureGroupPopulation[];
     /**
      * The stratifier criteria for the measure report, specified as either the name of a valid CQL expression defined within a referenced library or a valid FHIR Resource Path.
      */
-    stratifier?: fhir.MeasureGroupStratifier[];
+    stratifier: fhir.MeasureGroupStratifier[];
     /**
      * Default constructor for MeasureGroup - initializes any required elements to null if a value is not provided.
      */
@@ -247,7 +250,7 @@ export declare class MeasureSupplementalData extends fhir.BackboneElement {
     /**
      * An indicator of the intended usage for the supplemental data element. Supplemental data indicates the data is additional information requested to augment the measure information. Risk adjustment factor indicates the data is additional information used to calculate risk adjustment factors when applying a risk model to the measure calculation.
      */
-    usage?: fhir.CodeableConcept[];
+    usage: fhir.CodeableConcept[];
     /**
      * The human readable description of this supplemental data.
      */
@@ -263,7 +266,10 @@ export declare class MeasureSupplementalData extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for usage (Measure.supplementalData.usage)
      */
-    static usageExtensibleCoding(): MeasureDataUsageCodingType;
+    static get usageExtensibleCodings(): {
+        readonly RiskAdjustmentFactor: fhir.Coding;
+        readonly SupplementalData: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -306,7 +312,7 @@ export interface MeasureArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of measures that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Allows filtering of measures that are appropriate for use versus not.
      */
@@ -473,7 +479,7 @@ export declare class Measure extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this measure outside of FHIR, where it is not possible to use the logical URI.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * There may be different measure instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the measure with the format [url]|[version].
      */
@@ -493,7 +499,7 @@ export declare class Measure extends fhir.DomainResource {
     /**
      * Allows filtering of measures that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Allows filtering of measures that are appropriate for use versus not.
      */
@@ -517,7 +523,7 @@ export declare class Measure extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * This description can be used to capture details such as why the measure was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the measure as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the measure is presumed to be the predominant language in the place the measure was created).
      */
@@ -525,11 +531,11 @@ export declare class Measure extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the measure to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * This element does not describe the usage of the measure. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this measure.
      */
@@ -557,31 +563,31 @@ export declare class Measure extends fhir.DomainResource {
     /**
      * Descriptive topics related to the content of the measure. Topics provide a high-level categorization grouping types of measures that can be useful for filtering and searching.
      */
-    topic?: fhir.CodeableConcept[];
+    topic: fhir.CodeableConcept[];
     /**
      * An individiual or organization primarily involved in the creation and maintenance of the content.
      */
-    author?: fhir.ContactDetail[];
+    author: fhir.ContactDetail[];
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
      */
-    editor?: fhir.ContactDetail[];
+    editor: fhir.ContactDetail[];
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
      */
-    reviewer?: fhir.ContactDetail[];
+    reviewer: fhir.ContactDetail[];
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
      */
-    endorser?: fhir.ContactDetail[];
+    endorser: fhir.ContactDetail[];
     /**
      * Each related artifact is either an attachment, or a reference to another resource, but not both.
      */
-    relatedArtifact?: fhir.RelatedArtifact[];
+    relatedArtifact: fhir.RelatedArtifact[];
     /**
      * A reference to a Library resource containing the formal logic used by the measure.
      */
-    library?: fhir.FhirCanonical[];
+    library: fhir.FhirCanonical[];
     /**
      * Notices and disclaimers regarding the use of the measure or related to intellectual property (such as code systems) referenced by the measure.
      */
@@ -597,7 +603,7 @@ export declare class Measure extends fhir.DomainResource {
     /**
      * Indicates whether the measure is used to examine a process, an outcome over time, a patient-reported outcome, or a structure measure such as utilization.
      */
-    type?: fhir.CodeableConcept[];
+    type: fhir.CodeableConcept[];
     /**
      * Describes the method of adjusting for clinical severity and conditions present at the start of care that can influence patient outcomes for making valid comparisons of outcome measures across providers. Indicates whether a measure is subject to the statistical process for reducing, removing, or clarifying the influences of confounding factors to allow for more useful comparisons.
      */
@@ -621,7 +627,7 @@ export declare class Measure extends fhir.DomainResource {
     /**
      * Provides a description of an individual term used within the measure.
      */
-    definition?: fhir.FhirMarkdown[];
+    definition: fhir.FhirMarkdown[];
     /**
      * Additional guidance for the measure including how it can be used in a clinical context, and the intent of the measure.
      */
@@ -629,11 +635,11 @@ export declare class Measure extends fhir.DomainResource {
     /**
      * A group of population criteria for the measure.
      */
-    group?: fhir.MeasureGroup[];
+    group: fhir.MeasureGroup[];
     /**
      * Note that supplemental data are reported as observations for each patient and included in the evaluatedResources bundle. See the MeasureReport resource or the Quality Reporting topic for more information.
      */
-    supplementalData?: fhir.MeasureSupplementalData[];
+    supplementalData: fhir.MeasureSupplementalData[];
     /**
      * Default constructor for Measure - initializes any required elements to null if a value is not provided.
      */
@@ -641,23 +647,47 @@ export declare class Measure extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (Measure.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Extensible-bound Value Set for scoring (Measure.scoring)
      */
-    static scoringExtensibleCoding(): MeasureScoringCodingType;
+    static get scoringExtensibleCodings(): {
+        readonly Cohort: fhir.Coding;
+        readonly ContinuousVariable: fhir.Coding;
+        readonly Proportion: fhir.Coding;
+        readonly Ratio: fhir.Coding;
+    };
     /**
      * Extensible-bound Value Set for compositeScoring (Measure.compositeScoring)
      */
-    static compositeScoringExtensibleCoding(): CompositeMeasureScoringCodingType;
+    static get compositeScoringExtensibleCodings(): {
+        readonly AllOrNothing: fhir.Coding;
+        readonly Linear: fhir.Coding;
+        readonly Opportunity: fhir.Coding;
+        readonly Weighted: fhir.Coding;
+    };
     /**
      * Extensible-bound Value Set for type (Measure.type)
      */
-    static typeExtensibleCoding(): MeasureTypeCodingType;
+    static get typeExtensibleCodings(): {
+        readonly Composite: fhir.Coding;
+        readonly Outcome: fhir.Coding;
+        readonly PatientReportedOutcome: fhir.Coding;
+        readonly Process: fhir.Coding;
+        readonly Structure: fhir.Coding;
+    };
     /**
      * Required-bound Value Set for improvementNotation (Measure.improvementNotation)
      */
-    static improvementNotationRequiredCoding(): MeasureImprovementNotationCodingType;
+    static get improvementNotationRequiredCodes(): {
+        readonly DecreasedScoreIndicatesImprovement: "decrease";
+        readonly IncreasedScoreIndicatesImprovement: "increase";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

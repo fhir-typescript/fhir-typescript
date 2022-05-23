@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { FmStatusCodingType } from '../fhirValueSets/FmStatusCodings.js';
 import { FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
-import { EligibilityrequestPurposeCodingType } from '../fhirValueSets/EligibilityrequestPurposeCodings.js';
 import { EligibilityrequestPurposeCodeType } from '../fhirValueSets/EligibilityrequestPurposeCodes.js';
 /**
  * Valid arguments for the CoverageEligibilityRequestSupportingInfo type.
@@ -193,7 +191,7 @@ export declare class CoverageEligibilityRequestItem extends fhir.BackboneElement
     /**
      * Exceptions, special conditions and supporting information applicable for this service or product line.
      */
-    supportingInfoSequence?: fhir.FhirPositiveInt[];
+    supportingInfoSequence: fhir.FhirPositiveInt[];
     /**
      * Examples include Medical Care, Periodontics, Renal Dialysis, Vision Coverage.
      */
@@ -205,7 +203,7 @@ export declare class CoverageEligibilityRequestItem extends fhir.BackboneElement
     /**
      * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
      */
-    modifier?: fhir.CodeableConcept[];
+    modifier: fhir.CodeableConcept[];
     /**
      * The practitioner who is responsible for the product or service to be rendered to the patient.
      */
@@ -225,11 +223,11 @@ export declare class CoverageEligibilityRequestItem extends fhir.BackboneElement
     /**
      * Patient diagnosis for which care is sought.
      */
-    diagnosis?: fhir.CoverageEligibilityRequestItemDiagnosis[];
+    diagnosis: fhir.CoverageEligibilityRequestItemDiagnosis[];
     /**
      * The plan/proposal/order describing the proposed service in detail.
      */
-    detail?: fhir.Reference[];
+    detail: fhir.Reference[];
     /**
      * Default constructor for CoverageEligibilityRequestItem - initializes any required elements to null if a value is not provided.
      */
@@ -254,7 +252,7 @@ export interface CoverageEligibilityRequestArgs extends fhir.DomainResourceArgs 
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: FmStatusCodeType | null;
+    status: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
      * When the requestor expects the processor to complete processing.
      */
@@ -262,7 +260,7 @@ export interface CoverageEligibilityRequestArgs extends fhir.DomainResourceArgs 
     /**
      * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
      */
-    purpose: EligibilityrequestPurposeCodeType[] | null;
+    purpose: fhir.FhirCode<EligibilityrequestPurposeCodeType>[] | string[] | undefined;
     /**
      * 1..1.
      */
@@ -327,11 +325,11 @@ export declare class CoverageEligibilityRequest extends fhir.DomainResource {
     /**
      * A unique identifier assigned to this coverage eligiblity request.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: FmStatusCodeType | null;
+    status: fhir.FhirCode<FmStatusCodeType> | null;
     /**
      * When the requestor expects the processor to complete processing.
      */
@@ -339,7 +337,7 @@ export declare class CoverageEligibilityRequest extends fhir.DomainResource {
     /**
      * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
      */
-    purpose: EligibilityrequestPurposeCodeType[];
+    purpose: fhir.FhirCode<EligibilityrequestPurposeCodeType>[];
     /**
      * 1..1.
      */
@@ -375,15 +373,15 @@ export declare class CoverageEligibilityRequest extends fhir.DomainResource {
     /**
      * Often there are multiple jurisdiction specific valuesets which are required.
      */
-    supportingInfo?: fhir.CoverageEligibilityRequestSupportingInfo[];
+    supportingInfo: fhir.CoverageEligibilityRequestSupportingInfo[];
     /**
      * All insurance coverages for the patient which may be applicable for reimbursement, of the products and services listed in the claim, are typically provided in the claim to allow insurers to confirm the ordering of the insurance coverages relative to local 'coordination of benefit' rules. One coverage (and only one) with 'focal=true' is to be used in the adjudication of this claim. Coverages appearing before the focal Coverage in the list, and where 'subrogation=false', should provide a reference to the ClaimResponse containing the adjudication results of the prior claim.
      */
-    insurance?: fhir.CoverageEligibilityRequestInsurance[];
+    insurance: fhir.CoverageEligibilityRequestInsurance[];
     /**
      * Service categories or billable services for which benefit details and/or an authorization prior to service delivery may be required by the payor.
      */
-    item?: fhir.CoverageEligibilityRequestItem[];
+    item: fhir.CoverageEligibilityRequestItem[];
     /**
      * Default constructor for CoverageEligibilityRequest - initializes any required elements to null if a value is not provided.
      */
@@ -391,11 +389,21 @@ export declare class CoverageEligibilityRequest extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (CoverageEligibilityRequest.status)
      */
-    static statusRequiredCoding(): FmStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Cancelled: "cancelled";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+    };
     /**
      * Required-bound Value Set for purpose (CoverageEligibilityRequest.purpose)
      */
-    static purposeRequiredCoding(): EligibilityrequestPurposeCodingType;
+    static get purposeRequiredCodes(): {
+        readonly CoverageAuthRequirements: "auth-requirements";
+        readonly CoverageBenefits: "benefits";
+        readonly CoverageDiscovery: "discovery";
+        readonly CoverageValidation: "validation";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

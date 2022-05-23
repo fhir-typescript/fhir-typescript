@@ -1,15 +1,8 @@
 import * as fhir from '../fhir.js';
-import { FilterOperatorCodingType } from '../fhirValueSets/FilterOperatorCodings.js';
 import { FilterOperatorCodeType } from '../fhirValueSets/FilterOperatorCodes.js';
-import { ConceptPropertyTypeCodingType } from '../fhirValueSets/ConceptPropertyTypeCodings.js';
 import { ConceptPropertyTypeCodeType } from '../fhirValueSets/ConceptPropertyTypeCodes.js';
-import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
-import { DesignationUseCodingType } from '../fhirValueSets/DesignationUseCodings.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
-import { CodesystemHierarchyMeaningCodingType } from '../fhirValueSets/CodesystemHierarchyMeaningCodings.js';
 import { CodesystemHierarchyMeaningCodeType } from '../fhirValueSets/CodesystemHierarchyMeaningCodes.js';
-import { CodesystemContentModeCodingType } from '../fhirValueSets/CodesystemContentModeCodings.js';
 import { CodesystemContentModeCodeType } from '../fhirValueSets/CodesystemContentModeCodes.js';
 /**
  * Valid arguments for the CodeSystemFilter type.
@@ -26,7 +19,7 @@ export interface CodeSystemFilterArgs extends fhir.BackboneElementArgs {
     /**
      * A list of operators that can be used with the filter.
      */
-    operator: FilterOperatorCodeType[] | null;
+    operator: fhir.FhirCode<FilterOperatorCodeType>[] | string[] | undefined;
     /**
      * A description of what the value for the filter should be.
      */
@@ -51,7 +44,7 @@ export declare class CodeSystemFilter extends fhir.BackboneElement {
     /**
      * A list of operators that can be used with the filter.
      */
-    operator: FilterOperatorCodeType[];
+    operator: fhir.FhirCode<FilterOperatorCodeType>[];
     /**
      * A description of what the value for the filter should be.
      */
@@ -63,7 +56,17 @@ export declare class CodeSystemFilter extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for operator (CodeSystem.filter.operator)
      */
-    static operatorRequiredCoding(): FilterOperatorCodingType;
+    static get operatorRequiredCodes(): {
+        readonly Equals: "=";
+        readonly DescendentOfBySubsumption: "descendent-of";
+        readonly Exists: "exists";
+        readonly GeneralizesBySubsumption: "generalizes";
+        readonly InSet: "in";
+        readonly IsABySubsumption: "is-a";
+        readonly NotIsABySubsumption: "is-not-a";
+        readonly NotInSet: "not-in";
+        readonly RegularExpression: "regex";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -88,7 +91,7 @@ export interface CodeSystemPropertyArgs extends fhir.BackboneElementArgs {
     /**
      * The type of the property value. Properties of type "code" contain a code defined by the code system (e.g. a reference to another defined concept).
      */
-    type: ConceptPropertyTypeCodeType | null;
+    type: fhir.FhirCode<ConceptPropertyTypeCodeType> | string | undefined;
 }
 /**
  * A property defines an additional slot through which additional information can be provided about a concept.
@@ -113,7 +116,7 @@ export declare class CodeSystemProperty extends fhir.BackboneElement {
     /**
      * The type of the property value. Properties of type "code" contain a code defined by the code system (e.g. a reference to another defined concept).
      */
-    type: ConceptPropertyTypeCodeType | null;
+    type: fhir.FhirCode<ConceptPropertyTypeCodeType> | null;
     /**
      * Default constructor for CodeSystemProperty - initializes any required elements to null if a value is not provided.
      */
@@ -121,7 +124,15 @@ export declare class CodeSystemProperty extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for type (CodeSystem.property.type)
      */
-    static typeRequiredCoding(): ConceptPropertyTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly VALBoolean: "boolean";
+        readonly CodeInternalReference: "code";
+        readonly CodingExternalReference: "Coding";
+        readonly DateTime: "dateTime";
+        readonly Decimal: "decimal";
+        readonly Integer: "integer";
+        readonly VALString: "string";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -171,11 +182,78 @@ export declare class CodeSystemConceptDesignation extends fhir.BackboneElement {
     /**
      * Preferred-bound Value Set for language (CodeSystem.concept.designation.language)
      */
-    static languagePreferredCoding(): LanguagesCodingType;
+    static get languagePreferredCodings(): {
+        readonly Arabic: fhir.Coding;
+        readonly Bengali: fhir.Coding;
+        readonly Czech: fhir.Coding;
+        readonly Danish: fhir.Coding;
+        readonly German: fhir.Coding;
+        readonly GermanAustria: fhir.Coding;
+        readonly GermanSwitzerland: fhir.Coding;
+        readonly GermanGermany: fhir.Coding;
+        readonly Greek: fhir.Coding;
+        readonly English: fhir.Coding;
+        readonly EnglishAustralia: fhir.Coding;
+        readonly EnglishCanada: fhir.Coding;
+        readonly EnglishGreatBritain: fhir.Coding;
+        readonly EnglishIndia: fhir.Coding;
+        readonly EnglishNewZeland: fhir.Coding;
+        readonly EnglishSingapore: fhir.Coding;
+        readonly EnglishUnitedStates: fhir.Coding;
+        readonly Spanish: fhir.Coding;
+        readonly SpanishArgentina: fhir.Coding;
+        readonly SpanishSpain: fhir.Coding;
+        readonly SpanishUruguay: fhir.Coding; /**
+         * A list of operators that can be used with the filter.
+         */
+        readonly Finnish: fhir.Coding; /**
+         * A description of what the value for the filter should be.
+         */
+        readonly French: fhir.Coding;
+        readonly FrenchBelgium: fhir.Coding;
+        readonly FrenchSwitzerland: fhir.Coding;
+        readonly FrenchFrance: fhir.Coding;
+        readonly Frysian: fhir.Coding;
+        readonly FrysianNetherlands: fhir.Coding;
+        readonly Hindi: fhir.Coding;
+        readonly Croatian: fhir.Coding;
+        readonly Italian: fhir.Coding;
+        readonly ItalianSwitzerland: fhir.Coding;
+        readonly ItalianItaly: fhir.Coding;
+        readonly Japanese: fhir.Coding;
+        readonly Korean: fhir.Coding;
+        readonly Dutch: fhir.Coding;
+        readonly DutchBelgium: fhir.Coding;
+        readonly DutchNetherlands: fhir.Coding;
+        readonly Norwegian: fhir.Coding;
+        readonly NorwegianNorway: fhir.Coding;
+        readonly Punjabi: fhir.Coding;
+        readonly Polish: fhir.Coding;
+        readonly Portuguese: fhir.Coding;
+        readonly PortugueseBrazil: fhir.Coding;
+        readonly Russian: fhir.Coding;
+        readonly RussianRussia: fhir.Coding;
+        readonly Serbian: fhir.Coding;
+        readonly SerbianSerbia: fhir.Coding;
+        readonly Swedish: fhir.Coding;
+        readonly SwedishSweden: fhir.Coding;
+        readonly Telegu: fhir.Coding;
+        readonly Chinese: fhir.Coding;
+        readonly ChineseChina: fhir.Coding;
+        readonly ChineseHongKong: fhir.Coding;
+        /**
+         * Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system.
+         */
+        readonly ChineseSingapore: fhir.Coding;
+        readonly ChineseTaiwan: fhir.Coding;
+    };
     /**
      * Extensible-bound Value Set for use (CodeSystem.concept.designation.use)
      */
-    static useExtensibleCoding(): DesignationUseCodingType;
+    static get useExtensibleCodings(): {
+        readonly VAL900000000000003001: fhir.Coding;
+        readonly VAL900000000000013009: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -303,15 +381,15 @@ export declare class CodeSystemConcept extends fhir.BackboneElement {
     /**
      * Concepts have both a ```display``` and an array of ```designation```. The display is equivalent to a special designation with an implied ```designation.use``` of "primary code" and a language equal to the [Resource Language](resource.html#language).
      */
-    designation?: fhir.CodeSystemConceptDesignation[];
+    designation: fhir.CodeSystemConceptDesignation[];
     /**
      * A property value for this concept.
      */
-    property?: fhir.CodeSystemConceptProperty[];
+    property: fhir.CodeSystemConceptProperty[];
     /**
      * Defines children of a concept to produce a hierarchy of concepts. The nature of the relationships is variable (is-a/contains/categorizes) - see hierarchyMeaning.
      */
-    concept?: fhir.CodeSystemConcept[];
+    concept: fhir.CodeSystemConcept[];
     /**
      * Default constructor for CodeSystemConcept - initializes any required elements to null if a value is not provided.
      */
@@ -354,7 +432,7 @@ export interface CodeSystemArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of code systems that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Allows filtering of code systems that are appropriate for use versus not.
      */
@@ -402,7 +480,7 @@ export interface CodeSystemArgs extends fhir.DomainResourceArgs {
     /**
      * Note that other representations might have a different hierarchy or none at all, and represent the information using properties.
      */
-    hierarchyMeaning?: CodesystemHierarchyMeaningCodeType | undefined;
+    hierarchyMeaning?: fhir.FhirCode<CodesystemHierarchyMeaningCodeType> | string | undefined;
     /**
      * Note that the code system resource does not define what the compositional grammar is, only whether or not there is one.
      */
@@ -415,7 +493,7 @@ export interface CodeSystemArgs extends fhir.DomainResourceArgs {
     /**
      * The extent of the content of the code system (the concepts and codes it defines) are represented in this resource instance.
      */
-    content: CodesystemContentModeCodeType | null;
+    content: fhir.FhirCode<CodesystemContentModeCodeType> | string | undefined;
     /**
      * The most common use of a code system supplement is to add additional language support.
      */
@@ -458,7 +536,7 @@ export declare class CodeSystem extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this code system outside of FHIR, where it is not possible to use the logical URI.  Note that HL7 defines at least three identifiers for many of its code systems - the FHIR canonical URL, the OID and the V2 Table 0396 mnemonic code.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * There may be different code system instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the code system with the format [url]|[version].
      */
@@ -474,7 +552,7 @@ export declare class CodeSystem extends fhir.DomainResource {
     /**
      * Allows filtering of code systems that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Allows filtering of code systems that are appropriate for use versus not.
      */
@@ -490,7 +568,7 @@ export declare class CodeSystem extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * This description can be used to capture details such as why the code system was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the code system as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the code system is presumed to be the predominant language in the place the code system was created).
      */
@@ -498,11 +576,11 @@ export declare class CodeSystem extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the code system to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * This element does not describe the usage of the code system. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this code system.
      */
@@ -522,7 +600,7 @@ export declare class CodeSystem extends fhir.DomainResource {
     /**
      * Note that other representations might have a different hierarchy or none at all, and represent the information using properties.
      */
-    hierarchyMeaning?: CodesystemHierarchyMeaningCodeType | undefined;
+    hierarchyMeaning?: fhir.FhirCode<CodesystemHierarchyMeaningCodeType> | undefined;
     /**
      * Note that the code system resource does not define what the compositional grammar is, only whether or not there is one.
      */
@@ -535,7 +613,7 @@ export declare class CodeSystem extends fhir.DomainResource {
     /**
      * The extent of the content of the code system (the concepts and codes it defines) are represented in this resource instance.
      */
-    content: CodesystemContentModeCodeType | null;
+    content: fhir.FhirCode<CodesystemContentModeCodeType> | null;
     /**
      * The most common use of a code system supplement is to add additional language support.
      */
@@ -547,15 +625,15 @@ export declare class CodeSystem extends fhir.DomainResource {
     /**
      * Note that filters defined in code systems usually require custom code on the part of any terminology engine that will make them available for use in value set filters. For this reason, they are generally only seen in high value published terminologies.
      */
-    filter?: fhir.CodeSystemFilter[];
+    filter: fhir.CodeSystemFilter[];
     /**
      * A property defines an additional slot through which additional information can be provided about a concept.
      */
-    property?: fhir.CodeSystemProperty[];
+    property: fhir.CodeSystemProperty[];
     /**
      * If this is empty, it means that the code system resource does not represent the content of the code system.
      */
-    concept?: fhir.CodeSystemConcept[];
+    concept: fhir.CodeSystemConcept[];
     /**
      * Default constructor for CodeSystem - initializes any required elements to null if a value is not provided.
      */
@@ -563,15 +641,31 @@ export declare class CodeSystem extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (CodeSystem.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Required-bound Value Set for hierarchyMeaning (CodeSystem.hierarchyMeaning)
      */
-    static hierarchyMeaningRequiredCoding(): CodesystemHierarchyMeaningCodingType;
+    static get hierarchyMeaningRequiredCodes(): {
+        readonly ClassifiedWith: "classified-with";
+        readonly GroupedBy: "grouped-by";
+        readonly IsA: "is-a";
+        readonly PartOf: "part-of";
+    };
     /**
      * Required-bound Value Set for content (CodeSystem.content)
      */
-    static contentRequiredCoding(): CodesystemContentModeCodingType;
+    static get contentRequiredCodes(): {
+        readonly Complete: "complete";
+        readonly Example: "example";
+        readonly Fragment: "fragment";
+        readonly NotPresent: "not-present";
+        readonly Supplement: "supplement";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -23,6 +23,10 @@ export interface QuestionnaireItemEnableWhen extends fhir.BackboneElement {
    */
   operator: '!='|'<'|'<='|'='|'>'|'>='|'exists'|null;
   /**
+   * Extended properties for primitive element: Questionnaire.item.enableWhen.operator
+   */
+  _operator?:fhir.FhirElement;
+  /**
    * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
    */
   answerBoolean?: boolean|undefined;
@@ -277,6 +281,10 @@ export interface QuestionnaireItem extends fhir.BackboneElement {
    */
   type: 'attachment'|'boolean'|'choice'|'date'|'dateTime'|'decimal'|'display'|'group'|'integer'|'open-choice'|'quantity'|'question'|'reference'|'string'|'text'|'time'|'url'|null;
   /**
+   * Extended properties for primitive element: Questionnaire.item.type
+   */
+  _type?:fhir.FhirElement;
+  /**
    * If multiple repetitions of this extension are present, the item should be enabled when the condition for *any* of the repetitions is true.  I.e. treat "enableWhen"s as being joined by an "or" clause.  This element is a modifier because if enableWhen is present for an item, "required" is ignored unless one of the enableWhen conditions is met. When an item is disabled, all of its descendants are disabled, regardless of what their own enableWhen logic might evaluate to.
    */
   enableWhen?: fhir.QuestionnaireItemEnableWhen[]|undefined;
@@ -284,6 +292,10 @@ export interface QuestionnaireItem extends fhir.BackboneElement {
    * This element must be specified if more than one enableWhen value is provided.
    */
   enableBehavior?: 'all'|'any'|undefined;
+  /**
+   * Extended properties for primitive element: Questionnaire.item.enableBehavior
+   */
+  _enableBehavior?:fhir.FhirElement;
   /**
    * Questionnaire.item.required only has meaning for elements that are conditionally enabled with enableWhen if the condition evaluates to true.  If an item that contains other items is marked as required, that does not automatically make the contained elements required (though required groups must contain at least one child element). The value may come from the ElementDefinition referred to by .definition.
    */
@@ -396,6 +408,10 @@ export interface Questionnaire extends fhir.DomainResource {
    * Allows filtering of questionnaires that are appropriate for use versus not.
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
+  /**
+   * Extended properties for primitive element: Questionnaire.status
+   */
+  _status?:fhir.FhirElement;
   /**
    * Allows filtering of questionnaires that are appropriate for use versus not.
    */

@@ -33,7 +33,7 @@ export interface DeviceUseStatementArgs extends fhir.DomainResourceArgs {
    * DeviceUseStatment is a statement at a point in time.  The status is only representative at the point when it was asserted.  The value set for contains codes that assert the status of the use  by the patient (for example, stopped or on hold) as well as codes that assert the status of the resource itself (for example, entered in error).
    * This element is labeled as a modifier because the status contains the codes that mark the statement as not currently valid.
    */
-  status: DeviceStatementStatusCodeType|null;
+  status: fhir.FhirCode<DeviceStatementStatusCodeType>|string|undefined;
   /**
    * The patient who used the device.
    */
@@ -103,16 +103,16 @@ export class DeviceUseStatement extends fhir.DomainResource {
   /**
    * An external identifier for this statement such as an IRI.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * A plan, proposal or order that is fulfilled in whole or in part by this DeviceUseStatement.
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * DeviceUseStatment is a statement at a point in time.  The status is only representative at the point when it was asserted.  The value set for contains codes that assert the status of the use  by the patient (for example, stopped or on hold) as well as codes that assert the status of the resource itself (for example, entered in error).
    * This element is labeled as a modifier because the status contains the codes that mark the statement as not currently valid.
    */
-  public status: DeviceStatementStatusCodeType|null;
+  public status: fhir.FhirCode<DeviceStatementStatusCodeType>|null;
   /**
    * The patient who used the device.
    */
@@ -120,7 +120,7 @@ export class DeviceUseStatement extends fhir.DomainResource {
   /**
    * The most common use cases for deriving a DeviceUseStatement comes from creating it from a request or from an observation or a claim. it should be noted that the amount of information that is available varies from the type resource that you derive the DeviceUseStatement from.
    */
-  public derivedFrom?: fhir.Reference[];
+  public derivedFrom: fhir.Reference[];
   /**
    * How often the device was used.
    */
@@ -144,11 +144,11 @@ export class DeviceUseStatement extends fhir.DomainResource {
   /**
    * Reason or justification for the use of the device.
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * Indicates another resource whose existence justifies this DeviceUseStatement.
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * Indicates the anotomic location on the subject's body where the device was used ( i.e. the target).
    */
@@ -156,7 +156,7 @@ export class DeviceUseStatement extends fhir.DomainResource {
   /**
    * Details about the device statement that were not represented at all or sufficiently in one of the attributes provided in a class. These may include for example a comment, an instruction, or a note associated with the statement.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Default constructor for DeviceUseStatement - initializes any required elements to null if a value is not provided.
    */
@@ -167,7 +167,7 @@ export class DeviceUseStatement extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x)); }
     else { this.basedOn = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<DeviceStatementStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     else { this.subject = null; }
@@ -192,8 +192,8 @@ export class DeviceUseStatement extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (DeviceUseStatement.status)
    */
-  public static statusRequiredCoding():DeviceStatementStatusCodingType {
-    return DeviceStatementStatusCodings;
+  public static get statusRequiredCodes() {
+    return DeviceStatementStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -201,22 +201,26 @@ export class DeviceUseStatement extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"DeviceUseStatement" fhir: DeviceUseStatement.resourceType:"DeviceUseStatement"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"DeviceUseStatement" fhir: DeviceUseStatement.resourceType:"DeviceUseStatement"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:DeviceStatementStatusCodeType fhir: DeviceUseStatement.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<DeviceStatementStatusCodeType> fhir: DeviceUseStatement.status:code' });
     }
+    if (this['status'] && (!Object.values(DeviceStatementStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<DeviceStatementStatusCodeType> fhir: DeviceUseStatement.status:code Required binding to: DeviceStatementStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: DeviceUseStatement.subject:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: DeviceUseStatement.subject:Reference' });
     }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["derivedFrom"]) { this.derivedFrom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["recordedOn"]) { issues.push(...this.recordedOn.doModelValidation()); }
     if (this["source"]) { issues.push(...this.source.doModelValidation()); }
     if (!this['device']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property device:fhir.Reference fhir: DeviceUseStatement.device:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property device:fhir.Reference fhir: DeviceUseStatement.device:Reference' });
     }
     if (this["device"]) { issues.push(...this.device.doModelValidation()); }
     if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }

@@ -150,7 +150,7 @@ export interface RiskAssessmentArgs extends fhir.DomainResourceArgs {
   /**
    * The status of the RiskAssessment, using the same statuses as an Observation.
    */
-  status: ObservationStatusCodeType|null;
+  status: fhir.FhirCode<ObservationStatusCodeType>|string|undefined;
   /**
    * The algorithm, process or mechanism used to evaluate the risk.
    */
@@ -228,7 +228,7 @@ export class RiskAssessment extends fhir.DomainResource {
   /**
    * Business identifier assigned to the risk assessment.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * A reference to the request that is fulfilled by this risk assessment.
    */
@@ -240,7 +240,7 @@ export class RiskAssessment extends fhir.DomainResource {
   /**
    * The status of the RiskAssessment, using the same statuses as an Observation.
    */
-  public status: ObservationStatusCodeType|null;
+  public status: fhir.FhirCode<ObservationStatusCodeType>|null;
   /**
    * The algorithm, process or mechanism used to evaluate the risk.
    */
@@ -276,19 +276,19 @@ export class RiskAssessment extends fhir.DomainResource {
   /**
    * The reason the risk assessment was performed.
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * Resources supporting the reason the risk assessment was performed.
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * Indicates the source data considered as part of the assessment (for example, FamilyHistory, Observations, Procedures, Conditions, etc.).
    */
-  public basis?: fhir.Reference[];
+  public basis: fhir.Reference[];
   /**
    * Multiple repetitions can be used to identify the same type of outcome in different timeframes as well as different types of outcomes.
    */
-  public prediction?: fhir.RiskAssessmentPrediction[];
+  public prediction: fhir.RiskAssessmentPrediction[];
   /**
    * A description of the steps that might be taken to reduce the identified risk(s).
    */
@@ -296,7 +296,7 @@ export class RiskAssessment extends fhir.DomainResource {
   /**
    * Additional comments about the risk assessment.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Default constructor for RiskAssessment - initializes any required elements to null if a value is not provided.
    */
@@ -307,7 +307,7 @@ export class RiskAssessment extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['basedOn']) { this.basedOn = new fhir.Reference(source.basedOn); }
     if (source['parent']) { this.parent = new fhir.Reference(source.parent); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<ObservationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['method']) { this.method = new fhir.CodeableConcept(source.method); }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
@@ -334,8 +334,8 @@ export class RiskAssessment extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (RiskAssessment.status)
    */
-  public static statusRequiredCoding():ObservationStatusCodingType {
-    return ObservationStatusCodings;
+  public static get statusRequiredCodes() {
+    return ObservationStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -343,18 +343,22 @@ export class RiskAssessment extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"RiskAssessment" fhir: RiskAssessment.resourceType:"RiskAssessment"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"RiskAssessment" fhir: RiskAssessment.resourceType:"RiskAssessment"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["basedOn"]) { issues.push(...this.basedOn.doModelValidation()); }
     if (this["parent"]) { issues.push(...this.parent.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ObservationStatusCodeType fhir: RiskAssessment.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ObservationStatusCodeType> fhir: RiskAssessment.status:code' });
     }
+    if (this['status'] && (!Object.values(ObservationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ObservationStatusCodeType> fhir: RiskAssessment.status:code Required binding to: ObservationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["method"]) { issues.push(...this.method.doModelValidation()); }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: RiskAssessment.subject:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: RiskAssessment.subject:Reference' });
     }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }

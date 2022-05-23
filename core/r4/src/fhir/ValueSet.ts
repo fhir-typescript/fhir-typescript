@@ -72,13 +72,13 @@ export class ValueSetComposeIncludeConceptDesignation extends fhir.BackboneEleme
   /**
    * Preferred-bound Value Set for language (ValueSet.compose.include.concept.designation.language)
    */
-  public static languagePreferredCoding():LanguagesCodingType {
+  public static get languagePreferredCodings() {
     return LanguagesCodings;
   }
   /**
    * Extensible-bound Value Set for use (ValueSet.compose.include.concept.designation.use)
    */
-  public static useExtensibleCoding():DesignationUseCodingType {
+  public static get useExtensibleCodings() {
     return DesignationUseCodings;
   }
   /**
@@ -89,7 +89,7 @@ export class ValueSetComposeIncludeConceptDesignation extends fhir.BackboneEleme
     if (this["language"]) { issues.push(...this.language.doModelValidation()); }
     if (this["use"]) { issues.push(...this.use.doModelValidation()); }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value:fhir.FhirString fhir: ValueSet.compose.include.concept.designation.value:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value:fhir.FhirString fhir: ValueSet.compose.include.concept.designation.value:string' });
     }
     if (this["value"]) { issues.push(...this.value.doModelValidation()); }
     return issues;
@@ -132,7 +132,7 @@ export class ValueSetComposeIncludeConcept extends fhir.BackboneElement {
   /**
    * Concepts have both a ```display``` and an array of ```designation```. The display is equivalent to a special designation with an implied ```designation.use``` of "primary code" and a language equal to the [Resource Language](resource.html#language).
    */
-  public designation?: fhir.ValueSetComposeIncludeConceptDesignation[];
+  public designation: fhir.ValueSetComposeIncludeConceptDesignation[];
   /**
    * Default constructor for ValueSetComposeIncludeConcept - initializes any required elements to null if a value is not provided.
    */
@@ -150,7 +150,7 @@ export class ValueSetComposeIncludeConcept extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.FhirCode fhir: ValueSet.compose.include.concept.code:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode fhir: ValueSet.compose.include.concept.code:code' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["display"]) { issues.push(...this.display.doModelValidation()); }
@@ -169,7 +169,7 @@ export interface ValueSetComposeIncludeFilterArgs extends fhir.BackboneElementAr
   /**
    * In case filter.property represents a property of the system, the operation applies to the selected property. In case filter.property represents a filter of the system, the operation SHALL match one of the CodeSystem.filter.operator values.
    */
-  op: FilterOperatorCodeType|null;
+  op: fhir.FhirCode<FilterOperatorCodeType>|string|undefined;
   /**
    * Use regex matching with care - full regex matching on every SNOMED CT term is prohibitive, for example.
    */
@@ -191,7 +191,7 @@ export class ValueSetComposeIncludeFilter extends fhir.BackboneElement {
   /**
    * In case filter.property represents a property of the system, the operation applies to the selected property. In case filter.property represents a filter of the system, the operation SHALL match one of the CodeSystem.filter.operator values.
    */
-  public op: FilterOperatorCodeType|null;
+  public op: fhir.FhirCode<FilterOperatorCodeType>|null;
   /**
    * Use regex matching with care - full regex matching on every SNOMED CT term is prohibitive, for example.
    */
@@ -203,7 +203,7 @@ export class ValueSetComposeIncludeFilter extends fhir.BackboneElement {
     super(source, options);
     if (source['property']) { this.property = new fhir.FhirCode({value: source.property}); }
     else { this.property = null; }
-    if (source['op']) { this.op = source.op; }
+    if (source['op']) { this.op = new fhir.FhirCode<FilterOperatorCodeType>({value: source.op}); }
     else { this.op = null; }
     if (source['value']) { this.value = new fhir.FhirString({value: source.value}); }
     else { this.value = null; }
@@ -211,8 +211,8 @@ export class ValueSetComposeIncludeFilter extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for op (ValueSet.compose.include.filter.op)
    */
-  public static opRequiredCoding():FilterOperatorCodingType {
-    return FilterOperatorCodings;
+  public static get opRequiredCodes() {
+    return FilterOperatorCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -220,14 +220,18 @@ export class ValueSetComposeIncludeFilter extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['property']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property property:fhir.FhirCode fhir: ValueSet.compose.include.filter.property:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property property:fhir.FhirCode fhir: ValueSet.compose.include.filter.property:code' });
     }
     if (this["property"]) { issues.push(...this.property.doModelValidation()); }
     if (!this['op']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property op:FilterOperatorCodeType fhir: ValueSet.compose.include.filter.op:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property op:fhir.FhirCode<FilterOperatorCodeType> fhir: ValueSet.compose.include.filter.op:code' });
     }
+    if (this['op'] && (!Object.values(FilterOperatorCodes).includes(this.op as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property op:fhir.FhirCode<FilterOperatorCodeType> fhir: ValueSet.compose.include.filter.op:code Required binding to: FilterOperator' });
+    }
+    if (this["op"]) { issues.push(...this.op.doModelValidation()); }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value:fhir.FhirString fhir: ValueSet.compose.include.filter.value:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value:fhir.FhirString fhir: ValueSet.compose.include.filter.value:string' });
     }
     if (this["value"]) { issues.push(...this.value.doModelValidation()); }
     return issues;
@@ -278,15 +282,15 @@ export class ValueSetComposeInclude extends fhir.BackboneElement {
   /**
    * The list of concepts is considered ordered, though the order might not have any particular significance. Typically, the order of an expansion follows that defined in the compose element.
    */
-  public concept?: fhir.ValueSetComposeIncludeConcept[];
+  public concept: fhir.ValueSetComposeIncludeConcept[];
   /**
    * Selecting codes by specifying filters based on properties is only possible where the underlying code system defines appropriate properties. Note that in some cases, the underlying code system defines the logical concepts but not the literal codes for the concepts. In such cases, the literal definitions may be provided by a third party.
    */
-  public filter?: fhir.ValueSetComposeIncludeFilter[];
+  public filter: fhir.ValueSetComposeIncludeFilter[];
   /**
    * The value set URI is either a logical reference to a defined value set such as a [SNOMED CT reference set](snomedct.html#implicit), or a direct reference to a value set definition using ValueSet.url. The reference might not refer to an actual FHIR ValueSet resource; in this case, whatever is referred to is an implicit definition of a value set that needs to be clear about how versions are resolved.
    */
-  public valueSet?: fhir.FhirCanonical[];
+  public valueSet: fhir.FhirCanonical[];
   /**
    * Default constructor for ValueSetComposeInclude - initializes any required elements to null if a value is not provided.
    */
@@ -361,7 +365,7 @@ export class ValueSetCompose extends fhir.BackboneElement {
   /**
    * Usually this is used to selectively exclude codes that were included by subsumption in the inclusions. Any display names specified for the codes are ignored.
    */
-  public exclude?: fhir.ValueSetComposeInclude[];
+  public exclude: fhir.ValueSetComposeInclude[];
   /**
    * Default constructor for ValueSetCompose - initializes any required elements to null if a value is not provided.
    */
@@ -382,11 +386,11 @@ export class ValueSetCompose extends fhir.BackboneElement {
     if (this["lockedDate"]) { issues.push(...this.lockedDate.doModelValidation()); }
     if (this["inactive"]) { issues.push(...this.inactive.doModelValidation()); }
     if (!this['include']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property include:fhir.ValueSetComposeInclude[] fhir: ValueSet.compose.include:include', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property include:fhir.ValueSetComposeInclude[] fhir: ValueSet.compose.include:include' });
     } else if (!Array.isArray(this.include)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property include:fhir.ValueSetComposeInclude[] fhir: ValueSet.compose.include:include', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property include:fhir.ValueSetComposeInclude[] fhir: ValueSet.compose.include:include' });
     } else if (this.include.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property include:fhir.ValueSetComposeInclude[] fhir: ValueSet.compose.include:include', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property include:fhir.ValueSetComposeInclude[] fhir: ValueSet.compose.include:include' });
     }
     if (this["include"]) { this.include.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["exclude"]) { this.exclude.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -477,7 +481,7 @@ export class ValueSetExpansionParameter extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: ValueSet.expansion.parameter.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: ValueSet.expansion.parameter.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     return issues;
@@ -556,11 +560,11 @@ export class ValueSetExpansionContains extends fhir.BackboneElement {
   /**
    * The designations provided must be based on the value set and code system definitions.
    */
-  public designation?: fhir.ValueSetComposeIncludeConceptDesignation[];
+  public designation: fhir.ValueSetComposeIncludeConceptDesignation[];
   /**
    * If the expansion uses this element, there is  no implication about the logical relationship between them, and the  structure cannot be used for logical inferencing. The structure  exists to provide navigational assistance for helping human users to  locate codes in the expansion.
    */
-  public contains?: fhir.ValueSetExpansionContains[];
+  public contains: fhir.ValueSetExpansionContains[];
   /**
    * Default constructor for ValueSetExpansionContains - initializes any required elements to null if a value is not provided.
    */
@@ -651,11 +655,11 @@ export class ValueSetExpansion extends fhir.BackboneElement {
   /**
    * The server decides which parameters to include here, but at a minimum, the list SHOULD include all of the parameters that affect the $expand operation. If the expansion will be persisted all of these parameters SHALL be included. If the codeSystem on the server has a specified version then this version SHALL be provided as a parameter in the expansion (note that not all code systems have a version).
    */
-  public parameter?: fhir.ValueSetExpansionParameter[];
+  public parameter: fhir.ValueSetExpansionParameter[];
   /**
    * The codes that are contained in the value set expansion.
    */
-  public contains?: fhir.ValueSetExpansionContains[];
+  public contains: fhir.ValueSetExpansionContains[];
   /**
    * Default constructor for ValueSetExpansion - initializes any required elements to null if a value is not provided.
    */
@@ -678,7 +682,7 @@ export class ValueSetExpansion extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (!this['timestamp']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property timestamp:fhir.FhirDateTime fhir: ValueSet.expansion.timestamp:dateTime', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property timestamp:fhir.FhirDateTime fhir: ValueSet.expansion.timestamp:dateTime' });
     }
     if (this["timestamp"]) { issues.push(...this.timestamp.doModelValidation()); }
     if (this["total"]) { issues.push(...this.total.doModelValidation()); }
@@ -721,7 +725,7 @@ export interface ValueSetArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of value sets that are appropriate for use versus not.See also the [valueset-workflowStatus](extension-valueset-workflowstatus.html) extension for additional status information related to the editorial process.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of value sets that are appropriate for use versus not.
    */
@@ -794,7 +798,7 @@ export class ValueSet extends fhir.DomainResource {
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this value set outside of FHIR, where it is not possible to use the logical URI.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * There may be different value set instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the value set with the format [url]|[version].
    */
@@ -810,7 +814,7 @@ export class ValueSet extends fhir.DomainResource {
   /**
    * Allows filtering of value sets that are appropriate for use versus not.See also the [valueset-workflowStatus](extension-valueset-workflowstatus.html) extension for additional status information related to the editorial process.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of value sets that are appropriate for use versus not.
    */
@@ -826,7 +830,7 @@ export class ValueSet extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the value set was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the value set as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the value set is presumed to be the predominant language in the place the value set was created).The description is not intended to describe the semantics of the Value Set - there are no intrinsic semantics separate from the codes contained in its expansion. The description should capture its intended use, which is needed for ensuring integrity for its use in models across future changes. A description should be provided unless the value set is a contained resource (e.g. an anonymous value set in a profile). Most registries will require a description.
    */
@@ -834,11 +838,11 @@ export class ValueSet extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the value set to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * Normally immutability is set to 'false', which is the default assumption if it is not populated.  Note that the implication is that if this is set to 'true', there may be only one ValueSet version for this definition. Immutability tends to be set to 'true' in one of two cases: - Where the value set, by the nature of its usage, cannot change.  For example "All specializations of ACT in ActClassCode" - Where there's no safe way to express the "Purpose" such that someone else could safely make changes to the value set definition. Source workflow control must guarantee that the same URI always yields the same definition.
    */
@@ -872,7 +876,7 @@ export class ValueSet extends fhir.DomainResource {
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
@@ -893,8 +897,8 @@ export class ValueSet extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (ValueSet.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -902,7 +906,7 @@ export class ValueSet extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ValueSet" fhir: ValueSet.resourceType:"ValueSet"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ValueSet" fhir: ValueSet.resourceType:"ValueSet"' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -910,8 +914,12 @@ export class ValueSet extends fhir.DomainResource {
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: ValueSet.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: ValueSet.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: ValueSet.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }

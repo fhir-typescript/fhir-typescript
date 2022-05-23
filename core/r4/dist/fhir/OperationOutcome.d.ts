@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { IssueSeverityCodingType } from '../fhirValueSets/IssueSeverityCodings.js';
 import { IssueSeverityCodeType } from '../fhirValueSets/IssueSeverityCodes.js';
-import { IssueTypeCodingType } from '../fhirValueSets/IssueTypeCodings.js';
 /**
  * Valid arguments for the OperationOutcomeIssue type.
  */
@@ -9,7 +7,7 @@ export interface OperationOutcomeIssueArgs extends fhir.BackboneElementArgs {
     /**
      * This is labeled as "Is Modifier" because applications should not confuse hints and warnings with errors.
      */
-    severity: IssueSeverityCodeType | null;
+    severity: fhir.FhirCode<IssueSeverityCodeType> | string | undefined;
     /**
      * Describes the type of the issue. The system that creates an OperationOutcome SHALL choose the most applicable code from the IssueType value set, and may additional provide its own code for the error in the details element.
      */
@@ -42,7 +40,7 @@ export declare class OperationOutcomeIssue extends fhir.BackboneElement {
     /**
      * This is labeled as "Is Modifier" because applications should not confuse hints and warnings with errors.
      */
-    severity: IssueSeverityCodeType | null;
+    severity: fhir.FhirCode<IssueSeverityCodeType> | null;
     /**
      * Describes the type of the issue. The system that creates an OperationOutcome SHALL choose the most applicable code from the IssueType value set, and may additional provide its own code for the error in the details element.
      */
@@ -58,11 +56,11 @@ export declare class OperationOutcomeIssue extends fhir.BackboneElement {
     /**
      * The root of the XPath is the resource or bundle that generated OperationOutcome.  Each XPath SHALL resolve to a single node.  This element is deprecated, and is being replaced by expression.
      */
-    location?: fhir.FhirString[];
+    location: fhir.FhirString[];
     /**
      * The root of the FHIRPath is the resource or bundle that generated OperationOutcome.  Each FHIRPath SHALL resolve to a single node.
      */
-    expression?: fhir.FhirString[];
+    expression: fhir.FhirString[];
     /**
      * Default constructor for OperationOutcomeIssue - initializes any required elements to null if a value is not provided.
      */
@@ -70,11 +68,50 @@ export declare class OperationOutcomeIssue extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for severity (OperationOutcome.issue.severity)
      */
-    static severityRequiredCoding(): IssueSeverityCodingType;
+    static get severityRequiredCodes(): {
+        readonly Error: "error";
+        readonly Fatal: "fatal";
+        readonly Information: "information";
+        readonly Warning: "warning";
+    };
     /**
      * Required-bound Value Set for code (OperationOutcome.issue.code)
      */
-    static codeRequiredCoding(): IssueTypeCodingType;
+    static get codeRequiredCodes(): {
+        readonly BusinessRuleViolation: "business-rule";
+        readonly InvalidCode: "code-invalid";
+        readonly EditVersionConflict: "conflict";
+        readonly Deleted: "deleted";
+        readonly Duplicate: "duplicate";
+        readonly Exception: "exception";
+        readonly SessionExpired: "expired";
+        readonly UnacceptableExtension: "extension";
+        readonly Forbidden: "forbidden";
+        readonly IncompleteResults: "incomplete";
+        readonly InformationalNote: "informational";
+        readonly InvalidContent: "invalid";
+        readonly ValidationRuleFailed: "invariant";
+        readonly LockError: "lock-error";
+        readonly LoginRequired: "login"; /**
+         * This is labeled as "Is Modifier" because applications should not confuse hints and warnings with errors.
+         */
+        readonly MultipleMatches: "multiple-matches";
+        readonly NoStoreAvailable: "no-store";
+        readonly NotFound: "not-found";
+        readonly ContentNotSupported: "not-supported";
+        readonly ProcessingFailure: "processing";
+        readonly RequiredElementMissing: "required";
+        readonly SecurityProblem: "security";
+        readonly StructuralIssue: "structure";
+        readonly InformationSuppressed: "suppressed";
+        readonly Throttled: "throttled";
+        readonly Timeout: "timeout";
+        readonly OperationTooCostly: "too-costly";
+        readonly ContentTooLong: "too-long";
+        readonly TransientIssue: "transient";
+        readonly UnknownUser: "unknown";
+        readonly ElementValueInvalid: "value";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

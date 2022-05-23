@@ -28,7 +28,7 @@ export interface NamingSystemUniqueIdArgs extends fhir.BackboneElementArgs {
   /**
    * Different identifier types may be used in different types of communications (OIDs for v3, URIs for FHIR, etc.).  Other includes RUIDs from v3, standard v2 code name strings, etc.
    */
-  type: NamingsystemIdentifierTypeCodeType|null;
+  type: fhir.FhirCode<NamingsystemIdentifierTypeCodeType>|string|undefined;
   /**
    * If the value is a URI intended for use as FHIR system identifier, the URI should not contain "\" or "?" or "," since this makes escaping very difficult.
    */
@@ -58,7 +58,7 @@ export class NamingSystemUniqueId extends fhir.BackboneElement {
   /**
    * Different identifier types may be used in different types of communications (OIDs for v3, URIs for FHIR, etc.).  Other includes RUIDs from v3, standard v2 code name strings, etc.
    */
-  public type: NamingsystemIdentifierTypeCodeType|null;
+  public type: fhir.FhirCode<NamingsystemIdentifierTypeCodeType>|null;
   /**
    * If the value is a URI intended for use as FHIR system identifier, the URI should not contain "\" or "?" or "," since this makes escaping very difficult.
    */
@@ -80,7 +80,7 @@ export class NamingSystemUniqueId extends fhir.BackboneElement {
    */
   constructor(source:Partial<NamingSystemUniqueIdArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<NamingsystemIdentifierTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['value']) { this.value = new fhir.FhirString({value: source.value}); }
     else { this.value = null; }
@@ -91,8 +91,8 @@ export class NamingSystemUniqueId extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for type (NamingSystem.uniqueId.type)
    */
-  public static typeRequiredCoding():NamingsystemIdentifierTypeCodingType {
-    return NamingsystemIdentifierTypeCodings;
+  public static get typeRequiredCodes() {
+    return NamingsystemIdentifierTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -100,10 +100,14 @@ export class NamingSystemUniqueId extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:NamingsystemIdentifierTypeCodeType fhir: NamingSystem.uniqueId.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<NamingsystemIdentifierTypeCodeType> fhir: NamingSystem.uniqueId.type:code' });
     }
+    if (this['type'] && (!Object.values(NamingsystemIdentifierTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<NamingsystemIdentifierTypeCodeType> fhir: NamingSystem.uniqueId.type:code Required binding to: NamingsystemIdentifierType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value:fhir.FhirString fhir: NamingSystem.uniqueId.value:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value:fhir.FhirString fhir: NamingSystem.uniqueId.value:string' });
     }
     if (this["value"]) { issues.push(...this.value.doModelValidation()); }
     if (this["preferred"]) { issues.push(...this.preferred.doModelValidation()); }
@@ -127,11 +131,11 @@ export interface NamingSystemArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of naming systems that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Indicates the purpose for the naming system - what kinds of things does it make unique?
    */
-  kind: NamingsystemTypeCodeType|null;
+  kind: fhir.FhirCode<NamingsystemTypeCodeType>|string|undefined;
   /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the naming system. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
@@ -193,11 +197,11 @@ export class NamingSystem extends fhir.DomainResource {
   /**
    * Allows filtering of naming systems that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Indicates the purpose for the naming system - what kinds of things does it make unique?
    */
-  public kind: NamingsystemTypeCodeType|null;
+  public kind: fhir.FhirCode<NamingsystemTypeCodeType>|null;
   /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the naming system. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
@@ -209,7 +213,7 @@ export class NamingSystem extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This is the primary organization.  Responsibility for some aspects of a namespace may be delegated.
    */
@@ -225,11 +229,11 @@ export class NamingSystem extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the naming system to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * Provides guidance on the use of the namespace, including the handling of formatting characters, use of upper vs. lower case, etc.
    */
@@ -246,9 +250,9 @@ export class NamingSystem extends fhir.DomainResource {
     this.resourceType = 'NamingSystem';
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
-    if (source['kind']) { this.kind = source.kind; }
+    if (source['kind']) { this.kind = new fhir.FhirCode<NamingsystemTypeCodeType>({value: source.kind}); }
     else { this.kind = null; }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
     else { this.date = null; }
@@ -269,19 +273,19 @@ export class NamingSystem extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (NamingSystem.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Required-bound Value Set for kind (NamingSystem.kind)
    */
-  public static kindRequiredCoding():NamingsystemTypeCodingType {
-    return NamingsystemTypeCodings;
+  public static get kindRequiredCodes() {
+    return NamingsystemTypeCodes;
   }
   /**
    * Extensible-bound Value Set for type (NamingSystem.type)
    */
-  public static typeExtensibleCoding():IdentifierTypeCodingType {
+  public static get typeExtensibleCodings() {
     return IdentifierTypeCodings;
   }
   /**
@@ -290,20 +294,28 @@ export class NamingSystem extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"NamingSystem" fhir: NamingSystem.resourceType:"NamingSystem"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"NamingSystem" fhir: NamingSystem.resourceType:"NamingSystem"' });
     }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: NamingSystem.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: NamingSystem.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: NamingSystem.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: NamingSystem.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: NamingSystem.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['kind']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property kind:NamingsystemTypeCodeType fhir: NamingSystem.kind:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind:fhir.FhirCode<NamingsystemTypeCodeType> fhir: NamingSystem.kind:code' });
     }
+    if (this['kind'] && (!Object.values(NamingsystemTypeCodes).includes(this.kind as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind:fhir.FhirCode<NamingsystemTypeCodeType> fhir: NamingSystem.kind:code Required binding to: NamingsystemType' });
+    }
+    if (this["kind"]) { issues.push(...this.kind.doModelValidation()); }
     if (!this['date']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: NamingSystem.date:dateTime', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: NamingSystem.date:dateTime' });
     }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
@@ -315,11 +327,11 @@ export class NamingSystem extends fhir.DomainResource {
     if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["usage"]) { issues.push(...this.usage.doModelValidation()); }
     if (!this['uniqueId']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property uniqueId:fhir.NamingSystemUniqueId[] fhir: NamingSystem.uniqueId:uniqueId', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property uniqueId:fhir.NamingSystemUniqueId[] fhir: NamingSystem.uniqueId:uniqueId' });
     } else if (!Array.isArray(this.uniqueId)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property uniqueId:fhir.NamingSystemUniqueId[] fhir: NamingSystem.uniqueId:uniqueId', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property uniqueId:fhir.NamingSystemUniqueId[] fhir: NamingSystem.uniqueId:uniqueId' });
     } else if (this.uniqueId.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property uniqueId:fhir.NamingSystemUniqueId[] fhir: NamingSystem.uniqueId:uniqueId', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property uniqueId:fhir.NamingSystemUniqueId[] fhir: NamingSystem.uniqueId:uniqueId' });
     }
     if (this["uniqueId"]) { this.uniqueId.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;

@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { FmStatusCodingType } from '../fhirValueSets/FmStatusCodings.js';
 import { FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
 /**
  * Valid arguments for the EnrollmentRequest type.
@@ -16,7 +15,7 @@ export interface EnrollmentRequestArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the request as not currently valid.
      */
-    status?: FmStatusCodeType | undefined;
+    status?: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
      * The date when this resource was created.
      */
@@ -53,11 +52,11 @@ export declare class EnrollmentRequest extends fhir.DomainResource {
     /**
      * The Response business identifier.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the request as not currently valid.
      */
-    status?: FmStatusCodeType | undefined;
+    status?: fhir.FhirCode<FmStatusCodeType> | undefined;
     /**
      * The date when this resource was created.
      */
@@ -85,7 +84,12 @@ export declare class EnrollmentRequest extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (EnrollmentRequest.status)
      */
-    static statusRequiredCoding(): FmStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Cancelled: "cancelled";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -152,7 +152,7 @@ export interface ContractContentDefinitionArgs extends fhir.BackboneElementArgs 
   /**
    * amended | appended | cancelled | disputed | entered-in-error | executable | executed | negotiable | offered | policy | rejected | renewed | revoked | resolved | terminated.
    */
-  publicationStatus: ContractPublicationstatusCodeType|null;
+  publicationStatus: fhir.FhirCode<ContractPublicationstatusCodeType>|string|undefined;
   /**
    * A copyright statement relating to Contract precursor content. Copyright statements are generally legal restrictions on the use and publishing of the Contract precursor content.
    */
@@ -186,7 +186,7 @@ export class ContractContentDefinition extends fhir.BackboneElement {
   /**
    * amended | appended | cancelled | disputed | entered-in-error | executable | executed | negotiable | offered | policy | rejected | renewed | revoked | resolved | terminated.
    */
-  public publicationStatus: ContractPublicationstatusCodeType|null;
+  public publicationStatus: fhir.FhirCode<ContractPublicationstatusCodeType>|null;
   /**
    * A copyright statement relating to Contract precursor content. Copyright statements are generally legal restrictions on the use and publishing of the Contract precursor content.
    */
@@ -201,15 +201,15 @@ export class ContractContentDefinition extends fhir.BackboneElement {
     if (source['subType']) { this.subType = new fhir.CodeableConcept(source.subType); }
     if (source['publisher']) { this.publisher = new fhir.Reference(source.publisher); }
     if (source['publicationDate']) { this.publicationDate = new fhir.FhirDateTime({value: source.publicationDate}); }
-    if (source['publicationStatus']) { this.publicationStatus = source.publicationStatus; }
+    if (source['publicationStatus']) { this.publicationStatus = new fhir.FhirCode<ContractPublicationstatusCodeType>({value: source.publicationStatus}); }
     else { this.publicationStatus = null; }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
   }
   /**
    * Required-bound Value Set for publicationStatus (Contract.contentDefinition.publicationStatus)
    */
-  public static publicationStatusRequiredCoding():ContractPublicationstatusCodingType {
-    return ContractPublicationstatusCodings;
+  public static get publicationStatusRequiredCodes() {
+    return ContractPublicationstatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -217,15 +217,19 @@ export class ContractContentDefinition extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Contract.contentDefinition.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Contract.contentDefinition.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["subType"]) { issues.push(...this.subType.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
     if (this["publicationDate"]) { issues.push(...this.publicationDate.doModelValidation()); }
     if (!this['publicationStatus']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property publicationStatus:ContractPublicationstatusCodeType fhir: Contract.contentDefinition.publicationStatus:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property publicationStatus:fhir.FhirCode<ContractPublicationstatusCodeType> fhir: Contract.contentDefinition.publicationStatus:code' });
     }
+    if (this['publicationStatus'] && (!Object.values(ContractPublicationstatusCodes).includes(this.publicationStatus as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property publicationStatus:fhir.FhirCode<ContractPublicationstatusCodeType> fhir: Contract.contentDefinition.publicationStatus:code Required binding to: ContractPublicationstatus' });
+    }
+    if (this["publicationStatus"]) { issues.push(...this.publicationStatus.doModelValidation()); }
     if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
     return issues;
   }
@@ -263,7 +267,7 @@ export class ContractTermSecurityLabel extends fhir.BackboneElement {
   /**
    * Number used to link this term or term element to the applicable Security Label.
    */
-  public number?: fhir.FhirUnsignedInt[];
+  public number: fhir.FhirUnsignedInt[];
   /**
    * Security label privacy tag that species the level of confidentiality protection required for this term and/or term elements.
    */
@@ -271,11 +275,11 @@ export class ContractTermSecurityLabel extends fhir.BackboneElement {
   /**
    * Security label privacy tag that species the applicable privacy and security policies governing this term and/or term elements.
    */
-  public category?: fhir.Coding[];
+  public category: fhir.Coding[];
   /**
    * Security label privacy tag that species the manner in which term and/or term elements are to be protected.
    */
-  public control?: fhir.Coding[];
+  public control: fhir.Coding[];
   /**
    * Default constructor for ContractTermSecurityLabel - initializes any required elements to null if a value is not provided.
    */
@@ -297,7 +301,7 @@ export class ContractTermSecurityLabel extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["number"]) { this.number.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['classification']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property classification:fhir.Coding fhir: Contract.term.securityLabel.classification:Coding', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property classification:fhir.Coding fhir: Contract.term.securityLabel.classification:Coding' });
     }
     if (this["classification"]) { issues.push(...this.classification.doModelValidation()); }
     if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -351,15 +355,15 @@ export class ContractTermOfferParty extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['reference']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property reference:fhir.Reference[] fhir: Contract.term.offer.party.reference:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference:fhir.Reference[] fhir: Contract.term.offer.party.reference:Reference' });
     } else if (!Array.isArray(this.reference)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property reference:fhir.Reference[] fhir: Contract.term.offer.party.reference:Reference', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property reference:fhir.Reference[] fhir: Contract.term.offer.party.reference:Reference' });
     } else if (this.reference.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property reference:fhir.Reference[] fhir: Contract.term.offer.party.reference:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference:fhir.Reference[] fhir: Contract.term.offer.party.reference:Reference' });
     }
     if (this["reference"]) { this.reference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['role']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property role:fhir.CodeableConcept fhir: Contract.term.offer.party.role:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property role:fhir.CodeableConcept fhir: Contract.term.offer.party.role:CodeableConcept' });
     }
     if (this["role"]) { issues.push(...this.role.doModelValidation()); }
     return issues;
@@ -465,7 +469,7 @@ export class ContractTermOfferAnswer extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value: fhir: Contract.term.offer.answer.value[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value: fhir: Contract.term.offer.answer.value[x]:' });
     }
     return issues;
   }
@@ -530,11 +534,11 @@ export class ContractTermOffer extends fhir.BackboneElement {
   /**
    * Unique identifier for this particular Contract Provision.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Offer Recipient.
    */
-  public party?: fhir.ContractTermOfferParty[];
+  public party: fhir.ContractTermOfferParty[];
   /**
    * The Contract.topic may be an application for or offer of a policy or service (e.g., uri to a consent directive form or a health insurance policy), which becomes the Contract once accepted by both the grantor and grantee. 
    * The Contract Resource may function simply as the computable representation of the executed contract, which may be the attached to the Contract Resource as the “binding” or as the “friendly” electronic form.  For example, a Contract Resource may be automatically populated with the values expressed in a related QuestionnaireResponse. 
@@ -553,11 +557,11 @@ export class ContractTermOffer extends fhir.BackboneElement {
   /**
    * How the decision about a Contract was conveyed.
    */
-  public decisionMode?: fhir.CodeableConcept[];
+  public decisionMode: fhir.CodeableConcept[];
   /**
    * Response to offer text.
    */
-  public answer?: fhir.ContractTermOfferAnswer[];
+  public answer: fhir.ContractTermOfferAnswer[];
   /**
    * Human readable form of this Contract Offer.
    */
@@ -565,11 +569,11 @@ export class ContractTermOffer extends fhir.BackboneElement {
   /**
    * The id of the clause or question text of the offer in the referenced questionnaire/response.
    */
-  public linkId?: fhir.FhirString[];
+  public linkId: fhir.FhirString[];
   /**
    * Security labels that protects the offer.
    */
-  public securityLabelNumber?: fhir.FhirUnsignedInt[];
+  public securityLabelNumber: fhir.FhirUnsignedInt[];
   /**
    * Default constructor for ContractTermOffer - initializes any required elements to null if a value is not provided.
    */
@@ -595,7 +599,7 @@ export class ContractTermOffer extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for decision (Contract.term.offer.decision)
    */
-  public static decisionExtensibleCoding():V3ActConsentDirectiveCodingType {
+  public static get decisionExtensibleCodings() {
     return V3ActConsentDirectiveCodings;
   }
   /**
@@ -649,7 +653,7 @@ export class ContractTermAssetContext extends fhir.BackboneElement {
   /**
    * Coded representation of the context generally or of the Referenced entity, such as the asset holder type or location.
    */
-  public code?: fhir.CodeableConcept[];
+  public code: fhir.CodeableConcept[];
   /**
    * Context description.
    */
@@ -808,11 +812,11 @@ export class ContractTermAssetValuedItem extends fhir.BackboneElement {
   /**
    * Id  of the clause or question text related to the context of this valuedItem in the referenced form or QuestionnaireResponse.
    */
-  public linkId?: fhir.FhirString[];
+  public linkId: fhir.FhirString[];
   /**
    * A set of security labels that define which terms are controlled by this condition.
    */
-  public securityLabelNumber?: fhir.FhirUnsignedInt[];
+  public securityLabelNumber: fhir.FhirUnsignedInt[];
   /**
    * Default constructor for ContractTermAssetValuedItem - initializes any required elements to null if a value is not provided.
    */
@@ -939,15 +943,15 @@ export class ContractTermAsset extends fhir.BackboneElement {
   /**
    * Target entity type about which the term may be concerned.
    */
-  public type?: fhir.CodeableConcept[];
+  public type: fhir.CodeableConcept[];
   /**
    * Associated entities.
    */
-  public typeReference?: fhir.Reference[];
+  public typeReference: fhir.Reference[];
   /**
    * May be a subtype or part of an offered asset.
    */
-  public subtype?: fhir.CodeableConcept[];
+  public subtype: fhir.CodeableConcept[];
   /**
    * Specifies the applicability of the term to an asset resource instance, and instances it refers to orinstances that refer to it, and/or are owned by the offeree.
    */
@@ -955,7 +959,7 @@ export class ContractTermAsset extends fhir.BackboneElement {
   /**
    * Circumstance of the asset.
    */
-  public context?: fhir.ContractTermAssetContext[];
+  public context: fhir.ContractTermAssetContext[];
   /**
    * Description of the quality and completeness of the asset that imay be a factor in its valuation.
    */
@@ -963,15 +967,15 @@ export class ContractTermAsset extends fhir.BackboneElement {
   /**
    * Type of Asset availability for use or ownership.
    */
-  public periodType?: fhir.CodeableConcept[];
+  public periodType: fhir.CodeableConcept[];
   /**
    * Asset relevant contractual time period.
    */
-  public period?: fhir.Period[];
+  public period: fhir.Period[];
   /**
    * Time period of asset use.
    */
-  public usePeriod?: fhir.Period[];
+  public usePeriod: fhir.Period[];
   /**
    * Clause or question text (Prose Object) concerning the asset in a linked form, such as a QuestionnaireResponse used in the formation of the contract.
    */
@@ -979,19 +983,19 @@ export class ContractTermAsset extends fhir.BackboneElement {
   /**
    * Id [identifier??] of the clause or question text about the asset in the referenced form or QuestionnaireResponse.
    */
-  public linkId?: fhir.FhirString[];
+  public linkId: fhir.FhirString[];
   /**
    * Response to assets.
    */
-  public answer?: fhir.ContractTermOfferAnswer[];
+  public answer: fhir.ContractTermOfferAnswer[];
   /**
    * Security labels that protects the asset.
    */
-  public securityLabelNumber?: fhir.FhirUnsignedInt[];
+  public securityLabelNumber: fhir.FhirUnsignedInt[];
   /**
    * Contract Valued Item List.
    */
-  public valuedItem?: fhir.ContractTermAssetValuedItem[];
+  public valuedItem: fhir.ContractTermAssetValuedItem[];
   /**
    * Default constructor for ContractTermAsset - initializes any required elements to null if a value is not provided.
    */
@@ -1027,7 +1031,7 @@ export class ContractTermAsset extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for relationship (Contract.term.asset.relationship)
    */
-  public static relationshipExtensibleCoding():ConsentContentClassCodingType {
+  public static get relationshipExtensibleCodings() {
     return ConsentContentClassCodings;
   }
   /**
@@ -1098,11 +1102,11 @@ export class ContractTermActionSubject extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['reference']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property reference:fhir.Reference[] fhir: Contract.term.action.subject.reference:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference:fhir.Reference[] fhir: Contract.term.action.subject.reference:Reference' });
     } else if (!Array.isArray(this.reference)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property reference:fhir.Reference[] fhir: Contract.term.action.subject.reference:Reference', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property reference:fhir.Reference[] fhir: Contract.term.action.subject.reference:Reference' });
     } else if (this.reference.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property reference:fhir.Reference[] fhir: Contract.term.action.subject.reference:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference:fhir.Reference[] fhir: Contract.term.action.subject.reference:Reference' });
     }
     if (this["reference"]) { this.reference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["role"]) { issues.push(...this.role.doModelValidation()); }
@@ -1231,7 +1235,7 @@ export class ContractTermAction extends fhir.BackboneElement {
   /**
    * Entity of the action.
    */
-  public subject?: fhir.ContractTermActionSubject[];
+  public subject: fhir.ContractTermActionSubject[];
   /**
    * Reason or purpose for the action stipulated by this Contract Provision.
    */
@@ -1239,7 +1243,7 @@ export class ContractTermAction extends fhir.BackboneElement {
   /**
    * Id [identifier??] of the clause or question text related to this action in the referenced form or QuestionnaireResponse.
    */
-  public linkId?: fhir.FhirString[];
+  public linkId: fhir.FhirString[];
   /**
    * Current state of the term action.
    */
@@ -1251,7 +1255,7 @@ export class ContractTermAction extends fhir.BackboneElement {
   /**
    * Id [identifier??] of the clause or question text related to the requester of this action in the referenced form or QuestionnaireResponse.
    */
-  public contextLinkId?: fhir.FhirString[];
+  public contextLinkId: fhir.FhirString[];
   /**
    * When action happens.
    */
@@ -1263,15 +1267,15 @@ export class ContractTermAction extends fhir.BackboneElement {
   /**
    * Who or what initiated the action and has responsibility for its activation.
    */
-  public requester?: fhir.Reference[];
+  public requester: fhir.Reference[];
   /**
    * Id [identifier??] of the clause or question text related to the requester of this action in the referenced form or QuestionnaireResponse.
    */
-  public requesterLinkId?: fhir.FhirString[];
+  public requesterLinkId: fhir.FhirString[];
   /**
    * The type of individual that is desired or required to perform or not perform the action.
    */
-  public performerType?: fhir.CodeableConcept[];
+  public performerType: fhir.CodeableConcept[];
   /**
    * The type of role or competency of an individual desired or required to perform or not perform the action.
    */
@@ -1283,31 +1287,31 @@ export class ContractTermAction extends fhir.BackboneElement {
   /**
    * Id [identifier??] of the clause or question text related to the reason type or reference of this  action in the referenced form or QuestionnaireResponse.
    */
-  public performerLinkId?: fhir.FhirString[];
+  public performerLinkId: fhir.FhirString[];
   /**
    * Rationale for the action to be performed or not performed. Describes why the action is permitted or prohibited.
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * Indicates another resource whose existence justifies permitting or not permitting this action.
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * Describes why the action is to be performed or not performed in textual form.
    */
-  public reason?: fhir.FhirString[];
+  public reason: fhir.FhirString[];
   /**
    * Id [identifier??] of the clause or question text related to the reason type or reference of this  action in the referenced form or QuestionnaireResponse.
    */
-  public reasonLinkId?: fhir.FhirString[];
+  public reasonLinkId: fhir.FhirString[];
   /**
    * Comments made about the term action made by the requester, performer, subject or other participants.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Security labels that protects the action.
    */
-  public securityLabelNumber?: fhir.FhirUnsignedInt[];
+  public securityLabelNumber: fhir.FhirUnsignedInt[];
   /**
    * Default constructor for ContractTermAction - initializes any required elements to null if a value is not provided.
    */
@@ -1361,17 +1365,17 @@ export class ContractTermAction extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["doNotPerform"]) { issues.push(...this.doNotPerform.doModelValidation()); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Contract.term.action.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Contract.term.action.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["subject"]) { this.subject.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['intent']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property intent:fhir.CodeableConcept fhir: Contract.term.action.intent:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent:fhir.CodeableConcept fhir: Contract.term.action.intent:CodeableConcept' });
     }
     if (this["intent"]) { issues.push(...this.intent.doModelValidation()); }
     if (this["linkId"]) { this.linkId.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:fhir.CodeableConcept fhir: Contract.term.action.status:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.CodeableConcept fhir: Contract.term.action.status:CodeableConcept' });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["context"]) { issues.push(...this.context.doModelValidation()); }
@@ -1497,7 +1501,7 @@ export class ContractTerm extends fhir.BackboneElement {
   /**
    * Security labels that protect the handling of information about the term and its elements, which may be specifically identified..
    */
-  public securityLabel?: fhir.ContractTermSecurityLabel[];
+  public securityLabel: fhir.ContractTermSecurityLabel[];
   /**
    * The matter of concern in the context of this provision of the agrement.
    */
@@ -1505,16 +1509,16 @@ export class ContractTerm extends fhir.BackboneElement {
   /**
    * Contract Term Asset List.
    */
-  public asset?: fhir.ContractTermAsset[];
+  public asset: fhir.ContractTermAsset[];
   /**
    * Several agents may be associated (i.e. has some responsibility for an activity) with an activity and vice-versa.
    * For example, in cases of actions initiated by one user for other users, or in events that involve more than one user, hardware device, software, or system process. However, only one user may be the initiator/requestor for the event.
    */
-  public action?: fhir.ContractTermAction[];
+  public action: fhir.ContractTermAction[];
   /**
    * Nested group of Contract Provisions.
    */
-  public group?: fhir.ContractTerm[];
+  public group: fhir.ContractTerm[];
   /**
    * Default constructor for ContractTerm - initializes any required elements to null if a value is not provided.
    */
@@ -1553,7 +1557,7 @@ export class ContractTerm extends fhir.BackboneElement {
     if (this["text"]) { issues.push(...this.text.doModelValidation()); }
     if (this["securityLabel"]) { this.securityLabel.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['offer']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property offer:fhir.ContractTermOffer fhir: Contract.term.offer:offer', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property offer:fhir.ContractTermOffer fhir: Contract.term.offer:offer' });
     }
     if (this["offer"]) { issues.push(...this.offer.doModelValidation()); }
     if (this["asset"]) { this.asset.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -1616,7 +1620,7 @@ export class ContractSigner extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for type (Contract.signer.type)
    */
-  public static typePreferredCoding():ContractSignerTypeCodingType {
+  public static get typePreferredCodings() {
     return ContractSignerTypeCodings;
   }
   /**
@@ -1625,19 +1629,19 @@ export class ContractSigner extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.Coding fhir: Contract.signer.type:Coding', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.Coding fhir: Contract.signer.type:Coding' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['party']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property party:fhir.Reference fhir: Contract.signer.party:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property party:fhir.Reference fhir: Contract.signer.party:Reference' });
     }
     if (this["party"]) { issues.push(...this.party.doModelValidation()); }
     if (!this['signature']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property signature:fhir.Signature[] fhir: Contract.signer.signature:Signature', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property signature:fhir.Signature[] fhir: Contract.signer.signature:Signature' });
     } else if (!Array.isArray(this.signature)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property signature:fhir.Signature[] fhir: Contract.signer.signature:Signature', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property signature:fhir.Signature[] fhir: Contract.signer.signature:Signature' });
     } else if (this.signature.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property signature:fhir.Signature[] fhir: Contract.signer.signature:Signature', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property signature:fhir.Signature[] fhir: Contract.signer.signature:Signature' });
     }
     if (this["signature"]) { this.signature.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -1693,7 +1697,7 @@ export class ContractFriendly extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property content: fhir: Contract.friendly.content[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content: fhir: Contract.friendly.content[x]:' });
     }
     return issues;
   }
@@ -1748,7 +1752,7 @@ export class ContractLegal extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property content: fhir: Contract.legal.content[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content: fhir: Contract.legal.content[x]:' });
     }
     return issues;
   }
@@ -1803,7 +1807,7 @@ export class ContractRule extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property content: fhir: Contract.rule.content[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content: fhir: Contract.rule.content[x]:' });
     }
     return issues;
   }
@@ -1832,7 +1836,7 @@ export interface ContractArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the contract as not currently valid or active.
    */
-  status?: ContractStatusCodeType|undefined;
+  status?: fhir.FhirCode<ContractStatusCodeType>|string|undefined;
   /**
    * Legal states of the formation of a legal instrument, which is a formally executed written document that can be formally attributed to its author, records and formally expresses a legally enforceable act, process, or contractual duty, obligation, or right, and therefore evidences that act, process, or agreement.
    */
@@ -1984,7 +1988,7 @@ export class Contract extends fhir.DomainResource {
   /**
    * Unique identifier for this Contract or a derivative that references a Source Contract.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Used in a domain that uses a supplied contract repository.
    */
@@ -1997,7 +2001,7 @@ export class Contract extends fhir.DomainResource {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the contract as not currently valid or active.
    */
-  public status?: ContractStatusCodeType|undefined;
+  public status?: fhir.FhirCode<ContractStatusCodeType>|undefined;
   /**
    * Legal states of the formation of a legal instrument, which is a formally executed written document that can be formally attributed to its author, records and formally expresses a legally enforceable act, process, or contractual duty, obligation, or right, and therefore evidences that act, process, or agreement.
    */
@@ -2030,19 +2034,19 @@ export class Contract extends fhir.DomainResource {
    * The Contract.subject is an entity that has some role with respect to the Contract.topic and Contract.topic.term, which is of focal interest to the parties to the contract and likely impacted in a significant way by the Contract.action/Contract.action.reason and the Contract.term.action/Contract.action.reason. 
    * In many cases, the Contract.subject is a Contract.signer if the subject is an adult; has a legal interest in the contract; and incompetent to participate in the contract agreement.
    */
-  public subject?: fhir.Reference[];
+  public subject: fhir.Reference[];
   /**
    * A formally or informally recognized grouping of people, principals, organizations, or jurisdictions formed for the purpose of achieving some form of collective action such as the promulgation, administration and enforcement of contracts and policies.
    */
-  public authority?: fhir.Reference[];
+  public authority: fhir.Reference[];
   /**
    * Recognized governance framework or system operating with a circumscribed scope in accordance with specified principles, policies, processes or procedures for managing rights, actions, or behaviors of parties or principals relative to resources.
    */
-  public domain?: fhir.Reference[];
+  public domain: fhir.Reference[];
   /**
    * Sites in which the contract is complied with,  exercised, or in force.
    */
-  public site?: fhir.Reference[];
+  public site: fhir.Reference[];
   /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
    */
@@ -2058,7 +2062,7 @@ export class Contract extends fhir.DomainResource {
   /**
    * Alternative representation of the title for this Contract definition, derivative, or instance in any legal state., e.g., a domain specific contract number related to legislation.
    */
-  public alias?: fhir.FhirString[];
+  public alias: fhir.FhirString[];
   /**
    * The individual or organization that authored the Contract definition, derivative, or instance in any legal state.
    */
@@ -2082,7 +2086,7 @@ export class Contract extends fhir.DomainResource {
   /**
    * Sub-category for the Contract that distinguishes the kinds of systems that would be interested in the Contract within the context of the Contract's scope.
    */
-  public subType?: fhir.CodeableConcept[];
+  public subType: fhir.CodeableConcept[];
   /**
    * Precusory content developed with a focus and intent of supporting the formation a Contract instance, which may be associated with and transformable into a Contract.
    */
@@ -2090,32 +2094,32 @@ export class Contract extends fhir.DomainResource {
   /**
    * One or more Contract Provisions, which may be related and conveyed as a group, and may contain nested groups.
    */
-  public term?: fhir.ContractTerm[];
+  public term: fhir.ContractTerm[];
   /**
    * Information that may be needed by/relevant to the performer in their execution of this term action.
    */
-  public supportingInfo?: fhir.Reference[];
+  public supportingInfo: fhir.Reference[];
   /**
    * Links to Provenance records for past versions of this Contract definition, derivative, or instance, which identify key state transitions or updates that are likely to be relevant to a user looking at the current version of the Contract.  The Provence.entity indicates the target that was changed in the update. http://build.fhir.org/provenance-definitions.html#Provenance.entity.
    */
-  public relevantHistory?: fhir.Reference[];
+  public relevantHistory: fhir.Reference[];
   /**
    * Signers who are principal parties to the contract are bound by the Contract.activity related to the Contract.topic, and the Contract.term(s), which either extend or restrict the overall action on the topic by, for example, stipulating specific policies or obligations constraining actions, action reason, or agents with respect to some or all of the topic.
    * For example, specifying how policies or obligations shall constrain actions and action reasons permitted or denied on all or a subset of the Contract.topic (e.g., all or a portion of property being transferred by the contract), agents (e.g., who can resell, assign interests, or alter the property being transferred by the contract), actions, and action reasons; or with respect to Contract.terms, stipulating, extending, or limiting the Contract.period of applicability or valuation of items under consideration.
    */
-  public signer?: fhir.ContractSigner[];
+  public signer: fhir.ContractSigner[];
   /**
    * The "patient friendly language" versionof the Contract in whole or in parts. "Patient friendly language" means the representation of the Contract and Contract Provisions in a manner that is readily accessible and understandable by a layperson in accordance with best practices for communication styles that ensure that those agreeing to or signing the Contract understand the roles, actions, obligations, responsibilities, and implication of the agreement.
    */
-  public friendly?: fhir.ContractFriendly[];
+  public friendly: fhir.ContractFriendly[];
   /**
    * List of Legal expressions or representations of this Contract.
    */
-  public legal?: fhir.ContractLegal[];
+  public legal: fhir.ContractLegal[];
   /**
    * List of Computable Policy Rule Language Representations of this Contract.
    */
-  public rule?: fhir.ContractRule[];
+  public rule: fhir.ContractRule[];
   /**
    * Legally binding Contract: This is the signed and legally recognized representation of the Contract, which is considered the "source of truth" and which would be the basis for legal action related to enforcement of this Contract.
    */
@@ -2134,7 +2138,7 @@ export class Contract extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<ContractStatusCodeType>({value: source.status}); }
     if (source['legalState']) { this.legalState = new fhir.CodeableConcept(source.legalState); }
     if (source['instantiatesCanonical']) { this.instantiatesCanonical = new fhir.Reference(source.instantiatesCanonical); }
     if (source['instantiatesUri']) { this.instantiatesUri = new fhir.FhirUri({value: source.instantiatesUri}); }
@@ -2185,13 +2189,13 @@ export class Contract extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Contract.status)
    */
-  public static statusRequiredCoding():ContractStatusCodingType {
-    return ContractStatusCodings;
+  public static get statusRequiredCodes() {
+    return ContractStatusCodes;
   }
   /**
    * Extensible-bound Value Set for legalState (Contract.legalState)
    */
-  public static legalStateExtensibleCoding():ContractLegalstateCodingType {
+  public static get legalStateExtensibleCodings() {
     return ContractLegalstateCodings;
   }
   /**
@@ -2200,11 +2204,15 @@ export class Contract extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Contract" fhir: Contract.resourceType:"Contract"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Contract" fhir: Contract.resourceType:"Contract"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["version"]) { issues.push(...this.version.doModelValidation()); }
+    if (this['status'] && (!Object.values(ContractStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<ContractStatusCodeType> fhir: Contract.status:code Required binding to: ContractStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["legalState"]) { issues.push(...this.legalState.doModelValidation()); }
     if (this["instantiatesCanonical"]) { issues.push(...this.instantiatesCanonical.doModelValidation()); }
     if (this["instantiatesUri"]) { issues.push(...this.instantiatesUri.doModelValidation()); }

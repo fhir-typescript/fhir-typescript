@@ -65,11 +65,11 @@ export class MedicinalProductIndicationOtherTherapy extends fhir.BackboneElement
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['therapyRelationshipType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property therapyRelationshipType:fhir.CodeableConcept fhir: MedicinalProductIndication.otherTherapy.therapyRelationshipType:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property therapyRelationshipType:fhir.CodeableConcept fhir: MedicinalProductIndication.otherTherapy.therapyRelationshipType:CodeableConcept' });
     }
     if (this["therapyRelationshipType"]) { issues.push(...this.therapyRelationshipType.doModelValidation()); }
     if (!this['medication']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property medication: fhir: MedicinalProductIndication.otherTherapy.medication[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property medication: fhir: MedicinalProductIndication.otherTherapy.medication[x]:' });
     }
     return issues;
   }
@@ -135,7 +135,7 @@ export class MedicinalProductIndication extends fhir.DomainResource {
   /**
    * The medication for which this is an indication.
    */
-  public subject?: fhir.Reference[];
+  public subject: fhir.Reference[];
   /**
    * The disease, symptom or procedure that is the indication for treatment.
    */
@@ -147,7 +147,7 @@ export class MedicinalProductIndication extends fhir.DomainResource {
   /**
    * Comorbidity (concurrent condition) or co-infection as part of the indication.
    */
-  public comorbidity?: fhir.CodeableConcept[];
+  public comorbidity: fhir.CodeableConcept[];
   /**
    * The intended effect, aim or strategy to be achieved by the indication.
    */
@@ -159,15 +159,15 @@ export class MedicinalProductIndication extends fhir.DomainResource {
   /**
    * Information about the use of the medicinal product in relation to other therapies described as part of the indication.
    */
-  public otherTherapy?: fhir.MedicinalProductIndicationOtherTherapy[];
+  public otherTherapy: fhir.MedicinalProductIndicationOtherTherapy[];
   /**
    * Describe the undesirable effects of the medicinal product.
    */
-  public undesirableEffect?: fhir.Reference[];
+  public undesirableEffect: fhir.Reference[];
   /**
    * The population group to which this applies.
    */
-  public population?: fhir.Population[];
+  public population: fhir.Population[];
   /**
    * Default constructor for MedicinalProductIndication - initializes any required elements to null if a value is not provided.
    */
@@ -195,7 +195,7 @@ export class MedicinalProductIndication extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicinalProductIndication" fhir: MedicinalProductIndication.resourceType:"MedicinalProductIndication"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicinalProductIndication" fhir: MedicinalProductIndication.resourceType:"MedicinalProductIndication"' });
     }
     if (this["subject"]) { this.subject.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["diseaseSymptomProcedure"]) { issues.push(...this.diseaseSymptomProcedure.doModelValidation()); }

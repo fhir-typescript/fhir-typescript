@@ -93,7 +93,7 @@ export declare class MedicinalProductInteraction extends fhir.DomainResource {
     /**
      * The medication for which this is a described interaction.
      */
-    subject?: fhir.Reference[];
+    subject: fhir.Reference[];
     /**
      * The interaction described.
      */
@@ -101,7 +101,7 @@ export declare class MedicinalProductInteraction extends fhir.DomainResource {
     /**
      * The specific medication, food or laboratory test that interacts.
      */
-    interactant?: fhir.MedicinalProductInteractionInteractant[];
+    interactant: fhir.MedicinalProductInteractionInteractant[];
     /**
      * The type of the interaction e.g. drug-drug interaction, drug-food interaction, drug-lab test interaction.
      */

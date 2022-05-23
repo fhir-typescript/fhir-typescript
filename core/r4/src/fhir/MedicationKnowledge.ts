@@ -75,15 +75,15 @@ export class MedicationKnowledgeRelatedMedicationKnowledge extends fhir.Backbone
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: MedicationKnowledge.relatedMedicationKnowledge.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: MedicationKnowledge.relatedMedicationKnowledge.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['reference']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property reference:fhir.Reference[] fhir: MedicationKnowledge.relatedMedicationKnowledge.reference:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference:fhir.Reference[] fhir: MedicationKnowledge.relatedMedicationKnowledge.reference:Reference' });
     } else if (!Array.isArray(this.reference)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property reference:fhir.Reference[] fhir: MedicationKnowledge.relatedMedicationKnowledge.reference:Reference', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property reference:fhir.Reference[] fhir: MedicationKnowledge.relatedMedicationKnowledge.reference:Reference' });
     } else if (this.reference.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property reference:fhir.Reference[] fhir: MedicationKnowledge.relatedMedicationKnowledge.reference:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference:fhir.Reference[] fhir: MedicationKnowledge.relatedMedicationKnowledge.reference:Reference' });
     }
     if (this["reference"]) { this.reference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -205,7 +205,7 @@ export class MedicationKnowledgeIngredient extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['item']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property item: fhir: MedicationKnowledge.ingredient.item[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item: fhir: MedicationKnowledge.ingredient.item[x]:' });
     }
     if (this["isActive"]) { issues.push(...this.isActive.doModelValidation()); }
     if (this["strength"]) { issues.push(...this.strength.doModelValidation()); }
@@ -267,12 +267,12 @@ export class MedicationKnowledgeCost extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: MedicationKnowledge.cost.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: MedicationKnowledge.cost.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["source"]) { issues.push(...this.source.doModelValidation()); }
     if (!this['cost']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property cost:fhir.Money fhir: MedicationKnowledge.cost.cost:Money', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property cost:fhir.Money fhir: MedicationKnowledge.cost.cost:Money' });
     }
     if (this["cost"]) { issues.push(...this.cost.doModelValidation()); }
     return issues;
@@ -372,15 +372,15 @@ export class MedicationKnowledgeAdministrationGuidelinesDosage extends fhir.Back
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: MedicationKnowledge.administrationGuidelines.dosage.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: MedicationKnowledge.administrationGuidelines.dosage.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['dosage']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property dosage:fhir.Dosage[] fhir: MedicationKnowledge.administrationGuidelines.dosage.dosage:Dosage', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property dosage:fhir.Dosage[] fhir: MedicationKnowledge.administrationGuidelines.dosage.dosage:Dosage' });
     } else if (!Array.isArray(this.dosage)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property dosage:fhir.Dosage[] fhir: MedicationKnowledge.administrationGuidelines.dosage.dosage:Dosage', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property dosage:fhir.Dosage[] fhir: MedicationKnowledge.administrationGuidelines.dosage.dosage:Dosage' });
     } else if (this.dosage.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property dosage:fhir.Dosage[] fhir: MedicationKnowledge.administrationGuidelines.dosage.dosage:Dosage', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property dosage:fhir.Dosage[] fhir: MedicationKnowledge.administrationGuidelines.dosage.dosage:Dosage' });
     }
     if (this["dosage"]) { this.dosage.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -427,7 +427,7 @@ export class MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics e
   /**
    * The specific characteristic (e.g. height, weight, gender, etc.).
    */
-  public value?: fhir.FhirString[];
+  public value: fhir.FhirString[];
   /**
    * Default constructor for MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics - initializes any required elements to null if a value is not provided.
    */
@@ -446,7 +446,7 @@ export class MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics e
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['characteristic']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property characteristic: fhir: MedicationKnowledge.administrationGuidelines.patientCharacteristics.characteristic[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property characteristic: fhir: MedicationKnowledge.administrationGuidelines.patientCharacteristics.characteristic[x]:' });
     }
     if (this["value"]) { this.value.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -489,7 +489,7 @@ export class MedicationKnowledgeAdministrationGuidelines extends fhir.BackboneEl
   /**
    * Dosage for the medication for the specific guidelines.
    */
-  public dosage?: fhir.MedicationKnowledgeAdministrationGuidelinesDosage[];
+  public dosage: fhir.MedicationKnowledgeAdministrationGuidelinesDosage[];
   /**
    * Indication for use that apply to the specific administration guidelines.
    */
@@ -501,7 +501,7 @@ export class MedicationKnowledgeAdministrationGuidelines extends fhir.BackboneEl
   /**
    * Characteristics of the patient that are relevant to the administration guidelines (for example, height, weight, gender, etc.).
    */
-  public patientCharacteristics?: fhir.MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics[];
+  public patientCharacteristics: fhir.MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics[];
   /**
    * Default constructor for MedicationKnowledgeAdministrationGuidelines - initializes any required elements to null if a value is not provided.
    */
@@ -554,7 +554,7 @@ export class MedicationKnowledgeMedicineClassification extends fhir.BackboneElem
   /**
    * Specific category assigned to the medication (e.g. anti-infective, anti-hypertensive, antibiotic, etc.).
    */
-  public classification?: fhir.CodeableConcept[];
+  public classification: fhir.CodeableConcept[];
   /**
    * Default constructor for MedicationKnowledgeMedicineClassification - initializes any required elements to null if a value is not provided.
    */
@@ -571,7 +571,7 @@ export class MedicationKnowledgeMedicineClassification extends fhir.BackboneElem
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: MedicationKnowledge.medicineClassification.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: MedicationKnowledge.medicineClassification.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["classification"]) { this.classification.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -743,11 +743,11 @@ export class MedicationKnowledgeRegulatorySubstitution extends fhir.BackboneElem
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: MedicationKnowledge.regulatory.substitution.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: MedicationKnowledge.regulatory.substitution.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['allowed']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property allowed:fhir.FhirBoolean fhir: MedicationKnowledge.regulatory.substitution.allowed:boolean', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property allowed:fhir.FhirBoolean fhir: MedicationKnowledge.regulatory.substitution.allowed:boolean' });
     }
     if (this["allowed"]) { issues.push(...this.allowed.doModelValidation()); }
     return issues;
@@ -789,7 +789,7 @@ export class MedicationKnowledgeRegulatorySchedule extends fhir.BackboneElement 
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['schedule']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property schedule:fhir.CodeableConcept fhir: MedicationKnowledge.regulatory.schedule.schedule:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property schedule:fhir.CodeableConcept fhir: MedicationKnowledge.regulatory.schedule.schedule:CodeableConcept' });
     }
     if (this["schedule"]) { issues.push(...this.schedule.doModelValidation()); }
     return issues;
@@ -840,7 +840,7 @@ export class MedicationKnowledgeRegulatoryMaxDispense extends fhir.BackboneEleme
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['quantity']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property quantity:fhir.Quantity fhir: MedicationKnowledge.regulatory.maxDispense.quantity:Quantity', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property quantity:fhir.Quantity fhir: MedicationKnowledge.regulatory.maxDispense.quantity:Quantity' });
     }
     if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
     if (this["period"]) { issues.push(...this.period.doModelValidation()); }
@@ -884,11 +884,11 @@ export class MedicationKnowledgeRegulatory extends fhir.BackboneElement {
   /**
    * Specifies if changes are allowed when dispensing a medication from a regulatory perspective.
    */
-  public substitution?: fhir.MedicationKnowledgeRegulatorySubstitution[];
+  public substitution: fhir.MedicationKnowledgeRegulatorySubstitution[];
   /**
    * Specifies the schedule of a medication in jurisdiction.
    */
-  public schedule?: fhir.MedicationKnowledgeRegulatorySchedule[];
+  public schedule: fhir.MedicationKnowledgeRegulatorySchedule[];
   /**
    * The maximum number of units of the medication that can be dispensed in a period.
    */
@@ -912,7 +912,7 @@ export class MedicationKnowledgeRegulatory extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['regulatoryAuthority']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property regulatoryAuthority:fhir.Reference fhir: MedicationKnowledge.regulatory.regulatoryAuthority:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property regulatoryAuthority:fhir.Reference fhir: MedicationKnowledge.regulatory.regulatoryAuthority:Reference' });
     }
     if (this["regulatoryAuthority"]) { issues.push(...this.regulatoryAuthority.doModelValidation()); }
     if (this["substitution"]) { this.substitution.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -950,11 +950,11 @@ export class MedicationKnowledgeKinetics extends fhir.BackboneElement {
   /**
    * The drug concentration measured at certain discrete points in time.
    */
-  public areaUnderCurve?: fhir.Quantity[];
+  public areaUnderCurve: fhir.Quantity[];
   /**
    * The median lethal dose of a drug.
    */
-  public lethalDose50?: fhir.Quantity[];
+  public lethalDose50: fhir.Quantity[];
   /**
    * The time required for any specified property (e.g., the concentration of a substance in the body) to decrease by half.
    */
@@ -996,7 +996,7 @@ export interface MedicationKnowledgeArgs extends fhir.DomainResourceArgs {
   /**
    * This status is intended to identify if the medication in a local system is in active use within a drug database or inventory.  For example, a pharmacy system may create a new drug file record for a compounded product "ABC Hospital Special Cream" with an active status.  At some point in the future, it may be determined that the drug record was created with an error and the status is changed to "entered in error".   This status is not intended to specify if a medication is part of a particular formulary.  It is possible that the drug record may be referenced by multiple formularies or catalogues and each of those entries would have a separate status.
    */
-  status?: MedicationknowledgeStatusCodeType|undefined;
+  status?: fhir.FhirCode<MedicationknowledgeStatusCodeType>|string|undefined;
   /**
    * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
    */
@@ -1098,7 +1098,7 @@ export class MedicationKnowledge extends fhir.DomainResource {
   /**
    * This status is intended to identify if the medication in a local system is in active use within a drug database or inventory.  For example, a pharmacy system may create a new drug file record for a compounded product "ABC Hospital Special Cream" with an active status.  At some point in the future, it may be determined that the drug record was created with an error and the status is changed to "entered in error".   This status is not intended to specify if a medication is part of a particular formulary.  It is possible that the drug record may be referenced by multiple formularies or catalogues and each of those entries would have a separate status.
    */
-  public status?: MedicationknowledgeStatusCodeType|undefined;
+  public status?: fhir.FhirCode<MedicationknowledgeStatusCodeType>|undefined;
   /**
    * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
    */
@@ -1114,27 +1114,27 @@ export class MedicationKnowledge extends fhir.DomainResource {
   /**
    * Additional names for a medication, for example, the name(s) given to a medication in different countries.  For example, acetaminophen and paracetamol or salbutamol and albuterol.
    */
-  public synonym?: fhir.FhirString[];
+  public synonym: fhir.FhirString[];
   /**
    * Associated or related knowledge about a medication.
    */
-  public relatedMedicationKnowledge?: fhir.MedicationKnowledgeRelatedMedicationKnowledge[];
+  public relatedMedicationKnowledge: fhir.MedicationKnowledgeRelatedMedicationKnowledge[];
   /**
    * Associated or related medications.  For example, if the medication is a branded product (e.g. Crestor), this is the Therapeutic Moeity (e.g. Rosuvastatin) or if this is a generic medication (e.g. Rosuvastatin), this would link to a branded product (e.g. Crestor).
    */
-  public associatedMedication?: fhir.Reference[];
+  public associatedMedication: fhir.Reference[];
   /**
    * Category of the medication or product (e.g. branded product, therapeutic moeity, generic product, innovator product, etc.).
    */
-  public productType?: fhir.CodeableConcept[];
+  public productType: fhir.CodeableConcept[];
   /**
    * Associated documentation about the medication.
    */
-  public monograph?: fhir.MedicationKnowledgeMonograph[];
+  public monograph: fhir.MedicationKnowledgeMonograph[];
   /**
    * Identifies a particular constituent of interest in the product.
    */
-  public ingredient?: fhir.MedicationKnowledgeIngredient[];
+  public ingredient: fhir.MedicationKnowledgeIngredient[];
   /**
    * The instructions for preparing the medication.
    */
@@ -1142,23 +1142,23 @@ export class MedicationKnowledge extends fhir.DomainResource {
   /**
    * The intended or approved route of administration.
    */
-  public intendedRoute?: fhir.CodeableConcept[];
+  public intendedRoute: fhir.CodeableConcept[];
   /**
    * The price of the medication.
    */
-  public cost?: fhir.MedicationKnowledgeCost[];
+  public cost: fhir.MedicationKnowledgeCost[];
   /**
    * The program under which the medication is reviewed.
    */
-  public monitoringProgram?: fhir.MedicationKnowledgeMonitoringProgram[];
+  public monitoringProgram: fhir.MedicationKnowledgeMonitoringProgram[];
   /**
    * Guidelines for the administration of the medication.
    */
-  public administrationGuidelines?: fhir.MedicationKnowledgeAdministrationGuidelines[];
+  public administrationGuidelines: fhir.MedicationKnowledgeAdministrationGuidelines[];
   /**
    * Categorization of the medication within a formulary or classification system.
    */
-  public medicineClassification?: fhir.MedicationKnowledgeMedicineClassification[];
+  public medicineClassification: fhir.MedicationKnowledgeMedicineClassification[];
   /**
    * Information that only applies to packages (not products).
    */
@@ -1166,19 +1166,19 @@ export class MedicationKnowledge extends fhir.DomainResource {
   /**
    * Specifies descriptive properties of the medicine, such as color, shape, imprints, etc.
    */
-  public drugCharacteristic?: fhir.MedicationKnowledgeDrugCharacteristic[];
+  public drugCharacteristic: fhir.MedicationKnowledgeDrugCharacteristic[];
   /**
    * Potential clinical issue with or between medication(s) (for example, drug-drug interaction, drug-disease contraindication, drug-allergy interaction, etc.).
    */
-  public contraindication?: fhir.Reference[];
+  public contraindication: fhir.Reference[];
   /**
    * Regulatory information about a medication.
    */
-  public regulatory?: fhir.MedicationKnowledgeRegulatory[];
+  public regulatory: fhir.MedicationKnowledgeRegulatory[];
   /**
    * The time course of drug absorption, distribution, metabolism and excretion of a medication from the body.
    */
-  public kinetics?: fhir.MedicationKnowledgeKinetics[];
+  public kinetics: fhir.MedicationKnowledgeKinetics[];
   /**
    * Default constructor for MedicationKnowledge - initializes any required elements to null if a value is not provided.
    */
@@ -1186,7 +1186,7 @@ export class MedicationKnowledge extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'MedicationKnowledge';
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<MedicationknowledgeStatusCodeType>({value: source.status}); }
     if (source['manufacturer']) { this.manufacturer = new fhir.Reference(source.manufacturer); }
     if (source['doseForm']) { this.doseForm = new fhir.CodeableConcept(source.doseForm); }
     if (source['amount']) { this.amount = new fhir.Quantity(source.amount); }
@@ -1226,8 +1226,8 @@ export class MedicationKnowledge extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (MedicationKnowledge.status)
    */
-  public static statusRequiredCoding():MedicationknowledgeStatusCodingType {
-    return MedicationknowledgeStatusCodings;
+  public static get statusRequiredCodes() {
+    return MedicationknowledgeStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -1235,9 +1235,13 @@ export class MedicationKnowledge extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicationKnowledge" fhir: MedicationKnowledge.resourceType:"MedicationKnowledge"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicationKnowledge" fhir: MedicationKnowledge.resourceType:"MedicationKnowledge"' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this['status'] && (!Object.values(MedicationknowledgeStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<MedicationknowledgeStatusCodeType> fhir: MedicationKnowledge.status:code Required binding to: MedicationknowledgeStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["manufacturer"]) { issues.push(...this.manufacturer.doModelValidation()); }
     if (this["doseForm"]) { issues.push(...this.doseForm.doModelValidation()); }
     if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }

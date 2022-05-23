@@ -8,6 +8,10 @@ export interface CatalogEntryRelatedEntry extends fhir.BackboneElement {
      */
     relationtype: 'is-replaced-by' | 'triggers' | null;
     /**
+     * Extended properties for primitive element: CatalogEntry.relatedEntry.relationtype
+     */
+    _relationtype?: fhir.FhirElement;
+    /**
      * The reference to the related item.
      */
     item: fhir.Reference | null;
@@ -52,6 +56,10 @@ export interface CatalogEntry extends fhir.DomainResource {
      * Used to support catalog exchange even for unsupported products, e.g. getting list of medications even if not prescribable.
      */
     status?: 'active' | 'draft' | 'retired' | 'unknown' | undefined;
+    /**
+     * Extended properties for primitive element: CatalogEntry.status
+     */
+    _status?: fhir.FhirElement;
     /**
      * The time period in which this catalog entry is expected to be active.
      */

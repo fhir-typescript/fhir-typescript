@@ -97,6 +97,10 @@ export interface CapabilityStatementRestResourceInteraction extends fhir.Backbon
    */
   code: 'create'|'delete'|'history-instance'|'history-type'|'patch'|'read'|'search-type'|'update'|'vread'|null;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.interaction.code
+   */
+  _code?:fhir.FhirElement;
+  /**
    * Guidance specific to the implementation of this operation, such as 'delete is a logical delete' or 'updates are only allowed with version id' or 'creates permitted from pre-authorized certificates only'.
    */
   documentation?: string|undefined;
@@ -130,6 +134,10 @@ export interface CapabilityStatementRestResourceSearchParam extends fhir.Backbon
    * While this can be looked up from the definition, it is included here as a convenience for systems that autogenerate a query interface based on the server capability statement.  It SHALL be the same as the type in the search parameter definition.
    */
   type: 'composite'|'date'|'number'|'quantity'|'reference'|'special'|'string'|'token'|'uri'|null;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.searchParam.type
+   */
+  _type?:fhir.FhirElement;
   /**
    * This allows documentation of any distinct behaviors about how the search parameter is used.  For example, text matching algorithms.
    */
@@ -216,6 +224,10 @@ export interface CapabilityStatementRestResource extends fhir.BackboneElement {
    */
   versioning?: 'no-version'|'versioned'|'versioned-update'|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.versioning
+   */
+  _versioning?:fhir.FhirElement;
+  /**
    * It is useful to support the vRead operation for current operations, even if past versions aren't available.
    */
   readHistory?: boolean|undefined;
@@ -244,6 +256,10 @@ export interface CapabilityStatementRestResource extends fhir.BackboneElement {
    */
   conditionalRead?: 'full-support'|'modified-since'|'not-match'|'not-supported'|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.conditionalRead
+   */
+  _conditionalRead?:fhir.FhirElement;
+  /**
    * Conditional Update is mainly appropriate for interface engine scripts converting from other formats, such as v2.
    */
   conditionalUpdate?: boolean|undefined;
@@ -256,9 +272,17 @@ export interface CapabilityStatementRestResource extends fhir.BackboneElement {
    */
   conditionalDelete?: 'multiple'|'not-supported'|'single'|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.conditionalDelete
+   */
+  _conditionalDelete?:fhir.FhirElement;
+  /**
    * A set of flags that defines how references are supported.
    */
   referencePolicy?: ('enforced'|'literal'|'local'|'logical'|'resolves')[]|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.referencePolicy
+   */
+  _referencePolicy?:(fhir.FhirElement|null)[];
   /**
    * If this list is empty, the server does not support includes.
    */
@@ -295,6 +319,10 @@ export interface CapabilityStatementRestInteraction extends fhir.BackboneElement
    */
   code: 'batch'|'history-system'|'search-system'|'transaction'|null;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.interaction.code
+   */
+  _code?:fhir.FhirElement;
+  /**
    * Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.
    */
   documentation?: string|undefined;
@@ -312,6 +340,10 @@ export interface CapabilityStatementRest extends fhir.BackboneElement {
    * Identifies whether this portion of the statement is describing the ability to initiate or receive restful operations.
    */
   mode: 'client'|'server'|null;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.mode
+   */
+  _mode?:fhir.FhirElement;
   /**
    * Information about the system's restful capabilities that apply across all applications, such as security.
    */
@@ -377,6 +409,10 @@ export interface CapabilityStatementMessagingSupportedMessage extends fhir.Backb
    */
   mode: 'receiver'|'sender'|null;
   /**
+   * Extended properties for primitive element: CapabilityStatement.messaging.supportedMessage.mode
+   */
+  _mode?:fhir.FhirElement;
+  /**
    * Points to a message definition that identifies the messaging event, message structure, allowed responses, etc.
    */
   definition: string|null;
@@ -424,6 +460,10 @@ export interface CapabilityStatementDocument extends fhir.BackboneElement {
    * Mode of this document declaration - whether an application is a producer or consumer.
    */
   mode: 'consumer'|'producer'|null;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.document.mode
+   */
+  _mode?:fhir.FhirElement;
   /**
    * A description of how the application supports or uses the specified document profile.  For example, when documents are created, what action is taken with consumed documents, etc.
    */
@@ -489,6 +529,10 @@ export interface CapabilityStatement extends fhir.DomainResource {
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
   /**
+   * Extended properties for primitive element: CapabilityStatement.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Allows filtering of capability statements that are appropriate for use versus not.
    */
   experimental?: boolean|undefined;
@@ -552,6 +596,10 @@ export interface CapabilityStatement extends fhir.DomainResource {
    * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
    */
   kind: 'capability'|'instance'|'requirements'|null;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.kind
+   */
+  _kind?:fhir.FhirElement;
   /**
    * HL7 defines the following Services: [Terminology Service](terminology-service.html).    
    * Many [Implementation Guides](http://fhir.org/guides/registry) define additional services.

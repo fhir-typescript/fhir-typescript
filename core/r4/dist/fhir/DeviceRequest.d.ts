@@ -1,9 +1,6 @@
 import * as fhir from '../fhir.js';
-import { RequestStatusCodingType } from '../fhirValueSets/RequestStatusCodings.js';
 import { RequestStatusCodeType } from '../fhirValueSets/RequestStatusCodes.js';
-import { RequestIntentCodingType } from '../fhirValueSets/RequestIntentCodings.js';
 import { RequestIntentCodeType } from '../fhirValueSets/RequestIntentCodes.js';
-import { RequestPriorityCodingType } from '../fhirValueSets/RequestPriorityCodings.js';
 import { RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
 /**
  * Valid arguments for the DeviceRequestParameter type.
@@ -98,15 +95,15 @@ export interface DeviceRequestArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains the codes cancelled and entered-in-error that mark the request as not currently valid.
      */
-    status?: RequestStatusCodeType | undefined;
+    status?: fhir.FhirCode<RequestStatusCodeType> | string | undefined;
     /**
      * Whether the request is a proposal, plan, an original order or a reflex order.
      */
-    intent: RequestIntentCodeType | null;
+    intent: fhir.FhirCode<RequestIntentCodeType> | string | undefined;
     /**
      * Indicates how quickly the {{title}} should be addressed with respect to other requests.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
     /**
      * The details of the device to be used.
      */
@@ -205,23 +202,23 @@ export declare class DeviceRequest extends fhir.DomainResource {
     /**
      * Identifiers assigned to this order by the orderer or by the receiver.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Note: This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    instantiatesCanonical?: fhir.FhirCanonical[];
+    instantiatesCanonical: fhir.FhirCanonical[];
     /**
      * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
      */
-    instantiatesUri?: fhir.FhirUri[];
+    instantiatesUri: fhir.FhirUri[];
     /**
      * Plan/proposal/order fulfilled by this request.
      */
-    basedOn?: fhir.Reference[];
+    basedOn: fhir.Reference[];
     /**
      * The request takes the place of the referenced completed or terminated request(s).
      */
-    priorRequest?: fhir.Reference[];
+    priorRequest: fhir.Reference[];
     /**
      * Composite request this is part of.
      */
@@ -229,15 +226,15 @@ export declare class DeviceRequest extends fhir.DomainResource {
     /**
      * This element is labeled as a modifier because the status contains the codes cancelled and entered-in-error that mark the request as not currently valid.
      */
-    status?: RequestStatusCodeType | undefined;
+    status?: fhir.FhirCode<RequestStatusCodeType> | undefined;
     /**
      * Whether the request is a proposal, plan, an original order or a reflex order.
      */
-    intent: RequestIntentCodeType | null;
+    intent: fhir.FhirCode<RequestIntentCodeType> | null;
     /**
      * Indicates how quickly the {{title}} should be addressed with respect to other requests.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | undefined;
     /**
      * The details of the device to be used.
      */
@@ -249,7 +246,7 @@ export declare class DeviceRequest extends fhir.DomainResource {
     /**
      * Specific parameters for the ordered item.  For example, the prism value for lenses.
      */
-    parameter?: fhir.DeviceRequestParameter[];
+    parameter: fhir.DeviceRequestParameter[];
     /**
      * The patient who will use the device.
      */
@@ -285,29 +282,29 @@ export declare class DeviceRequest extends fhir.DomainResource {
     /**
      * Reason or justification for the use of this device.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * Reason or justification for the use of this device.
      */
-    reasonReference?: fhir.Reference[];
+    reasonReference: fhir.Reference[];
     /**
      * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be required for delivering the requested service.
      */
-    insurance?: fhir.Reference[];
+    insurance: fhir.Reference[];
     /**
      * Additional clinical information about the patient that may influence the request fulfilment.  For example, this may include where on the subject's body the device will be used (i.e. the target site).
      */
-    supportingInfo?: fhir.Reference[];
+    supportingInfo: fhir.Reference[];
     /**
      * Details about this request that were not represented at all or sufficiently in one of the attributes provided in a class. These may include for example a comment, an instruction, or a note associated with the statement.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * This might not include provenances for all versions of the request - only those deemed "relevant" or important.
      * This SHALL NOT include the Provenance associated with this current version of the resource.  (If that provenance is deemed to be a "relevant" change, it will need to be added as part of a later update.  Until then, it can be queried directly as the Provenance that points to this version using _revinclude
      * All Provenances should have some historical version of this Request as their subject.
      */
-    relevantHistory?: fhir.Reference[];
+    relevantHistory: fhir.Reference[];
     /**
      * Default constructor for DeviceRequest - initializes any required elements to null if a value is not provided.
      */
@@ -315,15 +312,38 @@ export declare class DeviceRequest extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (DeviceRequest.status)
      */
-    static statusRequiredCoding(): RequestStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Completed: "completed";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+        readonly OnHold: "on-hold";
+        readonly Revoked: "revoked";
+        readonly Unknown: "unknown";
+    };
     /**
      * Required-bound Value Set for intent (DeviceRequest.intent)
      */
-    static intentRequiredCoding(): RequestIntentCodingType;
+    static get intentRequiredCodes(): {
+        readonly Directive: "directive";
+        readonly FillerOrder: "filler-order";
+        readonly InstanceOrder: "instance-order";
+        readonly Option: "option";
+        readonly Order: "order";
+        readonly OriginalOrder: "original-order";
+        readonly Plan: "plan";
+        readonly Proposal: "proposal";
+        readonly ReflexOrder: "reflex-order";
+    };
     /**
      * Required-bound Value Set for priority (DeviceRequest.priority)
      */
-    static priorityRequiredCoding(): RequestPriorityCodingType;
+    static get priorityRequiredCodes(): {
+        readonly ASAP: "asap";
+        readonly Routine: "routine";
+        readonly STAT: "stat";
+        readonly Urgent: "urgent";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -53,6 +53,10 @@ export interface StructureDefinitionContext extends fhir.BackboneElement {
    */
   type: 'element'|'extension'|'fhirpath'|null;
   /**
+   * Extended properties for primitive element: StructureDefinition.context.type
+   */
+  _type?:fhir.FhirElement;
+  /**
    * An expression that defines where an extension can be used in resources.
    */
   expression: string|null;
@@ -137,6 +141,10 @@ export interface StructureDefinition extends fhir.DomainResource {
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
   /**
+   * Extended properties for primitive element: StructureDefinition.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Allows filtering of structure definitions that are appropriate for use versus not.
    */
   experimental?: boolean|undefined;
@@ -217,6 +225,10 @@ export interface StructureDefinition extends fhir.DomainResource {
    */
   kind: 'complex-type'|'logical'|'primitive-type'|'resource'|null;
   /**
+   * Extended properties for primitive element: StructureDefinition.kind
+   */
+  _kind?:fhir.FhirElement;
+  /**
    * Abstract Resources cannot be instantiated - a concrete sub-type must be used. Abstract datatypes and extensions cannot be used in an instance. For logical models, the exact implication of "abstract" will rest with the author, depending how the logical model is used. Flagging a constraint structure as abstract conveys design intent but makes no difference to how the structure definition is handled. Note that inline declared elements that are given the type "Element" in the StructureDefinition, but have children described, are anonymous concrete types that specialize Element.
    */
   abstract: boolean|null;
@@ -257,6 +269,10 @@ export interface StructureDefinition extends fhir.DomainResource {
    * If the definition is a specialization, then it adds new elements in the differential, and the snapshot includes the inherited elements.  If the definition is a constraint, then it cannot define new elements, it can only make new rules about existing content (see [Profiling Resources](profiling.html#resources)).
    */
   derivation?: 'constraint'|'specialization'|undefined;
+  /**
+   * Extended properties for primitive element: StructureDefinition.derivation
+   */
+  _derivation?:fhir.FhirElement;
   /**
    * A snapshot view is expressed in a standalone form that can be used and interpreted without considering the base StructureDefinition.
    */

@@ -1,7 +1,4 @@
 import * as fhir from '../fhir.js';
-import { SeriesPerformerFunctionCodingType } from '../fhirValueSets/SeriesPerformerFunctionCodings.js';
-import { DicomCid29AcquisitionModalityCodingType } from '../fhirValueSets/DicomCid29AcquisitionModalityCodings.js';
-import { ImagingstudyStatusCodingType } from '../fhirValueSets/ImagingstudyStatusCodings.js';
 import { ImagingstudyStatusCodeType } from '../fhirValueSets/ImagingstudyStatusCodes.js';
 /**
  * Valid arguments for the ImagingStudySeriesPerformer type.
@@ -39,7 +36,16 @@ export declare class ImagingStudySeriesPerformer extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for function (ImagingStudy.series.performer.function)
      */
-    static functionExtensibleCoding(): SeriesPerformerFunctionCodingType;
+    static get functionExtensibleCodings(): {
+        readonly Consultant: fhir.Coding;
+        readonly Performer: fhir.Coding;
+        readonly Referrer: fhir.Coding;
+        /**
+         * If the person who performed the series is not known, their Organization may be recorded. A patient, or related person, may be the performer, e.g. for patient-captured images.
+         */
+        readonly SecondaryPerformer: fhir.Coding;
+        readonly Verifier: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -183,7 +189,7 @@ export declare class ImagingStudySeries extends fhir.BackboneElement {
     /**
      * Typical endpoint types include DICOM WADO-RS, which is used to retrieve DICOM instances in native or rendered (e.g., JPG, PNG) formats using a RESTful API; DICOM WADO-URI, which can similarly retrieve native or rendered instances, except using an HTTP query-based approach; and DICOM QIDO-RS, which allows RESTful query for DICOM information without retrieving the actual instances.
      */
-    endpoint?: fhir.Reference[];
+    endpoint: fhir.Reference[];
     /**
      * The anatomic structures examined. See DICOM Part 16 Annex L (http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html) for DICOM to SNOMED-CT mappings. The bodySite may indicate the laterality of body part imaged; if so, it shall be consistent with any content of ImagingStudy.series.laterality.
      */
@@ -195,7 +201,7 @@ export declare class ImagingStudySeries extends fhir.BackboneElement {
     /**
      * The specimen imaged, e.g., for whole slide imaging of a biopsy.
      */
-    specimen?: fhir.Reference[];
+    specimen: fhir.Reference[];
     /**
      * The date and time the series was started.
      */
@@ -203,11 +209,11 @@ export declare class ImagingStudySeries extends fhir.BackboneElement {
     /**
      * If the person who performed the series is not known, their Organization may be recorded. A patient, or related person, may be the performer, e.g. for patient-captured images.
      */
-    performer?: fhir.ImagingStudySeriesPerformer[];
+    performer: fhir.ImagingStudySeriesPerformer[];
     /**
      * A single SOP instance within the series, e.g. an image, or presentation state.
      */
-    instance?: fhir.ImagingStudySeriesInstance[];
+    instance: fhir.ImagingStudySeriesInstance[];
     /**
      * Default constructor for ImagingStudySeries - initializes any required elements to null if a value is not provided.
      */
@@ -215,7 +221,45 @@ export declare class ImagingStudySeries extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for modality (ImagingStudy.series.modality)
      */
-    static modalityExtensibleCoding(): DicomCid29AcquisitionModalityCodingType;
+    static get modalityExtensibleCodings(): {
+        readonly Autorefraction: fhir.Coding;
+        readonly UltrasoundBoneDensitometry: fhir.Coding;
+        readonly BoneMineralDensitometry: fhir.Coding;
+        readonly ComputedRadiography: fhir.Coding;
+        readonly ComputedTomography: fhir.Coding;
+        readonly DigitalRadiography: fhir.Coding;
+        readonly Electrocardiography: fhir.Coding;
+        readonly CardiacElectrophysiology: fhir.Coding;
+        readonly Endoscopy: fhir.Coding;
+        readonly GeneralMicroscopy: fhir.Coding;
+        readonly HemodynamicWaveform: fhir.Coding;
+        readonly IntraOralRadiography: fhir.Coding;
+        readonly IntravascularOpticalCoherenceTomography: fhir.Coding;
+        readonly IntravascularUltrasound: fhir.Coding;
+        readonly Keratometry: fhir.Coding;
+        readonly Lensometry: fhir.Coding;
+        readonly Mammography: fhir.Coding;
+        readonly MagneticResonance: fhir.Coding;
+        readonly NuclearMedicine: fhir.Coding;
+        readonly OphthalmicAxialMeasurements: fhir.Coding;
+        readonly OpticalCoherenceTomography: fhir.Coding;
+        readonly OphthalmicPhotography: fhir.Coding;
+        readonly OphthalmicMapping: fhir.Coding;
+        readonly OphthalmicRefraction: fhir.Coding;
+        readonly OphthalmicTomography: fhir.Coding;
+        readonly OphthalmicVisualField: fhir.Coding;
+        readonly OpticalSurvaceScanner: fhir.Coding;
+        readonly PositronEmissionTomography: fhir.Coding;
+        readonly PanoramicXRay: fhir.Coding;
+        readonly Radiofluoroscopy: fhir.Coding;
+        readonly RadiographicImaging: fhir.Coding;
+        readonly SlideMicroscopy: fhir.Coding;
+        readonly SubjectiveRefraction: fhir.Coding;
+        readonly Ultrasound: fhir.Coding;
+        readonly VisualAcuity: fhir.Coding;
+        readonly XRayAngiography: fhir.Coding;
+        readonly ExternalCameraPhotography: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -236,7 +280,7 @@ export interface ImagingStudyArgs extends fhir.DomainResourceArgs {
     /**
      * Unknown does not represent "other" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.
      */
-    status: ImagingstudyStatusCodeType | null;
+    status: fhir.FhirCode<ImagingstudyStatusCodeType> | string | undefined;
     /**
      * A list of all the series.modality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
      */
@@ -325,15 +369,15 @@ export declare class ImagingStudy extends fhir.DomainResource {
     /**
      * See discussion under [Imaging Study Implementation Notes](imagingstudy.html#notes) for encoding of DICOM Study Instance UID. Accession Number should use ACSN Identifier type.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Unknown does not represent "other" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.
      */
-    status: ImagingstudyStatusCodeType | null;
+    status: fhir.FhirCode<ImagingstudyStatusCodeType> | null;
     /**
      * A list of all the series.modality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
      */
-    modality?: fhir.Coding[];
+    modality: fhir.Coding[];
     /**
      * QA phantoms can be recorded with a Device; multiple subjects (such as mice) can be recorded with a Group.
      */
@@ -349,7 +393,7 @@ export declare class ImagingStudy extends fhir.DomainResource {
     /**
      * A list of the diagnostic requests that resulted in this imaging study being performed.
      */
-    basedOn?: fhir.Reference[];
+    basedOn: fhir.Reference[];
     /**
      * The requesting/referring physician.
      */
@@ -357,11 +401,11 @@ export declare class ImagingStudy extends fhir.DomainResource {
     /**
      * Who read the study and interpreted the images or other content.
      */
-    interpreter?: fhir.Reference[];
+    interpreter: fhir.Reference[];
     /**
      * Typical endpoint types include DICOM WADO-RS, which is used to retrieve DICOM instances in native or rendered (e.g., JPG, PNG), formats using a RESTful API; DICOM WADO-URI, which can similarly retrieve native or rendered instances, except using an HTTP query-based approach; DICOM QIDO-RS, which allows RESTful query for DICOM information without retrieving the actual instances; or IHE Invoke Image Display (IID), which provides standard invocation of an imaging web viewer.
      */
-    endpoint?: fhir.Reference[];
+    endpoint: fhir.Reference[];
     /**
      * Number of Series in the Study. This value given may be larger than the number of series elements this Resource contains due to resource availability, security, or other factors. This element should be present if any series elements are present.
      */
@@ -377,7 +421,7 @@ export declare class ImagingStudy extends fhir.DomainResource {
     /**
      * The code for the performed procedure type.
      */
-    procedureCode?: fhir.CodeableConcept[];
+    procedureCode: fhir.CodeableConcept[];
     /**
      * The principal physical location where the ImagingStudy was performed.
      */
@@ -385,15 +429,15 @@ export declare class ImagingStudy extends fhir.DomainResource {
     /**
      * Description of clinical condition indicating why the ImagingStudy was requested.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * Indicates another resource whose existence justifies this Study.
      */
-    reasonReference?: fhir.Reference[];
+    reasonReference: fhir.Reference[];
     /**
      * Per the recommended DICOM mapping, this element is derived from the Study Description attribute (0008,1030). Observations or findings about the imaging study should be recorded in another resource, e.g. Observation, and not in this element.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * The Imaging Manager description of the study. Institution-generated description or classification of the Study (component) performed.
      */
@@ -401,7 +445,7 @@ export declare class ImagingStudy extends fhir.DomainResource {
     /**
      * Each study has one or more series of images or other content.
      */
-    series?: fhir.ImagingStudySeries[];
+    series: fhir.ImagingStudySeries[];
     /**
      * Default constructor for ImagingStudy - initializes any required elements to null if a value is not provided.
      */
@@ -409,11 +453,55 @@ export declare class ImagingStudy extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (ImagingStudy.status)
      */
-    static statusRequiredCoding(): ImagingstudyStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Available: "available";
+        readonly Cancelled: "cancelled";
+        readonly EnteredInError: "entered-in-error";
+        readonly Registered: "registered";
+        readonly Unknown: "unknown";
+    };
     /**
      * Extensible-bound Value Set for modality (ImagingStudy.modality)
      */
-    static modalityExtensibleCoding(): DicomCid29AcquisitionModalityCodingType;
+    static get modalityExtensibleCodings(): {
+        readonly Autorefraction: fhir.Coding;
+        readonly UltrasoundBoneDensitometry: fhir.Coding;
+        readonly BoneMineralDensitometry: fhir.Coding;
+        readonly ComputedRadiography: fhir.Coding;
+        readonly ComputedTomography: fhir.Coding;
+        readonly DigitalRadiography: fhir.Coding;
+        readonly Electrocardiography: fhir.Coding;
+        readonly CardiacElectrophysiology: fhir.Coding;
+        readonly Endoscopy: fhir.Coding;
+        readonly GeneralMicroscopy: fhir.Coding;
+        readonly HemodynamicWaveform: fhir.Coding;
+        readonly IntraOralRadiography: fhir.Coding;
+        readonly IntravascularOpticalCoherenceTomography: fhir.Coding;
+        readonly IntravascularUltrasound: fhir.Coding;
+        readonly Keratometry: fhir.Coding;
+        readonly Lensometry: fhir.Coding;
+        readonly Mammography: fhir.Coding;
+        readonly MagneticResonance: fhir.Coding;
+        readonly NuclearMedicine: fhir.Coding;
+        readonly OphthalmicAxialMeasurements: fhir.Coding;
+        readonly OpticalCoherenceTomography: fhir.Coding;
+        readonly OphthalmicPhotography: fhir.Coding;
+        readonly OphthalmicMapping: fhir.Coding;
+        readonly OphthalmicRefraction: fhir.Coding;
+        readonly OphthalmicTomography: fhir.Coding;
+        readonly OphthalmicVisualField: fhir.Coding;
+        readonly OpticalSurvaceScanner: fhir.Coding;
+        readonly PositronEmissionTomography: fhir.Coding;
+        readonly PanoramicXRay: fhir.Coding;
+        readonly Radiofluoroscopy: fhir.Coding;
+        readonly RadiographicImaging: fhir.Coding;
+        readonly SlideMicroscopy: fhir.Coding;
+        readonly SubjectiveRefraction: fhir.Coding;
+        readonly Ultrasound: fhir.Coding;
+        readonly VisualAcuity: fhir.Coding;
+        readonly XRayAngiography: fhir.Coding;
+        readonly ExternalCameraPhotography: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

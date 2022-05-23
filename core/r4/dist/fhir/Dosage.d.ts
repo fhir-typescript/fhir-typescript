@@ -162,7 +162,7 @@ export declare class Dosage extends fhir.BackboneElement {
     /**
      * Information about administration or preparation of the medication (e.g. "infuse as rapidly as possibly via intraperitoneal port" or "immediately following drug x") should be populated in dosage.text.
      */
-    additionalInstruction?: fhir.CodeableConcept[];
+    additionalInstruction: fhir.CodeableConcept[];
     /**
      * Instructions in terms that are understood by the patient or consumer.
      */
@@ -194,7 +194,7 @@ export declare class Dosage extends fhir.BackboneElement {
     /**
      * The amount of medication administered.
      */
-    doseAndRate?: fhir.DosageDoseAndRate[];
+    doseAndRate: fhir.DosageDoseAndRate[];
     /**
      * This is intended for use as an adjunct to the dosage when there is an upper cap.  For example "2 tablets every 4 hours to a maximum of 8/day".
      */

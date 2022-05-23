@@ -35,7 +35,7 @@ export declare class SubstanceReferenceInformationGene extends fhir.BackboneElem
     /**
      * Todo.
      */
-    source?: fhir.Reference[];
+    source: fhir.Reference[];
     /**
      * Default constructor for SubstanceReferenceInformationGene - initializes any required elements to null if a value is not provided.
      */
@@ -81,7 +81,7 @@ export declare class SubstanceReferenceInformationGeneElement extends fhir.Backb
     /**
      * Todo.
      */
-    source?: fhir.Reference[];
+    source: fhir.Reference[];
     /**
      * Default constructor for SubstanceReferenceInformationGeneElement - initializes any required elements to null if a value is not provided.
      */
@@ -131,11 +131,11 @@ export declare class SubstanceReferenceInformationClassification extends fhir.Ba
     /**
      * Todo.
      */
-    subtype?: fhir.CodeableConcept[];
+    subtype: fhir.CodeableConcept[];
     /**
      * Todo.
      */
-    source?: fhir.Reference[];
+    source: fhir.Reference[];
     /**
      * Default constructor for SubstanceReferenceInformationClassification - initializes any required elements to null if a value is not provided.
      */
@@ -237,7 +237,7 @@ export declare class SubstanceReferenceInformationTarget extends fhir.BackboneEl
     /**
      * Todo.
      */
-    source?: fhir.Reference[];
+    source: fhir.Reference[];
     /**
      * Default constructor for SubstanceReferenceInformationTarget - initializes any required elements to null if a value is not provided.
      */
@@ -295,19 +295,19 @@ export declare class SubstanceReferenceInformation extends fhir.DomainResource {
     /**
      * Todo.
      */
-    gene?: fhir.SubstanceReferenceInformationGene[];
+    gene: fhir.SubstanceReferenceInformationGene[];
     /**
      * Todo.
      */
-    geneElement?: fhir.SubstanceReferenceInformationGeneElement[];
+    geneElement: fhir.SubstanceReferenceInformationGeneElement[];
     /**
      * Todo.
      */
-    classification?: fhir.SubstanceReferenceInformationClassification[];
+    classification: fhir.SubstanceReferenceInformationClassification[];
     /**
      * Todo.
      */
-    target?: fhir.SubstanceReferenceInformationTarget[];
+    target: fhir.SubstanceReferenceInformationTarget[];
     /**
      * Default constructor for SubstanceReferenceInformation - initializes any required elements to null if a value is not provided.
      */

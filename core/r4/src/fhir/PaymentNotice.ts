@@ -28,7 +28,7 @@ export interface PaymentNoticeArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status: FmStatusCodeType|null;
+  status: fhir.FhirCode<FmStatusCodeType>|string|undefined;
   /**
    * Reference of resource for which payment is being made.
    */
@@ -86,11 +86,11 @@ export class PaymentNotice extends fhir.DomainResource {
   /**
    * A unique identifier assigned to this payment notice.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status: FmStatusCodeType|null;
+  public status: fhir.FhirCode<FmStatusCodeType>|null;
   /**
    * Reference of resource for which payment is being made.
    */
@@ -139,7 +139,7 @@ export class PaymentNotice extends fhir.DomainResource {
     this.resourceType = 'PaymentNotice';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['request']) { this.request = new fhir.Reference(source.request); }
     if (source['response']) { this.response = new fhir.Reference(source.response); }
@@ -159,8 +159,8 @@ export class PaymentNotice extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (PaymentNotice.status)
    */
-  public static statusRequiredCoding():FmStatusCodingType {
-    return FmStatusCodings;
+  public static get statusRequiredCodes() {
+    return FmStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -168,31 +168,35 @@ export class PaymentNotice extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"PaymentNotice" fhir: PaymentNotice.resourceType:"PaymentNotice"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"PaymentNotice" fhir: PaymentNotice.resourceType:"PaymentNotice"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:FmStatusCodeType fhir: PaymentNotice.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<FmStatusCodeType> fhir: PaymentNotice.status:code' });
     }
+    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<FmStatusCodeType> fhir: PaymentNotice.status:code Required binding to: FmStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["request"]) { issues.push(...this.request.doModelValidation()); }
     if (this["response"]) { issues.push(...this.response.doModelValidation()); }
     if (!this['created']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property created:fhir.FhirDateTime fhir: PaymentNotice.created:dateTime', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property created:fhir.FhirDateTime fhir: PaymentNotice.created:dateTime' });
     }
     if (this["created"]) { issues.push(...this.created.doModelValidation()); }
     if (this["provider"]) { issues.push(...this.provider.doModelValidation()); }
     if (!this['payment']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property payment:fhir.Reference fhir: PaymentNotice.payment:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property payment:fhir.Reference fhir: PaymentNotice.payment:Reference' });
     }
     if (this["payment"]) { issues.push(...this.payment.doModelValidation()); }
     if (this["paymentDate"]) { issues.push(...this.paymentDate.doModelValidation()); }
     if (this["payee"]) { issues.push(...this.payee.doModelValidation()); }
     if (!this['recipient']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property recipient:fhir.Reference fhir: PaymentNotice.recipient:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recipient:fhir.Reference fhir: PaymentNotice.recipient:Reference' });
     }
     if (this["recipient"]) { issues.push(...this.recipient.doModelValidation()); }
     if (!this['amount']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property amount:fhir.Money fhir: PaymentNotice.amount:Money', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property amount:fhir.Money fhir: PaymentNotice.amount:Money' });
     }
     if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
     if (this["paymentStatus"]) { issues.push(...this.paymentStatus.doModelValidation()); }

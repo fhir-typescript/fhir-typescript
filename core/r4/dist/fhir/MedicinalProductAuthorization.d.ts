@@ -35,7 +35,7 @@ export declare class MedicinalProductAuthorizationJurisdictionalAuthorization ex
     /**
      * The assigned number for the marketing authorization.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Country of authorization.
      */
@@ -43,7 +43,7 @@ export declare class MedicinalProductAuthorizationJurisdictionalAuthorization ex
     /**
      * Jurisdiction within a country.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * The legal status of supply in a jurisdiction or region.
      */
@@ -117,7 +117,7 @@ export declare class MedicinalProductAuthorizationProcedure extends fhir.Backbon
     /**
      * Applcations submitted to obtain a marketing authorization.
      */
-    application?: fhir.MedicinalProductAuthorizationProcedure[];
+    application: fhir.MedicinalProductAuthorizationProcedure[];
     /**
      * Default constructor for MedicinalProductAuthorizationProcedure - initializes any required elements to null if a value is not provided.
      */
@@ -215,7 +215,7 @@ export declare class MedicinalProductAuthorization extends fhir.DomainResource {
     /**
      * Business identifier for the marketing authorization, as assigned by a regulator.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * The medicinal product that is being authorized.
      */
@@ -223,11 +223,11 @@ export declare class MedicinalProductAuthorization extends fhir.DomainResource {
     /**
      * The country in which the marketing authorization has been granted.
      */
-    country?: fhir.CodeableConcept[];
+    country: fhir.CodeableConcept[];
     /**
      * Jurisdiction within a country.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * The status of the marketing authorization.
      */
@@ -263,7 +263,7 @@ export declare class MedicinalProductAuthorization extends fhir.DomainResource {
     /**
      * Authorization in areas within a country.
      */
-    jurisdictionalAuthorization?: fhir.MedicinalProductAuthorizationJurisdictionalAuthorization[];
+    jurisdictionalAuthorization: fhir.MedicinalProductAuthorizationJurisdictionalAuthorization[];
     /**
      * Marketing Authorization Holder.
      */

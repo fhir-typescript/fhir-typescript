@@ -73,6 +73,10 @@ export interface ResearchDefinition extends fhir.DomainResource {
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
   /**
+   * Extended properties for primitive element: ResearchDefinition.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Allows filtering of research definitions that are appropriate for use versus not.
    */
   experimental?: boolean|undefined;

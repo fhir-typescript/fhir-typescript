@@ -75,6 +75,10 @@ export interface SearchParameter extends fhir.DomainResource {
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
   /**
+   * Extended properties for primitive element: SearchParameter.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Allows filtering of search parameters that are appropriate for use versus not.
    */
   experimental?: boolean|undefined;
@@ -147,6 +151,10 @@ export interface SearchParameter extends fhir.DomainResource {
    */
   type: 'composite'|'date'|'number'|'quantity'|'reference'|'special'|'string'|'token'|'uri'|null;
   /**
+   * Extended properties for primitive element: SearchParameter.type
+   */
+  _type?:fhir.FhirElement;
+  /**
    * Note that the elements returned by the expression are sometimes complex elements where logic is required to determine quite how to handle them; e.g. CodeableConcepts may contain text and/or multiple codings, where the codings themselves contain a code and a system. For composite search parameters, the outcome of the expression must a collection of base elements from which the composites are derived.
    */
   expression?: string|undefined;
@@ -166,6 +174,10 @@ export interface SearchParameter extends fhir.DomainResource {
    * How the search parameter relates to the set of elements returned by evaluating the xpath query.
    */
   xpathUsage?: 'distance'|'nearby'|'normal'|'other'|'phonetic'|undefined;
+  /**
+   * Extended properties for primitive element: SearchParameter.xpathUsage
+   */
+  _xpathUsage?:fhir.FhirElement;
   /**
    * Types of resource (if a resource is referenced).
    */
@@ -195,9 +207,17 @@ export interface SearchParameter extends fhir.DomainResource {
    */
   comparator?: ('ap'|'eb'|'eq'|'ge'|'gt'|'le'|'lt'|'ne'|'sa')[]|undefined;
   /**
+   * Extended properties for primitive element: SearchParameter.comparator
+   */
+  _comparator?:(fhir.FhirElement|null)[];
+  /**
    * A modifier supported for the search parameter.
    */
   modifier?: ('above'|'below'|'contains'|'exact'|'identifier'|'in'|'missing'|'not'|'not-in'|'ofType'|'text'|'type')[]|undefined;
+  /**
+   * Extended properties for primitive element: SearchParameter.modifier
+   */
+  _modifier?:(fhir.FhirElement|null)[];
   /**
    * Systems are not required to list all the chain names they support, but if they don't list them, clients might not know to use them.
    */

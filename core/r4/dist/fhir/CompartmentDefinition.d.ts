@@ -1,8 +1,5 @@
 import * as fhir from '../fhir.js';
-import { ResourceTypesCodingType } from '../fhirValueSets/ResourceTypesCodings.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
-import { CompartmentTypeCodingType } from '../fhirValueSets/CompartmentTypeCodings.js';
 import { CompartmentTypeCodeType } from '../fhirValueSets/CompartmentTypeCodes.js';
 /**
  * Valid arguments for the CompartmentDefinitionResource type.
@@ -36,7 +33,7 @@ export declare class CompartmentDefinitionResource extends fhir.BackboneElement 
     /**
      * If no search parameters are listed, then the resource is not linked to the compartment.
      */
-    param?: fhir.FhirString[];
+    param: fhir.FhirString[];
     /**
      * Additional documentation about the resource and compartment.
      */
@@ -48,7 +45,159 @@ export declare class CompartmentDefinitionResource extends fhir.BackboneElement 
     /**
      * Required-bound Value Set for code (CompartmentDefinition.resource.code)
      */
-    static codeRequiredCoding(): ResourceTypesCodingType;
+    static get codeRequiredCodes(): {
+        readonly Account: "Account";
+        readonly ActivityDefinition: "ActivityDefinition";
+        readonly AdverseEvent: "AdverseEvent";
+        readonly AllergyIntolerance: "AllergyIntolerance";
+        readonly Appointment: "Appointment";
+        readonly AppointmentResponse: "AppointmentResponse";
+        readonly AuditEvent: "AuditEvent";
+        readonly Basic: "Basic";
+        /**
+         * Default constructor for CompartmentDefinitionResource - initializes any required elements to null if a value is not provided.
+         */
+        readonly Binary: "Binary";
+        readonly BiologicallyDerivedProduct: "BiologicallyDerivedProduct";
+        readonly BodyStructure: "BodyStructure";
+        readonly Bundle: "Bundle";
+        readonly CapabilityStatement: "CapabilityStatement";
+        readonly CarePlan: "CarePlan";
+        readonly CareTeam: "CareTeam";
+        readonly CatalogEntry: "CatalogEntry";
+        readonly ChargeItem: "ChargeItem";
+        readonly ChargeItemDefinition: "ChargeItemDefinition";
+        readonly Claim: "Claim";
+        readonly ClaimResponse: "ClaimResponse";
+        readonly ClinicalImpression: "ClinicalImpression";
+        readonly CodeSystem: "CodeSystem";
+        readonly Communication: "Communication";
+        readonly CommunicationRequest: "CommunicationRequest";
+        readonly CompartmentDefinition: "CompartmentDefinition";
+        readonly Composition: "Composition";
+        readonly ConceptMap: "ConceptMap";
+        readonly Condition: "Condition";
+        readonly Consent: "Consent";
+        readonly Contract: "Contract";
+        readonly Coverage: "Coverage";
+        readonly CoverageEligibilityRequest: "CoverageEligibilityRequest";
+        readonly CoverageEligibilityResponse: "CoverageEligibilityResponse";
+        readonly DetectedIssue: "DetectedIssue";
+        readonly Device: "Device";
+        readonly DeviceDefinition: "DeviceDefinition";
+        readonly DeviceMetric: "DeviceMetric";
+        readonly DeviceRequest: "DeviceRequest";
+        readonly DeviceUseStatement: "DeviceUseStatement";
+        readonly DiagnosticReport: "DiagnosticReport";
+        readonly DocumentManifest: "DocumentManifest";
+        readonly DocumentReference: "DocumentReference";
+        readonly DomainResource: "DomainResource";
+        readonly EffectEvidenceSynthesis: "EffectEvidenceSynthesis";
+        readonly Encounter: "Encounter";
+        readonly Endpoint: "Endpoint";
+        readonly EnrollmentRequest: "EnrollmentRequest";
+        readonly EnrollmentResponse: "EnrollmentResponse";
+        readonly EpisodeOfCare: "EpisodeOfCare";
+        readonly EventDefinition: "EventDefinition";
+        readonly Evidence: "Evidence";
+        readonly EvidenceVariable: "EvidenceVariable";
+        readonly ExampleScenario: "ExampleScenario";
+        readonly ExplanationOfBenefit: "ExplanationOfBenefit";
+        readonly FamilyMemberHistory: "FamilyMemberHistory";
+        readonly Flag: "Flag";
+        readonly Goal: "Goal";
+        readonly GraphDefinition: "GraphDefinition";
+        readonly Group: "Group";
+        readonly GuidanceResponse: "GuidanceResponse";
+        readonly HealthcareService: "HealthcareService";
+        readonly ImagingStudy: "ImagingStudy";
+        readonly Immunization: "Immunization";
+        readonly ImmunizationEvaluation: "ImmunizationEvaluation";
+        readonly ImmunizationRecommendation: "ImmunizationRecommendation";
+        readonly ImplementationGuide: "ImplementationGuide";
+        readonly InsurancePlan: "InsurancePlan";
+        readonly Invoice: "Invoice";
+        readonly Library: "Library";
+        readonly Linkage: "Linkage";
+        readonly List: "List";
+        readonly Location: "Location";
+        readonly Measure: "Measure";
+        readonly MeasureReport: "MeasureReport";
+        readonly Media: "Media";
+        readonly Medication: "Medication";
+        readonly MedicationAdministration: "MedicationAdministration";
+        readonly MedicationDispense: "MedicationDispense";
+        readonly MedicationKnowledge: "MedicationKnowledge";
+        readonly MedicationRequest: "MedicationRequest";
+        readonly MedicationStatement: "MedicationStatement";
+        readonly MedicinalProduct: "MedicinalProduct";
+        readonly MedicinalProductAuthorization: "MedicinalProductAuthorization";
+        readonly MedicinalProductContraindication: "MedicinalProductContraindication";
+        readonly MedicinalProductIndication: "MedicinalProductIndication";
+        readonly MedicinalProductIngredient: "MedicinalProductIngredient";
+        readonly MedicinalProductInteraction: "MedicinalProductInteraction";
+        readonly MedicinalProductManufactured: "MedicinalProductManufactured";
+        readonly MedicinalProductPackaged: "MedicinalProductPackaged";
+        readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
+        readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
+        readonly MessageDefinition: "MessageDefinition";
+        readonly MessageHeader: "MessageHeader";
+        readonly MolecularSequence: "MolecularSequence";
+        readonly NamingSystem: "NamingSystem";
+        readonly NutritionOrder: "NutritionOrder";
+        readonly Observation: "Observation";
+        readonly ObservationDefinition: "ObservationDefinition";
+        readonly OperationDefinition: "OperationDefinition";
+        readonly OperationOutcome: "OperationOutcome";
+        readonly Organization: "Organization";
+        readonly OrganizationAffiliation: "OrganizationAffiliation";
+        readonly Parameters: "Parameters";
+        readonly Patient: "Patient";
+        readonly PaymentNotice: "PaymentNotice";
+        readonly PaymentReconciliation: "PaymentReconciliation";
+        readonly Person: "Person";
+        readonly PlanDefinition: "PlanDefinition";
+        readonly Practitioner: "Practitioner";
+        readonly PractitionerRole: "PractitionerRole";
+        readonly Procedure: "Procedure";
+        readonly Provenance: "Provenance";
+        readonly Questionnaire: "Questionnaire";
+        readonly QuestionnaireResponse: "QuestionnaireResponse";
+        readonly RelatedPerson: "RelatedPerson";
+        readonly RequestGroup: "RequestGroup";
+        readonly ResearchDefinition: "ResearchDefinition";
+        readonly ResearchElementDefinition: "ResearchElementDefinition";
+        readonly ResearchStudy: "ResearchStudy";
+        readonly ResearchSubject: "ResearchSubject";
+        readonly Resource: "Resource";
+        readonly RiskAssessment: "RiskAssessment";
+        readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
+        readonly Schedule: "Schedule";
+        readonly SearchParameter: "SearchParameter";
+        readonly ServiceRequest: "ServiceRequest";
+        readonly Slot: "Slot";
+        readonly Specimen: "Specimen";
+        readonly SpecimenDefinition: "SpecimenDefinition";
+        readonly StructureDefinition: "StructureDefinition";
+        readonly StructureMap: "StructureMap";
+        readonly Subscription: "Subscription";
+        readonly Substance: "Substance";
+        readonly SubstanceNucleicAcid: "SubstanceNucleicAcid";
+        readonly SubstancePolymer: "SubstancePolymer";
+        readonly SubstanceProtein: "SubstanceProtein";
+        readonly SubstanceReferenceInformation: "SubstanceReferenceInformation";
+        readonly SubstanceSourceMaterial: "SubstanceSourceMaterial";
+        readonly SubstanceSpecification: "SubstanceSpecification";
+        readonly SupplyDelivery: "SupplyDelivery";
+        readonly SupplyRequest: "SupplyRequest";
+        readonly Task: "Task";
+        readonly TerminologyCapabilities: "TerminologyCapabilities";
+        readonly TestReport: "TestReport";
+        readonly TestScript: "TestScript";
+        readonly ValueSet: "ValueSet";
+        readonly VerificationResult: "VerificationResult";
+        readonly VisionPrescription: "VisionPrescription";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -79,7 +228,7 @@ export interface CompartmentDefinitionArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of compartment definitions that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Allows filtering of compartment definitions that are appropriate for use versus not.
      */
@@ -111,7 +260,7 @@ export interface CompartmentDefinitionArgs extends fhir.DomainResourceArgs {
     /**
      * Only the specification can define the compartments that can exist. Servers can choose to support them.
      */
-    code: CompartmentTypeCodeType | null;
+    code: fhir.FhirCode<CompartmentTypeCodeType> | string | undefined;
     /**
      * Servers may define and use compartments to manage logical access without implementing the compartment related syntax.
      */
@@ -150,7 +299,7 @@ export declare class CompartmentDefinition extends fhir.DomainResource {
     /**
      * Allows filtering of compartment definitions that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Allows filtering of compartment definitions that are appropriate for use versus not.
      */
@@ -166,7 +315,7 @@ export declare class CompartmentDefinition extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * This description can be used to capture details such as why the compartment definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the compartment definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the compartment definition is presumed to be the predominant language in the place the compartment definition was created).
      */
@@ -174,7 +323,7 @@ export declare class CompartmentDefinition extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * This element does not describe the usage of the compartment definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this compartment definition.
      */
@@ -182,7 +331,7 @@ export declare class CompartmentDefinition extends fhir.DomainResource {
     /**
      * Only the specification can define the compartments that can exist. Servers can choose to support them.
      */
-    code: CompartmentTypeCodeType | null;
+    code: fhir.FhirCode<CompartmentTypeCodeType> | null;
     /**
      * Servers may define and use compartments to manage logical access without implementing the compartment related syntax.
      */
@@ -190,7 +339,7 @@ export declare class CompartmentDefinition extends fhir.DomainResource {
     /**
      * Information about how a resource is related to the compartment.
      */
-    resource?: fhir.CompartmentDefinitionResource[];
+    resource: fhir.CompartmentDefinitionResource[];
     /**
      * Default constructor for CompartmentDefinition - initializes any required elements to null if a value is not provided.
      */
@@ -198,11 +347,22 @@ export declare class CompartmentDefinition extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (CompartmentDefinition.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Required-bound Value Set for code (CompartmentDefinition.code)
      */
-    static codeRequiredCoding(): CompartmentTypeCodingType;
+    static get codeRequiredCodes(): {
+        readonly Device: "Device";
+        readonly Encounter: "Encounter";
+        readonly Patient: "Patient";
+        readonly Practitioner: "Practitioner";
+        readonly RelatedPerson: "RelatedPerson";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

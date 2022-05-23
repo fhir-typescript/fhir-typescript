@@ -36,6 +36,10 @@ export interface Slot extends fhir.DomainResource {
      */
     status: 'busy' | 'busy-tentative' | 'busy-unavailable' | 'entered-in-error' | 'free' | null;
     /**
+     * Extended properties for primitive element: Slot.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * Date/Time that the slot is to begin.
      */
     start: string | null;

@@ -1,32 +1,16 @@
 import * as fhir from '../fhir.js';
-import { RestfulSecurityServiceCodingType } from '../fhirValueSets/RestfulSecurityServiceCodings.js';
-import { TypeRestfulInteractionCodingType } from '../fhirValueSets/TypeRestfulInteractionCodings.js';
 import { TypeRestfulInteractionCodeType } from '../fhirValueSets/TypeRestfulInteractionCodes.js';
-import { SearchParamTypeCodingType } from '../fhirValueSets/SearchParamTypeCodings.js';
 import { SearchParamTypeCodeType } from '../fhirValueSets/SearchParamTypeCodes.js';
-import { ResourceTypesCodingType } from '../fhirValueSets/ResourceTypesCodings.js';
-import { VersioningPolicyCodingType } from '../fhirValueSets/VersioningPolicyCodings.js';
 import { VersioningPolicyCodeType } from '../fhirValueSets/VersioningPolicyCodes.js';
-import { ConditionalReadStatusCodingType } from '../fhirValueSets/ConditionalReadStatusCodings.js';
 import { ConditionalReadStatusCodeType } from '../fhirValueSets/ConditionalReadStatusCodes.js';
-import { ConditionalDeleteStatusCodingType } from '../fhirValueSets/ConditionalDeleteStatusCodings.js';
 import { ConditionalDeleteStatusCodeType } from '../fhirValueSets/ConditionalDeleteStatusCodes.js';
-import { ReferenceHandlingPolicyCodingType } from '../fhirValueSets/ReferenceHandlingPolicyCodings.js';
 import { ReferenceHandlingPolicyCodeType } from '../fhirValueSets/ReferenceHandlingPolicyCodes.js';
-import { SystemRestfulInteractionCodingType } from '../fhirValueSets/SystemRestfulInteractionCodings.js';
 import { SystemRestfulInteractionCodeType } from '../fhirValueSets/SystemRestfulInteractionCodes.js';
-import { RestfulCapabilityModeCodingType } from '../fhirValueSets/RestfulCapabilityModeCodings.js';
 import { RestfulCapabilityModeCodeType } from '../fhirValueSets/RestfulCapabilityModeCodes.js';
-import { MessageTransportCodingType } from '../fhirValueSets/MessageTransportCodings.js';
-import { EventCapabilityModeCodingType } from '../fhirValueSets/EventCapabilityModeCodings.js';
 import { EventCapabilityModeCodeType } from '../fhirValueSets/EventCapabilityModeCodes.js';
-import { DocumentModeCodingType } from '../fhirValueSets/DocumentModeCodings.js';
 import { DocumentModeCodeType } from '../fhirValueSets/DocumentModeCodes.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
-import { CapabilityStatementKindCodingType } from '../fhirValueSets/CapabilityStatementKindCodings.js';
 import { CapabilityStatementKindCodeType } from '../fhirValueSets/CapabilityStatementKindCodes.js';
-import { FHIRVersionCodingType } from '../fhirValueSets/FHIRVersionCodings.js';
 /**
  * Valid arguments for the CapabilityStatementSoftware type.
  */
@@ -151,7 +135,7 @@ export declare class CapabilityStatementRestSecurity extends fhir.BackboneElemen
     /**
      * Types of security services that are supported/required by the system.
      */
-    service?: fhir.CodeableConcept[];
+    service: fhir.CodeableConcept[];
     /**
      * General description of how security works.
      */
@@ -163,7 +147,14 @@ export declare class CapabilityStatementRestSecurity extends fhir.BackboneElemen
     /**
      * Extensible-bound Value Set for service (CapabilityStatement.rest.security.service)
      */
-    static serviceExtensibleCoding(): RestfulSecurityServiceCodingType;
+    static get serviceExtensibleCodings(): {
+        readonly Basic: fhir.Coding;
+        readonly Certificates: fhir.Coding;
+        readonly Kerberos: fhir.Coding;
+        readonly NTLM: fhir.Coding;
+        readonly OAuth: fhir.Coding;
+        readonly SMARTOnFHIR: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -176,7 +167,7 @@ export interface CapabilityStatementRestResourceInteractionArgs extends fhir.Bac
     /**
      * Coded identifier of the operation, supported by the system resource.
      */
-    code: TypeRestfulInteractionCodeType | null;
+    code: fhir.FhirCode<TypeRestfulInteractionCodeType> | string | undefined;
     /**
      * Guidance specific to the implementation of this operation, such as 'delete is a logical delete' or 'updates are only allowed with version id' or 'creates permitted from pre-authorized certificates only'.
      */
@@ -193,7 +184,7 @@ export declare class CapabilityStatementRestResourceInteraction extends fhir.Bac
     /**
      * Coded identifier of the operation, supported by the system resource.
      */
-    code: TypeRestfulInteractionCodeType | null;
+    code: fhir.FhirCode<TypeRestfulInteractionCodeType> | null;
     /**
      * Guidance specific to the implementation of this operation, such as 'delete is a logical delete' or 'updates are only allowed with version id' or 'creates permitted from pre-authorized certificates only'.
      */
@@ -205,7 +196,17 @@ export declare class CapabilityStatementRestResourceInteraction extends fhir.Bac
     /**
      * Required-bound Value Set for code (CapabilityStatement.rest.resource.interaction.code)
      */
-    static codeRequiredCoding(): TypeRestfulInteractionCodingType;
+    static get codeRequiredCodes(): {
+        readonly Create: "create";
+        readonly Delete: "delete";
+        readonly HistoryInstance: "history-instance";
+        readonly HistoryType: "history-type";
+        readonly Patch: "patch";
+        readonly Read: "read";
+        readonly SearchType: "search-type";
+        readonly Update: "update";
+        readonly Vread: "vread";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -226,7 +227,7 @@ export interface CapabilityStatementRestResourceSearchParamArgs extends fhir.Bac
     /**
      * While this can be looked up from the definition, it is included here as a convenience for systems that autogenerate a query interface based on the server capability statement.  It SHALL be the same as the type in the search parameter definition.
      */
-    type: SearchParamTypeCodeType | null;
+    type: fhir.FhirCode<SearchParamTypeCodeType> | string | undefined;
     /**
      * This allows documentation of any distinct behaviors about how the search parameter is used.  For example, text matching algorithms.
      */
@@ -251,7 +252,7 @@ export declare class CapabilityStatementRestResourceSearchParam extends fhir.Bac
     /**
      * While this can be looked up from the definition, it is included here as a convenience for systems that autogenerate a query interface based on the server capability statement.  It SHALL be the same as the type in the search parameter definition.
      */
-    type: SearchParamTypeCodeType | null;
+    type: fhir.FhirCode<SearchParamTypeCodeType> | null;
     /**
      * This allows documentation of any distinct behaviors about how the search parameter is used.  For example, text matching algorithms.
      */
@@ -263,7 +264,17 @@ export declare class CapabilityStatementRestResourceSearchParam extends fhir.Bac
     /**
      * Required-bound Value Set for type (CapabilityStatement.rest.resource.searchParam.type)
      */
-    static typeRequiredCoding(): SearchParamTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Composite: "composite";
+        readonly DateDateTime: "date";
+        readonly Number: "number";
+        readonly Quantity: "quantity";
+        readonly Reference: "reference";
+        readonly Special: "special";
+        readonly String: "string";
+        readonly Token: "token";
+        readonly URI: "uri";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -343,7 +354,7 @@ export interface CapabilityStatementRestResourceArgs extends fhir.BackboneElemen
     /**
      * If a server supports versionIds correctly, it SHOULD support vread too, but is not required to do so.
      */
-    versioning?: VersioningPolicyCodeType | undefined;
+    versioning?: fhir.FhirCode<VersioningPolicyCodeType> | string | undefined;
     /**
      * It is useful to support the vRead operation for current operations, even if past versions aren't available.
      */
@@ -359,7 +370,7 @@ export interface CapabilityStatementRestResourceArgs extends fhir.BackboneElemen
     /**
      * Conditional Read is mainly appropriate for interface engine scripts converting from other formats, such as v2.
      */
-    conditionalRead?: ConditionalReadStatusCodeType | undefined;
+    conditionalRead?: fhir.FhirCode<ConditionalReadStatusCodeType> | string | undefined;
     /**
      * Conditional Update is mainly appropriate for interface engine scripts converting from other formats, such as v2.
      */
@@ -367,11 +378,11 @@ export interface CapabilityStatementRestResourceArgs extends fhir.BackboneElemen
     /**
      * Conditional Delete is mainly appropriate for interface engine scripts converting from other formats, such as v2.
      */
-    conditionalDelete?: ConditionalDeleteStatusCodeType | undefined;
+    conditionalDelete?: fhir.FhirCode<ConditionalDeleteStatusCodeType> | string | undefined;
     /**
      * A set of flags that defines how references are supported.
      */
-    referencePolicy?: ReferenceHandlingPolicyCodeType[] | undefined;
+    referencePolicy?: fhir.FhirCode<ReferenceHandlingPolicyCodeType>[] | string[] | undefined;
     /**
      * If this list is empty, the server does not support includes.
      */
@@ -409,7 +420,7 @@ export declare class CapabilityStatementRestResource extends fhir.BackboneElemen
     /**
      * Supported profiles are different than the profile that applies to a particular resource in .rest.resource.profile. The resource profile is a general statement of what features of the resource are supported overall by the system - the sum total of the facilities it supports. A supported profile is a deeper statement about the functionality of the data and services provided by the server (or used by the client). A typical case is a laboratory system that produces a set of different reports - this is the list of types of data that it publishes. A key aspect of declaring profiles here is the question of how the client converts knowledge that the server publishes this data into working with the data; the client can inspect individual resources to determine whether they conform to a particular profile, but how does it find the ones that do? It does so by searching using the _profile parameter, so any resources listed here must be valid values for the _profile resource (using the identifier in the target profile).
      */
-    supportedProfile?: fhir.FhirCanonical[];
+    supportedProfile: fhir.FhirCanonical[];
     /**
      * Additional information about the resource type used by the system.
      */
@@ -417,11 +428,11 @@ export declare class CapabilityStatementRestResource extends fhir.BackboneElemen
     /**
      * In general, a Resource will only appear in a CapabilityStatement if the server actually has some capabilities - e.g. there is at least one interaction supported. However interactions can be omitted to support summarization (_summary = true).
      */
-    interaction?: fhir.CapabilityStatementRestResourceInteraction[];
+    interaction: fhir.CapabilityStatementRestResourceInteraction[];
     /**
      * If a server supports versionIds correctly, it SHOULD support vread too, but is not required to do so.
      */
-    versioning?: VersioningPolicyCodeType | undefined;
+    versioning?: fhir.FhirCode<VersioningPolicyCodeType> | undefined;
     /**
      * It is useful to support the vRead operation for current operations, even if past versions aren't available.
      */
@@ -437,7 +448,7 @@ export declare class CapabilityStatementRestResource extends fhir.BackboneElemen
     /**
      * Conditional Read is mainly appropriate for interface engine scripts converting from other formats, such as v2.
      */
-    conditionalRead?: ConditionalReadStatusCodeType | undefined;
+    conditionalRead?: fhir.FhirCode<ConditionalReadStatusCodeType> | undefined;
     /**
      * Conditional Update is mainly appropriate for interface engine scripts converting from other formats, such as v2.
      */
@@ -445,28 +456,28 @@ export declare class CapabilityStatementRestResource extends fhir.BackboneElemen
     /**
      * Conditional Delete is mainly appropriate for interface engine scripts converting from other formats, such as v2.
      */
-    conditionalDelete?: ConditionalDeleteStatusCodeType | undefined;
+    conditionalDelete?: fhir.FhirCode<ConditionalDeleteStatusCodeType> | undefined;
     /**
      * A set of flags that defines how references are supported.
      */
-    referencePolicy?: ReferenceHandlingPolicyCodeType[];
+    referencePolicy: fhir.FhirCode<ReferenceHandlingPolicyCodeType>[];
     /**
      * If this list is empty, the server does not support includes.
      */
-    searchInclude?: fhir.FhirString[];
+    searchInclude: fhir.FhirString[];
     /**
      * If this list is empty, the server does not support reverse includes.
      */
-    searchRevInclude?: fhir.FhirString[];
+    searchRevInclude: fhir.FhirString[];
     /**
      * The search parameters should include the control search parameters such as _sort, _count, etc. that also apply to this resource (though many will be listed at [CapabilityStatement.rest.searchParam](capabilitystatement-definitions.html#CapabilityStatement.rest.searchParam)). The behavior of some search parameters may be further described by other code or extension elements, or narrative within the capability statement or linked [SearchParameter](searchparameter.html#) definitions.
      */
-    searchParam?: fhir.CapabilityStatementRestResourceSearchParam[];
+    searchParam: fhir.CapabilityStatementRestResourceSearchParam[];
     /**
      * Operations linked from CapabilityStatement.rest.resource.operation must have OperationDefinition.type = true or OperationDefinition.instance = true.
      * If an operation that is listed in multiple CapabilityStatement.rest.resource.operation (e.g. for different resource types), then clients should understand that the operation is only supported on the specified resource types, and that may be a subset of those listed in OperationDefinition.resource.
      */
-    operation?: fhir.CapabilityStatementRestResourceOperation[];
+    operation: fhir.CapabilityStatementRestResourceOperation[];
     /**
      * Default constructor for CapabilityStatementRestResource - initializes any required elements to null if a value is not provided.
      */
@@ -474,23 +485,195 @@ export declare class CapabilityStatementRestResource extends fhir.BackboneElemen
     /**
      * Required-bound Value Set for type (CapabilityStatement.rest.resource.type)
      */
-    static typeRequiredCoding(): ResourceTypesCodingType;
+    static get typeRequiredCodes(): {
+        readonly Account: "Account";
+        readonly ActivityDefinition: "ActivityDefinition";
+        readonly AdverseEvent: "AdverseEvent";
+        readonly AllergyIntolerance: "AllergyIntolerance";
+        readonly Appointment: "Appointment";
+        readonly AppointmentResponse: "AppointmentResponse";
+        readonly AuditEvent: "AuditEvent";
+        readonly Basic: "Basic";
+        readonly Binary: "Binary";
+        readonly BiologicallyDerivedProduct: "BiologicallyDerivedProduct";
+        readonly BodyStructure: "BodyStructure";
+        readonly Bundle: "Bundle";
+        readonly CapabilityStatement: "CapabilityStatement";
+        readonly CarePlan: "CarePlan";
+        readonly CareTeam: "CareTeam";
+        readonly CatalogEntry: "CatalogEntry";
+        readonly ChargeItem: "ChargeItem";
+        readonly ChargeItemDefinition: "ChargeItemDefinition";
+        readonly Claim: "Claim";
+        readonly ClaimResponse: "ClaimResponse";
+        readonly ClinicalImpression: "ClinicalImpression";
+        readonly CodeSystem: "CodeSystem";
+        readonly Communication: "Communication";
+        readonly CommunicationRequest: "CommunicationRequest";
+        readonly CompartmentDefinition: "CompartmentDefinition";
+        readonly Composition: "Composition";
+        readonly ConceptMap: "ConceptMap";
+        readonly Condition: "Condition";
+        readonly Consent: "Consent";
+        readonly Contract: "Contract";
+        readonly Coverage: "Coverage";
+        readonly CoverageEligibilityRequest: "CoverageEligibilityRequest";
+        readonly CoverageEligibilityResponse: "CoverageEligibilityResponse";
+        readonly DetectedIssue: "DetectedIssue";
+        readonly Device: "Device";
+        readonly DeviceDefinition: "DeviceDefinition";
+        readonly DeviceMetric: "DeviceMetric";
+        readonly DeviceRequest: "DeviceRequest";
+        readonly DeviceUseStatement: "DeviceUseStatement";
+        readonly DiagnosticReport: "DiagnosticReport";
+        readonly DocumentManifest: "DocumentManifest";
+        readonly DocumentReference: "DocumentReference";
+        readonly DomainResource: "DomainResource";
+        readonly EffectEvidenceSynthesis: "EffectEvidenceSynthesis";
+        readonly Encounter: "Encounter";
+        readonly Endpoint: "Endpoint"; /**
+         * Extensible-bound Value Set for service (CapabilityStatement.rest.security.service)
+         */
+        readonly EnrollmentRequest: "EnrollmentRequest";
+        readonly EnrollmentResponse: "EnrollmentResponse";
+        readonly EpisodeOfCare: "EpisodeOfCare";
+        readonly EventDefinition: "EventDefinition";
+        readonly Evidence: "Evidence";
+        readonly EvidenceVariable: "EvidenceVariable";
+        readonly ExampleScenario: "ExampleScenario";
+        readonly ExplanationOfBenefit: "ExplanationOfBenefit";
+        readonly FamilyMemberHistory: "FamilyMemberHistory";
+        readonly Flag: "Flag";
+        readonly Goal: "Goal";
+        readonly GraphDefinition: "GraphDefinition";
+        readonly Group: "Group";
+        readonly GuidanceResponse: "GuidanceResponse";
+        readonly HealthcareService: "HealthcareService";
+        readonly ImagingStudy: "ImagingStudy";
+        readonly Immunization: "Immunization";
+        readonly ImmunizationEvaluation: "ImmunizationEvaluation";
+        readonly ImmunizationRecommendation: "ImmunizationRecommendation";
+        readonly ImplementationGuide: "ImplementationGuide";
+        readonly InsurancePlan: "InsurancePlan";
+        readonly Invoice: "Invoice";
+        readonly Library: "Library";
+        readonly Linkage: "Linkage";
+        readonly List: "List";
+        readonly Location: "Location";
+        readonly Measure: "Measure";
+        readonly MeasureReport: "MeasureReport"; /**
+         * Parameter names cannot overlap with standard parameter names, and standard parameters cannot be redefined.
+         */
+        readonly Media: "Media";
+        readonly Medication: "Medication";
+        readonly MedicationAdministration: "MedicationAdministration";
+        readonly MedicationDispense: "MedicationDispense";
+        readonly MedicationKnowledge: "MedicationKnowledge";
+        readonly MedicationRequest: "MedicationRequest";
+        readonly MedicationStatement: "MedicationStatement";
+        readonly MedicinalProduct: "MedicinalProduct";
+        readonly MedicinalProductAuthorization: "MedicinalProductAuthorization";
+        readonly MedicinalProductContraindication: "MedicinalProductContraindication";
+        readonly MedicinalProductIndication: "MedicinalProductIndication";
+        readonly MedicinalProductIngredient: "MedicinalProductIngredient";
+        readonly MedicinalProductInteraction: "MedicinalProductInteraction";
+        readonly MedicinalProductManufactured: "MedicinalProductManufactured";
+        readonly MedicinalProductPackaged: "MedicinalProductPackaged";
+        readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
+        readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
+        readonly MessageDefinition: "MessageDefinition";
+        readonly MessageHeader: "MessageHeader";
+        readonly MolecularSequence: "MolecularSequence";
+        readonly NamingSystem: "NamingSystem";
+        readonly NutritionOrder: "NutritionOrder";
+        readonly Observation: "Observation";
+        readonly ObservationDefinition: "ObservationDefinition";
+        readonly OperationDefinition: "OperationDefinition";
+        readonly OperationOutcome: "OperationOutcome";
+        readonly Organization: "Organization";
+        readonly OrganizationAffiliation: "OrganizationAffiliation";
+        readonly Parameters: "Parameters";
+        readonly Patient: "Patient";
+        readonly PaymentNotice: "PaymentNotice";
+        readonly PaymentReconciliation: "PaymentReconciliation";
+        readonly Person: "Person";
+        readonly PlanDefinition: "PlanDefinition";
+        readonly Practitioner: "Practitioner";
+        readonly PractitionerRole: "PractitionerRole";
+        readonly Procedure: "Procedure";
+        readonly Provenance: "Provenance";
+        readonly Questionnaire: "Questionnaire";
+        readonly QuestionnaireResponse: "QuestionnaireResponse";
+        readonly RelatedPerson: "RelatedPerson";
+        readonly RequestGroup: "RequestGroup";
+        readonly ResearchDefinition: "ResearchDefinition";
+        readonly ResearchElementDefinition: "ResearchElementDefinition";
+        readonly ResearchStudy: "ResearchStudy";
+        readonly ResearchSubject: "ResearchSubject";
+        readonly Resource: "Resource";
+        readonly RiskAssessment: "RiskAssessment";
+        readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
+        readonly Schedule: "Schedule";
+        readonly SearchParameter: "SearchParameter";
+        readonly ServiceRequest: "ServiceRequest";
+        readonly Slot: "Slot";
+        readonly Specimen: "Specimen";
+        readonly SpecimenDefinition: "SpecimenDefinition";
+        readonly StructureDefinition: "StructureDefinition";
+        readonly StructureMap: "StructureMap";
+        readonly Subscription: "Subscription";
+        readonly Substance: "Substance";
+        readonly SubstanceNucleicAcid: "SubstanceNucleicAcid";
+        readonly SubstancePolymer: "SubstancePolymer";
+        readonly SubstanceProtein: "SubstanceProtein";
+        readonly SubstanceReferenceInformation: "SubstanceReferenceInformation";
+        readonly SubstanceSourceMaterial: "SubstanceSourceMaterial";
+        readonly SubstanceSpecification: "SubstanceSpecification";
+        readonly SupplyDelivery: "SupplyDelivery";
+        readonly SupplyRequest: "SupplyRequest";
+        readonly Task: "Task";
+        readonly TerminologyCapabilities: "TerminologyCapabilities";
+        readonly TestReport: "TestReport";
+        readonly TestScript: "TestScript";
+        readonly ValueSet: "ValueSet";
+        readonly VerificationResult: "VerificationResult";
+        readonly VisionPrescription: "VisionPrescription";
+    };
     /**
      * Required-bound Value Set for versioning (CapabilityStatement.rest.resource.versioning)
      */
-    static versioningRequiredCoding(): VersioningPolicyCodingType;
+    static get versioningRequiredCodes(): {
+        readonly NoVersionIdSupport: "no-version";
+        readonly Versioned: "versioned";
+        readonly VersionIdTrackedFully: "versioned-update";
+    };
     /**
      * Required-bound Value Set for conditionalRead (CapabilityStatement.rest.resource.conditionalRead)
      */
-    static conditionalReadRequiredCoding(): ConditionalReadStatusCodingType;
+    static get conditionalReadRequiredCodes(): {
+        readonly FullSupport: "full-support";
+        readonly IfModifiedSince: "modified-since";
+        readonly IfNoneMatch: "not-match";
+        readonly NotSupported: "not-supported";
+    };
     /**
      * Required-bound Value Set for conditionalDelete (CapabilityStatement.rest.resource.conditionalDelete)
      */
-    static conditionalDeleteRequiredCoding(): ConditionalDeleteStatusCodingType;
+    static get conditionalDeleteRequiredCodes(): {
+        readonly MultipleDeletesSupported: "multiple";
+        readonly NotSupported: "not-supported";
+        readonly SingleDeletesSupported: "single";
+    };
     /**
      * Required-bound Value Set for referencePolicy (CapabilityStatement.rest.resource.referencePolicy)
      */
-    static referencePolicyRequiredCoding(): ReferenceHandlingPolicyCodingType;
+    static get referencePolicyRequiredCodes(): {
+        readonly ReferenceIntegrityEnforced: "enforced";
+        readonly LiteralReferences: "literal";
+        readonly LocalReferencesOnly: "local";
+        readonly LogicalReferences: "logical";
+        readonly ResolvesReferences: "resolves";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -503,7 +686,7 @@ export interface CapabilityStatementRestInteractionArgs extends fhir.BackboneEle
     /**
      * A coded identifier of the operation, supported by the system.
      */
-    code: SystemRestfulInteractionCodeType | null;
+    code: fhir.FhirCode<SystemRestfulInteractionCodeType> | string | undefined;
     /**
      * Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.
      */
@@ -520,7 +703,7 @@ export declare class CapabilityStatementRestInteraction extends fhir.BackboneEle
     /**
      * A coded identifier of the operation, supported by the system.
      */
-    code: SystemRestfulInteractionCodeType | null;
+    code: fhir.FhirCode<SystemRestfulInteractionCodeType> | null;
     /**
      * Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.
      */
@@ -532,7 +715,12 @@ export declare class CapabilityStatementRestInteraction extends fhir.BackboneEle
     /**
      * Required-bound Value Set for code (CapabilityStatement.rest.interaction.code)
      */
-    static codeRequiredCoding(): SystemRestfulInteractionCodingType;
+    static get codeRequiredCodes(): {
+        readonly Batch: "batch";
+        readonly HistorySystem: "history-system";
+        readonly SearchSystem: "search-system";
+        readonly Transaction: "transaction";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -545,7 +733,7 @@ export interface CapabilityStatementRestArgs extends fhir.BackboneElementArgs {
     /**
      * Identifies whether this portion of the statement is describing the ability to initiate or receive restful operations.
      */
-    mode: RestfulCapabilityModeCodeType | null;
+    mode: fhir.FhirCode<RestfulCapabilityModeCodeType> | string | undefined;
     /**
      * Information about the system's restful capabilities that apply across all applications, such as security.
      */
@@ -586,7 +774,7 @@ export declare class CapabilityStatementRest extends fhir.BackboneElement {
     /**
      * Identifies whether this portion of the statement is describing the ability to initiate or receive restful operations.
      */
-    mode: RestfulCapabilityModeCodeType | null;
+    mode: fhir.FhirCode<RestfulCapabilityModeCodeType> | null;
     /**
      * Information about the system's restful capabilities that apply across all applications, such as security.
      */
@@ -598,23 +786,23 @@ export declare class CapabilityStatementRest extends fhir.BackboneElement {
     /**
      * Max of one repetition per resource type.
      */
-    resource?: fhir.CapabilityStatementRestResource[];
+    resource: fhir.CapabilityStatementRestResource[];
     /**
      * A specification of restful operations supported by the system.
      */
-    interaction?: fhir.CapabilityStatementRestInteraction[];
+    interaction: fhir.CapabilityStatementRestInteraction[];
     /**
      * Typically, the only search parameters supported for all searches are those that apply to all resources - tags, profiles, text search etc. These search parameters should include the control search parameters such as _sort, _count, etc. that also apply to this resource (though many will be listed at [CapabilityStatement.rest.searchParam](capabilitystatement-definitions.html#CapabilityStatement.rest.searchParam)). The behavior of some search parameters may be further described by other code or extension elements, or narrative within the capability statement or linked [SearchParameter](searchparameter.html#) definitions.
      */
-    searchParam?: fhir.CapabilityStatementRestResourceSearchParam[];
+    searchParam: fhir.CapabilityStatementRestResourceSearchParam[];
     /**
      * CapabilityStatement.rest.operation is for operations invoked at the system level, or for operations that are supported across multiple resource types. Operations linked from CapabilityStatement.rest.operation must have OperationDefinition.system = true, or more than one Operation.resource.
      */
-    operation?: fhir.CapabilityStatementRestResourceOperation[];
+    operation: fhir.CapabilityStatementRestResourceOperation[];
     /**
      * At present, the only defined compartments are at [CompartmentDefinition](compartmentdefinition.html).
      */
-    compartment?: fhir.FhirCanonical[];
+    compartment: fhir.FhirCanonical[];
     /**
      * Default constructor for CapabilityStatementRest - initializes any required elements to null if a value is not provided.
      */
@@ -622,7 +810,10 @@ export declare class CapabilityStatementRest extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for mode (CapabilityStatement.rest.mode)
      */
-    static modeRequiredCoding(): RestfulCapabilityModeCodingType;
+    static get modeRequiredCodes(): {
+        readonly Client: "client";
+        readonly Server: "server";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -664,7 +855,11 @@ export declare class CapabilityStatementMessagingEndpoint extends fhir.BackboneE
     /**
      * Extensible-bound Value Set for protocol (CapabilityStatement.messaging.endpoint.protocol)
      */
-    static protocolExtensibleCoding(): MessageTransportCodingType;
+    static get protocolExtensibleCodings(): {
+        readonly FTP: fhir.Coding;
+        readonly HTTP: fhir.Coding;
+        readonly MLLP: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -677,7 +872,7 @@ export interface CapabilityStatementMessagingSupportedMessageArgs extends fhir.B
     /**
      * The mode of this event declaration - whether application is sender or receiver.
      */
-    mode: EventCapabilityModeCodeType | null;
+    mode: fhir.FhirCode<EventCapabilityModeCodeType> | string | undefined;
     /**
      * Points to a message definition that identifies the messaging event, message structure, allowed responses, etc.
      */
@@ -694,7 +889,7 @@ export declare class CapabilityStatementMessagingSupportedMessage extends fhir.B
     /**
      * The mode of this event declaration - whether application is sender or receiver.
      */
-    mode: EventCapabilityModeCodeType | null;
+    mode: fhir.FhirCode<EventCapabilityModeCodeType> | null;
     /**
      * Points to a message definition that identifies the messaging event, message structure, allowed responses, etc.
      */
@@ -706,7 +901,10 @@ export declare class CapabilityStatementMessagingSupportedMessage extends fhir.B
     /**
      * Required-bound Value Set for mode (CapabilityStatement.messaging.supportedMessage.mode)
      */
-    static modeRequiredCoding(): EventCapabilityModeCodingType;
+    static get modeRequiredCodes(): {
+        readonly Receiver: "receiver";
+        readonly Sender: "sender";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -744,7 +942,7 @@ export declare class CapabilityStatementMessaging extends fhir.BackboneElement {
     /**
      * An endpoint (network accessible address) to which messages and/or replies are to be sent.
      */
-    endpoint?: fhir.CapabilityStatementMessagingEndpoint[];
+    endpoint: fhir.CapabilityStatementMessagingEndpoint[];
     /**
      * If this value is missing then the application does not implement (receiver) or depend on (sender) reliable messaging.
      */
@@ -756,7 +954,7 @@ export declare class CapabilityStatementMessaging extends fhir.BackboneElement {
     /**
      * This is a proposed alternative to the messaging.event structure.
      */
-    supportedMessage?: fhir.CapabilityStatementMessagingSupportedMessage[];
+    supportedMessage: fhir.CapabilityStatementMessagingSupportedMessage[];
     /**
      * Default constructor for CapabilityStatementMessaging - initializes any required elements to null if a value is not provided.
      */
@@ -773,7 +971,7 @@ export interface CapabilityStatementDocumentArgs extends fhir.BackboneElementArg
     /**
      * Mode of this document declaration - whether an application is a producer or consumer.
      */
-    mode: DocumentModeCodeType | null;
+    mode: fhir.FhirCode<DocumentModeCodeType> | string | undefined;
     /**
      * A description of how the application supports or uses the specified document profile.  For example, when documents are created, what action is taken with consumed documents, etc.
      */
@@ -794,7 +992,7 @@ export declare class CapabilityStatementDocument extends fhir.BackboneElement {
     /**
      * Mode of this document declaration - whether an application is a producer or consumer.
      */
-    mode: DocumentModeCodeType | null;
+    mode: fhir.FhirCode<DocumentModeCodeType> | null;
     /**
      * A description of how the application supports or uses the specified document profile.  For example, when documents are created, what action is taken with consumed documents, etc.
      */
@@ -810,7 +1008,10 @@ export declare class CapabilityStatementDocument extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for mode (CapabilityStatement.document.mode)
      */
-    static modeRequiredCoding(): DocumentModeCodingType;
+    static get modeRequiredCodes(): {
+        readonly Consumer: "consumer";
+        readonly Producer: "producer";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -845,7 +1046,7 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of capability statements that are appropriate for use versus not.This is not intended for use with actual capability statements, but where capability statements are used to describe possible or desired systems.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Allows filtering of capability statements that are appropriate for use versus not.
      */
@@ -885,7 +1086,7 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
     /**
      * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
      */
-    kind: CapabilityStatementKindCodeType | null;
+    kind: fhir.FhirCode<CapabilityStatementKindCodeType> | string | undefined;
     /**
      * HL7 defines the following Services: [Terminology Service](terminology-service.html).
      * Many [Implementation Guides](http://fhir.org/guides/registry) define additional services.
@@ -966,7 +1167,7 @@ export declare class CapabilityStatement extends fhir.DomainResource {
     /**
      * Allows filtering of capability statements that are appropriate for use versus not.This is not intended for use with actual capability statements, but where capability statements are used to describe possible or desired systems.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Allows filtering of capability statements that are appropriate for use versus not.
      */
@@ -982,7 +1183,7 @@ export declare class CapabilityStatement extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * This description can be used to capture details such as why the capability statement was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the capability statement as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the capability statement is presumed to be the predominant language in the place the capability statement was created).This does not need to be populated if the description is adequately implied by the software or implementation details.
      */
@@ -990,11 +1191,11 @@ export declare class CapabilityStatement extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the capability statement to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * This element does not describe the usage of the capability statement. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this capability statement.
      */
@@ -1006,17 +1207,17 @@ export declare class CapabilityStatement extends fhir.DomainResource {
     /**
      * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
      */
-    kind: CapabilityStatementKindCodeType | null;
+    kind: fhir.FhirCode<CapabilityStatementKindCodeType> | null;
     /**
      * HL7 defines the following Services: [Terminology Service](terminology-service.html).
      * Many [Implementation Guides](http://fhir.org/guides/registry) define additional services.
      */
-    instantiates?: fhir.FhirCanonical[];
+    instantiates: fhir.FhirCanonical[];
     /**
      * the contents of any directly or indirectly imported CapabilityStatements SHALL NOT overlap, i.e. they cannot refer to the same rest/resource, operations/name, searchparam/name, interaction/code, messaging/endpoint, document/mode pair.
      * A capability statement that imports another CapabilityStatement automatically instantiates it too (though this is often not a very useful statement for the kinds of CapabilityStatements that are suitable for importing).
      */
-    imports?: fhir.FhirCanonical[];
+    imports: fhir.FhirCanonical[];
     /**
      * Software that is covered by this capability statement.  It is used when the capability statement describes the capabilities of a particular software version, independent of an installation.
      */
@@ -1036,23 +1237,23 @@ export declare class CapabilityStatement extends fhir.DomainResource {
     /**
      * At present, the patch mime types application/json-patch+json and application/xml-patch+xml are legal. Generally, if a server supports PATCH, it would be expected to support the patch formats and match the formats it supports, but this is not always possible or necessary.
      */
-    patchFormat?: fhir.FhirCode[];
+    patchFormat: fhir.FhirCode[];
     /**
      * A list of implementation guides that the server does (or should) support in their entirety.
      */
-    implementationGuide?: fhir.FhirCanonical[];
+    implementationGuide: fhir.FhirCanonical[];
     /**
      * Multiple repetitions allow definition of both client and/or server behaviors or possibly behaviors under different configuration settings (for software or requirements statements).
      */
-    rest?: fhir.CapabilityStatementRest[];
+    rest: fhir.CapabilityStatementRest[];
     /**
      * Multiple repetitions allow the documentation of multiple endpoints per solution.
      */
-    messaging?: fhir.CapabilityStatementMessaging[];
+    messaging: fhir.CapabilityStatementMessaging[];
     /**
      * A document definition.
      */
-    document?: fhir.CapabilityStatementDocument[];
+    document: fhir.CapabilityStatementDocument[];
     /**
      * Default constructor for CapabilityStatement - initializes any required elements to null if a value is not provided.
      */
@@ -1060,15 +1261,47 @@ export declare class CapabilityStatement extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (CapabilityStatement.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Required-bound Value Set for kind (CapabilityStatement.kind)
      */
-    static kindRequiredCoding(): CapabilityStatementKindCodingType;
+    static get kindRequiredCodes(): {
+        readonly Capability: "capability";
+        readonly Instance: "instance";
+        readonly Requirements: "requirements";
+    };
     /**
      * Required-bound Value Set for fhirVersion (CapabilityStatement.fhirVersion)
      */
-    static fhirVersionRequiredCoding(): FHIRVersionCodingType;
+    static get fhirVersionRequiredCodes(): {
+        readonly VAL0080: "0.0.80";
+        readonly VAL0081: "0.0.81";
+        readonly VAL0082: "0.0.82";
+        readonly VAL001: "0.01";
+        readonly VAL005: "0.05";
+        readonly VAL006: "0.06";
+        readonly VAL011: "0.11";
+        readonly VAL040: "0.4.0";
+        readonly VAL050: "0.5.0";
+        readonly VAL100: "1.0.0";
+        readonly VAL101: "1.0.1";
+        readonly VAL102: "1.0.2";
+        readonly VAL110: "1.1.0";
+        readonly VAL140: "1.4.0";
+        readonly VAL160: "1.6.0";
+        readonly VAL180: "1.8.0";
+        readonly VAL300: "3.0.0";
+        readonly VAL301: "3.0.1";
+        readonly VAL330: "3.3.0";
+        readonly VAL350: "3.5.0";
+        readonly VAL400: "4.0.0";
+        readonly VAL401: "4.0.1";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

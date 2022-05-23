@@ -52,7 +52,7 @@ export interface DocumentReferenceRelatesToArgs extends fhir.BackboneElementArgs
   /**
    * If this document appends another document, then the document cannot be fully understood without also accessing the referenced document.
    */
-  code: DocumentRelationshipTypeCodeType|null;
+  code: fhir.FhirCode<DocumentRelationshipTypeCodeType>|string|undefined;
   /**
    * The target document of this relationship.
    */
@@ -70,7 +70,7 @@ export class DocumentReferenceRelatesTo extends fhir.BackboneElement {
   /**
    * If this document appends another document, then the document cannot be fully understood without also accessing the referenced document.
    */
-  public code: DocumentRelationshipTypeCodeType|null;
+  public code: fhir.FhirCode<DocumentRelationshipTypeCodeType>|null;
   /**
    * The target document of this relationship.
    */
@@ -80,7 +80,7 @@ export class DocumentReferenceRelatesTo extends fhir.BackboneElement {
    */
   constructor(source:Partial<DocumentReferenceRelatesToArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = source.code; }
+    if (source['code']) { this.code = new fhir.FhirCode<DocumentRelationshipTypeCodeType>({value: source.code}); }
     else { this.code = null; }
     if (source['target']) { this.target = new fhir.Reference(source.target); }
     else { this.target = null; }
@@ -88,8 +88,8 @@ export class DocumentReferenceRelatesTo extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for code (DocumentReference.relatesTo.code)
    */
-  public static codeRequiredCoding():DocumentRelationshipTypeCodingType {
-    return DocumentRelationshipTypeCodings;
+  public static get codeRequiredCodes() {
+    return DocumentRelationshipTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -97,10 +97,14 @@ export class DocumentReferenceRelatesTo extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:DocumentRelationshipTypeCodeType fhir: DocumentReference.relatesTo.code:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode<DocumentRelationshipTypeCodeType> fhir: DocumentReference.relatesTo.code:code' });
     }
+    if (this['code'] && (!Object.values(DocumentRelationshipTypeCodes).includes(this.code as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode<DocumentRelationshipTypeCodeType> fhir: DocumentReference.relatesTo.code:code Required binding to: DocumentRelationshipType' });
+    }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['target']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property target:fhir.Reference fhir: DocumentReference.relatesTo.target:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property target:fhir.Reference fhir: DocumentReference.relatesTo.target:Reference' });
     }
     if (this["target"]) { issues.push(...this.target.doModelValidation()); }
     return issues;
@@ -148,7 +152,7 @@ export class DocumentReferenceContent extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for format (DocumentReference.content.format)
    */
-  public static formatPreferredCoding():FormatcodesCodingType {
+  public static get formatPreferredCodings() {
     return FormatcodesCodings;
   }
   /**
@@ -157,7 +161,7 @@ export class DocumentReferenceContent extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['attachment']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property attachment:fhir.Attachment fhir: DocumentReference.content.attachment:Attachment', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property attachment:fhir.Attachment fhir: DocumentReference.content.attachment:Attachment' });
     }
     if (this["attachment"]) { issues.push(...this.attachment.doModelValidation()); }
     if (this["format"]) { issues.push(...this.format.doModelValidation()); }
@@ -209,11 +213,11 @@ export class DocumentReferenceContext extends fhir.BackboneElement {
   /**
    * Describes the clinical encounter or type of care that the document content is associated with.
    */
-  public encounter?: fhir.Reference[];
+  public encounter: fhir.Reference[];
   /**
    * An event can further specialize the act inherent in the type, such as  where it is simply "Procedure Report" and the procedure was a "colonoscopy". If one or more event codes are included, they shall not conflict with the values inherent in the class or type elements as such a conflict would create an ambiguous situation.
    */
-  public event?: fhir.CodeableConcept[];
+  public event: fhir.CodeableConcept[];
   /**
    * The time period over which the service that is described by the document was provided.
    */
@@ -233,7 +237,7 @@ export class DocumentReferenceContext extends fhir.BackboneElement {
   /**
    * May be identifiers or resources that caused the DocumentReference or referenced Document to be created.
    */
-  public related?: fhir.Reference[];
+  public related: fhir.Reference[];
   /**
    * Default constructor for DocumentReferenceContext - initializes any required elements to null if a value is not provided.
    */
@@ -285,11 +289,11 @@ export interface DocumentReferenceArgs extends fhir.DomainResourceArgs {
    * This is the status of the DocumentReference object, which might be independent from the docStatus element.
    * This element is labeled as a modifier because the status contains the codes that mark the document or reference as not currently valid.
    */
-  status: DocumentReferenceStatusCodeType|null;
+  status: fhir.FhirCode<DocumentReferenceStatusCodeType>|string|undefined;
   /**
    * The document that is pointed to might be in various lifecycle states.
    */
-  docStatus?: CompositionStatusCodeType|undefined;
+  docStatus?: fhir.FhirCode<CompositionStatusCodeType>|string|undefined;
   /**
    * Key metadata element describing the document that describes he exact type of document. Helps humans to assess whether the document is of interest when viewing a list of documents.
    */
@@ -360,16 +364,16 @@ export class DocumentReference extends fhir.DomainResource {
   /**
    * Other identifiers associated with the document, including version independent identifiers.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This is the status of the DocumentReference object, which might be independent from the docStatus element.
    * This element is labeled as a modifier because the status contains the codes that mark the document or reference as not currently valid.
    */
-  public status: DocumentReferenceStatusCodeType|null;
+  public status: fhir.FhirCode<DocumentReferenceStatusCodeType>|null;
   /**
    * The document that is pointed to might be in various lifecycle states.
    */
-  public docStatus?: CompositionStatusCodeType|undefined;
+  public docStatus?: fhir.FhirCode<CompositionStatusCodeType>|undefined;
   /**
    * Key metadata element describing the document that describes he exact type of document. Helps humans to assess whether the document is of interest when viewing a list of documents.
    */
@@ -377,7 +381,7 @@ export class DocumentReference extends fhir.DomainResource {
   /**
    * Key metadata element describing the the category or classification of the document. This is a broader perspective that groups similar documents based on how they would be used. This is a primary key used in searching.
    */
-  public category?: fhir.CodeableConcept[];
+  public category: fhir.CodeableConcept[];
   /**
    * Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure).
    */
@@ -389,7 +393,7 @@ export class DocumentReference extends fhir.DomainResource {
   /**
    * Not necessarily who did the actual data entry (i.e. typist) or who was the source (informant).
    */
-  public author?: fhir.Reference[];
+  public author: fhir.Reference[];
   /**
    * Represents a participant within the author institution who has legally authenticated or attested the document. Legal authentication implies that a document has been signed manually or electronically by the legal Authenticator.
    */
@@ -401,7 +405,7 @@ export class DocumentReference extends fhir.DomainResource {
   /**
    * This element is labeled as a modifier because documents that append to other documents are incomplete on their own.
    */
-  public relatesTo?: fhir.DocumentReferenceRelatesTo[];
+  public relatesTo: fhir.DocumentReferenceRelatesTo[];
   /**
    * What the document is about,  a terse summary of the document.
    */
@@ -410,7 +414,7 @@ export class DocumentReference extends fhir.DomainResource {
    * The confidentiality codes can carry multiple vocabulary items. HL7 has developed an understanding of security and privacy tags that might be desirable in a Document Sharing environment, called HL7 Healthcare Privacy and Security Classification System (HCS). The following specification is recommended but not mandated, as the vocabulary bindings are an administrative domain responsibility. The use of this method is up to the policy domain such as the XDS Affinity Domain or other Trust Domain where all parties including sender and recipients are trusted to appropriately tag and enforce.   
    * In the HL7 Healthcare Privacy and Security Classification (HCS) there are code systems specific to Confidentiality, Sensitivity, Integrity, and Handling Caveats. Some values would come from a local vocabulary as they are related to workflow roles and special projects.
    */
-  public securityLabel?: fhir.CodeableConcept[];
+  public securityLabel: fhir.CodeableConcept[];
   /**
    * The document and format referenced. There may be multiple content element repetitions, each with a different format.
    */
@@ -428,9 +432,9 @@ export class DocumentReference extends fhir.DomainResource {
     if (source['masterIdentifier']) { this.masterIdentifier = new fhir.Identifier(source.masterIdentifier); }
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<DocumentReferenceStatusCodeType>({value: source.status}); }
     else { this.status = null; }
-    if (source['docStatus']) { this.docStatus = source.docStatus; }
+    if (source['docStatus']) { this.docStatus = new fhir.FhirCode<CompositionStatusCodeType>({value: source.docStatus}); }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
@@ -452,25 +456,25 @@ export class DocumentReference extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (DocumentReference.status)
    */
-  public static statusRequiredCoding():DocumentReferenceStatusCodingType {
-    return DocumentReferenceStatusCodings;
+  public static get statusRequiredCodes() {
+    return DocumentReferenceStatusCodes;
   }
   /**
    * Required-bound Value Set for docStatus (DocumentReference.docStatus)
    */
-  public static docStatusRequiredCoding():CompositionStatusCodingType {
-    return CompositionStatusCodings;
+  public static get docStatusRequiredCodes() {
+    return CompositionStatusCodes;
   }
   /**
    * Preferred-bound Value Set for type (DocumentReference.type)
    */
-  public static typePreferredCoding():C80DocTypecodesCodingType {
+  public static get typePreferredCodings() {
     return C80DocTypecodesCodings;
   }
   /**
    * Extensible-bound Value Set for securityLabel (DocumentReference.securityLabel)
    */
-  public static securityLabelExtensibleCoding():SecurityLabelsCodingType {
+  public static get securityLabelExtensibleCodings() {
     return SecurityLabelsCodings;
   }
   /**
@@ -479,13 +483,21 @@ export class DocumentReference extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"DocumentReference" fhir: DocumentReference.resourceType:"DocumentReference"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"DocumentReference" fhir: DocumentReference.resourceType:"DocumentReference"' });
     }
     if (this["masterIdentifier"]) { issues.push(...this.masterIdentifier.doModelValidation()); }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:DocumentReferenceStatusCodeType fhir: DocumentReference.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<DocumentReferenceStatusCodeType> fhir: DocumentReference.status:code' });
     }
+    if (this['status'] && (!Object.values(DocumentReferenceStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<DocumentReferenceStatusCodeType> fhir: DocumentReference.status:code Required binding to: DocumentReferenceStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (this['docStatus'] && (!Object.values(CompositionStatusCodes).includes(this.docStatus as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property docStatus?:fhir.FhirCode<CompositionStatusCodeType> fhir: DocumentReference.docStatus:code Required binding to: CompositionStatus' });
+    }
+    if (this["docStatus"]) { issues.push(...this.docStatus.doModelValidation()); }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
@@ -497,11 +509,11 @@ export class DocumentReference extends fhir.DomainResource {
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["securityLabel"]) { this.securityLabel.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property content:fhir.DocumentReferenceContent[] fhir: DocumentReference.content:content', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content:fhir.DocumentReferenceContent[] fhir: DocumentReference.content:content' });
     } else if (!Array.isArray(this.content)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property content:fhir.DocumentReferenceContent[] fhir: DocumentReference.content:content', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property content:fhir.DocumentReferenceContent[] fhir: DocumentReference.content:content' });
     } else if (this.content.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property content:fhir.DocumentReferenceContent[] fhir: DocumentReference.content:content', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content:fhir.DocumentReferenceContent[] fhir: DocumentReference.content:content' });
     }
     if (this["content"]) { this.content.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["context"]) { issues.push(...this.context.doModelValidation()); }

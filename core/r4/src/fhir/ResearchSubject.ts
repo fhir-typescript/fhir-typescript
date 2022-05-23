@@ -24,7 +24,7 @@ export interface ResearchSubjectArgs extends fhir.DomainResourceArgs {
   /**
    * The current state of the subject.
    */
-  status: ResearchSubjectStatusCodeType|null;
+  status: fhir.FhirCode<ResearchSubjectStatusCodeType>|string|undefined;
   /**
    * The dates the subject began and ended their participation in the study.
    */
@@ -66,11 +66,11 @@ export class ResearchSubject extends fhir.DomainResource {
   /**
    * Identifiers assigned to this research subject for a study.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The current state of the subject.
    */
-  public status: ResearchSubjectStatusCodeType|null;
+  public status: fhir.FhirCode<ResearchSubjectStatusCodeType>|null;
   /**
    * The dates the subject began and ended their participation in the study.
    */
@@ -103,7 +103,7 @@ export class ResearchSubject extends fhir.DomainResource {
     this.resourceType = 'ResearchSubject';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<ResearchSubjectStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     if (source['study']) { this.study = new fhir.Reference(source.study); }
@@ -117,8 +117,8 @@ export class ResearchSubject extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (ResearchSubject.status)
    */
-  public static statusRequiredCoding():ResearchSubjectStatusCodingType {
-    return ResearchSubjectStatusCodings;
+  public static get statusRequiredCodes() {
+    return ResearchSubjectStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -126,19 +126,23 @@ export class ResearchSubject extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ResearchSubject" fhir: ResearchSubject.resourceType:"ResearchSubject"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ResearchSubject" fhir: ResearchSubject.resourceType:"ResearchSubject"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ResearchSubjectStatusCodeType fhir: ResearchSubject.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ResearchSubjectStatusCodeType> fhir: ResearchSubject.status:code' });
     }
+    if (this['status'] && (!Object.values(ResearchSubjectStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ResearchSubjectStatusCodeType> fhir: ResearchSubject.status:code Required binding to: ResearchSubjectStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["period"]) { issues.push(...this.period.doModelValidation()); }
     if (!this['study']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property study:fhir.Reference fhir: ResearchSubject.study:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property study:fhir.Reference fhir: ResearchSubject.study:Reference' });
     }
     if (this["study"]) { issues.push(...this.study.doModelValidation()); }
     if (!this['individual']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property individual:fhir.Reference fhir: ResearchSubject.individual:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property individual:fhir.Reference fhir: ResearchSubject.individual:Reference' });
     }
     if (this["individual"]) { issues.push(...this.individual.doModelValidation()); }
     if (this["assignedArm"]) { issues.push(...this.assignedArm.doModelValidation()); }

@@ -134,7 +134,7 @@ export class AdverseEventSuspectEntity extends fhir.BackboneElement {
   /**
    * Information on the possible cause of the event.
    */
-  public causality?: fhir.AdverseEventSuspectEntityCausality[];
+  public causality: fhir.AdverseEventSuspectEntityCausality[];
   /**
    * Default constructor for AdverseEventSuspectEntity - initializes any required elements to null if a value is not provided.
    */
@@ -151,7 +151,7 @@ export class AdverseEventSuspectEntity extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['instance']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property instance:fhir.Reference fhir: AdverseEvent.suspectEntity.instance:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property instance:fhir.Reference fhir: AdverseEvent.suspectEntity.instance:Reference' });
     }
     if (this["instance"]) { issues.push(...this.instance.doModelValidation()); }
     if (this["causality"]) { this.causality.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -173,7 +173,7 @@ export interface AdverseEventArgs extends fhir.DomainResourceArgs {
   /**
    * Whether the event actually happened, or just had the potential to. Note that this is independent of whether anyone was affected or harmed or how severely.
    */
-  actuality: AdverseEventActualityCodeType|null;
+  actuality: fhir.FhirCode<AdverseEventActualityCodeType>|string|undefined;
   /**
    * The overall type of event, intended for search and filtering purposes.
    */
@@ -267,11 +267,11 @@ export class AdverseEvent extends fhir.DomainResource {
   /**
    * Whether the event actually happened, or just had the potential to. Note that this is independent of whether anyone was affected or harmed or how severely.
    */
-  public actuality: AdverseEventActualityCodeType|null;
+  public actuality: fhir.FhirCode<AdverseEventActualityCodeType>|null;
   /**
    * The overall type of event, intended for search and filtering purposes.
    */
-  public category?: fhir.CodeableConcept[];
+  public category: fhir.CodeableConcept[];
   /**
    * This element defines the specific type of event that occurred or that was prevented from occurring.
    */
@@ -299,7 +299,7 @@ export class AdverseEvent extends fhir.DomainResource {
   /**
    * Includes information about the reaction that occurred as a result of exposure to a substance (for example, a drug or a chemical).
    */
-  public resultingCondition?: fhir.Reference[];
+  public resultingCondition: fhir.Reference[];
   /**
    * The information about where the adverse event occurred.
    */
@@ -323,23 +323,23 @@ export class AdverseEvent extends fhir.DomainResource {
   /**
    * Parties that may or should contribute or have contributed information to the adverse event, which can consist of one or more activities.  Such information includes information leading to the decision to perform the activity and how to perform the activity (e.g. consultant), information that the activity itself seeks to reveal (e.g. informant of clinical history), or information about what activity was performed (e.g. informant witness).
    */
-  public contributor?: fhir.Reference[];
+  public contributor: fhir.Reference[];
   /**
    * Describes the entity that is suspected to have caused the adverse event.
    */
-  public suspectEntity?: fhir.AdverseEventSuspectEntity[];
+  public suspectEntity: fhir.AdverseEventSuspectEntity[];
   /**
    * AdverseEvent.subjectMedicalHistory.
    */
-  public subjectMedicalHistory?: fhir.Reference[];
+  public subjectMedicalHistory: fhir.Reference[];
   /**
    * AdverseEvent.referenceDocument.
    */
-  public referenceDocument?: fhir.Reference[];
+  public referenceDocument: fhir.Reference[];
   /**
    * AdverseEvent.study.
    */
-  public study?: fhir.Reference[];
+  public study: fhir.Reference[];
   /**
    * Default constructor for AdverseEvent - initializes any required elements to null if a value is not provided.
    */
@@ -347,7 +347,7 @@ export class AdverseEvent extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'AdverseEvent';
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['actuality']) { this.actuality = source.actuality; }
+    if (source['actuality']) { this.actuality = new fhir.FhirCode<AdverseEventActualityCodeType>({value: source.actuality}); }
     else { this.actuality = null; }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
@@ -379,26 +379,26 @@ export class AdverseEvent extends fhir.DomainResource {
   /**
    * Required-bound Value Set for actuality (AdverseEvent.actuality)
    */
-  public static actualityRequiredCoding():AdverseEventActualityCodingType {
-    return AdverseEventActualityCodings;
+  public static get actualityRequiredCodes() {
+    return AdverseEventActualityCodes;
   }
   /**
    * Extensible-bound Value Set for category (AdverseEvent.category)
    */
-  public static categoryExtensibleCoding():AdverseEventCategoryCodingType {
+  public static get categoryExtensibleCodings() {
     return AdverseEventCategoryCodings;
   }
   /**
    * Required-bound Value Set for severity (AdverseEvent.severity)
    */
-  public static severityRequiredCoding():AdverseEventSeverityCodingType {
-    return AdverseEventSeverityCodings;
+  public static get severityRequiredCodes() {
+    return AdverseEventSeverityCodes;
   }
   /**
    * Required-bound Value Set for outcome (AdverseEvent.outcome)
    */
-  public static outcomeRequiredCoding():AdverseEventOutcomeCodingType {
-    return AdverseEventOutcomeCodings;
+  public static get outcomeRequiredCodes() {
+    return AdverseEventOutcomeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -406,16 +406,20 @@ export class AdverseEvent extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"AdverseEvent" fhir: AdverseEvent.resourceType:"AdverseEvent"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"AdverseEvent" fhir: AdverseEvent.resourceType:"AdverseEvent"' });
     }
     if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (!this['actuality']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actuality:AdverseEventActualityCodeType fhir: AdverseEvent.actuality:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actuality:fhir.FhirCode<AdverseEventActualityCodeType> fhir: AdverseEvent.actuality:code' });
     }
+    if (this['actuality'] && (!Object.values(AdverseEventActualityCodes).includes(this.actuality as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property actuality:fhir.FhirCode<AdverseEventActualityCodeType> fhir: AdverseEvent.actuality:code Required binding to: AdverseEventActuality' });
+    }
+    if (this["actuality"]) { issues.push(...this.actuality.doModelValidation()); }
     if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["event"]) { issues.push(...this.event.doModelValidation()); }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: AdverseEvent.subject:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: AdverseEvent.subject:Reference' });
     }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
@@ -425,7 +429,13 @@ export class AdverseEvent extends fhir.DomainResource {
     if (this["resultingCondition"]) { this.resultingCondition.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["location"]) { issues.push(...this.location.doModelValidation()); }
     if (this["seriousness"]) { issues.push(...this.seriousness.doModelValidation()); }
+    if (this['severity'] && (!Object.values(AdverseEventSeverityCodes).includes(this.severity as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property severity?:fhir.CodeableConcept fhir: AdverseEvent.severity:CodeableConcept Required binding to: AdverseEventSeverity' });
+    }
     if (this["severity"]) { issues.push(...this.severity.doModelValidation()); }
+    if (this['outcome'] && (!Object.values(AdverseEventOutcomeCodes).includes(this.outcome as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property outcome?:fhir.CodeableConcept fhir: AdverseEvent.outcome:CodeableConcept Required binding to: AdverseEventOutcome' });
+    }
     if (this["outcome"]) { issues.push(...this.outcome.doModelValidation()); }
     if (this["recorder"]) { issues.push(...this.recorder.doModelValidation()); }
     if (this["contributor"]) { this.contributor.forEach((x) => { issues.push(...x.doModelValidation()); }) }

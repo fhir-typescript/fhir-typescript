@@ -16,7 +16,7 @@ export interface ContributorArgs extends fhir.FhirElementArgs {
   /**
    * The type of contributor.
    */
-  type: ContributorTypeCodeType|null;
+  type: fhir.FhirCode<ContributorTypeCodeType>|string|undefined;
   /**
    * The name of the individual or organization responsible for the contribution.
    */
@@ -38,7 +38,7 @@ export class Contributor extends fhir.FhirElement {
   /**
    * The type of contributor.
    */
-  public type: ContributorTypeCodeType|null;
+  public type: fhir.FhirCode<ContributorTypeCodeType>|null;
   /**
    * The name of the individual or organization responsible for the contribution.
    */
@@ -46,13 +46,13 @@ export class Contributor extends fhir.FhirElement {
   /**
    * Contact details to assist a user in finding and communicating with the contributor.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * Default constructor for Contributor - initializes any required elements to null if a value is not provided.
    */
   constructor(source:Partial<ContributorArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<ContributorTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
@@ -62,8 +62,8 @@ export class Contributor extends fhir.FhirElement {
   /**
    * Required-bound Value Set for type (Contributor.type)
    */
-  public static typeRequiredCoding():ContributorTypeCodingType {
-    return ContributorTypeCodings;
+  public static get typeRequiredCodes() {
+    return ContributorTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -71,10 +71,14 @@ export class Contributor extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:ContributorTypeCodeType fhir: Contributor.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<ContributorTypeCodeType> fhir: Contributor.type:code' });
     }
+    if (this['type'] && (!Object.values(ContributorTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<ContributorTypeCodeType> fhir: Contributor.type:code Required binding to: ContributorType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: Contributor.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: Contributor.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }

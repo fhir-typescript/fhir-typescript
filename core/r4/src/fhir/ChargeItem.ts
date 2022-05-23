@@ -67,7 +67,7 @@ export class ChargeItemPerformer extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["function"]) { issues.push(...this.function.doModelValidation()); }
     if (!this['actor']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actor:fhir.Reference fhir: ChargeItem.performer.actor:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor:fhir.Reference fhir: ChargeItem.performer.actor:Reference' });
     }
     if (this["actor"]) { issues.push(...this.actor.doModelValidation()); }
     return issues;
@@ -97,7 +97,7 @@ export interface ChargeItemArgs extends fhir.DomainResourceArgs {
    * Unknown does not represent "other" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.
    * This element is labeled as a modifier because the status contains the code entered-in-error that marks the charge item as not currently valid.
    */
-  status: ChargeitemStatusCodeType|null;
+  status: fhir.FhirCode<ChargeitemStatusCodeType>|string|undefined;
   /**
    * ChargeItems can be grouped to larger ChargeItems covering the whole set.
    */
@@ -223,24 +223,24 @@ export class ChargeItem extends fhir.DomainResource {
   /**
    * Identifiers assigned to this event performer or other systems.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * References the (external) source of pricing information, rules of application for the code this ChargeItem uses.
    */
-  public definitionUri?: fhir.FhirUri[];
+  public definitionUri: fhir.FhirUri[];
   /**
    * References the source of pricing information, rules of application for the code this ChargeItem uses.
    */
-  public definitionCanonical?: fhir.FhirCanonical[];
+  public definitionCanonical: fhir.FhirCanonical[];
   /**
    * Unknown does not represent "other" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.
    * This element is labeled as a modifier because the status contains the code entered-in-error that marks the charge item as not currently valid.
    */
-  public status: ChargeitemStatusCodeType|null;
+  public status: fhir.FhirCode<ChargeitemStatusCodeType>|null;
   /**
    * ChargeItems can be grouped to larger ChargeItems covering the whole set.
    */
-  public partOf?: fhir.Reference[];
+  public partOf: fhir.Reference[];
   /**
    * A code that identifies the charge, like a billing code.
    */
@@ -264,7 +264,7 @@ export class ChargeItem extends fhir.DomainResource {
   /**
    * Indicates who or what performed or participated in the charged service.
    */
-  public performer?: fhir.ChargeItemPerformer[];
+  public performer: fhir.ChargeItemPerformer[];
   /**
    * Practitioners and Devices can be associated with multiple organizations. It has to be made clear, on behalf of which Organization the services have been rendered.
    */
@@ -284,7 +284,7 @@ export class ChargeItem extends fhir.DomainResource {
   /**
    * Only used if not implicit in code found in Condition.code. If the use case requires attributes from the BodySite resource (e.g. to identify and track separately) then use the standard extension [bodySite](extension-bodysite.html).  May be a summary code, or a reference to a very precise definition of the location, or both.
    */
-  public bodysite?: fhir.CodeableConcept[];
+  public bodysite: fhir.CodeableConcept[];
   /**
    * There is no reason to carry the factor in the instance of a ChargeItem unless special circumstances require a manual override. The factors are usually defined by a set of rules in a back catalogue of the billing codes  (see ChargeItem.definition). Derived profiles may require a ChargeItem.overrideReason to be provided if either factor or price are manually overridden.
    */
@@ -308,11 +308,11 @@ export class ChargeItem extends fhir.DomainResource {
   /**
    * If the application of the charge item requires a reason to be given, it can be captured here. Textual reasons can be captured using reasonCode.text.
    */
-  public reason?: fhir.CodeableConcept[];
+  public reason: fhir.CodeableConcept[];
   /**
    * Indicated the rendered service that caused this charge.
    */
-  public service?: fhir.Reference[];
+  public service: fhir.Reference[];
   /**
    * Identifies the device, food, drug or other product being charged either by type code or reference to an instance.
    */
@@ -324,15 +324,15 @@ export class ChargeItem extends fhir.DomainResource {
   /**
    * Systems posting the ChargeItems might not always be able to determine, which accounts the Items need to be places into. It is up to the postprocessing Financial System to apply internal rules to decide based on the Encounter/EpisodeOfCare/Patient/Coverage context and the type of ChargeItem, which Account is appropriate.
    */
-  public account?: fhir.Reference[];
+  public account: fhir.Reference[];
   /**
    * Comments made about the event by the performer, subject or other participants.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Further information supporting this charge.
    */
-  public supportingInformation?: fhir.Reference[];
+  public supportingInformation: fhir.Reference[];
   /**
    * Default constructor for ChargeItem - initializes any required elements to null if a value is not provided.
    */
@@ -345,7 +345,7 @@ export class ChargeItem extends fhir.DomainResource {
     else { this.definitionUri = []; }
     if (source['definitionCanonical']) { this.definitionCanonical = source.definitionCanonical.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.definitionCanonical = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<ChargeitemStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
     else { this.partOf = []; }
@@ -388,8 +388,8 @@ export class ChargeItem extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (ChargeItem.status)
    */
-  public static statusRequiredCoding():ChargeitemStatusCodingType {
-    return ChargeitemStatusCodings;
+  public static get statusRequiredCodes() {
+    return ChargeitemStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -397,21 +397,25 @@ export class ChargeItem extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ChargeItem" fhir: ChargeItem.resourceType:"ChargeItem"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ChargeItem" fhir: ChargeItem.resourceType:"ChargeItem"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["definitionUri"]) { this.definitionUri.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["definitionCanonical"]) { this.definitionCanonical.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ChargeitemStatusCodeType fhir: ChargeItem.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ChargeitemStatusCodeType> fhir: ChargeItem.status:code' });
     }
+    if (this['status'] && (!Object.values(ChargeitemStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ChargeitemStatusCodeType> fhir: ChargeItem.status:code Required binding to: ChargeitemStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: ChargeItem.code:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: ChargeItem.code:CodeableConcept' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: ChargeItem.subject:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: ChargeItem.subject:Reference' });
     }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["context"]) { issues.push(...this.context.doModelValidation()); }

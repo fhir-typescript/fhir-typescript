@@ -55,6 +55,10 @@ export interface DeviceUdiCarrier extends fhir.BackboneElement {
      * A coded entry to indicate how the data was entered.
      */
     entryType?: 'barcode' | 'card' | 'manual' | 'rfid' | 'self-reported' | 'unknown' | undefined;
+    /**
+     * Extended properties for primitive element: Device.udiCarrier.entryType
+     */
+    _entryType?: fhir.FhirElement;
 }
 /**
  * This represents the manufacturer's name of the device as provided by the device, from a UDI label, or by a person describing the Device.  This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.
@@ -73,6 +77,10 @@ export interface DeviceDeviceName extends fhir.BackboneElement {
      * UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.
      */
     type: 'manufacturer-name' | 'model-name' | 'other' | 'patient-reported-name' | 'udi-label-name' | 'user-friendly-name' | null;
+    /**
+     * Extended properties for primitive element: Device.deviceName.type
+     */
+    _type?: fhir.FhirElement;
 }
 /**
  * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.
@@ -153,6 +161,10 @@ export interface Device extends fhir.DomainResource {
      * This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the device (record)as not currently valid.
      */
     status?: 'active' | 'entered-in-error' | 'inactive' | 'unknown' | undefined;
+    /**
+     * Extended properties for primitive element: Device.status
+     */
+    _status?: fhir.FhirElement;
     /**
      * Reason for the dtatus of the Device availability.
      */

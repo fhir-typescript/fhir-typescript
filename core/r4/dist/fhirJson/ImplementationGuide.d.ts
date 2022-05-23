@@ -164,6 +164,10 @@ export interface ImplementationGuideDefinitionPage extends fhir.BackboneElement 
      */
     generation: 'generated' | 'html' | 'markdown' | 'xml' | null;
     /**
+     * Extended properties for primitive element: ImplementationGuide.definition.page.generation
+     */
+    _generation?: fhir.FhirElement;
+    /**
      * The implementation guide breadcrumbs are generated from this structure.
      */
     page?: fhir.ImplementationGuideDefinitionPage[] | undefined;
@@ -176,6 +180,10 @@ export interface ImplementationGuideDefinitionParameter extends fhir.BackboneEle
      * apply | path-resource | path-pages | path-tx-cache | expansion-parameter | rule-broken-links | generate-xml | generate-json | generate-turtle | html-template.
      */
     code: 'apply' | 'expansion-parameter' | 'generate-json' | 'generate-turtle' | 'generate-xml' | 'html-template' | 'path-pages' | 'path-resource' | 'path-tx-cache' | 'rule-broken-links' | null;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.definition.parameter.code
+     */
+    _code?: fhir.FhirElement;
     /**
      * Value for named type.
      */
@@ -384,6 +392,10 @@ export interface ImplementationGuide extends fhir.DomainResource {
      * Allows filtering of implementation guides that are appropriate for use versus not.
      */
     status: 'active' | 'draft' | 'retired' | 'unknown' | null;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.status
+     */
+    _status?: fhir.FhirElement;
     /**
      * Allows filtering of implementation guides that are appropriate for use versus not.
      */

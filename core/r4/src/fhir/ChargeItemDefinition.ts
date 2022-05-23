@@ -84,7 +84,7 @@ export interface ChargeItemDefinitionPropertyGroupPriceComponentArgs extends fhi
   /**
    * This code identifies the type of the component.
    */
-  type: InvoicePriceComponentTypeCodeType|null;
+  type: fhir.FhirCode<InvoicePriceComponentTypeCodeType>|string|undefined;
   /**
    * A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.
    */
@@ -110,7 +110,7 @@ export class ChargeItemDefinitionPropertyGroupPriceComponent extends fhir.Backbo
   /**
    * This code identifies the type of the component.
    */
-  public type: InvoicePriceComponentTypeCodeType|null;
+  public type: fhir.FhirCode<InvoicePriceComponentTypeCodeType>|null;
   /**
    * A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.
    */
@@ -128,7 +128,7 @@ export class ChargeItemDefinitionPropertyGroupPriceComponent extends fhir.Backbo
    */
   constructor(source:Partial<ChargeItemDefinitionPropertyGroupPriceComponentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<InvoicePriceComponentTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['factor']) { this.factor = new fhir.FhirDecimal({value: source.factor}); }
@@ -137,8 +137,8 @@ export class ChargeItemDefinitionPropertyGroupPriceComponent extends fhir.Backbo
   /**
    * Required-bound Value Set for type (ChargeItemDefinition.propertyGroup.priceComponent.type)
    */
-  public static typeRequiredCoding():InvoicePriceComponentTypeCodingType {
-    return InvoicePriceComponentTypeCodings;
+  public static get typeRequiredCodes() {
+    return InvoicePriceComponentTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -146,8 +146,12 @@ export class ChargeItemDefinitionPropertyGroupPriceComponent extends fhir.Backbo
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:InvoicePriceComponentTypeCodeType fhir: ChargeItemDefinition.propertyGroup.priceComponent.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<InvoicePriceComponentTypeCodeType> fhir: ChargeItemDefinition.propertyGroup.priceComponent.type:code' });
     }
+    if (this['type'] && (!Object.values(InvoicePriceComponentTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<InvoicePriceComponentTypeCodeType> fhir: ChargeItemDefinition.propertyGroup.priceComponent.type:code Required binding to: InvoicePriceComponentType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["factor"]) { issues.push(...this.factor.doModelValidation()); }
     if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
@@ -179,11 +183,11 @@ export class ChargeItemDefinitionPropertyGroup extends fhir.BackboneElement {
   /**
    * The applicability conditions can be used to ascertain whether a billing item is allowed in a specific context. E.g. some billing codes may only be applicable in out-patient settings, only to male/female patients or only to children.
    */
-  public applicability?: fhir.ChargeItemDefinitionApplicability[];
+  public applicability: fhir.ChargeItemDefinitionApplicability[];
   /**
    * The price for a ChargeItem may be calculated as a base price with surcharges/deductions that apply in certain conditions. A ChargeItemDefinition resource that defines the prices, factors and conditions that apply to a billing code is currently under development. The priceComponent element can be used to offer transparency to the recipient of the Invoice of how the prices have been calculated.
    */
-  public priceComponent?: fhir.ChargeItemDefinitionPropertyGroupPriceComponent[];
+  public priceComponent: fhir.ChargeItemDefinitionPropertyGroupPriceComponent[];
   /**
    * Default constructor for ChargeItemDefinitionPropertyGroup - initializes any required elements to null if a value is not provided.
    */
@@ -245,7 +249,7 @@ export interface ChargeItemDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of charge item definitions that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of charge item definitions that are appropriate for use versus not.
    */
@@ -329,7 +333,7 @@ export class ChargeItemDefinition extends fhir.DomainResource {
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this charge item definition outside of FHIR, where it is not possible to use the logical URI.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * There may be different charge item definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the charge item definition with the format [url]|[version].
    */
@@ -341,19 +345,19 @@ export class ChargeItemDefinition extends fhir.DomainResource {
   /**
    * The URL pointing to an externally-defined charge item definition that is adhered to in whole or in part by this definition.
    */
-  public derivedFromUri?: fhir.FhirUri[];
+  public derivedFromUri: fhir.FhirUri[];
   /**
    * A larger definition of which this particular definition is a component or step.
    */
-  public partOf?: fhir.FhirCanonical[];
+  public partOf: fhir.FhirCanonical[];
   /**
    * As new versions of a protocol or guideline are defined, allows identification of what versions are replaced by a new instance.
    */
-  public replaces?: fhir.FhirCanonical[];
+  public replaces: fhir.FhirCanonical[];
   /**
    * Allows filtering of charge item definitions that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of charge item definitions that are appropriate for use versus not.
    */
@@ -369,7 +373,7 @@ export class ChargeItemDefinition extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the charge item definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the charge item definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the charge item definition is presumed to be the predominant language in the place the charge item definition was created).
    */
@@ -377,11 +381,11 @@ export class ChargeItemDefinition extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the charge item definition to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * A copyright statement relating to the charge item definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the charge item definition.
    */
@@ -405,15 +409,15 @@ export class ChargeItemDefinition extends fhir.DomainResource {
   /**
    * In case of highly customized, individually produced or fitted devices/substances, the pricing information may be different for each instance of the product. This reference links pricing details to specific product instances.
    */
-  public instance?: fhir.Reference[];
+  public instance: fhir.Reference[];
   /**
    * The applicability conditions can be used to ascertain whether a billing item is allowed in a specific context. E.g. some billing codes may only be applicable in out-patient settings, only to male/female patients or only to children.
    */
-  public applicability?: fhir.ChargeItemDefinitionApplicability[];
+  public applicability: fhir.ChargeItemDefinitionApplicability[];
   /**
    * Group of properties which are applicable under the same conditions. If no applicability rules are established for the group, then all properties always apply.
    */
-  public propertyGroup?: fhir.ChargeItemDefinitionPropertyGroup[];
+  public propertyGroup: fhir.ChargeItemDefinitionPropertyGroup[];
   /**
    * Default constructor for ChargeItemDefinition - initializes any required elements to null if a value is not provided.
    */
@@ -432,7 +436,7 @@ export class ChargeItemDefinition extends fhir.DomainResource {
     else { this.partOf = []; }
     if (source['replaces']) { this.replaces = source.replaces.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.replaces = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
@@ -459,8 +463,8 @@ export class ChargeItemDefinition extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (ChargeItemDefinition.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -468,10 +472,10 @@ export class ChargeItemDefinition extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ChargeItemDefinition" fhir: ChargeItemDefinition.resourceType:"ChargeItemDefinition"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ChargeItemDefinition" fhir: ChargeItemDefinition.resourceType:"ChargeItemDefinition"' });
     }
     if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property url:fhir.FhirUri fhir: ChargeItemDefinition.url:uri', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url:fhir.FhirUri fhir: ChargeItemDefinition.url:uri' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -481,8 +485,12 @@ export class ChargeItemDefinition extends fhir.DomainResource {
     if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["replaces"]) { this.replaces.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: ChargeItemDefinition.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: ChargeItemDefinition.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: ChargeItemDefinition.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }

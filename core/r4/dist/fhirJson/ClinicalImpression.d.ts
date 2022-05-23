@@ -50,6 +50,10 @@ export interface ClinicalImpression extends fhir.DomainResource {
      */
     status: 'completed' | 'entered-in-error' | 'in-progress' | null;
     /**
+     * Extended properties for primitive element: ClinicalImpression.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * This is generally only used for "exception" statuses such as "not-done", "suspended" or "cancelled".
      * [distinct reason codes for different statuses can be enforced using invariants if they are universal bindings].
      */

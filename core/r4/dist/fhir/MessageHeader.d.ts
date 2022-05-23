@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ResponseCodeCodingType } from '../fhirValueSets/ResponseCodeCodings.js';
 import { ResponseCodeCodeType } from '../fhirValueSets/ResponseCodeCodes.js';
 /**
  * Valid arguments for the MessageHeaderDestination type.
@@ -128,7 +127,7 @@ export interface MessageHeaderResponseArgs extends fhir.BackboneElementArgs {
     /**
      * This is a generic response to the request message. Specific data for the response will be found in MessageHeader.focus.
      */
-    code: ResponseCodeCodeType | null;
+    code: fhir.FhirCode<ResponseCodeCodeType> | string | undefined;
     /**
      * This SHALL be contained in the bundle. If any of the issues are errors, the response code SHALL be an error.
      */
@@ -149,7 +148,7 @@ export declare class MessageHeaderResponse extends fhir.BackboneElement {
     /**
      * This is a generic response to the request message. Specific data for the response will be found in MessageHeader.focus.
      */
-    code: ResponseCodeCodeType | null;
+    code: fhir.FhirCode<ResponseCodeCodeType> | null;
     /**
      * This SHALL be contained in the bundle. If any of the issues are errors, the response code SHALL be an error.
      */
@@ -161,7 +160,11 @@ export declare class MessageHeaderResponse extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for code (MessageHeader.response.code)
      */
-    static codeRequiredCoding(): ResponseCodeCodingType;
+    static get codeRequiredCodes(): {
+        readonly FatalError: "fatal-error";
+        readonly OK: "ok";
+        readonly TransientError: "transient-error";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -251,7 +254,7 @@ export declare class MessageHeader extends fhir.DomainResource {
     /**
      * There SHOULD be at least one destination, but in some circumstances, the source system is unaware of any particular destination system.
      */
-    destination?: fhir.MessageHeaderDestination[];
+    destination: fhir.MessageHeaderDestination[];
     /**
      * Use case is for where a (trusted) sending system is responsible for multiple organizations, and therefore cannot differentiate based on source endpoint / authentication alone.
      */
@@ -283,7 +286,7 @@ export declare class MessageHeader extends fhir.DomainResource {
     /**
      * The data is defined where the transaction type is defined. The transaction data is always included in the bundle that is the full message.  Only the root resource is specified.  The resources it references should be contained in the bundle but are not also listed here.  Multiple repetitions are allowed to cater for merges and other situations with multiple focal targets.
      */
-    focus?: fhir.Reference[];
+    focus: fhir.Reference[];
     /**
      * Permanent link to the MessageDefinition for this message.
      */

@@ -1,9 +1,6 @@
 import * as fhir from '../fhir.js';
-import { ProductStorageScaleCodingType } from '../fhirValueSets/ProductStorageScaleCodings.js';
 import { ProductStorageScaleCodeType } from '../fhirValueSets/ProductStorageScaleCodes.js';
-import { ProductCategoryCodingType } from '../fhirValueSets/ProductCategoryCodings.js';
 import { ProductCategoryCodeType } from '../fhirValueSets/ProductCategoryCodes.js';
-import { ProductStatusCodingType } from '../fhirValueSets/ProductStatusCodings.js';
 import { ProductStatusCodeType } from '../fhirValueSets/ProductStatusCodes.js';
 /**
  * Valid arguments for the BiologicallyDerivedProductCollection type.
@@ -194,7 +191,7 @@ export interface BiologicallyDerivedProductStorageArgs extends fhir.BackboneElem
     /**
      * Temperature scale used.
      */
-    scale?: ProductStorageScaleCodeType | undefined;
+    scale?: fhir.FhirCode<ProductStorageScaleCodeType> | string | undefined;
     /**
      * Storage timeperiod.
      */
@@ -219,7 +216,7 @@ export declare class BiologicallyDerivedProductStorage extends fhir.BackboneElem
     /**
      * Temperature scale used.
      */
-    scale?: ProductStorageScaleCodeType | undefined;
+    scale?: fhir.FhirCode<ProductStorageScaleCodeType> | undefined;
     /**
      * Storage timeperiod.
      */
@@ -231,7 +228,11 @@ export declare class BiologicallyDerivedProductStorage extends fhir.BackboneElem
     /**
      * Required-bound Value Set for scale (BiologicallyDerivedProduct.storage.scale)
      */
-    static scaleRequiredCoding(): ProductStorageScaleCodingType;
+    static get scaleRequiredCodes(): {
+        readonly Celsius: "celsius";
+        readonly Fahrenheit: "farenheit";
+        readonly Kelvin: "kelvin";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -252,7 +253,7 @@ export interface BiologicallyDerivedProductArgs extends fhir.DomainResourceArgs 
     /**
      * Broad category of this product.
      */
-    productCategory?: ProductCategoryCodeType | undefined;
+    productCategory?: fhir.FhirCode<ProductCategoryCodeType> | string | undefined;
     /**
      * A code that identifies the kind of this biologically derived product (SNOMED Ctcode).
      */
@@ -260,7 +261,7 @@ export interface BiologicallyDerivedProductArgs extends fhir.DomainResourceArgs 
     /**
      * Whether the product is currently available.
      */
-    status?: ProductStatusCodeType | undefined;
+    status?: fhir.FhirCode<ProductStatusCodeType> | string | undefined;
     /**
      * Procedure request to obtain this biologically derived product.
      */
@@ -306,11 +307,11 @@ export declare class BiologicallyDerivedProduct extends fhir.DomainResource {
     /**
      * This records identifiers associated with this biologically derived product instance that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Broad category of this product.
      */
-    productCategory?: ProductCategoryCodeType | undefined;
+    productCategory?: fhir.FhirCode<ProductCategoryCodeType> | undefined;
     /**
      * A code that identifies the kind of this biologically derived product (SNOMED Ctcode).
      */
@@ -318,11 +319,11 @@ export declare class BiologicallyDerivedProduct extends fhir.DomainResource {
     /**
      * Whether the product is currently available.
      */
-    status?: ProductStatusCodeType | undefined;
+    status?: fhir.FhirCode<ProductStatusCodeType> | undefined;
     /**
      * Procedure request to obtain this biologically derived product.
      */
-    request?: fhir.Reference[];
+    request: fhir.Reference[];
     /**
      * Number of discrete units within this product.
      */
@@ -330,7 +331,7 @@ export declare class BiologicallyDerivedProduct extends fhir.DomainResource {
     /**
      * For products that have multiple collections. For example Peripheral Blood Stem Cells may be collected over several days from a single donor and the donation split into in multiple containers which must be linked to the parent donation.
      */
-    parent?: fhir.Reference[];
+    parent: fhir.Reference[];
     /**
      * How this product was collected.
      */
@@ -338,7 +339,7 @@ export declare class BiologicallyDerivedProduct extends fhir.DomainResource {
     /**
      * Any processing of the product during collection that does not change the fundamental nature of the product. For example adding anti-coagulants during the collection of Peripheral Blood Stem Cells.
      */
-    processing?: fhir.BiologicallyDerivedProductProcessing[];
+    processing: fhir.BiologicallyDerivedProductProcessing[];
     /**
      * Any manipulation of product post-collection that is intended to alter the product.  For example a buffy-coat enrichment or CD8 reduction of Peripheral Blood Stem Cells to make it more suitable for infusion.
      */
@@ -346,7 +347,7 @@ export declare class BiologicallyDerivedProduct extends fhir.DomainResource {
     /**
      * Product storage.
      */
-    storage?: fhir.BiologicallyDerivedProductStorage[];
+    storage: fhir.BiologicallyDerivedProductStorage[];
     /**
      * Default constructor for BiologicallyDerivedProduct - initializes any required elements to null if a value is not provided.
      */
@@ -354,11 +355,20 @@ export declare class BiologicallyDerivedProduct extends fhir.DomainResource {
     /**
      * Required-bound Value Set for productCategory (BiologicallyDerivedProduct.productCategory)
      */
-    static productCategoryRequiredCoding(): ProductCategoryCodingType;
+    static get productCategoryRequiredCodes(): {
+        readonly BiologicalAgent: "biologicalAgent";
+        readonly Cells: "cells";
+        readonly Fluid: "fluid";
+        readonly Organ: "organ";
+        readonly Tissue: "tissue";
+    };
     /**
      * Required-bound Value Set for status (BiologicallyDerivedProduct.status)
      */
-    static statusRequiredCoding(): ProductStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Available: "available";
+        readonly Unavailable: "unavailable";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

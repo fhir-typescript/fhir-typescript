@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { CareTeamStatusCodingType } from '../fhirValueSets/CareTeamStatusCodings.js';
 import { CareTeamStatusCodeType } from '../fhirValueSets/CareTeamStatusCodes.js';
 /**
  * Valid arguments for the CareTeamParticipant type.
@@ -34,7 +33,7 @@ export declare class CareTeamParticipant extends fhir.BackboneElement {
     /**
      * Roles may sometimes be inferred by type of Practitioner.  These are relationships that hold only within the context of the care team.  General relationships should be handled as properties of the Patient resource directly.
      */
-    role?: fhir.CodeableConcept[];
+    role: fhir.CodeableConcept[];
     /**
      * Patient only needs to be listed if they have a role other than "subject of care".
      * Member is optional because some participants may be known only by their role, particularly in draft plans.
@@ -72,7 +71,7 @@ export interface CareTeamArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains the code entered-in-error that marks the care team as not currently valid.
      */
-    status?: CareTeamStatusCodeType | undefined;
+    status?: fhir.FhirCode<CareTeamStatusCodeType> | string | undefined;
     /**
      * There may be multiple axis of categorization and one team may serve multiple purposes.
      */
@@ -133,15 +132,15 @@ export declare class CareTeam extends fhir.DomainResource {
     /**
      * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains the code entered-in-error that marks the care team as not currently valid.
      */
-    status?: CareTeamStatusCodeType | undefined;
+    status?: fhir.FhirCode<CareTeamStatusCodeType> | undefined;
     /**
      * There may be multiple axis of categorization and one team may serve multiple purposes.
      */
-    category?: fhir.CodeableConcept[];
+    category: fhir.CodeableConcept[];
     /**
      * The meaning/purpose of the team is conveyed in CareTeam.category.  This element may also convey semantics of the team (e.g. "Red trauma team"), but its primary purpose is to distinguish between identical teams in a human-friendly way.  ("Team 18735" isn't as friendly.).
      */
@@ -161,27 +160,27 @@ export declare class CareTeam extends fhir.DomainResource {
     /**
      * Identifies all people and organizations who are expected to be involved in the care team.
      */
-    participant?: fhir.CareTeamParticipant[];
+    participant: fhir.CareTeamParticipant[];
     /**
      * Describes why the care team exists.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * Condition(s) that this care team addresses.
      */
-    reasonReference?: fhir.Reference[];
+    reasonReference: fhir.Reference[];
     /**
      * The organization responsible for the care team.
      */
-    managingOrganization?: fhir.Reference[];
+    managingOrganization: fhir.Reference[];
     /**
      * The ContactPoint.use code of home is not appropriate to use. These contacts are not the contact details of individual care team members.
      */
-    telecom?: fhir.ContactPoint[];
+    telecom: fhir.ContactPoint[];
     /**
      * Comments made about the CareTeam.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Default constructor for CareTeam - initializes any required elements to null if a value is not provided.
      */
@@ -189,7 +188,13 @@ export declare class CareTeam extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (CareTeam.status)
      */
-    static statusRequiredCoding(): CareTeamStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly EnteredInError: "entered-in-error";
+        readonly Inactive: "inactive";
+        readonly Proposed: "proposed";
+        readonly Suspended: "suspended";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

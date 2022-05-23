@@ -331,6 +331,10 @@ export interface TestScriptSetupActionOperation extends fhir.BackboneElement {
    */
   method?: 'delete'|'get'|'head'|'options'|'patch'|'post'|'put'|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.method
+   */
+  _method?:fhir.FhirElement;
+  /**
    * If absent, test engine will send the message.  When present, test engine will not send the request message but will wait for the request message to be sent from this origin server.
    */
   origin?: number|undefined;
@@ -417,6 +421,10 @@ export interface TestScriptSetupActionAssert extends fhir.BackboneElement {
    */
   direction?: 'request'|'response'|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.direction
+   */
+  _direction?:fhir.FhirElement;
+  /**
    * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
    */
   compareToSourceId?: string|undefined;
@@ -485,6 +493,10 @@ export interface TestScriptSetupActionAssert extends fhir.BackboneElement {
    */
   operator?: 'contains'|'empty'|'equals'|'eval'|'greaterThan'|'in'|'lessThan'|'notContains'|'notEmpty'|'notEquals'|'notIn'|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.operator
+   */
+  _operator?:fhir.FhirElement;
+  /**
    * If both "path" and a "fixtureId" are specified, then the path will be evaluated against the request or response body mapped to the fixtureId.  If "path" is specified and a "fixtureId" is not, then the path will be evaluated against the response body of the last operation.  Test engines are to store the request and response body and headers of the last operation at all times for subsequent assertions.
    */
   path?: string|undefined;
@@ -496,6 +508,10 @@ export interface TestScriptSetupActionAssert extends fhir.BackboneElement {
    * If "requestMethod" is specified then it will be used in place of "value". The "requestMethod" will evaluate against the last operation's request HTTP operation.
    */
   requestMethod?: 'delete'|'get'|'head'|'options'|'patch'|'post'|'put'|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.requestMethod
+   */
+  _requestMethod?:fhir.FhirElement;
   /**
    * If "requestURL" is specified then it will be used in place of "value". The "requestURL" will evaluate against the last operation's full request URL path string.
    */
@@ -516,6 +532,10 @@ export interface TestScriptSetupActionAssert extends fhir.BackboneElement {
    * This is a shorter way of achieving similar verifications via "assert.responseCode".  If you need more control, then use "assert.responseCode"  e.g. &lt;assert&gt;  &lt;contentType value="json" /&gt;  &lt;response value="okay"/&gt; &lt;/assert&gt;.
    */
   response?: 'bad'|'conflict'|'created'|'forbidden'|'gone'|'methodNotAllowed'|'noContent'|'notFound'|'notModified'|'okay'|'preconditionFailed'|'unprocessable'|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.response
+   */
+  _response?:fhir.FhirElement;
   /**
    * To be used with "operator" attribute value. Asserts that the response code equals this value if "operator" is not specified.   If the operator is "in" or "notIn" then the responseCode would be a comma-separated list of values e.g. "200,201". Otherwise, it's expected to be a numeric value.   If "fixture" is not specified, then the "responseBodyId" value of the last operation is assumed.
    */
@@ -692,6 +712,10 @@ export interface TestScript extends fhir.DomainResource {
    * Allows filtering of test scripts that are appropriate for use versus not.
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
+  /**
+   * Extended properties for primitive element: TestScript.status
+   */
+  _status?:fhir.FhirElement;
   /**
    * Allows filtering of test scripts that are appropriate for use versus not.
    */

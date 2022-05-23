@@ -65,6 +65,10 @@ export interface Communication extends fhir.DomainResource {
      */
     status: 'completed' | 'entered-in-error' | 'in-progress' | 'not-done' | 'on-hold' | 'preparation' | 'stopped' | 'unknown' | null;
     /**
+     * Extended properties for primitive element: Communication.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * This is generally only used for "exception" statuses such as "not-done", "suspended" or "aborted". The reason for performing the event at all is captured in reasonCode, not here.
      */
     statusReason?: fhir.CodeableConcept | undefined;
@@ -76,6 +80,10 @@ export interface Communication extends fhir.DomainResource {
      * Used to prioritize workflow (such as which communication to read first) when the communication is planned or in progress.
      */
     priority?: 'asap' | 'routine' | 'stat' | 'urgent' | undefined;
+    /**
+     * Extended properties for primitive element: Communication.priority
+     */
+    _priority?: fhir.FhirElement;
     /**
      * A channel that was used for this communication (e.g. email, fax).
      */

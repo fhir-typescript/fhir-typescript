@@ -1,9 +1,6 @@
 import * as fhir from '../fhir.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
-import { CapabilityStatementKindCodingType } from '../fhirValueSets/CapabilityStatementKindCodings.js';
 import { CapabilityStatementKindCodeType } from '../fhirValueSets/CapabilityStatementKindCodes.js';
-import { CodeSearchSupportCodingType } from '../fhirValueSets/CodeSearchSupportCodings.js';
 import { CodeSearchSupportCodeType } from '../fhirValueSets/CodeSearchSupportCodes.js';
 /**
  * Valid arguments for the TerminologyCapabilitiesSoftware type.
@@ -171,15 +168,15 @@ export declare class TerminologyCapabilitiesCodeSystemVersion extends fhir.Backb
     /**
      * Language Displays supported.
      */
-    language?: fhir.FhirCode[];
+    language: fhir.FhirCode[];
     /**
      * Filter Properties supported.
      */
-    filter?: fhir.TerminologyCapabilitiesCodeSystemVersionFilter[];
+    filter: fhir.TerminologyCapabilitiesCodeSystemVersionFilter[];
     /**
      * Properties supported for $lookup.
      */
-    property?: fhir.FhirCode[];
+    property: fhir.FhirCode[];
     /**
      * Default constructor for TerminologyCapabilitiesCodeSystemVersion - initializes any required elements to null if a value is not provided.
      */
@@ -221,7 +218,7 @@ export declare class TerminologyCapabilitiesCodeSystem extends fhir.BackboneElem
     /**
      * Language translations might not be available for all codes.
      */
-    version?: fhir.TerminologyCapabilitiesCodeSystemVersion[];
+    version: fhir.TerminologyCapabilitiesCodeSystemVersion[];
     /**
      * True if subsumption is supported for this version of the code system.
      */
@@ -321,7 +318,7 @@ export declare class TerminologyCapabilitiesExpansion extends fhir.BackboneEleme
     /**
      * Supported expansion parameter.
      */
-    parameter?: fhir.TerminologyCapabilitiesExpansionParameter[];
+    parameter: fhir.TerminologyCapabilitiesExpansionParameter[];
     /**
      * This documentation should cover things like case sensitivity,  use of punctuation if not ignored, what wild cards are supported (if any), whether text is starts with or contains, and whether word order matters.
      */
@@ -454,7 +451,7 @@ export interface TerminologyCapabilitiesArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of terminology capabilitiess that are appropriate for use versus not.This is not intended for use with actual capability statements, but where capability statements are used to describe possible or desired systems.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Allows filtering of terminology capabilitiess that are appropriate for use versus not.
      */
@@ -494,7 +491,7 @@ export interface TerminologyCapabilitiesArgs extends fhir.DomainResourceArgs {
     /**
      * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
      */
-    kind: CapabilityStatementKindCodeType | null;
+    kind: fhir.FhirCode<CapabilityStatementKindCodeType> | string | undefined;
     /**
      * Software that is covered by this terminology capability statement.  It is used when the statement describes the capabilities of a particular software version, independent of an installation.
      */
@@ -518,7 +515,7 @@ export interface TerminologyCapabilitiesArgs extends fhir.DomainResourceArgs {
     /**
      * See notes on the [ValueSet](valueset.html#) resource.
      */
-    codeSearch?: CodeSearchSupportCodeType | undefined;
+    codeSearch?: fhir.FhirCode<CodeSearchSupportCodeType> | string | undefined;
     /**
      * Information about the [ValueSet/$validate-code](valueset-operation-validate-code.html) operation.
      */
@@ -565,7 +562,7 @@ export declare class TerminologyCapabilities extends fhir.DomainResource {
     /**
      * Allows filtering of terminology capabilitiess that are appropriate for use versus not.This is not intended for use with actual capability statements, but where capability statements are used to describe possible or desired systems.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Allows filtering of terminology capabilitiess that are appropriate for use versus not.
      */
@@ -581,7 +578,7 @@ export declare class TerminologyCapabilities extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * This description can be used to capture details such as why the terminology capabilities was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the terminology capabilities as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the terminology capabilities is presumed to be the predominant language in the place the terminology capabilities was created).This does not need to be populated if the description is adequately implied by the software or implementation details.
      */
@@ -589,11 +586,11 @@ export declare class TerminologyCapabilities extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the terminology capabilities to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * This element does not describe the usage of the terminology capabilities. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this terminology capabilities.
      */
@@ -605,7 +602,7 @@ export declare class TerminologyCapabilities extends fhir.DomainResource {
     /**
      * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
      */
-    kind: CapabilityStatementKindCodeType | null;
+    kind: fhir.FhirCode<CapabilityStatementKindCodeType> | null;
     /**
      * Software that is covered by this terminology capability statement.  It is used when the statement describes the capabilities of a particular software version, independent of an installation.
      */
@@ -621,7 +618,7 @@ export declare class TerminologyCapabilities extends fhir.DomainResource {
     /**
      * The code system - identified by its system URL - may also be declared explicitly as a Code System Resource at /CodeSystem, but it might not be.
      */
-    codeSystem?: fhir.TerminologyCapabilitiesCodeSystem[];
+    codeSystem: fhir.TerminologyCapabilitiesCodeSystem[];
     /**
      * Information about the [ValueSet/$expand](valueset-operation-expand.html) operation.
      */
@@ -629,7 +626,7 @@ export declare class TerminologyCapabilities extends fhir.DomainResource {
     /**
      * See notes on the [ValueSet](valueset.html#) resource.
      */
-    codeSearch?: CodeSearchSupportCodeType | undefined;
+    codeSearch?: fhir.FhirCode<CodeSearchSupportCodeType> | undefined;
     /**
      * Information about the [ValueSet/$validate-code](valueset-operation-validate-code.html) operation.
      */
@@ -649,15 +646,27 @@ export declare class TerminologyCapabilities extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (TerminologyCapabilities.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Required-bound Value Set for kind (TerminologyCapabilities.kind)
      */
-    static kindRequiredCoding(): CapabilityStatementKindCodingType;
+    static get kindRequiredCodes(): {
+        readonly Capability: "capability";
+        readonly Instance: "instance";
+        readonly Requirements: "requirements";
+    };
     /**
      * Required-bound Value Set for codeSearch (TerminologyCapabilities.codeSearch)
      */
-    static codeSearchRequiredCoding(): CodeSearchSupportCodingType;
+    static get codeSearchRequiredCodes(): {
+        readonly ImplicitCodes: "all";
+        readonly ExplicitCodes: "explicit";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

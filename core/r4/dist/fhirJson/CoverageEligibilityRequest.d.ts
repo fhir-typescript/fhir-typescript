@@ -128,6 +128,10 @@ export interface CoverageEligibilityRequest extends fhir.DomainResource {
      */
     status: 'active' | 'cancelled' | 'draft' | 'entered-in-error' | null;
     /**
+     * Extended properties for primitive element: CoverageEligibilityRequest.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * When the requestor expects the processor to complete processing.
      */
     priority?: fhir.CodeableConcept | undefined;
@@ -135,6 +139,10 @@ export interface CoverageEligibilityRequest extends fhir.DomainResource {
      * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
      */
     purpose: ('auth-requirements' | 'benefits' | 'discovery' | 'validation')[] | null;
+    /**
+     * Extended properties for primitive element: CoverageEligibilityRequest.purpose
+     */
+    _purpose?: (fhir.FhirElement | null)[];
     /**
      * 1..1.
      */

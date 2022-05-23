@@ -247,7 +247,7 @@ export declare class ParametersParameter extends fhir.BackboneElement {
     /**
      * Only one level of nested parameters is allowed.
      */
-    part?: fhir.ParametersParameter[];
+    part: fhir.ParametersParameter[];
     /**
      * Default constructor for ParametersParameter - initializes any required elements to null if a value is not provided.
      */
@@ -285,7 +285,7 @@ export declare class Parameters extends fhir.Resource {
     /**
      * A parameter passed to or received from the operation.
      */
-    parameter?: fhir.ParametersParameter[];
+    parameter: fhir.ParametersParameter[];
     /**
      * Default constructor for Parameters - initializes any required elements to null if a value is not provided.
      */

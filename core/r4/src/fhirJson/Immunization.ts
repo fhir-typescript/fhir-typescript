@@ -155,6 +155,10 @@ export interface Immunization extends fhir.DomainResource {
    */
   status: 'completed'|'entered-in-error'|'not-done'|null;
   /**
+   * Extended properties for primitive element: Immunization.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * This is generally only used for the status of "not-done". The reason for performing the immunization event is captured in reasonCode, not here.
    */
   statusReason?: fhir.CodeableConcept|undefined;

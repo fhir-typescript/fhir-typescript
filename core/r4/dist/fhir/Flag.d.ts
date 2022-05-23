@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { FlagStatusCodingType } from '../fhirValueSets/FlagStatusCodings.js';
 import { FlagStatusCodeType } from '../fhirValueSets/FlagStatusCodes.js';
 /**
  * Valid arguments for the Flag type.
@@ -16,7 +15,7 @@ export interface FlagArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: FlagStatusCodeType | null;
+    status: fhir.FhirCode<FlagStatusCodeType> | string | undefined;
     /**
      * The value set will often need to be adjusted based on local business rules and usage context.
      */
@@ -57,15 +56,15 @@ export declare class Flag extends fhir.DomainResource {
     /**
      * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: FlagStatusCodeType | null;
+    status: fhir.FhirCode<FlagStatusCodeType> | null;
     /**
      * The value set will often need to be adjusted based on local business rules and usage context.
      */
-    category?: fhir.CodeableConcept[];
+    category: fhir.CodeableConcept[];
     /**
      * If non-coded, use CodeableConcept.text.  This element should always be included in the narrative.
      */
@@ -93,7 +92,11 @@ export declare class Flag extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (Flag.status)
      */
-    static statusRequiredCoding(): FlagStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly EnteredInError: "entered-in-error";
+        readonly Inactive: "inactive";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

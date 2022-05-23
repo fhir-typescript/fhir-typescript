@@ -1,10 +1,6 @@
 import * as fhir from '../fhir.js';
-import { UnitsOfTimeCodingType } from '../fhirValueSets/UnitsOfTimeCodings.js';
 import { UnitsOfTimeCodeType } from '../fhirValueSets/UnitsOfTimeCodes.js';
-import { DaysOfWeekCodingType } from '../fhirValueSets/DaysOfWeekCodings.js';
 import { DaysOfWeekCodeType } from '../fhirValueSets/DaysOfWeekCodes.js';
-import { EventTimingCodingType } from '../fhirValueSets/EventTimingCodings.js';
-import { TimingAbbreviationCodingType } from '../fhirValueSets/TimingAbbreviationCodings.js';
 /**
  * Valid arguments for the TimingRepeat type.
  */
@@ -44,7 +40,7 @@ export interface TimingRepeatArgs extends fhir.FhirElementArgs {
     /**
      * The units of time for the duration, in UCUM units.
      */
-    durationUnit?: UnitsOfTimeCodeType | undefined;
+    durationUnit?: fhir.FhirCode<UnitsOfTimeCodeType> | string | undefined;
     /**
      * The number of times to repeat the action within the specified period. If frequencyMax is present, this element indicates the lower bound of the allowed range of the frequency.
      */
@@ -64,11 +60,11 @@ export interface TimingRepeatArgs extends fhir.FhirElementArgs {
     /**
      * The units of time for the period in UCUM units.
      */
-    periodUnit?: UnitsOfTimeCodeType | undefined;
+    periodUnit?: fhir.FhirCode<UnitsOfTimeCodeType> | string | undefined;
     /**
      * If no days are specified, the action is assumed to happen every day as otherwise specified. The elements frequency and period cannot be used as well as dayOfWeek.
      */
-    dayOfWeek?: DaysOfWeekCodeType[] | undefined;
+    dayOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[] | string[] | undefined;
     /**
      * When time of day is specified, it is inferred that the action happens every day (as filtered by dayofWeek) on the specified times. The elements when, frequency and period cannot be used as well as timeOfDay.
      */
@@ -117,7 +113,7 @@ export declare class TimingRepeat extends fhir.FhirElement {
     /**
      * The units of time for the duration, in UCUM units.
      */
-    durationUnit?: UnitsOfTimeCodeType | undefined;
+    durationUnit?: fhir.FhirCode<UnitsOfTimeCodeType> | undefined;
     /**
      * The number of times to repeat the action within the specified period. If frequencyMax is present, this element indicates the lower bound of the allowed range of the frequency.
      */
@@ -137,19 +133,19 @@ export declare class TimingRepeat extends fhir.FhirElement {
     /**
      * The units of time for the period in UCUM units.
      */
-    periodUnit?: UnitsOfTimeCodeType | undefined;
+    periodUnit?: fhir.FhirCode<UnitsOfTimeCodeType> | undefined;
     /**
      * If no days are specified, the action is assumed to happen every day as otherwise specified. The elements frequency and period cannot be used as well as dayOfWeek.
      */
-    dayOfWeek?: DaysOfWeekCodeType[];
+    dayOfWeek: fhir.FhirCode<DaysOfWeekCodeType>[];
     /**
      * When time of day is specified, it is inferred that the action happens every day (as filtered by dayofWeek) on the specified times. The elements when, frequency and period cannot be used as well as timeOfDay.
      */
-    timeOfDay?: fhir.FhirTime[];
+    timeOfDay: fhir.FhirTime[];
     /**
      * When more than one event is listed, the event is tied to the union of the specified events.
      */
-    when?: fhir.FhirCode[];
+    when: fhir.FhirCode[];
     /**
      * The number of minutes from the event. If the event code does not indicate whether the minutes is before or after the event, then the offset is assumed to be after the event.
      */
@@ -161,19 +157,72 @@ export declare class TimingRepeat extends fhir.FhirElement {
     /**
      * Required-bound Value Set for durationUnit (Timing.repeat.durationUnit)
      */
-    static durationUnitRequiredCoding(): UnitsOfTimeCodingType;
+    static get durationUnitRequiredCodes(): {
+        readonly Year: "a";
+        readonly Day: "d";
+        readonly Hour: "h";
+        readonly Minute: "min";
+        readonly Month: "mo";
+        readonly Second: "s";
+        readonly Week: "wk";
+    };
     /**
      * Required-bound Value Set for periodUnit (Timing.repeat.periodUnit)
      */
-    static periodUnitRequiredCoding(): UnitsOfTimeCodingType;
+    static get periodUnitRequiredCodes(): {
+        readonly Year: "a";
+        readonly Day: "d";
+        readonly Hour: "h";
+        readonly Minute: "min";
+        readonly Month: "mo";
+        readonly Second: "s";
+        readonly Week: "wk";
+    };
     /**
      * Required-bound Value Set for dayOfWeek (Timing.repeat.dayOfWeek)
      */
-    static dayOfWeekRequiredCoding(): DaysOfWeekCodingType;
+    static get dayOfWeekRequiredCodes(): {
+        readonly Friday: "fri";
+        readonly Monday: "mon";
+        readonly Saturday: "sat";
+        readonly Sunday: "sun";
+        readonly Thursday: "thu";
+        readonly Tuesday: "tue";
+        readonly Wednesday: "wed";
+    };
     /**
      * Required-bound Value Set for when (Timing.repeat.when)
      */
-    static whenRequiredCoding(): EventTimingCodingType;
+    static get whenRequiredCodes(): {
+        readonly AC: "AC";
+        readonly ACD: "ACD";
+        readonly ACM: "ACM";
+        readonly ACV: "ACV";
+        readonly Afternoon: "AFT";
+        readonly EarlyAfternoon: "AFT.early";
+        readonly LateAfternoon: "AFT.late";
+        readonly C: "C";
+        readonly CD: "CD";
+        readonly CM: "CM";
+        readonly CV: "CV";
+        readonly Evening: "EVE";
+        readonly EarlyEvening: "EVE.early";
+        readonly LateEvening: "EVE.late";
+        readonly HS: "HS";
+        readonly Morning: "MORN";
+        readonly EarlyMorning: "MORN.early";
+        readonly LateMorning: "MORN.late";
+        readonly Night: "NIGHT";
+        readonly Noon: "NOON"; /**
+         * The number of times to repeat the action within the specified period. If frequencyMax is present, this element indicates the lower bound of the allowed range of the frequency.
+         */
+        readonly PC: "PC";
+        readonly PCD: "PCD";
+        readonly PCM: "PCM";
+        readonly PCV: "PCV";
+        readonly AfterSleep: "PHS";
+        readonly WAKE: "WAKE";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -207,7 +256,7 @@ export declare class Timing extends fhir.BackboneElement {
     /**
      * Identifies specific times when the event occurs.
      */
-    event?: fhir.FhirDateTime[];
+    event: fhir.FhirDateTime[];
     /**
      * A set of rules that describe when the event is scheduled.
      */
@@ -223,7 +272,24 @@ export declare class Timing extends fhir.BackboneElement {
     /**
      * Preferred-bound Value Set for code (Timing.code)
      */
-    static codePreferredCoding(): TimingAbbreviationCodingType;
+    static get codePreferredCodings(): {
+        readonly AM: fhir.Coding;
+        readonly AtBedtime: fhir.Coding;
+        readonly BID: fhir.Coding;
+        readonly Monthly: fhir.Coding;
+        readonly PM: fhir.Coding;
+        readonly EveryHour: fhir.Coding;
+        readonly Every2Hours: fhir.Coding;
+        readonly Every3Hours: fhir.Coding;
+        readonly Q4H: fhir.Coding;
+        readonly Q6H: fhir.Coding;
+        readonly Every8Hours: fhir.Coding;
+        readonly QD: fhir.Coding;
+        readonly QID: fhir.Coding;
+        readonly QOD: fhir.Coding;
+        readonly TID: fhir.Coding;
+        readonly Weekly: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

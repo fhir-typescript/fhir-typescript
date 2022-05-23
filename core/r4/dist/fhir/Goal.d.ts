@@ -1,8 +1,5 @@
 import * as fhir from '../fhir.js';
-import { GoalStatusCodingType } from '../fhirValueSets/GoalStatusCodings.js';
 import { GoalStatusCodeType } from '../fhirValueSets/GoalStatusCodes.js';
-import { GoalAchievementCodingType } from '../fhirValueSets/GoalAchievementCodings.js';
-import { GoalPriorityCodingType } from '../fhirValueSets/GoalPriorityCodings.js';
 /**
  * Valid arguments for the GoalTarget type.
  */
@@ -108,7 +105,7 @@ export interface GoalArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the lifecycleStatus contains codes that mark the resource as not currently valid.
      */
-    lifecycleStatus: GoalStatusCodeType | null;
+    lifecycleStatus: fhir.FhirCode<GoalStatusCodeType> | string | undefined;
     /**
      * Describes the progression, or lack thereof, towards the goal against the target.
      */
@@ -190,11 +187,11 @@ export declare class Goal extends fhir.DomainResource {
     /**
      * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the lifecycleStatus contains codes that mark the resource as not currently valid.
      */
-    lifecycleStatus: GoalStatusCodeType | null;
+    lifecycleStatus: fhir.FhirCode<GoalStatusCodeType> | null;
     /**
      * Describes the progression, or lack thereof, towards the goal against the target.
      */
@@ -202,7 +199,7 @@ export declare class Goal extends fhir.DomainResource {
     /**
      * Indicates a category the goal falls within.
      */
-    category?: fhir.CodeableConcept[];
+    category: fhir.CodeableConcept[];
     /**
      * Extensions are available to track priorities as established by each participant (i.e. Priority from the patient's perspective, different practitioners' perspectives, family member's perspectives)
      * The ordinal extension on Coding can be used to convey a numerically comparable ranking to priority.  (Keep in mind that different coding systems may use a "low value=important".
@@ -227,7 +224,7 @@ export declare class Goal extends fhir.DomainResource {
     /**
      * When multiple targets are present for a single goal instance, all targets must be met for the overall goal to be met.
      */
-    target?: fhir.GoalTarget[];
+    target: fhir.GoalTarget[];
     /**
      * To see the date for past statuses, query history.
      */
@@ -243,19 +240,19 @@ export declare class Goal extends fhir.DomainResource {
     /**
      * The identified conditions and other health record elements that are intended to be addressed by the goal.
      */
-    addresses?: fhir.Reference[];
+    addresses: fhir.Reference[];
     /**
      * May be used for progress notes, concerns or other related information that doesn't actually describe the goal itself.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Note that this should not duplicate the goal status.
      */
-    outcomeCode?: fhir.CodeableConcept[];
+    outcomeCode: fhir.CodeableConcept[];
     /**
      * The goal outcome is independent of the outcome of the related activities.  For example, if the Goal is to achieve a target body weight of 150 lb and a care plan activity is defined to diet, then the care plan’s activity outcome could be calories consumed whereas goal outcome is an observation for the actual body weight measured.
      */
-    outcomeReference?: fhir.Reference[];
+    outcomeReference: fhir.Reference[];
     /**
      * Default constructor for Goal - initializes any required elements to null if a value is not provided.
      */
@@ -263,15 +260,39 @@ export declare class Goal extends fhir.DomainResource {
     /**
      * Required-bound Value Set for lifecycleStatus (Goal.lifecycleStatus)
      */
-    static lifecycleStatusRequiredCoding(): GoalStatusCodingType;
+    static get lifecycleStatusRequiredCodes(): {
+        readonly Accepted: "accepted";
+        readonly Active: "active";
+        readonly Cancelled: "cancelled";
+        readonly Completed: "completed";
+        readonly EnteredInError: "entered-in-error";
+        readonly OnHold: "on-hold";
+        readonly Planned: "planned";
+        readonly Proposed: "proposed";
+        readonly Rejected: "rejected";
+    };
     /**
      * Preferred-bound Value Set for achievementStatus (Goal.achievementStatus)
      */
-    static achievementStatusPreferredCoding(): GoalAchievementCodingType;
+    static get achievementStatusPreferredCodings(): {
+        readonly Achieved: fhir.Coding;
+        readonly Improving: fhir.Coding;
+        readonly InProgress: fhir.Coding;
+        readonly NoChange: fhir.Coding;
+        readonly NoProgress: fhir.Coding;
+        readonly NotAchieved: fhir.Coding;
+        readonly NotAttainable: fhir.Coding;
+        readonly Sustaining: fhir.Coding;
+        readonly Worsening: fhir.Coding;
+    };
     /**
      * Preferred-bound Value Set for priority (Goal.priority)
      */
-    static priorityPreferredCoding(): GoalPriorityCodingType;
+    static get priorityPreferredCodings(): {
+        readonly HighPriority: fhir.Coding;
+        readonly LowPriority: fhir.Coding;
+        readonly MediumPriority: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

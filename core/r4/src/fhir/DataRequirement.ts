@@ -58,7 +58,7 @@ export class DataRequirementCodeFilter extends fhir.FhirElement {
   /**
    * The codes for the code filter. If values are given, the filter will return only those data items for which the code-valued attribute specified by the path has a value that is one of the specified codes. If codes are specified in addition to a value set, the filter returns items matching a code in the value set or one of the specified codes.
    */
-  public code?: fhir.Coding[];
+  public code: fhir.Coding[];
   /**
    * Default constructor for DataRequirementCodeFilter - initializes any required elements to null if a value is not provided.
    */
@@ -169,7 +169,7 @@ export interface DataRequirementSortArgs extends fhir.FhirElementArgs {
   /**
    * The direction of the sort, ascending or descending.
    */
-  direction: SortDirectionCodeType|null;
+  direction: fhir.FhirCode<SortDirectionCodeType>|string|undefined;
 }
 
 /**
@@ -187,7 +187,7 @@ export class DataRequirementSort extends fhir.FhirElement {
   /**
    * The direction of the sort, ascending or descending.
    */
-  public direction: SortDirectionCodeType|null;
+  public direction: fhir.FhirCode<SortDirectionCodeType>|null;
   /**
    * Default constructor for DataRequirementSort - initializes any required elements to null if a value is not provided.
    */
@@ -195,14 +195,14 @@ export class DataRequirementSort extends fhir.FhirElement {
     super(source, options);
     if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
     else { this.path = null; }
-    if (source['direction']) { this.direction = source.direction; }
+    if (source['direction']) { this.direction = new fhir.FhirCode<SortDirectionCodeType>({value: source.direction}); }
     else { this.direction = null; }
   }
   /**
    * Required-bound Value Set for direction (DataRequirement.sort.direction)
    */
-  public static directionRequiredCoding():SortDirectionCodingType {
-    return SortDirectionCodings;
+  public static get directionRequiredCodes() {
+    return SortDirectionCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -210,12 +210,16 @@ export class DataRequirementSort extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['path']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property path:fhir.FhirString fhir: DataRequirement.sort.path:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property path:fhir.FhirString fhir: DataRequirement.sort.path:string' });
     }
     if (this["path"]) { issues.push(...this.path.doModelValidation()); }
     if (!this['direction']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property direction:SortDirectionCodeType fhir: DataRequirement.sort.direction:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property direction:fhir.FhirCode<SortDirectionCodeType> fhir: DataRequirement.sort.direction:code' });
     }
+    if (this['direction'] && (!Object.values(SortDirectionCodes).includes(this.direction as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property direction:fhir.FhirCode<SortDirectionCodeType> fhir: DataRequirement.sort.direction:code Required binding to: SortDirection' });
+    }
+    if (this["direction"]) { issues.push(...this.direction.doModelValidation()); }
     return issues;
   }
 }
@@ -281,7 +285,7 @@ export class DataRequirement extends fhir.FhirElement {
   /**
    * The profile of the required data, specified as the uri of the profile definition.
    */
-  public profile?: fhir.FhirCanonical[];
+  public profile: fhir.FhirCanonical[];
   /**
    * The subject of a data requirement is critical, as the data being specified is determined with respect to a particular subject. This corresponds roughly to the notion of a Compartment in that it limits what data is available based on its relationship to the subject. In CQL, this corresponds to the context declaration.
    */
@@ -294,15 +298,15 @@ export class DataRequirement extends fhir.FhirElement {
    * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available. 
    * The value of mustSupport SHALL be a FHIRPath resolveable on the type of the DataRequirement. The path SHALL consist only of identifiers, constant indexers, and .resolve() (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
    */
-  public mustSupport?: fhir.FhirString[];
+  public mustSupport: fhir.FhirString[];
   /**
    * Code filters specify additional constraints on the data, specifying the value set of interest for a particular element of the data. Each code filter defines an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
    */
-  public codeFilter?: fhir.DataRequirementCodeFilter[];
+  public codeFilter: fhir.DataRequirementCodeFilter[];
   /**
    * Date filters specify additional constraints on the data in terms of the applicable date range for specific elements. Each date filter specifies an additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
    */
-  public dateFilter?: fhir.DataRequirementDateFilter[];
+  public dateFilter: fhir.DataRequirementDateFilter[];
   /**
    * This element can be used in combination with the sort element to specify quota requirements such as "the most recent 5" or "the highest 5".
    */
@@ -310,7 +314,7 @@ export class DataRequirement extends fhir.FhirElement {
   /**
    * This element can be used in combination with the sort element to specify quota requirements such as "the most recent 5" or "the highest 5". When multiple sorts are specified, they are applied in the order they appear in the resource.
    */
-  public sort?: fhir.DataRequirementSort[];
+  public sort: fhir.DataRequirementSort[];
   /**
    * Default constructor for DataRequirement - initializes any required elements to null if a value is not provided.
    */
@@ -336,8 +340,8 @@ export class DataRequirement extends fhir.FhirElement {
   /**
    * Required-bound Value Set for type (DataRequirement.type)
    */
-  public static typeRequiredCoding():AllTypesCodingType {
-    return AllTypesCodings;
+  public static get typeRequiredCodes() {
+    return AllTypesCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -345,7 +349,10 @@ export class DataRequirement extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.FhirCode fhir: DataRequirement.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode fhir: DataRequirement.type:code' });
+    }
+    if (this['type'] && (!Object.values(AllTypesCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode fhir: DataRequirement.type:code Required binding to: AllTypes' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["profile"]) { this.profile.forEach((x) => { issues.push(...x.doModelValidation()); }) }

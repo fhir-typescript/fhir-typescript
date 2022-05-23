@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { LinkageTypeCodingType } from '../fhirValueSets/LinkageTypeCodings.js';
 import { LinkageTypeCodeType } from '../fhirValueSets/LinkageTypeCodes.js';
 /**
  * Valid arguments for the LinkageItem type.
@@ -8,7 +7,7 @@ export interface LinkageItemArgs extends fhir.BackboneElementArgs {
     /**
      * Distinguishes which item is "source of truth" (if any) and which items are no longer considered to be current representations.
      */
-    type: LinkageTypeCodeType | null;
+    type: fhir.FhirCode<LinkageTypeCodeType> | string | undefined;
     /**
      * The resource instance being linked as part of the group.
      */
@@ -25,7 +24,7 @@ export declare class LinkageItem extends fhir.BackboneElement {
     /**
      * Distinguishes which item is "source of truth" (if any) and which items are no longer considered to be current representations.
      */
-    type: LinkageTypeCodeType | null;
+    type: fhir.FhirCode<LinkageTypeCodeType> | null;
     /**
      * The resource instance being linked as part of the group.
      */
@@ -37,7 +36,11 @@ export declare class LinkageItem extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for type (Linkage.item.type)
      */
-    static typeRequiredCoding(): LinkageTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly AlternateRecord: "alternate";
+        readonly HistoricalObsoleteRecord: "historical";
+        readonly SourceOfTruth: "source";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

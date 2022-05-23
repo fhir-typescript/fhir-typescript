@@ -16,7 +16,7 @@ export interface NarrativeArgs extends fhir.FhirElementArgs {
   /**
    * The status of the narrative - whether it's entirely generated (from just the defined data or the extensions too), or whether a human authored it and it may contain additional data.
    */
-  status: NarrativeStatusCodeType|null;
+  status: fhir.FhirCode<NarrativeStatusCodeType>|string|undefined;
   /**
    * The contents of the html element are an XHTML fragment containing only the basic html formatting elements described in chapters 7-11 and 15 of the HTML 4.0 standard, &lt;a&gt; elements (either name or href), images and internally contained stylesheets. The XHTML content SHALL NOT contain a head, a body, external stylesheet references, scripts, forms, base/link/xlink, frames, iframes and objects.
    */
@@ -34,7 +34,7 @@ export class Narrative extends fhir.FhirElement {
   /**
    * The status of the narrative - whether it's entirely generated (from just the defined data or the extensions too), or whether a human authored it and it may contain additional data.
    */
-  public status: NarrativeStatusCodeType|null;
+  public status: fhir.FhirCode<NarrativeStatusCodeType>|null;
   /**
    * The contents of the html element are an XHTML fragment containing only the basic html formatting elements described in chapters 7-11 and 15 of the HTML 4.0 standard, &lt;a&gt; elements (either name or href), images and internally contained stylesheets. The XHTML content SHALL NOT contain a head, a body, external stylesheet references, scripts, forms, base/link/xlink, frames, iframes and objects.
    */
@@ -44,7 +44,7 @@ export class Narrative extends fhir.FhirElement {
    */
   constructor(source:Partial<NarrativeArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<NarrativeStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['div']) { this.div = new fhir.FhirXhtml({value: source.div}); }
     else { this.div = null; }
@@ -52,8 +52,8 @@ export class Narrative extends fhir.FhirElement {
   /**
    * Required-bound Value Set for status (Narrative.status)
    */
-  public static statusRequiredCoding():NarrativeStatusCodingType {
-    return NarrativeStatusCodings;
+  public static get statusRequiredCodes() {
+    return NarrativeStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -61,10 +61,14 @@ export class Narrative extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:NarrativeStatusCodeType fhir: Narrative.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<NarrativeStatusCodeType> fhir: Narrative.status:code' });
     }
+    if (this['status'] && (!Object.values(NarrativeStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<NarrativeStatusCodeType> fhir: Narrative.status:code Required binding to: NarrativeStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['div']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property div:fhir.FhirXhtml fhir: Narrative.div:xhtml', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property div:fhir.FhirXhtml fhir: Narrative.div:xhtml' });
     }
     if (this["div"]) { issues.push(...this.div.doModelValidation()); }
     return issues;

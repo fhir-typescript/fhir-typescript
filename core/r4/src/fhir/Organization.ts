@@ -54,7 +54,7 @@ export class OrganizationContact extends fhir.BackboneElement {
   /**
    * A contact detail (e.g. a telephone number or an email address) by which the party may be contacted.
    */
-  public telecom?: fhir.ContactPoint[];
+  public telecom: fhir.ContactPoint[];
   /**
    * Visiting or postal addresses for the contact.
    */
@@ -73,7 +73,7 @@ export class OrganizationContact extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for purpose (Organization.contact.purpose)
    */
-  public static purposeExtensibleCoding():ContactentityTypeCodingType {
+  public static get purposeExtensibleCodings() {
     return ContactentityTypeCodings;
   }
   /**
@@ -156,7 +156,7 @@ export class Organization extends fhir.DomainResource {
   /**
    * Identifier for the organization that is used to identify the organization across multiple disparate systems.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This active flag is not intended to be used to mark an organization as temporarily closed or under construction. Instead the Location(s) within the Organization should have the suspended status. If further details of the reason for the suspension are required, then an extension on this element should be used.
    * This element is labeled as a modifier because it may be used to mark that the resource was created in error.
@@ -167,7 +167,7 @@ export class Organization extends fhir.DomainResource {
    * When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
    * We expect that some jurisdictions will profile this optionality to be a single cardinality.
    */
-  public type?: fhir.CodeableConcept[];
+  public type: fhir.CodeableConcept[];
   /**
    * If the name of an organization changes, consider putting the old name in the alias column so that it can still be located through searches.
    */
@@ -175,15 +175,15 @@ export class Organization extends fhir.DomainResource {
   /**
    * There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the organization.
    */
-  public alias?: fhir.FhirString[];
+  public alias: fhir.FhirString[];
   /**
    * The use code 'home' is not to be used. Note that these contacts are not the contact details of people who are employed by or represent the organization, but official contacts for the organization itself.
    */
-  public telecom?: fhir.ContactPoint[];
+  public telecom: fhir.ContactPoint[];
   /**
    * Organization may have multiple addresses with different uses or applicable periods. The use code 'home' is not to be used.
    */
-  public address?: fhir.Address[];
+  public address: fhir.Address[];
   /**
    * The organization of which this organization forms a part.
    */
@@ -191,11 +191,11 @@ export class Organization extends fhir.DomainResource {
   /**
    * Where multiple contacts for the same purpose are provided there is a standard extension that can be used to determine which one is the preferred contact to use.
    */
-  public contact?: fhir.OrganizationContact[];
+  public contact: fhir.OrganizationContact[];
   /**
    * Technical endpoints providing access to services operated for the organization.
    */
-  public endpoint?: fhir.Reference[];
+  public endpoint: fhir.Reference[];
   /**
    * Default constructor for Organization - initializes any required elements to null if a value is not provided.
    */
@@ -226,7 +226,7 @@ export class Organization extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Organization" fhir: Organization.resourceType:"Organization"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Organization" fhir: Organization.resourceType:"Organization"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["active"]) { issues.push(...this.active.doModelValidation()); }

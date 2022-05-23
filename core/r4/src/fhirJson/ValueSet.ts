@@ -75,6 +75,10 @@ export interface ValueSetComposeIncludeFilter extends fhir.BackboneElement {
    */
   op: '='|'descendent-of'|'exists'|'generalizes'|'in'|'is-a'|'is-not-a'|'not-in'|'regex'|null;
   /**
+   * Extended properties for primitive element: ValueSet.compose.include.filter.op
+   */
+  _op?:fhir.FhirElement;
+  /**
    * Use regex matching with care - full regex matching on every SNOMED CT term is prohibitive, for example.
    */
   value: string|null;
@@ -382,6 +386,10 @@ export interface ValueSet extends fhir.DomainResource {
    * Allows filtering of value sets that are appropriate for use versus not.See also the [valueset-workflowStatus](extension-valueset-workflowstatus.html) extension for additional status information related to the editorial process.
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
+  /**
+   * Extended properties for primitive element: ValueSet.status
+   */
+  _status?:fhir.FhirElement;
   /**
    * Allows filtering of value sets that are appropriate for use versus not.
    */

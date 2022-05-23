@@ -1,13 +1,8 @@
 import * as fhir from '../fhir.js';
-import { QuestionnaireEnableOperatorCodingType } from '../fhirValueSets/QuestionnaireEnableOperatorCodings.js';
 import { QuestionnaireEnableOperatorCodeType } from '../fhirValueSets/QuestionnaireEnableOperatorCodes.js';
-import { ItemTypeCodingType } from '../fhirValueSets/ItemTypeCodings.js';
 import { ItemTypeCodeType } from '../fhirValueSets/ItemTypeCodes.js';
-import { QuestionnaireEnableBehaviorCodingType } from '../fhirValueSets/QuestionnaireEnableBehaviorCodings.js';
 import { QuestionnaireEnableBehaviorCodeType } from '../fhirValueSets/QuestionnaireEnableBehaviorCodes.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
-import { ResourceTypesCodingType } from '../fhirValueSets/ResourceTypesCodings.js';
 /**
  * Valid arguments for the QuestionnaireItemEnableWhen type.
  */
@@ -19,7 +14,7 @@ export interface QuestionnaireItemEnableWhenArgs extends fhir.BackboneElementArg
     /**
      * Specifies the criteria by which the question is enabled.
      */
-    operator: QuestionnaireEnableOperatorCodeType | null;
+    operator: fhir.FhirCode<QuestionnaireEnableOperatorCodeType> | string | undefined;
     /**
      * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
      */
@@ -80,7 +75,7 @@ export declare class QuestionnaireItemEnableWhen extends fhir.BackboneElement {
     /**
      * Specifies the criteria by which the question is enabled.
      */
-    operator: QuestionnaireEnableOperatorCodeType | null;
+    operator: fhir.FhirCode<QuestionnaireEnableOperatorCodeType> | null;
     /**
      * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
      */
@@ -96,7 +91,15 @@ export declare class QuestionnaireItemEnableWhen extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for operator (Questionnaire.item.enableWhen.operator)
      */
-    static operatorRequiredCoding(): QuestionnaireEnableOperatorCodingType;
+    static get operatorRequiredCodes(): {
+        readonly NotEquals: "!=";
+        readonly LessThan: "<";
+        readonly LessOrEquals: "<=";
+        readonly Equals: "=";
+        readonly GreaterThan: ">";
+        readonly GreaterOrEquals: ">=";
+        readonly Exists: "exists";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -277,7 +280,7 @@ export interface QuestionnaireItemArgs extends fhir.BackboneElementArgs {
     /**
      * Additional constraints on the type of answer can be conveyed by extensions. The value may come from the ElementDefinition referred to by .definition.
      */
-    type: ItemTypeCodeType | null;
+    type: fhir.FhirCode<ItemTypeCodeType> | string | undefined;
     /**
      * If multiple repetitions of this extension are present, the item should be enabled when the condition for *any* of the repetitions is true.  I.e. treat "enableWhen"s as being joined by an "or" clause.  This element is a modifier because if enableWhen is present for an item, "required" is ignored unless one of the enableWhen conditions is met. When an item is disabled, all of its descendants are disabled, regardless of what their own enableWhen logic might evaluate to.
      */
@@ -285,7 +288,7 @@ export interface QuestionnaireItemArgs extends fhir.BackboneElementArgs {
     /**
      * This element must be specified if more than one enableWhen value is provided.
      */
-    enableBehavior?: QuestionnaireEnableBehaviorCodeType | undefined;
+    enableBehavior?: fhir.FhirCode<QuestionnaireEnableBehaviorCodeType> | string | undefined;
     /**
      * Questionnaire.item.required only has meaning for elements that are conditionally enabled with enableWhen if the condition evaluates to true.  If an item that contains other items is marked as required, that does not automatically make the contained elements required (though required groups must contain at least one child element). The value may come from the ElementDefinition referred to by .definition.
      */
@@ -340,7 +343,7 @@ export declare class QuestionnaireItem extends fhir.BackboneElement {
     /**
      * The value may come from the ElementDefinition referred to by .definition.
      */
-    code?: fhir.Coding[];
+    code: fhir.Coding[];
     /**
      * These are generally unique within a questionnaire, though this is not guaranteed. Some questionnaires may have multiple questions with the same label with logic to control which gets exposed.  Typically, these won't be used for "display" items, though such use is not prohibited.  Systems SHOULD NOT generate their own prefixes if prefixes are defined for any items within a Questionnaire.
      */
@@ -352,15 +355,15 @@ export declare class QuestionnaireItem extends fhir.BackboneElement {
     /**
      * Additional constraints on the type of answer can be conveyed by extensions. The value may come from the ElementDefinition referred to by .definition.
      */
-    type: ItemTypeCodeType | null;
+    type: fhir.FhirCode<ItemTypeCodeType> | null;
     /**
      * If multiple repetitions of this extension are present, the item should be enabled when the condition for *any* of the repetitions is true.  I.e. treat "enableWhen"s as being joined by an "or" clause.  This element is a modifier because if enableWhen is present for an item, "required" is ignored unless one of the enableWhen conditions is met. When an item is disabled, all of its descendants are disabled, regardless of what their own enableWhen logic might evaluate to.
      */
-    enableWhen?: fhir.QuestionnaireItemEnableWhen[];
+    enableWhen: fhir.QuestionnaireItemEnableWhen[];
     /**
      * This element must be specified if more than one enableWhen value is provided.
      */
-    enableBehavior?: QuestionnaireEnableBehaviorCodeType | undefined;
+    enableBehavior?: fhir.FhirCode<QuestionnaireEnableBehaviorCodeType> | undefined;
     /**
      * Questionnaire.item.required only has meaning for elements that are conditionally enabled with enableWhen if the condition evaluates to true.  If an item that contains other items is marked as required, that does not automatically make the contained elements required (though required groups must contain at least one child element). The value may come from the ElementDefinition referred to by .definition.
      */
@@ -386,15 +389,15 @@ export declare class QuestionnaireItem extends fhir.BackboneElement {
     /**
      * This element can be used when the value set machinery of answerValueSet is deemed too cumbersome or when there's a need to capture possible answers that are not codes.
      */
-    answerOption?: fhir.QuestionnaireItemAnswerOption[];
+    answerOption: fhir.QuestionnaireItemAnswerOption[];
     /**
      * The user is allowed to change the value and override the default (unless marked as read-only). If the user doesn't change the value, then this initial value will be persisted when the QuestionnaireResponse is initially created.  Note that initial values can influence results.  The data type of initial[x] must agree with the item.type, and only repeating items can have more then one initial value.
      */
-    initial?: fhir.QuestionnaireItemInitial[];
+    initial: fhir.QuestionnaireItemInitial[];
     /**
      * There is no specified limit to the depth of nesting.  However, Questionnaire authors are encouraged to consider the impact on the user and user interface of overly deep nesting.
      */
-    item?: fhir.QuestionnaireItem[];
+    item: fhir.QuestionnaireItem[];
     /**
      * Default constructor for QuestionnaireItem - initializes any required elements to null if a value is not provided.
      */
@@ -402,11 +405,32 @@ export declare class QuestionnaireItem extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for type (Questionnaire.item.type)
      */
-    static typeRequiredCoding(): ItemTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Attachment: "attachment";
+        readonly Boolean: "boolean";
+        readonly Choice: "choice";
+        readonly Date: "date";
+        readonly DateTime: "dateTime";
+        readonly Decimal: "decimal";
+        readonly Display: "display";
+        readonly Group: "group";
+        readonly Integer: "integer";
+        readonly OpenChoice: "open-choice";
+        readonly Quantity: "quantity";
+        readonly Question: "question";
+        readonly Reference: "reference";
+        readonly String: "string";
+        readonly Text: "text";
+        readonly Time: "time";
+        readonly Url: "url";
+    };
     /**
      * Required-bound Value Set for enableBehavior (Questionnaire.item.enableBehavior)
      */
-    static enableBehaviorRequiredCoding(): QuestionnaireEnableBehaviorCodingType;
+    static get enableBehaviorRequiredCodes(): {
+        readonly All: "all";
+        readonly Any: "any";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -447,7 +471,7 @@ export interface QuestionnaireArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of questionnaires that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Allows filtering of questionnaires that are appropriate for use versus not.
      */
@@ -528,7 +552,7 @@ export declare class Questionnaire extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this questionnaire outside of FHIR, where it is not possible to use the logical URI.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * There may be different questionnaire instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the questionnaire with the format [url]|[version].
      */
@@ -544,11 +568,11 @@ export declare class Questionnaire extends fhir.DomainResource {
     /**
      * The URL of a Questionnaire that this Questionnaire is based on.
      */
-    derivedFrom?: fhir.FhirCanonical[];
+    derivedFrom: fhir.FhirCanonical[];
     /**
      * Allows filtering of questionnaires that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Allows filtering of questionnaires that are appropriate for use versus not.
      */
@@ -556,7 +580,7 @@ export declare class Questionnaire extends fhir.DomainResource {
     /**
      * If none are specified, then the subject is unlimited.
      */
-    subjectType?: fhir.FhirCode[];
+    subjectType: fhir.FhirCode[];
     /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the questionnaire. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
@@ -568,7 +592,7 @@ export declare class Questionnaire extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * This description can be used to capture details such as why the questionnaire was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the questionnaire as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the questionnaire is presumed to be the predominant language in the place the questionnaire was created).
      */
@@ -576,11 +600,11 @@ export declare class Questionnaire extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the questionnaire to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * This element does not describe the usage of the questionnaire. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this questionnaire.
      */
@@ -604,11 +628,11 @@ export declare class Questionnaire extends fhir.DomainResource {
     /**
      * An identifier for this question or group of questions in a particular terminology such as LOINC.
      */
-    code?: fhir.Coding[];
+    code: fhir.Coding[];
     /**
      * The content of the questionnaire is constructed from an ordered, hierarchical collection of items.
      */
-    item?: fhir.QuestionnaireItem[];
+    item: fhir.QuestionnaireItem[];
     /**
      * Default constructor for Questionnaire - initializes any required elements to null if a value is not provided.
      */
@@ -616,11 +640,169 @@ export declare class Questionnaire extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (Questionnaire.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Required-bound Value Set for subjectType (Questionnaire.subjectType)
      */
-    static subjectTypeRequiredCoding(): ResourceTypesCodingType;
+    static get subjectTypeRequiredCodes(): {
+        readonly Account: "Account";
+        readonly ActivityDefinition: "ActivityDefinition";
+        readonly AdverseEvent: "AdverseEvent";
+        readonly AllergyIntolerance: "AllergyIntolerance";
+        readonly Appointment: "Appointment";
+        readonly AppointmentResponse: "AppointmentResponse";
+        readonly AuditEvent: "AuditEvent";
+        readonly Basic: "Basic";
+        readonly Binary: "Binary";
+        readonly BiologicallyDerivedProduct: "BiologicallyDerivedProduct";
+        readonly BodyStructure: "BodyStructure";
+        readonly Bundle: "Bundle";
+        readonly CapabilityStatement: "CapabilityStatement";
+        readonly CarePlan: "CarePlan";
+        readonly CareTeam: "CareTeam";
+        readonly CatalogEntry: "CatalogEntry";
+        readonly ChargeItem: "ChargeItem";
+        readonly ChargeItemDefinition: "ChargeItemDefinition";
+        readonly Claim: "Claim";
+        readonly ClaimResponse: "ClaimResponse";
+        readonly ClinicalImpression: "ClinicalImpression";
+        readonly CodeSystem: "CodeSystem";
+        readonly Communication: "Communication";
+        readonly CommunicationRequest: "CommunicationRequest";
+        readonly CompartmentDefinition: "CompartmentDefinition";
+        readonly Composition: "Composition";
+        readonly ConceptMap: "ConceptMap";
+        readonly Condition: "Condition";
+        readonly Consent: "Consent";
+        readonly Contract: "Contract";
+        readonly Coverage: "Coverage";
+        readonly CoverageEligibilityRequest: "CoverageEligibilityRequest";
+        readonly CoverageEligibilityResponse: "CoverageEligibilityResponse";
+        readonly DetectedIssue: "DetectedIssue";
+        readonly Device: "Device";
+        readonly DeviceDefinition: "DeviceDefinition";
+        readonly DeviceMetric: "DeviceMetric";
+        readonly DeviceRequest: "DeviceRequest";
+        readonly DeviceUseStatement: "DeviceUseStatement";
+        readonly DiagnosticReport: "DiagnosticReport";
+        readonly DocumentManifest: "DocumentManifest";
+        readonly DocumentReference: "DocumentReference";
+        readonly DomainResource: "DomainResource";
+        readonly EffectEvidenceSynthesis: "EffectEvidenceSynthesis";
+        readonly Encounter: "Encounter";
+        readonly Endpoint: "Endpoint";
+        readonly EnrollmentRequest: "EnrollmentRequest";
+        readonly EnrollmentResponse: "EnrollmentResponse";
+        readonly EpisodeOfCare: "EpisodeOfCare";
+        readonly EventDefinition: "EventDefinition";
+        readonly Evidence: "Evidence";
+        readonly EvidenceVariable: "EvidenceVariable";
+        readonly ExampleScenario: "ExampleScenario";
+        readonly ExplanationOfBenefit: "ExplanationOfBenefit";
+        readonly FamilyMemberHistory: "FamilyMemberHistory";
+        readonly Flag: "Flag";
+        readonly Goal: "Goal";
+        readonly GraphDefinition: "GraphDefinition";
+        readonly Group: "Group";
+        readonly GuidanceResponse: "GuidanceResponse";
+        readonly HealthcareService: "HealthcareService";
+        readonly ImagingStudy: "ImagingStudy";
+        readonly Immunization: "Immunization";
+        readonly ImmunizationEvaluation: "ImmunizationEvaluation";
+        readonly ImmunizationRecommendation: "ImmunizationRecommendation";
+        readonly ImplementationGuide: "ImplementationGuide";
+        readonly InsurancePlan: "InsurancePlan";
+        readonly Invoice: "Invoice";
+        readonly Library: "Library";
+        readonly Linkage: "Linkage";
+        readonly List: "List";
+        readonly Location: "Location";
+        readonly Measure: "Measure";
+        readonly MeasureReport: "MeasureReport";
+        readonly Media: "Media";
+        readonly Medication: "Medication";
+        readonly MedicationAdministration: "MedicationAdministration";
+        readonly MedicationDispense: "MedicationDispense";
+        readonly MedicationKnowledge: "MedicationKnowledge";
+        readonly MedicationRequest: "MedicationRequest";
+        readonly MedicationStatement: "MedicationStatement";
+        readonly MedicinalProduct: "MedicinalProduct";
+        readonly MedicinalProductAuthorization: "MedicinalProductAuthorization";
+        readonly MedicinalProductContraindication: "MedicinalProductContraindication";
+        readonly MedicinalProductIndication: "MedicinalProductIndication";
+        readonly MedicinalProductIngredient: "MedicinalProductIngredient";
+        readonly MedicinalProductInteraction: "MedicinalProductInteraction";
+        readonly MedicinalProductManufactured: "MedicinalProductManufactured";
+        readonly MedicinalProductPackaged: "MedicinalProductPackaged";
+        readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
+        readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
+        readonly MessageDefinition: "MessageDefinition";
+        readonly MessageHeader: "MessageHeader";
+        readonly MolecularSequence: "MolecularSequence";
+        readonly NamingSystem: "NamingSystem"; /**
+         * This ''can'' be a meaningful identifier (e.g. a LOINC code) but is not intended to have any meaning.  GUIDs or sequential numbers are appropriate here.
+         */
+        readonly NutritionOrder: "NutritionOrder";
+        readonly Observation: "Observation";
+        readonly ObservationDefinition: "ObservationDefinition";
+        readonly OperationDefinition: "OperationDefinition";
+        readonly OperationOutcome: "OperationOutcome";
+        readonly Organization: "Organization";
+        readonly OrganizationAffiliation: "OrganizationAffiliation";
+        readonly Parameters: "Parameters";
+        readonly Patient: "Patient";
+        readonly PaymentNotice: "PaymentNotice";
+        readonly PaymentReconciliation: "PaymentReconciliation";
+        readonly Person: "Person";
+        readonly PlanDefinition: "PlanDefinition";
+        readonly Practitioner: "Practitioner";
+        readonly PractitionerRole: "PractitionerRole";
+        readonly Procedure: "Procedure";
+        readonly Provenance: "Provenance";
+        readonly Questionnaire: "Questionnaire";
+        readonly QuestionnaireResponse: "QuestionnaireResponse";
+        readonly RelatedPerson: "RelatedPerson"; /**
+         * The user is allowed to change the value and override the default (unless marked as read-only). If the user doesn't change the value, then this initial value will be persisted when the QuestionnaireResponse is initially created.  Note that initial values can influence results.  The data type of initial[x] must agree with the item.type, and only repeating items can have more then one initial value.
+         */
+        readonly RequestGroup: "RequestGroup";
+        readonly ResearchDefinition: "ResearchDefinition";
+        readonly ResearchElementDefinition: "ResearchElementDefinition";
+        readonly ResearchStudy: "ResearchStudy";
+        readonly ResearchSubject: "ResearchSubject";
+        readonly Resource: "Resource";
+        readonly RiskAssessment: "RiskAssessment";
+        readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
+        readonly Schedule: "Schedule";
+        readonly SearchParameter: "SearchParameter";
+        readonly ServiceRequest: "ServiceRequest";
+        readonly Slot: "Slot";
+        readonly Specimen: "Specimen";
+        readonly SpecimenDefinition: "SpecimenDefinition";
+        readonly StructureDefinition: "StructureDefinition";
+        readonly StructureMap: "StructureMap";
+        readonly Subscription: "Subscription";
+        readonly Substance: "Substance";
+        readonly SubstanceNucleicAcid: "SubstanceNucleicAcid";
+        readonly SubstancePolymer: "SubstancePolymer";
+        readonly SubstanceProtein: "SubstanceProtein";
+        readonly SubstanceReferenceInformation: "SubstanceReferenceInformation";
+        readonly SubstanceSourceMaterial: "SubstanceSourceMaterial";
+        readonly SubstanceSpecification: "SubstanceSpecification";
+        readonly SupplyDelivery: "SupplyDelivery";
+        readonly SupplyRequest: "SupplyRequest";
+        readonly Task: "Task";
+        readonly TerminologyCapabilities: "TerminologyCapabilities";
+        readonly TestReport: "TestReport";
+        readonly TestScript: "TestScript";
+        readonly ValueSet: "ValueSet";
+        readonly VerificationResult: "VerificationResult";
+        readonly VisionPrescription: "VisionPrescription";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

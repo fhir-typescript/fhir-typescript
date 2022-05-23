@@ -16,6 +16,10 @@ export interface StructureMapStructure extends fhir.BackboneElement {
      */
     mode: 'produced' | 'queried' | 'source' | 'target' | null;
     /**
+     * Extended properties for primitive element: StructureMap.structure.mode
+     */
+    _mode?: fhir.FhirElement;
+    /**
      * This is needed if both types have the same name (e.g. version conversion).
      */
     alias?: string | undefined;
@@ -56,6 +60,10 @@ export interface StructureMapGroupInput extends fhir.BackboneElement {
      * Mode for this instance of data.
      */
     mode: 'source' | 'target' | null;
+    /**
+     * Extended properties for primitive element: StructureMap.group.input.mode
+     */
+    _mode?: fhir.FhirElement;
     /**
      * Documentation for this instance of data.
      */
@@ -390,6 +398,10 @@ export interface StructureMapGroupRuleSource extends fhir.BackboneElement {
      */
     listMode?: 'first' | 'last' | 'not_first' | 'not_last' | 'only_one' | undefined;
     /**
+     * Extended properties for primitive element: StructureMap.group.rule.source.listMode
+     */
+    _listMode?: fhir.FhirElement;
+    /**
      * Named context for field, if a field is specified.
      */
     variable?: string | undefined;
@@ -484,6 +496,10 @@ export interface StructureMapGroupRuleTarget extends fhir.BackboneElement {
      */
     contextType?: 'type' | 'variable' | undefined;
     /**
+     * Extended properties for primitive element: StructureMap.group.rule.target.contextType
+     */
+    _contextType?: fhir.FhirElement;
+    /**
      * Field to create in the context.
      */
     element?: string | undefined;
@@ -504,6 +520,10 @@ export interface StructureMapGroupRuleTarget extends fhir.BackboneElement {
      */
     listMode?: ('collate' | 'first' | 'last' | 'share')[] | undefined;
     /**
+     * Extended properties for primitive element: StructureMap.group.rule.target.listMode
+     */
+    _listMode?: (fhir.FhirElement | null)[];
+    /**
      * Internal rule reference for shared list items.
      */
     listRuleId?: string | undefined;
@@ -515,6 +535,10 @@ export interface StructureMapGroupRuleTarget extends fhir.BackboneElement {
      * How the data is copied / created.
      */
     transform?: 'append' | 'c' | 'cast' | 'cc' | 'copy' | 'cp' | 'create' | 'dateOp' | 'escape' | 'evaluate' | 'id' | 'pointer' | 'qty' | 'reference' | 'translate' | 'truncate' | 'uuid' | undefined;
+    /**
+     * Extended properties for primitive element: StructureMap.group.rule.target.transform
+     */
+    _transform?: fhir.FhirElement;
     /**
      * Parameters to the transform.
      */
@@ -603,6 +627,10 @@ export interface StructureMapGroup extends fhir.BackboneElement {
      */
     typeMode: 'none' | 'type-and-types' | 'types' | null;
     /**
+     * Extended properties for primitive element: StructureMap.group.typeMode
+     */
+    _typeMode?: fhir.FhirElement;
+    /**
      * Additional supporting documentation that explains the purpose of the group and the types of mappings within it.
      */
     documentation?: string | undefined;
@@ -669,6 +697,10 @@ export interface StructureMap extends fhir.DomainResource {
      * Allows filtering of structure maps that are appropriate for use versus not.
      */
     status: 'active' | 'draft' | 'retired' | 'unknown' | null;
+    /**
+     * Extended properties for primitive element: StructureMap.status
+     */
+    _status?: fhir.FhirElement;
     /**
      * Allows filtering of structure maps that are appropriate for use versus not.
      */

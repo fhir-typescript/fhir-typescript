@@ -88,6 +88,10 @@ export interface MedicationAdministration extends fhir.DomainResource {
    */
   status: 'completed'|'entered-in-error'|'in-progress'|'not-done'|'on-hold'|'stopped'|'unknown'|null;
   /**
+   * Extended properties for primitive element: MedicationAdministration.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * A code indicating why the administration was not performed.
    */
   statusReason?: fhir.CodeableConcept[]|undefined;

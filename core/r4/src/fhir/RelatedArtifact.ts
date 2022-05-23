@@ -16,7 +16,7 @@ export interface RelatedArtifactArgs extends fhir.FhirElementArgs {
   /**
    * The type of relationship to the related artifact.
    */
-  type: RelatedArtifactTypeCodeType|null;
+  type: fhir.FhirCode<RelatedArtifactTypeCodeType>|string|undefined;
   /**
    * A short label that can be used to reference the citation from elsewhere in the containing artifact, such as a footnote index.
    */
@@ -54,7 +54,7 @@ export class RelatedArtifact extends fhir.FhirElement {
   /**
    * The type of relationship to the related artifact.
    */
-  public type: RelatedArtifactTypeCodeType|null;
+  public type: fhir.FhirCode<RelatedArtifactTypeCodeType>|null;
   /**
    * A short label that can be used to reference the citation from elsewhere in the containing artifact, such as a footnote index.
    */
@@ -84,7 +84,7 @@ export class RelatedArtifact extends fhir.FhirElement {
    */
   constructor(source:Partial<RelatedArtifactArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<RelatedArtifactTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['label']) { this.label = new fhir.FhirString({value: source.label}); }
     if (source['display']) { this.display = new fhir.FhirString({value: source.display}); }
@@ -96,8 +96,8 @@ export class RelatedArtifact extends fhir.FhirElement {
   /**
    * Required-bound Value Set for type (RelatedArtifact.type)
    */
-  public static typeRequiredCoding():RelatedArtifactTypeCodingType {
-    return RelatedArtifactTypeCodings;
+  public static get typeRequiredCodes() {
+    return RelatedArtifactTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -105,8 +105,12 @@ export class RelatedArtifact extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:RelatedArtifactTypeCodeType fhir: RelatedArtifact.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<RelatedArtifactTypeCodeType> fhir: RelatedArtifact.type:code' });
     }
+    if (this['type'] && (!Object.values(RelatedArtifactTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<RelatedArtifactTypeCodeType> fhir: RelatedArtifact.type:code Required binding to: RelatedArtifactType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["label"]) { issues.push(...this.label.doModelValidation()); }
     if (this["display"]) { issues.push(...this.display.doModelValidation()); }
     if (this["citation"]) { issues.push(...this.citation.doModelValidation()); }

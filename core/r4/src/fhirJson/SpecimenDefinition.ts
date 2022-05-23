@@ -121,6 +121,10 @@ export interface SpecimenDefinitionTypeTested extends fhir.BackboneElement {
    */
   preference: 'alternate'|'preferred'|null;
   /**
+   * Extended properties for primitive element: SpecimenDefinition.typeTested.preference
+   */
+  _preference?:fhir.FhirElement;
+  /**
    * The specimen's container.
    */
   container?: fhir.SpecimenDefinitionTypeTestedContainer|undefined;

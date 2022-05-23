@@ -162,7 +162,7 @@ export class RiskEvidenceSynthesisRiskEstimatePrecisionEstimate extends fhir.Bac
   /**
    * Extensible-bound Value Set for type (RiskEvidenceSynthesis.riskEstimate.precisionEstimate.type)
    */
-  public static typeExtensibleCoding():PrecisionEstimateTypeCodingType {
+  public static get typeExtensibleCodings() {
     return PrecisionEstimateTypeCodings;
   }
   /**
@@ -246,7 +246,7 @@ export class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElement {
   /**
    * A description of the precision of the estimate for the effect.
    */
-  public precisionEstimate?: fhir.RiskEvidenceSynthesisRiskEstimatePrecisionEstimate[];
+  public precisionEstimate: fhir.RiskEvidenceSynthesisRiskEstimatePrecisionEstimate[];
   /**
    * Default constructor for RiskEvidenceSynthesisRiskEstimate - initializes any required elements to null if a value is not provided.
    */
@@ -264,14 +264,14 @@ export class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (RiskEvidenceSynthesis.riskEstimate.type)
    */
-  public static typeExtensibleCoding():RiskEstimateTypeCodingType {
+  public static get typeExtensibleCodings() {
     return RiskEstimateTypeCodings;
   }
   /**
    * Required-bound Value Set for unitOfMeasure (RiskEvidenceSynthesis.riskEstimate.unitOfMeasure)
    */
-  public static unitOfMeasureRequiredCoding():UcumUnitsCodingType {
-    return UcumUnitsCodings;
+  public static get unitOfMeasureRequiredCodes() {
+    return UcumUnitsCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -281,6 +281,9 @@ export class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElement {
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["value"]) { issues.push(...this.value.doModelValidation()); }
+    if (this['unitOfMeasure'] && (!Object.values(UcumUnitsCodes).includes(this.unitOfMeasure as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property unitOfMeasure?:fhir.CodeableConcept fhir: RiskEvidenceSynthesis.riskEstimate.unitOfMeasure:CodeableConcept Required binding to: UcumUnits' });
+    }
     if (this["unitOfMeasure"]) { issues.push(...this.unitOfMeasure.doModelValidation()); }
     if (this["denominatorCount"]) { issues.push(...this.denominatorCount.doModelValidation()); }
     if (this["numeratorCount"]) { issues.push(...this.numeratorCount.doModelValidation()); }
@@ -321,11 +324,11 @@ export class RiskEvidenceSynthesisCertaintyCertaintySubcomponent extends fhir.Ba
   /**
    * A rating of a subcomponent of rating certainty.
    */
-  public rating?: fhir.CodeableConcept[];
+  public rating: fhir.CodeableConcept[];
   /**
    * A human-readable string to clarify or explain concepts about the resource.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Default constructor for RiskEvidenceSynthesisCertaintyCertaintySubcomponent - initializes any required elements to null if a value is not provided.
    */
@@ -340,13 +343,13 @@ export class RiskEvidenceSynthesisCertaintyCertaintySubcomponent extends fhir.Ba
   /**
    * Extensible-bound Value Set for type (RiskEvidenceSynthesis.certainty.certaintySubcomponent.type)
    */
-  public static typeExtensibleCoding():CertaintySubcomponentTypeCodingType {
+  public static get typeExtensibleCodings() {
     return CertaintySubcomponentTypeCodings;
   }
   /**
    * Extensible-bound Value Set for rating (RiskEvidenceSynthesis.certainty.certaintySubcomponent.rating)
    */
-  public static ratingExtensibleCoding():CertaintySubcomponentRatingCodingType {
+  public static get ratingExtensibleCodings() {
     return CertaintySubcomponentRatingCodings;
   }
   /**
@@ -389,15 +392,15 @@ export class RiskEvidenceSynthesisCertainty extends fhir.BackboneElement {
   /**
    * A rating of the certainty of the effect estimate.
    */
-  public rating?: fhir.CodeableConcept[];
+  public rating: fhir.CodeableConcept[];
   /**
    * A human-readable string to clarify or explain concepts about the resource.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * A description of a component of the overall certainty.
    */
-  public certaintySubcomponent?: fhir.RiskEvidenceSynthesisCertaintyCertaintySubcomponent[];
+  public certaintySubcomponent: fhir.RiskEvidenceSynthesisCertaintyCertaintySubcomponent[];
   /**
    * Default constructor for RiskEvidenceSynthesisCertainty - initializes any required elements to null if a value is not provided.
    */
@@ -413,7 +416,7 @@ export class RiskEvidenceSynthesisCertainty extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for rating (RiskEvidenceSynthesis.certainty.rating)
    */
-  public static ratingExtensibleCoding():EvidenceQualityCodingType {
+  public static get ratingExtensibleCodings() {
     return EvidenceQualityCodings;
   }
   /**
@@ -460,7 +463,7 @@ export interface RiskEvidenceSynthesisArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of risk evidence synthesiss that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the risk evidence synthesis. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
@@ -584,7 +587,7 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this risk evidence synthesis outside of FHIR, where it is not possible to use the logical URI.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * There may be different risk evidence synthesis instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the risk evidence synthesis with the format [url]|[version].
    */
@@ -600,7 +603,7 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
   /**
    * Allows filtering of risk evidence synthesiss that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the risk evidence synthesis. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
@@ -612,7 +615,7 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the risk evidence synthesis was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the risk evidence synthesis as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the risk evidence synthesis is presumed to be the predominant language in the place the risk evidence synthesis was created).
    */
@@ -620,15 +623,15 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
   /**
    * A human-readable string to clarify or explain concepts about the resource.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the risk evidence synthesis to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * A copyright statement relating to the risk evidence synthesis and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the risk evidence synthesis.
    */
@@ -648,27 +651,27 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
   /**
    * Descriptive topics related to the content of the RiskEvidenceSynthesis. Topics provide a high-level categorization grouping types of EffectEvidenceSynthesiss that can be useful for filtering and searching.
    */
-  public topic?: fhir.CodeableConcept[];
+  public topic: fhir.CodeableConcept[];
   /**
    * An individiual or organization primarily involved in the creation and maintenance of the content.
    */
-  public author?: fhir.ContactDetail[];
+  public author: fhir.ContactDetail[];
   /**
    * An individual or organization primarily responsible for internal coherence of the content.
    */
-  public editor?: fhir.ContactDetail[];
+  public editor: fhir.ContactDetail[];
   /**
    * An individual or organization primarily responsible for review of some aspect of the content.
    */
-  public reviewer?: fhir.ContactDetail[];
+  public reviewer: fhir.ContactDetail[];
   /**
    * An individual or organization responsible for officially endorsing the content for use in some setting.
    */
-  public endorser?: fhir.ContactDetail[];
+  public endorser: fhir.ContactDetail[];
   /**
    * Each related artifact is either an attachment, or a reference to another resource, but not both.
    */
-  public relatedArtifact?: fhir.RelatedArtifact[];
+  public relatedArtifact: fhir.RelatedArtifact[];
   /**
    * Type of synthesis eg meta-analysis.
    */
@@ -700,7 +703,7 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
   /**
    * A description of the certainty of the risk estimate.
    */
-  public certainty?: fhir.RiskEvidenceSynthesisCertainty[];
+  public certainty: fhir.RiskEvidenceSynthesisCertainty[];
   /**
    * Default constructor for RiskEvidenceSynthesis - initializes any required elements to null if a value is not provided.
    */
@@ -713,7 +716,7 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
@@ -757,19 +760,19 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (RiskEvidenceSynthesis.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Extensible-bound Value Set for synthesisType (RiskEvidenceSynthesis.synthesisType)
    */
-  public static synthesisTypeExtensibleCoding():SynthesisTypeCodingType {
+  public static get synthesisTypeExtensibleCodings() {
     return SynthesisTypeCodings;
   }
   /**
    * Extensible-bound Value Set for studyType (RiskEvidenceSynthesis.studyType)
    */
-  public static studyTypeExtensibleCoding():StudyTypeCodingType {
+  public static get studyTypeExtensibleCodings() {
     return StudyTypeCodings;
   }
   /**
@@ -778,7 +781,7 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"RiskEvidenceSynthesis" fhir: RiskEvidenceSynthesis.resourceType:"RiskEvidenceSynthesis"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"RiskEvidenceSynthesis" fhir: RiskEvidenceSynthesis.resourceType:"RiskEvidenceSynthesis"' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -786,8 +789,12 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: RiskEvidenceSynthesis.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: RiskEvidenceSynthesis.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: RiskEvidenceSynthesis.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
     if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -808,12 +815,12 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
     if (this["synthesisType"]) { issues.push(...this.synthesisType.doModelValidation()); }
     if (this["studyType"]) { issues.push(...this.studyType.doModelValidation()); }
     if (!this['population']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property population:fhir.Reference fhir: RiskEvidenceSynthesis.population:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property population:fhir.Reference fhir: RiskEvidenceSynthesis.population:Reference' });
     }
     if (this["population"]) { issues.push(...this.population.doModelValidation()); }
     if (this["exposure"]) { issues.push(...this.exposure.doModelValidation()); }
     if (!this['outcome']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property outcome:fhir.Reference fhir: RiskEvidenceSynthesis.outcome:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property outcome:fhir.Reference fhir: RiskEvidenceSynthesis.outcome:Reference' });
     }
     if (this["outcome"]) { issues.push(...this.outcome.doModelValidation()); }
     if (this["sampleSize"]) { issues.push(...this.sampleSize.doModelValidation()); }

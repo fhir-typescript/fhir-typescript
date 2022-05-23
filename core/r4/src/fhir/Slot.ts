@@ -60,7 +60,7 @@ export interface SlotArgs extends fhir.DomainResourceArgs {
   /**
    * busy | free | busy-unavailable | busy-tentative | entered-in-error.
    */
-  status: SlotstatusCodeType|null;
+  status: fhir.FhirCode<SlotstatusCodeType>|string|undefined;
   /**
    * Date/Time that the slot is to begin.
    */
@@ -94,19 +94,19 @@ export class Slot extends fhir.DomainResource {
   /**
    * External Ids for this item.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * A broad categorization of the service that is to be performed during this appointment.
    */
-  public serviceCategory?: fhir.CodeableConcept[];
+  public serviceCategory: fhir.CodeableConcept[];
   /**
    * The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource.
    */
-  public serviceType?: fhir.CodeableConcept[];
+  public serviceType: fhir.CodeableConcept[];
   /**
    * The specialty of a practitioner that would be required to perform the service requested in this appointment.
    */
-  public specialty?: fhir.CodeableConcept[];
+  public specialty: fhir.CodeableConcept[];
   /**
    * The style of appointment or patient that may be booked in the slot (not service type).
    */
@@ -118,7 +118,7 @@ export class Slot extends fhir.DomainResource {
   /**
    * busy | free | busy-unavailable | busy-tentative | entered-in-error.
    */
-  public status: SlotstatusCodeType|null;
+  public status: fhir.FhirCode<SlotstatusCodeType>|null;
   /**
    * Date/Time that the slot is to begin.
    */
@@ -152,7 +152,7 @@ export class Slot extends fhir.DomainResource {
     if (source['appointmentType']) { this.appointmentType = new fhir.CodeableConcept(source.appointmentType); }
     if (source['schedule']) { this.schedule = new fhir.Reference(source.schedule); }
     else { this.schedule = null; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<SlotstatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['start']) { this.start = new fhir.FhirInstant({value: source.start}); }
     else { this.start = null; }
@@ -164,20 +164,20 @@ export class Slot extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for specialty (Slot.specialty)
    */
-  public static specialtyPreferredCoding():C80PracticeCodesCodingType {
+  public static get specialtyPreferredCodings() {
     return C80PracticeCodesCodings;
   }
   /**
    * Preferred-bound Value Set for appointmentType (Slot.appointmentType)
    */
-  public static appointmentTypePreferredCoding():V20276CodingType {
+  public static get appointmentTypePreferredCodings() {
     return V20276Codings;
   }
   /**
    * Required-bound Value Set for status (Slot.status)
    */
-  public static statusRequiredCoding():SlotstatusCodingType {
-    return SlotstatusCodings;
+  public static get statusRequiredCodes() {
+    return SlotstatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -185,7 +185,7 @@ export class Slot extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Slot" fhir: Slot.resourceType:"Slot"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Slot" fhir: Slot.resourceType:"Slot"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["serviceCategory"]) { this.serviceCategory.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -193,18 +193,22 @@ export class Slot extends fhir.DomainResource {
     if (this["specialty"]) { this.specialty.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["appointmentType"]) { issues.push(...this.appointmentType.doModelValidation()); }
     if (!this['schedule']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property schedule:fhir.Reference fhir: Slot.schedule:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property schedule:fhir.Reference fhir: Slot.schedule:Reference' });
     }
     if (this["schedule"]) { issues.push(...this.schedule.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:SlotstatusCodeType fhir: Slot.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<SlotstatusCodeType> fhir: Slot.status:code' });
     }
+    if (this['status'] && (!Object.values(SlotstatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<SlotstatusCodeType> fhir: Slot.status:code Required binding to: Slotstatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['start']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property start:fhir.FhirInstant fhir: Slot.start:instant', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property start:fhir.FhirInstant fhir: Slot.start:instant' });
     }
     if (this["start"]) { issues.push(...this.start.doModelValidation()); }
     if (!this['end']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property end:fhir.FhirInstant fhir: Slot.end:instant', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property end:fhir.FhirInstant fhir: Slot.end:instant' });
     }
     if (this["end"]) { issues.push(...this.end.doModelValidation()); }
     if (this["overbooked"]) { issues.push(...this.overbooked.doModelValidation()); }

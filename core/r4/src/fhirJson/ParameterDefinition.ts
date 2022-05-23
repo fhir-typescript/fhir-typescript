@@ -23,6 +23,10 @@ export interface ParameterDefinition extends fhir.FhirElement {
    */
   use: 'in'|'out'|null;
   /**
+   * Extended properties for primitive element: ParameterDefinition.use
+   */
+  _use?:fhir.FhirElement;
+  /**
    * The minimum number of times this parameter SHALL appear in the request or response.
    */
   min?: number|undefined;

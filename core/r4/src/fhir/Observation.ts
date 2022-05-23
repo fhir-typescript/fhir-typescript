@@ -94,7 +94,7 @@ export class ObservationReferenceRange extends fhir.BackboneElement {
   /**
    * This SHOULD be populated if there is more than one range.  If this element is not present then the normal population is assumed.
    */
-  public appliesTo?: fhir.CodeableConcept[];
+  public appliesTo: fhir.CodeableConcept[];
   /**
    * The age at which this reference range is applicable. This is a neonatal age (e.g. number of weeks at term) if the meaning says so.
    */
@@ -119,7 +119,7 @@ export class ObservationReferenceRange extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for type (Observation.referenceRange.type)
    */
-  public static typePreferredCoding():ReferencerangeMeaningCodingType {
+  public static get typePreferredCodings() {
     return ReferencerangeMeaningCodings;
   }
   /**
@@ -235,11 +235,11 @@ export class ObservationComponent extends fhir.BackboneElement {
   /**
    * Historically used for laboratory results (known as 'abnormal flag' ),  its use extends to other use cases where coded interpretations  are relevant.  Often reported as one or more simple compact codes this element is often placed adjacent to the result value in reports and flow sheets to signal the meaning/normalcy status of the result.
    */
-  public interpretation?: fhir.CodeableConcept[];
+  public interpretation: fhir.CodeableConcept[];
   /**
    * Most observations only have one generic reference range. Systems MAY choose to restrict to only supplying the relevant reference range based on knowledge about the patient (e.g., specific to the patient's age, gender, weight and other factors), but this might not be possible or appropriate. Whenever more than one reference range is supplied, the differences between them SHOULD be provided in the reference range and/or age properties.
    */
-  public referenceRange?: fhir.ObservationReferenceRange[];
+  public referenceRange: fhir.ObservationReferenceRange[];
   /**
    * Default constructor for ObservationComponent - initializes any required elements to null if a value is not provided.
    */
@@ -268,13 +268,13 @@ export class ObservationComponent extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for dataAbsentReason (Observation.component.dataAbsentReason)
    */
-  public static dataAbsentReasonExtensibleCoding():DataAbsentReasonCodingType {
+  public static get dataAbsentReasonExtensibleCodings() {
     return DataAbsentReasonCodings;
   }
   /**
    * Extensible-bound Value Set for interpretation (Observation.component.interpretation)
    */
-  public static interpretationExtensibleCoding():ObservationInterpretationCodingType {
+  public static get interpretationExtensibleCodings() {
     return ObservationInterpretationCodings;
   }
   /**
@@ -283,7 +283,7 @@ export class ObservationComponent extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Observation.component.code:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Observation.component.code:CodeableConcept' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["dataAbsentReason"]) { issues.push(...this.dataAbsentReason.doModelValidation()); }
@@ -315,7 +315,7 @@ export interface ObservationArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status: ObservationStatusCodeType|null;
+  status: fhir.FhirCode<ObservationStatusCodeType>|string|undefined;
   /**
    * In addition to the required category valueset, this element allows various categorization schemes based on the owner’s definition of the category and effectively multiple categories can be used at once.  The level of granularity is defined by the category concepts in the value set.
    */
@@ -475,23 +475,23 @@ export class Observation extends fhir.DomainResource {
   /**
    * A unique identifier assigned to this observation.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * A plan, proposal or order that is fulfilled in whole or in part by this event.  For example, a MedicationRequest may require a patient to have laboratory test performed before  it is dispensed.
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * To link an Observation to an Encounter use `encounter`.  See the  [Notes](observation.html#obsgrouping) below for guidance on referencing another Observation.
    */
-  public partOf?: fhir.Reference[];
+  public partOf: fhir.Reference[];
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status: ObservationStatusCodeType|null;
+  public status: fhir.FhirCode<ObservationStatusCodeType>|null;
   /**
    * In addition to the required category valueset, this element allows various categorization schemes based on the owner’s definition of the category and effectively multiple categories can be used at once.  The level of granularity is defined by the category concepts in the value set.
    */
-  public category?: fhir.CodeableConcept[];
+  public category: fhir.CodeableConcept[];
   /**
    * *All* code-value and, if present, component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.
    */
@@ -503,7 +503,7 @@ export class Observation extends fhir.DomainResource {
   /**
    * Typically, an observation is made about the subject - a patient, or group of patients, location, or device - and the distinction between the subject and what is directly measured for an observation is specified in the observation code itself ( e.g., "Blood Glucose") and does not need to be represented separately using this element.  Use `specimen` if a reference to a specimen is required.  If a code is required instead of a resource use either  `bodysite` for bodysites or the standard extension [focusCode](extension-observation-focuscode.html).
    */
-  public focus?: fhir.Reference[];
+  public focus: fhir.Reference[];
   /**
    * This will typically be the encounter the event occurred within, but some events may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter (e.g. pre-admission laboratory tests).
    */
@@ -523,7 +523,7 @@ export class Observation extends fhir.DomainResource {
   /**
    * Who was responsible for asserting the observed value as "true".
    */
-  public performer?: fhir.Reference[];
+  public performer: fhir.Reference[];
   /**
    * An observation may have; 1)  a single value here, 2)  both a value and a set of related or component values,  or 3)  only a set of related or component values. If a value is present, the datatype for this element should be determined by Observation.code.  A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.
    */
@@ -540,11 +540,11 @@ export class Observation extends fhir.DomainResource {
   /**
    * Historically used for laboratory results (known as 'abnormal flag' ),  its use extends to other use cases where coded interpretations  are relevant.  Often reported as one or more simple compact codes this element is often placed adjacent to the result value in reports and flow sheets to signal the meaning/normalcy status of the result.
    */
-  public interpretation?: fhir.CodeableConcept[];
+  public interpretation: fhir.CodeableConcept[];
   /**
    * May include general statements about the observation, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Only used if not implicit in code found in Observation.code.  In many systems, this may be represented as a related observation instead of an inline component.   
    * If the use case requires BodySite to be handled as a separate resource (e.g. to identify and track separately) then use the standard extension[ bodySite](extension-bodysite.html).
@@ -565,19 +565,19 @@ export class Observation extends fhir.DomainResource {
   /**
    * Most observations only have one generic reference range. Systems MAY choose to restrict to only supplying the relevant reference range based on knowledge about the patient (e.g., specific to the patient's age, gender, weight and other factors), but this might not be possible or appropriate. Whenever more than one reference range is supplied, the differences between them SHOULD be provided in the reference range and/or age properties.
    */
-  public referenceRange?: fhir.ObservationReferenceRange[];
+  public referenceRange: fhir.ObservationReferenceRange[];
   /**
    * When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.
    */
-  public hasMember?: fhir.Reference[];
+  public hasMember: fhir.Reference[];
   /**
    * All the reference choices that are listed in this element can represent clinical observations and other measurements that may be the source for a derived value.  The most common reference will be another Observation.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.
    */
-  public derivedFrom?: fhir.Reference[];
+  public derivedFrom: fhir.Reference[];
   /**
    * For a discussion on the ways Observations can be assembled in groups together see [Notes](observation.html#notes) below.
    */
-  public component?: fhir.ObservationComponent[];
+  public component: fhir.ObservationComponent[];
   /**
    * Default constructor for Observation - initializes any required elements to null if a value is not provided.
    */
@@ -590,7 +590,7 @@ export class Observation extends fhir.DomainResource {
     else { this.basedOn = []; }
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
     else { this.partOf = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<ObservationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
@@ -641,25 +641,25 @@ export class Observation extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Observation.status)
    */
-  public static statusRequiredCoding():ObservationStatusCodingType {
-    return ObservationStatusCodings;
+  public static get statusRequiredCodes() {
+    return ObservationStatusCodes;
   }
   /**
    * Preferred-bound Value Set for category (Observation.category)
    */
-  public static categoryPreferredCoding():ObservationCategoryCodingType {
+  public static get categoryPreferredCodings() {
     return ObservationCategoryCodings;
   }
   /**
    * Extensible-bound Value Set for dataAbsentReason (Observation.dataAbsentReason)
    */
-  public static dataAbsentReasonExtensibleCoding():DataAbsentReasonCodingType {
+  public static get dataAbsentReasonExtensibleCodings() {
     return DataAbsentReasonCodings;
   }
   /**
    * Extensible-bound Value Set for interpretation (Observation.interpretation)
    */
-  public static interpretationExtensibleCoding():ObservationInterpretationCodingType {
+  public static get interpretationExtensibleCodings() {
     return ObservationInterpretationCodings;
   }
   /**
@@ -668,17 +668,21 @@ export class Observation extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Observation" fhir: Observation.resourceType:"Observation"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Observation" fhir: Observation.resourceType:"Observation"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ObservationStatusCodeType fhir: Observation.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ObservationStatusCodeType> fhir: Observation.status:code' });
     }
+    if (this['status'] && (!Object.values(ObservationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ObservationStatusCodeType> fhir: Observation.status:code Required binding to: ObservationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Observation.code:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Observation.code:CodeableConcept' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }

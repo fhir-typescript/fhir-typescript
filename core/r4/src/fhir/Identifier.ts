@@ -20,7 +20,7 @@ export interface IdentifierArgs extends fhir.FhirElementArgs {
   /**
    * Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.
    */
-  use?: IdentifierUseCodeType|undefined;
+  use?: fhir.FhirCode<IdentifierUseCodeType>|string|undefined;
   /**
    * This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.
    */
@@ -54,7 +54,7 @@ export class Identifier extends fhir.FhirElement {
   /**
    * Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.
    */
-  public use?: IdentifierUseCodeType|undefined;
+  public use?: fhir.FhirCode<IdentifierUseCodeType>|undefined;
   /**
    * This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.
    */
@@ -80,7 +80,7 @@ export class Identifier extends fhir.FhirElement {
    */
   constructor(source:Partial<IdentifierArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['use']) { this.use = source.use; }
+    if (source['use']) { this.use = new fhir.FhirCode<IdentifierUseCodeType>({value: source.use}); }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['system']) { this.system = new fhir.FhirUri({value: source.system}); }
     if (source['value']) { this.value = new fhir.FhirString({value: source.value}); }
@@ -90,13 +90,13 @@ export class Identifier extends fhir.FhirElement {
   /**
    * Required-bound Value Set for use (Identifier.use)
    */
-  public static useRequiredCoding():IdentifierUseCodingType {
-    return IdentifierUseCodings;
+  public static get useRequiredCodes() {
+    return IdentifierUseCodes;
   }
   /**
    * Extensible-bound Value Set for type (Identifier.type)
    */
-  public static typeExtensibleCoding():IdentifierTypeCodingType {
+  public static get typeExtensibleCodings() {
     return IdentifierTypeCodings;
   }
   /**
@@ -104,6 +104,10 @@ export class Identifier extends fhir.FhirElement {
    */
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this['use'] && (!Object.values(IdentifierUseCodes).includes(this.use as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use?:fhir.FhirCode<IdentifierUseCodeType> fhir: Identifier.use:code Required binding to: IdentifierUse' });
+    }
+    if (this["use"]) { issues.push(...this.use.doModelValidation()); }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["system"]) { issues.push(...this.system.doModelValidation()); }
     if (this["value"]) { issues.push(...this.value.doModelValidation()); }

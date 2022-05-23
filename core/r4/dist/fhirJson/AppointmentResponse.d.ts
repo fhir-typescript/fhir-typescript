@@ -46,6 +46,10 @@ export interface AppointmentResponse extends fhir.DomainResource {
      */
     participantStatus: 'accepted' | 'declined' | 'needs-action' | 'tentative' | null;
     /**
+     * Extended properties for primitive element: AppointmentResponse.participantStatus
+     */
+    _participantStatus?: fhir.FhirElement;
+    /**
      * This comment is particularly important when the responder is declining, tentatively accepting or requesting another time to indicate the reasons why.
      */
     comment?: string | undefined;

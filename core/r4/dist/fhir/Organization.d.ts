@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ContactentityTypeCodingType } from '../fhirValueSets/ContactentityTypeCodings.js';
 /**
  * Valid arguments for the OrganizationContact type.
  */
@@ -40,7 +39,7 @@ export declare class OrganizationContact extends fhir.BackboneElement {
     /**
      * A contact detail (e.g. a telephone number or an email address) by which the party may be contacted.
      */
-    telecom?: fhir.ContactPoint[];
+    telecom: fhir.ContactPoint[];
     /**
      * Visiting or postal addresses for the contact.
      */
@@ -52,7 +51,14 @@ export declare class OrganizationContact extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for purpose (Organization.contact.purpose)
      */
-    static purposeExtensibleCoding(): ContactentityTypeCodingType;
+    static get purposeExtensibleCodings(): {
+        readonly Administrative: fhir.Coding;
+        readonly Billing: fhir.Coding;
+        readonly HumanResource: fhir.Coding;
+        readonly Patient: fhir.Coding;
+        readonly Payor: fhir.Coding;
+        readonly Press: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -125,7 +131,7 @@ export declare class Organization extends fhir.DomainResource {
     /**
      * Identifier for the organization that is used to identify the organization across multiple disparate systems.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This active flag is not intended to be used to mark an organization as temporarily closed or under construction. Instead the Location(s) within the Organization should have the suspended status. If further details of the reason for the suspension are required, then an extension on this element should be used.
      * This element is labeled as a modifier because it may be used to mark that the resource was created in error.
@@ -136,7 +142,7 @@ export declare class Organization extends fhir.DomainResource {
      * When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
      * We expect that some jurisdictions will profile this optionality to be a single cardinality.
      */
-    type?: fhir.CodeableConcept[];
+    type: fhir.CodeableConcept[];
     /**
      * If the name of an organization changes, consider putting the old name in the alias column so that it can still be located through searches.
      */
@@ -144,15 +150,15 @@ export declare class Organization extends fhir.DomainResource {
     /**
      * There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the organization.
      */
-    alias?: fhir.FhirString[];
+    alias: fhir.FhirString[];
     /**
      * The use code 'home' is not to be used. Note that these contacts are not the contact details of people who are employed by or represent the organization, but official contacts for the organization itself.
      */
-    telecom?: fhir.ContactPoint[];
+    telecom: fhir.ContactPoint[];
     /**
      * Organization may have multiple addresses with different uses or applicable periods. The use code 'home' is not to be used.
      */
-    address?: fhir.Address[];
+    address: fhir.Address[];
     /**
      * The organization of which this organization forms a part.
      */
@@ -160,11 +166,11 @@ export declare class Organization extends fhir.DomainResource {
     /**
      * Where multiple contacts for the same purpose are provided there is a standard extension that can be used to determine which one is the preferred contact to use.
      */
-    contact?: fhir.OrganizationContact[];
+    contact: fhir.OrganizationContact[];
     /**
      * Technical endpoints providing access to services operated for the organization.
      */
-    endpoint?: fhir.Reference[];
+    endpoint: fhir.Reference[];
     /**
      * Default constructor for Organization - initializes any required elements to null if a value is not provided.
      */

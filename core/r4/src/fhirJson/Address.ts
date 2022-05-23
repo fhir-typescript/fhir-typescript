@@ -15,9 +15,17 @@ export interface Address extends fhir.FhirElement {
    */
   use?: 'billing'|'home'|'old'|'temp'|'work'|undefined;
   /**
+   * Extended properties for primitive element: Address.use
+   */
+  _use?:fhir.FhirElement;
+  /**
    * The definition of Address states that "address is intended to describe postal addresses, not physical locations". However, many applications track whether an address has a dual purpose of being a location that can be visited as well as being a valid delivery destination, and Postal addresses are often used as proxies for physical locations (also see the [Location](location.html#) resource).
    */
   type?: 'both'|'physical'|'postal'|undefined;
+  /**
+   * Extended properties for primitive element: Address.type
+   */
+  _type?:fhir.FhirElement;
   /**
    * Can provide both a text representation and parts. Applications updating an address SHALL ensure that  when both text and parts are present,  no content is included in the text that isn't found in a part.
    */

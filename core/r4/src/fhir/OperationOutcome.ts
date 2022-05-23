@@ -24,7 +24,7 @@ export interface OperationOutcomeIssueArgs extends fhir.BackboneElementArgs {
   /**
    * This is labeled as "Is Modifier" because applications should not confuse hints and warnings with errors.
    */
-  severity: IssueSeverityCodeType|null;
+  severity: fhir.FhirCode<IssueSeverityCodeType>|string|undefined;
   /**
    * Describes the type of the issue. The system that creates an OperationOutcome SHALL choose the most applicable code from the IssueType value set, and may additional provide its own code for the error in the details element.
    */
@@ -58,7 +58,7 @@ export class OperationOutcomeIssue extends fhir.BackboneElement {
   /**
    * This is labeled as "Is Modifier" because applications should not confuse hints and warnings with errors.
    */
-  public severity: IssueSeverityCodeType|null;
+  public severity: fhir.FhirCode<IssueSeverityCodeType>|null;
   /**
    * Describes the type of the issue. The system that creates an OperationOutcome SHALL choose the most applicable code from the IssueType value set, and may additional provide its own code for the error in the details element.
    */
@@ -74,17 +74,17 @@ export class OperationOutcomeIssue extends fhir.BackboneElement {
   /**
    * The root of the XPath is the resource or bundle that generated OperationOutcome.  Each XPath SHALL resolve to a single node.  This element is deprecated, and is being replaced by expression.
    */
-  public location?: fhir.FhirString[];
+  public location: fhir.FhirString[];
   /**
    * The root of the FHIRPath is the resource or bundle that generated OperationOutcome.  Each FHIRPath SHALL resolve to a single node.
    */
-  public expression?: fhir.FhirString[];
+  public expression: fhir.FhirString[];
   /**
    * Default constructor for OperationOutcomeIssue - initializes any required elements to null if a value is not provided.
    */
   constructor(source:Partial<OperationOutcomeIssueArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['severity']) { this.severity = source.severity; }
+    if (source['severity']) { this.severity = new fhir.FhirCode<IssueSeverityCodeType>({value: source.severity}); }
     else { this.severity = null; }
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
     else { this.code = null; }
@@ -98,14 +98,14 @@ export class OperationOutcomeIssue extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for severity (OperationOutcome.issue.severity)
    */
-  public static severityRequiredCoding():IssueSeverityCodingType {
-    return IssueSeverityCodings;
+  public static get severityRequiredCodes() {
+    return IssueSeverityCodes;
   }
   /**
    * Required-bound Value Set for code (OperationOutcome.issue.code)
    */
-  public static codeRequiredCoding():IssueTypeCodingType {
-    return IssueTypeCodings;
+  public static get codeRequiredCodes() {
+    return IssueTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -113,10 +113,17 @@ export class OperationOutcomeIssue extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['severity']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property severity:IssueSeverityCodeType fhir: OperationOutcome.issue.severity:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property severity:fhir.FhirCode<IssueSeverityCodeType> fhir: OperationOutcome.issue.severity:code' });
     }
+    if (this['severity'] && (!Object.values(IssueSeverityCodes).includes(this.severity as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property severity:fhir.FhirCode<IssueSeverityCodeType> fhir: OperationOutcome.issue.severity:code Required binding to: IssueSeverity' });
+    }
+    if (this["severity"]) { issues.push(...this.severity.doModelValidation()); }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.FhirCode fhir: OperationOutcome.issue.code:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode fhir: OperationOutcome.issue.code:code' });
+    }
+    if (this['code'] && (!Object.values(IssueTypeCodes).includes(this.code as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode fhir: OperationOutcome.issue.code:code Required binding to: IssueType' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["details"]) { issues.push(...this.details.doModelValidation()); }
@@ -171,14 +178,14 @@ export class OperationOutcome extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"OperationOutcome" fhir: OperationOutcome.resourceType:"OperationOutcome"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"OperationOutcome" fhir: OperationOutcome.resourceType:"OperationOutcome"' });
     }
     if (!this['issue']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property issue:fhir.OperationOutcomeIssue[] fhir: OperationOutcome.issue:issue', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property issue:fhir.OperationOutcomeIssue[] fhir: OperationOutcome.issue:issue' });
     } else if (!Array.isArray(this.issue)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property issue:fhir.OperationOutcomeIssue[] fhir: OperationOutcome.issue:issue', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property issue:fhir.OperationOutcomeIssue[] fhir: OperationOutcome.issue:issue' });
     } else if (this.issue.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property issue:fhir.OperationOutcomeIssue[] fhir: OperationOutcome.issue:issue', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property issue:fhir.OperationOutcomeIssue[] fhir: OperationOutcome.issue:issue' });
     }
     if (this["issue"]) { this.issue.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;

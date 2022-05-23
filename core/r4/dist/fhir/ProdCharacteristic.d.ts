@@ -87,15 +87,15 @@ export declare class ProdCharacteristic extends fhir.BackboneElement {
     /**
      * Where applicable, the color can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used.
      */
-    color?: fhir.FhirString[];
+    color: fhir.FhirString[];
     /**
      * Where applicable, the imprint can be specified as text.
      */
-    imprint?: fhir.FhirString[];
+    imprint: fhir.FhirString[];
     /**
      * Where applicable, the image can be provided The format of the image attachment shall be specified by regional implementations.
      */
-    image?: fhir.Attachment[];
+    image: fhir.Attachment[];
     /**
      * Where applicable, the scoring can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used.
      */

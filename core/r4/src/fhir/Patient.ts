@@ -48,7 +48,7 @@ export interface PatientContactArgs extends fhir.BackboneElementArgs {
   /**
    * Administrative Gender - the gender that the contact person is considered to have for administration and record keeping purposes.
    */
-  gender?: AdministrativeGenderCodeType|undefined;
+  gender?: fhir.FhirCode<AdministrativeGenderCodeType>|string|undefined;
   /**
    * Organization on behalf of which the contact is acting or for which the contact is working.
    */
@@ -70,7 +70,7 @@ export class PatientContact extends fhir.BackboneElement {
   /**
    * The nature of the relationship between the patient and the contact person.
    */
-  public relationship?: fhir.CodeableConcept[];
+  public relationship: fhir.CodeableConcept[];
   /**
    * A name associated with the contact person.
    */
@@ -78,7 +78,7 @@ export class PatientContact extends fhir.BackboneElement {
   /**
    * Contact may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently, and also to help with identification.
    */
-  public telecom?: fhir.ContactPoint[];
+  public telecom: fhir.ContactPoint[];
   /**
    * Address for the contact person.
    */
@@ -86,7 +86,7 @@ export class PatientContact extends fhir.BackboneElement {
   /**
    * Administrative Gender - the gender that the contact person is considered to have for administration and record keeping purposes.
    */
-  public gender?: AdministrativeGenderCodeType|undefined;
+  public gender?: fhir.FhirCode<AdministrativeGenderCodeType>|undefined;
   /**
    * Organization on behalf of which the contact is acting or for which the contact is working.
    */
@@ -106,21 +106,21 @@ export class PatientContact extends fhir.BackboneElement {
     if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
     else { this.telecom = []; }
     if (source['address']) { this.address = new fhir.Address(source.address); }
-    if (source['gender']) { this.gender = source.gender; }
+    if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
     if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
     if (source['period']) { this.period = new fhir.Period(source.period); }
   }
   /**
    * Extensible-bound Value Set for relationship (Patient.contact.relationship)
    */
-  public static relationshipExtensibleCoding():PatientContactrelationshipCodingType {
+  public static get relationshipExtensibleCodings() {
     return PatientContactrelationshipCodings;
   }
   /**
    * Required-bound Value Set for gender (Patient.contact.gender)
    */
-  public static genderRequiredCoding():AdministrativeGenderCodingType {
-    return AdministrativeGenderCodings;
+  public static get genderRequiredCodes() {
+    return AdministrativeGenderCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -131,6 +131,10 @@ export class PatientContact extends fhir.BackboneElement {
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["address"]) { issues.push(...this.address.doModelValidation()); }
+    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender?:fhir.FhirCode<AdministrativeGenderCodeType> fhir: Patient.contact.gender:code Required binding to: AdministrativeGender' });
+    }
+    if (this["gender"]) { issues.push(...this.gender.doModelValidation()); }
     if (this["organization"]) { issues.push(...this.organization.doModelValidation()); }
     if (this["period"]) { issues.push(...this.period.doModelValidation()); }
     return issues;
@@ -178,7 +182,7 @@ export class PatientCommunication extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for language (Patient.communication.language)
    */
-  public static languagePreferredCoding():LanguagesCodingType {
+  public static get languagePreferredCodings() {
     return LanguagesCodings;
   }
   /**
@@ -187,7 +191,7 @@ export class PatientCommunication extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['language']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property language:fhir.CodeableConcept fhir: Patient.communication.language:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property language:fhir.CodeableConcept fhir: Patient.communication.language:CodeableConcept' });
     }
     if (this["language"]) { issues.push(...this.language.doModelValidation()); }
     if (this["preferred"]) { issues.push(...this.preferred.doModelValidation()); }
@@ -205,7 +209,7 @@ export interface PatientLinkArgs extends fhir.BackboneElementArgs {
   /**
    * The type of link between this patient resource and another patient resource.
    */
-  type: LinkTypeCodeType|null;
+  type: fhir.FhirCode<LinkTypeCodeType>|string|undefined;
 }
 
 /**
@@ -223,7 +227,7 @@ export class PatientLink extends fhir.BackboneElement {
   /**
    * The type of link between this patient resource and another patient resource.
    */
-  public type: LinkTypeCodeType|null;
+  public type: fhir.FhirCode<LinkTypeCodeType>|null;
   /**
    * Default constructor for PatientLink - initializes any required elements to null if a value is not provided.
    */
@@ -231,14 +235,14 @@ export class PatientLink extends fhir.BackboneElement {
     super(source, options);
     if (source['other']) { this.other = new fhir.Reference(source.other); }
     else { this.other = null; }
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<LinkTypeCodeType>({value: source.type}); }
     else { this.type = null; }
   }
   /**
    * Required-bound Value Set for type (Patient.link.type)
    */
-  public static typeRequiredCoding():LinkTypeCodingType {
-    return LinkTypeCodings;
+  public static get typeRequiredCodes() {
+    return LinkTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -246,12 +250,16 @@ export class PatientLink extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['other']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property other:fhir.Reference fhir: Patient.link.other:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property other:fhir.Reference fhir: Patient.link.other:Reference' });
     }
     if (this["other"]) { issues.push(...this.other.doModelValidation()); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:LinkTypeCodeType fhir: Patient.link.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<LinkTypeCodeType> fhir: Patient.link.type:code' });
     }
+    if (this['type'] && (!Object.values(LinkTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<LinkTypeCodeType> fhir: Patient.link.type:code Required binding to: LinkType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     return issues;
   }
 }
@@ -282,7 +290,7 @@ export interface PatientArgs extends fhir.DomainResourceArgs {
   /**
    * The gender might not match the biological sex as determined by genetics or the individual's preferred identification. Note that for both humans and particularly animals, there are other legitimate possibilities than male and female, though the vast majority of systems and contexts only support male and female.  Systems providing decision support or enforcing business rules should ideally do this on the basis of Observations dealing with the specific sex or gender aspect of interest (anatomical, chromosomal, social, etc.)  However, because these observations are infrequently recorded, defaulting to the administrative gender is common practice.  Where such defaulting occurs, rule enforcement should allow for the variation between administrative and biological, chromosomal and other gender aspects.  For example, an alert about a hysterectomy on a male should be handled as a warning or overridable error, not a "hard" error.  See the Patient Gender and Sex section for additional information about communicating patient gender and sex.
    */
-  gender?: AdministrativeGenderCodeType|undefined;
+  gender?: fhir.FhirCode<AdministrativeGenderCodeType>|string|undefined;
   /**
    * At least an estimated year should be provided as a guess if the real DOB is unknown  There is a standard extension "patient-birthTime" available that should be used where Time is required (such as in maternity/infant care systems).
    */
@@ -365,7 +373,7 @@ export class Patient extends fhir.DomainResource {
   /**
    * An identifier for this patient.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * If a record is inactive, and linked to an active record, then future patient/record updates should occur on the other patient.
    */
@@ -373,15 +381,15 @@ export class Patient extends fhir.DomainResource {
   /**
    * A patient may have multiple names with different uses or applicable periods. For animals, the name is a "HumanName" in the sense that is assigned and used by humans and has the same patterns.
    */
-  public name?: fhir.HumanName[];
+  public name: fhir.HumanName[];
   /**
    * A Patient may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and also to help with identification. The address might not go directly to the individual, but may reach another party that is able to proxy for the patient (i.e. home phone, or pet owner's phone).
    */
-  public telecom?: fhir.ContactPoint[];
+  public telecom: fhir.ContactPoint[];
   /**
    * The gender might not match the biological sex as determined by genetics or the individual's preferred identification. Note that for both humans and particularly animals, there are other legitimate possibilities than male and female, though the vast majority of systems and contexts only support male and female.  Systems providing decision support or enforcing business rules should ideally do this on the basis of Observations dealing with the specific sex or gender aspect of interest (anatomical, chromosomal, social, etc.)  However, because these observations are infrequently recorded, defaulting to the administrative gender is common practice.  Where such defaulting occurs, rule enforcement should allow for the variation between administrative and biological, chromosomal and other gender aspects.  For example, an alert about a hysterectomy on a male should be handled as a warning or overridable error, not a "hard" error.  See the Patient Gender and Sex section for additional information about communicating patient gender and sex.
    */
-  public gender?: AdministrativeGenderCodeType|undefined;
+  public gender?: fhir.FhirCode<AdministrativeGenderCodeType>|undefined;
   /**
    * At least an estimated year should be provided as a guess if the real DOB is unknown  There is a standard extension "patient-birthTime" available that should be used where Time is required (such as in maternity/infant care systems).
    */
@@ -397,7 +405,7 @@ export class Patient extends fhir.DomainResource {
   /**
    * Patient may have multiple addresses with different uses or applicable periods.
    */
-  public address?: fhir.Address[];
+  public address: fhir.Address[];
   /**
    * This field contains a patient's most recent marital (civil) status.
    */
@@ -416,21 +424,21 @@ export class Patient extends fhir.DomainResource {
    * * Limit dimensions to thumbnail.
    * * Keep byte count low to ease resource updates.
    */
-  public photo?: fhir.Attachment[];
+  public photo: fhir.Attachment[];
   /**
    * Contact covers all kinds of contact parties: family members, business contacts, guardians, caregivers. Not applicable to register pedigree and family ties beyond use of having contact.
    */
-  public contact?: fhir.PatientContact[];
+  public contact: fhir.PatientContact[];
   /**
    * If no language is specified, this *implies* that the default local language is spoken.  If you need to convey proficiency for multiple modes, then you need multiple Patient.Communication associations.   For animals, language is not a relevant field, and should be absent from the instance. If the Patient does not speak the default local language, then the Interpreter Required Standard can be used to explicitly declare that an interpreter is required.
    */
-  public communication?: fhir.PatientCommunication[];
+  public communication: fhir.PatientCommunication[];
   /**
    * This may be the primary care provider (in a GP context), or it may be a patient nominated care manager in a community/disability setting, or even organization that will provide people to perform the care provider roles.  It is not to be used to record Care Teams, these should be in a CareTeam resource that may be linked to the CarePlan or EpisodeOfCare resources.
    * Multiple GPs may be recorded against the patient for various reasons, such as a student that has his home GP listed along with the GP at university during the school semesters, or a "fly-in/fly-out" worker that has the onsite GP also included with his home GP to remain aware of medical issues.
    * Jurisdictions may decide that they can profile this down to 1 if desired, or 1 per type.
    */
-  public generalPractitioner?: fhir.Reference[];
+  public generalPractitioner: fhir.Reference[];
   /**
    * There is only one managing organization for a specific patient record. Other organizations will have their own Patient record, and may use the Link property to join the records together (or a Person resource which can include confidence ratings for the association).
    */
@@ -438,7 +446,7 @@ export class Patient extends fhir.DomainResource {
   /**
    * There is no assumption that linked patient records have mutual links.
    */
-  public link?: fhir.PatientLink[];
+  public link: fhir.PatientLink[];
   /**
    * Default constructor for Patient - initializes any required elements to null if a value is not provided.
    */
@@ -452,7 +460,7 @@ export class Patient extends fhir.DomainResource {
     else { this.name = []; }
     if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
     else { this.telecom = []; }
-    if (source['gender']) { this.gender = source.gender; }
+    if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
     if (source['birthDate']) { this.birthDate = new fhir.FhirDate({value: source.birthDate}); }
     if (source['deceased']) { this.deceased = source.deceased; }
     else if (source['deceasedBoolean']) { this.deceased = new fhir.FhirBoolean({value: source.deceasedBoolean}); }
@@ -478,13 +486,13 @@ export class Patient extends fhir.DomainResource {
   /**
    * Required-bound Value Set for gender (Patient.gender)
    */
-  public static genderRequiredCoding():AdministrativeGenderCodingType {
-    return AdministrativeGenderCodings;
+  public static get genderRequiredCodes() {
+    return AdministrativeGenderCodes;
   }
   /**
    * Extensible-bound Value Set for maritalStatus (Patient.maritalStatus)
    */
-  public static maritalStatusExtensibleCoding():MaritalStatusCodingType {
+  public static get maritalStatusExtensibleCodings() {
     return MaritalStatusCodings;
   }
   /**
@@ -493,12 +501,16 @@ export class Patient extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Patient" fhir: Patient.resourceType:"Patient"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Patient" fhir: Patient.resourceType:"Patient"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["active"]) { issues.push(...this.active.doModelValidation()); }
     if (this["name"]) { this.name.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender?:fhir.FhirCode<AdministrativeGenderCodeType> fhir: Patient.gender:code Required binding to: AdministrativeGender' });
+    }
+    if (this["gender"]) { issues.push(...this.gender.doModelValidation()); }
     if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation()); }
     if (this["address"]) { this.address.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["maritalStatus"]) { issues.push(...this.maritalStatus.doModelValidation()); }

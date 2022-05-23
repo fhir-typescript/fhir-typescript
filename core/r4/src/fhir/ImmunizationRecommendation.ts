@@ -71,11 +71,11 @@ export class ImmunizationRecommendationRecommendationDateCriterion extends fhir.
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: ImmunizationRecommendation.recommendation.dateCriterion.code:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: ImmunizationRecommendation.recommendation.dateCriterion.code:CodeableConcept' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value:fhir.FhirDateTime fhir: ImmunizationRecommendation.recommendation.dateCriterion.value:dateTime', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value:fhir.FhirDateTime fhir: ImmunizationRecommendation.recommendation.dateCriterion.value:dateTime' });
     }
     if (this["value"]) { issues.push(...this.value.doModelValidation()); }
     return issues;
@@ -162,7 +162,7 @@ export class ImmunizationRecommendationRecommendation extends fhir.BackboneEleme
   /**
    * Vaccine(s) or vaccine group that pertain to the recommendation.
    */
-  public vaccineCode?: fhir.CodeableConcept[];
+  public vaccineCode: fhir.CodeableConcept[];
   /**
    * The targeted disease for the recommendation.
    */
@@ -170,7 +170,7 @@ export class ImmunizationRecommendationRecommendation extends fhir.BackboneEleme
   /**
    * Vaccine(s) which should not be used to fulfill the recommendation.
    */
-  public contraindicatedVaccineCode?: fhir.CodeableConcept[];
+  public contraindicatedVaccineCode: fhir.CodeableConcept[];
   /**
    * Indicates the patient status with respect to the path to immunity for the target disease.
    */
@@ -178,11 +178,11 @@ export class ImmunizationRecommendationRecommendation extends fhir.BackboneEleme
   /**
    * The reason for the assigned forecast status.
    */
-  public forecastReason?: fhir.CodeableConcept[];
+  public forecastReason: fhir.CodeableConcept[];
   /**
    * Vaccine date recommendations.  For example, earliest date to administer, latest date to administer, etc.
    */
-  public dateCriterion?: fhir.ImmunizationRecommendationRecommendationDateCriterion[];
+  public dateCriterion: fhir.ImmunizationRecommendationRecommendationDateCriterion[];
   /**
    * Contains the description about the protocol under which the vaccine was administered.
    */
@@ -210,11 +210,11 @@ export class ImmunizationRecommendationRecommendation extends fhir.BackboneEleme
   /**
    * Immunization event history and/or evaluation that supports the status and recommendation.
    */
-  public supportingImmunization?: fhir.Reference[];
+  public supportingImmunization: fhir.Reference[];
   /**
    * Patient Information that supports the status and recommendation.  This includes patient observations, adverse reactions and allergy/intolerance information.
    */
-  public supportingPatientInformation?: fhir.Reference[];
+  public supportingPatientInformation: fhir.Reference[];
   /**
    * Default constructor for ImmunizationRecommendationRecommendation - initializes any required elements to null if a value is not provided.
    */
@@ -253,7 +253,7 @@ export class ImmunizationRecommendationRecommendation extends fhir.BackboneEleme
     if (this["targetDisease"]) { issues.push(...this.targetDisease.doModelValidation()); }
     if (this["contraindicatedVaccineCode"]) { this.contraindicatedVaccineCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['forecastStatus']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property forecastStatus:fhir.CodeableConcept fhir: ImmunizationRecommendation.recommendation.forecastStatus:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property forecastStatus:fhir.CodeableConcept fhir: ImmunizationRecommendation.recommendation.forecastStatus:CodeableConcept' });
     }
     if (this["forecastStatus"]) { issues.push(...this.forecastStatus.doModelValidation()); }
     if (this["forecastReason"]) { this.forecastReason.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -310,7 +310,7 @@ export class ImmunizationRecommendation extends fhir.DomainResource {
   /**
    * A unique identifier assigned to this particular recommendation record.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The patient the recommendation(s) are for.
    */
@@ -349,24 +349,24 @@ export class ImmunizationRecommendation extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ImmunizationRecommendation" fhir: ImmunizationRecommendation.resourceType:"ImmunizationRecommendation"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ImmunizationRecommendation" fhir: ImmunizationRecommendation.resourceType:"ImmunizationRecommendation"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: ImmunizationRecommendation.patient:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: ImmunizationRecommendation.patient:Reference' });
     }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
     if (!this['date']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: ImmunizationRecommendation.date:dateTime', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: ImmunizationRecommendation.date:dateTime' });
     }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["authority"]) { issues.push(...this.authority.doModelValidation()); }
     if (!this['recommendation']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property recommendation:fhir.ImmunizationRecommendationRecommendation[] fhir: ImmunizationRecommendation.recommendation:recommendation', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recommendation:fhir.ImmunizationRecommendationRecommendation[] fhir: ImmunizationRecommendation.recommendation:recommendation' });
     } else if (!Array.isArray(this.recommendation)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property recommendation:fhir.ImmunizationRecommendationRecommendation[] fhir: ImmunizationRecommendation.recommendation:recommendation', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property recommendation:fhir.ImmunizationRecommendationRecommendation[] fhir: ImmunizationRecommendation.recommendation:recommendation' });
     } else if (this.recommendation.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property recommendation:fhir.ImmunizationRecommendationRecommendation[] fhir: ImmunizationRecommendation.recommendation:recommendation', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recommendation:fhir.ImmunizationRecommendationRecommendation[] fhir: ImmunizationRecommendation.recommendation:recommendation' });
     }
     if (this["recommendation"]) { this.recommendation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;

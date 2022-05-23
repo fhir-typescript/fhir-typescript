@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { RequestStatusCodingType } from '../fhirValueSets/RequestStatusCodings.js';
 import { RequestStatusCodeType } from '../fhirValueSets/RequestStatusCodes.js';
-import { RequestPriorityCodingType } from '../fhirValueSets/RequestPriorityCodings.js';
 import { RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
 /**
  * Valid arguments for the CommunicationRequestPayload type.
@@ -76,7 +74,7 @@ export interface CommunicationRequestArgs extends fhir.DomainResourceArgs {
     /**
      * The status of the proposal or order.
      */
-    status: RequestStatusCodeType | null;
+    status: fhir.FhirCode<RequestStatusCodeType> | string | undefined;
     /**
      * This is generally only used for "exception" statuses such as "suspended" or "cancelled".  The reason why the CommunicationRequest was created at all is captured in reasonCode, not here.  [distinct reason codes for different statuses can be enforced using invariants if they are universal bindings].
      */
@@ -88,7 +86,7 @@ export interface CommunicationRequestArgs extends fhir.DomainResourceArgs {
     /**
      * Characterizes how quickly the proposed act must be initiated. Includes concepts such as stat, urgent, routine.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
     /**
      * The attributes provided with the request qualify what is not to be done.
      */
@@ -169,15 +167,15 @@ export declare class CommunicationRequest extends fhir.DomainResource {
     /**
      * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * A plan or proposal that is fulfilled in whole or in part by this request.
      */
-    basedOn?: fhir.Reference[];
+    basedOn: fhir.Reference[];
     /**
      * The replacement could be because the initial request was immediately rejected (due to an issue) or because the previous request was completed, but the need for the action described by the request remains ongoing.
      */
-    replaces?: fhir.Reference[];
+    replaces: fhir.Reference[];
     /**
      * Requests are linked either by a "basedOn" relationship (i.e. one request is fulfilling another) or by having a common requisition.  Requests that are part of the same requisition are generally treated independently from the perspective of changing their state or maintaining them after initial creation.
      */
@@ -185,7 +183,7 @@ export declare class CommunicationRequest extends fhir.DomainResource {
     /**
      * The status of the proposal or order.
      */
-    status: RequestStatusCodeType | null;
+    status: fhir.FhirCode<RequestStatusCodeType> | null;
     /**
      * This is generally only used for "exception" statuses such as "suspended" or "cancelled".  The reason why the CommunicationRequest was created at all is captured in reasonCode, not here.  [distinct reason codes for different statuses can be enforced using invariants if they are universal bindings].
      */
@@ -193,11 +191,11 @@ export declare class CommunicationRequest extends fhir.DomainResource {
     /**
      * There may be multiple axes of categorization and one communication request may serve multiple purposes.
      */
-    category?: fhir.CodeableConcept[];
+    category: fhir.CodeableConcept[];
     /**
      * Characterizes how quickly the proposed act must be initiated. Includes concepts such as stat, urgent, routine.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | undefined;
     /**
      * The attributes provided with the request qualify what is not to be done.
      */
@@ -205,7 +203,7 @@ export declare class CommunicationRequest extends fhir.DomainResource {
     /**
      * A channel that was used for this communication (e.g. email, fax).
      */
-    medium?: fhir.CodeableConcept[];
+    medium: fhir.CodeableConcept[];
     /**
      * The patient or group that is the focus of this communication request.
      */
@@ -213,7 +211,7 @@ export declare class CommunicationRequest extends fhir.DomainResource {
     /**
      * Don't use CommunicationRequest.about element when a more specific element exists, such as basedOn, reasonReference, or replaces.
      */
-    about?: fhir.Reference[];
+    about: fhir.Reference[];
     /**
      * This will typically be the encounter the event occurred within, but some activities may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter.
      */
@@ -221,7 +219,7 @@ export declare class CommunicationRequest extends fhir.DomainResource {
     /**
      * Text, attachment(s), or resource(s) to be communicated to the recipient.
      */
-    payload?: fhir.CommunicationRequestPayload[];
+    payload: fhir.CommunicationRequestPayload[];
     /**
      * The time when this communication is to occur.
      */
@@ -241,7 +239,7 @@ export declare class CommunicationRequest extends fhir.DomainResource {
     /**
      * The entity (e.g. person, organization, clinical information system, device, group, or care team) which is the intended target of the communication.
      */
-    recipient?: fhir.Reference[];
+    recipient: fhir.Reference[];
     /**
      * The entity (e.g. person, organization, clinical information system, or device) which is to be the source of the communication.
      */
@@ -249,15 +247,15 @@ export declare class CommunicationRequest extends fhir.DomainResource {
     /**
      * Textual reasons can be captured using reasonCode.text.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * Indicates another resource whose existence justifies this request.
      */
-    reasonReference?: fhir.Reference[];
+    reasonReference: fhir.Reference[];
     /**
      * Comments made about the request by the requester, sender, recipient, subject or other participants.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Default constructor for CommunicationRequest - initializes any required elements to null if a value is not provided.
      */
@@ -265,11 +263,24 @@ export declare class CommunicationRequest extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (CommunicationRequest.status)
      */
-    static statusRequiredCoding(): RequestStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Completed: "completed";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+        readonly OnHold: "on-hold";
+        readonly Revoked: "revoked";
+        readonly Unknown: "unknown";
+    };
     /**
      * Required-bound Value Set for priority (CommunicationRequest.priority)
      */
-    static priorityRequiredCoding(): RequestPriorityCodingType;
+    static get priorityRequiredCodes(): {
+        readonly ASAP: "asap";
+        readonly Routine: "routine";
+        readonly STAT: "stat";
+        readonly Urgent: "urgent";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

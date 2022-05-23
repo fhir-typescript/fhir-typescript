@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { AccountStatusCodingType } from '../fhirValueSets/AccountStatusCodings.js';
 import { AccountStatusCodeType } from '../fhirValueSets/AccountStatusCodes.js';
 /**
  * Valid arguments for the AccountCoverage type.
@@ -104,7 +103,7 @@ export interface AccountArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the Account as not currently valid.
      */
-    status: AccountStatusCodeType | null;
+    status: fhir.FhirCode<AccountStatusCodeType> | string | undefined;
     /**
      * Categorizes the account for reporting and searching purposes.
      */
@@ -159,11 +158,11 @@ export declare class Account extends fhir.DomainResource {
     /**
      * Unique identifier used to reference the account.  Might or might not be intended for human use (e.g. credit card number).
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the Account as not currently valid.
      */
-    status: AccountStatusCodeType | null;
+    status: fhir.FhirCode<AccountStatusCodeType> | null;
     /**
      * Categorizes the account for reporting and searching purposes.
      */
@@ -175,7 +174,7 @@ export declare class Account extends fhir.DomainResource {
     /**
      * Accounts can be applied to non-patients for tracking other non-patient related activities, such as group services (patients not tracked, and costs charged to another body), or might not be allocated.
      */
-    subject?: fhir.Reference[];
+    subject: fhir.Reference[];
     /**
      * It is possible for transactions to be posted outside the service period, as long as the service was provided within the defined service period.
      */
@@ -185,7 +184,7 @@ export declare class Account extends fhir.DomainResource {
      * Local or jurisdictional business rules may determine which coverage covers which types of billable items charged to the account, and in which order.
      * Where the order is important, a local/jurisdictional extension may be defined to specify the order for the type of charge.
      */
-    coverage?: fhir.AccountCoverage[];
+    coverage: fhir.AccountCoverage[];
     /**
      * Indicates the service area, hospital, department, etc. with responsibility for managing the Account.
      */
@@ -197,7 +196,7 @@ export declare class Account extends fhir.DomainResource {
     /**
      * The parties responsible for balancing the account if other payment options fall short.
      */
-    guarantor?: fhir.AccountGuarantor[];
+    guarantor: fhir.AccountGuarantor[];
     /**
      * Reference to a parent Account.
      */
@@ -209,7 +208,13 @@ export declare class Account extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (Account.status)
      */
-    static statusRequiredCoding(): AccountStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly EnteredInError: "entered-in-error";
+        readonly Inactive: "inactive";
+        readonly OnHold: "on-hold";
+        readonly Unknown: "unknown";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

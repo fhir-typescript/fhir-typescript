@@ -59,7 +59,7 @@ export class InvoiceParticipant extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["role"]) { issues.push(...this.role.doModelValidation()); }
     if (!this['actor']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actor:fhir.Reference fhir: Invoice.participant.actor:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor:fhir.Reference fhir: Invoice.participant.actor:Reference' });
     }
     if (this["actor"]) { issues.push(...this.actor.doModelValidation()); }
     return issues;
@@ -72,7 +72,7 @@ export interface InvoiceLineItemPriceComponentArgs extends fhir.BackboneElementA
   /**
    * This code identifies the type of the component.
    */
-  type: InvoicePriceComponentTypeCodeType|null;
+  type: fhir.FhirCode<InvoicePriceComponentTypeCodeType>|string|undefined;
   /**
    * A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.
    */
@@ -98,7 +98,7 @@ export class InvoiceLineItemPriceComponent extends fhir.BackboneElement {
   /**
    * This code identifies the type of the component.
    */
-  public type: InvoicePriceComponentTypeCodeType|null;
+  public type: fhir.FhirCode<InvoicePriceComponentTypeCodeType>|null;
   /**
    * A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.
    */
@@ -116,7 +116,7 @@ export class InvoiceLineItemPriceComponent extends fhir.BackboneElement {
    */
   constructor(source:Partial<InvoiceLineItemPriceComponentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<InvoicePriceComponentTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['factor']) { this.factor = new fhir.FhirDecimal({value: source.factor}); }
@@ -125,8 +125,8 @@ export class InvoiceLineItemPriceComponent extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for type (Invoice.lineItem.priceComponent.type)
    */
-  public static typeRequiredCoding():InvoicePriceComponentTypeCodingType {
-    return InvoicePriceComponentTypeCodings;
+  public static get typeRequiredCodes() {
+    return InvoicePriceComponentTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -134,8 +134,12 @@ export class InvoiceLineItemPriceComponent extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:InvoicePriceComponentTypeCodeType fhir: Invoice.lineItem.priceComponent.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<InvoicePriceComponentTypeCodeType> fhir: Invoice.lineItem.priceComponent.type:code' });
     }
+    if (this['type'] && (!Object.values(InvoicePriceComponentTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<InvoicePriceComponentTypeCodeType> fhir: Invoice.lineItem.priceComponent.type:code Required binding to: InvoicePriceComponentType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["factor"]) { issues.push(...this.factor.doModelValidation()); }
     if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
@@ -191,7 +195,7 @@ export class InvoiceLineItem extends fhir.BackboneElement {
   /**
    * The price for a ChargeItem may be calculated as a base price with surcharges/deductions that apply in certain conditions. A ChargeItemDefinition resource that defines the prices, factors and conditions that apply to a billing code is currently under development. The priceComponent element can be used to offer transparency to the recipient of the Invoice as to how the prices have been calculated.
    */
-  public priceComponent?: fhir.InvoiceLineItemPriceComponent[];
+  public priceComponent: fhir.InvoiceLineItemPriceComponent[];
   /**
    * Default constructor for InvoiceLineItem - initializes any required elements to null if a value is not provided.
    */
@@ -212,7 +216,7 @@ export class InvoiceLineItem extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (!this['chargeItem']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property chargeItem: fhir: Invoice.lineItem.chargeItem[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property chargeItem: fhir: Invoice.lineItem.chargeItem[x]:' });
     }
     if (this["priceComponent"]) { this.priceComponent.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -233,7 +237,7 @@ export interface InvoiceArgs extends fhir.DomainResourceArgs {
   /**
    * The current state of the Invoice.
    */
-  status: InvoiceStatusCodeType|null;
+  status: fhir.FhirCode<InvoiceStatusCodeType>|string|undefined;
   /**
    * Derived Profiles may choose to add invariants requiring this field to be populated if either priceOverride or factorOverride have been filled.
    */
@@ -307,11 +311,11 @@ export class Invoice extends fhir.DomainResource {
   /**
    * Identifier of this Invoice, often used for reference in correspondence about this invoice or for tracking of payments.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The current state of the Invoice.
    */
-  public status: InvoiceStatusCodeType|null;
+  public status: fhir.FhirCode<InvoiceStatusCodeType>|null;
   /**
    * Derived Profiles may choose to add invariants requiring this field to be populated if either priceOverride or factorOverride have been filled.
    */
@@ -335,7 +339,7 @@ export class Invoice extends fhir.DomainResource {
   /**
    * Indicates who or what performed or participated in the charged service.
    */
-  public participant?: fhir.InvoiceParticipant[];
+  public participant: fhir.InvoiceParticipant[];
   /**
    * Practitioners and Devices can be associated with multiple organizations. It has to be made clear, on behalf of which Organization the services have been rendered.
    */
@@ -347,11 +351,11 @@ export class Invoice extends fhir.DomainResource {
   /**
    * Each line item represents one charge for goods and services rendered. Details such as date, code and amount are found in the referenced ChargeItem resource.
    */
-  public lineItem?: fhir.InvoiceLineItem[];
+  public lineItem: fhir.InvoiceLineItem[];
   /**
    * The total amount for the Invoice may be calculated as the sum of the line items with surcharges/deductions that apply in certain conditions.  The priceComponent element can be used to offer transparency to the recipient of the Invoice of how the total price was calculated.
    */
-  public totalPriceComponent?: fhir.InvoiceLineItemPriceComponent[];
+  public totalPriceComponent: fhir.InvoiceLineItemPriceComponent[];
   /**
    * There is no reason to carry the price in the instance of a ChargeItem unless circumstances require a manual override. The list prices or are usually defined in a back catalogue of the billing codes  (see ChargeItem.definition). Derived profiles may require a ChargeItem.overrideReason to be provided if either factor or price are manually overridden.
    */
@@ -367,7 +371,7 @@ export class Invoice extends fhir.DomainResource {
   /**
    * Comments made about the invoice by the issuer, subject, or other participants.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Default constructor for Invoice - initializes any required elements to null if a value is not provided.
    */
@@ -376,7 +380,7 @@ export class Invoice extends fhir.DomainResource {
     this.resourceType = 'Invoice';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<InvoiceStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['cancelledReason']) { this.cancelledReason = new fhir.FhirString({value: source.cancelledReason}); }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
@@ -400,8 +404,8 @@ export class Invoice extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Invoice.status)
    */
-  public static statusRequiredCoding():InvoiceStatusCodingType {
-    return InvoiceStatusCodings;
+  public static get statusRequiredCodes() {
+    return InvoiceStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -409,12 +413,16 @@ export class Invoice extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Invoice" fhir: Invoice.resourceType:"Invoice"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Invoice" fhir: Invoice.resourceType:"Invoice"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:InvoiceStatusCodeType fhir: Invoice.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<InvoiceStatusCodeType> fhir: Invoice.status:code' });
     }
+    if (this['status'] && (!Object.values(InvoiceStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<InvoiceStatusCodeType> fhir: Invoice.status:code Required binding to: InvoiceStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["cancelledReason"]) { issues.push(...this.cancelledReason.doModelValidation()); }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }

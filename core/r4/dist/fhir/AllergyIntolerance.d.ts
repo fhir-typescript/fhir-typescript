@@ -1,13 +1,7 @@
 import * as fhir from '../fhir.js';
-import { ReactionEventSeverityCodingType } from '../fhirValueSets/ReactionEventSeverityCodings.js';
 import { ReactionEventSeverityCodeType } from '../fhirValueSets/ReactionEventSeverityCodes.js';
-import { AllergyintoleranceClinicalCodingType } from '../fhirValueSets/AllergyintoleranceClinicalCodings.js';
-import { AllergyintoleranceVerificationCodingType } from '../fhirValueSets/AllergyintoleranceVerificationCodings.js';
-import { AllergyIntoleranceTypeCodingType } from '../fhirValueSets/AllergyIntoleranceTypeCodings.js';
 import { AllergyIntoleranceTypeCodeType } from '../fhirValueSets/AllergyIntoleranceTypeCodes.js';
-import { AllergyIntoleranceCategoryCodingType } from '../fhirValueSets/AllergyIntoleranceCategoryCodings.js';
 import { AllergyIntoleranceCategoryCodeType } from '../fhirValueSets/AllergyIntoleranceCategoryCodes.js';
-import { AllergyIntoleranceCriticalityCodingType } from '../fhirValueSets/AllergyIntoleranceCriticalityCodings.js';
 import { AllergyIntoleranceCriticalityCodeType } from '../fhirValueSets/AllergyIntoleranceCriticalityCodes.js';
 /**
  * Valid arguments for the AllergyIntoleranceReaction type.
@@ -32,7 +26,7 @@ export interface AllergyIntoleranceReactionArgs extends fhir.BackboneElementArgs
     /**
      * It is acknowledged that this assessment is very subjective. There may be some specific practice domains where objective scales have been applied. Objective scales can be included in this model as extensions.
      */
-    severity?: ReactionEventSeverityCodeType | undefined;
+    severity?: fhir.FhirCode<ReactionEventSeverityCodeType> | string | undefined;
     /**
      * Coding of the route of exposure with a terminology should be used wherever possible.
      */
@@ -69,7 +63,7 @@ export declare class AllergyIntoleranceReaction extends fhir.BackboneElement {
     /**
      * It is acknowledged that this assessment is very subjective. There may be some specific practice domains where objective scales have been applied. Objective scales can be included in this model as extensions.
      */
-    severity?: ReactionEventSeverityCodeType | undefined;
+    severity?: fhir.FhirCode<ReactionEventSeverityCodeType> | undefined;
     /**
      * Coding of the route of exposure with a terminology should be used wherever possible.
      */
@@ -77,7 +71,7 @@ export declare class AllergyIntoleranceReaction extends fhir.BackboneElement {
     /**
      * Use this field to record information indirectly related to a particular event and not captured in the description. For example: Clinical records are no longer available, recorded based on information provided to the patient by her mother and her mother is deceased.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Default constructor for AllergyIntoleranceReaction - initializes any required elements to null if a value is not provided.
      */
@@ -85,7 +79,11 @@ export declare class AllergyIntoleranceReaction extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for severity (AllergyIntolerance.reaction.severity)
      */
-    static severityRequiredCoding(): ReactionEventSeverityCodingType;
+    static get severityRequiredCodes(): {
+        readonly Mild: "mild";
+        readonly Moderate: "moderate";
+        readonly Severe: "severe";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -115,15 +113,15 @@ export interface AllergyIntoleranceArgs extends fhir.DomainResourceArgs {
     /**
      * Allergic (typically immune-mediated) reactions have been traditionally regarded as an indicator for potential escalation to significant future risk. Contemporary knowledge suggests that some reactions previously thought to be immune-mediated are, in fact, non-immune, but in some cases can still pose a life threatening risk. It is acknowledged that many clinicians might not be in a position to distinguish the mechanism of a particular reaction. Often the term "allergy" is used rather generically and may overlap with the use of "intolerance" - in practice the boundaries between these two concepts might not be well-defined or understood. This data element is included nevertheless, because many legacy systems have captured this attribute. Immunologic testing may provide supporting evidence for the basis of the reaction and the causative substance, but no tests are 100% sensitive or specific for sensitivity to a particular substance. If, as is commonly the case, it is unclear whether the reaction is due to an allergy or an intolerance, then the type element should be omitted from the resource.
      */
-    type?: AllergyIntoleranceTypeCodeType | undefined;
+    type?: fhir.FhirCode<AllergyIntoleranceTypeCodeType> | string | undefined;
     /**
      * This data element has been included because it is currently being captured in some clinical systems. This data can be derived from the substance where coding systems are used, and is effectively redundant in that situation.  When searching on category, consider the implications of AllergyIntolerance resources without a category.  For example, when searching on category = medication, medication allergies that don't have a category valued will not be returned.  Refer to [search](search.html) for more information on how to search category with a :missing modifier to get allergies that don't have a category.  Additionally, category should be used with caution because category can be subjective based on the sender.
      */
-    category?: AllergyIntoleranceCategoryCodeType[] | undefined;
+    category?: fhir.FhirCode<AllergyIntoleranceCategoryCodeType>[] | string[] | undefined;
     /**
      * The default criticality value for any propensity to an adverse reaction should be 'Low Risk', indicating at the very least a relative contraindication to deliberate or voluntary exposure to the substance. 'High Risk' is flagged if the clinician has identified a propensity for a more serious or potentially life-threatening reaction, such as anaphylaxis, and implies an absolute contraindication to deliberate or voluntary exposure to the substance. If this element is missing, the criticality is unknown (though it may be known elsewhere).  Systems that capture a severity at the condition level are actually representing the concept of criticality whereas the severity documented at the reaction level is representing the true reaction severity.  Existing systems that are capturing both condition criticality and reaction severity may use the term "severity" to represent both.  Criticality is the worst it could be in the future (i.e. situation-agnostic) whereas severity is situation-dependent.
      */
-    criticality?: AllergyIntoleranceCriticalityCodeType | undefined;
+    criticality?: fhir.FhirCode<AllergyIntoleranceCriticalityCodeType> | string | undefined;
     /**
      * It is strongly recommended that this element be populated using a terminology, where possible. For example, some terminologies used include RxNorm, SNOMED CT, DM+D, NDFRT, ICD-9, IDC-10, UNII, and ATC. Plain text should only be used if there is no appropriate terminology available. Additional details can be specified in the text.
      * When a substance or product code is specified for the 'code' element, the "default" semantic context is that this is a positive statement of an allergy or intolerance (depending on the value of the 'type' element, if present) condition to the specified substance/product.  In the corresponding SNOMED CT allergy model, the specified substance/product is the target (destination) of the "Causative agent" relationship.
@@ -202,7 +200,7 @@ export declare class AllergyIntolerance extends fhir.DomainResource {
     /**
      * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Refer to [discussion](extensibility.html#Special-Case) if clincalStatus is missing data.
      * The data type is CodeableConcept because clinicalStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.
@@ -215,15 +213,15 @@ export declare class AllergyIntolerance extends fhir.DomainResource {
     /**
      * Allergic (typically immune-mediated) reactions have been traditionally regarded as an indicator for potential escalation to significant future risk. Contemporary knowledge suggests that some reactions previously thought to be immune-mediated are, in fact, non-immune, but in some cases can still pose a life threatening risk. It is acknowledged that many clinicians might not be in a position to distinguish the mechanism of a particular reaction. Often the term "allergy" is used rather generically and may overlap with the use of "intolerance" - in practice the boundaries between these two concepts might not be well-defined or understood. This data element is included nevertheless, because many legacy systems have captured this attribute. Immunologic testing may provide supporting evidence for the basis of the reaction and the causative substance, but no tests are 100% sensitive or specific for sensitivity to a particular substance. If, as is commonly the case, it is unclear whether the reaction is due to an allergy or an intolerance, then the type element should be omitted from the resource.
      */
-    type?: AllergyIntoleranceTypeCodeType | undefined;
+    type?: fhir.FhirCode<AllergyIntoleranceTypeCodeType> | undefined;
     /**
      * This data element has been included because it is currently being captured in some clinical systems. This data can be derived from the substance where coding systems are used, and is effectively redundant in that situation.  When searching on category, consider the implications of AllergyIntolerance resources without a category.  For example, when searching on category = medication, medication allergies that don't have a category valued will not be returned.  Refer to [search](search.html) for more information on how to search category with a :missing modifier to get allergies that don't have a category.  Additionally, category should be used with caution because category can be subjective based on the sender.
      */
-    category?: AllergyIntoleranceCategoryCodeType[];
+    category: fhir.FhirCode<AllergyIntoleranceCategoryCodeType>[];
     /**
      * The default criticality value for any propensity to an adverse reaction should be 'Low Risk', indicating at the very least a relative contraindication to deliberate or voluntary exposure to the substance. 'High Risk' is flagged if the clinician has identified a propensity for a more serious or potentially life-threatening reaction, such as anaphylaxis, and implies an absolute contraindication to deliberate or voluntary exposure to the substance. If this element is missing, the criticality is unknown (though it may be known elsewhere).  Systems that capture a severity at the condition level are actually representing the concept of criticality whereas the severity documented at the reaction level is representing the true reaction severity.  Existing systems that are capturing both condition criticality and reaction severity may use the term "severity" to represent both.  Criticality is the worst it could be in the future (i.e. situation-agnostic) whereas severity is situation-dependent.
      */
-    criticality?: AllergyIntoleranceCriticalityCodeType | undefined;
+    criticality?: fhir.FhirCode<AllergyIntoleranceCriticalityCodeType> | undefined;
     /**
      * It is strongly recommended that this element be populated using a terminology, where possible. For example, some terminologies used include RxNorm, SNOMED CT, DM+D, NDFRT, ICD-9, IDC-10, UNII, and ATC. Plain text should only be used if there is no appropriate terminology available. Additional details can be specified in the text.
      * When a substance or product code is specified for the 'code' element, the "default" semantic context is that this is a positive statement of an allergy or intolerance (depending on the value of the 'type' element, if present) condition to the specified substance/product.  In the corresponding SNOMED CT allergy model, the specified substance/product is the target (destination) of the "Causative agent" relationship.
@@ -265,11 +263,11 @@ export declare class AllergyIntolerance extends fhir.DomainResource {
     /**
      * For example: including reason for flagging a seriousness of 'High Risk'; and instructions related to future exposure or administration of the substance, such as administration within an Intensive Care Unit or under corticosteroid cover. The notes should be related to an allergy or intolerance as a condition in general and not related to any particular episode of it. For episode notes and descriptions, use AllergyIntolerance.event.description and  AllergyIntolerance.event.notes.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Details about each adverse reaction event linked to exposure to the identified substance.
      */
-    reaction?: fhir.AllergyIntoleranceReaction[];
+    reaction: fhir.AllergyIntoleranceReaction[];
     /**
      * Default constructor for AllergyIntolerance - initializes any required elements to null if a value is not provided.
      */
@@ -277,23 +275,44 @@ export declare class AllergyIntolerance extends fhir.DomainResource {
     /**
      * Required-bound Value Set for clinicalStatus (AllergyIntolerance.clinicalStatus)
      */
-    static clinicalStatusRequiredCoding(): AllergyintoleranceClinicalCodingType;
+    static get clinicalStatusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Inactive: "inactive";
+        readonly Resolved: "resolved";
+    };
     /**
      * Required-bound Value Set for verificationStatus (AllergyIntolerance.verificationStatus)
      */
-    static verificationStatusRequiredCoding(): AllergyintoleranceVerificationCodingType;
+    static get verificationStatusRequiredCodes(): {
+        readonly Confirmed: "confirmed";
+        readonly EnteredInError: "entered-in-error";
+        readonly Refuted: "refuted";
+        readonly Unconfirmed: "unconfirmed";
+    };
     /**
      * Required-bound Value Set for type (AllergyIntolerance.type)
      */
-    static typeRequiredCoding(): AllergyIntoleranceTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Allergy: "allergy";
+        readonly Intolerance: "intolerance";
+    };
     /**
      * Required-bound Value Set for category (AllergyIntolerance.category)
      */
-    static categoryRequiredCoding(): AllergyIntoleranceCategoryCodingType;
+    static get categoryRequiredCodes(): {
+        readonly Biologic: "biologic";
+        readonly Environment: "environment";
+        readonly Food: "food";
+        readonly Medication: "medication";
+    };
     /**
      * Required-bound Value Set for criticality (AllergyIntolerance.criticality)
      */
-    static criticalityRequiredCoding(): AllergyIntoleranceCriticalityCodingType;
+    static get criticalityRequiredCodes(): {
+        readonly HighRisk: "high";
+        readonly LowRisk: "low";
+        readonly UnableToAssessRisk: "unable-to-assess";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

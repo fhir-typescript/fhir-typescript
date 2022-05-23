@@ -1,16 +1,9 @@
 import * as fhir from '../fhir.js';
-import { BindingStrengthCodingType } from '../fhirValueSets/BindingStrengthCodings.js';
 import { BindingStrengthCodeType } from '../fhirValueSets/BindingStrengthCodes.js';
-import { OperationParameterUseCodingType } from '../fhirValueSets/OperationParameterUseCodings.js';
 import { OperationParameterUseCodeType } from '../fhirValueSets/OperationParameterUseCodes.js';
-import { AllTypesCodingType } from '../fhirValueSets/AllTypesCodings.js';
-import { SearchParamTypeCodingType } from '../fhirValueSets/SearchParamTypeCodings.js';
 import { SearchParamTypeCodeType } from '../fhirValueSets/SearchParamTypeCodes.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
-import { OperationKindCodingType } from '../fhirValueSets/OperationKindCodings.js';
 import { OperationKindCodeType } from '../fhirValueSets/OperationKindCodes.js';
-import { ResourceTypesCodingType } from '../fhirValueSets/ResourceTypesCodings.js';
 /**
  * Valid arguments for the OperationDefinitionParameterBinding type.
  */
@@ -18,7 +11,7 @@ export interface OperationDefinitionParameterBindingArgs extends fhir.BackboneEl
     /**
      * For further discussion, see [Using Terminologies](terminologies.html).
      */
-    strength: BindingStrengthCodeType | null;
+    strength: fhir.FhirCode<BindingStrengthCodeType> | string | undefined;
     /**
      * For value sets with a referenceResource, the display can contain the value set description.  The reference may be version-specific or not.
      */
@@ -35,7 +28,7 @@ export declare class OperationDefinitionParameterBinding extends fhir.BackboneEl
     /**
      * For further discussion, see [Using Terminologies](terminologies.html).
      */
-    strength: BindingStrengthCodeType | null;
+    strength: fhir.FhirCode<BindingStrengthCodeType> | null;
     /**
      * For value sets with a referenceResource, the display can contain the value set description.  The reference may be version-specific or not.
      */
@@ -47,7 +40,12 @@ export declare class OperationDefinitionParameterBinding extends fhir.BackboneEl
     /**
      * Required-bound Value Set for strength (OperationDefinition.parameter.binding.strength)
      */
-    static strengthRequiredCoding(): BindingStrengthCodingType;
+    static get strengthRequiredCodes(): {
+        readonly Example: "example";
+        readonly Extensible: "extensible";
+        readonly Preferred: "preferred";
+        readonly Required: "required";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -102,7 +100,7 @@ export interface OperationDefinitionParameterArgs extends fhir.BackboneElementAr
     /**
      * If a parameter name is used for both an input and an output parameter, the parameter should be defined twice.
      */
-    use: OperationParameterUseCodeType | null;
+    use: fhir.FhirCode<OperationParameterUseCodeType> | string | undefined;
     /**
      * The minimum number of times this parameter SHALL appear in the request or response.
      */
@@ -126,7 +124,7 @@ export interface OperationDefinitionParameterArgs extends fhir.BackboneElementAr
     /**
      * How the parameter is understood as a search parameter. This is only used if the parameter type is 'string'.
      */
-    searchType?: SearchParamTypeCodeType | undefined;
+    searchType?: fhir.FhirCode<SearchParamTypeCodeType> | string | undefined;
     /**
      * Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).
      */
@@ -155,7 +153,7 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
     /**
      * If a parameter name is used for both an input and an output parameter, the parameter should be defined twice.
      */
-    use: OperationParameterUseCodeType | null;
+    use: fhir.FhirCode<OperationParameterUseCodeType> | null;
     /**
      * The minimum number of times this parameter SHALL appear in the request or response.
      */
@@ -175,11 +173,11 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
     /**
      * Often, these profiles are the base definitions from the spec (e.g. http://hl7.org/fhir/StructureDefinition/Patient).
      */
-    targetProfile?: fhir.FhirCanonical[];
+    targetProfile: fhir.FhirCanonical[];
     /**
      * How the parameter is understood as a search parameter. This is only used if the parameter type is 'string'.
      */
-    searchType?: SearchParamTypeCodeType | undefined;
+    searchType?: fhir.FhirCode<SearchParamTypeCodeType> | undefined;
     /**
      * Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).
      */
@@ -187,11 +185,11 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
     /**
      * Resolution applies if the referenced parameter exists.
      */
-    referencedFrom?: fhir.OperationDefinitionParameterReferencedFrom[];
+    referencedFrom: fhir.OperationDefinitionParameterReferencedFrom[];
     /**
      * Query Definitions only have one output parameter, named "result". This might not be described, but can be to allow a profile to be defined.
      */
-    part?: fhir.OperationDefinitionParameter[];
+    part: fhir.OperationDefinitionParameter[];
     /**
      * Default constructor for OperationDefinitionParameter - initializes any required elements to null if a value is not provided.
      */
@@ -199,15 +197,251 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for use (OperationDefinition.parameter.use)
      */
-    static useRequiredCoding(): OperationParameterUseCodingType;
+    static get useRequiredCodes(): {
+        readonly In: "in";
+        readonly Out: "out";
+    };
     /**
      * Required-bound Value Set for type (OperationDefinition.parameter.type)
      */
-    static typeRequiredCoding(): AllTypesCodingType;
+    static get typeRequiredCodes(): {
+        readonly Account: "Account";
+        readonly ActivityDefinition: "ActivityDefinition";
+        readonly Address: "Address";
+        readonly AdverseEvent: "AdverseEvent";
+        readonly Age: "Age";
+        readonly AllergyIntolerance: "AllergyIntolerance";
+        readonly Annotation: "Annotation";
+        readonly Any: "Any";
+        readonly Appointment: "Appointment";
+        readonly AppointmentResponse: "AppointmentResponse";
+        readonly Attachment: "Attachment";
+        readonly AuditEvent: "AuditEvent";
+        readonly BackboneElement: "BackboneElement";
+        readonly Base64Binary: "base64Binary";
+        readonly Basic: "Basic";
+        readonly Binary: "Binary";
+        readonly BiologicallyDerivedProduct: "BiologicallyDerivedProduct";
+        readonly BodyStructure: "BodyStructure";
+        readonly VALBoolean: "boolean";
+        readonly Bundle: "Bundle";
+        readonly Canonical: "canonical";
+        readonly CapabilityStatement: "CapabilityStatement";
+        readonly CarePlan: "CarePlan";
+        readonly CareTeam: "CareTeam";
+        readonly CatalogEntry: "CatalogEntry";
+        readonly ChargeItem: "ChargeItem";
+        readonly ChargeItemDefinition: "ChargeItemDefinition";
+        readonly Claim: "Claim";
+        readonly ClaimResponse: "ClaimResponse";
+        readonly ClinicalImpression: "ClinicalImpression";
+        readonly Code: "code";
+        readonly CodeableConcept: "CodeableConcept";
+        readonly CodeSystem: "CodeSystem";
+        readonly Coding: "Coding";
+        readonly Communication: "Communication";
+        readonly CommunicationRequest: "CommunicationRequest";
+        readonly CompartmentDefinition: "CompartmentDefinition";
+        readonly Composition: "Composition";
+        readonly ConceptMap: "ConceptMap"; /**
+         * Resolution applies if the referenced parameter exists.
+         */
+        readonly Condition: "Condition";
+        readonly Consent: "Consent";
+        readonly ContactDetail: "ContactDetail";
+        readonly ContactPoint: "ContactPoint";
+        readonly Contract: "Contract";
+        readonly Contributor: "Contributor";
+        readonly Count: "Count";
+        readonly Coverage: "Coverage";
+        readonly CoverageEligibilityRequest: "CoverageEligibilityRequest";
+        readonly CoverageEligibilityResponse: "CoverageEligibilityResponse";
+        readonly DataRequirement: "DataRequirement";
+        readonly Date: "date";
+        readonly DateTime: "dateTime";
+        readonly Decimal: "decimal";
+        readonly DetectedIssue: "DetectedIssue";
+        readonly Device: "Device";
+        readonly DeviceDefinition: "DeviceDefinition";
+        readonly DeviceMetric: "DeviceMetric";
+        readonly DeviceRequest: "DeviceRequest";
+        readonly DeviceUseStatement: "DeviceUseStatement";
+        readonly DiagnosticReport: "DiagnosticReport";
+        readonly Distance: "Distance"; /**
+         * Function to perform basic model validation (e.g., check if required elements are present).
+         */
+        readonly DocumentManifest: "DocumentManifest";
+        readonly DocumentReference: "DocumentReference";
+        readonly DomainResource: "DomainResource";
+        readonly Dosage: "Dosage";
+        readonly Duration: "Duration";
+        readonly EffectEvidenceSynthesis: "EffectEvidenceSynthesis";
+        readonly VALElement: "Element";
+        readonly ElementDefinition: "ElementDefinition";
+        readonly Encounter: "Encounter";
+        readonly Endpoint: "Endpoint";
+        readonly EnrollmentRequest: "EnrollmentRequest";
+        readonly EnrollmentResponse: "EnrollmentResponse";
+        readonly EpisodeOfCare: "EpisodeOfCare";
+        readonly EventDefinition: "EventDefinition";
+        readonly Evidence: "Evidence";
+        readonly EvidenceVariable: "EvidenceVariable";
+        readonly ExampleScenario: "ExampleScenario";
+        /**
+         * The combinations are suggestions as to which sets of parameters to use together, but the combinations are not intended to be authoritative.
+         */
+        readonly ExplanationOfBenefit: "ExplanationOfBenefit";
+        readonly Expression: "Expression";
+        readonly Extension: "Extension";
+        readonly FamilyMemberHistory: "FamilyMemberHistory";
+        readonly Flag: "Flag";
+        readonly Goal: "Goal";
+        readonly GraphDefinition: "GraphDefinition";
+        readonly Group: "Group";
+        readonly GuidanceResponse: "GuidanceResponse";
+        readonly HealthcareService: "HealthcareService";
+        readonly HumanName: "HumanName";
+        readonly Id: "id";
+        readonly Identifier: "Identifier";
+        readonly ImagingStudy: "ImagingStudy";
+        readonly Immunization: "Immunization";
+        readonly ImmunizationEvaluation: "ImmunizationEvaluation";
+        readonly ImmunizationRecommendation: "ImmunizationRecommendation";
+        readonly ImplementationGuide: "ImplementationGuide";
+        readonly Instant: "instant";
+        readonly InsurancePlan: "InsurancePlan";
+        readonly Integer: "integer"; /**
+         * May be a web site, an email address, a telephone number, etc.
+         */
+        readonly Invoice: "Invoice";
+        readonly Library: "Library";
+        readonly Linkage: "Linkage";
+        readonly List: "List";
+        readonly Location: "Location";
+        readonly Markdown: "markdown";
+        readonly MarketingStatus: "MarketingStatus";
+        readonly Measure: "Measure";
+        readonly MeasureReport: "MeasureReport";
+        readonly Media: "Media";
+        readonly Medication: "Medication";
+        readonly MedicationAdministration: "MedicationAdministration";
+        readonly MedicationDispense: "MedicationDispense";
+        readonly MedicationKnowledge: "MedicationKnowledge";
+        readonly MedicationRequest: "MedicationRequest";
+        readonly MedicationStatement: "MedicationStatement";
+        readonly MedicinalProduct: "MedicinalProduct";
+        readonly MedicinalProductAuthorization: "MedicinalProductAuthorization";
+        readonly MedicinalProductContraindication: "MedicinalProductContraindication";
+        readonly MedicinalProductIndication: "MedicinalProductIndication";
+        readonly MedicinalProductIngredient: "MedicinalProductIngredient";
+        readonly MedicinalProductInteraction: "MedicinalProductInteraction";
+        readonly MedicinalProductManufactured: "MedicinalProductManufactured";
+        readonly MedicinalProductPackaged: "MedicinalProductPackaged";
+        readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
+        readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
+        readonly MessageDefinition: "MessageDefinition";
+        readonly MessageHeader: "MessageHeader";
+        readonly Meta: "Meta";
+        readonly MolecularSequence: "MolecularSequence";
+        readonly Money: "Money";
+        readonly MoneyQuantity: "MoneyQuantity";
+        readonly NamingSystem: "NamingSystem";
+        readonly Narrative: "Narrative";
+        readonly NutritionOrder: "NutritionOrder";
+        readonly Observation: "Observation";
+        readonly ObservationDefinition: "ObservationDefinition";
+        readonly Oid: "oid";
+        readonly OperationDefinition: "OperationDefinition";
+        readonly OperationOutcome: "OperationOutcome";
+        readonly Organization: "Organization";
+        readonly OrganizationAffiliation: "OrganizationAffiliation";
+        readonly ParameterDefinition: "ParameterDefinition";
+        readonly Parameters: "Parameters";
+        readonly Patient: "Patient";
+        readonly PaymentNotice: "PaymentNotice";
+        readonly PaymentReconciliation: "PaymentReconciliation";
+        readonly Period: "Period";
+        readonly Person: "Person";
+        readonly PlanDefinition: "PlanDefinition";
+        readonly Population: "Population";
+        readonly PositiveInt: "positiveInt";
+        readonly Practitioner: "Practitioner";
+        readonly PractitionerRole: "PractitionerRole";
+        readonly Procedure: "Procedure";
+        readonly ProdCharacteristic: "ProdCharacteristic";
+        readonly ProductShelfLife: "ProductShelfLife";
+        readonly Provenance: "Provenance";
+        readonly Quantity: "Quantity";
+        readonly Questionnaire: "Questionnaire";
+        readonly QuestionnaireResponse: "QuestionnaireResponse";
+        readonly Range: "Range";
+        readonly Ratio: "Ratio";
+        readonly Reference: "Reference";
+        readonly RelatedArtifact: "RelatedArtifact";
+        readonly RelatedPerson: "RelatedPerson";
+        readonly RequestGroup: "RequestGroup";
+        readonly ResearchDefinition: "ResearchDefinition";
+        readonly ResearchElementDefinition: "ResearchElementDefinition";
+        readonly ResearchStudy: "ResearchStudy";
+        readonly ResearchSubject: "ResearchSubject";
+        readonly Resource: "Resource";
+        readonly RiskAssessment: "RiskAssessment";
+        readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
+        readonly SampledData: "SampledData";
+        readonly Schedule: "Schedule";
+        readonly SearchParameter: "SearchParameter";
+        readonly ServiceRequest: "ServiceRequest";
+        readonly Signature: "Signature";
+        readonly SimpleQuantity: "SimpleQuantity";
+        readonly Slot: "Slot";
+        readonly Specimen: "Specimen";
+        readonly SpecimenDefinition: "SpecimenDefinition";
+        readonly VALString: "string";
+        readonly StructureDefinition: "StructureDefinition";
+        readonly StructureMap: "StructureMap";
+        readonly Subscription: "Subscription";
+        readonly Substance: "Substance";
+        readonly SubstanceAmount: "SubstanceAmount";
+        readonly SubstanceNucleicAcid: "SubstanceNucleicAcid";
+        readonly SubstancePolymer: "SubstancePolymer";
+        readonly SubstanceProtein: "SubstanceProtein";
+        readonly SubstanceReferenceInformation: "SubstanceReferenceInformation";
+        readonly SubstanceSourceMaterial: "SubstanceSourceMaterial";
+        readonly SubstanceSpecification: "SubstanceSpecification";
+        readonly SupplyDelivery: "SupplyDelivery";
+        readonly SupplyRequest: "SupplyRequest";
+        readonly Task: "Task";
+        readonly TerminologyCapabilities: "TerminologyCapabilities";
+        readonly TestReport: "TestReport";
+        readonly TestScript: "TestScript";
+        readonly Time: "time";
+        readonly Timing: "Timing";
+        readonly TriggerDefinition: "TriggerDefinition";
+        readonly Type: "Type";
+        readonly UnsignedInt: "unsignedInt";
+        readonly Uri: "uri";
+        readonly Url: "url";
+        readonly UsageContext: "UsageContext";
+        readonly Uuid: "uuid";
+        readonly ValueSet: "ValueSet";
+        readonly VerificationResult: "VerificationResult";
+        readonly VisionPrescription: "VisionPrescription";
+        readonly XHTML: "xhtml";
+    };
     /**
      * Required-bound Value Set for searchType (OperationDefinition.parameter.searchType)
      */
-    static searchTypeRequiredCoding(): SearchParamTypeCodingType;
+    static get searchTypeRequiredCodes(): {
+        readonly Composite: "composite";
+        readonly DateDateTime: "date";
+        readonly Number: "number";
+        readonly Quantity: "quantity";
+        readonly Reference: "reference";
+        readonly Special: "special";
+        readonly String: "string";
+        readonly Token: "token";
+        readonly URI: "uri";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -237,7 +471,7 @@ export declare class OperationDefinitionOverload extends fhir.BackboneElement {
     /**
      * Name of parameter to include in overload.
      */
-    parameterName?: fhir.FhirString[];
+    parameterName: fhir.FhirString[];
     /**
      * Comments to go on overload.
      */
@@ -280,11 +514,11 @@ export interface OperationDefinitionArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of operation definitions that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Named queries are invoked differently, and have different capabilities.
      */
-    kind: OperationKindCodeType | null;
+    kind: fhir.FhirCode<OperationKindCodeType> | string | undefined;
     /**
      * Allows filtering of operation definitions that are appropriate for use versus not.
      */
@@ -401,11 +635,11 @@ export declare class OperationDefinition extends fhir.DomainResource {
     /**
      * Allows filtering of operation definitions that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Named queries are invoked differently, and have different capabilities.
      */
-    kind: OperationKindCodeType | null;
+    kind: fhir.FhirCode<OperationKindCodeType> | null;
     /**
      * Allows filtering of operation definitions that are appropriate for use versus not.
      */
@@ -421,7 +655,7 @@ export declare class OperationDefinition extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * This description can be used to capture details such as why the operation definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the operation definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the operation definition is presumed to be the predominant language in the place the operation definition was created).
      */
@@ -429,11 +663,11 @@ export declare class OperationDefinition extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the operation definition to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * This element does not describe the usage of the operation definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this operation definition.
      */
@@ -459,7 +693,7 @@ export declare class OperationDefinition extends fhir.DomainResource {
     /**
      * If the type is an abstract resource ("Resource" or "DomainResource") then the operation can be invoked on any concrete specialization.
      */
-    resource?: fhir.FhirCode[];
+    resource: fhir.FhirCode[];
     /**
      * Indicates whether this operation or named query can be invoked at the system level (e.g. without needing to choose a resource type for the context).
      */
@@ -483,11 +717,11 @@ export declare class OperationDefinition extends fhir.DomainResource {
     /**
      * Query Definitions only have one output parameter, named "result". This might not be described, but can be to allow a profile to be defined.
      */
-    parameter?: fhir.OperationDefinitionParameter[];
+    parameter: fhir.OperationDefinitionParameter[];
     /**
      * The combinations are suggestions as to which sets of parameters to use together, but the combinations are not intended to be authoritative.
      */
-    overload?: fhir.OperationDefinitionOverload[];
+    overload: fhir.OperationDefinitionOverload[];
     /**
      * Default constructor for OperationDefinition - initializes any required elements to null if a value is not provided.
      */
@@ -495,15 +729,172 @@ export declare class OperationDefinition extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (OperationDefinition.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Required-bound Value Set for kind (OperationDefinition.kind)
      */
-    static kindRequiredCoding(): OperationKindCodingType;
+    static get kindRequiredCodes(): {
+        readonly Operation: "operation";
+        readonly Query: "query";
+    };
     /**
      * Required-bound Value Set for resource (OperationDefinition.resource)
      */
-    static resourceRequiredCoding(): ResourceTypesCodingType;
+    static get resourceRequiredCodes(): {
+        readonly Account: "Account";
+        readonly ActivityDefinition: "ActivityDefinition";
+        readonly AdverseEvent: "AdverseEvent";
+        readonly AllergyIntolerance: "AllergyIntolerance";
+        readonly Appointment: "Appointment";
+        readonly AppointmentResponse: "AppointmentResponse";
+        readonly AuditEvent: "AuditEvent";
+        readonly Basic: "Basic";
+        readonly Binary: "Binary";
+        readonly BiologicallyDerivedProduct: "BiologicallyDerivedProduct";
+        readonly BodyStructure: "BodyStructure";
+        readonly Bundle: "Bundle";
+        readonly CapabilityStatement: "CapabilityStatement";
+        readonly CarePlan: "CarePlan";
+        readonly CareTeam: "CareTeam";
+        readonly CatalogEntry: "CatalogEntry";
+        readonly ChargeItem: "ChargeItem";
+        readonly ChargeItemDefinition: "ChargeItemDefinition";
+        readonly Claim: "Claim";
+        readonly ClaimResponse: "ClaimResponse";
+        readonly ClinicalImpression: "ClinicalImpression";
+        readonly CodeSystem: "CodeSystem";
+        readonly Communication: "Communication";
+        readonly CommunicationRequest: "CommunicationRequest";
+        readonly CompartmentDefinition: "CompartmentDefinition";
+        readonly Composition: "Composition";
+        readonly ConceptMap: "ConceptMap";
+        readonly Condition: "Condition";
+        readonly Consent: "Consent";
+        readonly Contract: "Contract";
+        readonly Coverage: "Coverage";
+        readonly CoverageEligibilityRequest: "CoverageEligibilityRequest";
+        readonly CoverageEligibilityResponse: "CoverageEligibilityResponse";
+        readonly DetectedIssue: "DetectedIssue";
+        readonly Device: "Device";
+        readonly DeviceDefinition: "DeviceDefinition";
+        readonly DeviceMetric: "DeviceMetric";
+        readonly DeviceRequest: "DeviceRequest";
+        readonly DeviceUseStatement: "DeviceUseStatement";
+        readonly DiagnosticReport: "DiagnosticReport";
+        readonly DocumentManifest: "DocumentManifest";
+        readonly DocumentReference: "DocumentReference";
+        readonly DomainResource: "DomainResource";
+        readonly EffectEvidenceSynthesis: "EffectEvidenceSynthesis";
+        readonly Encounter: "Encounter";
+        readonly Endpoint: "Endpoint";
+        readonly EnrollmentRequest: "EnrollmentRequest";
+        readonly EnrollmentResponse: "EnrollmentResponse";
+        readonly EpisodeOfCare: "EpisodeOfCare";
+        readonly EventDefinition: "EventDefinition";
+        readonly Evidence: "Evidence";
+        readonly EvidenceVariable: "EvidenceVariable";
+        readonly ExampleScenario: "ExampleScenario";
+        readonly ExplanationOfBenefit: "ExplanationOfBenefit";
+        readonly FamilyMemberHistory: "FamilyMemberHistory";
+        readonly Flag: "Flag";
+        readonly Goal: "Goal";
+        readonly GraphDefinition: "GraphDefinition";
+        readonly Group: "Group";
+        readonly GuidanceResponse: "GuidanceResponse";
+        readonly HealthcareService: "HealthcareService";
+        readonly ImagingStudy: "ImagingStudy";
+        readonly Immunization: "Immunization";
+        readonly ImmunizationEvaluation: "ImmunizationEvaluation";
+        readonly ImmunizationRecommendation: "ImmunizationRecommendation";
+        readonly ImplementationGuide: "ImplementationGuide";
+        readonly InsurancePlan: "InsurancePlan";
+        readonly Invoice: "Invoice";
+        readonly Library: "Library";
+        readonly Linkage: "Linkage";
+        readonly List: "List";
+        readonly Location: "Location";
+        readonly Measure: "Measure";
+        readonly MeasureReport: "MeasureReport";
+        readonly Media: "Media";
+        readonly Medication: "Medication";
+        readonly MedicationAdministration: "MedicationAdministration";
+        readonly MedicationDispense: "MedicationDispense";
+        readonly MedicationKnowledge: "MedicationKnowledge";
+        readonly MedicationRequest: "MedicationRequest";
+        readonly MedicationStatement: "MedicationStatement";
+        readonly MedicinalProduct: "MedicinalProduct";
+        readonly MedicinalProductAuthorization: "MedicinalProductAuthorization";
+        readonly MedicinalProductContraindication: "MedicinalProductContraindication";
+        readonly MedicinalProductIndication: "MedicinalProductIndication";
+        readonly MedicinalProductIngredient: "MedicinalProductIngredient";
+        readonly MedicinalProductInteraction: "MedicinalProductInteraction";
+        readonly MedicinalProductManufactured: "MedicinalProductManufactured";
+        readonly MedicinalProductPackaged: "MedicinalProductPackaged";
+        readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
+        readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
+        readonly MessageDefinition: "MessageDefinition";
+        readonly MessageHeader: "MessageHeader";
+        readonly MolecularSequence: "MolecularSequence";
+        readonly NamingSystem: "NamingSystem";
+        readonly NutritionOrder: "NutritionOrder";
+        readonly Observation: "Observation";
+        readonly ObservationDefinition: "ObservationDefinition";
+        readonly OperationDefinition: "OperationDefinition";
+        readonly OperationOutcome: "OperationOutcome";
+        readonly Organization: "Organization";
+        readonly OrganizationAffiliation: "OrganizationAffiliation";
+        readonly Parameters: "Parameters";
+        readonly Patient: "Patient";
+        readonly PaymentNotice: "PaymentNotice";
+        readonly PaymentReconciliation: "PaymentReconciliation";
+        readonly Person: "Person";
+        readonly PlanDefinition: "PlanDefinition";
+        readonly Practitioner: "Practitioner";
+        readonly PractitionerRole: "PractitionerRole";
+        readonly Procedure: "Procedure";
+        readonly Provenance: "Provenance";
+        readonly Questionnaire: "Questionnaire";
+        readonly QuestionnaireResponse: "QuestionnaireResponse";
+        readonly RelatedPerson: "RelatedPerson";
+        readonly RequestGroup: "RequestGroup";
+        readonly ResearchDefinition: "ResearchDefinition";
+        readonly ResearchElementDefinition: "ResearchElementDefinition";
+        readonly ResearchStudy: "ResearchStudy";
+        readonly ResearchSubject: "ResearchSubject";
+        readonly Resource: "Resource";
+        readonly RiskAssessment: "RiskAssessment";
+        readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
+        readonly Schedule: "Schedule";
+        readonly SearchParameter: "SearchParameter";
+        readonly ServiceRequest: "ServiceRequest";
+        readonly Slot: "Slot";
+        readonly Specimen: "Specimen";
+        readonly SpecimenDefinition: "SpecimenDefinition";
+        readonly StructureDefinition: "StructureDefinition";
+        readonly StructureMap: "StructureMap";
+        readonly Subscription: "Subscription";
+        readonly Substance: "Substance";
+        readonly SubstanceNucleicAcid: "SubstanceNucleicAcid";
+        readonly SubstancePolymer: "SubstancePolymer";
+        readonly SubstanceProtein: "SubstanceProtein";
+        readonly SubstanceReferenceInformation: "SubstanceReferenceInformation";
+        readonly SubstanceSourceMaterial: "SubstanceSourceMaterial";
+        readonly SubstanceSpecification: "SubstanceSpecification";
+        readonly SupplyDelivery: "SupplyDelivery";
+        readonly SupplyRequest: "SupplyRequest";
+        readonly Task: "Task";
+        readonly TerminologyCapabilities: "TerminologyCapabilities";
+        readonly TestReport: "TestReport";
+        readonly TestScript: "TestScript";
+        readonly ValueSet: "ValueSet";
+        readonly VerificationResult: "VerificationResult";
+        readonly VisionPrescription: "VisionPrescription";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

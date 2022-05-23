@@ -26,6 +26,10 @@ export interface Media extends fhir.DomainResource {
      */
     status: 'completed' | 'entered-in-error' | 'in-progress' | 'not-done' | 'on-hold' | 'preparation' | 'stopped' | 'unknown' | null;
     /**
+     * Extended properties for primitive element: Media.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * A code that classifies whether the media is an image, video or audio recording or some other media category.
      */
     type?: fhir.CodeableConcept | undefined;

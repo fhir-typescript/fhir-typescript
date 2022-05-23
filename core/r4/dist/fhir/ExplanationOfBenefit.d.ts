@@ -1,14 +1,7 @@
 import * as fhir from '../fhir.js';
-import { V3ActIncidentCodeCodingType } from '../fhirValueSets/V3ActIncidentCodeCodings.js';
-import { NoteTypeCodingType } from '../fhirValueSets/NoteTypeCodings.js';
 import { NoteTypeCodeType } from '../fhirValueSets/NoteTypeCodes.js';
-import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
-import { ExplanationofbenefitStatusCodingType } from '../fhirValueSets/ExplanationofbenefitStatusCodings.js';
 import { ExplanationofbenefitStatusCodeType } from '../fhirValueSets/ExplanationofbenefitStatusCodes.js';
-import { ClaimTypeCodingType } from '../fhirValueSets/ClaimTypeCodings.js';
-import { ClaimUseCodingType } from '../fhirValueSets/ClaimUseCodings.js';
 import { ClaimUseCodeType } from '../fhirValueSets/ClaimUseCodes.js';
-import { RemittanceOutcomeCodingType } from '../fhirValueSets/RemittanceOutcomeCodings.js';
 import { RemittanceOutcomeCodeType } from '../fhirValueSets/RemittanceOutcomeCodes.js';
 /**
  * Valid arguments for the ExplanationOfBenefitRelated type.
@@ -318,7 +311,7 @@ export declare class ExplanationOfBenefitDiagnosis extends fhir.BackboneElement 
     /**
      * For example: admitting, primary, secondary, discharge.
      */
-    type?: fhir.CodeableConcept[];
+    type: fhir.CodeableConcept[];
     /**
      * Indication of whether the diagnosis was present on admission to a facility.
      */
@@ -384,7 +377,7 @@ export declare class ExplanationOfBenefitProcedure extends fhir.BackboneElement 
     /**
      * When the condition was observed or the relative ranking.
      */
-    type?: fhir.CodeableConcept[];
+    type: fhir.CodeableConcept[];
     /**
      * Date and optionally time the procedure was performed.
      */
@@ -400,7 +393,7 @@ export declare class ExplanationOfBenefitProcedure extends fhir.BackboneElement 
     /**
      * Unique Device Identifiers associated with this line item.
      */
-    udi?: fhir.Reference[];
+    udi: fhir.Reference[];
     /**
      * Default constructor for ExplanationOfBenefitProcedure - initializes any required elements to null if a value is not provided.
      */
@@ -446,7 +439,7 @@ export declare class ExplanationOfBenefitInsurance extends fhir.BackboneElement 
     /**
      * This value is an alphanumeric string that may be provided over the phone, via text, via paper, or within a ClaimResponse resource and is not a FHIR Identifier.
      */
-    preAuthRef?: fhir.FhirString[];
+    preAuthRef: fhir.FhirString[];
     /**
      * Default constructor for ExplanationOfBenefitInsurance - initializes any required elements to null if a value is not provided.
      */
@@ -512,7 +505,12 @@ export declare class ExplanationOfBenefitAccident extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for type (ExplanationOfBenefit.accident.type)
      */
-    static typeExtensibleCoding(): V3ActIncidentCodeCodingType;
+    static get typeExtensibleCodings(): {
+        readonly MotorVehicleAccident: fhir.Coding;
+        readonly SchoolAccident: fhir.Coding;
+        readonly SportingAccident: fhir.Coding;
+        readonly WorkplaceAccident: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -656,11 +654,11 @@ export declare class ExplanationOfBenefitItemDetailSubDetail extends fhir.Backbo
     /**
      * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or outside of office hours.
      */
-    modifier?: fhir.CodeableConcept[];
+    modifier: fhir.CodeableConcept[];
     /**
      * For example: Neonatal program, child dental program or drug users recovery program.
      */
-    programCode?: fhir.CodeableConcept[];
+    programCode: fhir.CodeableConcept[];
     /**
      * The number of repetitions of a service or product.
      */
@@ -680,15 +678,15 @@ export declare class ExplanationOfBenefitItemDetailSubDetail extends fhir.Backbo
     /**
      * Unique Device Identifiers associated with this line item.
      */
-    udi?: fhir.Reference[];
+    udi: fhir.Reference[];
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: fhir.FhirPositiveInt[];
+    noteNumber: fhir.FhirPositiveInt[];
     /**
      * The adjudication results.
      */
-    adjudication?: fhir.ExplanationOfBenefitItemAdjudication[];
+    adjudication: fhir.ExplanationOfBenefitItemAdjudication[];
     /**
      * Default constructor for ExplanationOfBenefitItemDetailSubDetail - initializes any required elements to null if a value is not provided.
      */
@@ -786,11 +784,11 @@ export declare class ExplanationOfBenefitItemDetail extends fhir.BackboneElement
     /**
      * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
      */
-    modifier?: fhir.CodeableConcept[];
+    modifier: fhir.CodeableConcept[];
     /**
      * For example: Neonatal program, child dental program or drug users recovery program.
      */
-    programCode?: fhir.CodeableConcept[];
+    programCode: fhir.CodeableConcept[];
     /**
      * The number of repetitions of a service or product.
      */
@@ -810,19 +808,19 @@ export declare class ExplanationOfBenefitItemDetail extends fhir.BackboneElement
     /**
      * Unique Device Identifiers associated with this line item.
      */
-    udi?: fhir.Reference[];
+    udi: fhir.Reference[];
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: fhir.FhirPositiveInt[];
+    noteNumber: fhir.FhirPositiveInt[];
     /**
      * The adjudication results.
      */
-    adjudication?: fhir.ExplanationOfBenefitItemAdjudication[];
+    adjudication: fhir.ExplanationOfBenefitItemAdjudication[];
     /**
      * Third-tier of goods and services.
      */
-    subDetail?: fhir.ExplanationOfBenefitItemDetailSubDetail[];
+    subDetail: fhir.ExplanationOfBenefitItemDetailSubDetail[];
     /**
      * Default constructor for ExplanationOfBenefitItemDetail - initializes any required elements to null if a value is not provided.
      */
@@ -964,19 +962,19 @@ export declare class ExplanationOfBenefitItem extends fhir.BackboneElement {
     /**
      * Care team members related to this service or product.
      */
-    careTeamSequence?: fhir.FhirPositiveInt[];
+    careTeamSequence: fhir.FhirPositiveInt[];
     /**
      * Diagnoses applicable for this service or product.
      */
-    diagnosisSequence?: fhir.FhirPositiveInt[];
+    diagnosisSequence: fhir.FhirPositiveInt[];
     /**
      * Procedures applicable for this service or product.
      */
-    procedureSequence?: fhir.FhirPositiveInt[];
+    procedureSequence: fhir.FhirPositiveInt[];
     /**
      * Exceptions, special conditions and supporting information applicable for this service or product.
      */
-    informationSequence?: fhir.FhirPositiveInt[];
+    informationSequence: fhir.FhirPositiveInt[];
     /**
      * The type of revenue or cost center providing the product and/or service.
      */
@@ -992,11 +990,11 @@ export declare class ExplanationOfBenefitItem extends fhir.BackboneElement {
     /**
      * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
      */
-    modifier?: fhir.CodeableConcept[];
+    modifier: fhir.CodeableConcept[];
     /**
      * For example: Neonatal program, child dental program or drug users recovery program.
      */
-    programCode?: fhir.CodeableConcept[];
+    programCode: fhir.CodeableConcept[];
     /**
      * The date or dates when the service or product was supplied, performed or completed.
      */
@@ -1032,7 +1030,7 @@ export declare class ExplanationOfBenefitItem extends fhir.BackboneElement {
     /**
      * Unique Device Identifiers associated with this line item.
      */
-    udi?: fhir.Reference[];
+    udi: fhir.Reference[];
     /**
      * For example: Providing a tooth code, allows an insurer to identify a provider performing a filling on a tooth that was previously removed.
      */
@@ -1040,23 +1038,23 @@ export declare class ExplanationOfBenefitItem extends fhir.BackboneElement {
     /**
      * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
      */
-    subSite?: fhir.CodeableConcept[];
+    subSite: fhir.CodeableConcept[];
     /**
      * A billed item may include goods or services provided in multiple encounters.
      */
-    encounter?: fhir.Reference[];
+    encounter: fhir.Reference[];
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: fhir.FhirPositiveInt[];
+    noteNumber: fhir.FhirPositiveInt[];
     /**
      * If this item is a group then the values here are a summary of the adjudication of the detail items. If this item is a simple product or service then this is the result of the adjudication of this item.
      */
-    adjudication?: fhir.ExplanationOfBenefitItemAdjudication[];
+    adjudication: fhir.ExplanationOfBenefitItemAdjudication[];
     /**
      * Second-tier of goods and services.
      */
-    detail?: fhir.ExplanationOfBenefitItemDetail[];
+    detail: fhir.ExplanationOfBenefitItemDetail[];
     /**
      * Default constructor for ExplanationOfBenefitItem - initializes any required elements to null if a value is not provided.
      */
@@ -1118,7 +1116,7 @@ export declare class ExplanationOfBenefitAddItemDetailSubDetail extends fhir.Bac
     /**
      * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
      */
-    modifier?: fhir.CodeableConcept[];
+    modifier: fhir.CodeableConcept[];
     /**
      * The number of repetitions of a service or product.
      */
@@ -1138,11 +1136,11 @@ export declare class ExplanationOfBenefitAddItemDetailSubDetail extends fhir.Bac
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: fhir.FhirPositiveInt[];
+    noteNumber: fhir.FhirPositiveInt[];
     /**
      * The adjudication results.
      */
-    adjudication?: fhir.ExplanationOfBenefitItemAdjudication[];
+    adjudication: fhir.ExplanationOfBenefitItemAdjudication[];
     /**
      * Default constructor for ExplanationOfBenefitAddItemDetailSubDetail - initializes any required elements to null if a value is not provided.
      */
@@ -1208,7 +1206,7 @@ export declare class ExplanationOfBenefitAddItemDetail extends fhir.BackboneElem
     /**
      * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
      */
-    modifier?: fhir.CodeableConcept[];
+    modifier: fhir.CodeableConcept[];
     /**
      * The number of repetitions of a service or product.
      */
@@ -1228,15 +1226,15 @@ export declare class ExplanationOfBenefitAddItemDetail extends fhir.BackboneElem
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: fhir.FhirPositiveInt[];
+    noteNumber: fhir.FhirPositiveInt[];
     /**
      * The adjudication results.
      */
-    adjudication?: fhir.ExplanationOfBenefitItemAdjudication[];
+    adjudication: fhir.ExplanationOfBenefitItemAdjudication[];
     /**
      * The third-tier service adjudications for payor added services.
      */
-    subDetail?: fhir.ExplanationOfBenefitAddItemDetailSubDetail[];
+    subDetail: fhir.ExplanationOfBenefitAddItemDetailSubDetail[];
     /**
      * Default constructor for ExplanationOfBenefitAddItemDetail - initializes any required elements to null if a value is not provided.
      */
@@ -1354,19 +1352,19 @@ export declare class ExplanationOfBenefitAddItem extends fhir.BackboneElement {
     /**
      * Claim items which this service line is intended to replace.
      */
-    itemSequence?: fhir.FhirPositiveInt[];
+    itemSequence: fhir.FhirPositiveInt[];
     /**
      * The sequence number of the details within the claim item which this line is intended to replace.
      */
-    detailSequence?: fhir.FhirPositiveInt[];
+    detailSequence: fhir.FhirPositiveInt[];
     /**
      * The sequence number of the sub-details woithin the details within the claim item which this line is intended to replace.
      */
-    subDetailSequence?: fhir.FhirPositiveInt[];
+    subDetailSequence: fhir.FhirPositiveInt[];
     /**
      * The providers who are authorized for the services rendered to the patient.
      */
-    provider?: fhir.Reference[];
+    provider: fhir.Reference[];
     /**
      * If this is an actual service or product line, i.e. not a Group, then use code to indicate the Professional Service or Product supplied (e.g. CTP, HCPCS, USCLS, ICD10, NCPDP, DIN, RxNorm, ACHI, CCI). If a grouping item then use a group code to indicate the type of thing being grouped e.g. 'glasses' or 'compound'.
      */
@@ -1374,11 +1372,11 @@ export declare class ExplanationOfBenefitAddItem extends fhir.BackboneElement {
     /**
      * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
      */
-    modifier?: fhir.CodeableConcept[];
+    modifier: fhir.CodeableConcept[];
     /**
      * For example: Neonatal program, child dental program or drug users recovery program.
      */
-    programCode?: fhir.CodeableConcept[];
+    programCode: fhir.CodeableConcept[];
     /**
      * The date or dates when the service or product was supplied, performed or completed.
      */
@@ -1418,19 +1416,19 @@ export declare class ExplanationOfBenefitAddItem extends fhir.BackboneElement {
     /**
      * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
      */
-    subSite?: fhir.CodeableConcept[];
+    subSite: fhir.CodeableConcept[];
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: fhir.FhirPositiveInt[];
+    noteNumber: fhir.FhirPositiveInt[];
     /**
      * The adjudication results.
      */
-    adjudication?: fhir.ExplanationOfBenefitItemAdjudication[];
+    adjudication: fhir.ExplanationOfBenefitItemAdjudication[];
     /**
      * The second-tier service adjudications for payor added services.
      */
-    detail?: fhir.ExplanationOfBenefitAddItemDetail[];
+    detail: fhir.ExplanationOfBenefitAddItemDetail[];
     /**
      * Default constructor for ExplanationOfBenefitAddItem - initializes any required elements to null if a value is not provided.
      */
@@ -1559,7 +1557,7 @@ export interface ExplanationOfBenefitProcessNoteArgs extends fhir.BackboneElemen
     /**
      * The business purpose of the note text.
      */
-    type?: NoteTypeCodeType | undefined;
+    type?: fhir.FhirCode<NoteTypeCodeType> | string | undefined;
     /**
      * The explanation or description associated with the processing.
      */
@@ -1584,7 +1582,7 @@ export declare class ExplanationOfBenefitProcessNote extends fhir.BackboneElemen
     /**
      * The business purpose of the note text.
      */
-    type?: NoteTypeCodeType | undefined;
+    type?: fhir.FhirCode<NoteTypeCodeType> | undefined;
     /**
      * The explanation or description associated with the processing.
      */
@@ -1600,11 +1598,72 @@ export declare class ExplanationOfBenefitProcessNote extends fhir.BackboneElemen
     /**
      * Required-bound Value Set for type (ExplanationOfBenefit.processNote.type)
      */
-    static typeRequiredCoding(): NoteTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Display: "display";
+        readonly PrintForm: "print";
+        readonly PrintOperator: "printoper";
+    };
     /**
      * Preferred-bound Value Set for language (ExplanationOfBenefit.processNote.language)
      */
-    static languagePreferredCoding(): LanguagesCodingType;
+    static get languagePreferredCodings(): {
+        readonly Arabic: fhir.Coding;
+        readonly Bengali: fhir.Coding;
+        readonly Czech: fhir.Coding;
+        readonly Danish: fhir.Coding;
+        readonly German: fhir.Coding;
+        readonly GermanAustria: fhir.Coding;
+        readonly GermanSwitzerland: fhir.Coding;
+        readonly GermanGermany: fhir.Coding;
+        readonly Greek: fhir.Coding;
+        readonly English: fhir.Coding;
+        readonly EnglishAustralia: fhir.Coding;
+        readonly EnglishCanada: fhir.Coding;
+        readonly EnglishGreatBritain: fhir.Coding;
+        readonly EnglishIndia: fhir.Coding;
+        readonly EnglishNewZeland: fhir.Coding;
+        readonly EnglishSingapore: fhir.Coding;
+        readonly EnglishUnitedStates: fhir.Coding;
+        readonly Spanish: fhir.Coding;
+        readonly SpanishArgentina: fhir.Coding;
+        readonly SpanishSpain: fhir.Coding;
+        readonly SpanishUruguay: fhir.Coding;
+        readonly Finnish: fhir.Coding;
+        readonly French: fhir.Coding;
+        readonly FrenchBelgium: fhir.Coding;
+        readonly FrenchSwitzerland: fhir.Coding;
+        readonly FrenchFrance: fhir.Coding;
+        readonly Frysian: fhir.Coding;
+        readonly FrysianNetherlands: fhir.Coding;
+        readonly Hindi: fhir.Coding;
+        readonly Croatian: fhir.Coding;
+        readonly Italian: fhir.Coding;
+        readonly ItalianSwitzerland: fhir.Coding;
+        readonly ItalianItaly: fhir.Coding;
+        readonly Japanese: fhir.Coding;
+        readonly Korean: fhir.Coding;
+        readonly Dutch: fhir.Coding;
+        readonly DutchBelgium: fhir.Coding;
+        readonly DutchNetherlands: fhir.Coding;
+        readonly Norwegian: fhir.Coding;
+        readonly NorwegianNorway: fhir.Coding;
+        readonly Punjabi: fhir.Coding;
+        readonly Polish: fhir.Coding;
+        readonly Portuguese: fhir.Coding;
+        readonly PortugueseBrazil: fhir.Coding;
+        readonly Russian: fhir.Coding;
+        readonly RussianRussia: fhir.Coding;
+        readonly Serbian: fhir.Coding;
+        readonly SerbianSerbia: fhir.Coding;
+        readonly Swedish: fhir.Coding;
+        readonly SwedishSweden: fhir.Coding;
+        readonly Telegu: fhir.Coding;
+        readonly Chinese: fhir.Coding;
+        readonly ChineseChina: fhir.Coding;
+        readonly ChineseHongKong: fhir.Coding;
+        readonly ChineseSingapore: fhir.Coding;
+        readonly ChineseTaiwan: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1760,7 +1819,7 @@ export declare class ExplanationOfBenefitBenefitBalance extends fhir.BackboneEle
     /**
      * Benefits Used to date.
      */
-    financial?: fhir.ExplanationOfBenefitBenefitBalanceFinancial[];
+    financial: fhir.ExplanationOfBenefitBenefitBalanceFinancial[];
     /**
      * Default constructor for ExplanationOfBenefitBenefitBalance - initializes any required elements to null if a value is not provided.
      */
@@ -1785,7 +1844,7 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: ExplanationofbenefitStatusCodeType | null;
+    status: fhir.FhirCode<ExplanationofbenefitStatusCodeType> | string | undefined;
     /**
      * The majority of jurisdictions use: oral, pharmacy, vision, professional and institutional, or variants on those terms, as the general styles of claims. The valueset is extensible to accommodate other jurisdictional requirements.
      */
@@ -1797,7 +1856,7 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
     /**
      * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
      */
-    use: ClaimUseCodeType | null;
+    use: fhir.FhirCode<ClaimUseCodeType> | string | undefined;
     /**
      * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for forecast reimbursement is sought.
      */
@@ -1869,7 +1928,7 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
     /**
      * The resource may be used to indicate that: the request has been held (queued) for processing; that it has been processed and errors found (error); that no errors were found and that some of the adjudication has been undertaken (partial) or that all of the adjudication has been undertaken (complete).
      */
-    outcome: RemittanceOutcomeCodeType | null;
+    outcome: fhir.FhirCode<RemittanceOutcomeCodeType> | string | undefined;
     /**
      * A human readable description of the status of the adjudication.
      */
@@ -1966,11 +2025,11 @@ export declare class ExplanationOfBenefit extends fhir.DomainResource {
     /**
      * A unique identifier assigned to this explanation of benefit.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: ExplanationofbenefitStatusCodeType | null;
+    status: fhir.FhirCode<ExplanationofbenefitStatusCodeType> | null;
     /**
      * The majority of jurisdictions use: oral, pharmacy, vision, professional and institutional, or variants on those terms, as the general styles of claims. The valueset is extensible to accommodate other jurisdictional requirements.
      */
@@ -1982,7 +2041,7 @@ export declare class ExplanationOfBenefit extends fhir.DomainResource {
     /**
      * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
      */
-    use: ClaimUseCodeType | null;
+    use: fhir.FhirCode<ClaimUseCodeType> | null;
     /**
      * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for forecast reimbursement is sought.
      */
@@ -2022,7 +2081,7 @@ export declare class ExplanationOfBenefit extends fhir.DomainResource {
     /**
      * For example,  for the original treatment and follow-up exams.
      */
-    related?: fhir.ExplanationOfBenefitRelated[];
+    related: fhir.ExplanationOfBenefitRelated[];
     /**
      * Prescription to support the dispensing of pharmacy, device or vision products.
      */
@@ -2054,7 +2113,7 @@ export declare class ExplanationOfBenefit extends fhir.DomainResource {
     /**
      * The resource may be used to indicate that: the request has been held (queued) for processing; that it has been processed and errors found (error); that no errors were found and that some of the adjudication has been undertaken (partial) or that all of the adjudication has been undertaken (complete).
      */
-    outcome: RemittanceOutcomeCodeType | null;
+    outcome: fhir.FhirCode<RemittanceOutcomeCodeType> | null;
     /**
      * A human readable description of the status of the adjudication.
      */
@@ -2062,27 +2121,27 @@ export declare class ExplanationOfBenefit extends fhir.DomainResource {
     /**
      * This value is only present on preauthorization adjudications.
      */
-    preAuthRef?: fhir.FhirString[];
+    preAuthRef: fhir.FhirString[];
     /**
      * This value is only present on preauthorization adjudications.
      */
-    preAuthRefPeriod?: fhir.Period[];
+    preAuthRefPeriod: fhir.Period[];
     /**
      * The members of the team who provided the products and services.
      */
-    careTeam?: fhir.ExplanationOfBenefitCareTeam[];
+    careTeam: fhir.ExplanationOfBenefitCareTeam[];
     /**
      * Often there are multiple jurisdiction specific valuesets which are required.
      */
-    supportingInfo?: fhir.ExplanationOfBenefitSupportingInfo[];
+    supportingInfo: fhir.ExplanationOfBenefitSupportingInfo[];
     /**
      * Information about diagnoses relevant to the claim items.
      */
-    diagnosis?: fhir.ExplanationOfBenefitDiagnosis[];
+    diagnosis: fhir.ExplanationOfBenefitDiagnosis[];
     /**
      * Procedures performed on the patient relevant to the billing items with the claim.
      */
-    procedure?: fhir.ExplanationOfBenefitProcedure[];
+    procedure: fhir.ExplanationOfBenefitProcedure[];
     /**
      * This indicates the relative order of a series of EOBs related to different coverages for the same suite of services.
      */
@@ -2098,19 +2157,19 @@ export declare class ExplanationOfBenefit extends fhir.DomainResource {
     /**
      * A claim line. Either a simple (a product or service) or a 'group' of details which can also be a simple items or groups of sub-details.
      */
-    item?: fhir.ExplanationOfBenefitItem[];
+    item: fhir.ExplanationOfBenefitItem[];
     /**
      * The first-tier service adjudications for payor added product or service lines.
      */
-    addItem?: fhir.ExplanationOfBenefitAddItem[];
+    addItem: fhir.ExplanationOfBenefitAddItem[];
     /**
      * The adjudication results which are presented at the header level rather than at the line-item or add-item levels.
      */
-    adjudication?: fhir.ExplanationOfBenefitItemAdjudication[];
+    adjudication: fhir.ExplanationOfBenefitItemAdjudication[];
     /**
      * Totals for amounts submitted, co-pays, benefits payable etc.
      */
-    total?: fhir.ExplanationOfBenefitTotal[];
+    total: fhir.ExplanationOfBenefitTotal[];
     /**
      * Payment details for the adjudication of the claim.
      */
@@ -2126,7 +2185,7 @@ export declare class ExplanationOfBenefit extends fhir.DomainResource {
     /**
      * A note that describes or explains adjudication results in a human readable form.
      */
-    processNote?: fhir.ExplanationOfBenefitProcessNote[];
+    processNote: fhir.ExplanationOfBenefitProcessNote[];
     /**
      * Not applicable when use=claim.
      */
@@ -2134,7 +2193,7 @@ export declare class ExplanationOfBenefit extends fhir.DomainResource {
     /**
      * Balance by Benefit Category.
      */
-    benefitBalance?: fhir.ExplanationOfBenefitBenefitBalance[];
+    benefitBalance: fhir.ExplanationOfBenefitBenefitBalance[];
     /**
      * Default constructor for ExplanationOfBenefit - initializes any required elements to null if a value is not provided.
      */
@@ -2142,19 +2201,39 @@ export declare class ExplanationOfBenefit extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (ExplanationOfBenefit.status)
      */
-    static statusRequiredCoding(): ExplanationofbenefitStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Cancelled: "cancelled";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+    };
     /**
      * Extensible-bound Value Set for type (ExplanationOfBenefit.type)
      */
-    static typeExtensibleCoding(): ClaimTypeCodingType;
+    static get typeExtensibleCodings(): {
+        readonly Institutional: fhir.Coding;
+        readonly Oral: fhir.Coding;
+        readonly Pharmacy: fhir.Coding;
+        readonly Professional: fhir.Coding;
+        readonly Vision: fhir.Coding;
+    };
     /**
      * Required-bound Value Set for use (ExplanationOfBenefit.use)
      */
-    static useRequiredCoding(): ClaimUseCodingType;
+    static get useRequiredCodes(): {
+        readonly Claim: "claim";
+        readonly Preauthorization: "preauthorization";
+        readonly Predetermination: "predetermination";
+    };
     /**
      * Required-bound Value Set for outcome (ExplanationOfBenefit.outcome)
      */
-    static outcomeRequiredCoding(): RemittanceOutcomeCodingType;
+    static get outcomeRequiredCodes(): {
+        readonly ProcessingComplete: "complete";
+        readonly Error: "error";
+        readonly PartialProcessing: "partial";
+        readonly Queued: "queued";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

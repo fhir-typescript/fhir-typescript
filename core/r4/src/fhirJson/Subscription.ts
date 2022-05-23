@@ -15,6 +15,10 @@ export interface SubscriptionChannel extends fhir.BackboneElement {
    */
   type: 'email'|'message'|'rest-hook'|'sms'|'websocket'|null;
   /**
+   * Extended properties for primitive element: Subscription.channel.type
+   */
+  _type?:fhir.FhirElement;
+  /**
    * For rest-hook, and websocket, the end-point must be an http: or https: URL; for email, a mailto: url, for sms, a tel: url, and for message the endpoint can be in any form of url the server understands (usually, http: or mllp:). The URI is allowed to be relative; in which case, it is relative to the server end-point (since there may be more than one, clients should avoid using relative URIs).
    */
   endpoint?: string|undefined;
@@ -53,6 +57,10 @@ export interface Subscription extends fhir.DomainResource {
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
   status: 'active'|'error'|'off'|'requested'|null;
+  /**
+   * Extended properties for primitive element: Subscription.status
+   */
+  _status?:fhir.FhirElement;
   /**
    * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
    */

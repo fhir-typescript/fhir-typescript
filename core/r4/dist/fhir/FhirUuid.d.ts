@@ -6,7 +6,7 @@ export interface FhirUuidArgs extends fhir.FhirPrimitiveArgs {
     /**
      * See The Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A.
      */
-    value?: FhirUuid | string | undefined;
+    value?: FhirUuid | string | undefined | null;
 }
 /**
  * See The Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A.

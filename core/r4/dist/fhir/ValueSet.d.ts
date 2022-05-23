@@ -1,9 +1,5 @@
 import * as fhir from '../fhir.js';
-import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
-import { DesignationUseCodingType } from '../fhirValueSets/DesignationUseCodings.js';
-import { FilterOperatorCodingType } from '../fhirValueSets/FilterOperatorCodings.js';
 import { FilterOperatorCodeType } from '../fhirValueSets/FilterOperatorCodes.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 /**
  * Valid arguments for the ValueSetComposeIncludeConceptDesignation type.
@@ -49,11 +45,73 @@ export declare class ValueSetComposeIncludeConceptDesignation extends fhir.Backb
     /**
      * Preferred-bound Value Set for language (ValueSet.compose.include.concept.designation.language)
      */
-    static languagePreferredCoding(): LanguagesCodingType;
+    static get languagePreferredCodings(): {
+        readonly Arabic: fhir.Coding;
+        readonly Bengali: fhir.Coding;
+        readonly Czech: fhir.Coding;
+        readonly Danish: fhir.Coding;
+        readonly German: fhir.Coding;
+        readonly GermanAustria: fhir.Coding;
+        readonly GermanSwitzerland: fhir.Coding;
+        readonly GermanGermany: fhir.Coding;
+        readonly Greek: fhir.Coding;
+        readonly English: fhir.Coding;
+        readonly EnglishAustralia: fhir.Coding;
+        readonly EnglishCanada: fhir.Coding; /**
+         * Mapping of this datatype to a FHIR equivalent
+         */
+        readonly EnglishGreatBritain: fhir.Coding;
+        readonly EnglishIndia: fhir.Coding;
+        readonly EnglishNewZeland: fhir.Coding;
+        readonly EnglishSingapore: fhir.Coding;
+        readonly EnglishUnitedStates: fhir.Coding;
+        readonly Spanish: fhir.Coding;
+        readonly SpanishArgentina: fhir.Coding;
+        readonly SpanishSpain: fhir.Coding;
+        readonly SpanishUruguay: fhir.Coding;
+        readonly Finnish: fhir.Coding;
+        readonly French: fhir.Coding;
+        readonly FrenchBelgium: fhir.Coding;
+        readonly FrenchSwitzerland: fhir.Coding;
+        readonly FrenchFrance: fhir.Coding;
+        readonly Frysian: fhir.Coding;
+        readonly FrysianNetherlands: fhir.Coding;
+        readonly Hindi: fhir.Coding;
+        readonly Croatian: fhir.Coding;
+        readonly Italian: fhir.Coding;
+        readonly ItalianSwitzerland: fhir.Coding;
+        readonly ItalianItaly: fhir.Coding;
+        readonly Japanese: fhir.Coding;
+        readonly Korean: fhir.Coding;
+        readonly Dutch: fhir.Coding;
+        readonly DutchBelgium: fhir.Coding;
+        readonly DutchNetherlands: fhir.Coding;
+        readonly Norwegian: fhir.Coding;
+        readonly NorwegianNorway: fhir.Coding;
+        readonly Punjabi: fhir.Coding;
+        readonly Polish: fhir.Coding;
+        readonly Portuguese: fhir.Coding;
+        readonly PortugueseBrazil: fhir.Coding;
+        readonly Russian: fhir.Coding;
+        readonly RussianRussia: fhir.Coding;
+        readonly Serbian: fhir.Coding;
+        readonly SerbianSerbia: fhir.Coding;
+        readonly Swedish: fhir.Coding;
+        readonly SwedishSweden: fhir.Coding;
+        readonly Telegu: fhir.Coding;
+        readonly Chinese: fhir.Coding;
+        readonly ChineseChina: fhir.Coding;
+        readonly ChineseHongKong: fhir.Coding;
+        readonly ChineseSingapore: fhir.Coding;
+        readonly ChineseTaiwan: fhir.Coding;
+    };
     /**
      * Extensible-bound Value Set for use (ValueSet.compose.include.concept.designation.use)
      */
-    static useExtensibleCoding(): DesignationUseCodingType;
+    static get useExtensibleCodings(): {
+        readonly VAL900000000000003001: fhir.Coding;
+        readonly VAL900000000000013009: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -95,7 +153,7 @@ export declare class ValueSetComposeIncludeConcept extends fhir.BackboneElement 
     /**
      * Concepts have both a ```display``` and an array of ```designation```. The display is equivalent to a special designation with an implied ```designation.use``` of "primary code" and a language equal to the [Resource Language](resource.html#language).
      */
-    designation?: fhir.ValueSetComposeIncludeConceptDesignation[];
+    designation: fhir.ValueSetComposeIncludeConceptDesignation[];
     /**
      * Default constructor for ValueSetComposeIncludeConcept - initializes any required elements to null if a value is not provided.
      */
@@ -116,7 +174,7 @@ export interface ValueSetComposeIncludeFilterArgs extends fhir.BackboneElementAr
     /**
      * In case filter.property represents a property of the system, the operation applies to the selected property. In case filter.property represents a filter of the system, the operation SHALL match one of the CodeSystem.filter.operator values.
      */
-    op: FilterOperatorCodeType | null;
+    op: fhir.FhirCode<FilterOperatorCodeType> | string | undefined;
     /**
      * Use regex matching with care - full regex matching on every SNOMED CT term is prohibitive, for example.
      */
@@ -137,7 +195,7 @@ export declare class ValueSetComposeIncludeFilter extends fhir.BackboneElement {
     /**
      * In case filter.property represents a property of the system, the operation applies to the selected property. In case filter.property represents a filter of the system, the operation SHALL match one of the CodeSystem.filter.operator values.
      */
-    op: FilterOperatorCodeType | null;
+    op: fhir.FhirCode<FilterOperatorCodeType> | null;
     /**
      * Use regex matching with care - full regex matching on every SNOMED CT term is prohibitive, for example.
      */
@@ -149,7 +207,17 @@ export declare class ValueSetComposeIncludeFilter extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for op (ValueSet.compose.include.filter.op)
      */
-    static opRequiredCoding(): FilterOperatorCodingType;
+    static get opRequiredCodes(): {
+        readonly Equals: "=";
+        readonly DescendentOfBySubsumption: "descendent-of";
+        readonly Exists: "exists";
+        readonly GeneralizesBySubsumption: "generalizes";
+        readonly InSet: "in";
+        readonly IsABySubsumption: "is-a";
+        readonly NotIsABySubsumption: "is-not-a";
+        readonly NotInSet: "not-in";
+        readonly RegularExpression: "regex";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -199,15 +267,15 @@ export declare class ValueSetComposeInclude extends fhir.BackboneElement {
     /**
      * The list of concepts is considered ordered, though the order might not have any particular significance. Typically, the order of an expansion follows that defined in the compose element.
      */
-    concept?: fhir.ValueSetComposeIncludeConcept[];
+    concept: fhir.ValueSetComposeIncludeConcept[];
     /**
      * Selecting codes by specifying filters based on properties is only possible where the underlying code system defines appropriate properties. Note that in some cases, the underlying code system defines the logical concepts but not the literal codes for the concepts. In such cases, the literal definitions may be provided by a third party.
      */
-    filter?: fhir.ValueSetComposeIncludeFilter[];
+    filter: fhir.ValueSetComposeIncludeFilter[];
     /**
      * The value set URI is either a logical reference to a defined value set such as a [SNOMED CT reference set](snomedct.html#implicit), or a direct reference to a value set definition using ValueSet.url. The reference might not refer to an actual FHIR ValueSet resource; in this case, whatever is referred to is an implicit definition of a value set that needs to be clear about how versions are resolved.
      */
-    valueSet?: fhir.FhirCanonical[];
+    valueSet: fhir.FhirCanonical[];
     /**
      * Default constructor for ValueSetComposeInclude - initializes any required elements to null if a value is not provided.
      */
@@ -263,7 +331,7 @@ export declare class ValueSetCompose extends fhir.BackboneElement {
     /**
      * Usually this is used to selectively exclude codes that were included by subsumption in the inclusions. Any display names specified for the codes are ignored.
      */
-    exclude?: fhir.ValueSetComposeInclude[];
+    exclude: fhir.ValueSetComposeInclude[];
     /**
      * Default constructor for ValueSetCompose - initializes any required elements to null if a value is not provided.
      */
@@ -415,11 +483,11 @@ export declare class ValueSetExpansionContains extends fhir.BackboneElement {
     /**
      * The designations provided must be based on the value set and code system definitions.
      */
-    designation?: fhir.ValueSetComposeIncludeConceptDesignation[];
+    designation: fhir.ValueSetComposeIncludeConceptDesignation[];
     /**
      * If the expansion uses this element, there is  no implication about the logical relationship between them, and the  structure cannot be used for logical inferencing. The structure  exists to provide navigational assistance for helping human users to  locate codes in the expansion.
      */
-    contains?: fhir.ValueSetExpansionContains[];
+    contains: fhir.ValueSetExpansionContains[];
     /**
      * Default constructor for ValueSetExpansionContains - initializes any required elements to null if a value is not provided.
      */
@@ -486,11 +554,11 @@ export declare class ValueSetExpansion extends fhir.BackboneElement {
     /**
      * The server decides which parameters to include here, but at a minimum, the list SHOULD include all of the parameters that affect the $expand operation. If the expansion will be persisted all of these parameters SHALL be included. If the codeSystem on the server has a specified version then this version SHALL be provided as a parameter in the expansion (note that not all code systems have a version).
      */
-    parameter?: fhir.ValueSetExpansionParameter[];
+    parameter: fhir.ValueSetExpansionParameter[];
     /**
      * The codes that are contained in the value set expansion.
      */
-    contains?: fhir.ValueSetExpansionContains[];
+    contains: fhir.ValueSetExpansionContains[];
     /**
      * Default constructor for ValueSetExpansion - initializes any required elements to null if a value is not provided.
      */
@@ -533,7 +601,7 @@ export interface ValueSetArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of value sets that are appropriate for use versus not.See also the [valueset-workflowStatus](extension-valueset-workflowstatus.html) extension for additional status information related to the editorial process.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Allows filtering of value sets that are appropriate for use versus not.
      */
@@ -605,7 +673,7 @@ export declare class ValueSet extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this value set outside of FHIR, where it is not possible to use the logical URI.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * There may be different value set instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the value set with the format [url]|[version].
      */
@@ -621,7 +689,7 @@ export declare class ValueSet extends fhir.DomainResource {
     /**
      * Allows filtering of value sets that are appropriate for use versus not.See also the [valueset-workflowStatus](extension-valueset-workflowstatus.html) extension for additional status information related to the editorial process.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Allows filtering of value sets that are appropriate for use versus not.
      */
@@ -637,7 +705,7 @@ export declare class ValueSet extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * This description can be used to capture details such as why the value set was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the value set as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the value set is presumed to be the predominant language in the place the value set was created).The description is not intended to describe the semantics of the Value Set - there are no intrinsic semantics separate from the codes contained in its expansion. The description should capture its intended use, which is needed for ensuring integrity for its use in models across future changes. A description should be provided unless the value set is a contained resource (e.g. an anonymous value set in a profile). Most registries will require a description.
      */
@@ -645,11 +713,11 @@ export declare class ValueSet extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the value set to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * Normally immutability is set to 'false', which is the default assumption if it is not populated.  Note that the implication is that if this is set to 'true', there may be only one ValueSet version for this definition. Immutability tends to be set to 'true' in one of two cases: - Where the value set, by the nature of its usage, cannot change.  For example "All specializations of ACT in ActClassCode" - Where there's no safe way to express the "Purpose" such that someone else could safely make changes to the value set definition. Source workflow control must guarantee that the same URI always yields the same definition.
      */
@@ -678,7 +746,12 @@ export declare class ValueSet extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (ValueSet.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

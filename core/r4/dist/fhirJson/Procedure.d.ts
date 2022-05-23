@@ -71,6 +71,10 @@ export interface Procedure extends fhir.DomainResource {
      */
     status: 'completed' | 'entered-in-error' | 'in-progress' | 'not-done' | 'on-hold' | 'preparation' | 'stopped' | 'unknown' | null;
     /**
+     * Extended properties for primitive element: Procedure.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * This is generally only used for "exception" statuses such as "not-done", "suspended" or "aborted". The reason for performing the event at all is captured in reasonCode, not here.
      */
     statusReason?: fhir.CodeableConcept | undefined;

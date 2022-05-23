@@ -1,26 +1,13 @@
 import * as fhir from '../fhir.js';
-import { GoalPriorityCodingType } from '../fhirValueSets/GoalPriorityCodings.js';
-import { ActionConditionKindCodingType } from '../fhirValueSets/ActionConditionKindCodings.js';
 import { ActionConditionKindCodeType } from '../fhirValueSets/ActionConditionKindCodes.js';
-import { ActionRelationshipTypeCodingType } from '../fhirValueSets/ActionRelationshipTypeCodings.js';
 import { ActionRelationshipTypeCodeType } from '../fhirValueSets/ActionRelationshipTypeCodes.js';
-import { ActionParticipantTypeCodingType } from '../fhirValueSets/ActionParticipantTypeCodings.js';
 import { ActionParticipantTypeCodeType } from '../fhirValueSets/ActionParticipantTypeCodes.js';
-import { RequestPriorityCodingType } from '../fhirValueSets/RequestPriorityCodings.js';
 import { RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
-import { ActionTypeCodingType } from '../fhirValueSets/ActionTypeCodings.js';
-import { ActionGroupingBehaviorCodingType } from '../fhirValueSets/ActionGroupingBehaviorCodings.js';
 import { ActionGroupingBehaviorCodeType } from '../fhirValueSets/ActionGroupingBehaviorCodes.js';
-import { ActionSelectionBehaviorCodingType } from '../fhirValueSets/ActionSelectionBehaviorCodings.js';
 import { ActionSelectionBehaviorCodeType } from '../fhirValueSets/ActionSelectionBehaviorCodes.js';
-import { ActionRequiredBehaviorCodingType } from '../fhirValueSets/ActionRequiredBehaviorCodings.js';
 import { ActionRequiredBehaviorCodeType } from '../fhirValueSets/ActionRequiredBehaviorCodes.js';
-import { ActionPrecheckBehaviorCodingType } from '../fhirValueSets/ActionPrecheckBehaviorCodings.js';
 import { ActionPrecheckBehaviorCodeType } from '../fhirValueSets/ActionPrecheckBehaviorCodes.js';
-import { ActionCardinalityBehaviorCodingType } from '../fhirValueSets/ActionCardinalityBehaviorCodings.js';
 import { ActionCardinalityBehaviorCodeType } from '../fhirValueSets/ActionCardinalityBehaviorCodes.js';
-import { PlanDefinitionTypeCodingType } from '../fhirValueSets/PlanDefinitionTypeCodings.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 /**
  * Valid arguments for the PlanDefinitionGoalTarget type.
@@ -144,15 +131,15 @@ export declare class PlanDefinitionGoal extends fhir.BackboneElement {
     /**
      * Identifies problems, conditions, issues, or concerns the goal is intended to address.
      */
-    addresses?: fhir.CodeableConcept[];
+    addresses: fhir.CodeableConcept[];
     /**
      * Didactic or other informational resources associated with the goal that provide further supporting information about the goal. Information resources can include inline text commentary and links to web resources.
      */
-    documentation?: fhir.RelatedArtifact[];
+    documentation: fhir.RelatedArtifact[];
     /**
      * Indicates what should be done and within what timeframe.
      */
-    target?: fhir.PlanDefinitionGoalTarget[];
+    target: fhir.PlanDefinitionGoalTarget[];
     /**
      * Default constructor for PlanDefinitionGoal - initializes any required elements to null if a value is not provided.
      */
@@ -160,7 +147,11 @@ export declare class PlanDefinitionGoal extends fhir.BackboneElement {
     /**
      * Preferred-bound Value Set for priority (PlanDefinition.goal.priority)
      */
-    static priorityPreferredCoding(): GoalPriorityCodingType;
+    static get priorityPreferredCodings(): {
+        readonly HighPriority: fhir.Coding;
+        readonly LowPriority: fhir.Coding;
+        readonly MediumPriority: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -173,7 +164,7 @@ export interface PlanDefinitionActionConditionArgs extends fhir.BackboneElementA
     /**
      * Applicability criteria are used to determine immediate applicability when a plan definition is applied to a given context. Start and stop criteria are carried through application and used to describe enter/exit criteria for an action.
      */
-    kind: ActionConditionKindCodeType | null;
+    kind: fhir.FhirCode<ActionConditionKindCodeType> | string | undefined;
     /**
      * The expression may be inlined or may be a reference to a named expression within a logic library referenced by the library element.
      */
@@ -190,7 +181,7 @@ export declare class PlanDefinitionActionCondition extends fhir.BackboneElement 
     /**
      * Applicability criteria are used to determine immediate applicability when a plan definition is applied to a given context. Start and stop criteria are carried through application and used to describe enter/exit criteria for an action.
      */
-    kind: ActionConditionKindCodeType | null;
+    kind: fhir.FhirCode<ActionConditionKindCodeType> | null;
     /**
      * The expression may be inlined or may be a reference to a named expression within a logic library referenced by the library element.
      */
@@ -202,7 +193,11 @@ export declare class PlanDefinitionActionCondition extends fhir.BackboneElement 
     /**
      * Required-bound Value Set for kind (PlanDefinition.action.condition.kind)
      */
-    static kindRequiredCoding(): ActionConditionKindCodingType;
+    static get kindRequiredCodes(): {
+        readonly Applicability: "applicability";
+        readonly Start: "start";
+        readonly Stop: "stop";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -219,7 +214,7 @@ export interface PlanDefinitionActionRelatedActionArgs extends fhir.BackboneElem
     /**
      * The relationship of this action to the related action.
      */
-    relationship: ActionRelationshipTypeCodeType | null;
+    relationship: fhir.FhirCode<ActionRelationshipTypeCodeType> | string | undefined;
     /**
      * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before.
      */
@@ -248,7 +243,7 @@ export declare class PlanDefinitionActionRelatedAction extends fhir.BackboneElem
     /**
      * The relationship of this action to the related action.
      */
-    relationship: ActionRelationshipTypeCodeType | null;
+    relationship: fhir.FhirCode<ActionRelationshipTypeCodeType> | null;
     /**
      * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before.
      */
@@ -264,7 +259,17 @@ export declare class PlanDefinitionActionRelatedAction extends fhir.BackboneElem
     /**
      * Required-bound Value Set for relationship (PlanDefinition.action.relatedAction.relationship)
      */
-    static relationshipRequiredCoding(): ActionRelationshipTypeCodingType;
+    static get relationshipRequiredCodes(): {
+        readonly After: "after";
+        readonly AfterEnd: "after-end";
+        readonly AfterStart: "after-start";
+        readonly Before: "before";
+        readonly BeforeEnd: "before-end";
+        readonly BeforeStart: "before-start";
+        readonly Concurrent: "concurrent";
+        readonly ConcurrentWithEnd: "concurrent-with-end";
+        readonly ConcurrentWithStart: "concurrent-with-start";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -277,7 +282,7 @@ export interface PlanDefinitionActionParticipantArgs extends fhir.BackboneElemen
     /**
      * The type of participant in the action.
      */
-    type: ActionParticipantTypeCodeType | null;
+    type: fhir.FhirCode<ActionParticipantTypeCodeType> | string | undefined;
     /**
      * The role the participant should play in performing the described action.
      */
@@ -294,7 +299,7 @@ export declare class PlanDefinitionActionParticipant extends fhir.BackboneElemen
     /**
      * The type of participant in the action.
      */
-    type: ActionParticipantTypeCodeType | null;
+    type: fhir.FhirCode<ActionParticipantTypeCodeType> | null;
     /**
      * The role the participant should play in performing the described action.
      */
@@ -306,7 +311,12 @@ export declare class PlanDefinitionActionParticipant extends fhir.BackboneElemen
     /**
      * Required-bound Value Set for type (PlanDefinition.action.participant.type)
      */
-    static typeRequiredCoding(): ActionParticipantTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Device: "device";
+        readonly Patient: "patient";
+        readonly Practitioner: "practitioner";
+        readonly RelatedPerson: "related-person";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -373,7 +383,7 @@ export interface PlanDefinitionActionArgs extends fhir.BackboneElementArgs {
     /**
      * Indicates how quickly the action should be addressed with respect to other actions.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
     /**
      * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for the section of a documentation template.
      */
@@ -464,23 +474,23 @@ export interface PlanDefinitionActionArgs extends fhir.BackboneElementArgs {
     /**
      * Defines the grouping behavior for the action and its children.
      */
-    groupingBehavior?: ActionGroupingBehaviorCodeType | undefined;
+    groupingBehavior?: fhir.FhirCode<ActionGroupingBehaviorCodeType> | string | undefined;
     /**
      * Defines the selection behavior for the action and its children.
      */
-    selectionBehavior?: ActionSelectionBehaviorCodeType | undefined;
+    selectionBehavior?: fhir.FhirCode<ActionSelectionBehaviorCodeType> | string | undefined;
     /**
      * Defines the required behavior for the action.
      */
-    requiredBehavior?: ActionRequiredBehaviorCodeType | undefined;
+    requiredBehavior?: fhir.FhirCode<ActionRequiredBehaviorCodeType> | string | undefined;
     /**
      * Defines whether the action should usually be preselected.
      */
-    precheckBehavior?: ActionPrecheckBehaviorCodeType | undefined;
+    precheckBehavior?: fhir.FhirCode<ActionPrecheckBehaviorCodeType> | string | undefined;
     /**
      * Defines whether the action can be selected multiple times.
      */
-    cardinalityBehavior?: ActionCardinalityBehaviorCodeType | undefined;
+    cardinalityBehavior?: fhir.FhirCode<ActionCardinalityBehaviorCodeType> | string | undefined;
     /**
      * Note that the definition is optional, and if no definition is specified, a dynamicValue with a root ($this) path can be used to define the entire resource dynamically.
      */
@@ -533,23 +543,23 @@ export declare class PlanDefinitionAction extends fhir.BackboneElement {
     /**
      * Indicates how quickly the action should be addressed with respect to other actions.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | undefined;
     /**
      * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for the section of a documentation template.
      */
-    code?: fhir.CodeableConcept[];
+    code: fhir.CodeableConcept[];
     /**
      * This is different than the clinical evidence documentation, it's an actual business description of the reason for performing the action.
      */
-    reason?: fhir.CodeableConcept[];
+    reason: fhir.CodeableConcept[];
     /**
      * Didactic or other informational resources associated with the action that can be provided to the CDS recipient. Information resources can include inline text commentary and links to web resources.
      */
-    documentation?: fhir.RelatedArtifact[];
+    documentation: fhir.RelatedArtifact[];
     /**
      * Identifies goals that this action supports. The reference must be to a goal element defined within this plan definition.
      */
-    goalId?: fhir.FhirId[];
+    goalId: fhir.FhirId[];
     /**
      * The subject of an action overrides the subject at a parent action or on the root of the PlanDefinition if specified.
      * In addition, because the subject needs to be resolved during realization, use of subjects in actions (or in the ActivityDefinition referenced by the action) resolves based on the set of subjects supplied in context and by type (i.e. the patient subject would resolve to a resource of type Patient).
@@ -562,23 +572,23 @@ export declare class PlanDefinitionAction extends fhir.BackboneElement {
     /**
      * A description of when the action should be triggered.
      */
-    trigger?: fhir.TriggerDefinition[];
+    trigger: fhir.TriggerDefinition[];
     /**
      * When multiple conditions of the same kind are present, the effects are combined using AND semantics, so the overall condition is true only if all the conditions are true.
      */
-    condition?: fhir.PlanDefinitionActionCondition[];
+    condition: fhir.PlanDefinitionActionCondition[];
     /**
      * Defines input data requirements for the action.
      */
-    input?: fhir.DataRequirement[];
+    input: fhir.DataRequirement[];
     /**
      * Defines the outputs of the action, if any.
      */
-    output?: fhir.DataRequirement[];
+    output: fhir.DataRequirement[];
     /**
      * When an action depends on multiple actions, the meaning is that all actions are dependencies, rather than that any of the actions are a dependency.
      */
-    relatedAction?: fhir.PlanDefinitionActionRelatedAction[];
+    relatedAction: fhir.PlanDefinitionActionRelatedAction[];
     /**
      * An optional value describing when the action should be performed.
      */
@@ -590,7 +600,7 @@ export declare class PlanDefinitionAction extends fhir.BackboneElement {
     /**
      * Indicates who should participate in performing the action described.
      */
-    participant?: fhir.PlanDefinitionActionParticipant[];
+    participant: fhir.PlanDefinitionActionParticipant[];
     /**
      * The type of action to perform (create, update, remove).
      */
@@ -598,23 +608,23 @@ export declare class PlanDefinitionAction extends fhir.BackboneElement {
     /**
      * Defines the grouping behavior for the action and its children.
      */
-    groupingBehavior?: ActionGroupingBehaviorCodeType | undefined;
+    groupingBehavior?: fhir.FhirCode<ActionGroupingBehaviorCodeType> | undefined;
     /**
      * Defines the selection behavior for the action and its children.
      */
-    selectionBehavior?: ActionSelectionBehaviorCodeType | undefined;
+    selectionBehavior?: fhir.FhirCode<ActionSelectionBehaviorCodeType> | undefined;
     /**
      * Defines the required behavior for the action.
      */
-    requiredBehavior?: ActionRequiredBehaviorCodeType | undefined;
+    requiredBehavior?: fhir.FhirCode<ActionRequiredBehaviorCodeType> | undefined;
     /**
      * Defines whether the action should usually be preselected.
      */
-    precheckBehavior?: ActionPrecheckBehaviorCodeType | undefined;
+    precheckBehavior?: fhir.FhirCode<ActionPrecheckBehaviorCodeType> | undefined;
     /**
      * Defines whether the action can be selected multiple times.
      */
-    cardinalityBehavior?: ActionCardinalityBehaviorCodeType | undefined;
+    cardinalityBehavior?: fhir.FhirCode<ActionCardinalityBehaviorCodeType> | undefined;
     /**
      * Note that the definition is optional, and if no definition is specified, a dynamicValue with a root ($this) path can be used to define the entire resource dynamically.
      */
@@ -630,11 +640,11 @@ export declare class PlanDefinitionAction extends fhir.BackboneElement {
     /**
      * Dynamic values are applied in the order in which they are defined in the PlanDefinition resource. Note that when dynamic values are also specified by a referenced ActivityDefinition, the dynamicValues from the ActivityDefinition are applied first, followed by the dynamicValues specified here. In addition, if both a transform and dynamic values are specific, the dynamic values are applied to the result of the transform.
      */
-    dynamicValue?: fhir.PlanDefinitionActionDynamicValue[];
+    dynamicValue: fhir.PlanDefinitionActionDynamicValue[];
     /**
      * Sub actions that are contained within the action. The behavior of this action determines the functionality of the sub-actions. For example, a selection behavior of at-most-one indicates that of the sub-actions, at most one may be chosen as part of realizing the action definition.
      */
-    action?: fhir.PlanDefinitionAction[];
+    action: fhir.PlanDefinitionAction[];
     /**
      * Default constructor for PlanDefinitionAction - initializes any required elements to null if a value is not provided.
      */
@@ -642,31 +652,62 @@ export declare class PlanDefinitionAction extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for priority (PlanDefinition.action.priority)
      */
-    static priorityRequiredCoding(): RequestPriorityCodingType;
+    static get priorityRequiredCodes(): {
+        readonly ASAP: "asap";
+        readonly Routine: "routine";
+        readonly STAT: "stat";
+        readonly Urgent: "urgent";
+    };
     /**
      * Extensible-bound Value Set for type (PlanDefinition.action.type)
      */
-    static typeExtensibleCoding(): ActionTypeCodingType;
+    static get typeExtensibleCodings(): {
+        readonly Create: fhir.Coding;
+        readonly FireEvent: fhir.Coding;
+        readonly Remove: fhir.Coding;
+        readonly Update: fhir.Coding;
+    };
     /**
      * Required-bound Value Set for groupingBehavior (PlanDefinition.action.groupingBehavior)
      */
-    static groupingBehaviorRequiredCoding(): ActionGroupingBehaviorCodingType;
+    static get groupingBehaviorRequiredCodes(): {
+        readonly LogicalGroup: "logical-group";
+        readonly SentenceGroup: "sentence-group";
+        readonly VisualGroup: "visual-group";
+    };
     /**
      * Required-bound Value Set for selectionBehavior (PlanDefinition.action.selectionBehavior)
      */
-    static selectionBehaviorRequiredCoding(): ActionSelectionBehaviorCodingType;
+    static get selectionBehaviorRequiredCodes(): {
+        readonly All: "all";
+        readonly AllOrNone: "all-or-none";
+        readonly Any: "any";
+        readonly AtMostOne: "at-most-one";
+        readonly ExactlyOne: "exactly-one";
+        readonly OneOrMore: "one-or-more";
+    };
     /**
      * Required-bound Value Set for requiredBehavior (PlanDefinition.action.requiredBehavior)
      */
-    static requiredBehaviorRequiredCoding(): ActionRequiredBehaviorCodingType;
+    static get requiredBehaviorRequiredCodes(): {
+        readonly Could: "could";
+        readonly Must: "must";
+        readonly MustUnlessDocumented: "must-unless-documented";
+    };
     /**
      * Required-bound Value Set for precheckBehavior (PlanDefinition.action.precheckBehavior)
      */
-    static precheckBehaviorRequiredCoding(): ActionPrecheckBehaviorCodingType;
+    static get precheckBehaviorRequiredCodes(): {
+        readonly No: "no";
+        readonly Yes: "yes";
+    };
     /**
      * Required-bound Value Set for cardinalityBehavior (PlanDefinition.action.cardinalityBehavior)
      */
-    static cardinalityBehaviorRequiredCoding(): ActionCardinalityBehaviorCodingType;
+    static get cardinalityBehaviorRequiredCodes(): {
+        readonly Multiple: "multiple";
+        readonly Single: "single";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -713,7 +754,7 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of plan definitions that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Allows filtering of plan definitions that are appropriate for use versus not.
      */
@@ -836,7 +877,7 @@ export declare class PlanDefinition extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this plan definition outside of FHIR, where it is not possible to use the logical URI.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * There may be different plan definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the plan definition with the format [url]|[version].
      */
@@ -860,7 +901,7 @@ export declare class PlanDefinition extends fhir.DomainResource {
     /**
      * Allows filtering of plan definitions that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Allows filtering of plan definitions that are appropriate for use versus not.
      */
@@ -884,7 +925,7 @@ export declare class PlanDefinition extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * This description can be used to capture details such as why the plan definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the plan definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the plan definition is presumed to be the predominant language in the place the plan definition was created).
      */
@@ -892,11 +933,11 @@ export declare class PlanDefinition extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the plan definition to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * This element does not describe the usage of the plan definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this plan definition.
      */
@@ -924,39 +965,39 @@ export declare class PlanDefinition extends fhir.DomainResource {
     /**
      * Descriptive topics related to the content of the plan definition. Topics provide a high-level categorization of the definition that can be useful for filtering and searching.
      */
-    topic?: fhir.CodeableConcept[];
+    topic: fhir.CodeableConcept[];
     /**
      * An individiual or organization primarily involved in the creation and maintenance of the content.
      */
-    author?: fhir.ContactDetail[];
+    author: fhir.ContactDetail[];
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
      */
-    editor?: fhir.ContactDetail[];
+    editor: fhir.ContactDetail[];
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
      */
-    reviewer?: fhir.ContactDetail[];
+    reviewer: fhir.ContactDetail[];
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
      */
-    endorser?: fhir.ContactDetail[];
+    endorser: fhir.ContactDetail[];
     /**
      * Each related artifact is either an attachment, or a reference to another resource, but not both.
      */
-    relatedArtifact?: fhir.RelatedArtifact[];
+    relatedArtifact: fhir.RelatedArtifact[];
     /**
      * A reference to a Library resource containing any formal logic used by the plan definition.
      */
-    library?: fhir.FhirCanonical[];
+    library: fhir.FhirCanonical[];
     /**
      * Goals that describe what the activities within the plan are intended to achieve. For example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
      */
-    goal?: fhir.PlanDefinitionGoal[];
+    goal: fhir.PlanDefinitionGoal[];
     /**
      * Note that there is overlap between many of the elements defined here and the ActivityDefinition resource. When an ActivityDefinition is referenced (using the definition element), the overlapping elements in the plan override the content of the referenced ActivityDefinition unless otherwise documented in the specific elements. See the PlanDefinition resource for more detailed information.
      */
-    action?: fhir.PlanDefinitionAction[];
+    action: fhir.PlanDefinitionAction[];
     /**
      * Default constructor for PlanDefinition - initializes any required elements to null if a value is not provided.
      */
@@ -964,11 +1005,21 @@ export declare class PlanDefinition extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for type (PlanDefinition.type)
      */
-    static typeExtensibleCoding(): PlanDefinitionTypeCodingType;
+    static get typeExtensibleCodings(): {
+        readonly ClinicalProtocol: fhir.Coding;
+        readonly ECARule: fhir.Coding;
+        readonly OrderSet: fhir.Coding;
+        readonly WorkflowDefinition: fhir.Coding;
+    };
     /**
      * Required-bound Value Set for status (PlanDefinition.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

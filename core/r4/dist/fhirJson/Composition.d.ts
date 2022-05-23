@@ -8,6 +8,10 @@ export interface CompositionAttester extends fhir.BackboneElement {
      */
     mode: 'legal' | 'official' | 'personal' | 'professional' | null;
     /**
+     * Extended properties for primitive element: Composition.attester.mode
+     */
+    _mode?: fhir.FhirElement;
+    /**
      * When the composition was attested by the party.
      */
     time?: string | undefined;
@@ -28,6 +32,10 @@ export interface CompositionRelatesTo extends fhir.BackboneElement {
      * If this document appends another document, then the document cannot be fully understood without also accessing the referenced document.
      */
     code: 'appends' | 'replaces' | 'signs' | 'transforms' | null;
+    /**
+     * Extended properties for primitive element: Composition.relatesTo.code
+     */
+    _code?: fhir.FhirElement;
     /**
      * The target composition/document of this relationship.
      */
@@ -88,6 +96,10 @@ export interface CompositionSection extends fhir.BackboneElement {
      */
     mode?: 'changes' | 'snapshot' | 'working' | undefined;
     /**
+     * Extended properties for primitive element: Composition.section.mode
+     */
+    _mode?: fhir.FhirElement;
+    /**
      * Applications SHOULD render ordered lists in the order provided, but MAY allow users to re-order based on their own preferences as well. If there is no order specified, the order is unknown, though there may still be some order.
      */
     orderedBy?: fhir.CodeableConcept | undefined;
@@ -121,6 +133,10 @@ export interface Composition extends fhir.DomainResource {
      * Some reporting work flows require that the original narrative of a final document never be altered; instead, only new narrative can be added. The composition resource has no explicit status for explicitly noting whether this business rule is in effect. This would be handled by an extension if required.
      */
     status: 'amended' | 'entered-in-error' | 'final' | 'preliminary' | null;
+    /**
+     * Extended properties for primitive element: Composition.status
+     */
+    _status?: fhir.FhirElement;
     /**
      * For Composition type, LOINC is ubiquitous and strongly endorsed by HL7. Most implementation guides will require a specific LOINC code, or use LOINC as an extensible binding.
      */

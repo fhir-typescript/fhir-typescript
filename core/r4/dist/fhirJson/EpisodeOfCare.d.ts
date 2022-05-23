@@ -8,6 +8,10 @@ export interface EpisodeOfCareStatusHistory extends fhir.BackboneElement {
      */
     status: 'active' | 'cancelled' | 'entered-in-error' | 'finished' | 'onhold' | 'planned' | 'waitlist' | null;
     /**
+     * Extended properties for primitive element: EpisodeOfCare.statusHistory.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * The period during this EpisodeOfCare that the specific status applied.
      */
     period: fhir.Period | null;
@@ -49,6 +53,10 @@ export interface EpisodeOfCare extends fhir.DomainResource {
      * This element is labeled as a modifier because the status contains codes that mark the episode as not currently valid.
      */
     status: 'active' | 'cancelled' | 'entered-in-error' | 'finished' | 'onhold' | 'planned' | 'waitlist' | null;
+    /**
+     * Extended properties for primitive element: EpisodeOfCare.status
+     */
+    _status?: fhir.FhirElement;
     /**
      * The history of statuses that the EpisodeOfCare has been through (without requiring processing the history of the resource).
      */

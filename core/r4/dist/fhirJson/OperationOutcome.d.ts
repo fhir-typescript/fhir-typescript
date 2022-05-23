@@ -8,6 +8,10 @@ export interface OperationOutcomeIssue extends fhir.BackboneElement {
      */
     severity: 'error' | 'fatal' | 'information' | 'warning' | null;
     /**
+     * Extended properties for primitive element: OperationOutcome.issue.severity
+     */
+    _severity?: fhir.FhirElement;
+    /**
      * Describes the type of the issue. The system that creates an OperationOutcome SHALL choose the most applicable code from the IssueType value set, and may additional provide its own code for the error in the details element.
      */
     code: 'business-rule' | 'code-invalid' | 'conflict' | 'deleted' | 'duplicate' | 'exception' | 'expired' | 'extension' | 'forbidden' | 'incomplete' | 'informational' | 'invalid' | 'invariant' | 'lock-error' | 'login' | 'multiple-matches' | 'no-store' | 'not-found' | 'not-supported' | 'processing' | 'required' | 'security' | 'structure' | 'suppressed' | 'throttled' | 'timeout' | 'too-costly' | 'too-long' | 'transient' | 'unknown' | 'value' | null;

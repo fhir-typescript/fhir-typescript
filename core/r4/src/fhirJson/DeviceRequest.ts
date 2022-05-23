@@ -81,13 +81,25 @@ export interface DeviceRequest extends fhir.DomainResource {
    */
   status?: 'active'|'completed'|'draft'|'entered-in-error'|'on-hold'|'revoked'|'unknown'|undefined;
   /**
+   * Extended properties for primitive element: DeviceRequest.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Whether the request is a proposal, plan, an original order or a reflex order.
    */
   intent: 'directive'|'filler-order'|'instance-order'|'option'|'order'|'original-order'|'plan'|'proposal'|'reflex-order'|null;
   /**
+   * Extended properties for primitive element: DeviceRequest.intent
+   */
+  _intent?:fhir.FhirElement;
+  /**
    * Indicates how quickly the {{title}} should be addressed with respect to other requests.
    */
   priority?: 'asap'|'routine'|'stat'|'urgent'|undefined;
+  /**
+   * Extended properties for primitive element: DeviceRequest.priority
+   */
+  _priority?:fhir.FhirElement;
   /**
    * The details of the device to be used.
    */

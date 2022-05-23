@@ -43,7 +43,7 @@ export declare class MedicinalProductUndesirableEffect extends fhir.DomainResour
     /**
      * The medication for which this is an indication.
      */
-    subject?: fhir.Reference[];
+    subject: fhir.Reference[];
     /**
      * The symptom, condition or undesirable effect.
      */
@@ -59,7 +59,7 @@ export declare class MedicinalProductUndesirableEffect extends fhir.DomainResour
     /**
      * The population group to which this applies.
      */
-    population?: fhir.Population[];
+    population: fhir.Population[];
     /**
      * Default constructor for MedicinalProductUndesirableEffect - initializes any required elements to null if a value is not provided.
      */

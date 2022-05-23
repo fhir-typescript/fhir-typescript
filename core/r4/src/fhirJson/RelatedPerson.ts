@@ -65,6 +65,10 @@ export interface RelatedPerson extends fhir.DomainResource {
    */
   gender?: 'female'|'male'|'other'|'unknown'|undefined;
   /**
+   * Extended properties for primitive element: RelatedPerson.gender
+   */
+  _gender?:fhir.FhirElement;
+  /**
    * The date on which the related person was born.
    */
   birthDate?: string|undefined;

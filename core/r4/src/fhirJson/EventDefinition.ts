@@ -65,6 +65,10 @@ export interface EventDefinition extends fhir.DomainResource {
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
   /**
+   * Extended properties for primitive element: EventDefinition.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Allows filtering of event definitions that are appropriate for use versus not.
    */
   experimental?: boolean|undefined;

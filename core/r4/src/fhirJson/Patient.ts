@@ -31,6 +31,10 @@ export interface PatientContact extends fhir.BackboneElement {
    */
   gender?: 'female'|'male'|'other'|'unknown'|undefined;
   /**
+   * Extended properties for primitive element: Patient.contact.gender
+   */
+  _gender?:fhir.FhirElement;
+  /**
    * Organization on behalf of which the contact is acting or for which the contact is working.
    */
   organization?: fhir.Reference|undefined;
@@ -70,6 +74,10 @@ export interface PatientLink extends fhir.BackboneElement {
    * The type of link between this patient resource and another patient resource.
    */
   type: 'refer'|'replaced-by'|'replaces'|'seealso'|null;
+  /**
+   * Extended properties for primitive element: Patient.link.type
+   */
+  _type?:fhir.FhirElement;
 }
 
 /**
@@ -104,6 +112,10 @@ export interface Patient extends fhir.DomainResource {
    * The gender might not match the biological sex as determined by genetics or the individual's preferred identification. Note that for both humans and particularly animals, there are other legitimate possibilities than male and female, though the vast majority of systems and contexts only support male and female.  Systems providing decision support or enforcing business rules should ideally do this on the basis of Observations dealing with the specific sex or gender aspect of interest (anatomical, chromosomal, social, etc.)  However, because these observations are infrequently recorded, defaulting to the administrative gender is common practice.  Where such defaulting occurs, rule enforcement should allow for the variation between administrative and biological, chromosomal and other gender aspects.  For example, an alert about a hysterectomy on a male should be handled as a warning or overridable error, not a "hard" error.  See the Patient Gender and Sex section for additional information about communicating patient gender and sex.
    */
   gender?: 'female'|'male'|'other'|'unknown'|undefined;
+  /**
+   * Extended properties for primitive element: Patient.gender
+   */
+  _gender?:fhir.FhirElement;
   /**
    * At least an estimated year should be provided as a guess if the real DOB is unknown  There is a standard extension "patient-birthTime" available that should be used where Time is required (such as in maternity/infant care systems).
    */

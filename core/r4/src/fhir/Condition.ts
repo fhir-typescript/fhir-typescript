@@ -74,7 +74,7 @@ export class ConditionStage extends fhir.BackboneElement {
   /**
    * Reference to a formal record of the evidence on which the staging assessment is based.
    */
-  public assessment?: fhir.Reference[];
+  public assessment: fhir.Reference[];
   /**
    * The kind of staging, such as pathological or clinical staging.
    */
@@ -125,11 +125,11 @@ export class ConditionEvidence extends fhir.BackboneElement {
   /**
    * A manifestation or symptom that led to the recording of this condition.
    */
-  public code?: fhir.CodeableConcept[];
+  public code: fhir.CodeableConcept[];
   /**
    * Links to other relevant information, including pathology reports.
    */
-  public detail?: fhir.Reference[];
+  public detail: fhir.Reference[];
   /**
    * Default constructor for ConditionEvidence - initializes any required elements to null if a value is not provided.
    */
@@ -284,7 +284,7 @@ export class Condition extends fhir.DomainResource {
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The data type is CodeableConcept because clinicalStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.
    */
@@ -297,7 +297,7 @@ export class Condition extends fhir.DomainResource {
   /**
    * The categorization is often highly contextual and may appear poorly differentiated or not very useful in other contexts.
    */
-  public category?: fhir.CodeableConcept[];
+  public category: fhir.CodeableConcept[];
   /**
    * Coding of the severity with a terminology is preferred, where possible.
    */
@@ -309,7 +309,7 @@ export class Condition extends fhir.DomainResource {
   /**
    * Only used if not implicit in code found in Condition.code. If the use case requires attributes from the BodySite resource (e.g. to identify and track separately) then use the standard extension [bodySite](extension-bodysite.html).  May be a summary code, or a reference to a very precise definition of the location, or both.
    */
-  public bodySite?: fhir.CodeableConcept[];
+  public bodySite: fhir.CodeableConcept[];
   /**
    * Indicates the patient or group who the condition record is associated with.
    */
@@ -349,15 +349,15 @@ export class Condition extends fhir.DomainResource {
   /**
    * Clinical stage or grade of a condition. May include formal severity assessments.
    */
-  public stage?: fhir.ConditionStage[];
+  public stage: fhir.ConditionStage[];
   /**
    * The evidence may be a simple list of coded symptoms/manifestations, or references to observations or formal assessments, or both.
    */
-  public evidence?: fhir.ConditionEvidence[];
+  public evidence: fhir.ConditionEvidence[];
   /**
    * Additional information about the Condition. This is a general notes/comments entry  for description of the Condition, its diagnosis and prognosis.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Default constructor for Condition - initializes any required elements to null if a value is not provided.
    */
@@ -402,25 +402,25 @@ export class Condition extends fhir.DomainResource {
   /**
    * Required-bound Value Set for clinicalStatus (Condition.clinicalStatus)
    */
-  public static clinicalStatusRequiredCoding():ConditionClinicalCodingType {
-    return ConditionClinicalCodings;
+  public static get clinicalStatusRequiredCodes() {
+    return ConditionClinicalCodes;
   }
   /**
    * Required-bound Value Set for verificationStatus (Condition.verificationStatus)
    */
-  public static verificationStatusRequiredCoding():ConditionVerStatusCodingType {
-    return ConditionVerStatusCodings;
+  public static get verificationStatusRequiredCodes() {
+    return ConditionVerStatusCodes;
   }
   /**
    * Extensible-bound Value Set for category (Condition.category)
    */
-  public static categoryExtensibleCoding():ConditionCategoryCodingType {
+  public static get categoryExtensibleCodings() {
     return ConditionCategoryCodings;
   }
   /**
    * Preferred-bound Value Set for severity (Condition.severity)
    */
-  public static severityPreferredCoding():ConditionSeverityCodingType {
+  public static get severityPreferredCodings() {
     return ConditionSeverityCodings;
   }
   /**
@@ -429,17 +429,23 @@ export class Condition extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Condition" fhir: Condition.resourceType:"Condition"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Condition" fhir: Condition.resourceType:"Condition"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['clinicalStatus'] && (!Object.values(ConditionClinicalCodes).includes(this.clinicalStatus as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property clinicalStatus?:fhir.CodeableConcept fhir: Condition.clinicalStatus:CodeableConcept Required binding to: ConditionClinical' });
+    }
     if (this["clinicalStatus"]) { issues.push(...this.clinicalStatus.doModelValidation()); }
+    if (this['verificationStatus'] && (!Object.values(ConditionVerStatusCodes).includes(this.verificationStatus as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property verificationStatus?:fhir.CodeableConcept fhir: Condition.verificationStatus:CodeableConcept Required binding to: ConditionVerStatus' });
+    }
     if (this["verificationStatus"]) { issues.push(...this.verificationStatus.doModelValidation()); }
     if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["severity"]) { issues.push(...this.severity.doModelValidation()); }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["bodySite"]) { this.bodySite.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: Condition.subject:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: Condition.subject:Reference' });
     }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }

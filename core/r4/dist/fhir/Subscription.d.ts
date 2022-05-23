@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { SubscriptionChannelTypeCodingType } from '../fhirValueSets/SubscriptionChannelTypeCodings.js';
 import { SubscriptionChannelTypeCodeType } from '../fhirValueSets/SubscriptionChannelTypeCodes.js';
-import { SubscriptionStatusCodingType } from '../fhirValueSets/SubscriptionStatusCodings.js';
 import { SubscriptionStatusCodeType } from '../fhirValueSets/SubscriptionStatusCodes.js';
 /**
  * Valid arguments for the SubscriptionChannel type.
@@ -10,7 +8,7 @@ export interface SubscriptionChannelArgs extends fhir.BackboneElementArgs {
     /**
      * The type of channel to send notifications on.
      */
-    type: SubscriptionChannelTypeCodeType | null;
+    type: fhir.FhirCode<SubscriptionChannelTypeCodeType> | string | undefined;
     /**
      * For rest-hook, and websocket, the end-point must be an http: or https: URL; for email, a mailto: url, for sms, a tel: url, and for message the endpoint can be in any form of url the server understands (usually, http: or mllp:). The URI is allowed to be relative; in which case, it is relative to the server end-point (since there may be more than one, clients should avoid using relative URIs).
      */
@@ -35,7 +33,7 @@ export declare class SubscriptionChannel extends fhir.BackboneElement {
     /**
      * The type of channel to send notifications on.
      */
-    type: SubscriptionChannelTypeCodeType | null;
+    type: fhir.FhirCode<SubscriptionChannelTypeCodeType> | null;
     /**
      * For rest-hook, and websocket, the end-point must be an http: or https: URL; for email, a mailto: url, for sms, a tel: url, and for message the endpoint can be in any form of url the server understands (usually, http: or mllp:). The URI is allowed to be relative; in which case, it is relative to the server end-point (since there may be more than one, clients should avoid using relative URIs).
      */
@@ -47,7 +45,7 @@ export declare class SubscriptionChannel extends fhir.BackboneElement {
     /**
      * Exactly what these mean depend on the channel type. They can convey additional information to the recipient and/or meet security requirements; for example, support of multiple headers in the outgoing notifications for rest-hook type subscriptions.
      */
-    header?: fhir.FhirString[];
+    header: fhir.FhirString[];
     /**
      * Default constructor for SubscriptionChannel - initializes any required elements to null if a value is not provided.
      */
@@ -55,7 +53,13 @@ export declare class SubscriptionChannel extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for type (Subscription.channel.type)
      */
-    static typeRequiredCoding(): SubscriptionChannelTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Email: "email";
+        readonly Message: "message";
+        readonly RestHook: "rest-hook";
+        readonly SMS: "sms";
+        readonly Websocket: "websocket";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -73,7 +77,7 @@ export interface SubscriptionArgs extends fhir.DomainResourceArgs {
      * A client can only submit subscription resources in the requested or off state. Only the server can  move a subscription from requested to active, and then to error. Either the server or the client can turn a subscription off.
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: SubscriptionStatusCodeType | null;
+    status: fhir.FhirCode<SubscriptionStatusCodeType> | string | undefined;
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
      */
@@ -115,11 +119,11 @@ export declare class Subscription extends fhir.DomainResource {
      * A client can only submit subscription resources in the requested or off state. Only the server can  move a subscription from requested to active, and then to error. Either the server or the client can turn a subscription off.
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: SubscriptionStatusCodeType | null;
+    status: fhir.FhirCode<SubscriptionStatusCodeType> | null;
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
      */
-    contact?: fhir.ContactPoint[];
+    contact: fhir.ContactPoint[];
     /**
      * The server is permitted to deviate from this time but should observe it.
      */
@@ -147,7 +151,12 @@ export declare class Subscription extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (Subscription.status)
      */
-    static statusRequiredCoding(): SubscriptionStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Error: "error";
+        readonly Off: "off";
+        readonly Requested: "requested";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

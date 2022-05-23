@@ -42,15 +42,15 @@ export class DomainResource extends fhir.Resource {
   /**
    * This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.
    */
-  public contained?: fhir.FhirResource[];
+  public contained: fhir.FhirResource[];
   /**
    * There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.
    */
-  public extension?: fhir.Extension[];
+  public extension: fhir.Extension[];
   /**
    * There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.
    */
-  public modifierExtension?: fhir.Extension[];
+  public modifierExtension: fhir.Extension[];
   /**
    * Default constructor for DomainResource - initializes any required elements to null if a value is not provided.
    */

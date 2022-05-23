@@ -44,7 +44,7 @@ export interface ActivityDefinitionParticipantArgs extends fhir.BackboneElementA
   /**
    * The type of participant in the action.
    */
-  type: ActionParticipantTypeCodeType|null;
+  type: fhir.FhirCode<ActionParticipantTypeCodeType>|string|undefined;
   /**
    * The role the participant should play in performing the described action.
    */
@@ -62,7 +62,7 @@ export class ActivityDefinitionParticipant extends fhir.BackboneElement {
   /**
    * The type of participant in the action.
    */
-  public type: ActionParticipantTypeCodeType|null;
+  public type: fhir.FhirCode<ActionParticipantTypeCodeType>|null;
   /**
    * The role the participant should play in performing the described action.
    */
@@ -72,15 +72,15 @@ export class ActivityDefinitionParticipant extends fhir.BackboneElement {
    */
   constructor(source:Partial<ActivityDefinitionParticipantArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<ActionParticipantTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
   }
   /**
    * Required-bound Value Set for type (ActivityDefinition.participant.type)
    */
-  public static typeRequiredCoding():ActionParticipantTypeCodingType {
-    return ActionParticipantTypeCodings;
+  public static get typeRequiredCodes() {
+    return ActionParticipantTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -88,8 +88,12 @@ export class ActivityDefinitionParticipant extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:ActionParticipantTypeCodeType fhir: ActivityDefinition.participant.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<ActionParticipantTypeCodeType> fhir: ActivityDefinition.participant.type:code' });
     }
+    if (this['type'] && (!Object.values(ActionParticipantTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<ActionParticipantTypeCodeType> fhir: ActivityDefinition.participant.type:code Required binding to: ActionParticipantType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["role"]) { issues.push(...this.role.doModelValidation()); }
     return issues;
   }
@@ -140,11 +144,11 @@ export class ActivityDefinitionDynamicValue extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['path']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property path:fhir.FhirString fhir: ActivityDefinition.dynamicValue.path:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property path:fhir.FhirString fhir: ActivityDefinition.dynamicValue.path:string' });
     }
     if (this["path"]) { issues.push(...this.path.doModelValidation()); }
     if (!this['expression']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property expression:fhir.Expression fhir: ActivityDefinition.dynamicValue.expression:Expression', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property expression:fhir.Expression fhir: ActivityDefinition.dynamicValue.expression:Expression' });
     }
     if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
     return issues;
@@ -187,7 +191,7 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of activity definitions that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of activity definitions that are appropriate for use versus not.
    */
@@ -295,11 +299,11 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * Indicates the level of authority/intentionality associated with the activity and where the request should fit into the workflow chain.
    */
-  intent?: RequestIntentCodeType|undefined;
+  intent?: fhir.FhirCode<RequestIntentCodeType>|string|undefined;
   /**
    * Indicates how quickly the activity  should be addressed with respect to other requests.
    */
-  priority?: RequestPriorityCodeType|undefined;
+  priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
   /**
    * This element is not intended to be used to communicate a decision support response to cancel an order in progress. That should be done with the "remove" type of a PlanDefinition or RequestGroup.
    */
@@ -407,7 +411,7 @@ export class ActivityDefinition extends fhir.DomainResource {
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this activity definition outside of FHIR, where it is not possible to use the logical URI.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * There may be different activity definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the activity definition with the format [url]|[version].
    */
@@ -427,7 +431,7 @@ export class ActivityDefinition extends fhir.DomainResource {
   /**
    * Allows filtering of activity definitions that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of activity definitions that are appropriate for use versus not.
    */
@@ -451,7 +455,7 @@ export class ActivityDefinition extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the activity definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the activity definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the activity definition is presumed to be the predominant language in the place the activity definition was created).
    */
@@ -459,11 +463,11 @@ export class ActivityDefinition extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the activity definition to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * This element does not describe the usage of the activity definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this activity definition.
    */
@@ -491,31 +495,31 @@ export class ActivityDefinition extends fhir.DomainResource {
   /**
    * Descriptive topics related to the content of the activity. Topics provide a high-level categorization of the activity that can be useful for filtering and searching.
    */
-  public topic?: fhir.CodeableConcept[];
+  public topic: fhir.CodeableConcept[];
   /**
    * An individiual or organization primarily involved in the creation and maintenance of the content.
    */
-  public author?: fhir.ContactDetail[];
+  public author: fhir.ContactDetail[];
   /**
    * An individual or organization primarily responsible for internal coherence of the content.
    */
-  public editor?: fhir.ContactDetail[];
+  public editor: fhir.ContactDetail[];
   /**
    * An individual or organization primarily responsible for review of some aspect of the content.
    */
-  public reviewer?: fhir.ContactDetail[];
+  public reviewer: fhir.ContactDetail[];
   /**
    * An individual or organization responsible for officially endorsing the content for use in some setting.
    */
-  public endorser?: fhir.ContactDetail[];
+  public endorser: fhir.ContactDetail[];
   /**
    * Each related artifact is either an attachment, or a reference to another resource, but not both.
    */
-  public relatedArtifact?: fhir.RelatedArtifact[];
+  public relatedArtifact: fhir.RelatedArtifact[];
   /**
    * A reference to a Library resource containing any formal logic used by the activity definition.
    */
-  public library?: fhir.FhirCanonical[];
+  public library: fhir.FhirCanonical[];
   /**
    * May determine what types of extensions are permitted.
    */
@@ -531,11 +535,11 @@ export class ActivityDefinition extends fhir.DomainResource {
   /**
    * Indicates the level of authority/intentionality associated with the activity and where the request should fit into the workflow chain.
    */
-  public intent?: RequestIntentCodeType|undefined;
+  public intent?: fhir.FhirCode<RequestIntentCodeType>|undefined;
   /**
    * Indicates how quickly the activity  should be addressed with respect to other requests.
    */
-  public priority?: RequestPriorityCodeType|undefined;
+  public priority?: fhir.FhirCode<RequestPriorityCodeType>|undefined;
   /**
    * This element is not intended to be used to communicate a decision support response to cancel an order in progress. That should be done with the "remove" type of a PlanDefinition or RequestGroup.
    */
@@ -555,7 +559,7 @@ export class ActivityDefinition extends fhir.DomainResource {
   /**
    * Indicates who should participate in performing the action described.
    */
-  public participant?: fhir.ActivityDefinitionParticipant[];
+  public participant: fhir.ActivityDefinitionParticipant[];
   /**
    * Identifies the food, drug or other product being consumed or supplied in the activity.
    */
@@ -571,23 +575,23 @@ export class ActivityDefinition extends fhir.DomainResource {
   /**
    * If a dosage instruction is used, the definition should not specify timing or quantity.
    */
-  public dosage?: fhir.Dosage[];
+  public dosage: fhir.Dosage[];
   /**
    * Only used if not implicit in the code found in ServiceRequest.type.
    */
-  public bodySite?: fhir.CodeableConcept[];
+  public bodySite: fhir.CodeableConcept[];
   /**
    * Defines specimen requirements for the action to be performed, such as required specimens for a lab test.
    */
-  public specimenRequirement?: fhir.Reference[];
+  public specimenRequirement: fhir.Reference[];
   /**
    * Defines observation requirements for the action to be performed, such as body weight or surface area.
    */
-  public observationRequirement?: fhir.Reference[];
+  public observationRequirement: fhir.Reference[];
   /**
    * Defines the observations that are expected to be produced by the action.
    */
-  public observationResultRequirement?: fhir.Reference[];
+  public observationResultRequirement: fhir.Reference[];
   /**
    * Note that if both a transform and dynamic values are specified, the dynamic values will be applied to the result of the transform.
    */
@@ -595,7 +599,7 @@ export class ActivityDefinition extends fhir.DomainResource {
   /**
    * Dynamic values are applied in the order in which they are defined in the ActivityDefinition. Note that if both a transform and dynamic values are specified, the dynamic values will be applied to the result of the transform.
    */
-  public dynamicValue?: fhir.ActivityDefinitionDynamicValue[];
+  public dynamicValue: fhir.ActivityDefinitionDynamicValue[];
   /**
    * Default constructor for ActivityDefinition - initializes any required elements to null if a value is not provided.
    */
@@ -609,7 +613,7 @@ export class ActivityDefinition extends fhir.DomainResource {
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
     if (source['subtitle']) { this.subtitle = new fhir.FhirString({value: source.subtitle}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['subject']) { this.subject = source.subject; }
@@ -647,8 +651,8 @@ export class ActivityDefinition extends fhir.DomainResource {
     if (source['kind']) { this.kind = new fhir.FhirCode({value: source.kind}); }
     if (source['profile']) { this.profile = new fhir.FhirCanonical({value: source.profile}); }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['intent']) { this.intent = source.intent; }
-    if (source['priority']) { this.priority = source.priority; }
+    if (source['intent']) { this.intent = new fhir.FhirCode<RequestIntentCodeType>({value: source.intent}); }
+    if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
     if (source['doNotPerform']) { this.doNotPerform = new fhir.FhirBoolean({value: source.doNotPerform}); }
     if (source['timing']) { this.timing = source.timing; }
     else if (source['timingTiming']) { this.timing = new fhir.Timing(source.timingTiming); }
@@ -681,26 +685,26 @@ export class ActivityDefinition extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (ActivityDefinition.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Required-bound Value Set for kind (ActivityDefinition.kind)
    */
-  public static kindRequiredCoding():RequestResourceTypesCodingType {
-    return RequestResourceTypesCodings;
+  public static get kindRequiredCodes() {
+    return RequestResourceTypesCodes;
   }
   /**
    * Required-bound Value Set for intent (ActivityDefinition.intent)
    */
-  public static intentRequiredCoding():RequestIntentCodingType {
-    return RequestIntentCodings;
+  public static get intentRequiredCodes() {
+    return RequestIntentCodes;
   }
   /**
    * Required-bound Value Set for priority (ActivityDefinition.priority)
    */
-  public static priorityRequiredCoding():RequestPriorityCodingType {
-    return RequestPriorityCodings;
+  public static get priorityRequiredCodes() {
+    return RequestPriorityCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -708,7 +712,7 @@ export class ActivityDefinition extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ActivityDefinition" fhir: ActivityDefinition.resourceType:"ActivityDefinition"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ActivityDefinition" fhir: ActivityDefinition.resourceType:"ActivityDefinition"' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -717,8 +721,12 @@ export class ActivityDefinition extends fhir.DomainResource {
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: ActivityDefinition.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: ActivityDefinition.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: ActivityDefinition.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
@@ -739,9 +747,20 @@ export class ActivityDefinition extends fhir.DomainResource {
     if (this["endorser"]) { this.endorser.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["library"]) { this.library.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['kind'] && (!Object.values(RequestResourceTypesCodes).includes(this.kind as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind?:fhir.FhirCode fhir: ActivityDefinition.kind:code Required binding to: RequestResourceTypes' });
+    }
     if (this["kind"]) { issues.push(...this.kind.doModelValidation()); }
     if (this["profile"]) { issues.push(...this.profile.doModelValidation()); }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this['intent'] && (!Object.values(RequestIntentCodes).includes(this.intent as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent?:fhir.FhirCode<RequestIntentCodeType> fhir: ActivityDefinition.intent:code Required binding to: RequestIntent' });
+    }
+    if (this["intent"]) { issues.push(...this.intent.doModelValidation()); }
+    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority?:fhir.FhirCode<RequestPriorityCodeType> fhir: ActivityDefinition.priority:code Required binding to: RequestPriority' });
+    }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
     if (this["doNotPerform"]) { issues.push(...this.doNotPerform.doModelValidation()); }
     if (this["location"]) { issues.push(...this.location.doModelValidation()); }
     if (this["participant"]) { this.participant.forEach((x) => { issues.push(...x.doModelValidation()); }) }

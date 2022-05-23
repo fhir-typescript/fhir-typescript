@@ -218,15 +218,15 @@ export class PlanDefinitionGoal extends fhir.BackboneElement {
   /**
    * Identifies problems, conditions, issues, or concerns the goal is intended to address.
    */
-  public addresses?: fhir.CodeableConcept[];
+  public addresses: fhir.CodeableConcept[];
   /**
    * Didactic or other informational resources associated with the goal that provide further supporting information about the goal. Information resources can include inline text commentary and links to web resources.
    */
-  public documentation?: fhir.RelatedArtifact[];
+  public documentation: fhir.RelatedArtifact[];
   /**
    * Indicates what should be done and within what timeframe.
    */
-  public target?: fhir.PlanDefinitionGoalTarget[];
+  public target: fhir.PlanDefinitionGoalTarget[];
   /**
    * Default constructor for PlanDefinitionGoal - initializes any required elements to null if a value is not provided.
    */
@@ -247,7 +247,7 @@ export class PlanDefinitionGoal extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for priority (PlanDefinition.goal.priority)
    */
-  public static priorityPreferredCoding():GoalPriorityCodingType {
+  public static get priorityPreferredCodings() {
     return GoalPriorityCodings;
   }
   /**
@@ -257,7 +257,7 @@ export class PlanDefinitionGoal extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (!this['description']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property description:fhir.CodeableConcept fhir: PlanDefinition.goal.description:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description:fhir.CodeableConcept fhir: PlanDefinition.goal.description:CodeableConcept' });
     }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
@@ -275,7 +275,7 @@ export interface PlanDefinitionActionConditionArgs extends fhir.BackboneElementA
   /**
    * Applicability criteria are used to determine immediate applicability when a plan definition is applied to a given context. Start and stop criteria are carried through application and used to describe enter/exit criteria for an action.
    */
-  kind: ActionConditionKindCodeType|null;
+  kind: fhir.FhirCode<ActionConditionKindCodeType>|string|undefined;
   /**
    * The expression may be inlined or may be a reference to a named expression within a logic library referenced by the library element.
    */
@@ -293,7 +293,7 @@ export class PlanDefinitionActionCondition extends fhir.BackboneElement {
   /**
    * Applicability criteria are used to determine immediate applicability when a plan definition is applied to a given context. Start and stop criteria are carried through application and used to describe enter/exit criteria for an action.
    */
-  public kind: ActionConditionKindCodeType|null;
+  public kind: fhir.FhirCode<ActionConditionKindCodeType>|null;
   /**
    * The expression may be inlined or may be a reference to a named expression within a logic library referenced by the library element.
    */
@@ -303,15 +303,15 @@ export class PlanDefinitionActionCondition extends fhir.BackboneElement {
    */
   constructor(source:Partial<PlanDefinitionActionConditionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['kind']) { this.kind = source.kind; }
+    if (source['kind']) { this.kind = new fhir.FhirCode<ActionConditionKindCodeType>({value: source.kind}); }
     else { this.kind = null; }
     if (source['expression']) { this.expression = new fhir.Expression(source.expression); }
   }
   /**
    * Required-bound Value Set for kind (PlanDefinition.action.condition.kind)
    */
-  public static kindRequiredCoding():ActionConditionKindCodingType {
-    return ActionConditionKindCodings;
+  public static get kindRequiredCodes() {
+    return ActionConditionKindCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -319,8 +319,12 @@ export class PlanDefinitionActionCondition extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['kind']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property kind:ActionConditionKindCodeType fhir: PlanDefinition.action.condition.kind:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind:fhir.FhirCode<ActionConditionKindCodeType> fhir: PlanDefinition.action.condition.kind:code' });
     }
+    if (this['kind'] && (!Object.values(ActionConditionKindCodes).includes(this.kind as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind:fhir.FhirCode<ActionConditionKindCodeType> fhir: PlanDefinition.action.condition.kind:code Required binding to: ActionConditionKind' });
+    }
+    if (this["kind"]) { issues.push(...this.kind.doModelValidation()); }
     if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
     return issues;
   }
@@ -336,7 +340,7 @@ export interface PlanDefinitionActionRelatedActionArgs extends fhir.BackboneElem
   /**
    * The relationship of this action to the related action.
    */
-  relationship: ActionRelationshipTypeCodeType|null;
+  relationship: fhir.FhirCode<ActionRelationshipTypeCodeType>|string|undefined;
   /**
    * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before.
    */
@@ -366,7 +370,7 @@ export class PlanDefinitionActionRelatedAction extends fhir.BackboneElement {
   /**
    * The relationship of this action to the related action.
    */
-  public relationship: ActionRelationshipTypeCodeType|null;
+  public relationship: fhir.FhirCode<ActionRelationshipTypeCodeType>|null;
   /**
    * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before.
    */
@@ -382,7 +386,7 @@ export class PlanDefinitionActionRelatedAction extends fhir.BackboneElement {
     super(source, options);
     if (source['actionId']) { this.actionId = new fhir.FhirId({value: source.actionId}); }
     else { this.actionId = null; }
-    if (source['relationship']) { this.relationship = source.relationship; }
+    if (source['relationship']) { this.relationship = new fhir.FhirCode<ActionRelationshipTypeCodeType>({value: source.relationship}); }
     else { this.relationship = null; }
     if (source['offset']) { this.offset = source.offset; }
     else if (source['offsetDuration']) { this.offset = new fhir.Duration(source.offsetDuration); }
@@ -391,8 +395,8 @@ export class PlanDefinitionActionRelatedAction extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for relationship (PlanDefinition.action.relatedAction.relationship)
    */
-  public static relationshipRequiredCoding():ActionRelationshipTypeCodingType {
-    return ActionRelationshipTypeCodings;
+  public static get relationshipRequiredCodes() {
+    return ActionRelationshipTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -400,12 +404,16 @@ export class PlanDefinitionActionRelatedAction extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['actionId']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actionId:fhir.FhirId fhir: PlanDefinition.action.relatedAction.actionId:id', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actionId:fhir.FhirId fhir: PlanDefinition.action.relatedAction.actionId:id' });
     }
     if (this["actionId"]) { issues.push(...this.actionId.doModelValidation()); }
     if (!this['relationship']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property relationship:ActionRelationshipTypeCodeType fhir: PlanDefinition.action.relatedAction.relationship:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property relationship:fhir.FhirCode<ActionRelationshipTypeCodeType> fhir: PlanDefinition.action.relatedAction.relationship:code' });
     }
+    if (this['relationship'] && (!Object.values(ActionRelationshipTypeCodes).includes(this.relationship as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property relationship:fhir.FhirCode<ActionRelationshipTypeCodeType> fhir: PlanDefinition.action.relatedAction.relationship:code Required binding to: ActionRelationshipType' });
+    }
+    if (this["relationship"]) { issues.push(...this.relationship.doModelValidation()); }
     return issues;
   }
 }
@@ -416,7 +424,7 @@ export interface PlanDefinitionActionParticipantArgs extends fhir.BackboneElemen
   /**
    * The type of participant in the action.
    */
-  type: ActionParticipantTypeCodeType|null;
+  type: fhir.FhirCode<ActionParticipantTypeCodeType>|string|undefined;
   /**
    * The role the participant should play in performing the described action.
    */
@@ -434,7 +442,7 @@ export class PlanDefinitionActionParticipant extends fhir.BackboneElement {
   /**
    * The type of participant in the action.
    */
-  public type: ActionParticipantTypeCodeType|null;
+  public type: fhir.FhirCode<ActionParticipantTypeCodeType>|null;
   /**
    * The role the participant should play in performing the described action.
    */
@@ -444,15 +452,15 @@ export class PlanDefinitionActionParticipant extends fhir.BackboneElement {
    */
   constructor(source:Partial<PlanDefinitionActionParticipantArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<ActionParticipantTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
   }
   /**
    * Required-bound Value Set for type (PlanDefinition.action.participant.type)
    */
-  public static typeRequiredCoding():ActionParticipantTypeCodingType {
-    return ActionParticipantTypeCodings;
+  public static get typeRequiredCodes() {
+    return ActionParticipantTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -460,8 +468,12 @@ export class PlanDefinitionActionParticipant extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:ActionParticipantTypeCodeType fhir: PlanDefinition.action.participant.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<ActionParticipantTypeCodeType> fhir: PlanDefinition.action.participant.type:code' });
     }
+    if (this['type'] && (!Object.values(ActionParticipantTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<ActionParticipantTypeCodeType> fhir: PlanDefinition.action.participant.type:code Required binding to: ActionParticipantType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["role"]) { issues.push(...this.role.doModelValidation()); }
     return issues;
   }
@@ -537,7 +549,7 @@ export interface PlanDefinitionActionArgs extends fhir.BackboneElementArgs {
   /**
    * Indicates how quickly the action should be addressed with respect to other actions.
    */
-  priority?: RequestPriorityCodeType|undefined;
+  priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
   /**
    * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for the section of a documentation template.
    */
@@ -628,23 +640,23 @@ export interface PlanDefinitionActionArgs extends fhir.BackboneElementArgs {
   /**
    * Defines the grouping behavior for the action and its children.
    */
-  groupingBehavior?: ActionGroupingBehaviorCodeType|undefined;
+  groupingBehavior?: fhir.FhirCode<ActionGroupingBehaviorCodeType>|string|undefined;
   /**
    * Defines the selection behavior for the action and its children.
    */
-  selectionBehavior?: ActionSelectionBehaviorCodeType|undefined;
+  selectionBehavior?: fhir.FhirCode<ActionSelectionBehaviorCodeType>|string|undefined;
   /**
    * Defines the required behavior for the action.
    */
-  requiredBehavior?: ActionRequiredBehaviorCodeType|undefined;
+  requiredBehavior?: fhir.FhirCode<ActionRequiredBehaviorCodeType>|string|undefined;
   /**
    * Defines whether the action should usually be preselected.
    */
-  precheckBehavior?: ActionPrecheckBehaviorCodeType|undefined;
+  precheckBehavior?: fhir.FhirCode<ActionPrecheckBehaviorCodeType>|string|undefined;
   /**
    * Defines whether the action can be selected multiple times.
    */
-  cardinalityBehavior?: ActionCardinalityBehaviorCodeType|undefined;
+  cardinalityBehavior?: fhir.FhirCode<ActionCardinalityBehaviorCodeType>|string|undefined;
   /**
    * Note that the definition is optional, and if no definition is specified, a dynamicValue with a root ($this) path can be used to define the entire resource dynamically.
    */
@@ -698,23 +710,23 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
   /**
    * Indicates how quickly the action should be addressed with respect to other actions.
    */
-  public priority?: RequestPriorityCodeType|undefined;
+  public priority?: fhir.FhirCode<RequestPriorityCodeType>|undefined;
   /**
    * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for the section of a documentation template.
    */
-  public code?: fhir.CodeableConcept[];
+  public code: fhir.CodeableConcept[];
   /**
    * This is different than the clinical evidence documentation, it's an actual business description of the reason for performing the action.
    */
-  public reason?: fhir.CodeableConcept[];
+  public reason: fhir.CodeableConcept[];
   /**
    * Didactic or other informational resources associated with the action that can be provided to the CDS recipient. Information resources can include inline text commentary and links to web resources.
    */
-  public documentation?: fhir.RelatedArtifact[];
+  public documentation: fhir.RelatedArtifact[];
   /**
    * Identifies goals that this action supports. The reference must be to a goal element defined within this plan definition.
    */
-  public goalId?: fhir.FhirId[];
+  public goalId: fhir.FhirId[];
   /**
    * The subject of an action overrides the subject at a parent action or on the root of the PlanDefinition if specified.
    * In addition, because the subject needs to be resolved during realization, use of subjects in actions (or in the ActivityDefinition referenced by the action) resolves based on the set of subjects supplied in context and by type (i.e. the patient subject would resolve to a resource of type Patient).
@@ -727,23 +739,23 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
   /**
    * A description of when the action should be triggered.
    */
-  public trigger?: fhir.TriggerDefinition[];
+  public trigger: fhir.TriggerDefinition[];
   /**
    * When multiple conditions of the same kind are present, the effects are combined using AND semantics, so the overall condition is true only if all the conditions are true.
    */
-  public condition?: fhir.PlanDefinitionActionCondition[];
+  public condition: fhir.PlanDefinitionActionCondition[];
   /**
    * Defines input data requirements for the action.
    */
-  public input?: fhir.DataRequirement[];
+  public input: fhir.DataRequirement[];
   /**
    * Defines the outputs of the action, if any.
    */
-  public output?: fhir.DataRequirement[];
+  public output: fhir.DataRequirement[];
   /**
    * When an action depends on multiple actions, the meaning is that all actions are dependencies, rather than that any of the actions are a dependency.
    */
-  public relatedAction?: fhir.PlanDefinitionActionRelatedAction[];
+  public relatedAction: fhir.PlanDefinitionActionRelatedAction[];
   /**
    * An optional value describing when the action should be performed.
    */
@@ -755,7 +767,7 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
   /**
    * Indicates who should participate in performing the action described.
    */
-  public participant?: fhir.PlanDefinitionActionParticipant[];
+  public participant: fhir.PlanDefinitionActionParticipant[];
   /**
    * The type of action to perform (create, update, remove).
    */
@@ -763,23 +775,23 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
   /**
    * Defines the grouping behavior for the action and its children.
    */
-  public groupingBehavior?: ActionGroupingBehaviorCodeType|undefined;
+  public groupingBehavior?: fhir.FhirCode<ActionGroupingBehaviorCodeType>|undefined;
   /**
    * Defines the selection behavior for the action and its children.
    */
-  public selectionBehavior?: ActionSelectionBehaviorCodeType|undefined;
+  public selectionBehavior?: fhir.FhirCode<ActionSelectionBehaviorCodeType>|undefined;
   /**
    * Defines the required behavior for the action.
    */
-  public requiredBehavior?: ActionRequiredBehaviorCodeType|undefined;
+  public requiredBehavior?: fhir.FhirCode<ActionRequiredBehaviorCodeType>|undefined;
   /**
    * Defines whether the action should usually be preselected.
    */
-  public precheckBehavior?: ActionPrecheckBehaviorCodeType|undefined;
+  public precheckBehavior?: fhir.FhirCode<ActionPrecheckBehaviorCodeType>|undefined;
   /**
    * Defines whether the action can be selected multiple times.
    */
-  public cardinalityBehavior?: ActionCardinalityBehaviorCodeType|undefined;
+  public cardinalityBehavior?: fhir.FhirCode<ActionCardinalityBehaviorCodeType>|undefined;
   /**
    * Note that the definition is optional, and if no definition is specified, a dynamicValue with a root ($this) path can be used to define the entire resource dynamically.
    */
@@ -795,11 +807,11 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
   /**
    * Dynamic values are applied in the order in which they are defined in the PlanDefinition resource. Note that when dynamic values are also specified by a referenced ActivityDefinition, the dynamicValues from the ActivityDefinition are applied first, followed by the dynamicValues specified here. In addition, if both a transform and dynamic values are specific, the dynamic values are applied to the result of the transform.
    */
-  public dynamicValue?: fhir.PlanDefinitionActionDynamicValue[];
+  public dynamicValue: fhir.PlanDefinitionActionDynamicValue[];
   /**
    * Sub actions that are contained within the action. The behavior of this action determines the functionality of the sub-actions. For example, a selection behavior of at-most-one indicates that of the sub-actions, at most one may be chosen as part of realizing the action definition.
    */
-  public action?: fhir.PlanDefinitionAction[];
+  public action: fhir.PlanDefinitionAction[];
   /**
    * Default constructor for PlanDefinitionAction - initializes any required elements to null if a value is not provided.
    */
@@ -809,7 +821,7 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
     if (source['textEquivalent']) { this.textEquivalent = new fhir.FhirString({value: source.textEquivalent}); }
-    if (source['priority']) { this.priority = source.priority; }
+    if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
     if (source['code']) { this.code = source.code.map((x) => new fhir.CodeableConcept(x)); }
     else { this.code = []; }
     if (source['reason']) { this.reason = source.reason.map((x) => new fhir.CodeableConcept(x)); }
@@ -841,11 +853,11 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
     if (source['participant']) { this.participant = source.participant.map((x) => new fhir.PlanDefinitionActionParticipant(x)); }
     else { this.participant = []; }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['groupingBehavior']) { this.groupingBehavior = source.groupingBehavior; }
-    if (source['selectionBehavior']) { this.selectionBehavior = source.selectionBehavior; }
-    if (source['requiredBehavior']) { this.requiredBehavior = source.requiredBehavior; }
-    if (source['precheckBehavior']) { this.precheckBehavior = source.precheckBehavior; }
-    if (source['cardinalityBehavior']) { this.cardinalityBehavior = source.cardinalityBehavior; }
+    if (source['groupingBehavior']) { this.groupingBehavior = new fhir.FhirCode<ActionGroupingBehaviorCodeType>({value: source.groupingBehavior}); }
+    if (source['selectionBehavior']) { this.selectionBehavior = new fhir.FhirCode<ActionSelectionBehaviorCodeType>({value: source.selectionBehavior}); }
+    if (source['requiredBehavior']) { this.requiredBehavior = new fhir.FhirCode<ActionRequiredBehaviorCodeType>({value: source.requiredBehavior}); }
+    if (source['precheckBehavior']) { this.precheckBehavior = new fhir.FhirCode<ActionPrecheckBehaviorCodeType>({value: source.precheckBehavior}); }
+    if (source['cardinalityBehavior']) { this.cardinalityBehavior = new fhir.FhirCode<ActionCardinalityBehaviorCodeType>({value: source.cardinalityBehavior}); }
     if (source['definition']) { this.definition = source.definition; }
     else if (source['definitionCanonical']) { this.definition = new fhir.FhirCanonical({value: source.definitionCanonical}); }
     else if (source['definitionUri']) { this.definition = new fhir.FhirUri({value: source.definitionUri}); }
@@ -858,44 +870,44 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for priority (PlanDefinition.action.priority)
    */
-  public static priorityRequiredCoding():RequestPriorityCodingType {
-    return RequestPriorityCodings;
+  public static get priorityRequiredCodes() {
+    return RequestPriorityCodes;
   }
   /**
    * Extensible-bound Value Set for type (PlanDefinition.action.type)
    */
-  public static typeExtensibleCoding():ActionTypeCodingType {
+  public static get typeExtensibleCodings() {
     return ActionTypeCodings;
   }
   /**
    * Required-bound Value Set for groupingBehavior (PlanDefinition.action.groupingBehavior)
    */
-  public static groupingBehaviorRequiredCoding():ActionGroupingBehaviorCodingType {
-    return ActionGroupingBehaviorCodings;
+  public static get groupingBehaviorRequiredCodes() {
+    return ActionGroupingBehaviorCodes;
   }
   /**
    * Required-bound Value Set for selectionBehavior (PlanDefinition.action.selectionBehavior)
    */
-  public static selectionBehaviorRequiredCoding():ActionSelectionBehaviorCodingType {
-    return ActionSelectionBehaviorCodings;
+  public static get selectionBehaviorRequiredCodes() {
+    return ActionSelectionBehaviorCodes;
   }
   /**
    * Required-bound Value Set for requiredBehavior (PlanDefinition.action.requiredBehavior)
    */
-  public static requiredBehaviorRequiredCoding():ActionRequiredBehaviorCodingType {
-    return ActionRequiredBehaviorCodings;
+  public static get requiredBehaviorRequiredCodes() {
+    return ActionRequiredBehaviorCodes;
   }
   /**
    * Required-bound Value Set for precheckBehavior (PlanDefinition.action.precheckBehavior)
    */
-  public static precheckBehaviorRequiredCoding():ActionPrecheckBehaviorCodingType {
-    return ActionPrecheckBehaviorCodings;
+  public static get precheckBehaviorRequiredCodes() {
+    return ActionPrecheckBehaviorCodes;
   }
   /**
    * Required-bound Value Set for cardinalityBehavior (PlanDefinition.action.cardinalityBehavior)
    */
-  public static cardinalityBehaviorRequiredCoding():ActionCardinalityBehaviorCodingType {
-    return ActionCardinalityBehaviorCodings;
+  public static get cardinalityBehaviorRequiredCodes() {
+    return ActionCardinalityBehaviorCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -906,6 +918,10 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["textEquivalent"]) { issues.push(...this.textEquivalent.doModelValidation()); }
+    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority?:fhir.FhirCode<RequestPriorityCodeType> fhir: PlanDefinition.action.priority:code Required binding to: RequestPriority' });
+    }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
     if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["reason"]) { this.reason.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["documentation"]) { this.documentation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -917,6 +933,26 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
     if (this["relatedAction"]) { this.relatedAction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["participant"]) { this.participant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this['groupingBehavior'] && (!Object.values(ActionGroupingBehaviorCodes).includes(this.groupingBehavior as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property groupingBehavior?:fhir.FhirCode<ActionGroupingBehaviorCodeType> fhir: PlanDefinition.action.groupingBehavior:code Required binding to: ActionGroupingBehavior' });
+    }
+    if (this["groupingBehavior"]) { issues.push(...this.groupingBehavior.doModelValidation()); }
+    if (this['selectionBehavior'] && (!Object.values(ActionSelectionBehaviorCodes).includes(this.selectionBehavior as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property selectionBehavior?:fhir.FhirCode<ActionSelectionBehaviorCodeType> fhir: PlanDefinition.action.selectionBehavior:code Required binding to: ActionSelectionBehavior' });
+    }
+    if (this["selectionBehavior"]) { issues.push(...this.selectionBehavior.doModelValidation()); }
+    if (this['requiredBehavior'] && (!Object.values(ActionRequiredBehaviorCodes).includes(this.requiredBehavior as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property requiredBehavior?:fhir.FhirCode<ActionRequiredBehaviorCodeType> fhir: PlanDefinition.action.requiredBehavior:code Required binding to: ActionRequiredBehavior' });
+    }
+    if (this["requiredBehavior"]) { issues.push(...this.requiredBehavior.doModelValidation()); }
+    if (this['precheckBehavior'] && (!Object.values(ActionPrecheckBehaviorCodes).includes(this.precheckBehavior as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property precheckBehavior?:fhir.FhirCode<ActionPrecheckBehaviorCodeType> fhir: PlanDefinition.action.precheckBehavior:code Required binding to: ActionPrecheckBehavior' });
+    }
+    if (this["precheckBehavior"]) { issues.push(...this.precheckBehavior.doModelValidation()); }
+    if (this['cardinalityBehavior'] && (!Object.values(ActionCardinalityBehaviorCodes).includes(this.cardinalityBehavior as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property cardinalityBehavior?:fhir.FhirCode<ActionCardinalityBehaviorCodeType> fhir: PlanDefinition.action.cardinalityBehavior:code Required binding to: ActionCardinalityBehavior' });
+    }
+    if (this["cardinalityBehavior"]) { issues.push(...this.cardinalityBehavior.doModelValidation()); }
     if (this["transform"]) { issues.push(...this.transform.doModelValidation()); }
     if (this["dynamicValue"]) { this.dynamicValue.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -964,7 +1000,7 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of plan definitions that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of plan definitions that are appropriate for use versus not.
    */
@@ -1088,7 +1124,7 @@ export class PlanDefinition extends fhir.DomainResource {
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this plan definition outside of FHIR, where it is not possible to use the logical URI.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * There may be different plan definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the plan definition with the format [url]|[version].
    */
@@ -1112,7 +1148,7 @@ export class PlanDefinition extends fhir.DomainResource {
   /**
    * Allows filtering of plan definitions that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of plan definitions that are appropriate for use versus not.
    */
@@ -1136,7 +1172,7 @@ export class PlanDefinition extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the plan definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the plan definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the plan definition is presumed to be the predominant language in the place the plan definition was created).
    */
@@ -1144,11 +1180,11 @@ export class PlanDefinition extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the plan definition to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * This element does not describe the usage of the plan definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this plan definition.
    */
@@ -1176,39 +1212,39 @@ export class PlanDefinition extends fhir.DomainResource {
   /**
    * Descriptive topics related to the content of the plan definition. Topics provide a high-level categorization of the definition that can be useful for filtering and searching.
    */
-  public topic?: fhir.CodeableConcept[];
+  public topic: fhir.CodeableConcept[];
   /**
    * An individiual or organization primarily involved in the creation and maintenance of the content.
    */
-  public author?: fhir.ContactDetail[];
+  public author: fhir.ContactDetail[];
   /**
    * An individual or organization primarily responsible for internal coherence of the content.
    */
-  public editor?: fhir.ContactDetail[];
+  public editor: fhir.ContactDetail[];
   /**
    * An individual or organization primarily responsible for review of some aspect of the content.
    */
-  public reviewer?: fhir.ContactDetail[];
+  public reviewer: fhir.ContactDetail[];
   /**
    * An individual or organization responsible for officially endorsing the content for use in some setting.
    */
-  public endorser?: fhir.ContactDetail[];
+  public endorser: fhir.ContactDetail[];
   /**
    * Each related artifact is either an attachment, or a reference to another resource, but not both.
    */
-  public relatedArtifact?: fhir.RelatedArtifact[];
+  public relatedArtifact: fhir.RelatedArtifact[];
   /**
    * A reference to a Library resource containing any formal logic used by the plan definition.
    */
-  public library?: fhir.FhirCanonical[];
+  public library: fhir.FhirCanonical[];
   /**
    * Goals that describe what the activities within the plan are intended to achieve. For example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
    */
-  public goal?: fhir.PlanDefinitionGoal[];
+  public goal: fhir.PlanDefinitionGoal[];
   /**
    * Note that there is overlap between many of the elements defined here and the ActivityDefinition resource. When an ActivityDefinition is referenced (using the definition element), the overlapping elements in the plan override the content of the referenced ActivityDefinition unless otherwise documented in the specific elements. See the PlanDefinition resource for more detailed information.
    */
-  public action?: fhir.PlanDefinitionAction[];
+  public action: fhir.PlanDefinitionAction[];
   /**
    * Default constructor for PlanDefinition - initializes any required elements to null if a value is not provided.
    */
@@ -1223,7 +1259,7 @@ export class PlanDefinition extends fhir.DomainResource {
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
     if (source['subtitle']) { this.subtitle = new fhir.FhirString({value: source.subtitle}); }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['subject']) { this.subject = source.subject; }
@@ -1266,14 +1302,14 @@ export class PlanDefinition extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for type (PlanDefinition.type)
    */
-  public static typeExtensibleCoding():PlanDefinitionTypeCodingType {
+  public static get typeExtensibleCodings() {
     return PlanDefinitionTypeCodings;
   }
   /**
    * Required-bound Value Set for status (PlanDefinition.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -1281,7 +1317,7 @@ export class PlanDefinition extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"PlanDefinition" fhir: PlanDefinition.resourceType:"PlanDefinition"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"PlanDefinition" fhir: PlanDefinition.resourceType:"PlanDefinition"' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -1291,8 +1327,12 @@ export class PlanDefinition extends fhir.DomainResource {
     if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation()); }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: PlanDefinition.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: PlanDefinition.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: PlanDefinition.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }

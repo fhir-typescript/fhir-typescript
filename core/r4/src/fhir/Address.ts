@@ -20,11 +20,11 @@ export interface AddressArgs extends fhir.FhirElementArgs {
   /**
    * Applications can assume that an address is current unless it explicitly says that it is temporary or old.
    */
-  use?: AddressUseCodeType|undefined;
+  use?: fhir.FhirCode<AddressUseCodeType>|string|undefined;
   /**
    * The definition of Address states that "address is intended to describe postal addresses, not physical locations". However, many applications track whether an address has a dual purpose of being a location that can be visited as well as being a valid delivery destination, and Postal addresses are often used as proxies for physical locations (also see the [Location](location.html#) resource).
    */
-  type?: AddressTypeCodeType|undefined;
+  type?: fhir.FhirCode<AddressTypeCodeType>|string|undefined;
   /**
    * Can provide both a text representation and parts. Applications updating an address SHALL ensure that  when both text and parts are present,  no content is included in the text that isn't found in a part.
    */
@@ -70,11 +70,11 @@ export class Address extends fhir.FhirElement {
   /**
    * Applications can assume that an address is current unless it explicitly says that it is temporary or old.
    */
-  public use?: AddressUseCodeType|undefined;
+  public use?: fhir.FhirCode<AddressUseCodeType>|undefined;
   /**
    * The definition of Address states that "address is intended to describe postal addresses, not physical locations". However, many applications track whether an address has a dual purpose of being a location that can be visited as well as being a valid delivery destination, and Postal addresses are often used as proxies for physical locations (also see the [Location](location.html#) resource).
    */
-  public type?: AddressTypeCodeType|undefined;
+  public type?: fhir.FhirCode<AddressTypeCodeType>|undefined;
   /**
    * Can provide both a text representation and parts. Applications updating an address SHALL ensure that  when both text and parts are present,  no content is included in the text that isn't found in a part.
    */
@@ -82,7 +82,7 @@ export class Address extends fhir.FhirElement {
   /**
    * This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.
    */
-  public line?: fhir.FhirString[];
+  public line: fhir.FhirString[];
   /**
    * The name of the city, town, suburb, village or other community or delivery center.
    */
@@ -112,8 +112,8 @@ export class Address extends fhir.FhirElement {
    */
   constructor(source:Partial<AddressArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['use']) { this.use = source.use; }
-    if (source['type']) { this.type = source.type; }
+    if (source['use']) { this.use = new fhir.FhirCode<AddressUseCodeType>({value: source.use}); }
+    if (source['type']) { this.type = new fhir.FhirCode<AddressTypeCodeType>({value: source.type}); }
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
     if (source['line']) { this.line = source.line.map((x) => new fhir.FhirString({value: x})); }
     else { this.line = []; }
@@ -127,20 +127,28 @@ export class Address extends fhir.FhirElement {
   /**
    * Required-bound Value Set for use (Address.use)
    */
-  public static useRequiredCoding():AddressUseCodingType {
-    return AddressUseCodings;
+  public static get useRequiredCodes() {
+    return AddressUseCodes;
   }
   /**
    * Required-bound Value Set for type (Address.type)
    */
-  public static typeRequiredCoding():AddressTypeCodingType {
-    return AddressTypeCodings;
+  public static get typeRequiredCodes() {
+    return AddressTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this['use'] && (!Object.values(AddressUseCodes).includes(this.use as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use?:fhir.FhirCode<AddressUseCodeType> fhir: Address.use:code Required binding to: AddressUse' });
+    }
+    if (this["use"]) { issues.push(...this.use.doModelValidation()); }
+    if (this['type'] && (!Object.values(AddressTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type?:fhir.FhirCode<AddressTypeCodeType> fhir: Address.type:code Required binding to: AddressType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["text"]) { issues.push(...this.text.doModelValidation()); }
     if (this["line"]) { this.line.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["city"]) { issues.push(...this.city.doModelValidation()); }

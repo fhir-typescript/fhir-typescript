@@ -1,11 +1,7 @@
 import * as fhir from '../fhir.js';
-import { UdiEntryTypeCodingType } from '../fhirValueSets/UdiEntryTypeCodings.js';
 import { UdiEntryTypeCodeType } from '../fhirValueSets/UdiEntryTypeCodes.js';
-import { DeviceNametypeCodingType } from '../fhirValueSets/DeviceNametypeCodings.js';
 import { DeviceNametypeCodeType } from '../fhirValueSets/DeviceNametypeCodes.js';
-import { DeviceStatusCodingType } from '../fhirValueSets/DeviceStatusCodings.js';
 import { DeviceStatusCodeType } from '../fhirValueSets/DeviceStatusCodes.js';
-import { DeviceStatusReasonCodingType } from '../fhirValueSets/DeviceStatusReasonCodings.js';
 /**
  * Valid arguments for the DeviceUdiCarrier type.
  */
@@ -41,7 +37,7 @@ export interface DeviceUdiCarrierArgs extends fhir.BackboneElementArgs {
     /**
      * A coded entry to indicate how the data was entered.
      */
-    entryType?: UdiEntryTypeCodeType | undefined;
+    entryType?: fhir.FhirCode<UdiEntryTypeCodeType> | string | undefined;
 }
 /**
  * UDI may identify an unique instance of a device, or it may only identify the type of the device.  See [UDI mappings](device-mappings.html#udi) for a complete mapping of UDI parts to Device.
@@ -82,7 +78,7 @@ export declare class DeviceUdiCarrier extends fhir.BackboneElement {
     /**
      * A coded entry to indicate how the data was entered.
      */
-    entryType?: UdiEntryTypeCodeType | undefined;
+    entryType?: fhir.FhirCode<UdiEntryTypeCodeType> | undefined;
     /**
      * Default constructor for DeviceUdiCarrier - initializes any required elements to null if a value is not provided.
      */
@@ -90,7 +86,14 @@ export declare class DeviceUdiCarrier extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for entryType (Device.udiCarrier.entryType)
      */
-    static entryTypeRequiredCoding(): UdiEntryTypeCodingType;
+    static get entryTypeRequiredCodes(): {
+        readonly Barcode: "barcode";
+        readonly Card: "card";
+        readonly Manual: "manual";
+        readonly RFID: "rfid";
+        readonly SelfReported: "self-reported";
+        readonly Unknown: "unknown";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -108,7 +111,7 @@ export interface DeviceDeviceNameArgs extends fhir.BackboneElementArgs {
      * The type of deviceName.
      * UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.
      */
-    type: DeviceNametypeCodeType | null;
+    type: fhir.FhirCode<DeviceNametypeCodeType> | string | undefined;
 }
 /**
  * This represents the manufacturer's name of the device as provided by the device, from a UDI label, or by a person describing the Device.  This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.
@@ -126,7 +129,7 @@ export declare class DeviceDeviceName extends fhir.BackboneElement {
      * The type of deviceName.
      * UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.
      */
-    type: DeviceNametypeCodeType | null;
+    type: fhir.FhirCode<DeviceNametypeCodeType> | null;
     /**
      * Default constructor for DeviceDeviceName - initializes any required elements to null if a value is not provided.
      */
@@ -134,7 +137,14 @@ export declare class DeviceDeviceName extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for type (Device.deviceName.type)
      */
-    static typeRequiredCoding(): DeviceNametypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly ManufacturerName: "manufacturer-name";
+        readonly ModelName: "model-name";
+        readonly Other: "other";
+        readonly PatientReportedName: "patient-reported-name";
+        readonly UDILabelName: "udi-label-name";
+        readonly UserFriendlyName: "user-friendly-name";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -256,11 +266,11 @@ export declare class DeviceProperty extends fhir.BackboneElement {
     /**
      * Property value as a quantity.
      */
-    valueQuantity?: fhir.Quantity[];
+    valueQuantity: fhir.Quantity[];
     /**
      * Property value as a code, e.g., NTP4 (synced to NTP).
      */
-    valueCode?: fhir.CodeableConcept[];
+    valueCode: fhir.CodeableConcept[];
     /**
      * Default constructor for DeviceProperty - initializes any required elements to null if a value is not provided.
      */
@@ -293,7 +303,7 @@ export interface DeviceArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the device (record)as not currently valid.
      */
-    status?: DeviceStatusCodeType | undefined;
+    status?: fhir.FhirCode<DeviceStatusCodeType> | string | undefined;
     /**
      * Reason for the dtatus of the Device availability.
      */
@@ -398,7 +408,7 @@ export declare class Device extends fhir.DomainResource {
     /**
      * The barcode string from a barcode present on a device label or package may identify the instance, include names given to the device in local usage, or may identify the type of device. If the identifier identifies the type of device, Device.type element should be used.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * The reference to the definition for the device.
      */
@@ -406,15 +416,15 @@ export declare class Device extends fhir.DomainResource {
     /**
      * UDI may identify an unique instance of a device, or it may only identify the type of the device.  See [UDI mappings](device-mappings.html#udi) for a complete mapping of UDI parts to Device.
      */
-    udiCarrier?: fhir.DeviceUdiCarrier[];
+    udiCarrier: fhir.DeviceUdiCarrier[];
     /**
      * This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the device (record)as not currently valid.
      */
-    status?: DeviceStatusCodeType | undefined;
+    status?: fhir.FhirCode<DeviceStatusCodeType> | undefined;
     /**
      * Reason for the dtatus of the Device availability.
      */
-    statusReason?: fhir.CodeableConcept[];
+    statusReason: fhir.CodeableConcept[];
     /**
      * For example, this applies to devices in the United States regulated under *Code of Federal Regulation 21CFR§1271.290(c)*.
      */
@@ -442,7 +452,7 @@ export declare class Device extends fhir.DomainResource {
     /**
      * This represents the manufacturer's name of the device as provided by the device, from a UDI label, or by a person describing the Device.  This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.
      */
-    deviceName?: fhir.DeviceDeviceName[];
+    deviceName: fhir.DeviceDeviceName[];
     /**
      * The model number for the device.
      */
@@ -458,15 +468,15 @@ export declare class Device extends fhir.DomainResource {
     /**
      * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.
      */
-    specialization?: fhir.DeviceSpecialization[];
+    specialization: fhir.DeviceSpecialization[];
     /**
      * The actual design of the device or software version running on the device.
      */
-    version?: fhir.DeviceVersion[];
+    version: fhir.DeviceVersion[];
     /**
      * The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties.
      */
-    property?: fhir.DeviceProperty[];
+    property: fhir.DeviceProperty[];
     /**
      * Patient information, If the device is affixed to a person.
      */
@@ -478,7 +488,7 @@ export declare class Device extends fhir.DomainResource {
     /**
      * used for troubleshooting etc.
      */
-    contact?: fhir.ContactPoint[];
+    contact: fhir.ContactPoint[];
     /**
      * The place where the device can be found.
      */
@@ -490,11 +500,11 @@ export declare class Device extends fhir.DomainResource {
     /**
      * Descriptive information, usage information or implantation information that is not captured in an existing element.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Provides additional safety characteristics about a medical device.  For example devices containing latex.
      */
-    safety?: fhir.CodeableConcept[];
+    safety: fhir.CodeableConcept[];
     /**
      * The parent device.
      */
@@ -506,11 +516,25 @@ export declare class Device extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (Device.status)
      */
-    static statusRequiredCoding(): DeviceStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly EnteredInError: "entered-in-error";
+        readonly Inactive: "inactive";
+        readonly Unknown: "unknown";
+    };
     /**
      * Extensible-bound Value Set for statusReason (Device.statusReason)
      */
-    static statusReasonExtensibleCoding(): DeviceStatusReasonCodingType;
+    static get statusReasonExtensibleCodings(): {
+        readonly HardwareDisconnected: fhir.Coding;
+        readonly NotReady: fhir.Coding;
+        readonly Off: fhir.Coding;
+        readonly Offline: fhir.Coding;
+        readonly Online: fhir.Coding;
+        readonly Paused: fhir.Coding;
+        readonly Standby: fhir.Coding;
+        readonly TransducerDisconnected: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -44,7 +44,7 @@ export interface MolecularSequenceReferenceSeqArgs extends fhir.BackboneElementA
   /**
    * A relative reference to a DNA strand based on gene orientation. The strand that contains the open reading frame of the gene is the "sense" strand, and the opposite complementary strand is the "antisense" strand.
    */
-  orientation?: OrientationTypeCodeType|undefined;
+  orientation?: fhir.FhirCode<OrientationTypeCodeType>|string|undefined;
   /**
    * Reference identifier of reference sequence submitted to NCBI. It must match the type in the MolecularSequence.type field. For example, the prefix, “NG_” identifies reference sequence for genes, “NM_” for messenger RNA transcripts, and “NP_” for amino acid sequences.
    */
@@ -60,7 +60,7 @@ export interface MolecularSequenceReferenceSeqArgs extends fhir.BackboneElementA
   /**
    * An absolute reference to a strand. The Watson strand is the strand whose 5'-end is on the short arm of the chromosome, and the Crick strand as the one whose 5'-end is on the long arm.
    */
-  strand?: StrandTypeCodeType|undefined;
+  strand?: fhir.FhirCode<StrandTypeCodeType>|string|undefined;
   /**
    * Start position of the window on the reference sequence. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
    */
@@ -90,7 +90,7 @@ export class MolecularSequenceReferenceSeq extends fhir.BackboneElement {
   /**
    * A relative reference to a DNA strand based on gene orientation. The strand that contains the open reading frame of the gene is the "sense" strand, and the opposite complementary strand is the "antisense" strand.
    */
-  public orientation?: OrientationTypeCodeType|undefined;
+  public orientation?: fhir.FhirCode<OrientationTypeCodeType>|undefined;
   /**
    * Reference identifier of reference sequence submitted to NCBI. It must match the type in the MolecularSequence.type field. For example, the prefix, “NG_” identifies reference sequence for genes, “NM_” for messenger RNA transcripts, and “NP_” for amino acid sequences.
    */
@@ -106,7 +106,7 @@ export class MolecularSequenceReferenceSeq extends fhir.BackboneElement {
   /**
    * An absolute reference to a strand. The Watson strand is the strand whose 5'-end is on the short arm of the chromosome, and the Crick strand as the one whose 5'-end is on the long arm.
    */
-  public strand?: StrandTypeCodeType|undefined;
+  public strand?: fhir.FhirCode<StrandTypeCodeType>|undefined;
   /**
    * Start position of the window on the reference sequence. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
    */
@@ -122,25 +122,25 @@ export class MolecularSequenceReferenceSeq extends fhir.BackboneElement {
     super(source, options);
     if (source['chromosome']) { this.chromosome = new fhir.CodeableConcept(source.chromosome); }
     if (source['genomeBuild']) { this.genomeBuild = new fhir.FhirString({value: source.genomeBuild}); }
-    if (source['orientation']) { this.orientation = source.orientation; }
+    if (source['orientation']) { this.orientation = new fhir.FhirCode<OrientationTypeCodeType>({value: source.orientation}); }
     if (source['referenceSeqId']) { this.referenceSeqId = new fhir.CodeableConcept(source.referenceSeqId); }
     if (source['referenceSeqPointer']) { this.referenceSeqPointer = new fhir.Reference(source.referenceSeqPointer); }
     if (source['referenceSeqString']) { this.referenceSeqString = new fhir.FhirString({value: source.referenceSeqString}); }
-    if (source['strand']) { this.strand = source.strand; }
+    if (source['strand']) { this.strand = new fhir.FhirCode<StrandTypeCodeType>({value: source.strand}); }
     if (source['windowStart']) { this.windowStart = new fhir.FhirInteger({value: source.windowStart}); }
     if (source['windowEnd']) { this.windowEnd = new fhir.FhirInteger({value: source.windowEnd}); }
   }
   /**
    * Required-bound Value Set for orientation (MolecularSequence.referenceSeq.orientation)
    */
-  public static orientationRequiredCoding():OrientationTypeCodingType {
-    return OrientationTypeCodings;
+  public static get orientationRequiredCodes() {
+    return OrientationTypeCodes;
   }
   /**
    * Required-bound Value Set for strand (MolecularSequence.referenceSeq.strand)
    */
-  public static strandRequiredCoding():StrandTypeCodingType {
-    return StrandTypeCodings;
+  public static get strandRequiredCodes() {
+    return StrandTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -149,9 +149,17 @@ export class MolecularSequenceReferenceSeq extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["chromosome"]) { issues.push(...this.chromosome.doModelValidation()); }
     if (this["genomeBuild"]) { issues.push(...this.genomeBuild.doModelValidation()); }
+    if (this['orientation'] && (!Object.values(OrientationTypeCodes).includes(this.orientation as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property orientation?:fhir.FhirCode<OrientationTypeCodeType> fhir: MolecularSequence.referenceSeq.orientation:code Required binding to: OrientationType' });
+    }
+    if (this["orientation"]) { issues.push(...this.orientation.doModelValidation()); }
     if (this["referenceSeqId"]) { issues.push(...this.referenceSeqId.doModelValidation()); }
     if (this["referenceSeqPointer"]) { issues.push(...this.referenceSeqPointer.doModelValidation()); }
     if (this["referenceSeqString"]) { issues.push(...this.referenceSeqString.doModelValidation()); }
+    if (this['strand'] && (!Object.values(StrandTypeCodes).includes(this.strand as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property strand?:fhir.FhirCode<StrandTypeCodeType> fhir: MolecularSequence.referenceSeq.strand:code Required binding to: StrandType' });
+    }
+    if (this["strand"]) { issues.push(...this.strand.doModelValidation()); }
     if (this["windowStart"]) { issues.push(...this.windowStart.doModelValidation()); }
     if (this["windowEnd"]) { issues.push(...this.windowEnd.doModelValidation()); }
     return issues;
@@ -290,31 +298,31 @@ export class MolecularSequenceQualityRoc extends fhir.BackboneElement {
   /**
    * Invidual data point representing the GQ (genotype quality) score threshold.
    */
-  public score?: fhir.FhirInteger[];
+  public score: fhir.FhirInteger[];
   /**
    * The number of true positives if the GQ score threshold was set to "score" field value.
    */
-  public numTP?: fhir.FhirInteger[];
+  public numTP: fhir.FhirInteger[];
   /**
    * The number of false positives if the GQ score threshold was set to "score" field value.
    */
-  public numFP?: fhir.FhirInteger[];
+  public numFP: fhir.FhirInteger[];
   /**
    * The number of false negatives if the GQ score threshold was set to "score" field value.
    */
-  public numFN?: fhir.FhirInteger[];
+  public numFN: fhir.FhirInteger[];
   /**
    * Calculated precision if the GQ score threshold was set to "score" field value.
    */
-  public precision?: fhir.FhirDecimal[];
+  public precision: fhir.FhirDecimal[];
   /**
    * Calculated sensitivity if the GQ score threshold was set to "score" field value.
    */
-  public sensitivity?: fhir.FhirDecimal[];
+  public sensitivity: fhir.FhirDecimal[];
   /**
    * Calculated fScore if the GQ score threshold was set to "score" field value.
    */
-  public fMeasure?: fhir.FhirDecimal[];
+  public fMeasure: fhir.FhirDecimal[];
   /**
    * Default constructor for MolecularSequenceQualityRoc - initializes any required elements to null if a value is not provided.
    */
@@ -357,7 +365,7 @@ export interface MolecularSequenceQualityArgs extends fhir.BackboneElementArgs {
   /**
    * INDEL / SNP / Undefined variant.
    */
-  type: QualityTypeCodeType|null;
+  type: fhir.FhirCode<QualityTypeCodeType>|string|undefined;
   /**
    * Gold standard sequence used for comparing against.
    */
@@ -427,7 +435,7 @@ export class MolecularSequenceQuality extends fhir.BackboneElement {
   /**
    * INDEL / SNP / Undefined variant.
    */
-  public type: QualityTypeCodeType|null;
+  public type: fhir.FhirCode<QualityTypeCodeType>|null;
   /**
    * Gold standard sequence used for comparing against.
    */
@@ -489,7 +497,7 @@ export class MolecularSequenceQuality extends fhir.BackboneElement {
    */
   constructor(source:Partial<MolecularSequenceQualityArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<QualityTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['standardSequence']) { this.standardSequence = new fhir.CodeableConcept(source.standardSequence); }
     if (source['start']) { this.start = new fhir.FhirInteger({value: source.start}); }
@@ -509,8 +517,8 @@ export class MolecularSequenceQuality extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for type (MolecularSequence.quality.type)
    */
-  public static typeRequiredCoding():QualityTypeCodingType {
-    return QualityTypeCodings;
+  public static get typeRequiredCodes() {
+    return QualityTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -518,8 +526,12 @@ export class MolecularSequenceQuality extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:QualityTypeCodeType fhir: MolecularSequence.quality.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<QualityTypeCodeType> fhir: MolecularSequence.quality.type:code' });
     }
+    if (this['type'] && (!Object.values(QualityTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<QualityTypeCodeType> fhir: MolecularSequence.quality.type:code Required binding to: QualityType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["standardSequence"]) { issues.push(...this.standardSequence.doModelValidation()); }
     if (this["start"]) { issues.push(...this.start.doModelValidation()); }
     if (this["end"]) { issues.push(...this.end.doModelValidation()); }
@@ -544,7 +556,7 @@ export interface MolecularSequenceRepositoryArgs extends fhir.BackboneElementArg
   /**
    * Click and see / RESTful API / Need login to see / RESTful API with authentication / Other ways to see resource.
    */
-  type: RepositoryTypeCodeType|null;
+  type: fhir.FhirCode<RepositoryTypeCodeType>|string|undefined;
   /**
    * URI of an external repository which contains further details about the genetics data.
    */
@@ -578,7 +590,7 @@ export class MolecularSequenceRepository extends fhir.BackboneElement {
   /**
    * Click and see / RESTful API / Need login to see / RESTful API with authentication / Other ways to see resource.
    */
-  public type: RepositoryTypeCodeType|null;
+  public type: fhir.FhirCode<RepositoryTypeCodeType>|null;
   /**
    * URI of an external repository which contains further details about the genetics data.
    */
@@ -604,7 +616,7 @@ export class MolecularSequenceRepository extends fhir.BackboneElement {
    */
   constructor(source:Partial<MolecularSequenceRepositoryArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<RepositoryTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
@@ -615,8 +627,8 @@ export class MolecularSequenceRepository extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for type (MolecularSequence.repository.type)
    */
-  public static typeRequiredCoding():RepositoryTypeCodingType {
-    return RepositoryTypeCodings;
+  public static get typeRequiredCodes() {
+    return RepositoryTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -624,8 +636,12 @@ export class MolecularSequenceRepository extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:RepositoryTypeCodeType fhir: MolecularSequence.repository.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<RepositoryTypeCodeType> fhir: MolecularSequence.repository.type:code' });
     }
+    if (this['type'] && (!Object.values(RepositoryTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<RepositoryTypeCodeType> fhir: MolecularSequence.repository.type:code Required binding to: RepositoryType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["datasetId"]) { issues.push(...this.datasetId.doModelValidation()); }
@@ -823,7 +839,7 @@ export interface MolecularSequenceArgs extends fhir.DomainResourceArgs {
   /**
    * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
    */
-  type?: SequenceTypeCodeType|undefined;
+  type?: fhir.FhirCode<SequenceTypeCodeType>|string|undefined;
   /**
    * Whether the sequence is numbered starting at 0 (0-based numbering or coordinates, inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive start and inclusive end).
    */
@@ -897,11 +913,11 @@ export class MolecularSequence extends fhir.DomainResource {
   /**
    * A unique identifier for this particular sequence instance. This is a FHIR-defined id.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
    */
-  public type?: SequenceTypeCodeType|undefined;
+  public type?: fhir.FhirCode<SequenceTypeCodeType>|undefined;
   /**
    * Whether the sequence is numbered starting at 0 (0-based numbering or coordinates, inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive start and inclusive end).
    */
@@ -933,7 +949,7 @@ export class MolecularSequence extends fhir.DomainResource {
   /**
    * The definition of variant here originates from Sequence ontology ([variant_of](http://www.sequenceontology.org/browser/current_svn/term/variant_of)). This element can represent amino acid or nucleic sequence change(including insertion,deletion,SNP,etc.)  It can represent some complex mutation or segment variation with the assist of CIGAR string.
    */
-  public variant?: fhir.MolecularSequenceVariant[];
+  public variant: fhir.MolecularSequenceVariant[];
   /**
    * Sequence that was observed. It is the result marked by referenceSeq along with variant records on referenceSeq. This shall start from referenceSeq.windowStart and end by referenceSeq.windowEnd.
    */
@@ -941,7 +957,7 @@ export class MolecularSequence extends fhir.DomainResource {
   /**
    * An experimental feature attribute that defines the quality of the feature in a quantitative way, such as a phred quality score ([SO:0001686](http://www.sequenceontology.org/browser/current_svn/term/SO:0001686)).
    */
-  public quality?: fhir.MolecularSequenceQuality[];
+  public quality: fhir.MolecularSequenceQuality[];
   /**
    * Coverage (read depth or depth) is the average number of reads representing a given nucleotide in the reconstructed sequence.
    */
@@ -949,15 +965,15 @@ export class MolecularSequence extends fhir.DomainResource {
   /**
    * Configurations of the external repository. The repository shall store target's observedSeq or records related with target's observedSeq.
    */
-  public repository?: fhir.MolecularSequenceRepository[];
+  public repository: fhir.MolecularSequenceRepository[];
   /**
    * Pointer to next atomic sequence which at most contains one variant.
    */
-  public pointer?: fhir.Reference[];
+  public pointer: fhir.Reference[];
   /**
    * Information about chromosome structure variation.
    */
-  public structureVariant?: fhir.MolecularSequenceStructureVariant[];
+  public structureVariant: fhir.MolecularSequenceStructureVariant[];
   /**
    * Default constructor for MolecularSequence - initializes any required elements to null if a value is not provided.
    */
@@ -966,7 +982,7 @@ export class MolecularSequence extends fhir.DomainResource {
     this.resourceType = 'MolecularSequence';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<SequenceTypeCodeType>({value: source.type}); }
     if (source['coordinateSystem']) { this.coordinateSystem = new fhir.FhirInteger({value: source.coordinateSystem}); }
     else { this.coordinateSystem = null; }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
@@ -991,8 +1007,8 @@ export class MolecularSequence extends fhir.DomainResource {
   /**
    * Required-bound Value Set for type (MolecularSequence.type)
    */
-  public static typeRequiredCoding():SequenceTypeCodingType {
-    return SequenceTypeCodings;
+  public static get typeRequiredCodes() {
+    return SequenceTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -1000,11 +1016,15 @@ export class MolecularSequence extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MolecularSequence" fhir: MolecularSequence.resourceType:"MolecularSequence"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MolecularSequence" fhir: MolecularSequence.resourceType:"MolecularSequence"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['type'] && (!Object.values(SequenceTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type?:fhir.FhirCode<SequenceTypeCodeType> fhir: MolecularSequence.type:code Required binding to: SequenceType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['coordinateSystem']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property coordinateSystem:fhir.FhirInteger fhir: MolecularSequence.coordinateSystem:integer', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property coordinateSystem:fhir.FhirInteger fhir: MolecularSequence.coordinateSystem:integer' });
     }
     if (this["coordinateSystem"]) { issues.push(...this.coordinateSystem.doModelValidation()); }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }

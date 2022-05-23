@@ -1,9 +1,6 @@
 import * as fhir from '../fhir.js';
-import { GroupMeasureCodingType } from '../fhirValueSets/GroupMeasureCodings.js';
 import { GroupMeasureCodeType } from '../fhirValueSets/GroupMeasureCodes.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
-import { VariableTypeCodingType } from '../fhirValueSets/VariableTypeCodings.js';
 import { VariableTypeCodeType } from '../fhirValueSets/VariableTypeCodes.js';
 /**
  * Valid arguments for the EvidenceVariableCharacteristic type.
@@ -76,7 +73,7 @@ export interface EvidenceVariableCharacteristicArgs extends fhir.BackboneElement
     /**
      * Indicates how elements are aggregated within the study effective period.
      */
-    groupMeasure?: GroupMeasureCodeType | undefined;
+    groupMeasure?: fhir.FhirCode<GroupMeasureCodeType> | string | undefined;
 }
 /**
  * Characteristics can be defined flexibly to accommodate different use cases for membership criteria, ranging from simple codes, all the way to using an expression language to express the criteria.
@@ -101,7 +98,7 @@ export declare class EvidenceVariableCharacteristic extends fhir.BackboneElement
     /**
      * Use UsageContext to define the members of the population, such as Age Ranges, Genders, Settings.
      */
-    usageContext?: fhir.UsageContext[];
+    usageContext: fhir.UsageContext[];
     /**
      * When true, members with this characteristic are excluded from the element.
      */
@@ -121,7 +118,7 @@ export declare class EvidenceVariableCharacteristic extends fhir.BackboneElement
     /**
      * Indicates how elements are aggregated within the study effective period.
      */
-    groupMeasure?: GroupMeasureCodeType | undefined;
+    groupMeasure?: fhir.FhirCode<GroupMeasureCodeType> | undefined;
     /**
      * Default constructor for EvidenceVariableCharacteristic - initializes any required elements to null if a value is not provided.
      */
@@ -129,7 +126,14 @@ export declare class EvidenceVariableCharacteristic extends fhir.BackboneElement
     /**
      * Required-bound Value Set for groupMeasure (EvidenceVariable.characteristic.groupMeasure)
      */
-    static groupMeasureRequiredCoding(): GroupMeasureCodingType;
+    static get groupMeasureRequiredCodes(): {
+        readonly Mean: "mean";
+        readonly MeanOfStudyMeans: "mean-of-mean";
+        readonly MeanOfStudyMedins: "mean-of-median";
+        readonly Median: "median";
+        readonly MedianOfStudyMeans: "median-of-mean";
+        readonly MedianOfStudyMedians: "median-of-median";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -176,7 +180,7 @@ export interface EvidenceVariableArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of evidence variables that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the evidence variable. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
@@ -248,7 +252,7 @@ export interface EvidenceVariableArgs extends fhir.DomainResourceArgs {
     /**
      * The type of evidence element, a population, an exposure, or an outcome.
      */
-    type?: VariableTypeCodeType | undefined;
+    type?: fhir.FhirCode<VariableTypeCodeType> | string | undefined;
     /**
      * Characteristics can be defined flexibly to accommodate different use cases for membership criteria, ranging from simple codes, all the way to using an expression language to express the criteria.
      */
@@ -275,7 +279,7 @@ export declare class EvidenceVariable extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this evidence variable outside of FHIR, where it is not possible to use the logical URI.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * There may be different evidence variable instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the evidence variable with the format [url]|[version].
      */
@@ -299,7 +303,7 @@ export declare class EvidenceVariable extends fhir.DomainResource {
     /**
      * Allows filtering of evidence variables that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the evidence variable. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
@@ -311,7 +315,7 @@ export declare class EvidenceVariable extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * This description can be used to capture details such as why the evidence variable was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the evidence variable as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the evidence variable is presumed to be the predominant language in the place the evidence variable was created).
      */
@@ -319,15 +323,15 @@ export declare class EvidenceVariable extends fhir.DomainResource {
     /**
      * A human-readable string to clarify or explain concepts about the resource.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the evidence variable to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * A copyright statement relating to the evidence variable and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the evidence variable.
      */
@@ -347,31 +351,31 @@ export declare class EvidenceVariable extends fhir.DomainResource {
     /**
      * Descriptive topics related to the content of the EvidenceVariable. Topics provide a high-level categorization grouping types of EvidenceVariables that can be useful for filtering and searching.
      */
-    topic?: fhir.CodeableConcept[];
+    topic: fhir.CodeableConcept[];
     /**
      * An individiual or organization primarily involved in the creation and maintenance of the content.
      */
-    author?: fhir.ContactDetail[];
+    author: fhir.ContactDetail[];
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
      */
-    editor?: fhir.ContactDetail[];
+    editor: fhir.ContactDetail[];
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
      */
-    reviewer?: fhir.ContactDetail[];
+    reviewer: fhir.ContactDetail[];
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
      */
-    endorser?: fhir.ContactDetail[];
+    endorser: fhir.ContactDetail[];
     /**
      * Each related artifact is either an attachment, or a reference to another resource, but not both.
      */
-    relatedArtifact?: fhir.RelatedArtifact[];
+    relatedArtifact: fhir.RelatedArtifact[];
     /**
      * The type of evidence element, a population, an exposure, or an outcome.
      */
-    type?: VariableTypeCodeType | undefined;
+    type?: fhir.FhirCode<VariableTypeCodeType> | undefined;
     /**
      * Characteristics can be defined flexibly to accommodate different use cases for membership criteria, ranging from simple codes, all the way to using an expression language to express the criteria.
      */
@@ -383,11 +387,20 @@ export declare class EvidenceVariable extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (EvidenceVariable.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Required-bound Value Set for type (EvidenceVariable.type)
      */
-    static typeRequiredCoding(): VariableTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Continuous: "continuous";
+        readonly Descriptive: "descriptive";
+        readonly Dichotomous: "dichotomous";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -90,7 +90,7 @@ export class QuestionnaireResponseItemAnswer extends fhir.BackboneElement {
   /**
    * Nested groups and/or questions found within this particular answer.
    */
-  public item?: fhir.QuestionnaireResponseItem[];
+  public item: fhir.QuestionnaireResponseItem[];
   /**
    * Default constructor for QuestionnaireResponseItemAnswer - initializes any required elements to null if a value is not provided.
    */
@@ -172,11 +172,11 @@ export class QuestionnaireResponseItem extends fhir.BackboneElement {
   /**
    * The value is nested because we cannot have a repeating structure that has variable type.
    */
-  public answer?: fhir.QuestionnaireResponseItemAnswer[];
+  public answer: fhir.QuestionnaireResponseItemAnswer[];
   /**
    * Questions or sub-groups nested beneath a question or group.
    */
-  public item?: fhir.QuestionnaireResponseItem[];
+  public item: fhir.QuestionnaireResponseItem[];
   /**
    * Default constructor for QuestionnaireResponseItem - initializes any required elements to null if a value is not provided.
    */
@@ -197,7 +197,7 @@ export class QuestionnaireResponseItem extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['linkId']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property linkId:fhir.FhirString fhir: QuestionnaireResponse.item.linkId:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property linkId:fhir.FhirString fhir: QuestionnaireResponse.item.linkId:string' });
     }
     if (this["linkId"]) { issues.push(...this.linkId.doModelValidation()); }
     if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
@@ -234,7 +234,7 @@ export interface QuestionnaireResponseArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status: QuestionnaireAnswersStatusCodeType|null;
+  status: fhir.FhirCode<QuestionnaireAnswersStatusCodeType>|string|undefined;
   /**
    * If the Questionnaire declared a subjectType, the resource pointed to by this element must be an instance of one of the listed types.
    */
@@ -281,11 +281,11 @@ export class QuestionnaireResponse extends fhir.DomainResource {
   /**
    * The order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.  For example, a ServiceRequest seeking an intake assessment or a decision support recommendation to assess for post-partum depression.
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * Composition of questionnaire responses will be handled by the parent questionnaire having answers that reference the child questionnaire.  For relationships to referrals, and other types of requests, use basedOn.
    */
-  public partOf?: fhir.Reference[];
+  public partOf: fhir.Reference[];
   /**
    * If a QuestionnaireResponse references a Questionnaire, then the QuestionnaireResponse structure must be consistent with the Questionnaire (i.e. questions must be organized into the same groups, nested questions must still be nested, etc.).
    */
@@ -293,7 +293,7 @@ export class QuestionnaireResponse extends fhir.DomainResource {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status: QuestionnaireAnswersStatusCodeType|null;
+  public status: fhir.FhirCode<QuestionnaireAnswersStatusCodeType>|null;
   /**
    * If the Questionnaire declared a subjectType, the resource pointed to by this element must be an instance of one of the listed types.
    */
@@ -318,7 +318,7 @@ export class QuestionnaireResponse extends fhir.DomainResource {
   /**
    * Groups cannot have answers and therefore must nest directly within item. When dealing with questions, nesting must occur within each answer because some questions may have multiple answers (and the nesting occurs for each answer).
    */
-  public item?: fhir.QuestionnaireResponseItem[];
+  public item: fhir.QuestionnaireResponseItem[];
   /**
    * Default constructor for QuestionnaireResponse - initializes any required elements to null if a value is not provided.
    */
@@ -331,7 +331,7 @@ export class QuestionnaireResponse extends fhir.DomainResource {
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
     else { this.partOf = []; }
     if (source['questionnaire']) { this.questionnaire = new fhir.FhirCanonical({value: source.questionnaire}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<QuestionnaireAnswersStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
@@ -344,8 +344,8 @@ export class QuestionnaireResponse extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (QuestionnaireResponse.status)
    */
-  public static statusRequiredCoding():QuestionnaireAnswersStatusCodingType {
-    return QuestionnaireAnswersStatusCodings;
+  public static get statusRequiredCodes() {
+    return QuestionnaireAnswersStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -353,15 +353,19 @@ export class QuestionnaireResponse extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"QuestionnaireResponse" fhir: QuestionnaireResponse.resourceType:"QuestionnaireResponse"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"QuestionnaireResponse" fhir: QuestionnaireResponse.resourceType:"QuestionnaireResponse"' });
     }
     if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["questionnaire"]) { issues.push(...this.questionnaire.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:QuestionnaireAnswersStatusCodeType fhir: QuestionnaireResponse.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<QuestionnaireAnswersStatusCodeType> fhir: QuestionnaireResponse.status:code' });
     }
+    if (this['status'] && (!Object.values(QuestionnaireAnswersStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<QuestionnaireAnswersStatusCodeType> fhir: QuestionnaireResponse.status:code Required binding to: QuestionnaireAnswersStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
     if (this["authored"]) { issues.push(...this.authored.doModelValidation()); }

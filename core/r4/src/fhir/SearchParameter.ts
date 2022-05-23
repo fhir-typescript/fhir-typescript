@@ -75,11 +75,11 @@ export class SearchParameterComponent extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['definition']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property definition:fhir.FhirCanonical fhir: SearchParameter.component.definition:canonical', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property definition:fhir.FhirCanonical fhir: SearchParameter.component.definition:canonical' });
     }
     if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
     if (!this['expression']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property expression:fhir.FhirString fhir: SearchParameter.component.expression:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property expression:fhir.FhirString fhir: SearchParameter.component.expression:string' });
     }
     if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
     return issues;
@@ -114,7 +114,7 @@ export interface SearchParameterArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of search parameters that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of search parameters that are appropriate for use versus not.
    */
@@ -158,7 +158,7 @@ export interface SearchParameterArgs extends fhir.DomainResourceArgs {
   /**
    * The type of value that a search parameter may contain, and how the content is interpreted.
    */
-  type: SearchParamTypeCodeType|null;
+  type: fhir.FhirCode<SearchParamTypeCodeType>|string|undefined;
   /**
    * Note that the elements returned by the expression are sometimes complex elements where logic is required to determine quite how to handle them; e.g. CodeableConcepts may contain text and/or multiple codings, where the codings themselves contain a code and a system. For composite search parameters, the outcome of the expression must a collection of base elements from which the composites are derived.
    */
@@ -170,7 +170,7 @@ export interface SearchParameterArgs extends fhir.DomainResourceArgs {
   /**
    * How the search parameter relates to the set of elements returned by evaluating the xpath query.
    */
-  xpathUsage?: SearchXpathUsageCodeType|undefined;
+  xpathUsage?: fhir.FhirCode<SearchXpathUsageCodeType>|string|undefined;
   /**
    * Types of resource (if a resource is referenced).
    */
@@ -186,11 +186,11 @@ export interface SearchParameterArgs extends fhir.DomainResourceArgs {
   /**
    * If no comparators are listed, clients should not expect servers to support any comparators.
    */
-  comparator?: SearchComparatorCodeType[]|undefined;
+  comparator?: fhir.FhirCode<SearchComparatorCodeType>[]|string[]|undefined;
   /**
    * A modifier supported for the search parameter.
    */
-  modifier?: SearchModifierCodeCodeType[]|undefined;
+  modifier?: fhir.FhirCode<SearchModifierCodeCodeType>[]|string[]|undefined;
   /**
    * Systems are not required to list all the chain names they support, but if they don't list them, clients might not know to use them.
    */
@@ -234,7 +234,7 @@ export class SearchParameter extends fhir.DomainResource {
   /**
    * Allows filtering of search parameters that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of search parameters that are appropriate for use versus not.
    */
@@ -250,7 +250,7 @@ export class SearchParameter extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the search parameter was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the search parameter as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the search parameter is presumed to be the predominant language in the place the search parameter was created).
    */
@@ -258,11 +258,11 @@ export class SearchParameter extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the search parameter to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * This element does not describe the usage of the search parameter. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this search parameter.
    */
@@ -278,7 +278,7 @@ export class SearchParameter extends fhir.DomainResource {
   /**
    * The type of value that a search parameter may contain, and how the content is interpreted.
    */
-  public type: SearchParamTypeCodeType|null;
+  public type: fhir.FhirCode<SearchParamTypeCodeType>|null;
   /**
    * Note that the elements returned by the expression are sometimes complex elements where logic is required to determine quite how to handle them; e.g. CodeableConcepts may contain text and/or multiple codings, where the codings themselves contain a code and a system. For composite search parameters, the outcome of the expression must a collection of base elements from which the composites are derived.
    */
@@ -290,11 +290,11 @@ export class SearchParameter extends fhir.DomainResource {
   /**
    * How the search parameter relates to the set of elements returned by evaluating the xpath query.
    */
-  public xpathUsage?: SearchXpathUsageCodeType|undefined;
+  public xpathUsage?: fhir.FhirCode<SearchXpathUsageCodeType>|undefined;
   /**
    * Types of resource (if a resource is referenced).
    */
-  public target?: fhir.FhirCode[];
+  public target: fhir.FhirCode[];
   /**
    * Whether multiple values are allowed for each time the parameter exists. Values are separated by commas, and the parameter matches if any of the values match.
    */
@@ -306,19 +306,19 @@ export class SearchParameter extends fhir.DomainResource {
   /**
    * If no comparators are listed, clients should not expect servers to support any comparators.
    */
-  public comparator?: SearchComparatorCodeType[];
+  public comparator: fhir.FhirCode<SearchComparatorCodeType>[];
   /**
    * A modifier supported for the search parameter.
    */
-  public modifier?: SearchModifierCodeCodeType[];
+  public modifier: fhir.FhirCode<SearchModifierCodeCodeType>[];
   /**
    * Systems are not required to list all the chain names they support, but if they don't list them, clients might not know to use them.
    */
-  public chain?: fhir.FhirString[];
+  public chain: fhir.FhirString[];
   /**
    * Used to define the parts of a composite search parameter.
    */
-  public component?: fhir.SearchParameterComponent[];
+  public component: fhir.SearchParameterComponent[];
   /**
    * Default constructor for SearchParameter - initializes any required elements to null if a value is not provided.
    */
@@ -331,7 +331,7 @@ export class SearchParameter extends fhir.DomainResource {
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
     if (source['derivedFrom']) { this.derivedFrom = new fhir.FhirCanonical({value: source.derivedFrom}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
@@ -349,18 +349,18 @@ export class SearchParameter extends fhir.DomainResource {
     else { this.code = null; }
     if (source['base']) { this.base = source.base.map((x) => new fhir.FhirCode({value: x})); }
     else { this.base = []; }
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<SearchParamTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['expression']) { this.expression = new fhir.FhirString({value: source.expression}); }
     if (source['xpath']) { this.xpath = new fhir.FhirString({value: source.xpath}); }
-    if (source['xpathUsage']) { this.xpathUsage = source.xpathUsage; }
+    if (source['xpathUsage']) { this.xpathUsage = new fhir.FhirCode<SearchXpathUsageCodeType>({value: source.xpathUsage}); }
     if (source['target']) { this.target = source.target.map((x) => new fhir.FhirCode({value: x})); }
     else { this.target = []; }
     if (source['multipleOr']) { this.multipleOr = new fhir.FhirBoolean({value: source.multipleOr}); }
     if (source['multipleAnd']) { this.multipleAnd = new fhir.FhirBoolean({value: source.multipleAnd}); }
-    if (source['comparator']) { this.comparator = source.comparator.map((x) => x); }
+    if (source['comparator']) { this.comparator = source.comparator.map((x) => new fhir.FhirCode<SearchComparatorCodeType>({value: x})); }
     else { this.comparator = []; }
-    if (source['modifier']) { this.modifier = source.modifier.map((x) => x); }
+    if (source['modifier']) { this.modifier = source.modifier.map((x) => new fhir.FhirCode<SearchModifierCodeCodeType>({value: x})); }
     else { this.modifier = []; }
     if (source['chain']) { this.chain = source.chain.map((x) => new fhir.FhirString({value: x})); }
     else { this.chain = []; }
@@ -370,44 +370,44 @@ export class SearchParameter extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (SearchParameter.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Required-bound Value Set for base (SearchParameter.base)
    */
-  public static baseRequiredCoding():ResourceTypesCodingType {
-    return ResourceTypesCodings;
+  public static get baseRequiredCodes() {
+    return ResourceTypesCodes;
   }
   /**
    * Required-bound Value Set for type (SearchParameter.type)
    */
-  public static typeRequiredCoding():SearchParamTypeCodingType {
-    return SearchParamTypeCodings;
+  public static get typeRequiredCodes() {
+    return SearchParamTypeCodes;
   }
   /**
    * Required-bound Value Set for xpathUsage (SearchParameter.xpathUsage)
    */
-  public static xpathUsageRequiredCoding():SearchXpathUsageCodingType {
-    return SearchXpathUsageCodings;
+  public static get xpathUsageRequiredCodes() {
+    return SearchXpathUsageCodes;
   }
   /**
    * Required-bound Value Set for target (SearchParameter.target)
    */
-  public static targetRequiredCoding():ResourceTypesCodingType {
-    return ResourceTypesCodings;
+  public static get targetRequiredCodes() {
+    return ResourceTypesCodes;
   }
   /**
    * Required-bound Value Set for comparator (SearchParameter.comparator)
    */
-  public static comparatorRequiredCoding():SearchComparatorCodingType {
-    return SearchComparatorCodings;
+  public static get comparatorRequiredCodes() {
+    return SearchComparatorCodes;
   }
   /**
    * Required-bound Value Set for modifier (SearchParameter.modifier)
    */
-  public static modifierRequiredCoding():SearchModifierCodeCodingType {
-    return SearchModifierCodeCodings;
+  public static get modifierRequiredCodes() {
+    return SearchModifierCodeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -415,52 +415,94 @@ export class SearchParameter extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"SearchParameter" fhir: SearchParameter.resourceType:"SearchParameter"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"SearchParameter" fhir: SearchParameter.resourceType:"SearchParameter"' });
     }
     if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property url:fhir.FhirUri fhir: SearchParameter.url:uri', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url:fhir.FhirUri fhir: SearchParameter.url:uri' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["version"]) { issues.push(...this.version.doModelValidation()); }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: SearchParameter.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: SearchParameter.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["derivedFrom"]) { issues.push(...this.derivedFrom.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: SearchParameter.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: SearchParameter.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: SearchParameter.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
     if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['description']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property description:fhir.FhirMarkdown fhir: SearchParameter.description:markdown', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description:fhir.FhirMarkdown fhir: SearchParameter.description:markdown' });
     }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.FhirCode fhir: SearchParameter.code:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode fhir: SearchParameter.code:code' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['base']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property base:fhir.FhirCode[] fhir: SearchParameter.base:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property base:fhir.FhirCode[] fhir: SearchParameter.base:code' });
     } else if (!Array.isArray(this.base)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property base:fhir.FhirCode[] fhir: SearchParameter.base:code', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property base:fhir.FhirCode[] fhir: SearchParameter.base:code' });
     } else if (this.base.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property base:fhir.FhirCode[] fhir: SearchParameter.base:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property base:fhir.FhirCode[] fhir: SearchParameter.base:code' });
+    }
+    if (this['base']) {
+      this.base.forEach((v) => {
+        if (!Object.values(ResourceTypesCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property base:fhir.FhirCode[] fhir: SearchParameter.base:code Required binding to: ResourceTypes' });
+        }
+      });
     }
     if (this["base"]) { this.base.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:SearchParamTypeCodeType fhir: SearchParameter.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<SearchParamTypeCodeType> fhir: SearchParameter.type:code' });
     }
+    if (this['type'] && (!Object.values(SearchParamTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<SearchParamTypeCodeType> fhir: SearchParameter.type:code Required binding to: SearchParamType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
     if (this["xpath"]) { issues.push(...this.xpath.doModelValidation()); }
+    if (this['xpathUsage'] && (!Object.values(SearchXpathUsageCodes).includes(this.xpathUsage as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property xpathUsage?:fhir.FhirCode<SearchXpathUsageCodeType> fhir: SearchParameter.xpathUsage:code Required binding to: SearchXpathUsage' });
+    }
+    if (this["xpathUsage"]) { issues.push(...this.xpathUsage.doModelValidation()); }
+    if (this['target']) {
+      this.target.forEach((v) => {
+        if (!Object.values(ResourceTypesCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property target?:fhir.FhirCode[] fhir: SearchParameter.target:code Required binding to: ResourceTypes' });
+        }
+      });
+    }
     if (this["target"]) { this.target.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["multipleOr"]) { issues.push(...this.multipleOr.doModelValidation()); }
     if (this["multipleAnd"]) { issues.push(...this.multipleAnd.doModelValidation()); }
+    if (this['comparator']) {
+      this.comparator.forEach((v) => {
+        if (!Object.values(SearchComparatorCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property comparator?:fhir.FhirCode<SearchComparatorCodeType>[] fhir: SearchParameter.comparator:code Required binding to: SearchComparator' });
+        }
+      });
+    }
+    if (this["comparator"]) { this.comparator.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['modifier']) {
+      this.modifier.forEach((v) => {
+        if (!Object.values(SearchModifierCodeCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property modifier?:fhir.FhirCode<SearchModifierCodeCodeType>[] fhir: SearchParameter.modifier:code Required binding to: SearchModifierCode' });
+        }
+      });
+    }
+    if (this["modifier"]) { this.modifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["chain"]) { this.chain.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["component"]) { this.component.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;

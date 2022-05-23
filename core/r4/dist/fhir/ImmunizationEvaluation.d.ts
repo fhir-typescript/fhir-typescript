@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ImmunizationEvaluationStatusCodingType } from '../fhirValueSets/ImmunizationEvaluationStatusCodings.js';
 import { ImmunizationEvaluationStatusCodeType } from '../fhirValueSets/ImmunizationEvaluationStatusCodes.js';
 /**
  * Valid arguments for the ImmunizationEvaluation type.
@@ -16,7 +15,7 @@ export interface ImmunizationEvaluationArgs extends fhir.DomainResourceArgs {
     /**
      * Indicates the current status of the evaluation of the vaccination administration event.
      */
-    status: ImmunizationEvaluationStatusCodeType | null;
+    status: fhir.FhirCode<ImmunizationEvaluationStatusCodeType> | string | undefined;
     /**
      * The individual for whom the evaluation is being done.
      */
@@ -93,11 +92,11 @@ export declare class ImmunizationEvaluation extends fhir.DomainResource {
     /**
      * A unique identifier assigned to this immunization evaluation record.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Indicates the current status of the evaluation of the vaccination administration event.
      */
-    status: ImmunizationEvaluationStatusCodeType | null;
+    status: fhir.FhirCode<ImmunizationEvaluationStatusCodeType> | null;
     /**
      * The individual for whom the evaluation is being done.
      */
@@ -125,7 +124,7 @@ export declare class ImmunizationEvaluation extends fhir.DomainResource {
     /**
      * Provides an explanation as to why the vaccine administration event is valid or not relative to the published recommendations.
      */
-    doseStatusReason?: fhir.CodeableConcept[];
+    doseStatusReason: fhir.CodeableConcept[];
     /**
      * Additional information about the evaluation.
      */
@@ -157,7 +156,10 @@ export declare class ImmunizationEvaluation extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (ImmunizationEvaluation.status)
      */
-    static statusRequiredCoding(): ImmunizationEvaluationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Completed: "completed";
+        readonly EnteredInError: "entered-in-error";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -21,6 +21,10 @@ export interface DeviceUseStatement extends fhir.DomainResource {
      */
     status: 'active' | 'completed' | 'entered-in-error' | 'intended' | 'on-hold' | 'stopped' | null;
     /**
+     * Extended properties for primitive element: DeviceUseStatement.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * The patient who used the device.
      */
     subject: fhir.Reference | null;

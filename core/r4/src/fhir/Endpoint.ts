@@ -28,7 +28,7 @@ export interface EndpointArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the endpoint as not currently valid.
    */
-  status: EndpointStatusCodeType|null;
+  status: fhir.FhirCode<EndpointStatusCodeType>|string|undefined;
   /**
    * For additional connectivity details for the protocol, extensions will be used at this point, as in the XDS example.
    */
@@ -85,11 +85,11 @@ export class Endpoint extends fhir.DomainResource {
   /**
    * Identifier for the organization that is used to identify the endpoint across multiple disparate systems.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the status contains codes that mark the endpoint as not currently valid.
    */
-  public status: EndpointStatusCodeType|null;
+  public status: fhir.FhirCode<EndpointStatusCodeType>|null;
   /**
    * For additional connectivity details for the protocol, extensions will be used at this point, as in the XDS example.
    */
@@ -105,7 +105,7 @@ export class Endpoint extends fhir.DomainResource {
   /**
    * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
    */
-  public contact?: fhir.ContactPoint[];
+  public contact: fhir.ContactPoint[];
   /**
    * The interval during which the endpoint is expected to be operational.
    */
@@ -117,7 +117,7 @@ export class Endpoint extends fhir.DomainResource {
   /**
    * Sending the payload has obvious security consequences. The server is responsible for ensuring that the content is appropriately secured.
    */
-  public payloadMimeType?: fhir.FhirCode[];
+  public payloadMimeType: fhir.FhirCode[];
   /**
    * For rest-hook, and websocket, the end-point must be an http: or https: URL; for email, a mailto: url, for sms, a tel: url, and for message the endpoint can be in any form of url the server understands (usually, http: or mllp:). The URI is allowed to be relative; in which case, it is relative to the server end-point (since there may be more than one, clients should avoid using relative URIs)
    * This address will be to the service base, without any parameters, or sub-services or resources tacked on.
@@ -128,7 +128,7 @@ export class Endpoint extends fhir.DomainResource {
   /**
    * Exactly what these mean depends on the channel type. The can convey additional information to the recipient and/or meet security requirements.
    */
-  public header?: fhir.FhirString[];
+  public header: fhir.FhirString[];
   /**
    * Default constructor for Endpoint - initializes any required elements to null if a value is not provided.
    */
@@ -137,7 +137,7 @@ export class Endpoint extends fhir.DomainResource {
     this.resourceType = 'Endpoint';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<EndpointStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['connectionType']) { this.connectionType = new fhir.Coding(source.connectionType); }
     else { this.connectionType = null; }
@@ -158,13 +158,13 @@ export class Endpoint extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Endpoint.status)
    */
-  public static statusRequiredCoding():EndpointStatusCodingType {
-    return EndpointStatusCodings;
+  public static get statusRequiredCodes() {
+    return EndpointStatusCodes;
   }
   /**
    * Extensible-bound Value Set for connectionType (Endpoint.connectionType)
    */
-  public static connectionTypeExtensibleCoding():EndpointConnectionTypeCodingType {
+  public static get connectionTypeExtensibleCodings() {
     return EndpointConnectionTypeCodings;
   }
   /**
@@ -173,14 +173,18 @@ export class Endpoint extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Endpoint" fhir: Endpoint.resourceType:"Endpoint"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Endpoint" fhir: Endpoint.resourceType:"Endpoint"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:EndpointStatusCodeType fhir: Endpoint.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<EndpointStatusCodeType> fhir: Endpoint.status:code' });
     }
+    if (this['status'] && (!Object.values(EndpointStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<EndpointStatusCodeType> fhir: Endpoint.status:code Required binding to: EndpointStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['connectionType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property connectionType:fhir.Coding fhir: Endpoint.connectionType:Coding', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property connectionType:fhir.Coding fhir: Endpoint.connectionType:Coding' });
     }
     if (this["connectionType"]) { issues.push(...this.connectionType.doModelValidation()); }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
@@ -188,16 +192,16 @@ export class Endpoint extends fhir.DomainResource {
     if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["period"]) { issues.push(...this.period.doModelValidation()); }
     if (!this['payloadType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property payloadType:fhir.CodeableConcept[] fhir: Endpoint.payloadType:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property payloadType:fhir.CodeableConcept[] fhir: Endpoint.payloadType:CodeableConcept' });
     } else if (!Array.isArray(this.payloadType)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property payloadType:fhir.CodeableConcept[] fhir: Endpoint.payloadType:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property payloadType:fhir.CodeableConcept[] fhir: Endpoint.payloadType:CodeableConcept' });
     } else if (this.payloadType.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property payloadType:fhir.CodeableConcept[] fhir: Endpoint.payloadType:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property payloadType:fhir.CodeableConcept[] fhir: Endpoint.payloadType:CodeableConcept' });
     }
     if (this["payloadType"]) { this.payloadType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["payloadMimeType"]) { this.payloadMimeType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['address']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property address:fhir.FhirUrl fhir: Endpoint.address:url', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property address:fhir.FhirUrl fhir: Endpoint.address:url' });
     }
     if (this["address"]) { issues.push(...this.address.doModelValidation()); }
     if (this["header"]) { this.header.forEach((x) => { issues.push(...x.doModelValidation()); }) }

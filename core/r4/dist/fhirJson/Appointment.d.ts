@@ -18,9 +18,17 @@ export interface AppointmentParticipant extends fhir.BackboneElement {
      */
     required?: 'information-only' | 'optional' | 'required' | undefined;
     /**
+     * Extended properties for primitive element: Appointment.participant.required
+     */
+    _required?: fhir.FhirElement;
+    /**
      * Participation status of the actor.
      */
     status: 'accepted' | 'declined' | 'needs-action' | 'tentative' | null;
+    /**
+     * Extended properties for primitive element: Appointment.participant.status
+     */
+    _status?: fhir.FhirElement;
     /**
      * Participation period of the actor.
      */
@@ -43,6 +51,10 @@ export interface Appointment extends fhir.DomainResource {
      * This element is labeled as a modifier because the status contains the code entered-in-error that mark the Appointment as not currently valid.
      */
     status: 'arrived' | 'booked' | 'cancelled' | 'checked-in' | 'entered-in-error' | 'fulfilled' | 'noshow' | 'pending' | 'proposed' | 'waitlist' | null;
+    /**
+     * Extended properties for primitive element: Appointment.status
+     */
+    _status?: fhir.FhirElement;
     /**
      * The coded reason for the appointment being cancelled. This is often used in reporting/billing/futher processing to determine if further actions are required, or specific fees apply.
      */

@@ -125,6 +125,10 @@ export interface MessageDefinition extends fhir.DomainResource {
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
   /**
+   * Extended properties for primitive element: MessageDefinition.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Allows filtering of message definitions that are appropriate for use versus not.
    */
   experimental?: boolean|undefined;
@@ -217,6 +221,10 @@ export interface MessageDefinition extends fhir.DomainResource {
    */
   category?: 'consequence'|'currency'|'notification'|undefined;
   /**
+   * Extended properties for primitive element: MessageDefinition.category
+   */
+  _category?:fhir.FhirElement;
+  /**
    * Identifies the resource (or resources) that are being addressed by the event.  For example, the Encounter for an admit message or two Account records for a merge.
    */
   focus?: fhir.MessageDefinitionFocus[]|undefined;
@@ -224,6 +232,10 @@ export interface MessageDefinition extends fhir.DomainResource {
    * This enables the capability currently available through MSH-16 (Application Level acknowledgement) in HL7 Version 2 to declare at a message instance level whether a response is required or only upon error or success, or never.
    */
   responseRequired?: 'always'|'never'|'on-error'|'on-success'|undefined;
+  /**
+   * Extended properties for primitive element: MessageDefinition.responseRequired
+   */
+  _responseRequired?:fhir.FhirElement;
   /**
    * This indicates an application level response to "close" a transaction implicit in a particular request message.  To define a complete workflow scenario, look to the [[PlanDefinition]] resource which allows the definition of complex orchestrations, conditionality, etc.
    */

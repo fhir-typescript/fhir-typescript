@@ -1,9 +1,5 @@
 import * as fhir from '../fhir.js';
-import { AdverseEventActualityCodingType } from '../fhirValueSets/AdverseEventActualityCodings.js';
 import { AdverseEventActualityCodeType } from '../fhirValueSets/AdverseEventActualityCodes.js';
-import { AdverseEventCategoryCodingType } from '../fhirValueSets/AdverseEventCategoryCodings.js';
-import { AdverseEventSeverityCodingType } from '../fhirValueSets/AdverseEventSeverityCodings.js';
-import { AdverseEventOutcomeCodingType } from '../fhirValueSets/AdverseEventOutcomeCodings.js';
 /**
  * Valid arguments for the AdverseEventSuspectEntityCausality type.
  */
@@ -86,7 +82,7 @@ export declare class AdverseEventSuspectEntity extends fhir.BackboneElement {
     /**
      * Information on the possible cause of the event.
      */
-    causality?: fhir.AdverseEventSuspectEntityCausality[];
+    causality: fhir.AdverseEventSuspectEntityCausality[];
     /**
      * Default constructor for AdverseEventSuspectEntity - initializes any required elements to null if a value is not provided.
      */
@@ -111,7 +107,7 @@ export interface AdverseEventArgs extends fhir.DomainResourceArgs {
     /**
      * Whether the event actually happened, or just had the potential to. Note that this is independent of whether anyone was affected or harmed or how severely.
      */
-    actuality: AdverseEventActualityCodeType | null;
+    actuality: fhir.FhirCode<AdverseEventActualityCodeType> | string | undefined;
     /**
      * The overall type of event, intended for search and filtering purposes.
      */
@@ -204,11 +200,11 @@ export declare class AdverseEvent extends fhir.DomainResource {
     /**
      * Whether the event actually happened, or just had the potential to. Note that this is independent of whether anyone was affected or harmed or how severely.
      */
-    actuality: AdverseEventActualityCodeType | null;
+    actuality: fhir.FhirCode<AdverseEventActualityCodeType> | null;
     /**
      * The overall type of event, intended for search and filtering purposes.
      */
-    category?: fhir.CodeableConcept[];
+    category: fhir.CodeableConcept[];
     /**
      * This element defines the specific type of event that occurred or that was prevented from occurring.
      */
@@ -236,7 +232,7 @@ export declare class AdverseEvent extends fhir.DomainResource {
     /**
      * Includes information about the reaction that occurred as a result of exposure to a substance (for example, a drug or a chemical).
      */
-    resultingCondition?: fhir.Reference[];
+    resultingCondition: fhir.Reference[];
     /**
      * The information about where the adverse event occurred.
      */
@@ -260,23 +256,23 @@ export declare class AdverseEvent extends fhir.DomainResource {
     /**
      * Parties that may or should contribute or have contributed information to the adverse event, which can consist of one or more activities.  Such information includes information leading to the decision to perform the activity and how to perform the activity (e.g. consultant), information that the activity itself seeks to reveal (e.g. informant of clinical history), or information about what activity was performed (e.g. informant witness).
      */
-    contributor?: fhir.Reference[];
+    contributor: fhir.Reference[];
     /**
      * Describes the entity that is suspected to have caused the adverse event.
      */
-    suspectEntity?: fhir.AdverseEventSuspectEntity[];
+    suspectEntity: fhir.AdverseEventSuspectEntity[];
     /**
      * AdverseEvent.subjectMedicalHistory.
      */
-    subjectMedicalHistory?: fhir.Reference[];
+    subjectMedicalHistory: fhir.Reference[];
     /**
      * AdverseEvent.referenceDocument.
      */
-    referenceDocument?: fhir.Reference[];
+    referenceDocument: fhir.Reference[];
     /**
      * AdverseEvent.study.
      */
-    study?: fhir.Reference[];
+    study: fhir.Reference[];
     /**
      * Default constructor for AdverseEvent - initializes any required elements to null if a value is not provided.
      */
@@ -284,19 +280,48 @@ export declare class AdverseEvent extends fhir.DomainResource {
     /**
      * Required-bound Value Set for actuality (AdverseEvent.actuality)
      */
-    static actualityRequiredCoding(): AdverseEventActualityCodingType;
+    static get actualityRequiredCodes(): {
+        readonly AdverseEvent: "actual";
+        readonly PotentialAdverseEvent: "potential";
+    };
     /**
      * Extensible-bound Value Set for category (AdverseEvent.category)
      */
-    static categoryExtensibleCoding(): AdverseEventCategoryCodingType;
+    static get categoryExtensibleCodings(): {
+        readonly ExpiredDrug: fhir.Coding;
+        readonly IncorrectPrescribingInformation: fhir.Coding;
+        readonly MedicalDeviceUseError: fhir.Coding;
+        readonly ProblemWithDifferentManufacturerOfSameMedicine: fhir.Coding;
+        readonly ProductProblem: fhir.Coding;
+        readonly ProductQuality: fhir.Coding;
+        readonly ProductUseError: fhir.Coding;
+        readonly UnsafePhysicalEnvironment: fhir.Coding;
+        readonly WrongDose: fhir.Coding;
+        readonly WrongDuration: fhir.Coding;
+        readonly WrongRate: fhir.Coding;
+        readonly WrongRouteOfAdministration: fhir.Coding;
+        readonly WrongTechnique: fhir.Coding;
+        readonly WrongTime: fhir.Coding;
+    };
     /**
      * Required-bound Value Set for severity (AdverseEvent.severity)
      */
-    static severityRequiredCoding(): AdverseEventSeverityCodingType;
+    static get severityRequiredCodes(): {
+        readonly Mild: "mild";
+        readonly Moderate: "moderate";
+        readonly Severe: "severe";
+    };
     /**
      * Required-bound Value Set for outcome (AdverseEvent.outcome)
      */
-    static outcomeRequiredCoding(): AdverseEventOutcomeCodingType;
+    static get outcomeRequiredCodes(): {
+        readonly Fatal: "fatal";
+        readonly Ongoing: "ongoing";
+        readonly Recovering: "recovering";
+        readonly Resolved: "resolved";
+        readonly ResolvedWithSequelae: "resolvedWithSequelae";
+        readonly Unknown: "unknown";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

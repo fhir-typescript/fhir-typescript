@@ -70,11 +70,11 @@ export class MedicinalProductManufactured extends fhir.DomainResource {
   /**
    * Manufacturer of the item (Note that this should be named "manufacturer" but it currently causes technical issues).
    */
-  public manufacturer?: fhir.Reference[];
+  public manufacturer: fhir.Reference[];
   /**
    * Ingredient.
    */
-  public ingredient?: fhir.Reference[];
+  public ingredient: fhir.Reference[];
   /**
    * Dimensions, color etc.
    */
@@ -82,7 +82,7 @@ export class MedicinalProductManufactured extends fhir.DomainResource {
   /**
    * Other codeable characteristics.
    */
-  public otherCharacteristics?: fhir.CodeableConcept[];
+  public otherCharacteristics: fhir.CodeableConcept[];
   /**
    * Default constructor for MedicinalProductManufactured - initializes any required elements to null if a value is not provided.
    */
@@ -108,15 +108,15 @@ export class MedicinalProductManufactured extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicinalProductManufactured" fhir: MedicinalProductManufactured.resourceType:"MedicinalProductManufactured"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicinalProductManufactured" fhir: MedicinalProductManufactured.resourceType:"MedicinalProductManufactured"' });
     }
     if (!this['manufacturedDoseForm']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property manufacturedDoseForm:fhir.CodeableConcept fhir: MedicinalProductManufactured.manufacturedDoseForm:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property manufacturedDoseForm:fhir.CodeableConcept fhir: MedicinalProductManufactured.manufacturedDoseForm:CodeableConcept' });
     }
     if (this["manufacturedDoseForm"]) { issues.push(...this.manufacturedDoseForm.doModelValidation()); }
     if (this["unitOfPresentation"]) { issues.push(...this.unitOfPresentation.doModelValidation()); }
     if (!this['quantity']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property quantity:fhir.Quantity fhir: MedicinalProductManufactured.quantity:Quantity', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property quantity:fhir.Quantity fhir: MedicinalProductManufactured.quantity:Quantity' });
     }
     if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
     if (this["manufacturer"]) { this.manufacturer.forEach((x) => { issues.push(...x.doModelValidation()); }) }

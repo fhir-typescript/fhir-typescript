@@ -149,7 +149,7 @@ export class CoverageEligibilityResponseInsuranceItemBenefit extends fhir.Backbo
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: CoverageEligibilityResponse.insurance.item.benefit.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: CoverageEligibilityResponse.insurance.item.benefit.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     return issues;
@@ -236,7 +236,7 @@ export class CoverageEligibilityResponseInsuranceItem extends fhir.BackboneEleme
   /**
    * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  public modifier?: fhir.CodeableConcept[];
+  public modifier: fhir.CodeableConcept[];
   /**
    * The practitioner who is eligible for the provision of the product or service.
    */
@@ -268,7 +268,7 @@ export class CoverageEligibilityResponseInsuranceItem extends fhir.BackboneEleme
   /**
    * Benefits used to date.
    */
-  public benefit?: fhir.CoverageEligibilityResponseInsuranceItemBenefit[];
+  public benefit: fhir.CoverageEligibilityResponseInsuranceItemBenefit[];
   /**
    * A boolean flag indicating whether a preauthorization is required prior to actual service delivery.
    */
@@ -276,7 +276,7 @@ export class CoverageEligibilityResponseInsuranceItem extends fhir.BackboneEleme
   /**
    * Codes or comments regarding information or actions associated with the preauthorization.
    */
-  public authorizationSupporting?: fhir.CodeableConcept[];
+  public authorizationSupporting: fhir.CodeableConcept[];
   /**
    * A web location for obtaining requirements or descriptive information regarding the preauthorization.
    */
@@ -371,7 +371,7 @@ export class CoverageEligibilityResponseInsurance extends fhir.BackboneElement {
   /**
    * Benefits and optionally current balances, and authorization details by category or service.
    */
-  public item?: fhir.CoverageEligibilityResponseInsuranceItem[];
+  public item: fhir.CoverageEligibilityResponseInsuranceItem[];
   /**
    * Default constructor for CoverageEligibilityResponseInsurance - initializes any required elements to null if a value is not provided.
    */
@@ -390,7 +390,7 @@ export class CoverageEligibilityResponseInsurance extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['coverage']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property coverage:fhir.Reference fhir: CoverageEligibilityResponse.insurance.coverage:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property coverage:fhir.Reference fhir: CoverageEligibilityResponse.insurance.coverage:Reference' });
     }
     if (this["coverage"]) { issues.push(...this.coverage.doModelValidation()); }
     if (this["inforce"]) { issues.push(...this.inforce.doModelValidation()); }
@@ -435,7 +435,7 @@ export class CoverageEligibilityResponseError extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: CoverageEligibilityResponse.error.code:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: CoverageEligibilityResponse.error.code:CodeableConcept' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     return issues;
@@ -456,11 +456,11 @@ export interface CoverageEligibilityResponseArgs extends fhir.DomainResourceArgs
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status: FmStatusCodeType|null;
+  status: fhir.FhirCode<FmStatusCodeType>|string|undefined;
   /**
    * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
    */
-  purpose: EligibilityresponsePurposeCodeType[]|null;
+  purpose: fhir.FhirCode<EligibilityresponsePurposeCodeType>[]|string[]|undefined;
   /**
    * The party who is the beneficiary of the supplied coverage and for whom eligibility is sought.
    */
@@ -492,7 +492,7 @@ export interface CoverageEligibilityResponseArgs extends fhir.DomainResourceArgs
   /**
    * The resource may be used to indicate that: the request has been held (queued) for processing; that it has been processed and errors found (error); that no errors were found and that some of the adjudication has been undertaken (partial) or that all of the adjudication has been undertaken (complete).
    */
-  outcome: RemittanceOutcomeCodeType|null;
+  outcome: fhir.FhirCode<RemittanceOutcomeCodeType>|string|undefined;
   /**
    * A human readable description of the status of the adjudication.
    */
@@ -534,15 +534,15 @@ export class CoverageEligibilityResponse extends fhir.DomainResource {
   /**
    * A unique identifier assigned to this coverage eligiblity request.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status: FmStatusCodeType|null;
+  public status: fhir.FhirCode<FmStatusCodeType>|null;
   /**
    * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
    */
-  public purpose: EligibilityresponsePurposeCodeType[];
+  public purpose: fhir.FhirCode<EligibilityresponsePurposeCodeType>[];
   /**
    * The party who is the beneficiary of the supplied coverage and for whom eligibility is sought.
    */
@@ -570,7 +570,7 @@ export class CoverageEligibilityResponse extends fhir.DomainResource {
   /**
    * The resource may be used to indicate that: the request has been held (queued) for processing; that it has been processed and errors found (error); that no errors were found and that some of the adjudication has been undertaken (partial) or that all of the adjudication has been undertaken (complete).
    */
-  public outcome: RemittanceOutcomeCodeType|null;
+  public outcome: fhir.FhirCode<RemittanceOutcomeCodeType>|null;
   /**
    * A human readable description of the status of the adjudication.
    */
@@ -582,7 +582,7 @@ export class CoverageEligibilityResponse extends fhir.DomainResource {
   /**
    * All insurance coverages for the patient which may be applicable for reimbursement, of the products and services listed in the claim, are typically provided in the claim to allow insurers to confirm the ordering of the insurance coverages relative to local 'coordination of benefit' rules. One coverage (and only one) with 'focal=true' is to be used in the adjudication of this claim. Coverages appearing before the focal Coverage in the list, and where 'subrogation=false', should provide a reference to the ClaimResponse containing the adjudication results of the prior claim.
    */
-  public insurance?: fhir.CoverageEligibilityResponseInsurance[];
+  public insurance: fhir.CoverageEligibilityResponseInsurance[];
   /**
    * A reference from the Insurer to which these services pertain to be used on further communication and as proof that the request occurred.
    */
@@ -594,7 +594,7 @@ export class CoverageEligibilityResponse extends fhir.DomainResource {
   /**
    * Errors encountered during the processing of the request.
    */
-  public error?: fhir.CoverageEligibilityResponseError[];
+  public error: fhir.CoverageEligibilityResponseError[];
   /**
    * Default constructor for CoverageEligibilityResponse - initializes any required elements to null if a value is not provided.
    */
@@ -603,9 +603,9 @@ export class CoverageEligibilityResponse extends fhir.DomainResource {
     this.resourceType = 'CoverageEligibilityResponse';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
     else { this.status = null; }
-    if (source['purpose']) { this.purpose = source.purpose.map((x) => x); }
+    if (source['purpose']) { this.purpose = source.purpose.map((x) => new fhir.FhirCode<EligibilityresponsePurposeCodeType>({value: x})); }
     else { this.purpose = []; }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     else { this.patient = null; }
@@ -617,7 +617,7 @@ export class CoverageEligibilityResponse extends fhir.DomainResource {
     if (source['requestor']) { this.requestor = new fhir.Reference(source.requestor); }
     if (source['request']) { this.request = new fhir.Reference(source.request); }
     else { this.request = null; }
-    if (source['outcome']) { this.outcome = source.outcome; }
+    if (source['outcome']) { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>({value: source.outcome}); }
     else { this.outcome = null; }
     if (source['disposition']) { this.disposition = new fhir.FhirString({value: source.disposition}); }
     if (source['insurer']) { this.insurer = new fhir.Reference(source.insurer); }
@@ -632,20 +632,20 @@ export class CoverageEligibilityResponse extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (CoverageEligibilityResponse.status)
    */
-  public static statusRequiredCoding():FmStatusCodingType {
-    return FmStatusCodings;
+  public static get statusRequiredCodes() {
+    return FmStatusCodes;
   }
   /**
    * Required-bound Value Set for purpose (CoverageEligibilityResponse.purpose)
    */
-  public static purposeRequiredCoding():EligibilityresponsePurposeCodingType {
-    return EligibilityresponsePurposeCodings;
+  public static get purposeRequiredCodes() {
+    return EligibilityresponsePurposeCodes;
   }
   /**
    * Required-bound Value Set for outcome (CoverageEligibilityResponse.outcome)
    */
-  public static outcomeRequiredCoding():RemittanceOutcomeCodingType {
-    return RemittanceOutcomeCodings;
+  public static get outcomeRequiredCodes() {
+    return RemittanceOutcomeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -653,38 +653,54 @@ export class CoverageEligibilityResponse extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"CoverageEligibilityResponse" fhir: CoverageEligibilityResponse.resourceType:"CoverageEligibilityResponse"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"CoverageEligibilityResponse" fhir: CoverageEligibilityResponse.resourceType:"CoverageEligibilityResponse"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:FmStatusCodeType fhir: CoverageEligibilityResponse.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<FmStatusCodeType> fhir: CoverageEligibilityResponse.status:code' });
     }
+    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<FmStatusCodeType> fhir: CoverageEligibilityResponse.status:code Required binding to: FmStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['purpose']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property purpose:EligibilityresponsePurposeCodeType[] fhir: CoverageEligibilityResponse.purpose:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property purpose:fhir.FhirCode<EligibilityresponsePurposeCodeType>[] fhir: CoverageEligibilityResponse.purpose:code' });
     } else if (!Array.isArray(this.purpose)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property purpose:EligibilityresponsePurposeCodeType[] fhir: CoverageEligibilityResponse.purpose:code', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property purpose:fhir.FhirCode<EligibilityresponsePurposeCodeType>[] fhir: CoverageEligibilityResponse.purpose:code' });
     } else if (this.purpose.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property purpose:EligibilityresponsePurposeCodeType[] fhir: CoverageEligibilityResponse.purpose:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property purpose:fhir.FhirCode<EligibilityresponsePurposeCodeType>[] fhir: CoverageEligibilityResponse.purpose:code' });
     }
+    if (this['purpose']) {
+      this.purpose.forEach((v) => {
+        if (!Object.values(EligibilityresponsePurposeCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property purpose:fhir.FhirCode<EligibilityresponsePurposeCodeType>[] fhir: CoverageEligibilityResponse.purpose:code Required binding to: EligibilityresponsePurpose' });
+        }
+      });
+    }
+    if (this["purpose"]) { this.purpose.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: CoverageEligibilityResponse.patient:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: CoverageEligibilityResponse.patient:Reference' });
     }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
     if (!this['created']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property created:fhir.FhirDateTime fhir: CoverageEligibilityResponse.created:dateTime', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property created:fhir.FhirDateTime fhir: CoverageEligibilityResponse.created:dateTime' });
     }
     if (this["created"]) { issues.push(...this.created.doModelValidation()); }
     if (this["requestor"]) { issues.push(...this.requestor.doModelValidation()); }
     if (!this['request']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property request:fhir.Reference fhir: CoverageEligibilityResponse.request:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property request:fhir.Reference fhir: CoverageEligibilityResponse.request:Reference' });
     }
     if (this["request"]) { issues.push(...this.request.doModelValidation()); }
     if (!this['outcome']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property outcome:RemittanceOutcomeCodeType fhir: CoverageEligibilityResponse.outcome:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property outcome:fhir.FhirCode<RemittanceOutcomeCodeType> fhir: CoverageEligibilityResponse.outcome:code' });
     }
+    if (this['outcome'] && (!Object.values(RemittanceOutcomeCodes).includes(this.outcome as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property outcome:fhir.FhirCode<RemittanceOutcomeCodeType> fhir: CoverageEligibilityResponse.outcome:code Required binding to: RemittanceOutcome' });
+    }
+    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation()); }
     if (this["disposition"]) { issues.push(...this.disposition.doModelValidation()); }
     if (!this['insurer']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property insurer:fhir.Reference fhir: CoverageEligibilityResponse.insurer:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property insurer:fhir.Reference fhir: CoverageEligibilityResponse.insurer:Reference' });
     }
     if (this["insurer"]) { issues.push(...this.insurer.doModelValidation()); }
     if (this["insurance"]) { this.insurance.forEach((x) => { issues.push(...x.doModelValidation()); }) }

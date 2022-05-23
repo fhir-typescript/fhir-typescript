@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ClinicalimpressionStatusCodingType } from '../fhirValueSets/ClinicalimpressionStatusCodings.js';
 import { ClinicalimpressionStatusCodeType } from '../fhirValueSets/ClinicalimpressionStatusCodes.js';
 /**
  * Valid arguments for the ClinicalImpressionInvestigation type.
@@ -29,7 +28,7 @@ export declare class ClinicalImpressionInvestigation extends fhir.BackboneElemen
     /**
      * Most investigations are observations of one kind or another but some other specific types of data collection resources can also be used.
      */
-    item?: fhir.Reference[];
+    item: fhir.Reference[];
     /**
      * Default constructor for ClinicalImpressionInvestigation - initializes any required elements to null if a value is not provided.
      */
@@ -100,7 +99,7 @@ export interface ClinicalImpressionArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains the code entered-in-error that marks the clinical impression as not currently valid.
      */
-    status: ClinicalimpressionStatusCodeType | null;
+    status: fhir.FhirCode<ClinicalimpressionStatusCodeType> | string | undefined;
     /**
      * This is generally only used for "exception" statuses such as "not-done", "suspended" or "cancelled".
      * [distinct reason codes for different statuses can be enforced using invariants if they are universal bindings].
@@ -198,11 +197,11 @@ export declare class ClinicalImpression extends fhir.DomainResource {
     /**
      * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains the code entered-in-error that marks the clinical impression as not currently valid.
      */
-    status: ClinicalimpressionStatusCodeType | null;
+    status: fhir.FhirCode<ClinicalimpressionStatusCodeType> | null;
     /**
      * This is generally only used for "exception" statuses such as "not-done", "suspended" or "cancelled".
      * [distinct reason codes for different statuses can be enforced using invariants if they are universal bindings].
@@ -247,15 +246,15 @@ export declare class ClinicalImpression extends fhir.DomainResource {
     /**
      * e.g. The patient is a pregnant, has congestive heart failure, has an ‎Adenocarcinoma, and is allergic to penicillin.
      */
-    problem?: fhir.Reference[];
+    problem: fhir.Reference[];
     /**
      * One or more sets of investigations (signs, symptoms, etc.). The actual grouping of investigations varies greatly depending on the type and context of the assessment. These investigations may include data generated during the assessment process, or data previously generated and recorded that is pertinent to the outcomes.
      */
-    investigation?: fhir.ClinicalImpressionInvestigation[];
+    investigation: fhir.ClinicalImpressionInvestigation[];
     /**
      * Reference to a specific published clinical protocol that was followed during this assessment, and/or that provides evidence in support of the diagnosis.
      */
-    protocol?: fhir.FhirUri[];
+    protocol: fhir.FhirUri[];
     /**
      * A text summary of the investigations and the diagnosis.
      */
@@ -263,23 +262,23 @@ export declare class ClinicalImpression extends fhir.DomainResource {
     /**
      * Specific findings or diagnoses that were considered likely or relevant to ongoing treatment.
      */
-    finding?: fhir.ClinicalImpressionFinding[];
+    finding: fhir.ClinicalImpressionFinding[];
     /**
      * Estimate of likely outcome.
      */
-    prognosisCodeableConcept?: fhir.CodeableConcept[];
+    prognosisCodeableConcept: fhir.CodeableConcept[];
     /**
      * RiskAssessment expressing likely outcome.
      */
-    prognosisReference?: fhir.Reference[];
+    prognosisReference: fhir.Reference[];
     /**
      * Information supporting the clinical impression.
      */
-    supportingInfo?: fhir.Reference[];
+    supportingInfo: fhir.Reference[];
     /**
      * Don't use this element for content that should more properly appear as one of the specific elements of the impression.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Default constructor for ClinicalImpression - initializes any required elements to null if a value is not provided.
      */
@@ -287,7 +286,11 @@ export declare class ClinicalImpression extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (ClinicalImpression.status)
      */
-    static statusRequiredCoding(): ClinicalimpressionStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Completed: "completed";
+        readonly EnteredInError: "entered-in-error";
+        readonly InProgress: "in-progress";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

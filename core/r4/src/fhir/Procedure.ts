@@ -108,7 +108,7 @@ export class ProcedurePerformer extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["function"]) { issues.push(...this.function.doModelValidation()); }
     if (!this['actor']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actor:fhir.Reference fhir: Procedure.performer.actor:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor:fhir.Reference fhir: Procedure.performer.actor:Reference' });
     }
     if (this["actor"]) { issues.push(...this.actor.doModelValidation()); }
     if (this["onBehalfOf"]) { issues.push(...this.onBehalfOf.doModelValidation()); }
@@ -157,7 +157,7 @@ export class ProcedureFocalDevice extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for action (Procedure.focalDevice.action)
    */
-  public static actionPreferredCoding():DeviceActionCodingType {
+  public static get actionPreferredCodings() {
     return DeviceActionCodings;
   }
   /**
@@ -167,7 +167,7 @@ export class ProcedureFocalDevice extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["action"]) { issues.push(...this.action.doModelValidation()); }
     if (!this['manipulated']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property manipulated:fhir.Reference fhir: Procedure.focalDevice.manipulated:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property manipulated:fhir.Reference fhir: Procedure.focalDevice.manipulated:Reference' });
     }
     if (this["manipulated"]) { issues.push(...this.manipulated.doModelValidation()); }
     return issues;
@@ -205,7 +205,7 @@ export interface ProcedureArgs extends fhir.DomainResourceArgs {
    * The "unknown" code is not to be used to convey other statuses.  The "unknown" code should be used when one of the statuses applies, but the authoring system doesn't know the current state of the procedure.
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status: EventStatusCodeType|null;
+  status: fhir.FhirCode<EventStatusCodeType>|string|undefined;
   /**
    * This is generally only used for "exception" statuses such as "not-done", "suspended" or "aborted". The reason for performing the event at all is captured in reasonCode, not here.
    */
@@ -332,28 +332,28 @@ export class Procedure extends fhir.DomainResource {
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and Person resource instances might share the same social insurance number.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The URL pointing to a FHIR-defined protocol, guideline, order set or other definition that is adhered to in whole or in part by this Procedure.
    */
-  public instantiatesCanonical?: fhir.FhirCanonical[];
+  public instantiatesCanonical: fhir.FhirCanonical[];
   /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
-  public instantiatesUri?: fhir.FhirUri[];
+  public instantiatesUri: fhir.FhirUri[];
   /**
    * A reference to a resource that contains details of the request for this procedure.
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * The MedicationAdministration resource has a partOf reference to Procedure, but this is not a circular reference.   For example, the anesthesia MedicationAdministration is part of the surgical Procedure (MedicationAdministration.partOf = Procedure).  For example, the procedure to insert the IV port for an IV medication administration is part of the medication administration (Procedure.partOf = MedicationAdministration).
    */
-  public partOf?: fhir.Reference[];
+  public partOf: fhir.Reference[];
   /**
    * The "unknown" code is not to be used to convey other statuses.  The "unknown" code should be used when one of the statuses applies, but the authoring system doesn't know the current state of the procedure.
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status: EventStatusCodeType|null;
+  public status: fhir.FhirCode<EventStatusCodeType>|null;
   /**
    * This is generally only used for "exception" statuses such as "not-done", "suspended" or "aborted". The reason for performing the event at all is captured in reasonCode, not here.
    */
@@ -393,7 +393,7 @@ export class Procedure extends fhir.DomainResource {
   /**
    * Limited to "real" people rather than equipment.
    */
-  public performer?: fhir.ProcedurePerformer[];
+  public performer: fhir.ProcedurePerformer[];
   /**
    * The location where the procedure actually happened.  E.g. a newborn at home, a tracheostomy at a restaurant.
    */
@@ -401,16 +401,16 @@ export class Procedure extends fhir.DomainResource {
   /**
    * Use Procedure.reasonCode when a code sufficiently describes the reason.  Use Procedure.reasonReference when referencing a resource, which allows more information to be conveyed, such as onset date. Procedure.reasonCode and Procedure.reasonReference are not meant to be duplicative.  For a single reason, either Procedure.reasonCode or Procedure.reasonReference can be used.  Procedure.reasonCode may be a summary code, or Procedure.reasonReference may be used to reference a very precise definition of the reason using Condition | Observation | Procedure | DiagnosticReport | DocumentReference.  Both Procedure.reasonCode and Procedure.reasonReference can be used if they are describing different reasons for the procedure.
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * It is possible for a procedure to be a reason (such as C-Section) for another procedure (such as an epidural). Other examples include endoscopy for dilatation and biopsy (a combination of diagnostic and therapeutic use). 
    * Use Procedure.reasonCode when a code sufficiently describes the reason.  Use Procedure.reasonReference when referencing a resource, which allows more information to be conveyed, such as onset date. Procedure.reasonCode and Procedure.reasonReference are not meant to be duplicative.  For a single reason, either Procedure.reasonCode or Procedure.reasonReference can be used.  Procedure.reasonCode may be a summary code, or Procedure.reasonReference may be used to reference a very precise definition of the reason using Condition | Observation | Procedure | DiagnosticReport | DocumentReference.  Both Procedure.reasonCode and Procedure.reasonReference can be used if they are describing different reasons for the procedure.
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * If the use case requires attributes from the BodySite resource (e.g. to identify and track separately) then use the standard extension [procedure-targetbodystructure](extension-procedure-targetbodystructure.html).
    */
-  public bodySite?: fhir.CodeableConcept[];
+  public bodySite: fhir.CodeableConcept[];
   /**
    * If outcome contains narrative text only, it can be captured using the CodeableConcept.text.
    */
@@ -418,35 +418,35 @@ export class Procedure extends fhir.DomainResource {
   /**
    * There could potentially be multiple reports - e.g. if this was a procedure which took multiple biopsies resulting in a number of anatomical pathology reports.
    */
-  public report?: fhir.Reference[];
+  public report: fhir.Reference[];
   /**
    * If complications are only expressed by the narrative text, they can be captured using the CodeableConcept.text.
    */
-  public complication?: fhir.CodeableConcept[];
+  public complication: fhir.CodeableConcept[];
   /**
    * Any complications that occurred during the procedure, or in the immediate post-performance period.
    */
-  public complicationDetail?: fhir.Reference[];
+  public complicationDetail: fhir.Reference[];
   /**
    * If the procedure required specific follow up - e.g. removal of sutures. The follow up may be represented as a simple note or could potentially be more complex, in which case the CarePlan resource can be used.
    */
-  public followUp?: fhir.CodeableConcept[];
+  public followUp: fhir.CodeableConcept[];
   /**
    * Any other notes and comments about the procedure.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * A device that is implanted, removed or otherwise manipulated (calibration, battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a focal portion of the Procedure.
    */
-  public focalDevice?: fhir.ProcedureFocalDevice[];
+  public focalDevice: fhir.ProcedureFocalDevice[];
   /**
    * For devices actually implanted or removed, use Procedure.device.
    */
-  public usedReference?: fhir.Reference[];
+  public usedReference: fhir.Reference[];
   /**
    * For devices actually implanted or removed, use Procedure.device.
    */
-  public usedCode?: fhir.CodeableConcept[];
+  public usedCode: fhir.CodeableConcept[];
   /**
    * Default constructor for Procedure - initializes any required elements to null if a value is not provided.
    */
@@ -463,7 +463,7 @@ export class Procedure extends fhir.DomainResource {
     else { this.basedOn = []; }
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
     else { this.partOf = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<EventStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['statusReason']) { this.statusReason = new fhir.CodeableConcept(source.statusReason); }
     if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
@@ -509,8 +509,8 @@ export class Procedure extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Procedure.status)
    */
-  public static statusRequiredCoding():EventStatusCodingType {
-    return EventStatusCodings;
+  public static get statusRequiredCodes() {
+    return EventStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -518,7 +518,7 @@ export class Procedure extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Procedure" fhir: Procedure.resourceType:"Procedure"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Procedure" fhir: Procedure.resourceType:"Procedure"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -526,13 +526,17 @@ export class Procedure extends fhir.DomainResource {
     if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:EventStatusCodeType fhir: Procedure.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<EventStatusCodeType> fhir: Procedure.status:code' });
     }
+    if (this['status'] && (!Object.values(EventStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<EventStatusCodeType> fhir: Procedure.status:code Required binding to: EventStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation()); }
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: Procedure.subject:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: Procedure.subject:Reference' });
     }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }

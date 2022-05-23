@@ -73,6 +73,10 @@ export interface RiskAssessment extends fhir.DomainResource {
      */
     status: 'amended' | 'cancelled' | 'corrected' | 'entered-in-error' | 'final' | 'preliminary' | 'registered' | 'unknown' | null;
     /**
+     * Extended properties for primitive element: RiskAssessment.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * The algorithm, process or mechanism used to evaluate the risk.
      */
     method?: fhir.CodeableConcept | undefined;

@@ -1,8 +1,5 @@
 import * as fhir from '../fhir.js';
-import { EnteralRouteCodingType } from '../fhirValueSets/EnteralRouteCodings.js';
-import { RequestStatusCodingType } from '../fhirValueSets/RequestStatusCodings.js';
 import { RequestStatusCodeType } from '../fhirValueSets/RequestStatusCodes.js';
-import { RequestIntentCodingType } from '../fhirValueSets/RequestIntentCodings.js';
 import { RequestIntentCodeType } from '../fhirValueSets/RequestIntentCodes.js';
 /**
  * Valid arguments for the NutritionOrderOralDietNutrient type.
@@ -120,23 +117,23 @@ export declare class NutritionOrderOralDiet extends fhir.BackboneElement {
     /**
      * The kind of diet or dietary restriction such as fiber restricted diet or diabetic diet.
      */
-    type?: fhir.CodeableConcept[];
+    type: fhir.CodeableConcept[];
     /**
      * The time period and frequency at which the diet should be given.  The diet should be given for the combination of all schedules if more than one schedule is present.
      */
-    schedule?: fhir.Timing[];
+    schedule: fhir.Timing[];
     /**
      * Class that defines the quantity and type of nutrient modifications (for example carbohydrate, fiber or sodium) required for the oral diet.
      */
-    nutrient?: fhir.NutritionOrderOralDietNutrient[];
+    nutrient: fhir.NutritionOrderOralDietNutrient[];
     /**
      * Class that describes any texture modifications required for the patient to safely consume various types of solid foods.
      */
-    texture?: fhir.NutritionOrderOralDietTexture[];
+    texture: fhir.NutritionOrderOralDietTexture[];
     /**
      * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of liquids or fluids served to the patient.
      */
-    fluidConsistencyType?: fhir.CodeableConcept[];
+    fluidConsistencyType: fhir.CodeableConcept[];
     /**
      * Free text dosage instructions can be used for cases where the instructions are too complex to code.
      */
@@ -194,7 +191,7 @@ export declare class NutritionOrderSupplement extends fhir.BackboneElement {
     /**
      * The time period and frequency at which the supplement(s) should be given.  The supplement should be given for the combination of all schedules if more than one schedule is present.
      */
-    schedule?: fhir.Timing[];
+    schedule: fhir.Timing[];
     /**
      * The amount of the nutritional supplement to be given.
      */
@@ -346,7 +343,7 @@ export declare class NutritionOrderEnteralFormula extends fhir.BackboneElement {
     /**
      * See implementation notes below for further discussion on how to order continuous vs bolus enteral feeding using this resource.
      */
-    administration?: fhir.NutritionOrderEnteralFormulaAdministration[];
+    administration: fhir.NutritionOrderEnteralFormulaAdministration[];
     /**
      * The maximum total quantity of formula that may be administered to a subject over the period of time, e.g. 1440 mL over 24 hours.
      */
@@ -362,7 +359,17 @@ export declare class NutritionOrderEnteralFormula extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for routeofAdministration (NutritionOrder.enteralFormula.routeofAdministration)
      */
-    static routeofAdministrationExtensibleCoding(): EnteralRouteCodingType;
+    static get routeofAdministrationExtensibleCodings(): {
+        readonly InstillationEnteralFeedingTube: fhir.Coding;
+        readonly InstillationEnteral: fhir.Coding;
+        readonly InstillationGastroJejunostomyTube: fhir.Coding;
+        readonly InstillationGastrostomyTube: fhir.Coding;
+        readonly InstillationJejunostomyTube: fhir.Coding;
+        readonly InstillationNasogastricTube: fhir.Coding;
+        readonly InstillationOrogastricTube: fhir.Coding;
+        readonly InstillationOrojejunumTube: fhir.Coding;
+        readonly SwallowOral: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -395,11 +402,11 @@ export interface NutritionOrderArgs extends fhir.DomainResourceArgs {
     /**
      * Typically the system placing the order sets the status to "requested". Thereafter, the order is maintained by the receiver that updates the status as the request is handled.  This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: RequestStatusCodeType | null;
+    status: fhir.FhirCode<RequestStatusCodeType> | string | undefined;
     /**
      * When resources map to this element, they are free to define as many codes as necessary to cover their space and will map to "proposal, plan or order".  Can have multiple codes that map to one of these.  E.g. "original order", "encoded order", "reflex order" would all map to "order".  Expectation is that the set of codes is mutually exclusive or a strict all-encompassing hierarchy.
      */
-    intent: RequestIntentCodeType | null;
+    intent: fhir.FhirCode<RequestIntentCodeType> | string | undefined;
     /**
      * The person (patient) who needs the nutrition order for an oral diet, nutritional supplement and/or enteral or formula feeding.
      */
@@ -460,27 +467,27 @@ export declare class NutritionOrder extends fhir.DomainResource {
     /**
      * The Identifier.type element can be to indicate filler vs. placer if needed.  This is explained in further detail [here](servicerequest.html#notes).
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Note: This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    instantiatesCanonical?: fhir.FhirCanonical[];
+    instantiatesCanonical: fhir.FhirCanonical[];
     /**
      * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
      */
-    instantiatesUri?: fhir.FhirUri[];
+    instantiatesUri: fhir.FhirUri[];
     /**
      * The URL pointing to a protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.
      */
-    instantiates?: fhir.FhirUri[];
+    instantiates: fhir.FhirUri[];
     /**
      * Typically the system placing the order sets the status to "requested". Thereafter, the order is maintained by the receiver that updates the status as the request is handled.  This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: RequestStatusCodeType | null;
+    status: fhir.FhirCode<RequestStatusCodeType> | null;
     /**
      * When resources map to this element, they are free to define as many codes as necessary to cover their space and will map to "proposal, plan or order".  Can have multiple codes that map to one of these.  E.g. "original order", "encoded order", "reflex order" would all map to "order".  Expectation is that the set of codes is mutually exclusive or a strict all-encompassing hierarchy.
      */
-    intent: RequestIntentCodeType | null;
+    intent: fhir.FhirCode<RequestIntentCodeType> | null;
     /**
      * The person (patient) who needs the nutrition order for an oral diet, nutritional supplement and/or enteral or formula feeding.
      */
@@ -500,15 +507,15 @@ export declare class NutritionOrder extends fhir.DomainResource {
     /**
      * Information on a patient's food allergies and intolerances to inform healthcare personnel about the type of foods that the patient shouldn't receive or consume.
      */
-    allergyIntolerance?: fhir.Reference[];
+    allergyIntolerance: fhir.Reference[];
     /**
      * Information on a patient's food preferences that inform healthcare personnel about the food that the patient should receive or consume.
      */
-    foodPreferenceModifier?: fhir.CodeableConcept[];
+    foodPreferenceModifier: fhir.CodeableConcept[];
     /**
      * Information on a patient's food allergies, intolerances and preferences to inform healthcare personnel about the type  of foods that the patient shouldn't receive or consume.
      */
-    excludeFoodModifier?: fhir.CodeableConcept[];
+    excludeFoodModifier: fhir.CodeableConcept[];
     /**
      * Diet given orally in contrast to enteral (tube) feeding.
      */
@@ -516,7 +523,7 @@ export declare class NutritionOrder extends fhir.DomainResource {
     /**
      * Oral nutritional products given in order to add further nutritional value to the patient's diet.
      */
-    supplement?: fhir.NutritionOrderSupplement[];
+    supplement: fhir.NutritionOrderSupplement[];
     /**
      * Feeding provided through the gastrointestinal tract via a tube, catheter, or stoma that delivers nutrition distal to the oral cavity.
      */
@@ -524,7 +531,7 @@ export declare class NutritionOrder extends fhir.DomainResource {
     /**
      * This element SHALL NOT be used to supply free text instructions for the diet which are represented in the `.oralDiet.instruction`, `supplement.instruction`, or `enteralFormula.administrationInstruction` elements.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Default constructor for NutritionOrder - initializes any required elements to null if a value is not provided.
      */
@@ -532,11 +539,29 @@ export declare class NutritionOrder extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (NutritionOrder.status)
      */
-    static statusRequiredCoding(): RequestStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Completed: "completed";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+        readonly OnHold: "on-hold";
+        readonly Revoked: "revoked";
+        readonly Unknown: "unknown";
+    };
     /**
      * Required-bound Value Set for intent (NutritionOrder.intent)
      */
-    static intentRequiredCoding(): RequestIntentCodingType;
+    static get intentRequiredCodes(): {
+        readonly Directive: "directive";
+        readonly FillerOrder: "filler-order";
+        readonly InstanceOrder: "instance-order";
+        readonly Option: "option";
+        readonly Order: "order";
+        readonly OriginalOrder: "original-order";
+        readonly Plan: "plan";
+        readonly Proposal: "proposal";
+        readonly ReflexOrder: "reflex-order";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

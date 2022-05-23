@@ -6,7 +6,7 @@ export interface FhirUrlArgs extends fhir.FhirPrimitiveArgs {
     /**
      * A URI that is a literal reference
      */
-    value?: FhirUrl | string | undefined;
+    value?: FhirUrl | string | undefined | null;
 }
 /**
  * A URI that is a literal reference

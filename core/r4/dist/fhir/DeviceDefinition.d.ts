@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { DeviceNametypeCodingType } from '../fhirValueSets/DeviceNametypeCodings.js';
 import { DeviceNametypeCodeType } from '../fhirValueSets/DeviceNametypeCodes.js';
 /**
  * Valid arguments for the DeviceDefinitionUdiDeviceIdentifier type.
@@ -59,7 +58,7 @@ export interface DeviceDefinitionDeviceNameArgs extends fhir.BackboneElementArgs
      * The type of deviceName.
      * UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.
      */
-    type: DeviceNametypeCodeType | null;
+    type: fhir.FhirCode<DeviceNametypeCodeType> | string | undefined;
 }
 /**
  * A name given to the device to identify it.
@@ -77,7 +76,7 @@ export declare class DeviceDefinitionDeviceName extends fhir.BackboneElement {
      * The type of deviceName.
      * UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.
      */
-    type: DeviceNametypeCodeType | null;
+    type: fhir.FhirCode<DeviceNametypeCodeType> | null;
     /**
      * Default constructor for DeviceDefinitionDeviceName - initializes any required elements to null if a value is not provided.
      */
@@ -85,7 +84,14 @@ export declare class DeviceDefinitionDeviceName extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for type (DeviceDefinition.deviceName.type)
      */
-    static typeRequiredCoding(): DeviceNametypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly ManufacturerName: "manufacturer-name";
+        readonly ModelName: "model-name";
+        readonly Other: "other";
+        readonly PatientReportedName: "patient-reported-name";
+        readonly UDILabelName: "udi-label-name";
+        readonly UserFriendlyName: "user-friendly-name";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -157,7 +163,7 @@ export declare class DeviceDefinitionCapability extends fhir.BackboneElement {
     /**
      * Description of capability.
      */
-    description?: fhir.CodeableConcept[];
+    description: fhir.CodeableConcept[];
     /**
      * Default constructor for DeviceDefinitionCapability - initializes any required elements to null if a value is not provided.
      */
@@ -199,11 +205,11 @@ export declare class DeviceDefinitionProperty extends fhir.BackboneElement {
     /**
      * Property value as a quantity.
      */
-    valueQuantity?: fhir.Quantity[];
+    valueQuantity: fhir.Quantity[];
     /**
      * Property value as a code, e.g., NTP4 (synced to NTP).
      */
-    valueCode?: fhir.CodeableConcept[];
+    valueCode: fhir.CodeableConcept[];
     /**
      * Default constructor for DeviceDefinitionProperty - initializes any required elements to null if a value is not provided.
      */
@@ -379,11 +385,11 @@ export declare class DeviceDefinition extends fhir.DomainResource {
     /**
      * Unique instance identifiers assigned to a device by the software, manufacturers, other organizations or owners. For example: handle ID.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Unique device identifier (UDI) assigned to device label or package.  Note that the Device may include multiple udiCarriers as it either may include just the udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it could have been sold.
      */
-    udiDeviceIdentifier?: fhir.DeviceDefinitionUdiDeviceIdentifier[];
+    udiDeviceIdentifier: fhir.DeviceDefinitionUdiDeviceIdentifier[];
     /**
      * A name of the manufacturer.
      */
@@ -395,7 +401,7 @@ export declare class DeviceDefinition extends fhir.DomainResource {
     /**
      * A name given to the device to identify it.
      */
-    deviceName?: fhir.DeviceDefinitionDeviceName[];
+    deviceName: fhir.DeviceDefinitionDeviceName[];
     /**
      * The model number for the device.
      */
@@ -407,19 +413,19 @@ export declare class DeviceDefinition extends fhir.DomainResource {
     /**
      * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.
      */
-    specialization?: fhir.DeviceDefinitionSpecialization[];
+    specialization: fhir.DeviceDefinitionSpecialization[];
     /**
      * The available versions of the device, e.g., software versions.
      */
-    version?: fhir.FhirString[];
+    version: fhir.FhirString[];
     /**
      * Safety characteristics of the device.
      */
-    safety?: fhir.CodeableConcept[];
+    safety: fhir.CodeableConcept[];
     /**
      * Shelf Life and storage information.
      */
-    shelfLifeStorage?: fhir.ProductShelfLife[];
+    shelfLifeStorage: fhir.ProductShelfLife[];
     /**
      * Dimensions, color etc.
      */
@@ -427,15 +433,15 @@ export declare class DeviceDefinition extends fhir.DomainResource {
     /**
      * Language code for the human-readable text strings produced by the device (all supported).
      */
-    languageCode?: fhir.CodeableConcept[];
+    languageCode: fhir.CodeableConcept[];
     /**
      * Device capabilities.
      */
-    capability?: fhir.DeviceDefinitionCapability[];
+    capability: fhir.DeviceDefinitionCapability[];
     /**
      * The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties.
      */
-    property?: fhir.DeviceDefinitionProperty[];
+    property: fhir.DeviceDefinitionProperty[];
     /**
      * An organization that is responsible for the provision and ongoing maintenance of the device.
      */
@@ -443,7 +449,7 @@ export declare class DeviceDefinition extends fhir.DomainResource {
     /**
      * used for troubleshooting etc.
      */
-    contact?: fhir.ContactPoint[];
+    contact: fhir.ContactPoint[];
     /**
      * If the device is running a FHIR server, the network address should  be the Base URL from which a conformance statement may be retrieved.
      */
@@ -455,7 +461,7 @@ export declare class DeviceDefinition extends fhir.DomainResource {
     /**
      * Descriptive information, usage information or implantation information that is not captured in an existing element.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * The quantity of the device present in the packaging (e.g. the number of devices present in a pack, or the number of devices in the same package of the medicinal product).
      */
@@ -467,7 +473,7 @@ export declare class DeviceDefinition extends fhir.DomainResource {
     /**
      * A substance used to create the material(s) of which the device is made.
      */
-    material?: fhir.DeviceDefinitionMaterial[];
+    material: fhir.DeviceDefinitionMaterial[];
     /**
      * Default constructor for DeviceDefinition - initializes any required elements to null if a value is not provided.
      */

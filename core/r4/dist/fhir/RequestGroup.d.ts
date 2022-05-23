@@ -1,24 +1,13 @@
 import * as fhir from '../fhir.js';
-import { ActionConditionKindCodingType } from '../fhirValueSets/ActionConditionKindCodings.js';
 import { ActionConditionKindCodeType } from '../fhirValueSets/ActionConditionKindCodes.js';
-import { ActionRelationshipTypeCodingType } from '../fhirValueSets/ActionRelationshipTypeCodings.js';
 import { ActionRelationshipTypeCodeType } from '../fhirValueSets/ActionRelationshipTypeCodes.js';
-import { RequestPriorityCodingType } from '../fhirValueSets/RequestPriorityCodings.js';
 import { RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
-import { ActionTypeCodingType } from '../fhirValueSets/ActionTypeCodings.js';
-import { ActionGroupingBehaviorCodingType } from '../fhirValueSets/ActionGroupingBehaviorCodings.js';
 import { ActionGroupingBehaviorCodeType } from '../fhirValueSets/ActionGroupingBehaviorCodes.js';
-import { ActionSelectionBehaviorCodingType } from '../fhirValueSets/ActionSelectionBehaviorCodings.js';
 import { ActionSelectionBehaviorCodeType } from '../fhirValueSets/ActionSelectionBehaviorCodes.js';
-import { ActionRequiredBehaviorCodingType } from '../fhirValueSets/ActionRequiredBehaviorCodings.js';
 import { ActionRequiredBehaviorCodeType } from '../fhirValueSets/ActionRequiredBehaviorCodes.js';
-import { ActionPrecheckBehaviorCodingType } from '../fhirValueSets/ActionPrecheckBehaviorCodings.js';
 import { ActionPrecheckBehaviorCodeType } from '../fhirValueSets/ActionPrecheckBehaviorCodes.js';
-import { ActionCardinalityBehaviorCodingType } from '../fhirValueSets/ActionCardinalityBehaviorCodings.js';
 import { ActionCardinalityBehaviorCodeType } from '../fhirValueSets/ActionCardinalityBehaviorCodes.js';
-import { RequestStatusCodingType } from '../fhirValueSets/RequestStatusCodings.js';
 import { RequestStatusCodeType } from '../fhirValueSets/RequestStatusCodes.js';
-import { RequestIntentCodingType } from '../fhirValueSets/RequestIntentCodings.js';
 import { RequestIntentCodeType } from '../fhirValueSets/RequestIntentCodes.js';
 /**
  * Valid arguments for the RequestGroupActionCondition type.
@@ -27,7 +16,7 @@ export interface RequestGroupActionConditionArgs extends fhir.BackboneElementArg
     /**
      * Applicability criteria are used to determine immediate applicability when a plan definition is applied to a given context. Start and stop criteria are carried through application and used to describe enter/exit criteria for an action.
      */
-    kind: ActionConditionKindCodeType | null;
+    kind: fhir.FhirCode<ActionConditionKindCodeType> | string | undefined;
     /**
      * The expression may be inlined, or may be a reference to a named expression within a logic library referenced by the library element.
      */
@@ -44,7 +33,7 @@ export declare class RequestGroupActionCondition extends fhir.BackboneElement {
     /**
      * Applicability criteria are used to determine immediate applicability when a plan definition is applied to a given context. Start and stop criteria are carried through application and used to describe enter/exit criteria for an action.
      */
-    kind: ActionConditionKindCodeType | null;
+    kind: fhir.FhirCode<ActionConditionKindCodeType> | null;
     /**
      * The expression may be inlined, or may be a reference to a named expression within a logic library referenced by the library element.
      */
@@ -56,7 +45,11 @@ export declare class RequestGroupActionCondition extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for kind (RequestGroup.action.condition.kind)
      */
-    static kindRequiredCoding(): ActionConditionKindCodingType;
+    static get kindRequiredCodes(): {
+        readonly Applicability: "applicability";
+        readonly Start: "start";
+        readonly Stop: "stop";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -73,7 +66,7 @@ export interface RequestGroupActionRelatedActionArgs extends fhir.BackboneElemen
     /**
      * The relationship of this action to the related action.
      */
-    relationship: ActionRelationshipTypeCodeType | null;
+    relationship: fhir.FhirCode<ActionRelationshipTypeCodeType> | string | undefined;
     /**
      * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before.
      */
@@ -102,7 +95,7 @@ export declare class RequestGroupActionRelatedAction extends fhir.BackboneElemen
     /**
      * The relationship of this action to the related action.
      */
-    relationship: ActionRelationshipTypeCodeType | null;
+    relationship: fhir.FhirCode<ActionRelationshipTypeCodeType> | null;
     /**
      * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before.
      */
@@ -118,7 +111,17 @@ export declare class RequestGroupActionRelatedAction extends fhir.BackboneElemen
     /**
      * Required-bound Value Set for relationship (RequestGroup.action.relatedAction.relationship)
      */
-    static relationshipRequiredCoding(): ActionRelationshipTypeCodingType;
+    static get relationshipRequiredCodes(): {
+        readonly After: "after";
+        readonly AfterEnd: "after-end";
+        readonly AfterStart: "after-start";
+        readonly Before: "before";
+        readonly BeforeEnd: "before-end";
+        readonly BeforeStart: "before-start";
+        readonly Concurrent: "concurrent";
+        readonly ConcurrentWithEnd: "concurrent-with-end";
+        readonly ConcurrentWithStart: "concurrent-with-start";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -147,7 +150,7 @@ export interface RequestGroupActionArgs extends fhir.BackboneElementArgs {
     /**
      * Indicates how quickly the action should be addressed with respect to other actions.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
     /**
      * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a section of a documentation template.
      */
@@ -203,23 +206,23 @@ export interface RequestGroupActionArgs extends fhir.BackboneElementArgs {
     /**
      * Defines the grouping behavior for the action and its children.
      */
-    groupingBehavior?: ActionGroupingBehaviorCodeType | undefined;
+    groupingBehavior?: fhir.FhirCode<ActionGroupingBehaviorCodeType> | string | undefined;
     /**
      * Defines the selection behavior for the action and its children.
      */
-    selectionBehavior?: ActionSelectionBehaviorCodeType | undefined;
+    selectionBehavior?: fhir.FhirCode<ActionSelectionBehaviorCodeType> | string | undefined;
     /**
      * Defines expectations around whether an action is required.
      */
-    requiredBehavior?: ActionRequiredBehaviorCodeType | undefined;
+    requiredBehavior?: fhir.FhirCode<ActionRequiredBehaviorCodeType> | string | undefined;
     /**
      * Defines whether the action should usually be preselected.
      */
-    precheckBehavior?: ActionPrecheckBehaviorCodeType | undefined;
+    precheckBehavior?: fhir.FhirCode<ActionPrecheckBehaviorCodeType> | string | undefined;
     /**
      * Defines whether the action can be selected multiple times.
      */
-    cardinalityBehavior?: ActionCardinalityBehaviorCodeType | undefined;
+    cardinalityBehavior?: fhir.FhirCode<ActionCardinalityBehaviorCodeType> | string | undefined;
     /**
      * The target resource SHALL be a [Request](request.html) resource with a Request.intent set to "option".
      */
@@ -256,23 +259,23 @@ export declare class RequestGroupAction extends fhir.BackboneElement {
     /**
      * Indicates how quickly the action should be addressed with respect to other actions.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | undefined;
     /**
      * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a section of a documentation template.
      */
-    code?: fhir.CodeableConcept[];
+    code: fhir.CodeableConcept[];
     /**
      * Didactic or other informational resources associated with the action that can be provided to the CDS recipient. Information resources can include inline text commentary and links to web resources.
      */
-    documentation?: fhir.RelatedArtifact[];
+    documentation: fhir.RelatedArtifact[];
     /**
      * When multiple conditions of the same kind are present, the effects are combined using AND semantics, so the overall condition is true only if all of the conditions are true.
      */
-    condition?: fhir.RequestGroupActionCondition[];
+    condition: fhir.RequestGroupActionCondition[];
     /**
      * A relationship to another action such as "before" or "30-60 minutes after start of".
      */
-    relatedAction?: fhir.RequestGroupActionRelatedAction[];
+    relatedAction: fhir.RequestGroupActionRelatedAction[];
     /**
      * An optional value describing when the action should be performed.
      */
@@ -284,7 +287,7 @@ export declare class RequestGroupAction extends fhir.BackboneElement {
     /**
      * The participant that should perform or be responsible for this action.
      */
-    participant?: fhir.Reference[];
+    participant: fhir.Reference[];
     /**
      * The type of action to perform (create, update, remove).
      */
@@ -292,23 +295,23 @@ export declare class RequestGroupAction extends fhir.BackboneElement {
     /**
      * Defines the grouping behavior for the action and its children.
      */
-    groupingBehavior?: ActionGroupingBehaviorCodeType | undefined;
+    groupingBehavior?: fhir.FhirCode<ActionGroupingBehaviorCodeType> | undefined;
     /**
      * Defines the selection behavior for the action and its children.
      */
-    selectionBehavior?: ActionSelectionBehaviorCodeType | undefined;
+    selectionBehavior?: fhir.FhirCode<ActionSelectionBehaviorCodeType> | undefined;
     /**
      * Defines expectations around whether an action is required.
      */
-    requiredBehavior?: ActionRequiredBehaviorCodeType | undefined;
+    requiredBehavior?: fhir.FhirCode<ActionRequiredBehaviorCodeType> | undefined;
     /**
      * Defines whether the action should usually be preselected.
      */
-    precheckBehavior?: ActionPrecheckBehaviorCodeType | undefined;
+    precheckBehavior?: fhir.FhirCode<ActionPrecheckBehaviorCodeType> | undefined;
     /**
      * Defines whether the action can be selected multiple times.
      */
-    cardinalityBehavior?: ActionCardinalityBehaviorCodeType | undefined;
+    cardinalityBehavior?: fhir.FhirCode<ActionCardinalityBehaviorCodeType> | undefined;
     /**
      * The target resource SHALL be a [Request](request.html) resource with a Request.intent set to "option".
      */
@@ -316,7 +319,7 @@ export declare class RequestGroupAction extends fhir.BackboneElement {
     /**
      * Sub actions.
      */
-    action?: fhir.RequestGroupAction[];
+    action: fhir.RequestGroupAction[];
     /**
      * Default constructor for RequestGroupAction - initializes any required elements to null if a value is not provided.
      */
@@ -324,31 +327,62 @@ export declare class RequestGroupAction extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for priority (RequestGroup.action.priority)
      */
-    static priorityRequiredCoding(): RequestPriorityCodingType;
+    static get priorityRequiredCodes(): {
+        readonly ASAP: "asap";
+        readonly Routine: "routine";
+        readonly STAT: "stat";
+        readonly Urgent: "urgent";
+    };
     /**
      * Extensible-bound Value Set for type (RequestGroup.action.type)
      */
-    static typeExtensibleCoding(): ActionTypeCodingType;
+    static get typeExtensibleCodings(): {
+        readonly Create: fhir.Coding;
+        readonly FireEvent: fhir.Coding;
+        readonly Remove: fhir.Coding;
+        readonly Update: fhir.Coding;
+    };
     /**
      * Required-bound Value Set for groupingBehavior (RequestGroup.action.groupingBehavior)
      */
-    static groupingBehaviorRequiredCoding(): ActionGroupingBehaviorCodingType;
+    static get groupingBehaviorRequiredCodes(): {
+        readonly LogicalGroup: "logical-group";
+        readonly SentenceGroup: "sentence-group";
+        readonly VisualGroup: "visual-group";
+    };
     /**
      * Required-bound Value Set for selectionBehavior (RequestGroup.action.selectionBehavior)
      */
-    static selectionBehaviorRequiredCoding(): ActionSelectionBehaviorCodingType;
+    static get selectionBehaviorRequiredCodes(): {
+        readonly All: "all";
+        readonly AllOrNone: "all-or-none";
+        readonly Any: "any";
+        readonly AtMostOne: "at-most-one";
+        readonly ExactlyOne: "exactly-one";
+        readonly OneOrMore: "one-or-more";
+    };
     /**
      * Required-bound Value Set for requiredBehavior (RequestGroup.action.requiredBehavior)
      */
-    static requiredBehaviorRequiredCoding(): ActionRequiredBehaviorCodingType;
+    static get requiredBehaviorRequiredCodes(): {
+        readonly Could: "could";
+        readonly Must: "must";
+        readonly MustUnlessDocumented: "must-unless-documented";
+    };
     /**
      * Required-bound Value Set for precheckBehavior (RequestGroup.action.precheckBehavior)
      */
-    static precheckBehaviorRequiredCoding(): ActionPrecheckBehaviorCodingType;
+    static get precheckBehaviorRequiredCodes(): {
+        readonly No: "no";
+        readonly Yes: "yes";
+    };
     /**
      * Required-bound Value Set for cardinalityBehavior (RequestGroup.action.cardinalityBehavior)
      */
-    static cardinalityBehaviorRequiredCoding(): ActionCardinalityBehaviorCodingType;
+    static get cardinalityBehaviorRequiredCodes(): {
+        readonly Multiple: "multiple";
+        readonly Single: "single";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -389,15 +423,15 @@ export interface RequestGroupArgs extends fhir.DomainResourceArgs {
     /**
      * The current state of the request. For request groups, the status reflects the status of all the requests in the group.
      */
-    status: RequestStatusCodeType | null;
+    status: fhir.FhirCode<RequestStatusCodeType> | string | undefined;
     /**
      * Indicates the level of authority/intentionality associated with the request and where the request fits into the workflow chain.
      */
-    intent: RequestIntentCodeType | null;
+    intent: fhir.FhirCode<RequestIntentCodeType> | string | undefined;
     /**
      * Indicates how quickly the request should be addressed with respect to other requests.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
     /**
      * This element can be used to provide a code that captures the meaning of the request group as a whole, as opposed to the code of the action element, which captures the meaning of the individual actions within the request group.
      */
@@ -450,23 +484,23 @@ export declare class RequestGroup extends fhir.DomainResource {
     /**
      * Allows a service to provide a unique, business identifier for the request.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * A canonical URL referencing a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
      */
-    instantiatesCanonical?: fhir.FhirCanonical[];
+    instantiatesCanonical: fhir.FhirCanonical[];
     /**
      * A URL referencing an externally defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
      */
-    instantiatesUri?: fhir.FhirUri[];
+    instantiatesUri: fhir.FhirUri[];
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
      */
-    basedOn?: fhir.Reference[];
+    basedOn: fhir.Reference[];
     /**
      * The replacement could be because the initial request was immediately rejected (due to an issue) or because the previous request was completed, but the need for the action described by the request remains ongoing.
      */
-    replaces?: fhir.Reference[];
+    replaces: fhir.Reference[];
     /**
      * Requests are linked either by a "basedOn" relationship (i.e. one request is fulfilling another) or by having a common requisition.  Requests that are part of the same requisition are generally treated independently from the perspective of changing their state or maintaining them after initial creation.
      */
@@ -474,15 +508,15 @@ export declare class RequestGroup extends fhir.DomainResource {
     /**
      * The current state of the request. For request groups, the status reflects the status of all the requests in the group.
      */
-    status: RequestStatusCodeType | null;
+    status: fhir.FhirCode<RequestStatusCodeType> | null;
     /**
      * Indicates the level of authority/intentionality associated with the request and where the request fits into the workflow chain.
      */
-    intent: RequestIntentCodeType | null;
+    intent: fhir.FhirCode<RequestIntentCodeType> | null;
     /**
      * Indicates how quickly the request should be addressed with respect to other requests.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | undefined;
     /**
      * This element can be used to provide a code that captures the meaning of the request group as a whole, as opposed to the code of the action element, which captures the meaning of the individual actions within the request group.
      */
@@ -506,19 +540,19 @@ export declare class RequestGroup extends fhir.DomainResource {
     /**
      * Describes the reason for the request group in coded or textual form.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * Indicates another resource whose existence justifies this request group.
      */
-    reasonReference?: fhir.Reference[];
+    reasonReference: fhir.Reference[];
     /**
      * Provides a mechanism to communicate additional information about the response.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * The actions, if any, produced by the evaluation of the artifact.
      */
-    action?: fhir.RequestGroupAction[];
+    action: fhir.RequestGroupAction[];
     /**
      * Default constructor for RequestGroup - initializes any required elements to null if a value is not provided.
      */
@@ -526,15 +560,38 @@ export declare class RequestGroup extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (RequestGroup.status)
      */
-    static statusRequiredCoding(): RequestStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Completed: "completed";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+        readonly OnHold: "on-hold";
+        readonly Revoked: "revoked";
+        readonly Unknown: "unknown";
+    };
     /**
      * Required-bound Value Set for intent (RequestGroup.intent)
      */
-    static intentRequiredCoding(): RequestIntentCodingType;
+    static get intentRequiredCodes(): {
+        readonly Directive: "directive";
+        readonly FillerOrder: "filler-order";
+        readonly InstanceOrder: "instance-order";
+        readonly Option: "option";
+        readonly Order: "order";
+        readonly OriginalOrder: "original-order";
+        readonly Plan: "plan";
+        readonly Proposal: "proposal";
+        readonly ReflexOrder: "reflex-order";
+    };
     /**
      * Required-bound Value Set for priority (RequestGroup.priority)
      */
-    static priorityRequiredCoding(): RequestPriorityCodingType;
+    static get priorityRequiredCodes(): {
+        readonly ASAP: "asap";
+        readonly Routine: "routine";
+        readonly STAT: "stat";
+        readonly Urgent: "urgent";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

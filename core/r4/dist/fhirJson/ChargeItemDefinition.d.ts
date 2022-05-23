@@ -38,6 +38,10 @@ export interface ChargeItemDefinitionPropertyGroupPriceComponent extends fhir.Ba
      */
     type: 'base' | 'deduction' | 'discount' | 'informational' | 'surcharge' | 'tax' | null;
     /**
+     * Extended properties for primitive element: ChargeItemDefinition.propertyGroup.priceComponent.type
+     */
+    _type?: fhir.FhirElement;
+    /**
      * A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.
      */
     code?: fhir.CodeableConcept | undefined;
@@ -133,6 +137,10 @@ export interface ChargeItemDefinition extends fhir.DomainResource {
      * Allows filtering of charge item definitions that are appropriate for use versus not.
      */
     status: 'active' | 'draft' | 'retired' | 'unknown' | null;
+    /**
+     * Extended properties for primitive element: ChargeItemDefinition.status
+     */
+    _status?: fhir.FhirElement;
     /**
      * Allows filtering of charge item definitions that are appropriate for use versus not.
      */

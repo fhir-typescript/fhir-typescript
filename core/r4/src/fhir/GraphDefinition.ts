@@ -32,15 +32,15 @@ export interface GraphDefinitionLinkTargetCompartmentArgs extends fhir.BackboneE
   /**
    * All conditional rules are evaluated; if they are true, then the rules are evaluated.
    */
-  use: GraphCompartmentUseCodeType|null;
+  use: fhir.FhirCode<GraphCompartmentUseCodeType>|string|undefined;
   /**
    * Identifies the compartment.
    */
-  code: CompartmentTypeCodeType|null;
+  code: fhir.FhirCode<CompartmentTypeCodeType>|string|undefined;
   /**
    * identical | matching | different | no-rule | custom.
    */
-  rule: GraphCompartmentRuleCodeType|null;
+  rule: fhir.FhirCode<GraphCompartmentRuleCodeType>|string|undefined;
   /**
    * Custom rule, as a FHIRPath expression.
    */
@@ -62,15 +62,15 @@ export class GraphDefinitionLinkTargetCompartment extends fhir.BackboneElement {
   /**
    * All conditional rules are evaluated; if they are true, then the rules are evaluated.
    */
-  public use: GraphCompartmentUseCodeType|null;
+  public use: fhir.FhirCode<GraphCompartmentUseCodeType>|null;
   /**
    * Identifies the compartment.
    */
-  public code: CompartmentTypeCodeType|null;
+  public code: fhir.FhirCode<CompartmentTypeCodeType>|null;
   /**
    * identical | matching | different | no-rule | custom.
    */
-  public rule: GraphCompartmentRuleCodeType|null;
+  public rule: fhir.FhirCode<GraphCompartmentRuleCodeType>|null;
   /**
    * Custom rule, as a FHIRPath expression.
    */
@@ -84,11 +84,11 @@ export class GraphDefinitionLinkTargetCompartment extends fhir.BackboneElement {
    */
   constructor(source:Partial<GraphDefinitionLinkTargetCompartmentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['use']) { this.use = source.use; }
+    if (source['use']) { this.use = new fhir.FhirCode<GraphCompartmentUseCodeType>({value: source.use}); }
     else { this.use = null; }
-    if (source['code']) { this.code = source.code; }
+    if (source['code']) { this.code = new fhir.FhirCode<CompartmentTypeCodeType>({value: source.code}); }
     else { this.code = null; }
-    if (source['rule']) { this.rule = source.rule; }
+    if (source['rule']) { this.rule = new fhir.FhirCode<GraphCompartmentRuleCodeType>({value: source.rule}); }
     else { this.rule = null; }
     if (source['expression']) { this.expression = new fhir.FhirString({value: source.expression}); }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
@@ -96,20 +96,20 @@ export class GraphDefinitionLinkTargetCompartment extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for use (GraphDefinition.link.target.compartment.use)
    */
-  public static useRequiredCoding():GraphCompartmentUseCodingType {
-    return GraphCompartmentUseCodings;
+  public static get useRequiredCodes() {
+    return GraphCompartmentUseCodes;
   }
   /**
    * Required-bound Value Set for code (GraphDefinition.link.target.compartment.code)
    */
-  public static codeRequiredCoding():CompartmentTypeCodingType {
-    return CompartmentTypeCodings;
+  public static get codeRequiredCodes() {
+    return CompartmentTypeCodes;
   }
   /**
    * Required-bound Value Set for rule (GraphDefinition.link.target.compartment.rule)
    */
-  public static ruleRequiredCoding():GraphCompartmentRuleCodingType {
-    return GraphCompartmentRuleCodings;
+  public static get ruleRequiredCodes() {
+    return GraphCompartmentRuleCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -117,14 +117,26 @@ export class GraphDefinitionLinkTargetCompartment extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['use']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property use:GraphCompartmentUseCodeType fhir: GraphDefinition.link.target.compartment.use:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property use:fhir.FhirCode<GraphCompartmentUseCodeType> fhir: GraphDefinition.link.target.compartment.use:code' });
     }
+    if (this['use'] && (!Object.values(GraphCompartmentUseCodes).includes(this.use as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use:fhir.FhirCode<GraphCompartmentUseCodeType> fhir: GraphDefinition.link.target.compartment.use:code Required binding to: GraphCompartmentUse' });
+    }
+    if (this["use"]) { issues.push(...this.use.doModelValidation()); }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:CompartmentTypeCodeType fhir: GraphDefinition.link.target.compartment.code:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode<CompartmentTypeCodeType> fhir: GraphDefinition.link.target.compartment.code:code' });
     }
+    if (this['code'] && (!Object.values(CompartmentTypeCodes).includes(this.code as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode<CompartmentTypeCodeType> fhir: GraphDefinition.link.target.compartment.code:code Required binding to: CompartmentType' });
+    }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['rule']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property rule:GraphCompartmentRuleCodeType fhir: GraphDefinition.link.target.compartment.rule:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property rule:fhir.FhirCode<GraphCompartmentRuleCodeType> fhir: GraphDefinition.link.target.compartment.rule:code' });
     }
+    if (this['rule'] && (!Object.values(GraphCompartmentRuleCodes).includes(this.rule as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property rule:fhir.FhirCode<GraphCompartmentRuleCodeType> fhir: GraphDefinition.link.target.compartment.rule:code Required binding to: GraphCompartmentRule' });
+    }
+    if (this["rule"]) { issues.push(...this.rule.doModelValidation()); }
     if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     return issues;
@@ -179,11 +191,11 @@ export class GraphDefinitionLinkTarget extends fhir.BackboneElement {
   /**
    * Compartment Consistency Rules.
    */
-  public compartment?: fhir.GraphDefinitionLinkTargetCompartment[];
+  public compartment: fhir.GraphDefinitionLinkTargetCompartment[];
   /**
    * Additional links from target resource.
    */
-  public link?: fhir.GraphDefinitionLink[];
+  public link: fhir.GraphDefinitionLink[];
   /**
    * Default constructor for GraphDefinitionLinkTarget - initializes any required elements to null if a value is not provided.
    */
@@ -201,8 +213,8 @@ export class GraphDefinitionLinkTarget extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for type (GraphDefinition.link.target.type)
    */
-  public static typeRequiredCoding():ResourceTypesCodingType {
-    return ResourceTypesCodings;
+  public static get typeRequiredCodes() {
+    return ResourceTypesCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -210,7 +222,10 @@ export class GraphDefinitionLinkTarget extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.FhirCode fhir: GraphDefinition.link.target.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode fhir: GraphDefinition.link.target.type:code' });
+    }
+    if (this['type'] && (!Object.values(ResourceTypesCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode fhir: GraphDefinition.link.target.type:code Required binding to: ResourceTypes' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["params"]) { issues.push(...this.params.doModelValidation()); }
@@ -281,7 +296,7 @@ export class GraphDefinitionLink extends fhir.BackboneElement {
   /**
    * Potential target for the link.
    */
-  public target?: fhir.GraphDefinitionLinkTarget[];
+  public target: fhir.GraphDefinitionLinkTarget[];
   /**
    * Default constructor for GraphDefinitionLink - initializes any required elements to null if a value is not provided.
    */
@@ -334,7 +349,7 @@ export interface GraphDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of graph definitions that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of graph definitions that are appropriate for use versus not.
    */
@@ -410,7 +425,7 @@ export class GraphDefinition extends fhir.DomainResource {
   /**
    * Allows filtering of graph definitions that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of graph definitions that are appropriate for use versus not.
    */
@@ -426,7 +441,7 @@ export class GraphDefinition extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the graph definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the graph definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the graph definition is presumed to be the predominant language in the place the graph definition was created).
    */
@@ -434,11 +449,11 @@ export class GraphDefinition extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the graph definition to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * This element does not describe the usage of the graph definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this graph definition.
    */
@@ -454,7 +469,7 @@ export class GraphDefinition extends fhir.DomainResource {
   /**
    * Links this graph makes rules about.
    */
-  public link?: fhir.GraphDefinitionLink[];
+  public link: fhir.GraphDefinitionLink[];
   /**
    * Default constructor for GraphDefinition - initializes any required elements to null if a value is not provided.
    */
@@ -465,7 +480,7 @@ export class GraphDefinition extends fhir.DomainResource {
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
@@ -487,14 +502,14 @@ export class GraphDefinition extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (GraphDefinition.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Required-bound Value Set for start (GraphDefinition.start)
    */
-  public static startRequiredCoding():ResourceTypesCodingType {
-    return ResourceTypesCodings;
+  public static get startRequiredCodes() {
+    return ResourceTypesCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -502,17 +517,21 @@ export class GraphDefinition extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"GraphDefinition" fhir: GraphDefinition.resourceType:"GraphDefinition"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"GraphDefinition" fhir: GraphDefinition.resourceType:"GraphDefinition"' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["version"]) { issues.push(...this.version.doModelValidation()); }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: GraphDefinition.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: GraphDefinition.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: GraphDefinition.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: GraphDefinition.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: GraphDefinition.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
@@ -522,7 +541,10 @@ export class GraphDefinition extends fhir.DomainResource {
     if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
     if (!this['start']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property start:fhir.FhirCode fhir: GraphDefinition.start:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property start:fhir.FhirCode fhir: GraphDefinition.start:code' });
+    }
+    if (this['start'] && (!Object.values(ResourceTypesCodes).includes(this.start as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property start:fhir.FhirCode fhir: GraphDefinition.start:code Required binding to: ResourceTypes' });
     }
     if (this["start"]) { issues.push(...this.start.doModelValidation()); }
     if (this["profile"]) { issues.push(...this.profile.doModelValidation()); }

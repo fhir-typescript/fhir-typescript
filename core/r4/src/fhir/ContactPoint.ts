@@ -20,7 +20,7 @@ export interface ContactPointArgs extends fhir.FhirElementArgs {
   /**
    * Telecommunications form for contact point - what communications system is required to make use of the contact.
    */
-  system?: ContactPointSystemCodeType|undefined;
+  system?: fhir.FhirCode<ContactPointSystemCodeType>|string|undefined;
   /**
    * Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.
    */
@@ -28,7 +28,7 @@ export interface ContactPointArgs extends fhir.FhirElementArgs {
   /**
    * Applications can assume that a contact is current unless it explicitly says that it is temporary or old.
    */
-  use?: ContactPointUseCodeType|undefined;
+  use?: fhir.FhirCode<ContactPointUseCodeType>|string|undefined;
   /**
    * Note that rank does not necessarily follow the order in which the contacts are represented in the instance.
    */
@@ -50,7 +50,7 @@ export class ContactPoint extends fhir.FhirElement {
   /**
    * Telecommunications form for contact point - what communications system is required to make use of the contact.
    */
-  public system?: ContactPointSystemCodeType|undefined;
+  public system?: fhir.FhirCode<ContactPointSystemCodeType>|undefined;
   /**
    * Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.
    */
@@ -58,7 +58,7 @@ export class ContactPoint extends fhir.FhirElement {
   /**
    * Applications can assume that a contact is current unless it explicitly says that it is temporary or old.
    */
-  public use?: ContactPointUseCodeType|undefined;
+  public use?: fhir.FhirCode<ContactPointUseCodeType>|undefined;
   /**
    * Note that rank does not necessarily follow the order in which the contacts are represented in the instance.
    */
@@ -72,30 +72,38 @@ export class ContactPoint extends fhir.FhirElement {
    */
   constructor(source:Partial<ContactPointArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['system']) { this.system = source.system; }
+    if (source['system']) { this.system = new fhir.FhirCode<ContactPointSystemCodeType>({value: source.system}); }
     if (source['value']) { this.value = new fhir.FhirString({value: source.value}); }
-    if (source['use']) { this.use = source.use; }
+    if (source['use']) { this.use = new fhir.FhirCode<ContactPointUseCodeType>({value: source.use}); }
     if (source['rank']) { this.rank = new fhir.FhirPositiveInt({value: source.rank}); }
     if (source['period']) { this.period = new fhir.Period(source.period); }
   }
   /**
    * Required-bound Value Set for system (ContactPoint.system)
    */
-  public static systemRequiredCoding():ContactPointSystemCodingType {
-    return ContactPointSystemCodings;
+  public static get systemRequiredCodes() {
+    return ContactPointSystemCodes;
   }
   /**
    * Required-bound Value Set for use (ContactPoint.use)
    */
-  public static useRequiredCoding():ContactPointUseCodingType {
-    return ContactPointUseCodings;
+  public static get useRequiredCodes() {
+    return ContactPointUseCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this['system'] && (!Object.values(ContactPointSystemCodes).includes(this.system as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property system?:fhir.FhirCode<ContactPointSystemCodeType> fhir: ContactPoint.system:code Required binding to: ContactPointSystem' });
+    }
+    if (this["system"]) { issues.push(...this.system.doModelValidation()); }
     if (this["value"]) { issues.push(...this.value.doModelValidation()); }
+    if (this['use'] && (!Object.values(ContactPointUseCodes).includes(this.use as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use?:fhir.FhirCode<ContactPointUseCodeType> fhir: ContactPoint.use:code Required binding to: ContactPointUse' });
+    }
+    if (this["use"]) { issues.push(...this.use.doModelValidation()); }
     if (this["rank"]) { issues.push(...this.rank.doModelValidation()); }
     if (this["period"]) { issues.push(...this.period.doModelValidation()); }
     return issues;

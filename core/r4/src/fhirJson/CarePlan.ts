@@ -15,6 +15,10 @@ export interface CarePlanActivityDetail extends fhir.BackboneElement {
    */
   kind?: 'Appointment'|'CommunicationRequest'|'DeviceRequest'|'MedicationRequest'|'NutritionOrder'|'ServiceRequest'|'Task'|'VisionPrescription'|undefined;
   /**
+   * Extended properties for primitive element: CarePlan.activity.detail.kind
+   */
+  _kind?:fhir.FhirElement;
+  /**
    * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
    */
   instantiatesCanonical?: string[]|undefined;
@@ -51,6 +55,10 @@ export interface CarePlanActivityDetail extends fhir.BackboneElement {
    * The unknown code is not to be used to convey other statuses.  The unknown code should be used when one of the statuses applies, but the authoring system doesn't know the current state of the activity.
    */
   status: 'cancelled'|'completed'|'entered-in-error'|'in-progress'|'not-started'|'on-hold'|'scheduled'|'stopped'|'unknown'|null;
+  /**
+   * Extended properties for primitive element: CarePlan.activity.detail.status
+   */
+  _status?:fhir.FhirElement;
   /**
    * Will generally not be present if status is "complete".  Be sure to prompt to update this (or at least remove the existing value) if the status is changed.
    */
@@ -186,9 +194,17 @@ export interface CarePlan extends fhir.DomainResource {
    */
   status: 'active'|'completed'|'draft'|'entered-in-error'|'on-hold'|'revoked'|'unknown'|null;
   /**
+   * Extended properties for primitive element: CarePlan.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * This element is labeled as a modifier because the intent alters when and how the resource is actually applicable.
    */
   intent: 'option'|'order'|'plan'|'proposal'|null;
+  /**
+   * Extended properties for primitive element: CarePlan.intent
+   */
+  _intent?:fhir.FhirElement;
   /**
    * There may be multiple axes of categorization and one plan may serve multiple purposes.  In some cases, this may be redundant with references to CarePlan.concern.
    */

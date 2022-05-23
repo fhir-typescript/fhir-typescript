@@ -1,13 +1,7 @@
 import * as fhir from '../fhir.js';
-import { NoteTypeCodingType } from '../fhirValueSets/NoteTypeCodings.js';
 import { NoteTypeCodeType } from '../fhirValueSets/NoteTypeCodes.js';
-import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
-import { FmStatusCodingType } from '../fhirValueSets/FmStatusCodings.js';
 import { FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
-import { ClaimTypeCodingType } from '../fhirValueSets/ClaimTypeCodings.js';
-import { ClaimUseCodingType } from '../fhirValueSets/ClaimUseCodings.js';
 import { ClaimUseCodeType } from '../fhirValueSets/ClaimUseCodes.js';
-import { RemittanceOutcomeCodingType } from '../fhirValueSets/RemittanceOutcomeCodings.js';
 import { RemittanceOutcomeCodeType } from '../fhirValueSets/RemittanceOutcomeCodes.js';
 /**
  * Valid arguments for the ClaimResponseItemAdjudication type.
@@ -95,11 +89,11 @@ export declare class ClaimResponseItemDetailSubDetail extends fhir.BackboneEleme
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: fhir.FhirPositiveInt[];
+    noteNumber: fhir.FhirPositiveInt[];
     /**
      * The adjudication results.
      */
-    adjudication?: fhir.ClaimResponseItemAdjudication[];
+    adjudication: fhir.ClaimResponseItemAdjudication[];
     /**
      * Default constructor for ClaimResponseItemDetailSubDetail - initializes any required elements to null if a value is not provided.
      */
@@ -145,7 +139,7 @@ export declare class ClaimResponseItemDetail extends fhir.BackboneElement {
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: fhir.FhirPositiveInt[];
+    noteNumber: fhir.FhirPositiveInt[];
     /**
      * The adjudication results.
      */
@@ -153,7 +147,7 @@ export declare class ClaimResponseItemDetail extends fhir.BackboneElement {
     /**
      * A sub-detail adjudication of a simple product or service.
      */
-    subDetail?: fhir.ClaimResponseItemDetailSubDetail[];
+    subDetail: fhir.ClaimResponseItemDetailSubDetail[];
     /**
      * Default constructor for ClaimResponseItemDetail - initializes any required elements to null if a value is not provided.
      */
@@ -199,7 +193,7 @@ export declare class ClaimResponseItem extends fhir.BackboneElement {
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: fhir.FhirPositiveInt[];
+    noteNumber: fhir.FhirPositiveInt[];
     /**
      * If this item is a group then the values here are a summary of the adjudication of the detail items. If this item is a simple product or service then this is the result of the adjudication of this item.
      */
@@ -207,7 +201,7 @@ export declare class ClaimResponseItem extends fhir.BackboneElement {
     /**
      * A claim detail. Either a simple (a product or service) or a 'group' of sub-details which are simple items.
      */
-    detail?: fhir.ClaimResponseItemDetail[];
+    detail: fhir.ClaimResponseItemDetail[];
     /**
      * Default constructor for ClaimResponseItem - initializes any required elements to null if a value is not provided.
      */
@@ -269,7 +263,7 @@ export declare class ClaimResponseAddItemDetailSubDetail extends fhir.BackboneEl
     /**
      * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or outside of office hours.
      */
-    modifier?: fhir.CodeableConcept[];
+    modifier: fhir.CodeableConcept[];
     /**
      * The number of repetitions of a service or product.
      */
@@ -289,7 +283,7 @@ export declare class ClaimResponseAddItemDetailSubDetail extends fhir.BackboneEl
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: fhir.FhirPositiveInt[];
+    noteNumber: fhir.FhirPositiveInt[];
     /**
      * The adjudication results.
      */
@@ -359,7 +353,7 @@ export declare class ClaimResponseAddItemDetail extends fhir.BackboneElement {
     /**
      * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or outside of office hours.
      */
-    modifier?: fhir.CodeableConcept[];
+    modifier: fhir.CodeableConcept[];
     /**
      * The number of repetitions of a service or product.
      */
@@ -379,7 +373,7 @@ export declare class ClaimResponseAddItemDetail extends fhir.BackboneElement {
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: fhir.FhirPositiveInt[];
+    noteNumber: fhir.FhirPositiveInt[];
     /**
      * The adjudication results.
      */
@@ -387,7 +381,7 @@ export declare class ClaimResponseAddItemDetail extends fhir.BackboneElement {
     /**
      * The third-tier service adjudications for payor added services.
      */
-    subDetail?: fhir.ClaimResponseAddItemDetailSubDetail[];
+    subDetail: fhir.ClaimResponseAddItemDetailSubDetail[];
     /**
      * Default constructor for ClaimResponseAddItemDetail - initializes any required elements to null if a value is not provided.
      */
@@ -505,19 +499,19 @@ export declare class ClaimResponseAddItem extends fhir.BackboneElement {
     /**
      * Claim items which this service line is intended to replace.
      */
-    itemSequence?: fhir.FhirPositiveInt[];
+    itemSequence: fhir.FhirPositiveInt[];
     /**
      * The sequence number of the details within the claim item which this line is intended to replace.
      */
-    detailSequence?: fhir.FhirPositiveInt[];
+    detailSequence: fhir.FhirPositiveInt[];
     /**
      * The sequence number of the sub-details within the details within the claim item which this line is intended to replace.
      */
-    subdetailSequence?: fhir.FhirPositiveInt[];
+    subdetailSequence: fhir.FhirPositiveInt[];
     /**
      * The providers who are authorized for the services rendered to the patient.
      */
-    provider?: fhir.Reference[];
+    provider: fhir.Reference[];
     /**
      * If this is an actual service or product line, i.e. not a Group, then use code to indicate the Professional Service or Product supplied (e.g. CTP, HCPCS, USCLS, ICD10, NCPDP, DIN, RxNorm, ACHI, CCI). If a grouping item then use a group code to indicate the type of thing being grouped e.g. 'glasses' or 'compound'.
      */
@@ -525,11 +519,11 @@ export declare class ClaimResponseAddItem extends fhir.BackboneElement {
     /**
      * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or outside of office hours.
      */
-    modifier?: fhir.CodeableConcept[];
+    modifier: fhir.CodeableConcept[];
     /**
      * For example: Neonatal program, child dental program or drug users recovery program.
      */
-    programCode?: fhir.CodeableConcept[];
+    programCode: fhir.CodeableConcept[];
     /**
      * The date or dates when the service or product was supplied, performed or completed.
      */
@@ -569,11 +563,11 @@ export declare class ClaimResponseAddItem extends fhir.BackboneElement {
     /**
      * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
      */
-    subSite?: fhir.CodeableConcept[];
+    subSite: fhir.CodeableConcept[];
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: fhir.FhirPositiveInt[];
+    noteNumber: fhir.FhirPositiveInt[];
     /**
      * The adjudication results.
      */
@@ -581,7 +575,7 @@ export declare class ClaimResponseAddItem extends fhir.BackboneElement {
     /**
      * The second-tier service adjudications for payor added services.
      */
-    detail?: fhir.ClaimResponseAddItemDetail[];
+    detail: fhir.ClaimResponseAddItemDetail[];
     /**
      * Default constructor for ClaimResponseAddItem - initializes any required elements to null if a value is not provided.
      */
@@ -710,7 +704,7 @@ export interface ClaimResponseProcessNoteArgs extends fhir.BackboneElementArgs {
     /**
      * The business purpose of the note text.
      */
-    type?: NoteTypeCodeType | undefined;
+    type?: fhir.FhirCode<NoteTypeCodeType> | string | undefined;
     /**
      * The explanation or description associated with the processing.
      */
@@ -735,7 +729,7 @@ export declare class ClaimResponseProcessNote extends fhir.BackboneElement {
     /**
      * The business purpose of the note text.
      */
-    type?: NoteTypeCodeType | undefined;
+    type?: fhir.FhirCode<NoteTypeCodeType> | undefined;
     /**
      * The explanation or description associated with the processing.
      */
@@ -751,11 +745,75 @@ export declare class ClaimResponseProcessNote extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for type (ClaimResponse.processNote.type)
      */
-    static typeRequiredCoding(): NoteTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Display: "display";
+        readonly PrintForm: "print";
+        readonly PrintOperator: "printoper";
+    };
     /**
      * Preferred-bound Value Set for language (ClaimResponse.processNote.language)
      */
-    static languagePreferredCoding(): LanguagesCodingType;
+    static get languagePreferredCodings(): {
+        readonly Arabic: fhir.Coding;
+        readonly Bengali: fhir.Coding;
+        readonly Czech: fhir.Coding;
+        readonly Danish: fhir.Coding;
+        readonly German: fhir.Coding;
+        readonly GermanAustria: fhir.Coding;
+        readonly GermanSwitzerland: fhir.Coding;
+        readonly GermanGermany: fhir.Coding;
+        readonly Greek: fhir.Coding;
+        readonly English: fhir.Coding;
+        readonly EnglishAustralia: fhir.Coding;
+        readonly EnglishCanada: fhir.Coding;
+        readonly EnglishGreatBritain: fhir.Coding;
+        readonly EnglishIndia: fhir.Coding;
+        readonly EnglishNewZeland: fhir.Coding;
+        readonly EnglishSingapore: fhir.Coding;
+        readonly EnglishUnitedStates: fhir.Coding;
+        readonly Spanish: fhir.Coding;
+        readonly SpanishArgentina: fhir.Coding;
+        readonly SpanishSpain: fhir.Coding;
+        readonly SpanishUruguay: fhir.Coding;
+        readonly Finnish: fhir.Coding;
+        readonly French: fhir.Coding;
+        readonly FrenchBelgium: fhir.Coding;
+        readonly FrenchSwitzerland: fhir.Coding;
+        readonly FrenchFrance: fhir.Coding;
+        readonly Frysian: fhir.Coding;
+        readonly FrysianNetherlands: fhir.Coding;
+        readonly Hindi: fhir.Coding;
+        readonly Croatian: fhir.Coding;
+        readonly Italian: fhir.Coding;
+        /**
+         * For example codes indicating: Co-Pay, deductible, eligible, benefit, tax, etc.
+         */
+        readonly ItalianSwitzerland: fhir.Coding;
+        readonly ItalianItaly: fhir.Coding;
+        readonly Japanese: fhir.Coding;
+        readonly Korean: fhir.Coding;
+        readonly Dutch: fhir.Coding;
+        readonly DutchBelgium: fhir.Coding;
+        readonly DutchNetherlands: fhir.Coding;
+        readonly Norwegian: fhir.Coding;
+        readonly NorwegianNorway: fhir.Coding;
+        readonly Punjabi: fhir.Coding;
+        readonly Polish: fhir.Coding;
+        readonly Portuguese: fhir.Coding;
+        readonly PortugueseBrazil: fhir.Coding;
+        readonly Russian: fhir.Coding;
+        readonly RussianRussia: fhir.Coding;
+        readonly Serbian: fhir.Coding;
+        readonly SerbianSerbia: fhir.Coding;
+        readonly Swedish: fhir.Coding;
+        readonly SwedishSweden: fhir.Coding;
+        readonly Telegu: fhir.Coding;
+        readonly Chinese: fhir.Coding;
+        readonly ChineseChina: fhir.Coding;
+        readonly ChineseHongKong: fhir.Coding;
+        readonly ChineseSingapore: fhir.Coding;
+        readonly ChineseTaiwan: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -892,7 +950,7 @@ export interface ClaimResponseArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: FmStatusCodeType | null;
+    status: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
      * This may contain the local bill type codes, for example the US UB-04 bill type code or the CMS bill type.
      */
@@ -904,7 +962,7 @@ export interface ClaimResponseArgs extends fhir.DomainResourceArgs {
     /**
      * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
      */
-    use: ClaimUseCodeType | null;
+    use: fhir.FhirCode<ClaimUseCodeType> | string | undefined;
     /**
      * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for facast reimbursement is sought.
      */
@@ -928,7 +986,7 @@ export interface ClaimResponseArgs extends fhir.DomainResourceArgs {
     /**
      * The resource may be used to indicate that: the request has been held (queued) for processing; that it has been processed and errors found (error); that no errors were found and that some of the adjudication has been undertaken (partial) or that all of the adjudication has been undertaken (complete).
      */
-    outcome: RemittanceOutcomeCodeType | null;
+    outcome: fhir.FhirCode<RemittanceOutcomeCodeType> | string | undefined;
     /**
      * A human readable description of the status of the adjudication.
      */
@@ -1009,11 +1067,11 @@ export declare class ClaimResponse extends fhir.DomainResource {
     /**
      * A unique identifier assigned to this claim response.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: FmStatusCodeType | null;
+    status: fhir.FhirCode<FmStatusCodeType> | null;
     /**
      * This may contain the local bill type codes, for example the US UB-04 bill type code or the CMS bill type.
      */
@@ -1025,7 +1083,7 @@ export declare class ClaimResponse extends fhir.DomainResource {
     /**
      * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
      */
-    use: ClaimUseCodeType | null;
+    use: fhir.FhirCode<ClaimUseCodeType> | null;
     /**
      * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for facast reimbursement is sought.
      */
@@ -1049,7 +1107,7 @@ export declare class ClaimResponse extends fhir.DomainResource {
     /**
      * The resource may be used to indicate that: the request has been held (queued) for processing; that it has been processed and errors found (error); that no errors were found and that some of the adjudication has been undertaken (partial) or that all of the adjudication has been undertaken (complete).
      */
-    outcome: RemittanceOutcomeCodeType | null;
+    outcome: fhir.FhirCode<RemittanceOutcomeCodeType> | null;
     /**
      * A human readable description of the status of the adjudication.
      */
@@ -1069,19 +1127,19 @@ export declare class ClaimResponse extends fhir.DomainResource {
     /**
      * A claim line. Either a simple (a product or service) or a 'group' of details which can also be a simple items or groups of sub-details.
      */
-    item?: fhir.ClaimResponseItem[];
+    item: fhir.ClaimResponseItem[];
     /**
      * The first-tier service adjudications for payor added product or service lines.
      */
-    addItem?: fhir.ClaimResponseAddItem[];
+    addItem: fhir.ClaimResponseAddItem[];
     /**
      * The adjudication results which are presented at the header level rather than at the line-item or add-item levels.
      */
-    adjudication?: fhir.ClaimResponseItemAdjudication[];
+    adjudication: fhir.ClaimResponseItemAdjudication[];
     /**
      * Totals for amounts submitted, co-pays, benefits payable etc.
      */
-    total?: fhir.ClaimResponseTotal[];
+    total: fhir.ClaimResponseTotal[];
     /**
      * Payment details for the adjudication of the claim.
      */
@@ -1101,19 +1159,19 @@ export declare class ClaimResponse extends fhir.DomainResource {
     /**
      * A note that describes or explains adjudication results in a human readable form.
      */
-    processNote?: fhir.ClaimResponseProcessNote[];
+    processNote: fhir.ClaimResponseProcessNote[];
     /**
      * For example: professional reports, documents, images, clinical resources, or accident reports.
      */
-    communicationRequest?: fhir.Reference[];
+    communicationRequest: fhir.Reference[];
     /**
      * All insurance coverages for the patient which may be applicable for reimbursement, of the products and services listed in the claim, are typically provided in the claim to allow insurers to confirm the ordering of the insurance coverages relative to local 'coordination of benefit' rules. One coverage (and only one) with 'focal=true' is to be used in the adjudication of this claim. Coverages appearing before the focal Coverage in the list, and where 'subrogation=false', should provide a reference to the ClaimResponse containing the adjudication results of the prior claim.
      */
-    insurance?: fhir.ClaimResponseInsurance[];
+    insurance: fhir.ClaimResponseInsurance[];
     /**
      * If the request contains errors then an error element should be provided and no adjudication related sections (item, addItem, or payment) should be present.
      */
-    error?: fhir.ClaimResponseError[];
+    error: fhir.ClaimResponseError[];
     /**
      * Default constructor for ClaimResponse - initializes any required elements to null if a value is not provided.
      */
@@ -1121,19 +1179,39 @@ export declare class ClaimResponse extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (ClaimResponse.status)
      */
-    static statusRequiredCoding(): FmStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Cancelled: "cancelled";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+    };
     /**
      * Extensible-bound Value Set for type (ClaimResponse.type)
      */
-    static typeExtensibleCoding(): ClaimTypeCodingType;
+    static get typeExtensibleCodings(): {
+        readonly Institutional: fhir.Coding;
+        readonly Oral: fhir.Coding;
+        readonly Pharmacy: fhir.Coding;
+        readonly Professional: fhir.Coding;
+        readonly Vision: fhir.Coding;
+    };
     /**
      * Required-bound Value Set for use (ClaimResponse.use)
      */
-    static useRequiredCoding(): ClaimUseCodingType;
+    static get useRequiredCodes(): {
+        readonly Claim: "claim";
+        readonly Preauthorization: "preauthorization";
+        readonly Predetermination: "predetermination";
+    };
     /**
      * Required-bound Value Set for outcome (ClaimResponse.outcome)
      */
-    static outcomeRequiredCoding(): RemittanceOutcomeCodingType;
+    static get outcomeRequiredCodes(): {
+        readonly ProcessingComplete: "complete";
+        readonly Error: "error";
+        readonly PartialProcessing: "partial";
+        readonly Queued: "queued";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

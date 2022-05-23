@@ -79,6 +79,10 @@ export interface EvidenceVariableCharacteristic extends fhir.BackboneElement {
      * Indicates how elements are aggregated within the study effective period.
      */
     groupMeasure?: 'mean' | 'mean-of-mean' | 'mean-of-median' | 'median' | 'median-of-mean' | 'median-of-median' | undefined;
+    /**
+     * Extended properties for primitive element: EvidenceVariable.characteristic.groupMeasure
+     */
+    _groupMeasure?: fhir.FhirElement;
 }
 /**
  * The EvidenceVariable resource describes a "PICO" element that knowledge (evidence, assertion, recommendation) is about.
@@ -146,6 +150,10 @@ export interface EvidenceVariable extends fhir.DomainResource {
      * Allows filtering of evidence variables that are appropriate for use versus not.
      */
     status: 'active' | 'draft' | 'retired' | 'unknown' | null;
+    /**
+     * Extended properties for primitive element: EvidenceVariable.status
+     */
+    _status?: fhir.FhirElement;
     /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the evidence variable. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
@@ -242,6 +250,10 @@ export interface EvidenceVariable extends fhir.DomainResource {
      * The type of evidence element, a population, an exposure, or an outcome.
      */
     type?: 'continuous' | 'descriptive' | 'dichotomous' | undefined;
+    /**
+     * Extended properties for primitive element: EvidenceVariable.type
+     */
+    _type?: fhir.FhirElement;
     /**
      * Characteristics can be defined flexibly to accommodate different use cases for membership criteria, ranging from simple codes, all the way to using an expression language to express the criteria.
      */

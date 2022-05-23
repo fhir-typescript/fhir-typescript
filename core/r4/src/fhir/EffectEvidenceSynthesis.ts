@@ -122,7 +122,7 @@ export interface EffectEvidenceSynthesisResultsByExposureArgs extends fhir.Backb
   /**
    * Whether these results are for the exposure state or alternative exposure state.
    */
-  exposureState?: ExposureStateCodeType|undefined;
+  exposureState?: fhir.FhirCode<ExposureStateCodeType>|string|undefined;
   /**
    * Used to define variant exposure states such as low-risk state.
    */
@@ -148,7 +148,7 @@ export class EffectEvidenceSynthesisResultsByExposure extends fhir.BackboneEleme
   /**
    * Whether these results are for the exposure state or alternative exposure state.
    */
-  public exposureState?: ExposureStateCodeType|undefined;
+  public exposureState?: fhir.FhirCode<ExposureStateCodeType>|undefined;
   /**
    * Used to define variant exposure states such as low-risk state.
    */
@@ -163,7 +163,7 @@ export class EffectEvidenceSynthesisResultsByExposure extends fhir.BackboneEleme
   constructor(source:Partial<EffectEvidenceSynthesisResultsByExposureArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
-    if (source['exposureState']) { this.exposureState = source.exposureState; }
+    if (source['exposureState']) { this.exposureState = new fhir.FhirCode<ExposureStateCodeType>({value: source.exposureState}); }
     if (source['variantState']) { this.variantState = new fhir.CodeableConcept(source.variantState); }
     if (source['riskEvidenceSynthesis']) { this.riskEvidenceSynthesis = new fhir.Reference(source.riskEvidenceSynthesis); }
     else { this.riskEvidenceSynthesis = null; }
@@ -171,13 +171,13 @@ export class EffectEvidenceSynthesisResultsByExposure extends fhir.BackboneEleme
   /**
    * Required-bound Value Set for exposureState (EffectEvidenceSynthesis.resultsByExposure.exposureState)
    */
-  public static exposureStateRequiredCoding():ExposureStateCodingType {
-    return ExposureStateCodings;
+  public static get exposureStateRequiredCodes() {
+    return ExposureStateCodes;
   }
   /**
    * Extensible-bound Value Set for variantState (EffectEvidenceSynthesis.resultsByExposure.variantState)
    */
-  public static variantStateExtensibleCoding():EvidenceVariantStateCodingType {
+  public static get variantStateExtensibleCodings() {
     return EvidenceVariantStateCodings;
   }
   /**
@@ -186,9 +186,13 @@ export class EffectEvidenceSynthesisResultsByExposure extends fhir.BackboneEleme
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this['exposureState'] && (!Object.values(ExposureStateCodes).includes(this.exposureState as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property exposureState?:fhir.FhirCode<ExposureStateCodeType> fhir: EffectEvidenceSynthesis.resultsByExposure.exposureState:code Required binding to: ExposureState' });
+    }
+    if (this["exposureState"]) { issues.push(...this.exposureState.doModelValidation()); }
     if (this["variantState"]) { issues.push(...this.variantState.doModelValidation()); }
     if (!this['riskEvidenceSynthesis']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property riskEvidenceSynthesis:fhir.Reference fhir: EffectEvidenceSynthesis.resultsByExposure.riskEvidenceSynthesis:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property riskEvidenceSynthesis:fhir.Reference fhir: EffectEvidenceSynthesis.resultsByExposure.riskEvidenceSynthesis:Reference' });
     }
     if (this["riskEvidenceSynthesis"]) { issues.push(...this.riskEvidenceSynthesis.doModelValidation()); }
     return issues;
@@ -253,7 +257,7 @@ export class EffectEvidenceSynthesisEffectEstimatePrecisionEstimate extends fhir
   /**
    * Extensible-bound Value Set for type (EffectEvidenceSynthesis.effectEstimate.precisionEstimate.type)
    */
-  public static typeExtensibleCoding():PrecisionEstimateTypeCodingType {
+  public static get typeExtensibleCodings() {
     return PrecisionEstimateTypeCodings;
   }
   /**
@@ -329,7 +333,7 @@ export class EffectEvidenceSynthesisEffectEstimate extends fhir.BackboneElement 
   /**
    * A description of the precision of the estimate for the effect.
    */
-  public precisionEstimate?: fhir.EffectEvidenceSynthesisEffectEstimatePrecisionEstimate[];
+  public precisionEstimate: fhir.EffectEvidenceSynthesisEffectEstimatePrecisionEstimate[];
   /**
    * Default constructor for EffectEvidenceSynthesisEffectEstimate - initializes any required elements to null if a value is not provided.
    */
@@ -346,20 +350,20 @@ export class EffectEvidenceSynthesisEffectEstimate extends fhir.BackboneElement 
   /**
    * Extensible-bound Value Set for type (EffectEvidenceSynthesis.effectEstimate.type)
    */
-  public static typeExtensibleCoding():EffectEstimateTypeCodingType {
+  public static get typeExtensibleCodings() {
     return EffectEstimateTypeCodings;
   }
   /**
    * Extensible-bound Value Set for variantState (EffectEvidenceSynthesis.effectEstimate.variantState)
    */
-  public static variantStateExtensibleCoding():EvidenceVariantStateCodingType {
+  public static get variantStateExtensibleCodings() {
     return EvidenceVariantStateCodings;
   }
   /**
    * Required-bound Value Set for unitOfMeasure (EffectEvidenceSynthesis.effectEstimate.unitOfMeasure)
    */
-  public static unitOfMeasureRequiredCoding():UcumUnitsCodingType {
-    return UcumUnitsCodings;
+  public static get unitOfMeasureRequiredCodes() {
+    return UcumUnitsCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -370,6 +374,9 @@ export class EffectEvidenceSynthesisEffectEstimate extends fhir.BackboneElement 
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["variantState"]) { issues.push(...this.variantState.doModelValidation()); }
     if (this["value"]) { issues.push(...this.value.doModelValidation()); }
+    if (this['unitOfMeasure'] && (!Object.values(UcumUnitsCodes).includes(this.unitOfMeasure as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property unitOfMeasure?:fhir.CodeableConcept fhir: EffectEvidenceSynthesis.effectEstimate.unitOfMeasure:CodeableConcept Required binding to: UcumUnits' });
+    }
     if (this["unitOfMeasure"]) { issues.push(...this.unitOfMeasure.doModelValidation()); }
     if (this["precisionEstimate"]) { this.precisionEstimate.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -408,11 +415,11 @@ export class EffectEvidenceSynthesisCertaintyCertaintySubcomponent extends fhir.
   /**
    * A rating of a subcomponent of rating certainty.
    */
-  public rating?: fhir.CodeableConcept[];
+  public rating: fhir.CodeableConcept[];
   /**
    * A human-readable string to clarify or explain concepts about the resource.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Default constructor for EffectEvidenceSynthesisCertaintyCertaintySubcomponent - initializes any required elements to null if a value is not provided.
    */
@@ -427,13 +434,13 @@ export class EffectEvidenceSynthesisCertaintyCertaintySubcomponent extends fhir.
   /**
    * Extensible-bound Value Set for type (EffectEvidenceSynthesis.certainty.certaintySubcomponent.type)
    */
-  public static typeExtensibleCoding():CertaintySubcomponentTypeCodingType {
+  public static get typeExtensibleCodings() {
     return CertaintySubcomponentTypeCodings;
   }
   /**
    * Extensible-bound Value Set for rating (EffectEvidenceSynthesis.certainty.certaintySubcomponent.rating)
    */
-  public static ratingExtensibleCoding():CertaintySubcomponentRatingCodingType {
+  public static get ratingExtensibleCodings() {
     return CertaintySubcomponentRatingCodings;
   }
   /**
@@ -476,15 +483,15 @@ export class EffectEvidenceSynthesisCertainty extends fhir.BackboneElement {
   /**
    * A rating of the certainty of the effect estimate.
    */
-  public rating?: fhir.CodeableConcept[];
+  public rating: fhir.CodeableConcept[];
   /**
    * A human-readable string to clarify or explain concepts about the resource.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * A description of a component of the overall certainty.
    */
-  public certaintySubcomponent?: fhir.EffectEvidenceSynthesisCertaintyCertaintySubcomponent[];
+  public certaintySubcomponent: fhir.EffectEvidenceSynthesisCertaintyCertaintySubcomponent[];
   /**
    * Default constructor for EffectEvidenceSynthesisCertainty - initializes any required elements to null if a value is not provided.
    */
@@ -500,7 +507,7 @@ export class EffectEvidenceSynthesisCertainty extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for rating (EffectEvidenceSynthesis.certainty.rating)
    */
-  public static ratingExtensibleCoding():EvidenceQualityCodingType {
+  public static get ratingExtensibleCodings() {
     return EvidenceQualityCodings;
   }
   /**
@@ -547,7 +554,7 @@ export interface EffectEvidenceSynthesisArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of effect evidence synthesiss that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the effect evidence synthesis. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
@@ -679,7 +686,7 @@ export class EffectEvidenceSynthesis extends fhir.DomainResource {
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this effect evidence synthesis outside of FHIR, where it is not possible to use the logical URI.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * There may be different effect evidence synthesis instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the effect evidence synthesis with the format [url]|[version].
    */
@@ -695,7 +702,7 @@ export class EffectEvidenceSynthesis extends fhir.DomainResource {
   /**
    * Allows filtering of effect evidence synthesiss that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the effect evidence synthesis. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
@@ -707,7 +714,7 @@ export class EffectEvidenceSynthesis extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the effect evidence synthesis was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the effect evidence synthesis as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the effect evidence synthesis is presumed to be the predominant language in the place the effect evidence synthesis was created).
    */
@@ -715,15 +722,15 @@ export class EffectEvidenceSynthesis extends fhir.DomainResource {
   /**
    * A human-readable string to clarify or explain concepts about the resource.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the effect evidence synthesis to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * A copyright statement relating to the effect evidence synthesis and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the effect evidence synthesis.
    */
@@ -743,27 +750,27 @@ export class EffectEvidenceSynthesis extends fhir.DomainResource {
   /**
    * Descriptive topics related to the content of the EffectEvidenceSynthesis. Topics provide a high-level categorization grouping types of EffectEvidenceSynthesiss that can be useful for filtering and searching.
    */
-  public topic?: fhir.CodeableConcept[];
+  public topic: fhir.CodeableConcept[];
   /**
    * An individiual or organization primarily involved in the creation and maintenance of the content.
    */
-  public author?: fhir.ContactDetail[];
+  public author: fhir.ContactDetail[];
   /**
    * An individual or organization primarily responsible for internal coherence of the content.
    */
-  public editor?: fhir.ContactDetail[];
+  public editor: fhir.ContactDetail[];
   /**
    * An individual or organization primarily responsible for review of some aspect of the content.
    */
-  public reviewer?: fhir.ContactDetail[];
+  public reviewer: fhir.ContactDetail[];
   /**
    * An individual or organization responsible for officially endorsing the content for use in some setting.
    */
-  public endorser?: fhir.ContactDetail[];
+  public endorser: fhir.ContactDetail[];
   /**
    * Each related artifact is either an attachment, or a reference to another resource, but not both.
    */
-  public relatedArtifact?: fhir.RelatedArtifact[];
+  public relatedArtifact: fhir.RelatedArtifact[];
   /**
    * Type of synthesis eg meta-analysis.
    */
@@ -795,15 +802,15 @@ export class EffectEvidenceSynthesis extends fhir.DomainResource {
   /**
    * A description of the results for each exposure considered in the effect estimate.
    */
-  public resultsByExposure?: fhir.EffectEvidenceSynthesisResultsByExposure[];
+  public resultsByExposure: fhir.EffectEvidenceSynthesisResultsByExposure[];
   /**
    * The estimated effect of the exposure variant.
    */
-  public effectEstimate?: fhir.EffectEvidenceSynthesisEffectEstimate[];
+  public effectEstimate: fhir.EffectEvidenceSynthesisEffectEstimate[];
   /**
    * A description of the certainty of the effect estimate.
    */
-  public certainty?: fhir.EffectEvidenceSynthesisCertainty[];
+  public certainty: fhir.EffectEvidenceSynthesisCertainty[];
   /**
    * Default constructor for EffectEvidenceSynthesis - initializes any required elements to null if a value is not provided.
    */
@@ -816,7 +823,7 @@ export class EffectEvidenceSynthesis extends fhir.DomainResource {
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
@@ -866,19 +873,19 @@ export class EffectEvidenceSynthesis extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (EffectEvidenceSynthesis.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Extensible-bound Value Set for synthesisType (EffectEvidenceSynthesis.synthesisType)
    */
-  public static synthesisTypeExtensibleCoding():SynthesisTypeCodingType {
+  public static get synthesisTypeExtensibleCodings() {
     return SynthesisTypeCodings;
   }
   /**
    * Extensible-bound Value Set for studyType (EffectEvidenceSynthesis.studyType)
    */
-  public static studyTypeExtensibleCoding():StudyTypeCodingType {
+  public static get studyTypeExtensibleCodings() {
     return StudyTypeCodings;
   }
   /**
@@ -887,7 +894,7 @@ export class EffectEvidenceSynthesis extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"EffectEvidenceSynthesis" fhir: EffectEvidenceSynthesis.resourceType:"EffectEvidenceSynthesis"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"EffectEvidenceSynthesis" fhir: EffectEvidenceSynthesis.resourceType:"EffectEvidenceSynthesis"' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -895,8 +902,12 @@ export class EffectEvidenceSynthesis extends fhir.DomainResource {
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: EffectEvidenceSynthesis.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: EffectEvidenceSynthesis.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: EffectEvidenceSynthesis.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
     if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -917,19 +928,19 @@ export class EffectEvidenceSynthesis extends fhir.DomainResource {
     if (this["synthesisType"]) { issues.push(...this.synthesisType.doModelValidation()); }
     if (this["studyType"]) { issues.push(...this.studyType.doModelValidation()); }
     if (!this['population']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property population:fhir.Reference fhir: EffectEvidenceSynthesis.population:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property population:fhir.Reference fhir: EffectEvidenceSynthesis.population:Reference' });
     }
     if (this["population"]) { issues.push(...this.population.doModelValidation()); }
     if (!this['exposure']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property exposure:fhir.Reference fhir: EffectEvidenceSynthesis.exposure:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property exposure:fhir.Reference fhir: EffectEvidenceSynthesis.exposure:Reference' });
     }
     if (this["exposure"]) { issues.push(...this.exposure.doModelValidation()); }
     if (!this['exposureAlternative']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property exposureAlternative:fhir.Reference fhir: EffectEvidenceSynthesis.exposureAlternative:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property exposureAlternative:fhir.Reference fhir: EffectEvidenceSynthesis.exposureAlternative:Reference' });
     }
     if (this["exposureAlternative"]) { issues.push(...this.exposureAlternative.doModelValidation()); }
     if (!this['outcome']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property outcome:fhir.Reference fhir: EffectEvidenceSynthesis.outcome:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property outcome:fhir.Reference fhir: EffectEvidenceSynthesis.outcome:Reference' });
     }
     if (this["outcome"]) { issues.push(...this.outcome.doModelValidation()); }
     if (this["sampleSize"]) { issues.push(...this.sampleSize.doModelValidation()); }

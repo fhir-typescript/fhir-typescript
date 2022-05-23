@@ -58,7 +58,7 @@ export class MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStreng
   /**
    * The country or countries for which the strength range applies.
    */
-  public country?: fhir.CodeableConcept[];
+  public country: fhir.CodeableConcept[];
   /**
    * Default constructor for MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength - initializes any required elements to null if a value is not provided.
    */
@@ -79,7 +79,7 @@ export class MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStreng
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["substance"]) { issues.push(...this.substance.doModelValidation()); }
     if (!this['strength']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property strength:fhir.Ratio fhir: MedicinalProductIngredient.specifiedSubstance.strength.referenceStrength.strength:Ratio', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property strength:fhir.Ratio fhir: MedicinalProductIngredient.specifiedSubstance.strength.referenceStrength.strength:Ratio' });
     }
     if (this["strength"]) { issues.push(...this.strength.doModelValidation()); }
     if (this["strengthLowLimit"]) { issues.push(...this.strengthLowLimit.doModelValidation()); }
@@ -153,11 +153,11 @@ export class MedicinalProductIngredientSpecifiedSubstanceStrength extends fhir.B
   /**
    * The country or countries for which the strength range applies.
    */
-  public country?: fhir.CodeableConcept[];
+  public country: fhir.CodeableConcept[];
   /**
    * Strength expressed in terms of a reference substance.
    */
-  public referenceStrength?: fhir.MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength[];
+  public referenceStrength: fhir.MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength[];
   /**
    * Default constructor for MedicinalProductIngredientSpecifiedSubstanceStrength - initializes any required elements to null if a value is not provided.
    */
@@ -180,7 +180,7 @@ export class MedicinalProductIngredientSpecifiedSubstanceStrength extends fhir.B
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['presentation']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property presentation:fhir.Ratio fhir: MedicinalProductIngredient.specifiedSubstance.strength.presentation:Ratio', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property presentation:fhir.Ratio fhir: MedicinalProductIngredient.specifiedSubstance.strength.presentation:Ratio' });
     }
     if (this["presentation"]) { issues.push(...this.presentation.doModelValidation()); }
     if (this["presentationLowLimit"]) { issues.push(...this.presentationLowLimit.doModelValidation()); }
@@ -237,7 +237,7 @@ export class MedicinalProductIngredientSpecifiedSubstance extends fhir.BackboneE
   /**
    * Quantity of the substance or specified substance present in the manufactured item or pharmaceutical product.
    */
-  public strength?: fhir.MedicinalProductIngredientSpecifiedSubstanceStrength[];
+  public strength: fhir.MedicinalProductIngredientSpecifiedSubstanceStrength[];
   /**
    * Default constructor for MedicinalProductIngredientSpecifiedSubstance - initializes any required elements to null if a value is not provided.
    */
@@ -257,11 +257,11 @@ export class MedicinalProductIngredientSpecifiedSubstance extends fhir.BackboneE
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: MedicinalProductIngredient.specifiedSubstance.code:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: MedicinalProductIngredient.specifiedSubstance.code:CodeableConcept' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['group']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property group:fhir.CodeableConcept fhir: MedicinalProductIngredient.specifiedSubstance.group:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property group:fhir.CodeableConcept fhir: MedicinalProductIngredient.specifiedSubstance.group:CodeableConcept' });
     }
     if (this["group"]) { issues.push(...this.group.doModelValidation()); }
     if (this["confidentiality"]) { issues.push(...this.confidentiality.doModelValidation()); }
@@ -298,7 +298,7 @@ export class MedicinalProductIngredientSubstance extends fhir.BackboneElement {
   /**
    * Quantity of the substance or specified substance present in the manufactured item or pharmaceutical product.
    */
-  public strength?: fhir.MedicinalProductIngredientSpecifiedSubstanceStrength[];
+  public strength: fhir.MedicinalProductIngredientSpecifiedSubstanceStrength[];
   /**
    * Default constructor for MedicinalProductIngredientSubstance - initializes any required elements to null if a value is not provided.
    */
@@ -315,7 +315,7 @@ export class MedicinalProductIngredientSubstance extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: MedicinalProductIngredient.substance.code:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: MedicinalProductIngredient.substance.code:CodeableConcept' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["strength"]) { this.strength.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -383,11 +383,11 @@ export class MedicinalProductIngredient extends fhir.DomainResource {
   /**
    * Manufacturer of this Ingredient.
    */
-  public manufacturer?: fhir.Reference[];
+  public manufacturer: fhir.Reference[];
   /**
    * A specified substance that comprises this ingredient.
    */
-  public specifiedSubstance?: fhir.MedicinalProductIngredientSpecifiedSubstance[];
+  public specifiedSubstance: fhir.MedicinalProductIngredientSpecifiedSubstance[];
   /**
    * The ingredient substance.
    */
@@ -414,11 +414,11 @@ export class MedicinalProductIngredient extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicinalProductIngredient" fhir: MedicinalProductIngredient.resourceType:"MedicinalProductIngredient"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicinalProductIngredient" fhir: MedicinalProductIngredient.resourceType:"MedicinalProductIngredient"' });
     }
     if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (!this['role']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property role:fhir.CodeableConcept fhir: MedicinalProductIngredient.role:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property role:fhir.CodeableConcept fhir: MedicinalProductIngredient.role:CodeableConcept' });
     }
     if (this["role"]) { issues.push(...this.role.doModelValidation()); }
     if (this["allergenicIndicator"]) { issues.push(...this.allergenicIndicator.doModelValidation()); }

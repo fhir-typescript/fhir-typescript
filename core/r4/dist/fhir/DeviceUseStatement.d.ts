@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { DeviceStatementStatusCodingType } from '../fhirValueSets/DeviceStatementStatusCodings.js';
 import { DeviceStatementStatusCodeType } from '../fhirValueSets/DeviceStatementStatusCodes.js';
 /**
  * Valid arguments for the DeviceUseStatement type.
@@ -21,7 +20,7 @@ export interface DeviceUseStatementArgs extends fhir.DomainResourceArgs {
      * DeviceUseStatment is a statement at a point in time.  The status is only representative at the point when it was asserted.  The value set for contains codes that assert the status of the use  by the patient (for example, stopped or on hold) as well as codes that assert the status of the resource itself (for example, entered in error).
      * This element is labeled as a modifier because the status contains the codes that mark the statement as not currently valid.
      */
-    status: DeviceStatementStatusCodeType | null;
+    status: fhir.FhirCode<DeviceStatementStatusCodeType> | string | undefined;
     /**
      * The patient who used the device.
      */
@@ -90,16 +89,16 @@ export declare class DeviceUseStatement extends fhir.DomainResource {
     /**
      * An external identifier for this statement such as an IRI.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this DeviceUseStatement.
      */
-    basedOn?: fhir.Reference[];
+    basedOn: fhir.Reference[];
     /**
      * DeviceUseStatment is a statement at a point in time.  The status is only representative at the point when it was asserted.  The value set for contains codes that assert the status of the use  by the patient (for example, stopped or on hold) as well as codes that assert the status of the resource itself (for example, entered in error).
      * This element is labeled as a modifier because the status contains the codes that mark the statement as not currently valid.
      */
-    status: DeviceStatementStatusCodeType | null;
+    status: fhir.FhirCode<DeviceStatementStatusCodeType> | null;
     /**
      * The patient who used the device.
      */
@@ -107,7 +106,7 @@ export declare class DeviceUseStatement extends fhir.DomainResource {
     /**
      * The most common use cases for deriving a DeviceUseStatement comes from creating it from a request or from an observation or a claim. it should be noted that the amount of information that is available varies from the type resource that you derive the DeviceUseStatement from.
      */
-    derivedFrom?: fhir.Reference[];
+    derivedFrom: fhir.Reference[];
     /**
      * How often the device was used.
      */
@@ -131,11 +130,11 @@ export declare class DeviceUseStatement extends fhir.DomainResource {
     /**
      * Reason or justification for the use of the device.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * Indicates another resource whose existence justifies this DeviceUseStatement.
      */
-    reasonReference?: fhir.Reference[];
+    reasonReference: fhir.Reference[];
     /**
      * Indicates the anotomic location on the subject's body where the device was used ( i.e. the target).
      */
@@ -143,7 +142,7 @@ export declare class DeviceUseStatement extends fhir.DomainResource {
     /**
      * Details about the device statement that were not represented at all or sufficiently in one of the attributes provided in a class. These may include for example a comment, an instruction, or a note associated with the statement.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Default constructor for DeviceUseStatement - initializes any required elements to null if a value is not provided.
      */
@@ -151,7 +150,14 @@ export declare class DeviceUseStatement extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (DeviceUseStatement.status)
      */
-    static statusRequiredCoding(): DeviceStatementStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Completed: "completed";
+        readonly EnteredInError: "entered-in-error";
+        readonly Intended: "intended";
+        readonly OnHold: "on-hold";
+        readonly Stopped: "stopped";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

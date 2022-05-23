@@ -37,6 +37,10 @@ export interface ProvenanceEntity extends fhir.BackboneElement {
    */
   role: 'derivation'|'quotation'|'removal'|'revision'|'source'|null;
   /**
+   * Extended properties for primitive element: Provenance.entity.role
+   */
+  _role?:fhir.FhirElement;
+  /**
    * whatIdentity should be used for entities that are not a Resource type.
    */
   what: fhir.Reference|null;

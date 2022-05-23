@@ -74,7 +74,7 @@ export class Schedule extends fhir.DomainResource {
   /**
    * External Ids for this item.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because it may be used to mark that the resource was created in error.
    */
@@ -82,15 +82,15 @@ export class Schedule extends fhir.DomainResource {
   /**
    * A broad categorization of the service that is to be performed during this appointment.
    */
-  public serviceCategory?: fhir.CodeableConcept[];
+  public serviceCategory: fhir.CodeableConcept[];
   /**
    * The specific service that is to be performed during this appointment.
    */
-  public serviceType?: fhir.CodeableConcept[];
+  public serviceType: fhir.CodeableConcept[];
   /**
    * The specialty of a practitioner that would be required to perform the service requested in this appointment.
    */
-  public specialty?: fhir.CodeableConcept[];
+  public specialty: fhir.CodeableConcept[];
   /**
    * The capacity to support multiple referenced resource types should be used in cases where the specific resources themselves cannot be scheduled without the other, and thus only make sense to the system exposing them as a group. Common examples of this are where the combination of a practitioner and a room (Location) are always required by a system.
    */
@@ -126,7 +126,7 @@ export class Schedule extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for specialty (Schedule.specialty)
    */
-  public static specialtyPreferredCoding():C80PracticeCodesCodingType {
+  public static get specialtyPreferredCodings() {
     return C80PracticeCodesCodings;
   }
   /**
@@ -135,7 +135,7 @@ export class Schedule extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Schedule" fhir: Schedule.resourceType:"Schedule"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Schedule" fhir: Schedule.resourceType:"Schedule"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["active"]) { issues.push(...this.active.doModelValidation()); }
@@ -143,11 +143,11 @@ export class Schedule extends fhir.DomainResource {
     if (this["serviceType"]) { this.serviceType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["specialty"]) { this.specialty.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['actor']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actor:fhir.Reference[] fhir: Schedule.actor:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor:fhir.Reference[] fhir: Schedule.actor:Reference' });
     } else if (!Array.isArray(this.actor)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property actor:fhir.Reference[] fhir: Schedule.actor:Reference', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property actor:fhir.Reference[] fhir: Schedule.actor:Reference' });
     } else if (this.actor.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actor:fhir.Reference[] fhir: Schedule.actor:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor:fhir.Reference[] fhir: Schedule.actor:Reference' });
     }
     if (this["actor"]) { this.actor.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["planningHorizon"]) { issues.push(...this.planningHorizon.doModelValidation()); }

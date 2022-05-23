@@ -59,6 +59,10 @@ export interface DetectedIssue extends fhir.DomainResource {
    */
   status: 'amended'|'cancelled'|'corrected'|'entered-in-error'|'final'|'preliminary'|'registered'|'unknown'|null;
   /**
+   * Extended properties for primitive element: DetectedIssue.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Identifies the general type of issue identified.
    */
   code?: fhir.CodeableConcept|undefined;
@@ -66,6 +70,10 @@ export interface DetectedIssue extends fhir.DomainResource {
    * Indicates the degree of importance associated with the identified issue based on the potential impact on the patient.
    */
   severity?: 'high'|'low'|'moderate'|undefined;
+  /**
+   * Extended properties for primitive element: DetectedIssue.severity
+   */
+  _severity?:fhir.FhirElement;
   /**
    * Indicates the patient whose record the detected issue is associated with.
    */

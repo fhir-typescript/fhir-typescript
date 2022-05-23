@@ -31,6 +31,10 @@ export interface BundleEntrySearch extends fhir.BackboneElement {
      */
     mode?: 'include' | 'match' | 'outcome' | undefined;
     /**
+     * Extended properties for primitive element: Bundle.entry.search.mode
+     */
+    _mode?: fhir.FhirElement;
+    /**
      * Servers are not required to return a ranking score. 1 is most relevant, and 0 is least relevant. Often, search results are sorted by score, but the client may specify a different sort order.
      * See [Patient Match](patient-operation-match.html) for the EMPI search which relates to this element.
      */
@@ -48,6 +52,10 @@ export interface BundleEntryRequest extends fhir.BackboneElement {
      * In a transaction or batch, this is the HTTP action to be executed for this entry. In a history bundle, this indicates the HTTP action that occurred.
      */
     method: 'DELETE' | 'GET' | 'HEAD' | 'PATCH' | 'POST' | 'PUT' | null;
+    /**
+     * Extended properties for primitive element: Bundle.entry.request.method
+     */
+    _method?: fhir.FhirElement;
     /**
      * E.g. for a Patient Create, the method would be "POST" and the URL would be "Patient". For a Patient Update, the method would be PUT and the URL would be "Patient/[id]".
      */
@@ -181,6 +189,10 @@ export interface Bundle extends fhir.Resource {
      * It's possible to use a bundle for other purposes (e.g. a document can be accepted as a transaction). This is primarily defined so that there can be specific rules for some of the bundle types.
      */
     type: 'batch' | 'batch-response' | 'collection' | 'document' | 'history' | 'message' | 'searchset' | 'transaction' | 'transaction-response' | null;
+    /**
+     * Extended properties for primitive element: Bundle.type
+     */
+    _type?: fhir.FhirElement;
     /**
      * For many bundles, the timestamp is equal to .meta.lastUpdated, because they are not stored (e.g. search results). When a bundle is placed in a persistent store, .meta.lastUpdated will be usually be changed by the server. When the bundle is a message, a middleware agent altering the message (even if not stored) SHOULD update .meta.lastUpdated. .timestamp is used to track the original time of the Bundle, and SHOULD be populated.
      * Usage:

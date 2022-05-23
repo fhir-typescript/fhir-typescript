@@ -33,6 +33,10 @@ export interface MedicationStatement extends fhir.DomainResource {
    */
   status: 'active'|'completed'|'entered-in-error'|'intended'|'not-taken'|'on-hold'|'stopped'|'unknown'|null;
   /**
+   * Extended properties for primitive element: MedicationStatement.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * This is generally only used for "exception" statuses such as "not-taken", "on-hold", "cancelled" or "entered-in-error". The reason for performing the event at all is captured in reasonCode, not here.
    */
   statusReason?: fhir.CodeableConcept[]|undefined;

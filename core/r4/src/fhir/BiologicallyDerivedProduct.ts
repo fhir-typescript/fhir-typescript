@@ -249,7 +249,7 @@ export interface BiologicallyDerivedProductStorageArgs extends fhir.BackboneElem
   /**
    * Temperature scale used.
    */
-  scale?: ProductStorageScaleCodeType|undefined;
+  scale?: fhir.FhirCode<ProductStorageScaleCodeType>|string|undefined;
   /**
    * Storage timeperiod.
    */
@@ -275,7 +275,7 @@ export class BiologicallyDerivedProductStorage extends fhir.BackboneElement {
   /**
    * Temperature scale used.
    */
-  public scale?: ProductStorageScaleCodeType|undefined;
+  public scale?: fhir.FhirCode<ProductStorageScaleCodeType>|undefined;
   /**
    * Storage timeperiod.
    */
@@ -287,14 +287,14 @@ export class BiologicallyDerivedProductStorage extends fhir.BackboneElement {
     super(source, options);
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
     if (source['temperature']) { this.temperature = new fhir.FhirDecimal({value: source.temperature}); }
-    if (source['scale']) { this.scale = source.scale; }
+    if (source['scale']) { this.scale = new fhir.FhirCode<ProductStorageScaleCodeType>({value: source.scale}); }
     if (source['duration']) { this.duration = new fhir.Period(source.duration); }
   }
   /**
    * Required-bound Value Set for scale (BiologicallyDerivedProduct.storage.scale)
    */
-  public static scaleRequiredCoding():ProductStorageScaleCodingType {
-    return ProductStorageScaleCodings;
+  public static get scaleRequiredCodes() {
+    return ProductStorageScaleCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -303,6 +303,10 @@ export class BiologicallyDerivedProductStorage extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["temperature"]) { issues.push(...this.temperature.doModelValidation()); }
+    if (this['scale'] && (!Object.values(ProductStorageScaleCodes).includes(this.scale as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property scale?:fhir.FhirCode<ProductStorageScaleCodeType> fhir: BiologicallyDerivedProduct.storage.scale:code Required binding to: ProductStorageScale' });
+    }
+    if (this["scale"]) { issues.push(...this.scale.doModelValidation()); }
     if (this["duration"]) { issues.push(...this.duration.doModelValidation()); }
     return issues;
   }
@@ -322,7 +326,7 @@ export interface BiologicallyDerivedProductArgs extends fhir.DomainResourceArgs 
   /**
    * Broad category of this product.
    */
-  productCategory?: ProductCategoryCodeType|undefined;
+  productCategory?: fhir.FhirCode<ProductCategoryCodeType>|string|undefined;
   /**
    * A code that identifies the kind of this biologically derived product (SNOMED Ctcode).
    */
@@ -330,7 +334,7 @@ export interface BiologicallyDerivedProductArgs extends fhir.DomainResourceArgs 
   /**
    * Whether the product is currently available.
    */
-  status?: ProductStatusCodeType|undefined;
+  status?: fhir.FhirCode<ProductStatusCodeType>|string|undefined;
   /**
    * Procedure request to obtain this biologically derived product.
    */
@@ -377,11 +381,11 @@ export class BiologicallyDerivedProduct extends fhir.DomainResource {
   /**
    * This records identifiers associated with this biologically derived product instance that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Broad category of this product.
    */
-  public productCategory?: ProductCategoryCodeType|undefined;
+  public productCategory?: fhir.FhirCode<ProductCategoryCodeType>|undefined;
   /**
    * A code that identifies the kind of this biologically derived product (SNOMED Ctcode).
    */
@@ -389,11 +393,11 @@ export class BiologicallyDerivedProduct extends fhir.DomainResource {
   /**
    * Whether the product is currently available.
    */
-  public status?: ProductStatusCodeType|undefined;
+  public status?: fhir.FhirCode<ProductStatusCodeType>|undefined;
   /**
    * Procedure request to obtain this biologically derived product.
    */
-  public request?: fhir.Reference[];
+  public request: fhir.Reference[];
   /**
    * Number of discrete units within this product.
    */
@@ -401,7 +405,7 @@ export class BiologicallyDerivedProduct extends fhir.DomainResource {
   /**
    * For products that have multiple collections. For example Peripheral Blood Stem Cells may be collected over several days from a single donor and the donation split into in multiple containers which must be linked to the parent donation.
    */
-  public parent?: fhir.Reference[];
+  public parent: fhir.Reference[];
   /**
    * How this product was collected.
    */
@@ -409,7 +413,7 @@ export class BiologicallyDerivedProduct extends fhir.DomainResource {
   /**
    * Any processing of the product during collection that does not change the fundamental nature of the product. For example adding anti-coagulants during the collection of Peripheral Blood Stem Cells.
    */
-  public processing?: fhir.BiologicallyDerivedProductProcessing[];
+  public processing: fhir.BiologicallyDerivedProductProcessing[];
   /**
    * Any manipulation of product post-collection that is intended to alter the product.  For example a buffy-coat enrichment or CD8 reduction of Peripheral Blood Stem Cells to make it more suitable for infusion.
    */
@@ -417,7 +421,7 @@ export class BiologicallyDerivedProduct extends fhir.DomainResource {
   /**
    * Product storage.
    */
-  public storage?: fhir.BiologicallyDerivedProductStorage[];
+  public storage: fhir.BiologicallyDerivedProductStorage[];
   /**
    * Default constructor for BiologicallyDerivedProduct - initializes any required elements to null if a value is not provided.
    */
@@ -426,9 +430,9 @@ export class BiologicallyDerivedProduct extends fhir.DomainResource {
     this.resourceType = 'BiologicallyDerivedProduct';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['productCategory']) { this.productCategory = source.productCategory; }
+    if (source['productCategory']) { this.productCategory = new fhir.FhirCode<ProductCategoryCodeType>({value: source.productCategory}); }
     if (source['productCode']) { this.productCode = new fhir.CodeableConcept(source.productCode); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<ProductStatusCodeType>({value: source.status}); }
     if (source['request']) { this.request = source.request.map((x) => new fhir.Reference(x)); }
     else { this.request = []; }
     if (source['quantity']) { this.quantity = new fhir.FhirInteger({value: source.quantity}); }
@@ -444,14 +448,14 @@ export class BiologicallyDerivedProduct extends fhir.DomainResource {
   /**
    * Required-bound Value Set for productCategory (BiologicallyDerivedProduct.productCategory)
    */
-  public static productCategoryRequiredCoding():ProductCategoryCodingType {
-    return ProductCategoryCodings;
+  public static get productCategoryRequiredCodes() {
+    return ProductCategoryCodes;
   }
   /**
    * Required-bound Value Set for status (BiologicallyDerivedProduct.status)
    */
-  public static statusRequiredCoding():ProductStatusCodingType {
-    return ProductStatusCodings;
+  public static get statusRequiredCodes() {
+    return ProductStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -459,10 +463,18 @@ export class BiologicallyDerivedProduct extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"BiologicallyDerivedProduct" fhir: BiologicallyDerivedProduct.resourceType:"BiologicallyDerivedProduct"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"BiologicallyDerivedProduct" fhir: BiologicallyDerivedProduct.resourceType:"BiologicallyDerivedProduct"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['productCategory'] && (!Object.values(ProductCategoryCodes).includes(this.productCategory as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property productCategory?:fhir.FhirCode<ProductCategoryCodeType> fhir: BiologicallyDerivedProduct.productCategory:code Required binding to: ProductCategory' });
+    }
+    if (this["productCategory"]) { issues.push(...this.productCategory.doModelValidation()); }
     if (this["productCode"]) { issues.push(...this.productCode.doModelValidation()); }
+    if (this['status'] && (!Object.values(ProductStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<ProductStatusCodeType> fhir: BiologicallyDerivedProduct.status:code Required binding to: ProductStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["request"]) { this.request.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
     if (this["parent"]) { this.parent.forEach((x) => { issues.push(...x.doModelValidation()); }) }

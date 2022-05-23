@@ -35,6 +35,10 @@ export interface ContractContentDefinition extends fhir.BackboneElement {
    */
   publicationStatus: 'amended'|'appended'|'cancelled'|'disputed'|'entered-in-error'|'executable'|'executed'|'negotiable'|'offered'|'policy'|'rejected'|'renewed'|'resolved'|'revoked'|'terminated'|null;
   /**
+   * Extended properties for primitive element: Contract.contentDefinition.publicationStatus
+   */
+  _publicationStatus?:fhir.FhirElement;
+  /**
    * A copyright statement relating to Contract precursor content. Copyright statements are generally legal restrictions on the use and publishing of the Contract precursor content.
    */
   copyright?: string|undefined;
@@ -739,6 +743,10 @@ export interface Contract extends fhir.DomainResource {
    * This element is labeled as a modifier because the status contains codes that mark the contract as not currently valid or active.
    */
   status?: 'amended'|'appended'|'cancelled'|'disputed'|'entered-in-error'|'executable'|'executed'|'negotiable'|'offered'|'policy'|'rejected'|'renewed'|'resolved'|'revoked'|'terminated'|undefined;
+  /**
+   * Extended properties for primitive element: Contract.status
+   */
+  _status?:fhir.FhirElement;
   /**
    * Legal states of the formation of a legal instrument, which is a formally executed written document that can be formally attributed to its author, records and formally expresses a legally enforceable act, process, or contractual duty, obligation, or right, and therefore evidences that act, process, or agreement.
    */

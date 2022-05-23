@@ -1,11 +1,7 @@
 import * as fhir from '../fhir.js';
-import { ReportParticipantTypeCodingType } from '../fhirValueSets/ReportParticipantTypeCodings.js';
 import { ReportParticipantTypeCodeType } from '../fhirValueSets/ReportParticipantTypeCodes.js';
-import { ReportActionResultCodesCodingType } from '../fhirValueSets/ReportActionResultCodesCodings.js';
 import { ReportActionResultCodesCodeType } from '../fhirValueSets/ReportActionResultCodesCodes.js';
-import { ReportStatusCodesCodingType } from '../fhirValueSets/ReportStatusCodesCodings.js';
 import { ReportStatusCodesCodeType } from '../fhirValueSets/ReportStatusCodesCodes.js';
-import { ReportResultCodesCodingType } from '../fhirValueSets/ReportResultCodesCodings.js';
 import { ReportResultCodesCodeType } from '../fhirValueSets/ReportResultCodesCodes.js';
 /**
  * Valid arguments for the TestReportParticipant type.
@@ -14,7 +10,7 @@ export interface TestReportParticipantArgs extends fhir.BackboneElementArgs {
     /**
      * The type of participant.
      */
-    type: ReportParticipantTypeCodeType | null;
+    type: fhir.FhirCode<ReportParticipantTypeCodeType> | string | undefined;
     /**
      * The uri of the participant. An absolute URL is preferred.
      */
@@ -35,7 +31,7 @@ export declare class TestReportParticipant extends fhir.BackboneElement {
     /**
      * The type of participant.
      */
-    type: ReportParticipantTypeCodeType | null;
+    type: fhir.FhirCode<ReportParticipantTypeCodeType> | null;
     /**
      * The uri of the participant. An absolute URL is preferred.
      */
@@ -51,7 +47,11 @@ export declare class TestReportParticipant extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for type (TestReport.participant.type)
      */
-    static typeRequiredCoding(): ReportParticipantTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Client: "client";
+        readonly Server: "server";
+        readonly TestEngine: "test-engine";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -64,7 +64,7 @@ export interface TestReportSetupActionOperationArgs extends fhir.BackboneElement
     /**
      * The result of this operation.
      */
-    result: ReportActionResultCodesCodeType | null;
+    result: fhir.FhirCode<ReportActionResultCodesCodeType> | string | undefined;
     /**
      * An explanatory message associated with the result.
      */
@@ -85,7 +85,7 @@ export declare class TestReportSetupActionOperation extends fhir.BackboneElement
     /**
      * The result of this operation.
      */
-    result: ReportActionResultCodesCodeType | null;
+    result: fhir.FhirCode<ReportActionResultCodesCodeType> | null;
     /**
      * An explanatory message associated with the result.
      */
@@ -101,7 +101,13 @@ export declare class TestReportSetupActionOperation extends fhir.BackboneElement
     /**
      * Required-bound Value Set for result (TestReport.setup.action.operation.result)
      */
-    static resultRequiredCoding(): ReportActionResultCodesCodingType;
+    static get resultRequiredCodes(): {
+        readonly Error: "error";
+        readonly Fail: "fail";
+        readonly Pass: "pass";
+        readonly Skip: "skip";
+        readonly Warning: "warning";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -114,7 +120,7 @@ export interface TestReportSetupActionAssertArgs extends fhir.BackboneElementArg
     /**
      * The result of this assertion.
      */
-    result: ReportActionResultCodesCodeType | null;
+    result: fhir.FhirCode<ReportActionResultCodesCodeType> | string | undefined;
     /**
      * An explanatory message associated with the result.
      */
@@ -135,7 +141,7 @@ export declare class TestReportSetupActionAssert extends fhir.BackboneElement {
     /**
      * The result of this assertion.
      */
-    result: ReportActionResultCodesCodeType | null;
+    result: fhir.FhirCode<ReportActionResultCodesCodeType> | null;
     /**
      * An explanatory message associated with the result.
      */
@@ -151,7 +157,13 @@ export declare class TestReportSetupActionAssert extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for result (TestReport.setup.action.assert.result)
      */
-    static resultRequiredCoding(): ReportActionResultCodesCodingType;
+    static get resultRequiredCodes(): {
+        readonly Error: "error";
+        readonly Fail: "fail";
+        readonly Pass: "pass";
+        readonly Skip: "skip";
+        readonly Warning: "warning";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -389,7 +401,7 @@ export interface TestReportArgs extends fhir.DomainResourceArgs {
      * The status represents where the execution is currently within the test script execution life cycle.
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: ReportStatusCodesCodeType | null;
+    status: fhir.FhirCode<ReportStatusCodesCodeType> | string | undefined;
     /**
      * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
      */
@@ -397,7 +409,7 @@ export interface TestReportArgs extends fhir.DomainResourceArgs {
     /**
      * The pass and fail result represents a completed test script execution. The pending result represents a test script execution that has not yet started or is currently in progress.
      */
-    result: ReportResultCodesCodeType | null;
+    result: fhir.FhirCode<ReportResultCodesCodeType> | string | undefined;
     /**
      * The final score (percentage of tests passed) resulting from the execution of the TestScript.
      */
@@ -451,7 +463,7 @@ export declare class TestReport extends fhir.DomainResource {
      * The status represents where the execution is currently within the test script execution life cycle.
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: ReportStatusCodesCodeType | null;
+    status: fhir.FhirCode<ReportStatusCodesCodeType> | null;
     /**
      * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
      */
@@ -459,7 +471,7 @@ export declare class TestReport extends fhir.DomainResource {
     /**
      * The pass and fail result represents a completed test script execution. The pending result represents a test script execution that has not yet started or is currently in progress.
      */
-    result: ReportResultCodesCodeType | null;
+    result: fhir.FhirCode<ReportResultCodesCodeType> | null;
     /**
      * The final score (percentage of tests passed) resulting from the execution of the TestScript.
      */
@@ -475,7 +487,7 @@ export declare class TestReport extends fhir.DomainResource {
     /**
      * A participant in the test execution, either the execution engine, a client, or a server.
      */
-    participant?: fhir.TestReportParticipant[];
+    participant: fhir.TestReportParticipant[];
     /**
      * The results of the series of required setup operations before the tests were executed.
      */
@@ -483,7 +495,7 @@ export declare class TestReport extends fhir.DomainResource {
     /**
      * A test executed from the test script.
      */
-    test?: fhir.TestReportTest[];
+    test: fhir.TestReportTest[];
     /**
      * The results of the series of operations required to clean up after all the tests were executed (successfully or otherwise).
      */
@@ -495,11 +507,21 @@ export declare class TestReport extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (TestReport.status)
      */
-    static statusRequiredCoding(): ReportStatusCodesCodingType;
+    static get statusRequiredCodes(): {
+        readonly Completed: "completed";
+        readonly EnteredInError: "entered-in-error";
+        readonly InProgress: "in-progress";
+        readonly Stopped: "stopped";
+        readonly Waiting: "waiting";
+    };
     /**
      * Required-bound Value Set for result (TestReport.result)
      */
-    static resultRequiredCoding(): ReportResultCodesCodingType;
+    static get resultRequiredCodes(): {
+        readonly Fail: "fail";
+        readonly Pass: "pass";
+        readonly Pending: "pending";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

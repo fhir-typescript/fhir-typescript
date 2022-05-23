@@ -33,6 +33,10 @@ export interface DocumentManifest extends fhir.DomainResource {
      */
     status: 'current' | 'entered-in-error' | 'superseded' | null;
     /**
+     * Extended properties for primitive element: DocumentManifest.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * Specifies the kind of this set of documents (e.g. Patient Summary, Discharge Summary, Prescription, etc.). The type of a set of documents may be the same as one of the documents in it - especially if there is only one - but it may be wider.
      */
     type?: fhir.CodeableConcept | undefined;

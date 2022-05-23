@@ -50,7 +50,7 @@ export class ClinicalImpressionInvestigation extends fhir.BackboneElement {
   /**
    * Most investigations are observations of one kind or another but some other specific types of data collection resources can also be used.
    */
-  public item?: fhir.Reference[];
+  public item: fhir.Reference[];
   /**
    * Default constructor for ClinicalImpressionInvestigation - initializes any required elements to null if a value is not provided.
    */
@@ -67,7 +67,7 @@ export class ClinicalImpressionInvestigation extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: ClinicalImpression.investigation.code:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: ClinicalImpression.investigation.code:CodeableConcept' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["item"]) { this.item.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -147,7 +147,7 @@ export interface ClinicalImpressionArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains the code entered-in-error that marks the clinical impression as not currently valid.
    */
-  status: ClinicalimpressionStatusCodeType|null;
+  status: fhir.FhirCode<ClinicalimpressionStatusCodeType>|string|undefined;
   /**
    * This is generally only used for "exception" statuses such as "not-done", "suspended" or "cancelled".
    * [distinct reason codes for different statuses can be enforced using invariants if they are universal bindings].
@@ -246,11 +246,11 @@ export class ClinicalImpression extends fhir.DomainResource {
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the status contains the code entered-in-error that marks the clinical impression as not currently valid.
    */
-  public status: ClinicalimpressionStatusCodeType|null;
+  public status: fhir.FhirCode<ClinicalimpressionStatusCodeType>|null;
   /**
    * This is generally only used for "exception" statuses such as "not-done", "suspended" or "cancelled".
    * [distinct reason codes for different statuses can be enforced using invariants if they are universal bindings].
@@ -295,15 +295,15 @@ export class ClinicalImpression extends fhir.DomainResource {
   /**
    * e.g. The patient is a pregnant, has congestive heart failure, has an ‎Adenocarcinoma, and is allergic to penicillin.
    */
-  public problem?: fhir.Reference[];
+  public problem: fhir.Reference[];
   /**
    * One or more sets of investigations (signs, symptoms, etc.). The actual grouping of investigations varies greatly depending on the type and context of the assessment. These investigations may include data generated during the assessment process, or data previously generated and recorded that is pertinent to the outcomes.
    */
-  public investigation?: fhir.ClinicalImpressionInvestigation[];
+  public investigation: fhir.ClinicalImpressionInvestigation[];
   /**
    * Reference to a specific published clinical protocol that was followed during this assessment, and/or that provides evidence in support of the diagnosis.
    */
-  public protocol?: fhir.FhirUri[];
+  public protocol: fhir.FhirUri[];
   /**
    * A text summary of the investigations and the diagnosis.
    */
@@ -311,23 +311,23 @@ export class ClinicalImpression extends fhir.DomainResource {
   /**
    * Specific findings or diagnoses that were considered likely or relevant to ongoing treatment.
    */
-  public finding?: fhir.ClinicalImpressionFinding[];
+  public finding: fhir.ClinicalImpressionFinding[];
   /**
    * Estimate of likely outcome.
    */
-  public prognosisCodeableConcept?: fhir.CodeableConcept[];
+  public prognosisCodeableConcept: fhir.CodeableConcept[];
   /**
    * RiskAssessment expressing likely outcome.
    */
-  public prognosisReference?: fhir.Reference[];
+  public prognosisReference: fhir.Reference[];
   /**
    * Information supporting the clinical impression.
    */
-  public supportingInfo?: fhir.Reference[];
+  public supportingInfo: fhir.Reference[];
   /**
    * Don't use this element for content that should more properly appear as one of the specific elements of the impression.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Default constructor for ClinicalImpression - initializes any required elements to null if a value is not provided.
    */
@@ -336,7 +336,7 @@ export class ClinicalImpression extends fhir.DomainResource {
     this.resourceType = 'ClinicalImpression';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<ClinicalimpressionStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['statusReason']) { this.statusReason = new fhir.CodeableConcept(source.statusReason); }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
@@ -371,8 +371,8 @@ export class ClinicalImpression extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (ClinicalImpression.status)
    */
-  public static statusRequiredCoding():ClinicalimpressionStatusCodingType {
-    return ClinicalimpressionStatusCodings;
+  public static get statusRequiredCodes() {
+    return ClinicalimpressionStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -380,17 +380,21 @@ export class ClinicalImpression extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ClinicalImpression" fhir: ClinicalImpression.resourceType:"ClinicalImpression"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ClinicalImpression" fhir: ClinicalImpression.resourceType:"ClinicalImpression"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ClinicalimpressionStatusCodeType fhir: ClinicalImpression.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ClinicalimpressionStatusCodeType> fhir: ClinicalImpression.status:code' });
     }
+    if (this['status'] && (!Object.values(ClinicalimpressionStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ClinicalimpressionStatusCodeType> fhir: ClinicalImpression.status:code Required binding to: ClinicalimpressionStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation()); }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: ClinicalImpression.subject:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: ClinicalImpression.subject:Reference' });
     }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }

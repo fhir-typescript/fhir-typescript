@@ -71,6 +71,10 @@ export interface Practitioner extends fhir.DomainResource {
    */
   gender?: 'female'|'male'|'other'|'unknown'|undefined;
   /**
+   * Extended properties for primitive element: Practitioner.gender
+   */
+  _gender?:fhir.FhirElement;
+  /**
    * The date of birth for the practitioner.
    */
   birthDate?: string|undefined;

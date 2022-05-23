@@ -106,7 +106,7 @@ export class FamilyMemberHistoryCondition extends fhir.BackboneElement {
   /**
    * An area where general notes can be placed about this specific condition.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Default constructor for FamilyMemberHistoryCondition - initializes any required elements to null if a value is not provided.
    */
@@ -130,7 +130,7 @@ export class FamilyMemberHistoryCondition extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: FamilyMemberHistory.condition.code:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: FamilyMemberHistory.condition.code:CodeableConcept' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["outcome"]) { issues.push(...this.outcome.doModelValidation()); }
@@ -162,7 +162,7 @@ export interface FamilyMemberHistoryArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status: HistoryStatusCodeType|null;
+  status: fhir.FhirCode<HistoryStatusCodeType>|string|undefined;
   /**
    * Describes why the family member's history is not available.
    */
@@ -280,19 +280,19 @@ export class FamilyMemberHistory extends fhir.DomainResource {
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this FamilyMemberHistory.
    */
-  public instantiatesCanonical?: fhir.FhirCanonical[];
+  public instantiatesCanonical: fhir.FhirCanonical[];
   /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
-  public instantiatesUri?: fhir.FhirUri[];
+  public instantiatesUri: fhir.FhirUri[];
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status: HistoryStatusCodeType|null;
+  public status: fhir.FhirCode<HistoryStatusCodeType>|null;
   /**
    * Describes why the family member's history is not available.
    */
@@ -348,19 +348,19 @@ export class FamilyMemberHistory extends fhir.DomainResource {
   /**
    * Textual reasons can be captured using reasonCode.text.
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse that justifies this family member history event.
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * This property allows a non condition-specific note to the made about the related person. Ideally, the note would be in the condition property, but this is not always possible.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * The significant Conditions (or condition) that the family member had. This is a repeating section to allow a system to represent more than one condition per resource, though there is nothing stopping multiple resources - one per condition.
    */
-  public condition?: fhir.FamilyMemberHistoryCondition[];
+  public condition: fhir.FamilyMemberHistoryCondition[];
   /**
    * Default constructor for FamilyMemberHistory - initializes any required elements to null if a value is not provided.
    */
@@ -373,7 +373,7 @@ export class FamilyMemberHistory extends fhir.DomainResource {
     else { this.instantiatesCanonical = []; }
     if (source['instantiatesUri']) { this.instantiatesUri = source.instantiatesUri.map((x) => new fhir.FhirUri({value: x})); }
     else { this.instantiatesUri = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<HistoryStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['dataAbsentReason']) { this.dataAbsentReason = new fhir.CodeableConcept(source.dataAbsentReason); }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
@@ -410,13 +410,13 @@ export class FamilyMemberHistory extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (FamilyMemberHistory.status)
    */
-  public static statusRequiredCoding():HistoryStatusCodingType {
-    return HistoryStatusCodings;
+  public static get statusRequiredCodes() {
+    return HistoryStatusCodes;
   }
   /**
    * Extensible-bound Value Set for sex (FamilyMemberHistory.sex)
    */
-  public static sexExtensibleCoding():AdministrativeGenderCodingType {
+  public static get sexExtensibleCodings() {
     return AdministrativeGenderCodings;
   }
   /**
@@ -425,23 +425,27 @@ export class FamilyMemberHistory extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"FamilyMemberHistory" fhir: FamilyMemberHistory.resourceType:"FamilyMemberHistory"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"FamilyMemberHistory" fhir: FamilyMemberHistory.resourceType:"FamilyMemberHistory"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:HistoryStatusCodeType fhir: FamilyMemberHistory.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<HistoryStatusCodeType> fhir: FamilyMemberHistory.status:code' });
     }
+    if (this['status'] && (!Object.values(HistoryStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<HistoryStatusCodeType> fhir: FamilyMemberHistory.status:code Required binding to: HistoryStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["dataAbsentReason"]) { issues.push(...this.dataAbsentReason.doModelValidation()); }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: FamilyMemberHistory.patient:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: FamilyMemberHistory.patient:Reference' });
     }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (!this['relationship']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property relationship:fhir.CodeableConcept fhir: FamilyMemberHistory.relationship:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property relationship:fhir.CodeableConcept fhir: FamilyMemberHistory.relationship:CodeableConcept' });
     }
     if (this["relationship"]) { issues.push(...this.relationship.doModelValidation()); }
     if (this["sex"]) { issues.push(...this.sex.doModelValidation()); }

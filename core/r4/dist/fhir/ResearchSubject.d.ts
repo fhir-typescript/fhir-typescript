@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ResearchSubjectStatusCodingType } from '../fhirValueSets/ResearchSubjectStatusCodings.js';
 import { ResearchSubjectStatusCodeType } from '../fhirValueSets/ResearchSubjectStatusCodes.js';
 /**
  * Valid arguments for the ResearchSubject type.
@@ -16,7 +15,7 @@ export interface ResearchSubjectArgs extends fhir.DomainResourceArgs {
     /**
      * The current state of the subject.
      */
-    status: ResearchSubjectStatusCodeType | null;
+    status: fhir.FhirCode<ResearchSubjectStatusCodeType> | string | undefined;
     /**
      * The dates the subject began and ended their participation in the study.
      */
@@ -57,11 +56,11 @@ export declare class ResearchSubject extends fhir.DomainResource {
     /**
      * Identifiers assigned to this research subject for a study.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * The current state of the subject.
      */
-    status: ResearchSubjectStatusCodeType | null;
+    status: fhir.FhirCode<ResearchSubjectStatusCodeType> | null;
     /**
      * The dates the subject began and ended their participation in the study.
      */
@@ -93,7 +92,21 @@ export declare class ResearchSubject extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (ResearchSubject.status)
      */
-    static statusRequiredCoding(): ResearchSubjectStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Candidate: "candidate";
+        readonly Eligible: "eligible";
+        readonly FollowUp: "follow-up";
+        readonly Ineligible: "ineligible";
+        readonly NotRegistered: "not-registered";
+        readonly OffStudy: "off-study";
+        readonly OnStudy: "on-study";
+        readonly OnStudyIntervention: "on-study-intervention";
+        readonly OnStudyObservation: "on-study-observation";
+        readonly PendingOnStudy: "pending-on-study";
+        readonly PotentialCandidate: "potential-candidate";
+        readonly Screening: "screening";
+        readonly Withdrawn: "withdrawn";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

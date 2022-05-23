@@ -219,9 +219,17 @@ export interface NutritionOrder extends fhir.DomainResource {
    */
   status: 'active'|'completed'|'draft'|'entered-in-error'|'on-hold'|'revoked'|'unknown'|null;
   /**
+   * Extended properties for primitive element: NutritionOrder.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * When resources map to this element, they are free to define as many codes as necessary to cover their space and will map to "proposal, plan or order".  Can have multiple codes that map to one of these.  E.g. "original order", "encoded order", "reflex order" would all map to "order".  Expectation is that the set of codes is mutually exclusive or a strict all-encompassing hierarchy.
    */
   intent: 'directive'|'filler-order'|'instance-order'|'option'|'order'|'original-order'|'plan'|'proposal'|'reflex-order'|null;
+  /**
+   * Extended properties for primitive element: NutritionOrder.intent
+   */
+  _intent?:fhir.FhirElement;
   /**
    * The person (patient) who needs the nutrition order for an oral diet, nutritional supplement and/or enteral or formula feeding.
    */

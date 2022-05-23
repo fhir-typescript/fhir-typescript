@@ -54,6 +54,10 @@ export interface ChargeItem extends fhir.DomainResource {
    */
   status: 'aborted'|'billable'|'billed'|'entered-in-error'|'not-billable'|'planned'|'unknown'|null;
   /**
+   * Extended properties for primitive element: ChargeItem.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * ChargeItems can be grouped to larger ChargeItems covering the whole set.
    */
   partOf?: fhir.Reference[]|undefined;

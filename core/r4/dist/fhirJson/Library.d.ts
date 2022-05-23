@@ -58,6 +58,10 @@ export interface Library extends fhir.DomainResource {
      */
     status: 'active' | 'draft' | 'retired' | 'unknown' | null;
     /**
+     * Extended properties for primitive element: Library.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * Allows filtering of librarys that are appropriate for use versus not.
      */
     experimental?: boolean | undefined;

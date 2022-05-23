@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ChargeitemStatusCodingType } from '../fhirValueSets/ChargeitemStatusCodings.js';
 import { ChargeitemStatusCodeType } from '../fhirValueSets/ChargeitemStatusCodes.js';
 /**
  * Valid arguments for the ChargeItemPerformer type.
@@ -63,7 +62,7 @@ export interface ChargeItemArgs extends fhir.DomainResourceArgs {
      * Unknown does not represent "other" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.
      * This element is labeled as a modifier because the status contains the code entered-in-error that marks the charge item as not currently valid.
      */
-    status: ChargeitemStatusCodeType | null;
+    status: fhir.FhirCode<ChargeitemStatusCodeType> | string | undefined;
     /**
      * ChargeItems can be grouped to larger ChargeItems covering the whole set.
      */
@@ -188,24 +187,24 @@ export declare class ChargeItem extends fhir.DomainResource {
     /**
      * Identifiers assigned to this event performer or other systems.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * References the (external) source of pricing information, rules of application for the code this ChargeItem uses.
      */
-    definitionUri?: fhir.FhirUri[];
+    definitionUri: fhir.FhirUri[];
     /**
      * References the source of pricing information, rules of application for the code this ChargeItem uses.
      */
-    definitionCanonical?: fhir.FhirCanonical[];
+    definitionCanonical: fhir.FhirCanonical[];
     /**
      * Unknown does not represent "other" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.
      * This element is labeled as a modifier because the status contains the code entered-in-error that marks the charge item as not currently valid.
      */
-    status: ChargeitemStatusCodeType | null;
+    status: fhir.FhirCode<ChargeitemStatusCodeType> | null;
     /**
      * ChargeItems can be grouped to larger ChargeItems covering the whole set.
      */
-    partOf?: fhir.Reference[];
+    partOf: fhir.Reference[];
     /**
      * A code that identifies the charge, like a billing code.
      */
@@ -229,7 +228,7 @@ export declare class ChargeItem extends fhir.DomainResource {
     /**
      * Indicates who or what performed or participated in the charged service.
      */
-    performer?: fhir.ChargeItemPerformer[];
+    performer: fhir.ChargeItemPerformer[];
     /**
      * Practitioners and Devices can be associated with multiple organizations. It has to be made clear, on behalf of which Organization the services have been rendered.
      */
@@ -249,7 +248,7 @@ export declare class ChargeItem extends fhir.DomainResource {
     /**
      * Only used if not implicit in code found in Condition.code. If the use case requires attributes from the BodySite resource (e.g. to identify and track separately) then use the standard extension [bodySite](extension-bodysite.html).  May be a summary code, or a reference to a very precise definition of the location, or both.
      */
-    bodysite?: fhir.CodeableConcept[];
+    bodysite: fhir.CodeableConcept[];
     /**
      * There is no reason to carry the factor in the instance of a ChargeItem unless special circumstances require a manual override. The factors are usually defined by a set of rules in a back catalogue of the billing codes  (see ChargeItem.definition). Derived profiles may require a ChargeItem.overrideReason to be provided if either factor or price are manually overridden.
      */
@@ -273,11 +272,11 @@ export declare class ChargeItem extends fhir.DomainResource {
     /**
      * If the application of the charge item requires a reason to be given, it can be captured here. Textual reasons can be captured using reasonCode.text.
      */
-    reason?: fhir.CodeableConcept[];
+    reason: fhir.CodeableConcept[];
     /**
      * Indicated the rendered service that caused this charge.
      */
-    service?: fhir.Reference[];
+    service: fhir.Reference[];
     /**
      * Identifies the device, food, drug or other product being charged either by type code or reference to an instance.
      */
@@ -289,15 +288,15 @@ export declare class ChargeItem extends fhir.DomainResource {
     /**
      * Systems posting the ChargeItems might not always be able to determine, which accounts the Items need to be places into. It is up to the postprocessing Financial System to apply internal rules to decide based on the Encounter/EpisodeOfCare/Patient/Coverage context and the type of ChargeItem, which Account is appropriate.
      */
-    account?: fhir.Reference[];
+    account: fhir.Reference[];
     /**
      * Comments made about the event by the performer, subject or other participants.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Further information supporting this charge.
      */
-    supportingInformation?: fhir.Reference[];
+    supportingInformation: fhir.Reference[];
     /**
      * Default constructor for ChargeItem - initializes any required elements to null if a value is not provided.
      */
@@ -305,7 +304,15 @@ export declare class ChargeItem extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (ChargeItem.status)
      */
-    static statusRequiredCoding(): ChargeitemStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Aborted: "aborted";
+        readonly Billable: "billable";
+        readonly Billed: "billed";
+        readonly EnteredInError: "entered-in-error";
+        readonly NotBillable: "not-billable";
+        readonly Planned: "planned";
+        readonly Unknown: "unknown";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

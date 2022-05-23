@@ -37,6 +37,10 @@ export interface ObservationDefinitionQualifiedInterval extends fhir.BackboneEle
      */
     category?: 'absolute' | 'critical' | 'reference' | undefined;
     /**
+     * Extended properties for primitive element: ObservationDefinition.qualifiedInterval.category
+     */
+    _category?: fhir.FhirElement;
+    /**
      * The low and high values determining the interval. There may be only one of the two.
      */
     range?: fhir.Range | undefined;
@@ -52,6 +56,10 @@ export interface ObservationDefinitionQualifiedInterval extends fhir.BackboneEle
      * Sex of the population the range applies to.
      */
     gender?: 'female' | 'male' | 'other' | 'unknown' | undefined;
+    /**
+     * Extended properties for primitive element: ObservationDefinition.qualifiedInterval.gender
+     */
+    _gender?: fhir.FhirElement;
     /**
      * Some analytes vary greatly over age.
      */
@@ -93,6 +101,10 @@ export interface ObservationDefinition extends fhir.DomainResource {
      * The data types allowed for the value element of the instance observations conforming to this ObservationDefinition.
      */
     permittedDataType?: ('boolean' | 'CodeableConcept' | 'dateTime' | 'integer' | 'Period' | 'Quantity' | 'Range' | 'Ratio' | 'SampledData' | 'string' | 'time')[] | undefined;
+    /**
+     * Extended properties for primitive element: ObservationDefinition.permittedDataType
+     */
+    _permittedDataType?: (fhir.FhirElement | null)[];
     /**
      * An example of observation allowing multiple results is "bacteria identified by culture". Conversely, the measurement of a potassium level allows a single result.
      */

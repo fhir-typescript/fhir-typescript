@@ -301,6 +301,10 @@ export interface TerminologyCapabilities extends fhir.DomainResource {
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Allows filtering of terminology capabilitiess that are appropriate for use versus not.
    */
   experimental?: boolean|undefined;
@@ -365,6 +369,10 @@ export interface TerminologyCapabilities extends fhir.DomainResource {
    */
   kind: 'capability'|'instance'|'requirements'|null;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.kind
+   */
+  _kind?:fhir.FhirElement;
+  /**
    * Software that is covered by this terminology capability statement.  It is used when the statement describes the capabilities of a particular software version, independent of an installation.
    */
   software?: fhir.TerminologyCapabilitiesSoftware|undefined;
@@ -392,6 +400,10 @@ export interface TerminologyCapabilities extends fhir.DomainResource {
    * See notes on the [ValueSet](valueset.html#) resource.
    */
   codeSearch?: 'all'|'explicit'|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.codeSearch
+   */
+  _codeSearch?:fhir.FhirElement;
   /**
    * Information about the [ValueSet/$validate-code](valueset-operation-validate-code.html) operation.
    */

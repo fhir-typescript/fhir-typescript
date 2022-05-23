@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { MedicationdispenseStatusCodingType } from '../fhirValueSets/MedicationdispenseStatusCodings.js';
 import { MedicationdispenseStatusCodeType } from '../fhirValueSets/MedicationdispenseStatusCodes.js';
-import { MedicationdispenseCategoryCodingType } from '../fhirValueSets/MedicationdispenseCategoryCodings.js';
 /**
  * Valid arguments for the MedicationDispensePerformer type.
  */
@@ -80,11 +78,11 @@ export declare class MedicationDispenseSubstitution extends fhir.BackboneElement
     /**
      * Indicates the reason for the substitution (or lack of substitution) from what was prescribed.
      */
-    reason?: fhir.CodeableConcept[];
+    reason: fhir.CodeableConcept[];
     /**
      * The person or organization that has primary responsibility for the substitution.
      */
-    responsibleParty?: fhir.Reference[];
+    responsibleParty: fhir.Reference[];
     /**
      * Default constructor for MedicationDispenseSubstitution - initializes any required elements to null if a value is not provided.
      */
@@ -113,7 +111,7 @@ export interface MedicationDispenseArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: MedicationdispenseStatusCodeType | null;
+    status: fhir.FhirCode<MedicationdispenseStatusCodeType> | string | undefined;
     /**
      * Indicates the reason why a dispense was not performed.
      */
@@ -231,15 +229,15 @@ export declare class MedicationDispense extends fhir.DomainResource {
     /**
      * This is a business identifier, not a resource identifier.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * The procedure that trigger the dispense.
      */
-    partOf?: fhir.Reference[];
+    partOf: fhir.Reference[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: MedicationdispenseStatusCodeType | null;
+    status: fhir.FhirCode<MedicationdispenseStatusCodeType> | null;
     /**
      * Indicates the reason why a dispense was not performed.
      */
@@ -271,11 +269,11 @@ export declare class MedicationDispense extends fhir.DomainResource {
     /**
      * Additional information that supports the medication being dispensed.
      */
-    supportingInformation?: fhir.Reference[];
+    supportingInformation: fhir.Reference[];
     /**
      * Indicates who or what performed the event.
      */
-    performer?: fhir.MedicationDispensePerformer[];
+    performer: fhir.MedicationDispensePerformer[];
     /**
      * The principal physical location where the dispense was performed.
      */
@@ -283,7 +281,7 @@ export declare class MedicationDispense extends fhir.DomainResource {
     /**
      * Maps to basedOn in Event logical model.
      */
-    authorizingPrescription?: fhir.Reference[];
+    authorizingPrescription: fhir.Reference[];
     /**
      * Indicates the type of dispensing event that is performed. For example, Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
      */
@@ -311,16 +309,16 @@ export declare class MedicationDispense extends fhir.DomainResource {
     /**
      * Identifies the person who picked up the medication.  This will usually be a patient or their caregiver, but some cases exist where it can be a healthcare professional.
      */
-    receiver?: fhir.Reference[];
+    receiver: fhir.Reference[];
     /**
      * Extra information about the dispense that could not be conveyed in the other attributes.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * When the dose or rate is intended to change over the entire administration period (e.g. Tapering dose prescriptions), multiple instances of dosage instructions will need to be supplied to convey the different doses/rates.
      * The pharmacist reviews the medication order prior to dispense and updates the dosageInstruction based on the actual product being dispensed.
      */
-    dosageInstruction?: fhir.Dosage[];
+    dosageInstruction: fhir.Dosage[];
     /**
      * Indicates whether or not substitution was made as part of the dispense.  In some cases, substitution will be expected but does not happen, in other cases substitution is not expected but does happen.  This block explains what substitution did or did not happen and why.  If nothing is specified, substitution was not done.
      */
@@ -328,11 +326,11 @@ export declare class MedicationDispense extends fhir.DomainResource {
     /**
      * This element can include a detected issue that has been identified either by a decision support system or by a clinician and may include information on the steps that were taken to address the issue.
      */
-    detectedIssue?: fhir.Reference[];
+    detectedIssue: fhir.Reference[];
     /**
      * This might not include provenances for all versions of the request – only those deemed “relevant” or important. This SHALL NOT include the Provenance associated with this current version of the resource. (If that provenance is deemed to be a “relevant” change, it will need to be added as part of a later update. Until then, it can be queried directly as the Provenance that points to this version using _revinclude All Provenances should have some historical version of this Request as their subject.).
      */
-    eventHistory?: fhir.Reference[];
+    eventHistory: fhir.Reference[];
     /**
      * Default constructor for MedicationDispense - initializes any required elements to null if a value is not provided.
      */
@@ -340,11 +338,26 @@ export declare class MedicationDispense extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (MedicationDispense.status)
      */
-    static statusRequiredCoding(): MedicationdispenseStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Cancelled: "cancelled";
+        readonly Completed: "completed";
+        readonly Declined: "declined";
+        readonly EnteredInError: "entered-in-error";
+        readonly InProgress: "in-progress";
+        readonly OnHold: "on-hold";
+        readonly Preparation: "preparation";
+        readonly Stopped: "stopped";
+        readonly Unknown: "unknown";
+    };
     /**
      * Preferred-bound Value Set for category (MedicationDispense.category)
      */
-    static categoryPreferredCoding(): MedicationdispenseCategoryCodingType;
+    static get categoryPreferredCodings(): {
+        readonly Community: fhir.Coding;
+        readonly Discharge: fhir.Coding;
+        readonly Inpatient: fhir.Coding;
+        readonly Outpatient: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

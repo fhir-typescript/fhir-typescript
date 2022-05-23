@@ -83,7 +83,7 @@ export class ImplementationGuideDependsOn extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['uri']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property uri:fhir.FhirCanonical fhir: ImplementationGuide.dependsOn.uri:canonical', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property uri:fhir.FhirCanonical fhir: ImplementationGuide.dependsOn.uri:canonical' });
     }
     if (this["uri"]) { issues.push(...this.uri.doModelValidation()); }
     if (this["packageId"]) { issues.push(...this.packageId.doModelValidation()); }
@@ -134,8 +134,8 @@ export class ImplementationGuideGlobal extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for type (ImplementationGuide.global.type)
    */
-  public static typeRequiredCoding():ResourceTypesCodingType {
-    return ResourceTypesCodings;
+  public static get typeRequiredCodes() {
+    return ResourceTypesCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -143,11 +143,14 @@ export class ImplementationGuideGlobal extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.FhirCode fhir: ImplementationGuide.global.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode fhir: ImplementationGuide.global.type:code' });
+    }
+    if (this['type'] && (!Object.values(ResourceTypesCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode fhir: ImplementationGuide.global.type:code Required binding to: ResourceTypes' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['profile']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property profile:fhir.FhirCanonical fhir: ImplementationGuide.global.profile:canonical', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property profile:fhir.FhirCanonical fhir: ImplementationGuide.global.profile:canonical' });
     }
     if (this["profile"]) { issues.push(...this.profile.doModelValidation()); }
     return issues;
@@ -198,7 +201,7 @@ export class ImplementationGuideDefinitionGrouping extends fhir.BackboneElement 
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: ImplementationGuide.definition.grouping.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: ImplementationGuide.definition.grouping.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
@@ -270,7 +273,7 @@ export class ImplementationGuideDefinitionResource extends fhir.BackboneElement 
   /**
    * The resource SHALL be valid against all the versions it is specified to apply to. If the resource referred to is a StructureDefinition, the fhirVersion stated in the StructureDefinition cannot disagree with the version specified here; the specified versions SHALL include the version specified by the StructureDefinition, and may include additional versions using the [applicable-version](extension-structuredefinition-applicable-version.html) extension.
    */
-  public fhirVersion?: fhir.FhirCode[];
+  public fhirVersion: fhir.FhirCode[];
   /**
    * A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
    */
@@ -314,8 +317,8 @@ export class ImplementationGuideDefinitionResource extends fhir.BackboneElement 
   /**
    * Required-bound Value Set for fhirVersion (ImplementationGuide.definition.resource.fhirVersion)
    */
-  public static fhirVersionRequiredCoding():FHIRVersionCodingType {
-    return FHIRVersionCodings;
+  public static get fhirVersionRequiredCodes() {
+    return FHIRVersionCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -323,9 +326,16 @@ export class ImplementationGuideDefinitionResource extends fhir.BackboneElement 
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['reference']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property reference:fhir.Reference fhir: ImplementationGuide.definition.resource.reference:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference:fhir.Reference fhir: ImplementationGuide.definition.resource.reference:Reference' });
     }
     if (this["reference"]) { issues.push(...this.reference.doModelValidation()); }
+    if (this['fhirVersion']) {
+      this.fhirVersion.forEach((v) => {
+        if (!Object.values(FHIRVersionCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property fhirVersion?:fhir.FhirCode[] fhir: ImplementationGuide.definition.resource.fhirVersion:code Required binding to: FHIRVersion' });
+        }
+      });
+    }
     if (this["fhirVersion"]) { this.fhirVersion.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
@@ -356,7 +366,7 @@ export interface ImplementationGuideDefinitionPageArgs extends fhir.BackboneElem
   /**
    * A code that indicates how the page is generated.
    */
-  generation: GuidePageGenerationCodeType|null;
+  generation: fhir.FhirCode<GuidePageGenerationCodeType>|string|undefined;
   /**
    * The implementation guide breadcrumbs are generated from this structure.
    */
@@ -386,11 +396,11 @@ export class ImplementationGuideDefinitionPage extends fhir.BackboneElement {
   /**
    * A code that indicates how the page is generated.
    */
-  public generation: GuidePageGenerationCodeType|null;
+  public generation: fhir.FhirCode<GuidePageGenerationCodeType>|null;
   /**
    * The implementation guide breadcrumbs are generated from this structure.
    */
-  public page?: fhir.ImplementationGuideDefinitionPage[];
+  public page: fhir.ImplementationGuideDefinitionPage[];
   /**
    * Default constructor for ImplementationGuideDefinitionPage - initializes any required elements to null if a value is not provided.
    */
@@ -402,7 +412,7 @@ export class ImplementationGuideDefinitionPage extends fhir.BackboneElement {
     else { this.name = null; }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
     else { this.title = null; }
-    if (source['generation']) { this.generation = source.generation; }
+    if (source['generation']) { this.generation = new fhir.FhirCode<GuidePageGenerationCodeType>({value: source.generation}); }
     else { this.generation = null; }
     if (source['page']) { this.page = source.page.map((x) => new fhir.ImplementationGuideDefinitionPage(x)); }
     else { this.page = []; }
@@ -410,8 +420,8 @@ export class ImplementationGuideDefinitionPage extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for generation (ImplementationGuide.definition.page.generation)
    */
-  public static generationRequiredCoding():GuidePageGenerationCodingType {
-    return GuidePageGenerationCodings;
+  public static get generationRequiredCodes() {
+    return GuidePageGenerationCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -419,15 +429,19 @@ export class ImplementationGuideDefinitionPage extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name: fhir: ImplementationGuide.definition.page.name[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name: fhir: ImplementationGuide.definition.page.name[x]:' });
     }
     if (!this['title']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property title:fhir.FhirString fhir: ImplementationGuide.definition.page.title:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property title:fhir.FhirString fhir: ImplementationGuide.definition.page.title:string' });
     }
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (!this['generation']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property generation:GuidePageGenerationCodeType fhir: ImplementationGuide.definition.page.generation:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property generation:fhir.FhirCode<GuidePageGenerationCodeType> fhir: ImplementationGuide.definition.page.generation:code' });
     }
+    if (this['generation'] && (!Object.values(GuidePageGenerationCodes).includes(this.generation as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property generation:fhir.FhirCode<GuidePageGenerationCodeType> fhir: ImplementationGuide.definition.page.generation:code Required binding to: GuidePageGeneration' });
+    }
+    if (this["generation"]) { issues.push(...this.generation.doModelValidation()); }
     if (this["page"]) { this.page.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
   }
@@ -439,7 +453,7 @@ export interface ImplementationGuideDefinitionParameterArgs extends fhir.Backbon
   /**
    * apply | path-resource | path-pages | path-tx-cache | expansion-parameter | rule-broken-links | generate-xml | generate-json | generate-turtle | html-template.
    */
-  code: GuideParameterCodeCodeType|null;
+  code: fhir.FhirCode<GuideParameterCodeCodeType>|string|undefined;
   /**
    * Value for named type.
    */
@@ -457,7 +471,7 @@ export class ImplementationGuideDefinitionParameter extends fhir.BackboneElement
   /**
    * apply | path-resource | path-pages | path-tx-cache | expansion-parameter | rule-broken-links | generate-xml | generate-json | generate-turtle | html-template.
    */
-  public code: GuideParameterCodeCodeType|null;
+  public code: fhir.FhirCode<GuideParameterCodeCodeType>|null;
   /**
    * Value for named type.
    */
@@ -467,7 +481,7 @@ export class ImplementationGuideDefinitionParameter extends fhir.BackboneElement
    */
   constructor(source:Partial<ImplementationGuideDefinitionParameterArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = source.code; }
+    if (source['code']) { this.code = new fhir.FhirCode<GuideParameterCodeCodeType>({value: source.code}); }
     else { this.code = null; }
     if (source['value']) { this.value = new fhir.FhirString({value: source.value}); }
     else { this.value = null; }
@@ -475,8 +489,8 @@ export class ImplementationGuideDefinitionParameter extends fhir.BackboneElement
   /**
    * Required-bound Value Set for code (ImplementationGuide.definition.parameter.code)
    */
-  public static codeRequiredCoding():GuideParameterCodeCodingType {
-    return GuideParameterCodeCodings;
+  public static get codeRequiredCodes() {
+    return GuideParameterCodeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -484,10 +498,14 @@ export class ImplementationGuideDefinitionParameter extends fhir.BackboneElement
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:GuideParameterCodeCodeType fhir: ImplementationGuide.definition.parameter.code:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode<GuideParameterCodeCodeType> fhir: ImplementationGuide.definition.parameter.code:code' });
     }
+    if (this['code'] && (!Object.values(GuideParameterCodeCodes).includes(this.code as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode<GuideParameterCodeCodeType> fhir: ImplementationGuide.definition.parameter.code:code Required binding to: GuideParameterCode' });
+    }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value:fhir.FhirString fhir: ImplementationGuide.definition.parameter.value:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value:fhir.FhirString fhir: ImplementationGuide.definition.parameter.value:string' });
     }
     if (this["value"]) { issues.push(...this.value.doModelValidation()); }
     return issues;
@@ -548,11 +566,11 @@ export class ImplementationGuideDefinitionTemplate extends fhir.BackboneElement 
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.FhirCode fhir: ImplementationGuide.definition.template.code:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode fhir: ImplementationGuide.definition.template.code:code' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['source']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property source:fhir.FhirString fhir: ImplementationGuide.definition.template.source:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property source:fhir.FhirString fhir: ImplementationGuide.definition.template.source:string' });
     }
     if (this["source"]) { issues.push(...this.source.doModelValidation()); }
     if (this["scope"]) { issues.push(...this.scope.doModelValidation()); }
@@ -596,7 +614,7 @@ export class ImplementationGuideDefinition extends fhir.BackboneElement {
   /**
    * Groupings are arbitrary sub-divisions of content. Typically, they are used to help build Table of Contents automatically.
    */
-  public grouping?: fhir.ImplementationGuideDefinitionGrouping[];
+  public grouping: fhir.ImplementationGuideDefinitionGrouping[];
   /**
    * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
    */
@@ -608,11 +626,11 @@ export class ImplementationGuideDefinition extends fhir.BackboneElement {
   /**
    * Defines how IG is built by tools.
    */
-  public parameter?: fhir.ImplementationGuideDefinitionParameter[];
+  public parameter: fhir.ImplementationGuideDefinitionParameter[];
   /**
    * A template for building resources.
    */
-  public template?: fhir.ImplementationGuideDefinitionTemplate[];
+  public template: fhir.ImplementationGuideDefinitionTemplate[];
   /**
    * Default constructor for ImplementationGuideDefinition - initializes any required elements to null if a value is not provided.
    */
@@ -635,11 +653,11 @@ export class ImplementationGuideDefinition extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["grouping"]) { this.grouping.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['resource']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resource:fhir.ImplementationGuideDefinitionResource[] fhir: ImplementationGuide.definition.resource:resource', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resource:fhir.ImplementationGuideDefinitionResource[] fhir: ImplementationGuide.definition.resource:resource' });
     } else if (!Array.isArray(this.resource)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property resource:fhir.ImplementationGuideDefinitionResource[] fhir: ImplementationGuide.definition.resource:resource', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property resource:fhir.ImplementationGuideDefinitionResource[] fhir: ImplementationGuide.definition.resource:resource' });
     } else if (this.resource.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resource:fhir.ImplementationGuideDefinitionResource[] fhir: ImplementationGuide.definition.resource:resource', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resource:fhir.ImplementationGuideDefinitionResource[] fhir: ImplementationGuide.definition.resource:resource' });
     }
     if (this["resource"]) { this.resource.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["page"]) { issues.push(...this.page.doModelValidation()); }
@@ -716,7 +734,7 @@ export class ImplementationGuideManifestResource extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['reference']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property reference:fhir.Reference fhir: ImplementationGuide.manifest.resource.reference:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference:fhir.Reference fhir: ImplementationGuide.manifest.resource.reference:Reference' });
     }
     if (this["reference"]) { issues.push(...this.reference.doModelValidation()); }
     if (this["relativePath"]) { issues.push(...this.relativePath.doModelValidation()); }
@@ -760,7 +778,7 @@ export class ImplementationGuideManifestPage extends fhir.BackboneElement {
   /**
    * Appending 'rendering' + "/" + page.name + "#" + page.anchor should resolve to the anchor.
    */
-  public anchor?: fhir.FhirString[];
+  public anchor: fhir.FhirString[];
   /**
    * Default constructor for ImplementationGuideManifestPage - initializes any required elements to null if a value is not provided.
    */
@@ -778,7 +796,7 @@ export class ImplementationGuideManifestPage extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: ImplementationGuide.manifest.page.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: ImplementationGuide.manifest.page.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
@@ -831,15 +849,15 @@ export class ImplementationGuideManifest extends fhir.BackboneElement {
   /**
    * Information about a page within the IG.
    */
-  public page?: fhir.ImplementationGuideManifestPage[];
+  public page: fhir.ImplementationGuideManifestPage[];
   /**
    * Indicates a relative path to an image that exists within the IG.
    */
-  public image?: fhir.FhirString[];
+  public image: fhir.FhirString[];
   /**
    * Indicates the relative path of an additional non-page, non-image file that is part of the IG - e.g. zip, jar and similar files that could be the target of a hyperlink in a derived IG.
    */
-  public other?: fhir.FhirString[];
+  public other: fhir.FhirString[];
   /**
    * Default constructor for ImplementationGuideManifest - initializes any required elements to null if a value is not provided.
    */
@@ -862,11 +880,11 @@ export class ImplementationGuideManifest extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["rendering"]) { issues.push(...this.rendering.doModelValidation()); }
     if (!this['resource']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resource:fhir.ImplementationGuideManifestResource[] fhir: ImplementationGuide.manifest.resource:resource', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resource:fhir.ImplementationGuideManifestResource[] fhir: ImplementationGuide.manifest.resource:resource' });
     } else if (!Array.isArray(this.resource)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property resource:fhir.ImplementationGuideManifestResource[] fhir: ImplementationGuide.manifest.resource:resource', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property resource:fhir.ImplementationGuideManifestResource[] fhir: ImplementationGuide.manifest.resource:resource' });
     } else if (this.resource.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resource:fhir.ImplementationGuideManifestResource[] fhir: ImplementationGuide.manifest.resource:resource', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resource:fhir.ImplementationGuideManifestResource[] fhir: ImplementationGuide.manifest.resource:resource' });
     }
     if (this["resource"]) { this.resource.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["page"]) { this.page.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -904,7 +922,7 @@ export interface ImplementationGuideArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of implementation guides that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of implementation guides that are appropriate for use versus not.
    */
@@ -1000,7 +1018,7 @@ export class ImplementationGuide extends fhir.DomainResource {
   /**
    * Allows filtering of implementation guides that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of implementation guides that are appropriate for use versus not.
    */
@@ -1016,7 +1034,7 @@ export class ImplementationGuide extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the implementation guide was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the implementation guide as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the implementation guide is presumed to be the predominant language in the place the implementation guide was created).
    */
@@ -1024,11 +1042,11 @@ export class ImplementationGuide extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the implementation guide to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * A copyright statement relating to the implementation guide and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the implementation guide.
    */
@@ -1048,11 +1066,11 @@ export class ImplementationGuide extends fhir.DomainResource {
   /**
    * Another implementation guide that this implementation depends on. Typically, an implementation guide uses value sets, profiles etc.defined in other implementation guides.
    */
-  public dependsOn?: fhir.ImplementationGuideDependsOn[];
+  public dependsOn: fhir.ImplementationGuideDependsOn[];
   /**
    * See [Default Profiles](implementationguide.html#default) for a discussion of which resources are 'covered' by an implementation guide.
    */
-  public global?: fhir.ImplementationGuideGlobal[];
+  public global: fhir.ImplementationGuideGlobal[];
   /**
    * Principally, this consists of information abuot source resource and file locations, and build parameters and templates.
    */
@@ -1073,7 +1091,7 @@ export class ImplementationGuide extends fhir.DomainResource {
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
@@ -1101,20 +1119,20 @@ export class ImplementationGuide extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (ImplementationGuide.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Required-bound Value Set for license (ImplementationGuide.license)
    */
-  public static licenseRequiredCoding():SpdxLicenseCodingType {
-    return SpdxLicenseCodings;
+  public static get licenseRequiredCodes() {
+    return SpdxLicenseCodes;
   }
   /**
    * Required-bound Value Set for fhirVersion (ImplementationGuide.fhirVersion)
    */
-  public static fhirVersionRequiredCoding():FHIRVersionCodingType {
-    return FHIRVersionCodings;
+  public static get fhirVersionRequiredCodes() {
+    return FHIRVersionCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -1122,21 +1140,25 @@ export class ImplementationGuide extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ImplementationGuide" fhir: ImplementationGuide.resourceType:"ImplementationGuide"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ImplementationGuide" fhir: ImplementationGuide.resourceType:"ImplementationGuide"' });
     }
     if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property url:fhir.FhirUri fhir: ImplementationGuide.url:uri', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url:fhir.FhirUri fhir: ImplementationGuide.url:uri' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["version"]) { issues.push(...this.version.doModelValidation()); }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: ImplementationGuide.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: ImplementationGuide.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: ImplementationGuide.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: ImplementationGuide.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: ImplementationGuide.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
@@ -1146,16 +1168,26 @@ export class ImplementationGuide extends fhir.DomainResource {
     if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
     if (!this['packageId']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property packageId:fhir.FhirId fhir: ImplementationGuide.packageId:id', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property packageId:fhir.FhirId fhir: ImplementationGuide.packageId:id' });
     }
     if (this["packageId"]) { issues.push(...this.packageId.doModelValidation()); }
+    if (this['license'] && (!Object.values(SpdxLicenseCodes).includes(this.license as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property license?:fhir.FhirCode fhir: ImplementationGuide.license:code Required binding to: SpdxLicense' });
+    }
     if (this["license"]) { issues.push(...this.license.doModelValidation()); }
     if (!this['fhirVersion']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property fhirVersion:fhir.FhirCode[] fhir: ImplementationGuide.fhirVersion:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property fhirVersion:fhir.FhirCode[] fhir: ImplementationGuide.fhirVersion:code' });
     } else if (!Array.isArray(this.fhirVersion)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property fhirVersion:fhir.FhirCode[] fhir: ImplementationGuide.fhirVersion:code', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property fhirVersion:fhir.FhirCode[] fhir: ImplementationGuide.fhirVersion:code' });
     } else if (this.fhirVersion.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property fhirVersion:fhir.FhirCode[] fhir: ImplementationGuide.fhirVersion:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property fhirVersion:fhir.FhirCode[] fhir: ImplementationGuide.fhirVersion:code' });
+    }
+    if (this['fhirVersion']) {
+      this.fhirVersion.forEach((v) => {
+        if (!Object.values(FHIRVersionCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property fhirVersion:fhir.FhirCode[] fhir: ImplementationGuide.fhirVersion:code Required binding to: FHIRVersion' });
+        }
+      });
     }
     if (this["fhirVersion"]) { this.fhirVersion.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["dependsOn"]) { this.dependsOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }

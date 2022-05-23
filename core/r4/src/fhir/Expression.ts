@@ -78,7 +78,7 @@ export class Expression extends fhir.FhirElement {
   /**
    * Extensible-bound Value Set for language (Expression.language)
    */
-  public static languageExtensibleCoding():ExpressionLanguageCodingType {
+  public static get languageExtensibleCodings() {
     return ExpressionLanguageCodings;
   }
   /**
@@ -89,7 +89,7 @@ export class Expression extends fhir.FhirElement {
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (!this['language']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property language:fhir.FhirCode fhir: Expression.language:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property language:fhir.FhirCode fhir: Expression.language:code' });
     }
     if (this["language"]) { issues.push(...this.language.doModelValidation()); }
     if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }

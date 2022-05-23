@@ -45,6 +45,10 @@ export interface DeviceDefinitionDeviceName extends fhir.BackboneElement {
      * UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.
      */
     type: 'manufacturer-name' | 'model-name' | 'other' | 'patient-reported-name' | 'udi-label-name' | 'user-friendly-name' | null;
+    /**
+     * Extended properties for primitive element: DeviceDefinition.deviceName.type
+     */
+    _type?: fhir.FhirElement;
 }
 /**
  * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.

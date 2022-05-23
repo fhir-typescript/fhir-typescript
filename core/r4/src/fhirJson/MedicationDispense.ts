@@ -67,6 +67,10 @@ export interface MedicationDispense extends fhir.DomainResource {
    */
   status: 'cancelled'|'completed'|'declined'|'entered-in-error'|'in-progress'|'on-hold'|'preparation'|'stopped'|'unknown'|null;
   /**
+   * Extended properties for primitive element: MedicationDispense.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Indicates the reason why a dispense was not performed.
    */
   statusReasonCodeableConcept?: fhir.CodeableConcept|undefined;

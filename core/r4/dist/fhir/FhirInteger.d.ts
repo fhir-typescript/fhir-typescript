@@ -6,7 +6,7 @@ export interface FhirIntegerArgs extends fhir.FhirPrimitiveArgs {
     /**
      * 32 bit number; for values larger than this, use decimal
      */
-    value?: FhirInteger | number | undefined;
+    value?: FhirInteger | number | undefined | null;
 }
 /**
  * 32 bit number; for values larger than this, use decimal

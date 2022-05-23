@@ -155,7 +155,7 @@ export class ConsentVerification extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['verified']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property verified:fhir.FhirBoolean fhir: Consent.verification.verified:boolean', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property verified:fhir.FhirBoolean fhir: Consent.verification.verified:boolean' });
     }
     if (this["verified"]) { issues.push(...this.verified.doModelValidation()); }
     if (this["verifiedWith"]) { issues.push(...this.verifiedWith.doModelValidation()); }
@@ -206,7 +206,7 @@ export class ConsentProvisionActor extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for role (Consent.provision.actor.role)
    */
-  public static roleExtensibleCoding():SecurityRoleTypeCodingType {
+  public static get roleExtensibleCodings() {
     return SecurityRoleTypeCodings;
   }
   /**
@@ -215,11 +215,11 @@ export class ConsentProvisionActor extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['role']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property role:fhir.CodeableConcept fhir: Consent.provision.actor.role:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property role:fhir.CodeableConcept fhir: Consent.provision.actor.role:CodeableConcept' });
     }
     if (this["role"]) { issues.push(...this.role.doModelValidation()); }
     if (!this['reference']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property reference:fhir.Reference fhir: Consent.provision.actor.reference:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference:fhir.Reference fhir: Consent.provision.actor.reference:Reference' });
     }
     if (this["reference"]) { issues.push(...this.reference.doModelValidation()); }
     return issues;
@@ -232,7 +232,7 @@ export interface ConsentProvisionDataArgs extends fhir.BackboneElementArgs {
   /**
    * How the resource reference is interpreted when testing consent restrictions.
    */
-  meaning: ConsentDataMeaningCodeType|null;
+  meaning: fhir.FhirCode<ConsentDataMeaningCodeType>|string|undefined;
   /**
    * A reference to a specific resource that defines which resources are covered by this consent.
    */
@@ -250,7 +250,7 @@ export class ConsentProvisionData extends fhir.BackboneElement {
   /**
    * How the resource reference is interpreted when testing consent restrictions.
    */
-  public meaning: ConsentDataMeaningCodeType|null;
+  public meaning: fhir.FhirCode<ConsentDataMeaningCodeType>|null;
   /**
    * A reference to a specific resource that defines which resources are covered by this consent.
    */
@@ -260,7 +260,7 @@ export class ConsentProvisionData extends fhir.BackboneElement {
    */
   constructor(source:Partial<ConsentProvisionDataArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['meaning']) { this.meaning = source.meaning; }
+    if (source['meaning']) { this.meaning = new fhir.FhirCode<ConsentDataMeaningCodeType>({value: source.meaning}); }
     else { this.meaning = null; }
     if (source['reference']) { this.reference = new fhir.Reference(source.reference); }
     else { this.reference = null; }
@@ -268,8 +268,8 @@ export class ConsentProvisionData extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for meaning (Consent.provision.data.meaning)
    */
-  public static meaningRequiredCoding():ConsentDataMeaningCodingType {
-    return ConsentDataMeaningCodings;
+  public static get meaningRequiredCodes() {
+    return ConsentDataMeaningCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -277,10 +277,14 @@ export class ConsentProvisionData extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['meaning']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property meaning:ConsentDataMeaningCodeType fhir: Consent.provision.data.meaning:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property meaning:fhir.FhirCode<ConsentDataMeaningCodeType> fhir: Consent.provision.data.meaning:code' });
     }
+    if (this['meaning'] && (!Object.values(ConsentDataMeaningCodes).includes(this.meaning as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property meaning:fhir.FhirCode<ConsentDataMeaningCodeType> fhir: Consent.provision.data.meaning:code Required binding to: ConsentDataMeaning' });
+    }
+    if (this["meaning"]) { issues.push(...this.meaning.doModelValidation()); }
     if (!this['reference']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property reference:fhir.Reference fhir: Consent.provision.data.reference:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference:fhir.Reference fhir: Consent.provision.data.reference:Reference' });
     }
     if (this["reference"]) { issues.push(...this.reference.doModelValidation()); }
     return issues;
@@ -293,7 +297,7 @@ export interface ConsentProvisionArgs extends fhir.BackboneElementArgs {
   /**
    * Action  to take - permit or deny - when the rule conditions are met.  Not permitted in root rule, required in all nested rules.
    */
-  type?: ConsentProvisionTypeCodeType|undefined;
+  type?: fhir.FhirCode<ConsentProvisionTypeCodeType>|string|undefined;
   /**
    * The timeframe in this rule is valid.
    */
@@ -347,7 +351,7 @@ export class ConsentProvision extends fhir.BackboneElement {
   /**
    * Action  to take - permit or deny - when the rule conditions are met.  Not permitted in root rule, required in all nested rules.
    */
-  public type?: ConsentProvisionTypeCodeType|undefined;
+  public type?: fhir.FhirCode<ConsentProvisionTypeCodeType>|undefined;
   /**
    * The timeframe in this rule is valid.
    */
@@ -355,27 +359,27 @@ export class ConsentProvision extends fhir.BackboneElement {
   /**
    * Who or what is controlled by this rule. Use group to identify a set of actors by some property they share (e.g. 'admitting officers').
    */
-  public actor?: fhir.ConsentProvisionActor[];
+  public actor: fhir.ConsentProvisionActor[];
   /**
    * Note that this is the direct action (not the grounds for the action covered in the purpose element). At present, the only action in the understood and tested scope of this resource is 'read'.
    */
-  public action?: fhir.CodeableConcept[];
+  public action: fhir.CodeableConcept[];
   /**
    * If the consent specifies a security label of "R" then it applies to all resources that are labeled "R" or lower. E.g. for Confidentiality, it's a high water mark. For other kinds of security labels, subsumption logic applies. When the purpose of use tag is on the data, access request purpose of use shall not conflict.
    */
-  public securityLabel?: fhir.Coding[];
+  public securityLabel: fhir.Coding[];
   /**
    * When the purpose of use tag is on the data, access request purpose of use shall not conflict.
    */
-  public purpose?: fhir.Coding[];
+  public purpose: fhir.Coding[];
   /**
    * Multiple types are or'ed together. The intention of the contentType element is that the codes refer to profiles or document types defined in a standard or an implementation guide somewhere.
    */
-  public class?: fhir.Coding[];
+  public class: fhir.Coding[];
   /**
    * Typical use of this is a Document code with class = CDA.
    */
-  public code?: fhir.CodeableConcept[];
+  public code: fhir.CodeableConcept[];
   /**
    * This has a different sense to the Consent.period - that is when the consent agreement holds. This is the time period of the data that is controlled by the agreement.
    */
@@ -383,17 +387,17 @@ export class ConsentProvision extends fhir.BackboneElement {
   /**
    * The resources controlled by this rule if specific resources are referenced.
    */
-  public data?: fhir.ConsentProvisionData[];
+  public data: fhir.ConsentProvisionData[];
   /**
    * Rules which provide exceptions to the base rule or subrules.
    */
-  public provision?: fhir.ConsentProvision[];
+  public provision: fhir.ConsentProvision[];
   /**
    * Default constructor for ConsentProvision - initializes any required elements to null if a value is not provided.
    */
   constructor(source:Partial<ConsentProvisionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<ConsentProvisionTypeCodeType>({value: source.type}); }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     if (source['actor']) { this.actor = source.actor.map((x) => new fhir.ConsentProvisionActor(x)); }
     else { this.actor = []; }
@@ -416,25 +420,25 @@ export class ConsentProvision extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for type (Consent.provision.type)
    */
-  public static typeRequiredCoding():ConsentProvisionTypeCodingType {
-    return ConsentProvisionTypeCodings;
+  public static get typeRequiredCodes() {
+    return ConsentProvisionTypeCodes;
   }
   /**
    * Extensible-bound Value Set for securityLabel (Consent.provision.securityLabel)
    */
-  public static securityLabelExtensibleCoding():SecurityLabelsCodingType {
+  public static get securityLabelExtensibleCodings() {
     return SecurityLabelsCodings;
   }
   /**
    * Extensible-bound Value Set for purpose (Consent.provision.purpose)
    */
-  public static purposeExtensibleCoding():V3PurposeOfUseCodingType {
+  public static get purposeExtensibleCodings() {
     return V3PurposeOfUseCodings;
   }
   /**
    * Extensible-bound Value Set for class (Consent.provision.class)
    */
-  public static classExtensibleCoding():ConsentContentClassCodingType {
+  public static get classExtensibleCodings() {
     return ConsentContentClassCodings;
   }
   /**
@@ -442,6 +446,10 @@ export class ConsentProvision extends fhir.BackboneElement {
    */
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this['type'] && (!Object.values(ConsentProvisionTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type?:fhir.FhirCode<ConsentProvisionTypeCodeType> fhir: Consent.provision.type:code Required binding to: ConsentProvisionType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["period"]) { issues.push(...this.period.doModelValidation()); }
     if (this["actor"]) { this.actor.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -470,7 +478,7 @@ export interface ConsentArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains the codes rejected and entered-in-error that mark the Consent as not currently valid.
    */
-  status: ConsentStateCodesCodeType|null;
+  status: fhir.FhirCode<ConsentStateCodesCodeType>|string|undefined;
   /**
    * A selector of the type of consent being presented: ADR, Privacy, Treatment, Research.  This list is now extensible.
    */
@@ -540,11 +548,11 @@ export class Consent extends fhir.DomainResource {
   /**
    * This identifier identifies this copy of the consent. Where this identifier is also used elsewhere as the identifier for a consent record (e.g. a CDA consent document) then the consent details are expected to be the same.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the status contains the codes rejected and entered-in-error that mark the Consent as not currently valid.
    */
-  public status: ConsentStateCodesCodeType|null;
+  public status: fhir.FhirCode<ConsentStateCodesCodeType>|null;
   /**
    * A selector of the type of consent being presented: ADR, Privacy, Treatment, Research.  This list is now extensible.
    */
@@ -564,11 +572,11 @@ export class Consent extends fhir.DomainResource {
   /**
    * Commonly, the patient the consent pertains to is the consentor, but particularly for young and old people, it may be some other person - e.g. a legal guardian.
    */
-  public performer?: fhir.Reference[];
+  public performer: fhir.Reference[];
   /**
    * The organization that manages the consent, and the framework within which it is executed.
    */
-  public organization?: fhir.Reference[];
+  public organization: fhir.Reference[];
   /**
    * The source can be contained inline (Attachment), referenced directly (Consent), referenced in a consent repository (DocumentReference), or simply by an identifier (Identifier), e.g. a CDA document id.
    */
@@ -580,7 +588,7 @@ export class Consent extends fhir.DomainResource {
   /**
    * The references to the policies that are included in this consent scope. Policies may be organizational, but are often defined jurisdictionally, or in law.
    */
-  public policy?: fhir.ConsentPolicy[];
+  public policy: fhir.ConsentPolicy[];
   /**
    * If the policyRule is absent, computable consent would need to be constructed from the elements of the Consent resource.
    */
@@ -588,7 +596,7 @@ export class Consent extends fhir.DomainResource {
   /**
    * Whether a treatment instruction (e.g. artificial respiration yes or no) was verified with the patient, his/her family or another authorized person.
    */
-  public verification?: fhir.ConsentVerification[];
+  public verification: fhir.ConsentVerification[];
   /**
    * An exception to the base policy of this consent. An exception can be an addition or removal of access permissions.
    */
@@ -601,7 +609,7 @@ export class Consent extends fhir.DomainResource {
     this.resourceType = 'Consent';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<ConsentStateCodesCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['scope']) { this.scope = new fhir.CodeableConcept(source.scope); }
     else { this.scope = null; }
@@ -626,25 +634,25 @@ export class Consent extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Consent.status)
    */
-  public static statusRequiredCoding():ConsentStateCodesCodingType {
-    return ConsentStateCodesCodings;
+  public static get statusRequiredCodes() {
+    return ConsentStateCodesCodes;
   }
   /**
    * Extensible-bound Value Set for scope (Consent.scope)
    */
-  public static scopeExtensibleCoding():ConsentScopeCodingType {
+  public static get scopeExtensibleCodings() {
     return ConsentScopeCodings;
   }
   /**
    * Extensible-bound Value Set for category (Consent.category)
    */
-  public static categoryExtensibleCoding():ConsentCategoryCodingType {
+  public static get categoryExtensibleCodings() {
     return ConsentCategoryCodings;
   }
   /**
    * Extensible-bound Value Set for policyRule (Consent.policyRule)
    */
-  public static policyRuleExtensibleCoding():ConsentPolicyCodingType {
+  public static get policyRuleExtensibleCodings() {
     return ConsentPolicyCodings;
   }
   /**
@@ -653,22 +661,26 @@ export class Consent extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Consent" fhir: Consent.resourceType:"Consent"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Consent" fhir: Consent.resourceType:"Consent"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ConsentStateCodesCodeType fhir: Consent.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ConsentStateCodesCodeType> fhir: Consent.status:code' });
     }
+    if (this['status'] && (!Object.values(ConsentStateCodesCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ConsentStateCodesCodeType> fhir: Consent.status:code Required binding to: ConsentStateCodes' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['scope']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property scope:fhir.CodeableConcept fhir: Consent.scope:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property scope:fhir.CodeableConcept fhir: Consent.scope:CodeableConcept' });
     }
     if (this["scope"]) { issues.push(...this.scope.doModelValidation()); }
     if (!this['category']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property category:fhir.CodeableConcept[] fhir: Consent.category:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category:fhir.CodeableConcept[] fhir: Consent.category:CodeableConcept' });
     } else if (!Array.isArray(this.category)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property category:fhir.CodeableConcept[] fhir: Consent.category:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property category:fhir.CodeableConcept[] fhir: Consent.category:CodeableConcept' });
     } else if (this.category.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property category:fhir.CodeableConcept[] fhir: Consent.category:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category:fhir.CodeableConcept[] fhir: Consent.category:CodeableConcept' });
     }
     if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }

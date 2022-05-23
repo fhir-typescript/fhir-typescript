@@ -60,7 +60,7 @@ export interface TimingRepeatArgs extends fhir.FhirElementArgs {
   /**
    * The units of time for the duration, in UCUM units.
    */
-  durationUnit?: UnitsOfTimeCodeType|undefined;
+  durationUnit?: fhir.FhirCode<UnitsOfTimeCodeType>|string|undefined;
   /**
    * The number of times to repeat the action within the specified period. If frequencyMax is present, this element indicates the lower bound of the allowed range of the frequency.
    */
@@ -80,11 +80,11 @@ export interface TimingRepeatArgs extends fhir.FhirElementArgs {
   /**
    * The units of time for the period in UCUM units.
    */
-  periodUnit?: UnitsOfTimeCodeType|undefined;
+  periodUnit?: fhir.FhirCode<UnitsOfTimeCodeType>|string|undefined;
   /**
    * If no days are specified, the action is assumed to happen every day as otherwise specified. The elements frequency and period cannot be used as well as dayOfWeek.
    */
-  dayOfWeek?: DaysOfWeekCodeType[]|undefined;
+  dayOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[]|string[]|undefined;
   /**
    * When time of day is specified, it is inferred that the action happens every day (as filtered by dayofWeek) on the specified times. The elements when, frequency and period cannot be used as well as timeOfDay.
    */
@@ -134,7 +134,7 @@ export class TimingRepeat extends fhir.FhirElement {
   /**
    * The units of time for the duration, in UCUM units.
    */
-  public durationUnit?: UnitsOfTimeCodeType|undefined;
+  public durationUnit?: fhir.FhirCode<UnitsOfTimeCodeType>|undefined;
   /**
    * The number of times to repeat the action within the specified period. If frequencyMax is present, this element indicates the lower bound of the allowed range of the frequency.
    */
@@ -154,19 +154,19 @@ export class TimingRepeat extends fhir.FhirElement {
   /**
    * The units of time for the period in UCUM units.
    */
-  public periodUnit?: UnitsOfTimeCodeType|undefined;
+  public periodUnit?: fhir.FhirCode<UnitsOfTimeCodeType>|undefined;
   /**
    * If no days are specified, the action is assumed to happen every day as otherwise specified. The elements frequency and period cannot be used as well as dayOfWeek.
    */
-  public dayOfWeek?: DaysOfWeekCodeType[];
+  public dayOfWeek: fhir.FhirCode<DaysOfWeekCodeType>[];
   /**
    * When time of day is specified, it is inferred that the action happens every day (as filtered by dayofWeek) on the specified times. The elements when, frequency and period cannot be used as well as timeOfDay.
    */
-  public timeOfDay?: fhir.FhirTime[];
+  public timeOfDay: fhir.FhirTime[];
   /**
    * When more than one event is listed, the event is tied to the union of the specified events.
    */
-  public when?: fhir.FhirCode[];
+  public when: fhir.FhirCode[];
   /**
    * The number of minutes from the event. If the event code does not indicate whether the minutes is before or after the event, then the offset is assumed to be after the event.
    */
@@ -184,13 +184,13 @@ export class TimingRepeat extends fhir.FhirElement {
     if (source['countMax']) { this.countMax = new fhir.FhirPositiveInt({value: source.countMax}); }
     if (source['duration']) { this.duration = new fhir.FhirDecimal({value: source.duration}); }
     if (source['durationMax']) { this.durationMax = new fhir.FhirDecimal({value: source.durationMax}); }
-    if (source['durationUnit']) { this.durationUnit = source.durationUnit; }
+    if (source['durationUnit']) { this.durationUnit = new fhir.FhirCode<UnitsOfTimeCodeType>({value: source.durationUnit}); }
     if (source['frequency']) { this.frequency = new fhir.FhirPositiveInt({value: source.frequency}); }
     if (source['frequencyMax']) { this.frequencyMax = new fhir.FhirPositiveInt({value: source.frequencyMax}); }
     if (source['period']) { this.period = new fhir.FhirDecimal({value: source.period}); }
     if (source['periodMax']) { this.periodMax = new fhir.FhirDecimal({value: source.periodMax}); }
-    if (source['periodUnit']) { this.periodUnit = source.periodUnit; }
-    if (source['dayOfWeek']) { this.dayOfWeek = source.dayOfWeek.map((x) => x); }
+    if (source['periodUnit']) { this.periodUnit = new fhir.FhirCode<UnitsOfTimeCodeType>({value: source.periodUnit}); }
+    if (source['dayOfWeek']) { this.dayOfWeek = source.dayOfWeek.map((x) => new fhir.FhirCode<DaysOfWeekCodeType>({value: x})); }
     else { this.dayOfWeek = []; }
     if (source['timeOfDay']) { this.timeOfDay = source.timeOfDay.map((x) => new fhir.FhirTime({value: x})); }
     else { this.timeOfDay = []; }
@@ -201,26 +201,26 @@ export class TimingRepeat extends fhir.FhirElement {
   /**
    * Required-bound Value Set for durationUnit (Timing.repeat.durationUnit)
    */
-  public static durationUnitRequiredCoding():UnitsOfTimeCodingType {
-    return UnitsOfTimeCodings;
+  public static get durationUnitRequiredCodes() {
+    return UnitsOfTimeCodes;
   }
   /**
    * Required-bound Value Set for periodUnit (Timing.repeat.periodUnit)
    */
-  public static periodUnitRequiredCoding():UnitsOfTimeCodingType {
-    return UnitsOfTimeCodings;
+  public static get periodUnitRequiredCodes() {
+    return UnitsOfTimeCodes;
   }
   /**
    * Required-bound Value Set for dayOfWeek (Timing.repeat.dayOfWeek)
    */
-  public static dayOfWeekRequiredCoding():DaysOfWeekCodingType {
-    return DaysOfWeekCodings;
+  public static get dayOfWeekRequiredCodes() {
+    return DaysOfWeekCodes;
   }
   /**
    * Required-bound Value Set for when (Timing.repeat.when)
    */
-  public static whenRequiredCoding():EventTimingCodingType {
-    return EventTimingCodings;
+  public static get whenRequiredCodes() {
+    return EventTimingCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -231,11 +231,34 @@ export class TimingRepeat extends fhir.FhirElement {
     if (this["countMax"]) { issues.push(...this.countMax.doModelValidation()); }
     if (this["duration"]) { issues.push(...this.duration.doModelValidation()); }
     if (this["durationMax"]) { issues.push(...this.durationMax.doModelValidation()); }
+    if (this['durationUnit'] && (!Object.values(UnitsOfTimeCodes).includes(this.durationUnit as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property durationUnit?:fhir.FhirCode<UnitsOfTimeCodeType> fhir: Timing.repeat.durationUnit:code Required binding to: UnitsOfTime' });
+    }
+    if (this["durationUnit"]) { issues.push(...this.durationUnit.doModelValidation()); }
     if (this["frequency"]) { issues.push(...this.frequency.doModelValidation()); }
     if (this["frequencyMax"]) { issues.push(...this.frequencyMax.doModelValidation()); }
     if (this["period"]) { issues.push(...this.period.doModelValidation()); }
     if (this["periodMax"]) { issues.push(...this.periodMax.doModelValidation()); }
+    if (this['periodUnit'] && (!Object.values(UnitsOfTimeCodes).includes(this.periodUnit as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property periodUnit?:fhir.FhirCode<UnitsOfTimeCodeType> fhir: Timing.repeat.periodUnit:code Required binding to: UnitsOfTime' });
+    }
+    if (this["periodUnit"]) { issues.push(...this.periodUnit.doModelValidation()); }
+    if (this['dayOfWeek']) {
+      this.dayOfWeek.forEach((v) => {
+        if (!Object.values(DaysOfWeekCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property dayOfWeek?:fhir.FhirCode<DaysOfWeekCodeType>[] fhir: Timing.repeat.dayOfWeek:code Required binding to: DaysOfWeek' });
+        }
+      });
+    }
+    if (this["dayOfWeek"]) { this.dayOfWeek.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["timeOfDay"]) { this.timeOfDay.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['when']) {
+      this.when.forEach((v) => {
+        if (!Object.values(EventTimingCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property when?:fhir.FhirCode[] fhir: Timing.repeat.when:code Required binding to: EventTiming' });
+        }
+      });
+    }
     if (this["when"]) { this.when.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["offset"]) { issues.push(...this.offset.doModelValidation()); }
     return issues;
@@ -270,7 +293,7 @@ export class Timing extends fhir.BackboneElement {
   /**
    * Identifies specific times when the event occurs.
    */
-  public event?: fhir.FhirDateTime[];
+  public event: fhir.FhirDateTime[];
   /**
    * A set of rules that describe when the event is scheduled.
    */
@@ -292,7 +315,7 @@ export class Timing extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for code (Timing.code)
    */
-  public static codePreferredCoding():TimingAbbreviationCodingType {
+  public static get codePreferredCodings() {
     return TimingAbbreviationCodings;
   }
   /**

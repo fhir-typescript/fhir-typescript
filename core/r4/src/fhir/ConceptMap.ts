@@ -81,12 +81,12 @@ export class ConceptMapGroupElementTargetDependsOn extends fhir.BackboneElement 
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['property']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property property:fhir.FhirUri fhir: ConceptMap.group.element.target.dependsOn.property:uri', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property property:fhir.FhirUri fhir: ConceptMap.group.element.target.dependsOn.property:uri' });
     }
     if (this["property"]) { issues.push(...this.property.doModelValidation()); }
     if (this["system"]) { issues.push(...this.system.doModelValidation()); }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value:fhir.FhirString fhir: ConceptMap.group.element.target.dependsOn.value:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value:fhir.FhirString fhir: ConceptMap.group.element.target.dependsOn.value:string' });
     }
     if (this["value"]) { issues.push(...this.value.doModelValidation()); }
     if (this["display"]) { issues.push(...this.display.doModelValidation()); }
@@ -108,7 +108,7 @@ export interface ConceptMapGroupElementTargetArgs extends fhir.BackboneElementAr
   /**
    * This element is labeled as a modifier because it may indicate that a target does not apply.
    */
-  equivalence: ConceptMapEquivalenceCodeType|null;
+  equivalence: fhir.FhirCode<ConceptMapEquivalenceCodeType>|string|undefined;
   /**
    * A description of status/issues in mapping that conveys additional information not represented in  the structured data.
    */
@@ -142,7 +142,7 @@ export class ConceptMapGroupElementTarget extends fhir.BackboneElement {
   /**
    * This element is labeled as a modifier because it may indicate that a target does not apply.
    */
-  public equivalence: ConceptMapEquivalenceCodeType|null;
+  public equivalence: fhir.FhirCode<ConceptMapEquivalenceCodeType>|null;
   /**
    * A description of status/issues in mapping that conveys additional information not represented in  the structured data.
    */
@@ -150,11 +150,11 @@ export class ConceptMapGroupElementTarget extends fhir.BackboneElement {
   /**
    * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
    */
-  public dependsOn?: fhir.ConceptMapGroupElementTargetDependsOn[];
+  public dependsOn: fhir.ConceptMapGroupElementTargetDependsOn[];
   /**
    * A set of additional outcomes from this mapping to other elements. To properly execute this mapping, the specified element must be mapped to some data element or source that is in context. The mapping may still be useful without a place for the additional data elements, but the equivalence cannot be relied on.
    */
-  public product?: fhir.ConceptMapGroupElementTargetDependsOn[];
+  public product: fhir.ConceptMapGroupElementTargetDependsOn[];
   /**
    * Default constructor for ConceptMapGroupElementTarget - initializes any required elements to null if a value is not provided.
    */
@@ -162,7 +162,7 @@ export class ConceptMapGroupElementTarget extends fhir.BackboneElement {
     super(source, options);
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
     if (source['display']) { this.display = new fhir.FhirString({value: source.display}); }
-    if (source['equivalence']) { this.equivalence = source.equivalence; }
+    if (source['equivalence']) { this.equivalence = new fhir.FhirCode<ConceptMapEquivalenceCodeType>({value: source.equivalence}); }
     else { this.equivalence = null; }
     if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
     if (source['dependsOn']) { this.dependsOn = source.dependsOn.map((x) => new fhir.ConceptMapGroupElementTargetDependsOn(x)); }
@@ -173,8 +173,8 @@ export class ConceptMapGroupElementTarget extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for equivalence (ConceptMap.group.element.target.equivalence)
    */
-  public static equivalenceRequiredCoding():ConceptMapEquivalenceCodingType {
-    return ConceptMapEquivalenceCodings;
+  public static get equivalenceRequiredCodes() {
+    return ConceptMapEquivalenceCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -184,8 +184,12 @@ export class ConceptMapGroupElementTarget extends fhir.BackboneElement {
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["display"]) { issues.push(...this.display.doModelValidation()); }
     if (!this['equivalence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property equivalence:ConceptMapEquivalenceCodeType fhir: ConceptMap.group.element.target.equivalence:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property equivalence:fhir.FhirCode<ConceptMapEquivalenceCodeType> fhir: ConceptMap.group.element.target.equivalence:code' });
     }
+    if (this['equivalence'] && (!Object.values(ConceptMapEquivalenceCodes).includes(this.equivalence as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property equivalence:fhir.FhirCode<ConceptMapEquivalenceCodeType> fhir: ConceptMap.group.element.target.equivalence:code Required binding to: ConceptMapEquivalence' });
+    }
+    if (this["equivalence"]) { issues.push(...this.equivalence.doModelValidation()); }
     if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
     if (this["dependsOn"]) { this.dependsOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["product"]) { this.product.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -229,7 +233,7 @@ export class ConceptMapGroupElement extends fhir.BackboneElement {
   /**
    * Ideally there would only be one map, with equal or equivalent mapping. But multiple maps are allowed for several narrower options, or to assert that other concepts are unmatched.
    */
-  public target?: fhir.ConceptMapGroupElementTarget[];
+  public target: fhir.ConceptMapGroupElementTarget[];
   /**
    * Default constructor for ConceptMapGroupElement - initializes any required elements to null if a value is not provided.
    */
@@ -258,7 +262,7 @@ export interface ConceptMapGroupUnmappedArgs extends fhir.BackboneElementArgs {
   /**
    * Defines which action to take if there is no match for the source concept in the target system designated for the group. One of 3 actions are possible: use the unmapped code (this is useful when doing a mapping between versions, and only a few codes have changed), use a fixed code (a default code), or alternatively, a reference to a different concept map can be provided (by canonical URL).
    */
-  mode: ConceptmapUnmappedModeCodeType|null;
+  mode: fhir.FhirCode<ConceptmapUnmappedModeCodeType>|string|undefined;
   /**
    * The fixed code to use when the mode = 'fixed'  - all unmapped codes are mapped to a single fixed code.
    */
@@ -284,7 +288,7 @@ export class ConceptMapGroupUnmapped extends fhir.BackboneElement {
   /**
    * Defines which action to take if there is no match for the source concept in the target system designated for the group. One of 3 actions are possible: use the unmapped code (this is useful when doing a mapping between versions, and only a few codes have changed), use a fixed code (a default code), or alternatively, a reference to a different concept map can be provided (by canonical URL).
    */
-  public mode: ConceptmapUnmappedModeCodeType|null;
+  public mode: fhir.FhirCode<ConceptmapUnmappedModeCodeType>|null;
   /**
    * The fixed code to use when the mode = 'fixed'  - all unmapped codes are mapped to a single fixed code.
    */
@@ -302,7 +306,7 @@ export class ConceptMapGroupUnmapped extends fhir.BackboneElement {
    */
   constructor(source:Partial<ConceptMapGroupUnmappedArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['mode']) { this.mode = source.mode; }
+    if (source['mode']) { this.mode = new fhir.FhirCode<ConceptmapUnmappedModeCodeType>({value: source.mode}); }
     else { this.mode = null; }
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
     if (source['display']) { this.display = new fhir.FhirString({value: source.display}); }
@@ -311,8 +315,8 @@ export class ConceptMapGroupUnmapped extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for mode (ConceptMap.group.unmapped.mode)
    */
-  public static modeRequiredCoding():ConceptmapUnmappedModeCodingType {
-    return ConceptmapUnmappedModeCodings;
+  public static get modeRequiredCodes() {
+    return ConceptmapUnmappedModeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -320,8 +324,12 @@ export class ConceptMapGroupUnmapped extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['mode']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property mode:ConceptmapUnmappedModeCodeType fhir: ConceptMap.group.unmapped.mode:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode:fhir.FhirCode<ConceptmapUnmappedModeCodeType> fhir: ConceptMap.group.unmapped.mode:code' });
     }
+    if (this['mode'] && (!Object.values(ConceptmapUnmappedModeCodes).includes(this.mode as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode:fhir.FhirCode<ConceptmapUnmappedModeCodeType> fhir: ConceptMap.group.unmapped.mode:code Required binding to: ConceptmapUnmappedMode' });
+    }
+    if (this["mode"]) { issues.push(...this.mode.doModelValidation()); }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["display"]) { issues.push(...this.display.doModelValidation()); }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
@@ -413,11 +421,11 @@ export class ConceptMapGroup extends fhir.BackboneElement {
     if (this["target"]) { issues.push(...this.target.doModelValidation()); }
     if (this["targetVersion"]) { issues.push(...this.targetVersion.doModelValidation()); }
     if (!this['element']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property element:fhir.ConceptMapGroupElement[] fhir: ConceptMap.group.element:element', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property element:fhir.ConceptMapGroupElement[] fhir: ConceptMap.group.element:element' });
     } else if (!Array.isArray(this.element)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property element:fhir.ConceptMapGroupElement[] fhir: ConceptMap.group.element:element', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property element:fhir.ConceptMapGroupElement[] fhir: ConceptMap.group.element:element' });
     } else if (this.element.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property element:fhir.ConceptMapGroupElement[] fhir: ConceptMap.group.element:element', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property element:fhir.ConceptMapGroupElement[] fhir: ConceptMap.group.element:element' });
     }
     if (this["element"]) { this.element.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["unmapped"]) { issues.push(...this.unmapped.doModelValidation()); }
@@ -457,7 +465,7 @@ export interface ConceptMapArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of concept maps that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of concept maps that are appropriate for use versus not.
    */
@@ -561,7 +569,7 @@ export class ConceptMap extends fhir.DomainResource {
   /**
    * Allows filtering of concept maps that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of concept maps that are appropriate for use versus not.
    */
@@ -577,7 +585,7 @@ export class ConceptMap extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * The description is not intended to describe the semantics of the concept map. The description should capture its intended use, which is needed for ensuring integrity for its use in models across future changes.
    */
@@ -585,11 +593,11 @@ export class ConceptMap extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the concept map to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * This element does not describe the usage of the concept map. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this concept map.
    */
@@ -617,7 +625,7 @@ export class ConceptMap extends fhir.DomainResource {
   /**
    * A group of mappings that all have the same source and target system.
    */
-  public group?: fhir.ConceptMapGroup[];
+  public group: fhir.ConceptMapGroup[];
   /**
    * Default constructor for ConceptMap - initializes any required elements to null if a value is not provided.
    */
@@ -629,7 +637,7 @@ export class ConceptMap extends fhir.DomainResource {
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
@@ -655,8 +663,8 @@ export class ConceptMap extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (ConceptMap.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -664,7 +672,7 @@ export class ConceptMap extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ConceptMap" fhir: ConceptMap.resourceType:"ConceptMap"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ConceptMap" fhir: ConceptMap.resourceType:"ConceptMap"' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
@@ -672,8 +680,12 @@ export class ConceptMap extends fhir.DomainResource {
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: ConceptMap.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: ConceptMap.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: ConceptMap.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }

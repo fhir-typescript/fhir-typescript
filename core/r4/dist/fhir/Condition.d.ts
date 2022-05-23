@@ -1,8 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ConditionClinicalCodingType } from '../fhirValueSets/ConditionClinicalCodings.js';
-import { ConditionVerStatusCodingType } from '../fhirValueSets/ConditionVerStatusCodings.js';
-import { ConditionCategoryCodingType } from '../fhirValueSets/ConditionCategoryCodings.js';
-import { ConditionSeverityCodingType } from '../fhirValueSets/ConditionSeverityCodings.js';
 /**
  * Valid arguments for the ConditionStage type.
  */
@@ -35,7 +31,7 @@ export declare class ConditionStage extends fhir.BackboneElement {
     /**
      * Reference to a formal record of the evidence on which the staging assessment is based.
      */
-    assessment?: fhir.Reference[];
+    assessment: fhir.Reference[];
     /**
      * The kind of staging, such as pathological or clinical staging.
      */
@@ -73,11 +69,11 @@ export declare class ConditionEvidence extends fhir.BackboneElement {
     /**
      * A manifestation or symptom that led to the recording of this condition.
      */
-    code?: fhir.CodeableConcept[];
+    code: fhir.CodeableConcept[];
     /**
      * Links to other relevant information, including pathology reports.
      */
-    detail?: fhir.Reference[];
+    detail: fhir.Reference[];
     /**
      * Default constructor for ConditionEvidence - initializes any required elements to null if a value is not provided.
      */
@@ -220,7 +216,7 @@ export declare class Condition extends fhir.DomainResource {
     /**
      * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * The data type is CodeableConcept because clinicalStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.
      */
@@ -233,7 +229,7 @@ export declare class Condition extends fhir.DomainResource {
     /**
      * The categorization is often highly contextual and may appear poorly differentiated or not very useful in other contexts.
      */
-    category?: fhir.CodeableConcept[];
+    category: fhir.CodeableConcept[];
     /**
      * Coding of the severity with a terminology is preferred, where possible.
      */
@@ -245,7 +241,7 @@ export declare class Condition extends fhir.DomainResource {
     /**
      * Only used if not implicit in code found in Condition.code. If the use case requires attributes from the BodySite resource (e.g. to identify and track separately) then use the standard extension [bodySite](extension-bodysite.html).  May be a summary code, or a reference to a very precise definition of the location, or both.
      */
-    bodySite?: fhir.CodeableConcept[];
+    bodySite: fhir.CodeableConcept[];
     /**
      * Indicates the patient or group who the condition record is associated with.
      */
@@ -285,15 +281,15 @@ export declare class Condition extends fhir.DomainResource {
     /**
      * Clinical stage or grade of a condition. May include formal severity assessments.
      */
-    stage?: fhir.ConditionStage[];
+    stage: fhir.ConditionStage[];
     /**
      * The evidence may be a simple list of coded symptoms/manifestations, or references to observations or formal assessments, or both.
      */
-    evidence?: fhir.ConditionEvidence[];
+    evidence: fhir.ConditionEvidence[];
     /**
      * Additional information about the Condition. This is a general notes/comments entry  for description of the Condition, its diagnosis and prognosis.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Default constructor for Condition - initializes any required elements to null if a value is not provided.
      */
@@ -301,19 +297,40 @@ export declare class Condition extends fhir.DomainResource {
     /**
      * Required-bound Value Set for clinicalStatus (Condition.clinicalStatus)
      */
-    static clinicalStatusRequiredCoding(): ConditionClinicalCodingType;
+    static get clinicalStatusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Inactive: "inactive";
+        readonly Recurrence: "recurrence";
+        readonly Relapse: "relapse";
+        readonly Remission: "remission";
+        readonly Resolved: "resolved";
+    };
     /**
      * Required-bound Value Set for verificationStatus (Condition.verificationStatus)
      */
-    static verificationStatusRequiredCoding(): ConditionVerStatusCodingType;
+    static get verificationStatusRequiredCodes(): {
+        readonly Confirmed: "confirmed";
+        readonly Differential: "differential";
+        readonly EnteredInError: "entered-in-error";
+        readonly Provisional: "provisional";
+        readonly Refuted: "refuted";
+        readonly Unconfirmed: "unconfirmed";
+    };
     /**
      * Extensible-bound Value Set for category (Condition.category)
      */
-    static categoryExtensibleCoding(): ConditionCategoryCodingType;
+    static get categoryExtensibleCodings(): {
+        readonly EncounterDiagnosis: fhir.Coding;
+        readonly ProblemListItem: fhir.Coding;
+    };
     /**
      * Preferred-bound Value Set for severity (Condition.severity)
      */
-    static severityPreferredCoding(): ConditionSeverityCodingType;
+    static get severityPreferredCodings(): {
+        readonly VAL24484000: fhir.Coding;
+        readonly VAL255604002: fhir.Coding;
+        readonly VAL6736007: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

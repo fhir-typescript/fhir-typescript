@@ -24,7 +24,7 @@ export interface EnrollmentRequestArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the request as not currently valid.
    */
-  status?: FmStatusCodeType|undefined;
+  status?: fhir.FhirCode<FmStatusCodeType>|string|undefined;
   /**
    * The date when this resource was created.
    */
@@ -62,11 +62,11 @@ export class EnrollmentRequest extends fhir.DomainResource {
   /**
    * The Response business identifier.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the status contains codes that mark the request as not currently valid.
    */
-  public status?: FmStatusCodeType|undefined;
+  public status?: fhir.FhirCode<FmStatusCodeType>|undefined;
   /**
    * The date when this resource was created.
    */
@@ -95,7 +95,7 @@ export class EnrollmentRequest extends fhir.DomainResource {
     this.resourceType = 'EnrollmentRequest';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
     if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
     if (source['insurer']) { this.insurer = new fhir.Reference(source.insurer); }
     if (source['provider']) { this.provider = new fhir.Reference(source.provider); }
@@ -105,8 +105,8 @@ export class EnrollmentRequest extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (EnrollmentRequest.status)
    */
-  public static statusRequiredCoding():FmStatusCodingType {
-    return FmStatusCodings;
+  public static get statusRequiredCodes() {
+    return FmStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -114,9 +114,13 @@ export class EnrollmentRequest extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"EnrollmentRequest" fhir: EnrollmentRequest.resourceType:"EnrollmentRequest"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"EnrollmentRequest" fhir: EnrollmentRequest.resourceType:"EnrollmentRequest"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<FmStatusCodeType> fhir: EnrollmentRequest.status:code Required binding to: FmStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["created"]) { issues.push(...this.created.doModelValidation()); }
     if (this["insurer"]) { issues.push(...this.insurer.doModelValidation()); }
     if (this["provider"]) { issues.push(...this.provider.doModelValidation()); }

@@ -69,15 +69,15 @@ export class DeviceDefinitionUdiDeviceIdentifier extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['deviceIdentifier']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property deviceIdentifier:fhir.FhirString fhir: DeviceDefinition.udiDeviceIdentifier.deviceIdentifier:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property deviceIdentifier:fhir.FhirString fhir: DeviceDefinition.udiDeviceIdentifier.deviceIdentifier:string' });
     }
     if (this["deviceIdentifier"]) { issues.push(...this.deviceIdentifier.doModelValidation()); }
     if (!this['issuer']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property issuer:fhir.FhirUri fhir: DeviceDefinition.udiDeviceIdentifier.issuer:uri', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property issuer:fhir.FhirUri fhir: DeviceDefinition.udiDeviceIdentifier.issuer:uri' });
     }
     if (this["issuer"]) { issues.push(...this.issuer.doModelValidation()); }
     if (!this['jurisdiction']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property jurisdiction:fhir.FhirUri fhir: DeviceDefinition.udiDeviceIdentifier.jurisdiction:uri', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property jurisdiction:fhir.FhirUri fhir: DeviceDefinition.udiDeviceIdentifier.jurisdiction:uri' });
     }
     if (this["jurisdiction"]) { issues.push(...this.jurisdiction.doModelValidation()); }
     return issues;
@@ -95,7 +95,7 @@ export interface DeviceDefinitionDeviceNameArgs extends fhir.BackboneElementArgs
    * The type of deviceName.
    * UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.
    */
-  type: DeviceNametypeCodeType|null;
+  type: fhir.FhirCode<DeviceNametypeCodeType>|string|undefined;
 }
 
 /**
@@ -114,7 +114,7 @@ export class DeviceDefinitionDeviceName extends fhir.BackboneElement {
    * The type of deviceName.
    * UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.
    */
-  public type: DeviceNametypeCodeType|null;
+  public type: fhir.FhirCode<DeviceNametypeCodeType>|null;
   /**
    * Default constructor for DeviceDefinitionDeviceName - initializes any required elements to null if a value is not provided.
    */
@@ -122,14 +122,14 @@ export class DeviceDefinitionDeviceName extends fhir.BackboneElement {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<DeviceNametypeCodeType>({value: source.type}); }
     else { this.type = null; }
   }
   /**
    * Required-bound Value Set for type (DeviceDefinition.deviceName.type)
    */
-  public static typeRequiredCoding():DeviceNametypeCodingType {
-    return DeviceNametypeCodings;
+  public static get typeRequiredCodes() {
+    return DeviceNametypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -137,12 +137,16 @@ export class DeviceDefinitionDeviceName extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: DeviceDefinition.deviceName.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: DeviceDefinition.deviceName.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:DeviceNametypeCodeType fhir: DeviceDefinition.deviceName.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<DeviceNametypeCodeType> fhir: DeviceDefinition.deviceName.type:code' });
     }
+    if (this['type'] && (!Object.values(DeviceNametypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<DeviceNametypeCodeType> fhir: DeviceDefinition.deviceName.type:code Required binding to: DeviceNametype' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     return issues;
   }
 }
@@ -191,7 +195,7 @@ export class DeviceDefinitionSpecialization extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['systemType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property systemType:fhir.FhirString fhir: DeviceDefinition.specialization.systemType:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property systemType:fhir.FhirString fhir: DeviceDefinition.specialization.systemType:string' });
     }
     if (this["systemType"]) { issues.push(...this.systemType.doModelValidation()); }
     if (this["version"]) { issues.push(...this.version.doModelValidation()); }
@@ -227,7 +231,7 @@ export class DeviceDefinitionCapability extends fhir.BackboneElement {
   /**
    * Description of capability.
    */
-  public description?: fhir.CodeableConcept[];
+  public description: fhir.CodeableConcept[];
   /**
    * Default constructor for DeviceDefinitionCapability - initializes any required elements to null if a value is not provided.
    */
@@ -244,7 +248,7 @@ export class DeviceDefinitionCapability extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: DeviceDefinition.capability.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: DeviceDefinition.capability.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["description"]) { this.description.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -284,11 +288,11 @@ export class DeviceDefinitionProperty extends fhir.BackboneElement {
   /**
    * Property value as a quantity.
    */
-  public valueQuantity?: fhir.Quantity[];
+  public valueQuantity: fhir.Quantity[];
   /**
    * Property value as a code, e.g., NTP4 (synced to NTP).
    */
-  public valueCode?: fhir.CodeableConcept[];
+  public valueCode: fhir.CodeableConcept[];
   /**
    * Default constructor for DeviceDefinitionProperty - initializes any required elements to null if a value is not provided.
    */
@@ -307,7 +311,7 @@ export class DeviceDefinitionProperty extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: DeviceDefinition.property.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: DeviceDefinition.property.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["valueQuantity"]) { this.valueQuantity.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -369,7 +373,7 @@ export class DeviceDefinitionMaterial extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['substance']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property substance:fhir.CodeableConcept fhir: DeviceDefinition.material.substance:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property substance:fhir.CodeableConcept fhir: DeviceDefinition.material.substance:CodeableConcept' });
     }
     if (this["substance"]) { issues.push(...this.substance.doModelValidation()); }
     if (this["alternate"]) { issues.push(...this.alternate.doModelValidation()); }
@@ -498,11 +502,11 @@ export class DeviceDefinition extends fhir.DomainResource {
   /**
    * Unique instance identifiers assigned to a device by the software, manufacturers, other organizations or owners. For example: handle ID.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Unique device identifier (UDI) assigned to device label or package.  Note that the Device may include multiple udiCarriers as it either may include just the udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it could have been sold.
    */
-  public udiDeviceIdentifier?: fhir.DeviceDefinitionUdiDeviceIdentifier[];
+  public udiDeviceIdentifier: fhir.DeviceDefinitionUdiDeviceIdentifier[];
   /**
    * A name of the manufacturer.
    */
@@ -514,7 +518,7 @@ export class DeviceDefinition extends fhir.DomainResource {
   /**
    * A name given to the device to identify it.
    */
-  public deviceName?: fhir.DeviceDefinitionDeviceName[];
+  public deviceName: fhir.DeviceDefinitionDeviceName[];
   /**
    * The model number for the device.
    */
@@ -526,19 +530,19 @@ export class DeviceDefinition extends fhir.DomainResource {
   /**
    * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.
    */
-  public specialization?: fhir.DeviceDefinitionSpecialization[];
+  public specialization: fhir.DeviceDefinitionSpecialization[];
   /**
    * The available versions of the device, e.g., software versions.
    */
-  public version?: fhir.FhirString[];
+  public version: fhir.FhirString[];
   /**
    * Safety characteristics of the device.
    */
-  public safety?: fhir.CodeableConcept[];
+  public safety: fhir.CodeableConcept[];
   /**
    * Shelf Life and storage information.
    */
-  public shelfLifeStorage?: fhir.ProductShelfLife[];
+  public shelfLifeStorage: fhir.ProductShelfLife[];
   /**
    * Dimensions, color etc.
    */
@@ -546,15 +550,15 @@ export class DeviceDefinition extends fhir.DomainResource {
   /**
    * Language code for the human-readable text strings produced by the device (all supported).
    */
-  public languageCode?: fhir.CodeableConcept[];
+  public languageCode: fhir.CodeableConcept[];
   /**
    * Device capabilities.
    */
-  public capability?: fhir.DeviceDefinitionCapability[];
+  public capability: fhir.DeviceDefinitionCapability[];
   /**
    * The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties.
    */
-  public property?: fhir.DeviceDefinitionProperty[];
+  public property: fhir.DeviceDefinitionProperty[];
   /**
    * An organization that is responsible for the provision and ongoing maintenance of the device.
    */
@@ -562,7 +566,7 @@ export class DeviceDefinition extends fhir.DomainResource {
   /**
    * used for troubleshooting etc.
    */
-  public contact?: fhir.ContactPoint[];
+  public contact: fhir.ContactPoint[];
   /**
    * If the device is running a FHIR server, the network address should  be the Base URL from which a conformance statement may be retrieved.
    */
@@ -574,7 +578,7 @@ export class DeviceDefinition extends fhir.DomainResource {
   /**
    * Descriptive information, usage information or implantation information that is not captured in an existing element.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * The quantity of the device present in the packaging (e.g. the number of devices present in a pack, or the number of devices in the same package of the medicinal product).
    */
@@ -586,7 +590,7 @@ export class DeviceDefinition extends fhir.DomainResource {
   /**
    * A substance used to create the material(s) of which the device is made.
    */
-  public material?: fhir.DeviceDefinitionMaterial[];
+  public material: fhir.DeviceDefinitionMaterial[];
   /**
    * Default constructor for DeviceDefinition - initializes any required elements to null if a value is not provided.
    */
@@ -637,7 +641,7 @@ export class DeviceDefinition extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"DeviceDefinition" fhir: DeviceDefinition.resourceType:"DeviceDefinition"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"DeviceDefinition" fhir: DeviceDefinition.resourceType:"DeviceDefinition"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["udiDeviceIdentifier"]) { this.udiDeviceIdentifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }

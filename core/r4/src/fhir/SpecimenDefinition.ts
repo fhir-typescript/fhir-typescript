@@ -91,7 +91,7 @@ export class SpecimenDefinitionTypeTestedContainerAdditive extends fhir.Backbone
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['additive']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property additive: fhir: SpecimenDefinition.typeTested.container.additive.additive[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property additive: fhir: SpecimenDefinition.typeTested.container.additive.additive[x]:' });
     }
     return issues;
   }
@@ -181,7 +181,7 @@ export class SpecimenDefinitionTypeTestedContainer extends fhir.BackboneElement 
   /**
    * Substance introduced in the kind of container to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.
    */
-  public additive?: fhir.SpecimenDefinitionTypeTestedContainerAdditive[];
+  public additive: fhir.SpecimenDefinitionTypeTestedContainerAdditive[];
   /**
    * Special processing that should be applied to the container for this kind of specimen.
    */
@@ -301,7 +301,7 @@ export interface SpecimenDefinitionTypeTestedArgs extends fhir.BackboneElementAr
   /**
    * The preference for this type of conditioned specimen.
    */
-  preference: SpecimenContainedPreferenceCodeType|null;
+  preference: fhir.FhirCode<SpecimenContainedPreferenceCodeType>|string|undefined;
   /**
    * The specimen's container.
    */
@@ -343,7 +343,7 @@ export class SpecimenDefinitionTypeTested extends fhir.BackboneElement {
   /**
    * The preference for this type of conditioned specimen.
    */
-  public preference: SpecimenContainedPreferenceCodeType|null;
+  public preference: fhir.FhirCode<SpecimenContainedPreferenceCodeType>|null;
   /**
    * The specimen's container.
    */
@@ -359,11 +359,11 @@ export class SpecimenDefinitionTypeTested extends fhir.BackboneElement {
   /**
    * Criterion for rejection of the specimen in its container by the laboratory.
    */
-  public rejectionCriterion?: fhir.CodeableConcept[];
+  public rejectionCriterion: fhir.CodeableConcept[];
   /**
    * Set of instructions for preservation/transport of the specimen at a defined temperature interval, prior the testing process.
    */
-  public handling?: fhir.SpecimenDefinitionTypeTestedHandling[];
+  public handling: fhir.SpecimenDefinitionTypeTestedHandling[];
   /**
    * Default constructor for SpecimenDefinitionTypeTested - initializes any required elements to null if a value is not provided.
    */
@@ -371,7 +371,7 @@ export class SpecimenDefinitionTypeTested extends fhir.BackboneElement {
     super(source, options);
     if (source['isDerived']) { this.isDerived = new fhir.FhirBoolean({value: source.isDerived}); }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['preference']) { this.preference = source.preference; }
+    if (source['preference']) { this.preference = new fhir.FhirCode<SpecimenContainedPreferenceCodeType>({value: source.preference}); }
     else { this.preference = null; }
     if (source['container']) { this.container = new fhir.SpecimenDefinitionTypeTestedContainer(source.container); }
     if (source['requirement']) { this.requirement = new fhir.FhirString({value: source.requirement}); }
@@ -384,8 +384,8 @@ export class SpecimenDefinitionTypeTested extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for preference (SpecimenDefinition.typeTested.preference)
    */
-  public static preferenceRequiredCoding():SpecimenContainedPreferenceCodingType {
-    return SpecimenContainedPreferenceCodings;
+  public static get preferenceRequiredCodes() {
+    return SpecimenContainedPreferenceCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -395,8 +395,12 @@ export class SpecimenDefinitionTypeTested extends fhir.BackboneElement {
     if (this["isDerived"]) { issues.push(...this.isDerived.doModelValidation()); }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['preference']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property preference:SpecimenContainedPreferenceCodeType fhir: SpecimenDefinition.typeTested.preference:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property preference:fhir.FhirCode<SpecimenContainedPreferenceCodeType> fhir: SpecimenDefinition.typeTested.preference:code' });
     }
+    if (this['preference'] && (!Object.values(SpecimenContainedPreferenceCodes).includes(this.preference as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property preference:fhir.FhirCode<SpecimenContainedPreferenceCodeType> fhir: SpecimenDefinition.typeTested.preference:code Required binding to: SpecimenContainedPreference' });
+    }
+    if (this["preference"]) { issues.push(...this.preference.doModelValidation()); }
     if (this["container"]) { issues.push(...this.container.doModelValidation()); }
     if (this["requirement"]) { issues.push(...this.requirement.doModelValidation()); }
     if (this["retentionTime"]) { issues.push(...this.retentionTime.doModelValidation()); }
@@ -462,7 +466,7 @@ export class SpecimenDefinition extends fhir.DomainResource {
   /**
    * Preparation of the patient for specimen collection.
    */
-  public patientPreparation?: fhir.CodeableConcept[];
+  public patientPreparation: fhir.CodeableConcept[];
   /**
    * Time aspect of specimen collection (duration or offset).
    */
@@ -470,11 +474,11 @@ export class SpecimenDefinition extends fhir.DomainResource {
   /**
    * The action to be performed for collecting the specimen.
    */
-  public collection?: fhir.CodeableConcept[];
+  public collection: fhir.CodeableConcept[];
   /**
    * Specimen conditioned in a container as expected by the testing laboratory.
    */
-  public typeTested?: fhir.SpecimenDefinitionTypeTested[];
+  public typeTested: fhir.SpecimenDefinitionTypeTested[];
   /**
    * Default constructor for SpecimenDefinition - initializes any required elements to null if a value is not provided.
    */
@@ -497,7 +501,7 @@ export class SpecimenDefinition extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"SpecimenDefinition" fhir: SpecimenDefinition.resourceType:"SpecimenDefinition"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"SpecimenDefinition" fhir: SpecimenDefinition.resourceType:"SpecimenDefinition"' });
     }
     if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (this["typeCollected"]) { issues.push(...this.typeCollected.doModelValidation()); }

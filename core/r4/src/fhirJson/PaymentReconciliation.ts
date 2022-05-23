@@ -65,6 +65,10 @@ export interface PaymentReconciliationProcessNote extends fhir.BackboneElement {
    */
   type?: 'display'|'print'|'printoper'|undefined;
   /**
+   * Extended properties for primitive element: PaymentReconciliation.processNote.type
+   */
+  _type?:fhir.FhirElement;
+  /**
    * The explanation or description associated with the processing.
    */
   text?: string|undefined;
@@ -90,6 +94,10 @@ export interface PaymentReconciliation extends fhir.DomainResource {
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
   status: 'active'|'cancelled'|'draft'|'entered-in-error'|null;
+  /**
+   * Extended properties for primitive element: PaymentReconciliation.status
+   */
+  _status?:fhir.FhirElement;
   /**
    * The period of time for which payments have been gathered into this bulk payment for settlement.
    */
@@ -118,6 +126,10 @@ export interface PaymentReconciliation extends fhir.DomainResource {
    * The resource may be used to indicate that: the request has been held (queued) for processing; that it has been processed and errors found (error); that no errors were found and that some of the adjudication has been undertaken (partial) or that all of the adjudication has been undertaken (complete).
    */
   outcome?: 'complete'|'error'|'partial'|'queued'|undefined;
+  /**
+   * Extended properties for primitive element: PaymentReconciliation.outcome
+   */
+  _outcome?:fhir.FhirElement;
   /**
    * A human readable description of the status of the request for the reconciliation.
    */

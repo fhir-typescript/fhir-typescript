@@ -76,7 +76,7 @@ export class UsageContext extends fhir.FhirElement {
   /**
    * Extensible-bound Value Set for code (UsageContext.code)
    */
-  public static codeExtensibleCoding():UsageContextTypeCodingType {
+  public static get codeExtensibleCodings() {
     return UsageContextTypeCodings;
   }
   /**
@@ -85,11 +85,11 @@ export class UsageContext extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.Coding fhir: UsageContext.code:Coding', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.Coding fhir: UsageContext.code:Coding' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value: fhir: UsageContext.value[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value: fhir: UsageContext.value[x]:' });
     }
     return issues;
   }

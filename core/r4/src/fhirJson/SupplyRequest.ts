@@ -53,6 +53,10 @@ export interface SupplyRequest extends fhir.DomainResource {
    */
   status?: 'active'|'cancelled'|'completed'|'draft'|'entered-in-error'|'suspended'|'unknown'|undefined;
   /**
+   * Extended properties for primitive element: SupplyRequest.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Category of supply, e.g.  central, non-stock, etc. This is used to support work flows associated with the supply process.
    */
   category?: fhir.CodeableConcept|undefined;
@@ -60,6 +64,10 @@ export interface SupplyRequest extends fhir.DomainResource {
    * Indicates how quickly this SupplyRequest should be addressed with respect to other requests.
    */
   priority?: 'asap'|'routine'|'stat'|'urgent'|undefined;
+  /**
+   * Extended properties for primitive element: SupplyRequest.priority
+   */
+  _priority?:fhir.FhirElement;
   /**
    * Note that there's a difference between a prescription - an instruction to take a medication, along with a (sometimes) implicit supply, and an explicit request to supply, with no explicit instructions.
    */

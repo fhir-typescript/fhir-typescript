@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { FmStatusCodingType } from '../fhirValueSets/FmStatusCodings.js';
 import { FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
 /**
  * Valid arguments for the PaymentNotice type.
@@ -16,7 +15,7 @@ export interface PaymentNoticeArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: FmStatusCodeType | null;
+    status: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
      * Reference of resource for which payment is being made.
      */
@@ -73,11 +72,11 @@ export declare class PaymentNotice extends fhir.DomainResource {
     /**
      * A unique identifier assigned to this payment notice.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: FmStatusCodeType | null;
+    status: fhir.FhirCode<FmStatusCodeType> | null;
     /**
      * Reference of resource for which payment is being made.
      */
@@ -125,7 +124,12 @@ export declare class PaymentNotice extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (PaymentNotice.status)
      */
-    static statusRequiredCoding(): FmStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Cancelled: "cancelled";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

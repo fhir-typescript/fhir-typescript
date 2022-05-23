@@ -23,6 +23,10 @@ export interface EnrollmentResponse extends fhir.DomainResource {
    */
   status?: 'active'|'cancelled'|'draft'|'entered-in-error'|undefined;
   /**
+   * Extended properties for primitive element: EnrollmentResponse.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Original request resource reference.
    */
   request?: fhir.Reference|undefined;
@@ -30,6 +34,10 @@ export interface EnrollmentResponse extends fhir.DomainResource {
    * Processing status: error, complete.
    */
   outcome?: 'complete'|'error'|'partial'|'queued'|undefined;
+  /**
+   * Extended properties for primitive element: EnrollmentResponse.outcome
+   */
+  _outcome?:fhir.FhirElement;
   /**
    * A description of the status of the adjudication.
    */

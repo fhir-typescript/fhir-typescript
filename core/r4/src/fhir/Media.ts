@@ -50,7 +50,7 @@ export interface MediaArgs extends fhir.DomainResourceArgs {
    * A nominal state-transition diagram can be found in the [[event.html#statemachine | Event pattern]] documentation
    * Unknown does not represent "other" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.
    */
-  status: EventStatusCodeType|null;
+  status: fhir.FhirCode<EventStatusCodeType>|string|undefined;
   /**
    * A code that classifies whether the media is an image, video or audio recording or some other media category.
    */
@@ -149,21 +149,21 @@ export class Media extends fhir.DomainResource {
   /**
    * The identifier label and use can be used to determine what kind of identifier it is.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * A procedure that is fulfilled in whole or in part by the creation of this media.
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * Not to be used to link an event to an Encounter - use Media.encounter for that.
    * [The allowed reference resources may be adjusted as appropriate for the event resource].
    */
-  public partOf?: fhir.Reference[];
+  public partOf: fhir.Reference[];
   /**
    * A nominal state-transition diagram can be found in the [[event.html#statemachine | Event pattern]] documentation
    * Unknown does not represent "other" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.
    */
-  public status: EventStatusCodeType|null;
+  public status: fhir.FhirCode<EventStatusCodeType>|null;
   /**
    * A code that classifies whether the media is an image, video or audio recording or some other media category.
    */
@@ -203,7 +203,7 @@ export class Media extends fhir.DomainResource {
   /**
    * Textual reasons can be captured using reasonCode.text.
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * Only used if not implicit in code found in Observation.code.  In many systems, this may be represented as a related observation instead of an inline component.   
    * If the use case requires BodySite to be handled as a separate resource (e.g. to identify and track separately) then use the standard extension[ bodySite](extension-bodysite.html).
@@ -240,7 +240,7 @@ export class Media extends fhir.DomainResource {
   /**
    * Not to be used for observations, conclusions, etc. Instead use an [Observation](observation.html) based on the Media/ImagingStudy resource.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Default constructor for Media - initializes any required elements to null if a value is not provided.
    */
@@ -253,7 +253,7 @@ export class Media extends fhir.DomainResource {
     else { this.basedOn = []; }
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
     else { this.partOf = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<EventStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['modality']) { this.modality = new fhir.CodeableConcept(source.modality); }
@@ -282,13 +282,13 @@ export class Media extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Media.status)
    */
-  public static statusRequiredCoding():EventStatusCodingType {
-    return EventStatusCodings;
+  public static get statusRequiredCodes() {
+    return EventStatusCodes;
   }
   /**
    * Extensible-bound Value Set for type (Media.type)
    */
-  public static typeExtensibleCoding():MediaTypeCodingType {
+  public static get typeExtensibleCodings() {
     return MediaTypeCodings;
   }
   /**
@@ -297,14 +297,18 @@ export class Media extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Media" fhir: Media.resourceType:"Media"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Media" fhir: Media.resourceType:"Media"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:EventStatusCodeType fhir: Media.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<EventStatusCodeType> fhir: Media.status:code' });
     }
+    if (this['status'] && (!Object.values(EventStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<EventStatusCodeType> fhir: Media.status:code Required binding to: EventStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["modality"]) { issues.push(...this.modality.doModelValidation()); }
     if (this["view"]) { issues.push(...this.view.doModelValidation()); }
@@ -321,7 +325,7 @@ export class Media extends fhir.DomainResource {
     if (this["frames"]) { issues.push(...this.frames.doModelValidation()); }
     if (this["duration"]) { issues.push(...this.duration.doModelValidation()); }
     if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property content:fhir.Attachment fhir: Media.content:Attachment', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content:fhir.Attachment fhir: Media.content:Attachment' });
     }
     if (this["content"]) { issues.push(...this.content.doModelValidation()); }
     if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }

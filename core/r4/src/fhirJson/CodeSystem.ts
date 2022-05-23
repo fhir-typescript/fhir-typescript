@@ -31,6 +31,10 @@ export interface CodeSystemFilter extends fhir.BackboneElement {
    */
   operator: ('='|'descendent-of'|'exists'|'generalizes'|'in'|'is-a'|'is-not-a'|'not-in'|'regex')[]|null;
   /**
+   * Extended properties for primitive element: CodeSystem.filter.operator
+   */
+  _operator?:(fhir.FhirElement|null)[];
+  /**
    * A description of what the value for the filter should be.
    */
   value: string|null;
@@ -72,6 +76,10 @@ export interface CodeSystemProperty extends fhir.BackboneElement {
    * The type of the property value. Properties of type "code" contain a code defined by the code system (e.g. a reference to another defined concept).
    */
   type: 'boolean'|'code'|'Coding'|'dateTime'|'decimal'|'integer'|'string'|null;
+  /**
+   * Extended properties for primitive element: CodeSystem.property.type
+   */
+  _type?:fhir.FhirElement;
 }
 
 /**
@@ -259,6 +267,10 @@ export interface CodeSystem extends fhir.DomainResource {
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
   /**
+   * Extended properties for primitive element: CodeSystem.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Allows filtering of code systems that are appropriate for use versus not.
    */
   experimental?: boolean|undefined;
@@ -339,6 +351,10 @@ export interface CodeSystem extends fhir.DomainResource {
    */
   hierarchyMeaning?: 'classified-with'|'grouped-by'|'is-a'|'part-of'|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.hierarchyMeaning
+   */
+  _hierarchyMeaning?:fhir.FhirElement;
+  /**
    * Note that the code system resource does not define what the compositional grammar is, only whether or not there is one.
    */
   compositional?: boolean|undefined;
@@ -359,6 +375,10 @@ export interface CodeSystem extends fhir.DomainResource {
    * The extent of the content of the code system (the concepts and codes it defines) are represented in this resource instance.
    */
   content: 'complete'|'example'|'fragment'|'not-present'|'supplement'|null;
+  /**
+   * Extended properties for primitive element: CodeSystem.content
+   */
+  _content?:fhir.FhirElement;
   /**
    * The most common use of a code system supplement is to add additional language support.
    */

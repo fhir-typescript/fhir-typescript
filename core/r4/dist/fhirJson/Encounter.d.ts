@@ -8,6 +8,10 @@ export interface EncounterStatusHistory extends fhir.BackboneElement {
      */
     status: 'arrived' | 'cancelled' | 'entered-in-error' | 'finished' | 'in-progress' | 'onleave' | 'planned' | 'triaged' | 'unknown' | null;
     /**
+     * Extended properties for primitive element: Encounter.statusHistory.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * The time that the episode was in the specified status.
      */
     period: fhir.Period | null;
@@ -118,6 +122,10 @@ export interface EncounterLocation extends fhir.BackboneElement {
      */
     status?: 'active' | 'completed' | 'planned' | 'reserved' | undefined;
     /**
+     * Extended properties for primitive element: Encounter.location.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * This information is de-normalized from the Location resource to support the easier understanding of the encounter resource and processing in messaging or query.
      * There may be many levels in the hierachy, and this may only pic specific levels that are required for a specific usage scenario.
      */
@@ -143,6 +151,10 @@ export interface Encounter extends fhir.DomainResource {
      * Note that internal business rules will determine the appropriate transitions that may occur between statuses (and also classes).
      */
     status: 'arrived' | 'cancelled' | 'entered-in-error' | 'finished' | 'in-progress' | 'onleave' | 'planned' | 'triaged' | 'unknown' | null;
+    /**
+     * Extended properties for primitive element: Encounter.status
+     */
+    _status?: fhir.FhirElement;
     /**
      * The current status is always found in the current version of the resource, not the status history.
      */

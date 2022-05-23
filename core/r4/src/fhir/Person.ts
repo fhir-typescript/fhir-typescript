@@ -24,7 +24,7 @@ export interface PersonLinkArgs extends fhir.BackboneElementArgs {
   /**
    * Level of assurance that this link is associated with the target resource.
    */
-  assurance?: IdentityAssuranceLevelCodeType|undefined;
+  assurance?: fhir.FhirCode<IdentityAssuranceLevelCodeType>|string|undefined;
 }
 
 /**
@@ -42,7 +42,7 @@ export class PersonLink extends fhir.BackboneElement {
   /**
    * Level of assurance that this link is associated with the target resource.
    */
-  public assurance?: IdentityAssuranceLevelCodeType|undefined;
+  public assurance?: fhir.FhirCode<IdentityAssuranceLevelCodeType>|undefined;
   /**
    * Default constructor for PersonLink - initializes any required elements to null if a value is not provided.
    */
@@ -50,13 +50,13 @@ export class PersonLink extends fhir.BackboneElement {
     super(source, options);
     if (source['target']) { this.target = new fhir.Reference(source.target); }
     else { this.target = null; }
-    if (source['assurance']) { this.assurance = source.assurance; }
+    if (source['assurance']) { this.assurance = new fhir.FhirCode<IdentityAssuranceLevelCodeType>({value: source.assurance}); }
   }
   /**
    * Required-bound Value Set for assurance (Person.link.assurance)
    */
-  public static assuranceRequiredCoding():IdentityAssuranceLevelCodingType {
-    return IdentityAssuranceLevelCodings;
+  public static get assuranceRequiredCodes() {
+    return IdentityAssuranceLevelCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -64,9 +64,13 @@ export class PersonLink extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['target']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property target:fhir.Reference fhir: Person.link.target:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property target:fhir.Reference fhir: Person.link.target:Reference' });
     }
     if (this["target"]) { issues.push(...this.target.doModelValidation()); }
+    if (this['assurance'] && (!Object.values(IdentityAssuranceLevelCodes).includes(this.assurance as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property assurance?:fhir.FhirCode<IdentityAssuranceLevelCodeType> fhir: Person.link.assurance:code Required binding to: IdentityAssuranceLevel' });
+    }
+    if (this["assurance"]) { issues.push(...this.assurance.doModelValidation()); }
     return issues;
   }
 }
@@ -93,7 +97,7 @@ export interface PersonArgs extends fhir.DomainResourceArgs {
   /**
    * The gender might not match the biological sex as determined by genetics, or the individual's preferred identification. Note that for both humans and particularly animals, there are other legitimate possibilities than M and F, though a clear majority of systems and contexts only support M and F.
    */
-  gender?: AdministrativeGenderCodeType|undefined;
+  gender?: fhir.FhirCode<AdministrativeGenderCodeType>|string|undefined;
   /**
    * At least an estimated year should be provided as a guess if the real DOB is unknown.
    */
@@ -135,19 +139,19 @@ export class Person extends fhir.DomainResource {
   /**
    * Identifier for a person within a particular scope.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Person may have multiple names with different uses or applicable periods.
    */
-  public name?: fhir.HumanName[];
+  public name: fhir.HumanName[];
   /**
    * Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and also to help with identification.
    */
-  public telecom?: fhir.ContactPoint[];
+  public telecom: fhir.ContactPoint[];
   /**
    * The gender might not match the biological sex as determined by genetics, or the individual's preferred identification. Note that for both humans and particularly animals, there are other legitimate possibilities than M and F, though a clear majority of systems and contexts only support M and F.
    */
-  public gender?: AdministrativeGenderCodeType|undefined;
+  public gender?: fhir.FhirCode<AdministrativeGenderCodeType>|undefined;
   /**
    * At least an estimated year should be provided as a guess if the real DOB is unknown.
    */
@@ -155,7 +159,7 @@ export class Person extends fhir.DomainResource {
   /**
    * Person may have multiple addresses with different uses or applicable periods.
    */
-  public address?: fhir.Address[];
+  public address: fhir.Address[];
   /**
    * An image that can be displayed as a thumbnail of the person to enhance the identification of the individual.
    */
@@ -171,7 +175,7 @@ export class Person extends fhir.DomainResource {
   /**
    * Link to a resource that concerns the same actual person.
    */
-  public link?: fhir.PersonLink[];
+  public link: fhir.PersonLink[];
   /**
    * Default constructor for Person - initializes any required elements to null if a value is not provided.
    */
@@ -184,7 +188,7 @@ export class Person extends fhir.DomainResource {
     else { this.name = []; }
     if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
     else { this.telecom = []; }
-    if (source['gender']) { this.gender = source.gender; }
+    if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
     if (source['birthDate']) { this.birthDate = new fhir.FhirDate({value: source.birthDate}); }
     if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x)); }
     else { this.address = []; }
@@ -197,8 +201,8 @@ export class Person extends fhir.DomainResource {
   /**
    * Required-bound Value Set for gender (Person.gender)
    */
-  public static genderRequiredCoding():AdministrativeGenderCodingType {
-    return AdministrativeGenderCodings;
+  public static get genderRequiredCodes() {
+    return AdministrativeGenderCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -206,11 +210,15 @@ export class Person extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Person" fhir: Person.resourceType:"Person"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Person" fhir: Person.resourceType:"Person"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["name"]) { this.name.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender?:fhir.FhirCode<AdministrativeGenderCodeType> fhir: Person.gender:code Required binding to: AdministrativeGender' });
+    }
+    if (this["gender"]) { issues.push(...this.gender.doModelValidation()); }
     if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation()); }
     if (this["address"]) { this.address.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["photo"]) { issues.push(...this.photo.doModelValidation()); }

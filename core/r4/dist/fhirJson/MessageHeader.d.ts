@@ -86,6 +86,10 @@ export interface MessageHeaderResponse extends fhir.BackboneElement {
      */
     code: 'fatal-error' | 'ok' | 'transient-error' | null;
     /**
+     * Extended properties for primitive element: MessageHeader.response.code
+     */
+    _code?: fhir.FhirElement;
+    /**
      * This SHALL be contained in the bundle. If any of the issues are errors, the response code SHALL be an error.
      */
     details?: fhir.Reference | undefined;

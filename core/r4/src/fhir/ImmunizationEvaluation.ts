@@ -36,7 +36,7 @@ export interface ImmunizationEvaluationArgs extends fhir.DomainResourceArgs {
   /**
    * Indicates the current status of the evaluation of the vaccination administration event.
    */
-  status: ImmunizationEvaluationStatusCodeType|null;
+  status: fhir.FhirCode<ImmunizationEvaluationStatusCodeType>|string|undefined;
   /**
    * The individual for whom the evaluation is being done.
    */
@@ -114,11 +114,11 @@ export class ImmunizationEvaluation extends fhir.DomainResource {
   /**
    * A unique identifier assigned to this immunization evaluation record.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Indicates the current status of the evaluation of the vaccination administration event.
    */
-  public status: ImmunizationEvaluationStatusCodeType|null;
+  public status: fhir.FhirCode<ImmunizationEvaluationStatusCodeType>|null;
   /**
    * The individual for whom the evaluation is being done.
    */
@@ -146,7 +146,7 @@ export class ImmunizationEvaluation extends fhir.DomainResource {
   /**
    * Provides an explanation as to why the vaccine administration event is valid or not relative to the published recommendations.
    */
-  public doseStatusReason?: fhir.CodeableConcept[];
+  public doseStatusReason: fhir.CodeableConcept[];
   /**
    * Additional information about the evaluation.
    */
@@ -179,7 +179,7 @@ export class ImmunizationEvaluation extends fhir.DomainResource {
     this.resourceType = 'ImmunizationEvaluation';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<ImmunizationEvaluationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     else { this.patient = null; }
@@ -205,8 +205,8 @@ export class ImmunizationEvaluation extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (ImmunizationEvaluation.status)
    */
-  public static statusRequiredCoding():ImmunizationEvaluationStatusCodingType {
-    return ImmunizationEvaluationStatusCodings;
+  public static get statusRequiredCodes() {
+    return ImmunizationEvaluationStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -214,28 +214,32 @@ export class ImmunizationEvaluation extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ImmunizationEvaluation" fhir: ImmunizationEvaluation.resourceType:"ImmunizationEvaluation"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ImmunizationEvaluation" fhir: ImmunizationEvaluation.resourceType:"ImmunizationEvaluation"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ImmunizationEvaluationStatusCodeType fhir: ImmunizationEvaluation.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ImmunizationEvaluationStatusCodeType> fhir: ImmunizationEvaluation.status:code' });
     }
+    if (this['status'] && (!Object.values(ImmunizationEvaluationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ImmunizationEvaluationStatusCodeType> fhir: ImmunizationEvaluation.status:code Required binding to: ImmunizationEvaluationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: ImmunizationEvaluation.patient:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: ImmunizationEvaluation.patient:Reference' });
     }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["authority"]) { issues.push(...this.authority.doModelValidation()); }
     if (!this['targetDisease']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property targetDisease:fhir.CodeableConcept fhir: ImmunizationEvaluation.targetDisease:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property targetDisease:fhir.CodeableConcept fhir: ImmunizationEvaluation.targetDisease:CodeableConcept' });
     }
     if (this["targetDisease"]) { issues.push(...this.targetDisease.doModelValidation()); }
     if (!this['immunizationEvent']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property immunizationEvent:fhir.Reference fhir: ImmunizationEvaluation.immunizationEvent:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property immunizationEvent:fhir.Reference fhir: ImmunizationEvaluation.immunizationEvent:Reference' });
     }
     if (this["immunizationEvent"]) { issues.push(...this.immunizationEvent.doModelValidation()); }
     if (!this['doseStatus']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property doseStatus:fhir.CodeableConcept fhir: ImmunizationEvaluation.doseStatus:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property doseStatus:fhir.CodeableConcept fhir: ImmunizationEvaluation.doseStatus:CodeableConcept' });
     }
     if (this["doseStatus"]) { issues.push(...this.doseStatus.doModelValidation()); }
     if (this["doseStatusReason"]) { this.doseStatusReason.forEach((x) => { issues.push(...x.doModelValidation()); }) }

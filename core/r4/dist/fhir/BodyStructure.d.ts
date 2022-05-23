@@ -55,7 +55,7 @@ export declare class BodyStructure extends fhir.DomainResource {
     /**
      * Identifier for this instance of the anatomical structure.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because it may be used to mark that the resource was created in error.
      */
@@ -71,7 +71,7 @@ export declare class BodyStructure extends fhir.DomainResource {
     /**
      * Qualifier to refine the anatomical location.  These include qualifiers for laterality, relative location, directionality, number, and plane.
      */
-    locationQualifier?: fhir.CodeableConcept[];
+    locationQualifier: fhir.CodeableConcept[];
     /**
      * This description could include any visual markings used to orientate the viewer e.g. external reference points, special sutures, ink markings.
      */
@@ -79,7 +79,7 @@ export declare class BodyStructure extends fhir.DomainResource {
     /**
      * Image or images used to identify a location.
      */
-    image?: fhir.Attachment[];
+    image: fhir.Attachment[];
     /**
      * The person to which the body site belongs.
      */

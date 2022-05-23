@@ -131,15 +131,15 @@ export interface DeviceRequestArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains the codes cancelled and entered-in-error that mark the request as not currently valid.
    */
-  status?: RequestStatusCodeType|undefined;
+  status?: fhir.FhirCode<RequestStatusCodeType>|string|undefined;
   /**
    * Whether the request is a proposal, plan, an original order or a reflex order.
    */
-  intent: RequestIntentCodeType|null;
+  intent: fhir.FhirCode<RequestIntentCodeType>|string|undefined;
   /**
    * Indicates how quickly the {{title}} should be addressed with respect to other requests.
    */
-  priority?: RequestPriorityCodeType|undefined;
+  priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
   /**
    * The details of the device to be used.
    */
@@ -239,23 +239,23 @@ export class DeviceRequest extends fhir.DomainResource {
   /**
    * Identifiers assigned to this order by the orderer or by the receiver.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Note: This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  public instantiatesCanonical?: fhir.FhirCanonical[];
+  public instantiatesCanonical: fhir.FhirCanonical[];
   /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
-  public instantiatesUri?: fhir.FhirUri[];
+  public instantiatesUri: fhir.FhirUri[];
   /**
    * Plan/proposal/order fulfilled by this request.
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * The request takes the place of the referenced completed or terminated request(s).
    */
-  public priorRequest?: fhir.Reference[];
+  public priorRequest: fhir.Reference[];
   /**
    * Composite request this is part of.
    */
@@ -263,15 +263,15 @@ export class DeviceRequest extends fhir.DomainResource {
   /**
    * This element is labeled as a modifier because the status contains the codes cancelled and entered-in-error that mark the request as not currently valid.
    */
-  public status?: RequestStatusCodeType|undefined;
+  public status?: fhir.FhirCode<RequestStatusCodeType>|undefined;
   /**
    * Whether the request is a proposal, plan, an original order or a reflex order.
    */
-  public intent: RequestIntentCodeType|null;
+  public intent: fhir.FhirCode<RequestIntentCodeType>|null;
   /**
    * Indicates how quickly the {{title}} should be addressed with respect to other requests.
    */
-  public priority?: RequestPriorityCodeType|undefined;
+  public priority?: fhir.FhirCode<RequestPriorityCodeType>|undefined;
   /**
    * The details of the device to be used.
    */
@@ -283,7 +283,7 @@ export class DeviceRequest extends fhir.DomainResource {
   /**
    * Specific parameters for the ordered item.  For example, the prism value for lenses.
    */
-  public parameter?: fhir.DeviceRequestParameter[];
+  public parameter: fhir.DeviceRequestParameter[];
   /**
    * The patient who will use the device.
    */
@@ -319,29 +319,29 @@ export class DeviceRequest extends fhir.DomainResource {
   /**
    * Reason or justification for the use of this device.
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * Reason or justification for the use of this device.
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be required for delivering the requested service.
    */
-  public insurance?: fhir.Reference[];
+  public insurance: fhir.Reference[];
   /**
    * Additional clinical information about the patient that may influence the request fulfilment.  For example, this may include where on the subject's body the device will be used (i.e. the target site).
    */
-  public supportingInfo?: fhir.Reference[];
+  public supportingInfo: fhir.Reference[];
   /**
    * Details about this request that were not represented at all or sufficiently in one of the attributes provided in a class. These may include for example a comment, an instruction, or a note associated with the statement.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * This might not include provenances for all versions of the request - only those deemed "relevant" or important.
    * This SHALL NOT include the Provenance associated with this current version of the resource.  (If that provenance is deemed to be a "relevant" change, it will need to be added as part of a later update.  Until then, it can be queried directly as the Provenance that points to this version using _revinclude
    * All Provenances should have some historical version of this Request as their subject.
    */
-  public relevantHistory?: fhir.Reference[];
+  public relevantHistory: fhir.Reference[];
   /**
    * Default constructor for DeviceRequest - initializes any required elements to null if a value is not provided.
    */
@@ -359,10 +359,10 @@ export class DeviceRequest extends fhir.DomainResource {
     if (source['priorRequest']) { this.priorRequest = source.priorRequest.map((x) => new fhir.Reference(x)); }
     else { this.priorRequest = []; }
     if (source['groupIdentifier']) { this.groupIdentifier = new fhir.Identifier(source.groupIdentifier); }
-    if (source['status']) { this.status = source.status; }
-    if (source['intent']) { this.intent = source.intent; }
+    if (source['status']) { this.status = new fhir.FhirCode<RequestStatusCodeType>({value: source.status}); }
+    if (source['intent']) { this.intent = new fhir.FhirCode<RequestIntentCodeType>({value: source.intent}); }
     else { this.intent = null; }
-    if (source['priority']) { this.priority = source.priority; }
+    if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
     if (source['code']) { this.code = source.code; }
     else if (source['codeReference']) { this.code = new fhir.Reference(source.codeReference); }
     else if (source['codeCodeableConcept']) { this.code = new fhir.CodeableConcept(source.codeCodeableConcept); }
@@ -396,20 +396,20 @@ export class DeviceRequest extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (DeviceRequest.status)
    */
-  public static statusRequiredCoding():RequestStatusCodingType {
-    return RequestStatusCodings;
+  public static get statusRequiredCodes() {
+    return RequestStatusCodes;
   }
   /**
    * Required-bound Value Set for intent (DeviceRequest.intent)
    */
-  public static intentRequiredCoding():RequestIntentCodingType {
-    return RequestIntentCodings;
+  public static get intentRequiredCodes() {
+    return RequestIntentCodes;
   }
   /**
    * Required-bound Value Set for priority (DeviceRequest.priority)
    */
-  public static priorityRequiredCoding():RequestPriorityCodingType {
-    return RequestPriorityCodings;
+  public static get priorityRequiredCodes() {
+    return RequestPriorityCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -417,7 +417,7 @@ export class DeviceRequest extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"DeviceRequest" fhir: DeviceRequest.resourceType:"DeviceRequest"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"DeviceRequest" fhir: DeviceRequest.resourceType:"DeviceRequest"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -425,15 +425,27 @@ export class DeviceRequest extends fhir.DomainResource {
     if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["priorRequest"]) { this.priorRequest.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["groupIdentifier"]) { issues.push(...this.groupIdentifier.doModelValidation()); }
-    if (!this['intent']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property intent:RequestIntentCodeType fhir: DeviceRequest.intent:code', });
+    if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<RequestStatusCodeType> fhir: DeviceRequest.status:code Required binding to: RequestStatus' });
     }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (!this['intent']) {
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent:fhir.FhirCode<RequestIntentCodeType> fhir: DeviceRequest.intent:code' });
+    }
+    if (this['intent'] && (!Object.values(RequestIntentCodes).includes(this.intent as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent:fhir.FhirCode<RequestIntentCodeType> fhir: DeviceRequest.intent:code Required binding to: RequestIntent' });
+    }
+    if (this["intent"]) { issues.push(...this.intent.doModelValidation()); }
+    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority?:fhir.FhirCode<RequestPriorityCodeType> fhir: DeviceRequest.priority:code Required binding to: RequestPriority' });
+    }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code: fhir: DeviceRequest.code[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code: fhir: DeviceRequest.code[x]:' });
     }
     if (this["parameter"]) { this.parameter.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: DeviceRequest.subject:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: DeviceRequest.subject:Reference' });
     }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }

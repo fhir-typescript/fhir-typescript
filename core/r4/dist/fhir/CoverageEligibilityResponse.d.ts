@@ -1,9 +1,6 @@
 import * as fhir from '../fhir.js';
-import { FmStatusCodingType } from '../fhirValueSets/FmStatusCodings.js';
 import { FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
-import { EligibilityresponsePurposeCodingType } from '../fhirValueSets/EligibilityresponsePurposeCodings.js';
 import { EligibilityresponsePurposeCodeType } from '../fhirValueSets/EligibilityresponsePurposeCodes.js';
-import { RemittanceOutcomeCodingType } from '../fhirValueSets/RemittanceOutcomeCodings.js';
 import { RemittanceOutcomeCodeType } from '../fhirValueSets/RemittanceOutcomeCodes.js';
 /**
  * Valid arguments for the CoverageEligibilityResponseInsuranceItemBenefit type.
@@ -163,7 +160,7 @@ export declare class CoverageEligibilityResponseInsuranceItem extends fhir.Backb
     /**
      * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
      */
-    modifier?: fhir.CodeableConcept[];
+    modifier: fhir.CodeableConcept[];
     /**
      * The practitioner who is eligible for the provision of the product or service.
      */
@@ -195,7 +192,7 @@ export declare class CoverageEligibilityResponseInsuranceItem extends fhir.Backb
     /**
      * Benefits used to date.
      */
-    benefit?: fhir.CoverageEligibilityResponseInsuranceItemBenefit[];
+    benefit: fhir.CoverageEligibilityResponseInsuranceItemBenefit[];
     /**
      * A boolean flag indicating whether a preauthorization is required prior to actual service delivery.
      */
@@ -203,7 +200,7 @@ export declare class CoverageEligibilityResponseInsuranceItem extends fhir.Backb
     /**
      * Codes or comments regarding information or actions associated with the preauthorization.
      */
-    authorizationSupporting?: fhir.CodeableConcept[];
+    authorizationSupporting: fhir.CodeableConcept[];
     /**
      * A web location for obtaining requirements or descriptive information regarding the preauthorization.
      */
@@ -261,7 +258,7 @@ export declare class CoverageEligibilityResponseInsurance extends fhir.BackboneE
     /**
      * Benefits and optionally current balances, and authorization details by category or service.
      */
-    item?: fhir.CoverageEligibilityResponseInsuranceItem[];
+    item: fhir.CoverageEligibilityResponseInsuranceItem[];
     /**
      * Default constructor for CoverageEligibilityResponseInsurance - initializes any required elements to null if a value is not provided.
      */
@@ -316,11 +313,11 @@ export interface CoverageEligibilityResponseArgs extends fhir.DomainResourceArgs
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: FmStatusCodeType | null;
+    status: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
      * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
      */
-    purpose: EligibilityresponsePurposeCodeType[] | null;
+    purpose: fhir.FhirCode<EligibilityresponsePurposeCodeType>[] | string[] | undefined;
     /**
      * The party who is the beneficiary of the supplied coverage and for whom eligibility is sought.
      */
@@ -352,7 +349,7 @@ export interface CoverageEligibilityResponseArgs extends fhir.DomainResourceArgs
     /**
      * The resource may be used to indicate that: the request has been held (queued) for processing; that it has been processed and errors found (error); that no errors were found and that some of the adjudication has been undertaken (partial) or that all of the adjudication has been undertaken (complete).
      */
-    outcome: RemittanceOutcomeCodeType | null;
+    outcome: fhir.FhirCode<RemittanceOutcomeCodeType> | string | undefined;
     /**
      * A human readable description of the status of the adjudication.
      */
@@ -393,15 +390,15 @@ export declare class CoverageEligibilityResponse extends fhir.DomainResource {
     /**
      * A unique identifier assigned to this coverage eligiblity request.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: FmStatusCodeType | null;
+    status: fhir.FhirCode<FmStatusCodeType> | null;
     /**
      * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
      */
-    purpose: EligibilityresponsePurposeCodeType[];
+    purpose: fhir.FhirCode<EligibilityresponsePurposeCodeType>[];
     /**
      * The party who is the beneficiary of the supplied coverage and for whom eligibility is sought.
      */
@@ -429,7 +426,7 @@ export declare class CoverageEligibilityResponse extends fhir.DomainResource {
     /**
      * The resource may be used to indicate that: the request has been held (queued) for processing; that it has been processed and errors found (error); that no errors were found and that some of the adjudication has been undertaken (partial) or that all of the adjudication has been undertaken (complete).
      */
-    outcome: RemittanceOutcomeCodeType | null;
+    outcome: fhir.FhirCode<RemittanceOutcomeCodeType> | null;
     /**
      * A human readable description of the status of the adjudication.
      */
@@ -441,7 +438,7 @@ export declare class CoverageEligibilityResponse extends fhir.DomainResource {
     /**
      * All insurance coverages for the patient which may be applicable for reimbursement, of the products and services listed in the claim, are typically provided in the claim to allow insurers to confirm the ordering of the insurance coverages relative to local 'coordination of benefit' rules. One coverage (and only one) with 'focal=true' is to be used in the adjudication of this claim. Coverages appearing before the focal Coverage in the list, and where 'subrogation=false', should provide a reference to the ClaimResponse containing the adjudication results of the prior claim.
      */
-    insurance?: fhir.CoverageEligibilityResponseInsurance[];
+    insurance: fhir.CoverageEligibilityResponseInsurance[];
     /**
      * A reference from the Insurer to which these services pertain to be used on further communication and as proof that the request occurred.
      */
@@ -453,7 +450,7 @@ export declare class CoverageEligibilityResponse extends fhir.DomainResource {
     /**
      * Errors encountered during the processing of the request.
      */
-    error?: fhir.CoverageEligibilityResponseError[];
+    error: fhir.CoverageEligibilityResponseError[];
     /**
      * Default constructor for CoverageEligibilityResponse - initializes any required elements to null if a value is not provided.
      */
@@ -461,15 +458,30 @@ export declare class CoverageEligibilityResponse extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (CoverageEligibilityResponse.status)
      */
-    static statusRequiredCoding(): FmStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Cancelled: "cancelled";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+    };
     /**
      * Required-bound Value Set for purpose (CoverageEligibilityResponse.purpose)
      */
-    static purposeRequiredCoding(): EligibilityresponsePurposeCodingType;
+    static get purposeRequiredCodes(): {
+        readonly CoverageAuthRequirements: "auth-requirements";
+        readonly CoverageBenefits: "benefits";
+        readonly CoverageDiscovery: "discovery";
+        readonly CoverageValidation: "validation";
+    };
     /**
      * Required-bound Value Set for outcome (CoverageEligibilityResponse.outcome)
      */
-    static outcomeRequiredCoding(): RemittanceOutcomeCodingType;
+    static get outcomeRequiredCodes(): {
+        readonly ProcessingComplete: "complete";
+        readonly Error: "error";
+        readonly PartialProcessing: "partial";
+        readonly Queued: "queued";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

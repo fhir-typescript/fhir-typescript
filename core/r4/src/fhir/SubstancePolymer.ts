@@ -102,7 +102,7 @@ export class SubstancePolymerMonomerSet extends fhir.BackboneElement {
   /**
    * Todo.
    */
-  public startingMaterial?: fhir.SubstancePolymerMonomerSetStartingMaterial[];
+  public startingMaterial: fhir.SubstancePolymerMonomerSetStartingMaterial[];
   /**
    * Default constructor for SubstancePolymerMonomerSet - initializes any required elements to null if a value is not provided.
    */
@@ -277,11 +277,11 @@ export class SubstancePolymerRepeatRepeatUnit extends fhir.BackboneElement {
   /**
    * Todo.
    */
-  public degreeOfPolymerisation?: fhir.SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation[];
+  public degreeOfPolymerisation: fhir.SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation[];
   /**
    * Todo.
    */
-  public structuralRepresentation?: fhir.SubstancePolymerRepeatRepeatUnitStructuralRepresentation[];
+  public structuralRepresentation: fhir.SubstancePolymerRepeatRepeatUnitStructuralRepresentation[];
   /**
    * Default constructor for SubstancePolymerRepeatRepeatUnit - initializes any required elements to null if a value is not provided.
    */
@@ -353,7 +353,7 @@ export class SubstancePolymerRepeat extends fhir.BackboneElement {
   /**
    * Todo.
    */
-  public repeatUnit?: fhir.SubstancePolymerRepeatRepeatUnit[];
+  public repeatUnit: fhir.SubstancePolymerRepeatRepeatUnit[];
   /**
    * Default constructor for SubstancePolymerRepeat - initializes any required elements to null if a value is not provided.
    */
@@ -434,19 +434,19 @@ export class SubstancePolymer extends fhir.DomainResource {
   /**
    * Todo.
    */
-  public copolymerConnectivity?: fhir.CodeableConcept[];
+  public copolymerConnectivity: fhir.CodeableConcept[];
   /**
    * Todo.
    */
-  public modification?: fhir.FhirString[];
+  public modification: fhir.FhirString[];
   /**
    * Todo.
    */
-  public monomerSet?: fhir.SubstancePolymerMonomerSet[];
+  public monomerSet: fhir.SubstancePolymerMonomerSet[];
   /**
    * Todo.
    */
-  public repeat?: fhir.SubstancePolymerRepeat[];
+  public repeat: fhir.SubstancePolymerRepeat[];
   /**
    * Default constructor for SubstancePolymer - initializes any required elements to null if a value is not provided.
    */
@@ -470,7 +470,7 @@ export class SubstancePolymer extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"SubstancePolymer" fhir: SubstancePolymer.resourceType:"SubstancePolymer"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"SubstancePolymer" fhir: SubstancePolymer.resourceType:"SubstancePolymer"' });
     }
     if (this["class"]) { issues.push(...this.class.doModelValidation()); }
     if (this["geometry"]) { issues.push(...this.geometry.doModelValidation()); }

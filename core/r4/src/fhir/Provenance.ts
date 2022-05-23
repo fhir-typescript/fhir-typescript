@@ -62,7 +62,7 @@ export class ProvenanceAgent extends fhir.BackboneElement {
   /**
    * For example: doctor, nurse, clerk, etc.
    */
-  public role?: fhir.CodeableConcept[];
+  public role: fhir.CodeableConcept[];
   /**
    * whoIdentity should be used when the agent is not a Resource type.
    */
@@ -86,7 +86,7 @@ export class ProvenanceAgent extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (Provenance.agent.type)
    */
-  public static typeExtensibleCoding():ProvenanceAgentTypeCodingType {
+  public static get typeExtensibleCodings() {
     return ProvenanceAgentTypeCodings;
   }
   /**
@@ -97,7 +97,7 @@ export class ProvenanceAgent extends fhir.BackboneElement {
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["role"]) { this.role.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['who']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property who:fhir.Reference fhir: Provenance.agent.who:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property who:fhir.Reference fhir: Provenance.agent.who:Reference' });
     }
     if (this["who"]) { issues.push(...this.who.doModelValidation()); }
     if (this["onBehalfOf"]) { issues.push(...this.onBehalfOf.doModelValidation()); }
@@ -111,7 +111,7 @@ export interface ProvenanceEntityArgs extends fhir.BackboneElementArgs {
   /**
    * How the entity was used during the activity.
    */
-  role: ProvenanceEntityRoleCodeType|null;
+  role: fhir.FhirCode<ProvenanceEntityRoleCodeType>|string|undefined;
   /**
    * whatIdentity should be used for entities that are not a Resource type.
    */
@@ -133,7 +133,7 @@ export class ProvenanceEntity extends fhir.BackboneElement {
   /**
    * How the entity was used during the activity.
    */
-  public role: ProvenanceEntityRoleCodeType|null;
+  public role: fhir.FhirCode<ProvenanceEntityRoleCodeType>|null;
   /**
    * whatIdentity should be used for entities that are not a Resource type.
    */
@@ -141,13 +141,13 @@ export class ProvenanceEntity extends fhir.BackboneElement {
   /**
    * A usecase where one Provenance.entity.agent is used where the Entity that was used in the creation/updating of the Target, is not in the context of the same custodianship as the Target, and thus the meaning of Provenance.entity.agent is to say that the entity referenced is managed elsewhere and that this Agent provided access to it.  This would be similar to where the Entity being referenced is managed outside FHIR, such as through HL7 v2, v3, or XDS. This might be where the Entity being referenced is managed in another FHIR resource server. Thus it explains the Provenance of that Entity's use in the context of this Provenance activity.
    */
-  public agent?: fhir.ProvenanceAgent[];
+  public agent: fhir.ProvenanceAgent[];
   /**
    * Default constructor for ProvenanceEntity - initializes any required elements to null if a value is not provided.
    */
   constructor(source:Partial<ProvenanceEntityArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['role']) { this.role = source.role; }
+    if (source['role']) { this.role = new fhir.FhirCode<ProvenanceEntityRoleCodeType>({value: source.role}); }
     else { this.role = null; }
     if (source['what']) { this.what = new fhir.Reference(source.what); }
     else { this.what = null; }
@@ -157,8 +157,8 @@ export class ProvenanceEntity extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for role (Provenance.entity.role)
    */
-  public static roleRequiredCoding():ProvenanceEntityRoleCodingType {
-    return ProvenanceEntityRoleCodings;
+  public static get roleRequiredCodes() {
+    return ProvenanceEntityRoleCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -166,10 +166,14 @@ export class ProvenanceEntity extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['role']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property role:ProvenanceEntityRoleCodeType fhir: Provenance.entity.role:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property role:fhir.FhirCode<ProvenanceEntityRoleCodeType> fhir: Provenance.entity.role:code' });
     }
+    if (this['role'] && (!Object.values(ProvenanceEntityRoleCodes).includes(this.role as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property role:fhir.FhirCode<ProvenanceEntityRoleCodeType> fhir: Provenance.entity.role:code Required binding to: ProvenanceEntityRole' });
+    }
+    if (this["role"]) { issues.push(...this.role.doModelValidation()); }
     if (!this['what']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property what:fhir.Reference fhir: Provenance.entity.what:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property what:fhir.Reference fhir: Provenance.entity.what:Reference' });
     }
     if (this["what"]) { issues.push(...this.what.doModelValidation()); }
     if (this["agent"]) { this.agent.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -265,7 +269,7 @@ export class Provenance extends fhir.DomainResource {
   /**
    * For example: Where an OAuth token authorizes, the unique identifier from the OAuth token is placed into the policy element Where a policy engine (e.g. XACML) holds policy logic, the unique policy identifier is placed into the policy element.
    */
-  public policy?: fhir.FhirUri[];
+  public policy: fhir.FhirUri[];
   /**
    * Where the activity occurred, if relevant.
    */
@@ -273,7 +277,7 @@ export class Provenance extends fhir.DomainResource {
   /**
    * The reason that the activity was taking place.
    */
-  public reason?: fhir.CodeableConcept[];
+  public reason: fhir.CodeableConcept[];
   /**
    * An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
    */
@@ -285,11 +289,11 @@ export class Provenance extends fhir.DomainResource {
   /**
    * An entity used in this activity.
    */
-  public entity?: fhir.ProvenanceEntity[];
+  public entity: fhir.ProvenanceEntity[];
   /**
    * A digital signature on the target Reference(s). The signer should match a Provenance.agent. The purpose of the signature is indicated.
    */
-  public signature?: fhir.Signature[];
+  public signature: fhir.Signature[];
   /**
    * Default constructor for Provenance - initializes any required elements to null if a value is not provided.
    */
@@ -319,13 +323,13 @@ export class Provenance extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for reason (Provenance.reason)
    */
-  public static reasonExtensibleCoding():V3PurposeOfUseCodingType {
+  public static get reasonExtensibleCodings() {
     return V3PurposeOfUseCodings;
   }
   /**
    * Extensible-bound Value Set for activity (Provenance.activity)
    */
-  public static activityExtensibleCoding():ProvenanceActivityTypeCodingType {
+  public static get activityExtensibleCodings() {
     return ProvenanceActivityTypeCodings;
   }
   /**
@@ -334,18 +338,18 @@ export class Provenance extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Provenance" fhir: Provenance.resourceType:"Provenance"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Provenance" fhir: Provenance.resourceType:"Provenance"' });
     }
     if (!this['target']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property target:fhir.Reference[] fhir: Provenance.target:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property target:fhir.Reference[] fhir: Provenance.target:Reference' });
     } else if (!Array.isArray(this.target)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property target:fhir.Reference[] fhir: Provenance.target:Reference', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property target:fhir.Reference[] fhir: Provenance.target:Reference' });
     } else if (this.target.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property target:fhir.Reference[] fhir: Provenance.target:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property target:fhir.Reference[] fhir: Provenance.target:Reference' });
     }
     if (this["target"]) { this.target.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['recorded']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property recorded:fhir.FhirInstant fhir: Provenance.recorded:instant', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recorded:fhir.FhirInstant fhir: Provenance.recorded:instant' });
     }
     if (this["recorded"]) { issues.push(...this.recorded.doModelValidation()); }
     if (this["policy"]) { this.policy.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -353,11 +357,11 @@ export class Provenance extends fhir.DomainResource {
     if (this["reason"]) { this.reason.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["activity"]) { issues.push(...this.activity.doModelValidation()); }
     if (!this['agent']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property agent:fhir.ProvenanceAgent[] fhir: Provenance.agent:agent', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property agent:fhir.ProvenanceAgent[] fhir: Provenance.agent:agent' });
     } else if (!Array.isArray(this.agent)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property agent:fhir.ProvenanceAgent[] fhir: Provenance.agent:agent', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property agent:fhir.ProvenanceAgent[] fhir: Provenance.agent:agent' });
     } else if (this.agent.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property agent:fhir.ProvenanceAgent[] fhir: Provenance.agent:agent', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property agent:fhir.ProvenanceAgent[] fhir: Provenance.agent:agent' });
     }
     if (this["agent"]) { this.agent.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["entity"]) { this.entity.forEach((x) => { issues.push(...x.doModelValidation()); }) }

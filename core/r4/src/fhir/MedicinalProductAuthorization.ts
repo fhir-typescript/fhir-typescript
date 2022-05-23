@@ -42,7 +42,7 @@ export class MedicinalProductAuthorizationJurisdictionalAuthorization extends fh
   /**
    * The assigned number for the marketing authorization.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Country of authorization.
    */
@@ -50,7 +50,7 @@ export class MedicinalProductAuthorizationJurisdictionalAuthorization extends fh
   /**
    * Jurisdiction within a country.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * The legal status of supply in a jurisdiction or region.
    */
@@ -142,7 +142,7 @@ export class MedicinalProductAuthorizationProcedure extends fhir.BackboneElement
   /**
    * Applcations submitted to obtain a marketing authorization.
    */
-  public application?: fhir.MedicinalProductAuthorizationProcedure[];
+  public application: fhir.MedicinalProductAuthorizationProcedure[];
   /**
    * Default constructor for MedicinalProductAuthorizationProcedure - initializes any required elements to null if a value is not provided.
    */
@@ -164,7 +164,7 @@ export class MedicinalProductAuthorizationProcedure extends fhir.BackboneElement
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: MedicinalProductAuthorization.procedure.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: MedicinalProductAuthorization.procedure.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["application"]) { this.application.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -260,7 +260,7 @@ export class MedicinalProductAuthorization extends fhir.DomainResource {
   /**
    * Business identifier for the marketing authorization, as assigned by a regulator.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The medicinal product that is being authorized.
    */
@@ -268,11 +268,11 @@ export class MedicinalProductAuthorization extends fhir.DomainResource {
   /**
    * The country in which the marketing authorization has been granted.
    */
-  public country?: fhir.CodeableConcept[];
+  public country: fhir.CodeableConcept[];
   /**
    * Jurisdiction within a country.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * The status of the marketing authorization.
    */
@@ -308,7 +308,7 @@ export class MedicinalProductAuthorization extends fhir.DomainResource {
   /**
    * Authorization in areas within a country.
    */
-  public jurisdictionalAuthorization?: fhir.MedicinalProductAuthorizationJurisdictionalAuthorization[];
+  public jurisdictionalAuthorization: fhir.MedicinalProductAuthorizationJurisdictionalAuthorization[];
   /**
    * Marketing Authorization Holder.
    */
@@ -354,7 +354,7 @@ export class MedicinalProductAuthorization extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicinalProductAuthorization" fhir: MedicinalProductAuthorization.resourceType:"MedicinalProductAuthorization"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicinalProductAuthorization" fhir: MedicinalProductAuthorization.resourceType:"MedicinalProductAuthorization"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }

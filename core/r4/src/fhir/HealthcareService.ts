@@ -92,7 +92,7 @@ export interface HealthcareServiceAvailableTimeArgs extends fhir.BackboneElement
   /**
    * Indicates which days of the week are available between the start and end Times.
    */
-  daysOfWeek?: DaysOfWeekCodeType[]|undefined;
+  daysOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[]|string[]|undefined;
   /**
    * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
    */
@@ -118,7 +118,7 @@ export class HealthcareServiceAvailableTime extends fhir.BackboneElement {
   /**
    * Indicates which days of the week are available between the start and end Times.
    */
-  public daysOfWeek?: DaysOfWeekCodeType[];
+  public daysOfWeek: fhir.FhirCode<DaysOfWeekCodeType>[];
   /**
    * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
    */
@@ -136,7 +136,7 @@ export class HealthcareServiceAvailableTime extends fhir.BackboneElement {
    */
   constructor(source:Partial<HealthcareServiceAvailableTimeArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['daysOfWeek']) { this.daysOfWeek = source.daysOfWeek.map((x) => x); }
+    if (source['daysOfWeek']) { this.daysOfWeek = source.daysOfWeek.map((x) => new fhir.FhirCode<DaysOfWeekCodeType>({value: x})); }
     else { this.daysOfWeek = []; }
     if (source['allDay']) { this.allDay = new fhir.FhirBoolean({value: source.allDay}); }
     if (source['availableStartTime']) { this.availableStartTime = new fhir.FhirTime({value: source.availableStartTime}); }
@@ -145,14 +145,22 @@ export class HealthcareServiceAvailableTime extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for daysOfWeek (HealthcareService.availableTime.daysOfWeek)
    */
-  public static daysOfWeekRequiredCoding():DaysOfWeekCodingType {
-    return DaysOfWeekCodings;
+  public static get daysOfWeekRequiredCodes() {
+    return DaysOfWeekCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this['daysOfWeek']) {
+      this.daysOfWeek.forEach((v) => {
+        if (!Object.values(DaysOfWeekCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property daysOfWeek?:fhir.FhirCode<DaysOfWeekCodeType>[] fhir: HealthcareService.availableTime.daysOfWeek:code Required binding to: DaysOfWeek' });
+        }
+      });
+    }
+    if (this["daysOfWeek"]) { this.daysOfWeek.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["allDay"]) { issues.push(...this.allDay.doModelValidation()); }
     if (this["availableStartTime"]) { issues.push(...this.availableStartTime.doModelValidation()); }
     if (this["availableEndTime"]) { issues.push(...this.availableEndTime.doModelValidation()); }
@@ -204,7 +212,7 @@ export class HealthcareServiceNotAvailable extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['description']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property description:fhir.FhirString fhir: HealthcareService.notAvailable.description:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description:fhir.FhirString fhir: HealthcareService.notAvailable.description:string' });
     }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["during"]) { issues.push(...this.during.doModelValidation()); }
@@ -332,7 +340,7 @@ export class HealthcareService extends fhir.DomainResource {
   /**
    * External identifiers for this item.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because it may be used to mark that the resource was created in error.
    */
@@ -344,19 +352,19 @@ export class HealthcareService extends fhir.DomainResource {
   /**
    * Selecting a Service Category then determines the list of relevant service types that can be selected in the primary service type.
    */
-  public category?: fhir.CodeableConcept[];
+  public category: fhir.CodeableConcept[];
   /**
    * The specific type of service that may be delivered or performed.
    */
-  public type?: fhir.CodeableConcept[];
+  public type: fhir.CodeableConcept[];
   /**
    * Collection of specialties handled by the service site. This is more of a medical term.
    */
-  public specialty?: fhir.CodeableConcept[];
+  public specialty: fhir.CodeableConcept[];
   /**
    * The location(s) where this healthcare service may be provided.
    */
-  public location?: fhir.Reference[];
+  public location: fhir.Reference[];
   /**
    * Further description of the service as it would be presented to a consumer while searching.
    */
@@ -376,35 +384,35 @@ export class HealthcareService extends fhir.DomainResource {
   /**
    * If this is empty, then refer to the location's contacts.
    */
-  public telecom?: fhir.ContactPoint[];
+  public telecom: fhir.ContactPoint[];
   /**
    * The locations referenced by the coverage area can include both specific locations, including areas, and also conceptual domains too (mode = kind), such as a physical area (tri-state area) and some other attribute (covered by Example Care Organization). These types of Locations are often not managed by any specific organization. This could also include generic locations such as "in-home".
    */
-  public coverageArea?: fhir.Reference[];
+  public coverageArea: fhir.Reference[];
   /**
    * The provision means being commissioned by, contractually obliged or financially sourced. Types of costings that may apply to this healthcare service, such if the service may be available for free, some discounts available, or fees apply.
    */
-  public serviceProvisionCode?: fhir.CodeableConcept[];
+  public serviceProvisionCode: fhir.CodeableConcept[];
   /**
    * Does this service have specific eligibility requirements that need to be met in order to use the service?
    */
-  public eligibility?: fhir.HealthcareServiceEligibility[];
+  public eligibility: fhir.HealthcareServiceEligibility[];
   /**
    * Programs are often defined externally to an Organization, commonly by governments; e.g. Home and Community Care Programs, Homeless Program, ….
    */
-  public program?: fhir.CodeableConcept[];
+  public program: fhir.CodeableConcept[];
   /**
    * These could be such things as is wheelchair accessible.
    */
-  public characteristic?: fhir.CodeableConcept[];
+  public characteristic: fhir.CodeableConcept[];
   /**
    * When using this property it indicates that the service is available with this language, it is not derived from the practitioners, and not all are required to use this language, just that this language is available while scheduling.
    */
-  public communication?: fhir.CodeableConcept[];
+  public communication: fhir.CodeableConcept[];
   /**
    * Ways that the service accepts referrals, if this is not provided then it is implied that no referral is required.
    */
-  public referralMethod?: fhir.CodeableConcept[];
+  public referralMethod: fhir.CodeableConcept[];
   /**
    * Indicates whether or not a prospective consumer will require an appointment for a particular service at a site to be provided by the Organization. Indicates if an appointment is required for access to this service.
    */
@@ -412,11 +420,11 @@ export class HealthcareService extends fhir.DomainResource {
   /**
    * More detailed availability information may be provided in associated Schedule/Slot resources.
    */
-  public availableTime?: fhir.HealthcareServiceAvailableTime[];
+  public availableTime: fhir.HealthcareServiceAvailableTime[];
   /**
    * The HealthcareService is not available during this period of time due to the provided reason.
    */
-  public notAvailable?: fhir.HealthcareServiceNotAvailable[];
+  public notAvailable: fhir.HealthcareServiceNotAvailable[];
   /**
    * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
    */
@@ -424,7 +432,7 @@ export class HealthcareService extends fhir.DomainResource {
   /**
    * Technical endpoints providing access to services operated for the specific healthcare services defined at this resource.
    */
-  public endpoint?: fhir.Reference[];
+  public endpoint: fhir.Reference[];
   /**
    * Default constructor for HealthcareService - initializes any required elements to null if a value is not provided.
    */
@@ -475,13 +483,13 @@ export class HealthcareService extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for specialty (HealthcareService.specialty)
    */
-  public static specialtyPreferredCoding():C80PracticeCodesCodingType {
+  public static get specialtyPreferredCodings() {
     return C80PracticeCodesCodings;
   }
   /**
    * Preferred-bound Value Set for communication (HealthcareService.communication)
    */
-  public static communicationPreferredCoding():LanguagesCodingType {
+  public static get communicationPreferredCodings() {
     return LanguagesCodings;
   }
   /**
@@ -490,7 +498,7 @@ export class HealthcareService extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"HealthcareService" fhir: HealthcareService.resourceType:"HealthcareService"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"HealthcareService" fhir: HealthcareService.resourceType:"HealthcareService"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["active"]) { issues.push(...this.active.doModelValidation()); }

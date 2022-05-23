@@ -1,10 +1,5 @@
 import * as fhir from '../fhir.js';
-import { CoverageClassCodingType } from '../fhirValueSets/CoverageClassCodings.js';
-import { CoverageCopayTypeCodingType } from '../fhirValueSets/CoverageCopayTypeCodings.js';
-import { FmStatusCodingType } from '../fhirValueSets/FmStatusCodings.js';
 import { FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
-import { CoverageTypeCodingType } from '../fhirValueSets/CoverageTypeCodings.js';
-import { SubscriberRelationshipCodingType } from '../fhirValueSets/SubscriberRelationshipCodings.js';
 /**
  * Valid arguments for the CoverageClass type.
  */
@@ -49,7 +44,19 @@ export declare class CoverageClass extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for type (Coverage.class.type)
      */
-    static typeExtensibleCoding(): CoverageClassCodingType;
+    static get typeExtensibleCodings(): {
+        readonly Class: fhir.Coding;
+        readonly Group: fhir.Coding;
+        readonly Plan: fhir.Coding;
+        readonly RXBIN: fhir.Coding;
+        readonly RXGroup: fhir.Coding;
+        readonly RXId: fhir.Coding;
+        readonly RXPCN: fhir.Coding;
+        readonly Sequence: fhir.Coding;
+        readonly SubClass: fhir.Coding;
+        readonly SubGroup: fhir.Coding;
+        readonly SubPlan: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -141,7 +148,7 @@ export declare class CoverageCostToBeneficiary extends fhir.BackboneElement {
     /**
      * A suite of codes indicating exceptions or reductions to patient costs and their effective periods.
      */
-    exception?: fhir.CoverageCostToBeneficiaryException[];
+    exception: fhir.CoverageCostToBeneficiaryException[];
     /**
      * Default constructor for CoverageCostToBeneficiary - initializes any required elements to null if a value is not provided.
      */
@@ -149,7 +156,18 @@ export declare class CoverageCostToBeneficiary extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for type (Coverage.costToBeneficiary.type)
      */
-    static typeExtensibleCoding(): CoverageCopayTypeCodingType;
+    static get typeExtensibleCodings(): {
+        readonly CopayAmount: fhir.Coding;
+        readonly CopayPercentage: fhir.Coding;
+        readonly Deductible: fhir.Coding;
+        readonly Emergency: fhir.Coding;
+        readonly GPOfficeVisit: fhir.Coding;
+        readonly InpatientHospital: fhir.Coding;
+        readonly MaximumOutOfPocket: fhir.Coding;
+        readonly SpecialistOfficeVisit: fhir.Coding;
+        readonly TeleVisit: fhir.Coding;
+        readonly UrgentCare: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -170,7 +188,7 @@ export interface CoverageArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains the code entered-in-error that marks the coverage as not currently valid.
      */
-    status: FmStatusCodeType | null;
+    status: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
      * The type of coverage: social program, medical plan, accident coverage (workers compensation, auto), group health or payment by an individual or organization.
      */
@@ -248,11 +266,11 @@ export declare class Coverage extends fhir.DomainResource {
     /**
      * The main (and possibly only) identifier for the coverage - often referred to as a Member Id, Certificate number, Personal Health Number or Case ID. May be constructed as the concatenation of the Coverage.SubscriberID and the Coverage.dependant.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains the code entered-in-error that marks the coverage as not currently valid.
      */
-    status: FmStatusCodeType | null;
+    status: fhir.FhirCode<FmStatusCodeType> | null;
     /**
      * The type of coverage: social program, medical plan, accident coverage (workers compensation, auto), group health or payment by an individual or organization.
      */
@@ -293,7 +311,7 @@ export declare class Coverage extends fhir.DomainResource {
     /**
      * For example may be used to identify a class of coverage or employer group, Policy, Plan.
      */
-    class?: fhir.CoverageClass[];
+    class: fhir.CoverageClass[];
     /**
      * The order of applicability of this coverage relative to other coverages which are currently in force. Note, there may be gaps in the numbering and this does not imply primary, secondary etc. as the specific positioning of coverages depends upon the episode of care.
      */
@@ -305,7 +323,7 @@ export declare class Coverage extends fhir.DomainResource {
     /**
      * For example by knowing the patient visit co-pay, the provider can collect the amount prior to undertaking treatment.
      */
-    costToBeneficiary?: fhir.CoverageCostToBeneficiary[];
+    costToBeneficiary: fhir.CoverageCostToBeneficiary[];
     /**
      * Typically, automotive and worker's compensation policies would be flagged with 'subrogation=true' to enable healthcare payors to collect against accident claims.
      */
@@ -313,7 +331,7 @@ export declare class Coverage extends fhir.DomainResource {
     /**
      * The policy(s) which constitute this insurance coverage.
      */
-    contract?: fhir.Reference[];
+    contract: fhir.Reference[];
     /**
      * Default constructor for Coverage - initializes any required elements to null if a value is not provided.
      */
@@ -321,15 +339,82 @@ export declare class Coverage extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (Coverage.status)
      */
-    static statusRequiredCoding(): FmStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Cancelled: "cancelled";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+    };
     /**
      * Preferred-bound Value Set for type (Coverage.type)
      */
-    static typePreferredCoding(): CoverageTypeCodingType;
+    static get typePreferredCodings(): {
+        readonly AnnuityPolicy: fhir.Coding;
+        readonly Automobile: fhir.Coding;
+        readonly WomenQuoteSCancerDetectionProgram: fhir.Coding;
+        readonly CharityProgram: fhir.Coding;
+        readonly CollisionCoveragePolicy: fhir.Coding;
+        readonly CrimeVictimProgram: fhir.Coding;
+        readonly DentalCarePolicy: fhir.Coding;
+        readonly DentalProgram: fhir.Coding;
+        readonly DisabilityInsurancePolicy: fhir.Coding;
+        readonly DiseaseSpecificPolicy: fhir.Coding;
+        readonly PublicHealthProgram: fhir.Coding;
+        readonly DrugPolicy: fhir.Coding;
+        readonly EmployeeAssistanceProgram: fhir.Coding;
+        readonly ExtendedHealthcare: fhir.Coding;
+        readonly EndRenalProgram: fhir.Coding;
+        readonly EmployeeWelfareBenefitPlanPolicy: fhir.Coding;
+        readonly FlexibleBenefitPlanPolicy: fhir.Coding;
+        readonly GovernmentEmployeeHealthProgram: fhir.Coding;
+        readonly HealthInsurancePlanPolicy: fhir.Coding;
+        readonly HighRiskPoolProgram: fhir.Coding;
+        readonly HIVAIDSProgram: fhir.Coding;
+        readonly HealthMaintenanceOrganizationPolicy: fhir.Coding;
+        readonly HealthSpendingAccount: fhir.Coding;
+        readonly IndigenousPeoplesHealthProgram: fhir.Coding;
+        readonly LifeInsurancePolicy: fhir.Coding;
+        readonly LongTermCarePolicy: fhir.Coding;
+        readonly MandatoryHealthProgram: fhir.Coding;
+        readonly ManagedCarePolicy: fhir.Coding;
+        readonly MentalHealthPolicy: fhir.Coding;
+        readonly MentalHealthProgram: fhir.Coding;
+        readonly MilitaryHealthProgram: fhir.Coding;
+        readonly Pay: fhir.Coding;
+        readonly PropertyAndCasualtyInsurancePolicy: fhir.Coding;
+        readonly PointOfServicePolicy: fhir.Coding;
+        readonly PreferredProviderOrganizationPolicy: fhir.Coding;
+        readonly PublicHealthcare: fhir.Coding;
+        readonly ReinsurancePolicy: fhir.Coding;
+        readonly RetireeHealthProgram: fhir.Coding;
+        readonly SafetyNetClinicProgram: fhir.Coding;
+        readonly SocialServiceProgram: fhir.Coding;
+        readonly SubstanceUsePolicy: fhir.Coding;
+        readonly SubstanceUseProgram: fhir.Coding;
+        readonly SubsidizedHealthProgram: fhir.Coding;
+        readonly SubsidizedManagedCareProgram: fhir.Coding;
+        readonly SubsidizedSupplementalHealthProgram: fhir.Coding;
+        readonly SurplusLineInsurancePolicy: fhir.Coding;
+        readonly TermLifeInsurancePolicy: fhir.Coding;
+        readonly UniversalLifeInsurancePolicy: fhir.Coding;
+        readonly UmbrellaLiabilityInsurancePolicy: fhir.Coding;
+        readonly UninsuredMotoristPolicy: fhir.Coding;
+        readonly VeteranHealthProgram: fhir.Coding;
+        readonly VisionCarePolicy: fhir.Coding;
+        readonly WorkerQuoteSCompensation: fhir.Coding;
+    };
     /**
      * Extensible-bound Value Set for relationship (Coverage.relationship)
      */
-    static relationshipExtensibleCoding(): SubscriberRelationshipCodingType;
+    static get relationshipExtensibleCodings(): {
+        readonly Child: fhir.Coding;
+        readonly CommonLawSpouse: fhir.Coding;
+        readonly InjuredParty: fhir.Coding;
+        readonly Other: fhir.Coding;
+        readonly Parent: fhir.Coding;
+        readonly Self: fhir.Coding;
+        readonly Spouse: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

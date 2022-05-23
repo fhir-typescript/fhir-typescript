@@ -1,12 +1,5 @@
 import * as fhir from '../fhir.js';
-import { VerificationresultValidationStatusCodingType } from '../fhirValueSets/VerificationresultValidationStatusCodings.js';
-import { VerificationresultCanPushUpdatesCodingType } from '../fhirValueSets/VerificationresultCanPushUpdatesCodings.js';
-import { VerificationresultPushTypeAvailableCodingType } from '../fhirValueSets/VerificationresultPushTypeAvailableCodings.js';
-import { VerificationresultNeedCodingType } from '../fhirValueSets/VerificationresultNeedCodings.js';
-import { VerificationresultStatusCodingType } from '../fhirValueSets/VerificationresultStatusCodings.js';
 import { VerificationresultStatusCodeType } from '../fhirValueSets/VerificationresultStatusCodes.js';
-import { VerificationresultValidationTypeCodingType } from '../fhirValueSets/VerificationresultValidationTypeCodings.js';
-import { VerificationresultFailureActionCodingType } from '../fhirValueSets/VerificationresultFailureActionCodings.js';
 /**
  * Valid arguments for the VerificationResultPrimarySource type.
  */
@@ -55,11 +48,11 @@ export declare class VerificationResultPrimarySource extends fhir.BackboneElemen
     /**
      * Type of primary source (License Board; Primary Education; Continuing Education; Postal Service; Relationship owner; Registration Authority; legal source; issuing source; authoritative source).
      */
-    type?: fhir.CodeableConcept[];
+    type: fhir.CodeableConcept[];
     /**
      * Method for communicating with the primary source (manual; API; Push).
      */
-    communicationMethod?: fhir.CodeableConcept[];
+    communicationMethod: fhir.CodeableConcept[];
     /**
      * Status of the validation of the target against the primary source (successful; failed; unknown).
      */
@@ -75,7 +68,7 @@ export declare class VerificationResultPrimarySource extends fhir.BackboneElemen
     /**
      * Type of alerts/updates the primary source can send (specific requested changes; any changes; as defined by source).
      */
-    pushTypeAvailable?: fhir.CodeableConcept[];
+    pushTypeAvailable: fhir.CodeableConcept[];
     /**
      * Default constructor for VerificationResultPrimarySource - initializes any required elements to null if a value is not provided.
      */
@@ -83,15 +76,27 @@ export declare class VerificationResultPrimarySource extends fhir.BackboneElemen
     /**
      * Preferred-bound Value Set for validationStatus (VerificationResult.primarySource.validationStatus)
      */
-    static validationStatusPreferredCoding(): VerificationresultValidationStatusCodingType;
+    static get validationStatusPreferredCodings(): {
+        readonly Failed: fhir.Coding;
+        readonly Successful: fhir.Coding;
+        readonly Unknown: fhir.Coding;
+    };
     /**
      * Preferred-bound Value Set for canPushUpdates (VerificationResult.primarySource.canPushUpdates)
      */
-    static canPushUpdatesPreferredCoding(): VerificationresultCanPushUpdatesCodingType;
+    static get canPushUpdatesPreferredCodings(): {
+        readonly No: fhir.Coding;
+        readonly Undetermined: fhir.Coding;
+        readonly Yes: fhir.Coding;
+    };
     /**
      * Preferred-bound Value Set for pushTypeAvailable (VerificationResult.primarySource.pushTypeAvailable)
      */
-    static pushTypeAvailablePreferredCoding(): VerificationresultPushTypeAvailableCodingType;
+    static get pushTypeAvailablePreferredCodings(): {
+        readonly AnyChanges: fhir.Coding;
+        readonly AsDefinedBySource: fhir.Coding;
+        readonly SpecificRequestedChanges: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -252,7 +257,7 @@ export interface VerificationResultArgs extends fhir.DomainResourceArgs {
     /**
      * The validation status of the target (attested; validated; in process; requires revalidation; validation failed; revalidation failed).
      */
-    status: VerificationresultStatusCodeType | null;
+    status: fhir.FhirCode<VerificationresultStatusCodeType> | string | undefined;
     /**
      * When the validation status was updated.
      */
@@ -309,11 +314,11 @@ export declare class VerificationResult extends fhir.DomainResource {
     /**
      * A resource that was validated.
      */
-    target?: fhir.Reference[];
+    target: fhir.Reference[];
     /**
      * The fhirpath location(s) within the resource that was validated.
      */
-    targetLocation?: fhir.FhirString[];
+    targetLocation: fhir.FhirString[];
     /**
      * The frequency with which the target must be validated (none; initial; periodic).
      */
@@ -321,7 +326,7 @@ export declare class VerificationResult extends fhir.DomainResource {
     /**
      * The validation status of the target (attested; validated; in process; requires revalidation; validation failed; revalidation failed).
      */
-    status: VerificationresultStatusCodeType | null;
+    status: fhir.FhirCode<VerificationresultStatusCodeType> | null;
     /**
      * When the validation status was updated.
      */
@@ -333,7 +338,7 @@ export declare class VerificationResult extends fhir.DomainResource {
     /**
      * The primary process by which the target is validated (edit check; value set; primary source; multiple sources; standalone; in context).
      */
-    validationProcess?: fhir.CodeableConcept[];
+    validationProcess: fhir.CodeableConcept[];
     /**
      * Frequency of revalidation.
      */
@@ -353,7 +358,7 @@ export declare class VerificationResult extends fhir.DomainResource {
     /**
      * Information about the primary source(s) involved in validation.
      */
-    primarySource?: fhir.VerificationResultPrimarySource[];
+    primarySource: fhir.VerificationResultPrimarySource[];
     /**
      * Information about the entity attesting to information.
      */
@@ -361,7 +366,7 @@ export declare class VerificationResult extends fhir.DomainResource {
     /**
      * Information about the entity validating information.
      */
-    validator?: fhir.VerificationResultValidator[];
+    validator: fhir.VerificationResultValidator[];
     /**
      * Default constructor for VerificationResult - initializes any required elements to null if a value is not provided.
      */
@@ -369,19 +374,39 @@ export declare class VerificationResult extends fhir.DomainResource {
     /**
      * Preferred-bound Value Set for need (VerificationResult.need)
      */
-    static needPreferredCoding(): VerificationresultNeedCodingType;
+    static get needPreferredCodings(): {
+        readonly Initial: fhir.Coding;
+        readonly None: fhir.Coding;
+        readonly Periodic: fhir.Coding;
+    };
     /**
      * Required-bound Value Set for status (VerificationResult.status)
      */
-    static statusRequiredCoding(): VerificationresultStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Attested: "attested";
+        readonly InProcess: "in-process";
+        readonly RequiresRevalidation: "req-revalid";
+        readonly ReValidationFailed: "reval-fail";
+        readonly ValidationFailed: "val-fail";
+        readonly Validated: "validated";
+    };
     /**
      * Preferred-bound Value Set for validationType (VerificationResult.validationType)
      */
-    static validationTypePreferredCoding(): VerificationresultValidationTypeCodingType;
+    static get validationTypePreferredCodings(): {
+        readonly MultipleSources: fhir.Coding;
+        readonly Nothing: fhir.Coding;
+        readonly PrimarySource: fhir.Coding;
+    };
     /**
      * Preferred-bound Value Set for failureAction (VerificationResult.failureAction)
      */
-    static failureActionPreferredCoding(): VerificationresultFailureActionCodingType;
+    static get failureActionPreferredCodings(): {
+        readonly Fatal: fhir.Coding;
+        readonly None: fhir.Coding;
+        readonly RecordOnly: fhir.Coding;
+        readonly Warning: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

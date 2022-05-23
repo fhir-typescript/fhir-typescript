@@ -84,11 +84,11 @@ export class CoverageEligibilityRequestSupportingInfo extends fhir.BackboneEleme
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: CoverageEligibilityRequest.supportingInfo.sequence:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: CoverageEligibilityRequest.supportingInfo.sequence:positiveInt' });
     }
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (!this['information']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property information:fhir.Reference fhir: CoverageEligibilityRequest.supportingInfo.information:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property information:fhir.Reference fhir: CoverageEligibilityRequest.supportingInfo.information:Reference' });
     }
     if (this["information"]) { issues.push(...this.information.doModelValidation()); }
     if (this["appliesToAll"]) { issues.push(...this.appliesToAll.doModelValidation()); }
@@ -150,7 +150,7 @@ export class CoverageEligibilityRequestInsurance extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["focal"]) { issues.push(...this.focal.doModelValidation()); }
     if (!this['coverage']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property coverage:fhir.Reference fhir: CoverageEligibilityRequest.insurance.coverage:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property coverage:fhir.Reference fhir: CoverageEligibilityRequest.insurance.coverage:Reference' });
     }
     if (this["coverage"]) { issues.push(...this.coverage.doModelValidation()); }
     if (this["businessArrangement"]) { issues.push(...this.businessArrangement.doModelValidation()); }
@@ -265,7 +265,7 @@ export class CoverageEligibilityRequestItem extends fhir.BackboneElement {
   /**
    * Exceptions, special conditions and supporting information applicable for this service or product line.
    */
-  public supportingInfoSequence?: fhir.FhirPositiveInt[];
+  public supportingInfoSequence: fhir.FhirPositiveInt[];
   /**
    * Examples include Medical Care, Periodontics, Renal Dialysis, Vision Coverage.
    */
@@ -277,7 +277,7 @@ export class CoverageEligibilityRequestItem extends fhir.BackboneElement {
   /**
    * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  public modifier?: fhir.CodeableConcept[];
+  public modifier: fhir.CodeableConcept[];
   /**
    * The practitioner who is responsible for the product or service to be rendered to the patient.
    */
@@ -297,11 +297,11 @@ export class CoverageEligibilityRequestItem extends fhir.BackboneElement {
   /**
    * Patient diagnosis for which care is sought.
    */
-  public diagnosis?: fhir.CoverageEligibilityRequestItemDiagnosis[];
+  public diagnosis: fhir.CoverageEligibilityRequestItemDiagnosis[];
   /**
    * The plan/proposal/order describing the proposed service in detail.
    */
-  public detail?: fhir.Reference[];
+  public detail: fhir.Reference[];
   /**
    * Default constructor for CoverageEligibilityRequestItem - initializes any required elements to null if a value is not provided.
    */
@@ -355,7 +355,7 @@ export interface CoverageEligibilityRequestArgs extends fhir.DomainResourceArgs 
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status: FmStatusCodeType|null;
+  status: fhir.FhirCode<FmStatusCodeType>|string|undefined;
   /**
    * When the requestor expects the processor to complete processing.
    */
@@ -363,7 +363,7 @@ export interface CoverageEligibilityRequestArgs extends fhir.DomainResourceArgs 
   /**
    * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
    */
-  purpose: EligibilityrequestPurposeCodeType[]|null;
+  purpose: fhir.FhirCode<EligibilityrequestPurposeCodeType>[]|string[]|undefined;
   /**
    * 1..1.
    */
@@ -429,11 +429,11 @@ export class CoverageEligibilityRequest extends fhir.DomainResource {
   /**
    * A unique identifier assigned to this coverage eligiblity request.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status: FmStatusCodeType|null;
+  public status: fhir.FhirCode<FmStatusCodeType>|null;
   /**
    * When the requestor expects the processor to complete processing.
    */
@@ -441,7 +441,7 @@ export class CoverageEligibilityRequest extends fhir.DomainResource {
   /**
    * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
    */
-  public purpose: EligibilityrequestPurposeCodeType[];
+  public purpose: fhir.FhirCode<EligibilityrequestPurposeCodeType>[];
   /**
    * 1..1.
    */
@@ -477,15 +477,15 @@ export class CoverageEligibilityRequest extends fhir.DomainResource {
   /**
    * Often there are multiple jurisdiction specific valuesets which are required.
    */
-  public supportingInfo?: fhir.CoverageEligibilityRequestSupportingInfo[];
+  public supportingInfo: fhir.CoverageEligibilityRequestSupportingInfo[];
   /**
    * All insurance coverages for the patient which may be applicable for reimbursement, of the products and services listed in the claim, are typically provided in the claim to allow insurers to confirm the ordering of the insurance coverages relative to local 'coordination of benefit' rules. One coverage (and only one) with 'focal=true' is to be used in the adjudication of this claim. Coverages appearing before the focal Coverage in the list, and where 'subrogation=false', should provide a reference to the ClaimResponse containing the adjudication results of the prior claim.
    */
-  public insurance?: fhir.CoverageEligibilityRequestInsurance[];
+  public insurance: fhir.CoverageEligibilityRequestInsurance[];
   /**
    * Service categories or billable services for which benefit details and/or an authorization prior to service delivery may be required by the payor.
    */
-  public item?: fhir.CoverageEligibilityRequestItem[];
+  public item: fhir.CoverageEligibilityRequestItem[];
   /**
    * Default constructor for CoverageEligibilityRequest - initializes any required elements to null if a value is not provided.
    */
@@ -494,10 +494,10 @@ export class CoverageEligibilityRequest extends fhir.DomainResource {
     this.resourceType = 'CoverageEligibilityRequest';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['priority']) { this.priority = new fhir.CodeableConcept(source.priority); }
-    if (source['purpose']) { this.purpose = source.purpose.map((x) => x); }
+    if (source['purpose']) { this.purpose = source.purpose.map((x) => new fhir.FhirCode<EligibilityrequestPurposeCodeType>({value: x})); }
     else { this.purpose = []; }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     else { this.patient = null; }
@@ -521,14 +521,14 @@ export class CoverageEligibilityRequest extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (CoverageEligibilityRequest.status)
    */
-  public static statusRequiredCoding():FmStatusCodingType {
-    return FmStatusCodings;
+  public static get statusRequiredCodes() {
+    return FmStatusCodes;
   }
   /**
    * Required-bound Value Set for purpose (CoverageEligibilityRequest.purpose)
    */
-  public static purposeRequiredCoding():EligibilityrequestPurposeCodingType {
-    return EligibilityrequestPurposeCodings;
+  public static get purposeRequiredCodes() {
+    return EligibilityrequestPurposeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -536,32 +536,44 @@ export class CoverageEligibilityRequest extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"CoverageEligibilityRequest" fhir: CoverageEligibilityRequest.resourceType:"CoverageEligibilityRequest"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"CoverageEligibilityRequest" fhir: CoverageEligibilityRequest.resourceType:"CoverageEligibilityRequest"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:FmStatusCodeType fhir: CoverageEligibilityRequest.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<FmStatusCodeType> fhir: CoverageEligibilityRequest.status:code' });
     }
+    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<FmStatusCodeType> fhir: CoverageEligibilityRequest.status:code Required binding to: FmStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
     if (!this['purpose']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property purpose:EligibilityrequestPurposeCodeType[] fhir: CoverageEligibilityRequest.purpose:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property purpose:fhir.FhirCode<EligibilityrequestPurposeCodeType>[] fhir: CoverageEligibilityRequest.purpose:code' });
     } else if (!Array.isArray(this.purpose)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property purpose:EligibilityrequestPurposeCodeType[] fhir: CoverageEligibilityRequest.purpose:code', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property purpose:fhir.FhirCode<EligibilityrequestPurposeCodeType>[] fhir: CoverageEligibilityRequest.purpose:code' });
     } else if (this.purpose.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property purpose:EligibilityrequestPurposeCodeType[] fhir: CoverageEligibilityRequest.purpose:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property purpose:fhir.FhirCode<EligibilityrequestPurposeCodeType>[] fhir: CoverageEligibilityRequest.purpose:code' });
     }
+    if (this['purpose']) {
+      this.purpose.forEach((v) => {
+        if (!Object.values(EligibilityrequestPurposeCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property purpose:fhir.FhirCode<EligibilityrequestPurposeCodeType>[] fhir: CoverageEligibilityRequest.purpose:code Required binding to: EligibilityrequestPurpose' });
+        }
+      });
+    }
+    if (this["purpose"]) { this.purpose.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: CoverageEligibilityRequest.patient:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: CoverageEligibilityRequest.patient:Reference' });
     }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
     if (!this['created']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property created:fhir.FhirDateTime fhir: CoverageEligibilityRequest.created:dateTime', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property created:fhir.FhirDateTime fhir: CoverageEligibilityRequest.created:dateTime' });
     }
     if (this["created"]) { issues.push(...this.created.doModelValidation()); }
     if (this["enterer"]) { issues.push(...this.enterer.doModelValidation()); }
     if (this["provider"]) { issues.push(...this.provider.doModelValidation()); }
     if (!this['insurer']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property insurer:fhir.Reference fhir: CoverageEligibilityRequest.insurer:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property insurer:fhir.Reference fhir: CoverageEligibilityRequest.insurer:Reference' });
     }
     if (this["insurer"]) { issues.push(...this.insurer.doModelValidation()); }
     if (this["facility"]) { issues.push(...this.facility.doModelValidation()); }

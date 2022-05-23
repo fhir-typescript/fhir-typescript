@@ -79,16 +79,16 @@ export class MarketingStatus extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['country']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property country:fhir.CodeableConcept fhir: MarketingStatus.country:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property country:fhir.CodeableConcept fhir: MarketingStatus.country:CodeableConcept' });
     }
     if (this["country"]) { issues.push(...this.country.doModelValidation()); }
     if (this["jurisdiction"]) { issues.push(...this.jurisdiction.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:fhir.CodeableConcept fhir: MarketingStatus.status:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.CodeableConcept fhir: MarketingStatus.status:CodeableConcept' });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['dateRange']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property dateRange:fhir.Period fhir: MarketingStatus.dateRange:Period', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property dateRange:fhir.Period fhir: MarketingStatus.dateRange:Period' });
     }
     if (this["dateRange"]) { issues.push(...this.dateRange.doModelValidation()); }
     if (this["restoreDate"]) { issues.push(...this.restoreDate.doModelValidation()); }

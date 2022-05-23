@@ -171,11 +171,11 @@ export declare class SubstanceNucleicAcidSubunit extends fhir.BackboneElement {
     /**
      * The linkages between sugar residues will also be captured.
      */
-    linkage?: fhir.SubstanceNucleicAcidSubunitLinkage[];
+    linkage: fhir.SubstanceNucleicAcidSubunitLinkage[];
     /**
      * 5.3.6.8.1 Sugar ID (Mandatory).
      */
-    sugar?: fhir.SubstanceNucleicAcidSubunitSugar[];
+    sugar: fhir.SubstanceNucleicAcidSubunitSugar[];
     /**
      * Default constructor for SubstanceNucleicAcidSubunit - initializes any required elements to null if a value is not provided.
      */
@@ -245,7 +245,7 @@ export declare class SubstanceNucleicAcid extends fhir.DomainResource {
     /**
      * Subunits are listed in order of decreasing length; sequences of the same length will be ordered by molecular weight; subunits that have identical sequences will be repeated multiple times.
      */
-    subunit?: fhir.SubstanceNucleicAcidSubunit[];
+    subunit: fhir.SubstanceNucleicAcidSubunit[];
     /**
      * Default constructor for SubstanceNucleicAcid - initializes any required elements to null if a value is not provided.
      */

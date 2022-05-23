@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { GuidanceResponseStatusCodingType } from '../fhirValueSets/GuidanceResponseStatusCodings.js';
 import { GuidanceResponseStatusCodeType } from '../fhirValueSets/GuidanceResponseStatusCodes.js';
 /**
  * Valid arguments for the GuidanceResponse type.
@@ -36,7 +35,7 @@ export interface GuidanceResponseArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: GuidanceResponseStatusCodeType | null;
+    status: fhir.FhirCode<GuidanceResponseStatusCodeType> | string | undefined;
     /**
      * The patient for which the request was processed.
      */
@@ -101,7 +100,7 @@ export declare class GuidanceResponse extends fhir.DomainResource {
     /**
      * Allows a service to provide  unique, business identifiers for the response.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * An identifier, CodeableConcept or canonical reference to the guidance that was requested.
      */
@@ -113,7 +112,7 @@ export declare class GuidanceResponse extends fhir.DomainResource {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: GuidanceResponseStatusCodeType | null;
+    status: fhir.FhirCode<GuidanceResponseStatusCodeType> | null;
     /**
      * The patient for which the request was processed.
      */
@@ -133,19 +132,19 @@ export declare class GuidanceResponse extends fhir.DomainResource {
     /**
      * Describes the reason for the guidance response in coded or textual form.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * Indicates the reason the request was initiated. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response.
      */
-    reasonReference?: fhir.Reference[];
+    reasonReference: fhir.Reference[];
     /**
      * Provides a mechanism to communicate additional information about the response.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Messages resulting from the evaluation of the artifact or artifacts. As part of evaluating the request, the engine may produce informational or warning messages. These messages will be provided by this element.
      */
-    evaluationMessage?: fhir.Reference[];
+    evaluationMessage: fhir.Reference[];
     /**
      * The output parameters of the evaluation, if any. Many modules will result in the return of specific resources such as procedure or communication requests that are returned as part of the operation result. However, modules may define specific outputs that would be returned as the result of the evaluation, and these would be returned in this element.
      */
@@ -157,7 +156,7 @@ export declare class GuidanceResponse extends fhir.DomainResource {
     /**
      * If the evaluation could not be completed due to lack of information, or additional information would potentially result in a more accurate response, this element will a description of the data required in order to proceed with the evaluation. A subsequent request to the service should include this data.
      */
-    dataRequirement?: fhir.DataRequirement[];
+    dataRequirement: fhir.DataRequirement[];
     /**
      * Default constructor for GuidanceResponse - initializes any required elements to null if a value is not provided.
      */
@@ -165,7 +164,14 @@ export declare class GuidanceResponse extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (GuidanceResponse.status)
      */
-    static statusRequiredCoding(): GuidanceResponseStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly DataRequested: "data-requested";
+        readonly DataRequired: "data-required";
+        readonly EnteredInError: "entered-in-error";
+        readonly Failure: "failure";
+        readonly InProgress: "in-progress";
+        readonly Success: "success";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

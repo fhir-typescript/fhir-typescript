@@ -45,6 +45,10 @@ export interface EffectEvidenceSynthesisResultsByExposure extends fhir.BackboneE
      */
     exposureState?: 'exposure' | 'exposure-alternative' | undefined;
     /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.resultsByExposure.exposureState
+     */
+    _exposureState?: fhir.FhirElement;
+    /**
      * Used to define variant exposure states such as low-risk state.
      */
     variantState?: fhir.CodeableConcept | undefined;
@@ -207,6 +211,10 @@ export interface EffectEvidenceSynthesis extends fhir.DomainResource {
      * Allows filtering of effect evidence synthesiss that are appropriate for use versus not.
      */
     status: 'active' | 'draft' | 'retired' | 'unknown' | null;
+    /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.status
+     */
+    _status?: fhir.FhirElement;
     /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the effect evidence synthesis. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */

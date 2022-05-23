@@ -56,7 +56,7 @@ export interface CompositionAttesterArgs extends fhir.BackboneElementArgs {
   /**
    * The type of attestation the authenticator offers.
    */
-  mode: CompositionAttestationModeCodeType|null;
+  mode: fhir.FhirCode<CompositionAttestationModeCodeType>|string|undefined;
   /**
    * When the composition was attested by the party.
    */
@@ -78,7 +78,7 @@ export class CompositionAttester extends fhir.BackboneElement {
   /**
    * The type of attestation the authenticator offers.
    */
-  public mode: CompositionAttestationModeCodeType|null;
+  public mode: fhir.FhirCode<CompositionAttestationModeCodeType>|null;
   /**
    * When the composition was attested by the party.
    */
@@ -92,7 +92,7 @@ export class CompositionAttester extends fhir.BackboneElement {
    */
   constructor(source:Partial<CompositionAttesterArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['mode']) { this.mode = source.mode; }
+    if (source['mode']) { this.mode = new fhir.FhirCode<CompositionAttestationModeCodeType>({value: source.mode}); }
     else { this.mode = null; }
     if (source['time']) { this.time = new fhir.FhirDateTime({value: source.time}); }
     if (source['party']) { this.party = new fhir.Reference(source.party); }
@@ -100,8 +100,8 @@ export class CompositionAttester extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for mode (Composition.attester.mode)
    */
-  public static modeRequiredCoding():CompositionAttestationModeCodingType {
-    return CompositionAttestationModeCodings;
+  public static get modeRequiredCodes() {
+    return CompositionAttestationModeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -109,8 +109,12 @@ export class CompositionAttester extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['mode']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property mode:CompositionAttestationModeCodeType fhir: Composition.attester.mode:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode:fhir.FhirCode<CompositionAttestationModeCodeType> fhir: Composition.attester.mode:code' });
     }
+    if (this['mode'] && (!Object.values(CompositionAttestationModeCodes).includes(this.mode as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode:fhir.FhirCode<CompositionAttestationModeCodeType> fhir: Composition.attester.mode:code Required binding to: CompositionAttestationMode' });
+    }
+    if (this["mode"]) { issues.push(...this.mode.doModelValidation()); }
     if (this["time"]) { issues.push(...this.time.doModelValidation()); }
     if (this["party"]) { issues.push(...this.party.doModelValidation()); }
     return issues;
@@ -123,7 +127,7 @@ export interface CompositionRelatesToArgs extends fhir.BackboneElementArgs {
   /**
    * If this document appends another document, then the document cannot be fully understood without also accessing the referenced document.
    */
-  code: DocumentRelationshipTypeCodeType|null;
+  code: fhir.FhirCode<DocumentRelationshipTypeCodeType>|string|undefined;
   /**
    * The target composition/document of this relationship.
    */
@@ -149,7 +153,7 @@ export class CompositionRelatesTo extends fhir.BackboneElement {
   /**
    * If this document appends another document, then the document cannot be fully understood without also accessing the referenced document.
    */
-  public code: DocumentRelationshipTypeCodeType|null;
+  public code: fhir.FhirCode<DocumentRelationshipTypeCodeType>|null;
   /**
    * The target composition/document of this relationship.
    */
@@ -163,7 +167,7 @@ export class CompositionRelatesTo extends fhir.BackboneElement {
    */
   constructor(source:Partial<CompositionRelatesToArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = source.code; }
+    if (source['code']) { this.code = new fhir.FhirCode<DocumentRelationshipTypeCodeType>({value: source.code}); }
     else { this.code = null; }
     if (source['target']) { this.target = source.target; }
     else if (source['targetIdentifier']) { this.target = new fhir.Identifier(source.targetIdentifier); }
@@ -173,8 +177,8 @@ export class CompositionRelatesTo extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for code (Composition.relatesTo.code)
    */
-  public static codeRequiredCoding():DocumentRelationshipTypeCodingType {
-    return DocumentRelationshipTypeCodings;
+  public static get codeRequiredCodes() {
+    return DocumentRelationshipTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -182,10 +186,14 @@ export class CompositionRelatesTo extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:DocumentRelationshipTypeCodeType fhir: Composition.relatesTo.code:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode<DocumentRelationshipTypeCodeType> fhir: Composition.relatesTo.code:code' });
     }
+    if (this['code'] && (!Object.values(DocumentRelationshipTypeCodes).includes(this.code as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode<DocumentRelationshipTypeCodeType> fhir: Composition.relatesTo.code:code Required binding to: DocumentRelationshipType' });
+    }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['target']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property target: fhir: Composition.relatesTo.target[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property target: fhir: Composition.relatesTo.target[x]:' });
     }
     return issues;
   }
@@ -219,7 +227,7 @@ export class CompositionEvent extends fhir.BackboneElement {
   /**
    * An event can further specialize the act inherent in the typeCode, such as where it is simply "Procedure Report" and the procedure was a "colonoscopy". If one or more eventCodes are included, they SHALL NOT conflict with the values inherent in the classCode, practiceSettingCode or typeCode, as such a conflict would create an ambiguous situation. This short list of codes is provided to be used as key words for certain types of queries.
    */
-  public code?: fhir.CodeableConcept[];
+  public code: fhir.CodeableConcept[];
   /**
    * The period of time covered by the documentation. There is no assertion that the documentation is a complete representation for this period, only that it documents events during this time.
    */
@@ -227,7 +235,7 @@ export class CompositionEvent extends fhir.BackboneElement {
   /**
    * The description and/or reference of the event(s) being documented. For example, this could be used to document such a colonoscopy or an appendectomy.
    */
-  public detail?: fhir.Reference[];
+  public detail: fhir.Reference[];
   /**
    * Default constructor for CompositionEvent - initializes any required elements to null if a value is not provided.
    */
@@ -278,7 +286,7 @@ export interface CompositionSectionArgs extends fhir.BackboneElementArgs {
   /**
    * This element is labeled as a modifier because a change list must not be misunderstood as a complete list.
    */
-  mode?: ListModeCodeType|undefined;
+  mode?: fhir.FhirCode<ListModeCodeType>|string|undefined;
   /**
    * Applications SHOULD render ordered lists in the order provided, but MAY allow users to re-order based on their own preferences as well. If there is no order specified, the order is unknown, though there may still be some order.
    */
@@ -317,7 +325,7 @@ export class CompositionSection extends fhir.BackboneElement {
   /**
    * Identifies who is responsible for the information in this section, not necessarily who typed it in.
    */
-  public author?: fhir.Reference[];
+  public author: fhir.Reference[];
   /**
    * Typically, sections in a doument are about the subject of the document, whether that is a  patient, or group of patients, location, or device, or whatever. For some kind of documents, some sections actually contain data about related entities. Typical examples are  a section in a newborn discharge summary concerning the mother, or family history documents, with a section about each family member, though there are many other examples.
    */
@@ -329,7 +337,7 @@ export class CompositionSection extends fhir.BackboneElement {
   /**
    * This element is labeled as a modifier because a change list must not be misunderstood as a complete list.
    */
-  public mode?: ListModeCodeType|undefined;
+  public mode?: fhir.FhirCode<ListModeCodeType>|undefined;
   /**
    * Applications SHOULD render ordered lists in the order provided, but MAY allow users to re-order based on their own preferences as well. If there is no order specified, the order is unknown, though there may still be some order.
    */
@@ -337,7 +345,7 @@ export class CompositionSection extends fhir.BackboneElement {
   /**
    * If there are no entries in the list, an emptyReason SHOULD be provided.
    */
-  public entry?: fhir.Reference[];
+  public entry: fhir.Reference[];
   /**
    * The various reasons for an empty section make a significant interpretation to its interpretation. Note that this code is for use when the entire section content has been suppressed, and not for when individual items are omitted - implementers may consider using a text note or a flag on an entry in these cases.
    */
@@ -345,7 +353,7 @@ export class CompositionSection extends fhir.BackboneElement {
   /**
    * Nested sections are primarily used to help human readers navigate to particular portions of the document.
    */
-  public section?: fhir.CompositionSection[];
+  public section: fhir.CompositionSection[];
   /**
    * Default constructor for CompositionSection - initializes any required elements to null if a value is not provided.
    */
@@ -357,7 +365,7 @@ export class CompositionSection extends fhir.BackboneElement {
     else { this.author = []; }
     if (source['focus']) { this.focus = new fhir.Reference(source.focus); }
     if (source['text']) { this.text = new fhir.Narrative(source.text); }
-    if (source['mode']) { this.mode = source.mode; }
+    if (source['mode']) { this.mode = new fhir.FhirCode<ListModeCodeType>({value: source.mode}); }
     if (source['orderedBy']) { this.orderedBy = new fhir.CodeableConcept(source.orderedBy); }
     if (source['entry']) { this.entry = source.entry.map((x) => new fhir.Reference(x)); }
     else { this.entry = []; }
@@ -368,19 +376,19 @@ export class CompositionSection extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for mode (Composition.section.mode)
    */
-  public static modeRequiredCoding():ListModeCodingType {
-    return ListModeCodings;
+  public static get modeRequiredCodes() {
+    return ListModeCodes;
   }
   /**
    * Preferred-bound Value Set for orderedBy (Composition.section.orderedBy)
    */
-  public static orderedByPreferredCoding():ListOrderCodingType {
+  public static get orderedByPreferredCodings() {
     return ListOrderCodings;
   }
   /**
    * Preferred-bound Value Set for emptyReason (Composition.section.emptyReason)
    */
-  public static emptyReasonPreferredCoding():ListEmptyReasonCodingType {
+  public static get emptyReasonPreferredCodings() {
     return ListEmptyReasonCodings;
   }
   /**
@@ -393,6 +401,10 @@ export class CompositionSection extends fhir.BackboneElement {
     if (this["author"]) { this.author.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["focus"]) { issues.push(...this.focus.doModelValidation()); }
     if (this["text"]) { issues.push(...this.text.doModelValidation()); }
+    if (this['mode'] && (!Object.values(ListModeCodes).includes(this.mode as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode?:fhir.FhirCode<ListModeCodeType> fhir: Composition.section.mode:code Required binding to: ListMode' });
+    }
+    if (this["mode"]) { issues.push(...this.mode.doModelValidation()); }
     if (this["orderedBy"]) { issues.push(...this.orderedBy.doModelValidation()); }
     if (this["entry"]) { this.entry.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["emptyReason"]) { issues.push(...this.emptyReason.doModelValidation()); }
@@ -416,7 +428,7 @@ export interface CompositionArgs extends fhir.DomainResourceArgs {
    * If a composition is marked as withdrawn, the compositions/documents in the series, or data from the composition or document series, should never be displayed to a user without being clearly marked as untrustworthy. The flag "entered-in-error" is why this element is labeled as a modifier of other elements.   
    * Some reporting work flows require that the original narrative of a final document never be altered; instead, only new narrative can be added. The composition resource has no explicit status for explicitly noting whether this business rule is in effect. This would be handled by an extension if required.
    */
-  status: CompositionStatusCodeType|null;
+  status: fhir.FhirCode<CompositionStatusCodeType>|string|undefined;
   /**
    * For Composition type, LOINC is ubiquitous and strongly endorsed by HL7. Most implementation guides will require a specific LOINC code, or use LOINC as an extensible binding.
    */
@@ -491,7 +503,7 @@ export class Composition extends fhir.DomainResource {
    * If a composition is marked as withdrawn, the compositions/documents in the series, or data from the composition or document series, should never be displayed to a user without being clearly marked as untrustworthy. The flag "entered-in-error" is why this element is labeled as a modifier of other elements.   
    * Some reporting work flows require that the original narrative of a final document never be altered; instead, only new narrative can be added. The composition resource has no explicit status for explicitly noting whether this business rule is in effect. This would be handled by an extension if required.
    */
-  public status: CompositionStatusCodeType|null;
+  public status: fhir.FhirCode<CompositionStatusCodeType>|null;
   /**
    * For Composition type, LOINC is ubiquitous and strongly endorsed by HL7. Most implementation guides will require a specific LOINC code, or use LOINC as an extensible binding.
    */
@@ -499,7 +511,7 @@ export class Composition extends fhir.DomainResource {
   /**
    * This is a metadata field from [XDS/MHD](http://wiki.ihe.net/index.php?title=Mobile_access_to_Health_Documents_(MHD)).
    */
-  public category?: fhir.CodeableConcept[];
+  public category: fhir.CodeableConcept[];
   /**
    * For clinical documents, this is usually the patient.
    */
@@ -527,7 +539,7 @@ export class Composition extends fhir.DomainResource {
   /**
    * Only list each attester once.
    */
-  public attester?: fhir.CompositionAttester[];
+  public attester: fhir.CompositionAttester[];
   /**
    * This is useful when documents are derived from a composition - provides guidance for how to get the latest version of the document. This is optional because this is sometimes not known by the authoring system, and can be inferred by context. However, it is important that this information be known when working with a derived document, so providing a custodian is encouraged.
    */
@@ -535,15 +547,15 @@ export class Composition extends fhir.DomainResource {
   /**
    * A document is a version specific composition.
    */
-  public relatesTo?: fhir.CompositionRelatesTo[];
+  public relatesTo: fhir.CompositionRelatesTo[];
   /**
    * The event needs to be consistent with the type element, though can provide further information if desired.
    */
-  public event?: fhir.CompositionEvent[];
+  public event: fhir.CompositionEvent[];
   /**
    * The root of the sections that make up the composition.
    */
-  public section?: fhir.CompositionSection[];
+  public section: fhir.CompositionSection[];
   /**
    * Default constructor for Composition - initializes any required elements to null if a value is not provided.
    */
@@ -551,7 +563,7 @@ export class Composition extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'Composition';
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<CompositionStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     else { this.type = null; }
@@ -579,20 +591,20 @@ export class Composition extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Composition.status)
    */
-  public static statusRequiredCoding():CompositionStatusCodingType {
-    return CompositionStatusCodings;
+  public static get statusRequiredCodes() {
+    return CompositionStatusCodes;
   }
   /**
    * Preferred-bound Value Set for type (Composition.type)
    */
-  public static typePreferredCoding():DocTypecodesCodingType {
+  public static get typePreferredCodings() {
     return DocTypecodesCodings;
   }
   /**
    * Required-bound Value Set for confidentiality (Composition.confidentiality)
    */
-  public static confidentialityRequiredCoding():V3ConfidentialityClassificationCodingType {
-    return V3ConfidentialityClassificationCodings;
+  public static get confidentialityRequiredCodes() {
+    return V3ConfidentialityClassificationCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -600,35 +612,42 @@ export class Composition extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Composition" fhir: Composition.resourceType:"Composition"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Composition" fhir: Composition.resourceType:"Composition"' });
     }
     if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:CompositionStatusCodeType fhir: Composition.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<CompositionStatusCodeType> fhir: Composition.status:code' });
     }
+    if (this['status'] && (!Object.values(CompositionStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<CompositionStatusCodeType> fhir: Composition.status:code Required binding to: CompositionStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Composition.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Composition.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
     if (!this['date']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: Composition.date:dateTime', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: Composition.date:dateTime' });
     }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (!this['author']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property author:fhir.Reference[] fhir: Composition.author:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property author:fhir.Reference[] fhir: Composition.author:Reference' });
     } else if (!Array.isArray(this.author)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property author:fhir.Reference[] fhir: Composition.author:Reference', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property author:fhir.Reference[] fhir: Composition.author:Reference' });
     } else if (this.author.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property author:fhir.Reference[] fhir: Composition.author:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property author:fhir.Reference[] fhir: Composition.author:Reference' });
     }
     if (this["author"]) { this.author.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['title']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property title:fhir.FhirString fhir: Composition.title:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property title:fhir.FhirString fhir: Composition.title:string' });
     }
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
+    if (this['confidentiality'] && (!Object.values(V3ConfidentialityClassificationCodes).includes(this.confidentiality as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property confidentiality?:fhir.FhirCode fhir: Composition.confidentiality:code Required binding to: V3ConfidentialityClassification' });
+    }
     if (this["confidentiality"]) { issues.push(...this.confidentiality.doModelValidation()); }
     if (this["attester"]) { this.attester.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["custodian"]) { issues.push(...this.custodian.doModelValidation()); }

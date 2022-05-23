@@ -153,7 +153,7 @@ export interface GoalArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the lifecycleStatus contains codes that mark the resource as not currently valid.
    */
-  lifecycleStatus: GoalStatusCodeType|null;
+  lifecycleStatus: fhir.FhirCode<GoalStatusCodeType>|string|undefined;
   /**
    * Describes the progression, or lack thereof, towards the goal against the target.
    */
@@ -236,11 +236,11 @@ export class Goal extends fhir.DomainResource {
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the lifecycleStatus contains codes that mark the resource as not currently valid.
    */
-  public lifecycleStatus: GoalStatusCodeType|null;
+  public lifecycleStatus: fhir.FhirCode<GoalStatusCodeType>|null;
   /**
    * Describes the progression, or lack thereof, towards the goal against the target.
    */
@@ -248,7 +248,7 @@ export class Goal extends fhir.DomainResource {
   /**
    * Indicates a category the goal falls within.
    */
-  public category?: fhir.CodeableConcept[];
+  public category: fhir.CodeableConcept[];
   /**
    * Extensions are available to track priorities as established by each participant (i.e. Priority from the patient's perspective, different practitioners' perspectives, family member's perspectives)
    * The ordinal extension on Coding can be used to convey a numerically comparable ranking to priority.  (Keep in mind that different coding systems may use a "low value=important".
@@ -273,7 +273,7 @@ export class Goal extends fhir.DomainResource {
   /**
    * When multiple targets are present for a single goal instance, all targets must be met for the overall goal to be met.
    */
-  public target?: fhir.GoalTarget[];
+  public target: fhir.GoalTarget[];
   /**
    * To see the date for past statuses, query history.
    */
@@ -289,19 +289,19 @@ export class Goal extends fhir.DomainResource {
   /**
    * The identified conditions and other health record elements that are intended to be addressed by the goal.
    */
-  public addresses?: fhir.Reference[];
+  public addresses: fhir.Reference[];
   /**
    * May be used for progress notes, concerns or other related information that doesn't actually describe the goal itself.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Note that this should not duplicate the goal status.
    */
-  public outcomeCode?: fhir.CodeableConcept[];
+  public outcomeCode: fhir.CodeableConcept[];
   /**
    * The goal outcome is independent of the outcome of the related activities.  For example, if the Goal is to achieve a target body weight of 150 lb and a care plan activity is defined to diet, then the care plan’s activity outcome could be calories consumed whereas goal outcome is an observation for the actual body weight measured.
    */
-  public outcomeReference?: fhir.Reference[];
+  public outcomeReference: fhir.Reference[];
   /**
    * Default constructor for Goal - initializes any required elements to null if a value is not provided.
    */
@@ -310,7 +310,7 @@ export class Goal extends fhir.DomainResource {
     this.resourceType = 'Goal';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['lifecycleStatus']) { this.lifecycleStatus = source.lifecycleStatus; }
+    if (source['lifecycleStatus']) { this.lifecycleStatus = new fhir.FhirCode<GoalStatusCodeType>({value: source.lifecycleStatus}); }
     else { this.lifecycleStatus = null; }
     if (source['achievementStatus']) { this.achievementStatus = new fhir.CodeableConcept(source.achievementStatus); }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
@@ -340,19 +340,19 @@ export class Goal extends fhir.DomainResource {
   /**
    * Required-bound Value Set for lifecycleStatus (Goal.lifecycleStatus)
    */
-  public static lifecycleStatusRequiredCoding():GoalStatusCodingType {
-    return GoalStatusCodings;
+  public static get lifecycleStatusRequiredCodes() {
+    return GoalStatusCodes;
   }
   /**
    * Preferred-bound Value Set for achievementStatus (Goal.achievementStatus)
    */
-  public static achievementStatusPreferredCoding():GoalAchievementCodingType {
+  public static get achievementStatusPreferredCodings() {
     return GoalAchievementCodings;
   }
   /**
    * Preferred-bound Value Set for priority (Goal.priority)
    */
-  public static priorityPreferredCoding():GoalPriorityCodingType {
+  public static get priorityPreferredCodings() {
     return GoalPriorityCodings;
   }
   /**
@@ -361,21 +361,25 @@ export class Goal extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Goal" fhir: Goal.resourceType:"Goal"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Goal" fhir: Goal.resourceType:"Goal"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['lifecycleStatus']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property lifecycleStatus:GoalStatusCodeType fhir: Goal.lifecycleStatus:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property lifecycleStatus:fhir.FhirCode<GoalStatusCodeType> fhir: Goal.lifecycleStatus:code' });
     }
+    if (this['lifecycleStatus'] && (!Object.values(GoalStatusCodes).includes(this.lifecycleStatus as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property lifecycleStatus:fhir.FhirCode<GoalStatusCodeType> fhir: Goal.lifecycleStatus:code Required binding to: GoalStatus' });
+    }
+    if (this["lifecycleStatus"]) { issues.push(...this.lifecycleStatus.doModelValidation()); }
     if (this["achievementStatus"]) { issues.push(...this.achievementStatus.doModelValidation()); }
     if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
     if (!this['description']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property description:fhir.CodeableConcept fhir: Goal.description:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description:fhir.CodeableConcept fhir: Goal.description:CodeableConcept' });
     }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: Goal.subject:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: Goal.subject:Reference' });
     }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["target"]) { this.target.forEach((x) => { issues.push(...x.doModelValidation()); }) }

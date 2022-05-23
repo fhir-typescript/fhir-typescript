@@ -62,7 +62,7 @@ export class TerminologyCapabilitiesSoftware extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: TerminologyCapabilities.software.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: TerminologyCapabilities.software.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["version"]) { issues.push(...this.version.doModelValidation()); }
@@ -114,7 +114,7 @@ export class TerminologyCapabilitiesImplementation extends fhir.BackboneElement 
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['description']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property description:fhir.FhirString fhir: TerminologyCapabilities.implementation.description:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description:fhir.FhirString fhir: TerminologyCapabilities.implementation.description:string' });
     }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
@@ -167,15 +167,15 @@ export class TerminologyCapabilitiesCodeSystemVersionFilter extends fhir.Backbon
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.FhirCode fhir: TerminologyCapabilities.codeSystem.version.filter.code:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode fhir: TerminologyCapabilities.codeSystem.version.filter.code:code' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['op']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property op:fhir.FhirCode[] fhir: TerminologyCapabilities.codeSystem.version.filter.op:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property op:fhir.FhirCode[] fhir: TerminologyCapabilities.codeSystem.version.filter.op:code' });
     } else if (!Array.isArray(this.op)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property op:fhir.FhirCode[] fhir: TerminologyCapabilities.codeSystem.version.filter.op:code', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property op:fhir.FhirCode[] fhir: TerminologyCapabilities.codeSystem.version.filter.op:code' });
     } else if (this.op.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property op:fhir.FhirCode[] fhir: TerminologyCapabilities.codeSystem.version.filter.op:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property op:fhir.FhirCode[] fhir: TerminologyCapabilities.codeSystem.version.filter.op:code' });
     }
     if (this["op"]) { this.op.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -234,15 +234,15 @@ export class TerminologyCapabilitiesCodeSystemVersion extends fhir.BackboneEleme
   /**
    * Language Displays supported.
    */
-  public language?: fhir.FhirCode[];
+  public language: fhir.FhirCode[];
   /**
    * Filter Properties supported.
    */
-  public filter?: fhir.TerminologyCapabilitiesCodeSystemVersionFilter[];
+  public filter: fhir.TerminologyCapabilitiesCodeSystemVersionFilter[];
   /**
    * Properties supported for $lookup.
    */
-  public property?: fhir.FhirCode[];
+  public property: fhir.FhirCode[];
   /**
    * Default constructor for TerminologyCapabilitiesCodeSystemVersion - initializes any required elements to null if a value is not provided.
    */
@@ -305,7 +305,7 @@ export class TerminologyCapabilitiesCodeSystem extends fhir.BackboneElement {
   /**
    * Language translations might not be available for all codes.
    */
-  public version?: fhir.TerminologyCapabilitiesCodeSystemVersion[];
+  public version: fhir.TerminologyCapabilitiesCodeSystemVersion[];
   /**
    * True if subsumption is supported for this version of the code system.
    */
@@ -376,7 +376,7 @@ export class TerminologyCapabilitiesExpansionParameter extends fhir.BackboneElem
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirCode fhir: TerminologyCapabilities.expansion.parameter.name:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirCode fhir: TerminologyCapabilities.expansion.parameter.name:code' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
@@ -432,7 +432,7 @@ export class TerminologyCapabilitiesExpansion extends fhir.BackboneElement {
   /**
    * Supported expansion parameter.
    */
-  public parameter?: fhir.TerminologyCapabilitiesExpansionParameter[];
+  public parameter: fhir.TerminologyCapabilitiesExpansionParameter[];
   /**
    * This documentation should cover things like case sensitivity,  use of punctuation if not ignored, what wild cards are supported (if any), whether text is starts with or contains, and whether word order matters.
    */
@@ -498,7 +498,7 @@ export class TerminologyCapabilitiesValidateCode extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['translations']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property translations:fhir.FhirBoolean fhir: TerminologyCapabilities.validateCode.translations:boolean', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property translations:fhir.FhirBoolean fhir: TerminologyCapabilities.validateCode.translations:boolean' });
     }
     if (this["translations"]) { issues.push(...this.translations.doModelValidation()); }
     return issues;
@@ -540,7 +540,7 @@ export class TerminologyCapabilitiesTranslation extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['needsMap']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property needsMap:fhir.FhirBoolean fhir: TerminologyCapabilities.translation.needsMap:boolean', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property needsMap:fhir.FhirBoolean fhir: TerminologyCapabilities.translation.needsMap:boolean' });
     }
     if (this["needsMap"]) { issues.push(...this.needsMap.doModelValidation()); }
     return issues;
@@ -613,7 +613,7 @@ export interface TerminologyCapabilitiesArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of terminology capabilitiess that are appropriate for use versus not.This is not intended for use with actual capability statements, but where capability statements are used to describe possible or desired systems.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of terminology capabilitiess that are appropriate for use versus not.
    */
@@ -653,7 +653,7 @@ export interface TerminologyCapabilitiesArgs extends fhir.DomainResourceArgs {
   /**
    * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
    */
-  kind: CapabilityStatementKindCodeType|null;
+  kind: fhir.FhirCode<CapabilityStatementKindCodeType>|string|undefined;
   /**
    * Software that is covered by this terminology capability statement.  It is used when the statement describes the capabilities of a particular software version, independent of an installation.
    */
@@ -677,7 +677,7 @@ export interface TerminologyCapabilitiesArgs extends fhir.DomainResourceArgs {
   /**
    * See notes on the [ValueSet](valueset.html#) resource.
    */
-  codeSearch?: CodeSearchSupportCodeType|undefined;
+  codeSearch?: fhir.FhirCode<CodeSearchSupportCodeType>|string|undefined;
   /**
    * Information about the [ValueSet/$validate-code](valueset-operation-validate-code.html) operation.
    */
@@ -725,7 +725,7 @@ export class TerminologyCapabilities extends fhir.DomainResource {
   /**
    * Allows filtering of terminology capabilitiess that are appropriate for use versus not.This is not intended for use with actual capability statements, but where capability statements are used to describe possible or desired systems.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of terminology capabilitiess that are appropriate for use versus not.
    */
@@ -741,7 +741,7 @@ export class TerminologyCapabilities extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the terminology capabilities was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the terminology capabilities as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the terminology capabilities is presumed to be the predominant language in the place the terminology capabilities was created).This does not need to be populated if the description is adequately implied by the software or implementation details.
    */
@@ -749,11 +749,11 @@ export class TerminologyCapabilities extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the terminology capabilities to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * This element does not describe the usage of the terminology capabilities. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this terminology capabilities.
    */
@@ -765,7 +765,7 @@ export class TerminologyCapabilities extends fhir.DomainResource {
   /**
    * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
    */
-  public kind: CapabilityStatementKindCodeType|null;
+  public kind: fhir.FhirCode<CapabilityStatementKindCodeType>|null;
   /**
    * Software that is covered by this terminology capability statement.  It is used when the statement describes the capabilities of a particular software version, independent of an installation.
    */
@@ -781,7 +781,7 @@ export class TerminologyCapabilities extends fhir.DomainResource {
   /**
    * The code system - identified by its system URL - may also be declared explicitly as a Code System Resource at /CodeSystem, but it might not be.
    */
-  public codeSystem?: fhir.TerminologyCapabilitiesCodeSystem[];
+  public codeSystem: fhir.TerminologyCapabilitiesCodeSystem[];
   /**
    * Information about the [ValueSet/$expand](valueset-operation-expand.html) operation.
    */
@@ -789,7 +789,7 @@ export class TerminologyCapabilities extends fhir.DomainResource {
   /**
    * See notes on the [ValueSet](valueset.html#) resource.
    */
-  public codeSearch?: CodeSearchSupportCodeType|undefined;
+  public codeSearch?: fhir.FhirCode<CodeSearchSupportCodeType>|undefined;
   /**
    * Information about the [ValueSet/$validate-code](valueset-operation-validate-code.html) operation.
    */
@@ -812,7 +812,7 @@ export class TerminologyCapabilities extends fhir.DomainResource {
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
@@ -827,7 +827,7 @@ export class TerminologyCapabilities extends fhir.DomainResource {
     else { this.jurisdiction = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
-    if (source['kind']) { this.kind = source.kind; }
+    if (source['kind']) { this.kind = new fhir.FhirCode<CapabilityStatementKindCodeType>({value: source.kind}); }
     else { this.kind = null; }
     if (source['software']) { this.software = new fhir.TerminologyCapabilitiesSoftware(source.software); }
     if (source['implementation']) { this.implementation = new fhir.TerminologyCapabilitiesImplementation(source.implementation); }
@@ -835,7 +835,7 @@ export class TerminologyCapabilities extends fhir.DomainResource {
     if (source['codeSystem']) { this.codeSystem = source.codeSystem.map((x) => new fhir.TerminologyCapabilitiesCodeSystem(x)); }
     else { this.codeSystem = []; }
     if (source['expansion']) { this.expansion = new fhir.TerminologyCapabilitiesExpansion(source.expansion); }
-    if (source['codeSearch']) { this.codeSearch = source.codeSearch; }
+    if (source['codeSearch']) { this.codeSearch = new fhir.FhirCode<CodeSearchSupportCodeType>({value: source.codeSearch}); }
     if (source['validateCode']) { this.validateCode = new fhir.TerminologyCapabilitiesValidateCode(source.validateCode); }
     if (source['translation']) { this.translation = new fhir.TerminologyCapabilitiesTranslation(source.translation); }
     if (source['closure']) { this.closure = new fhir.TerminologyCapabilitiesClosure(source.closure); }
@@ -843,20 +843,20 @@ export class TerminologyCapabilities extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (TerminologyCapabilities.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Required-bound Value Set for kind (TerminologyCapabilities.kind)
    */
-  public static kindRequiredCoding():CapabilityStatementKindCodingType {
-    return CapabilityStatementKindCodings;
+  public static get kindRequiredCodes() {
+    return CapabilityStatementKindCodes;
   }
   /**
    * Required-bound Value Set for codeSearch (TerminologyCapabilities.codeSearch)
    */
-  public static codeSearchRequiredCoding():CodeSearchSupportCodingType {
-    return CodeSearchSupportCodings;
+  public static get codeSearchRequiredCodes() {
+    return CodeSearchSupportCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -864,18 +864,22 @@ export class TerminologyCapabilities extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"TerminologyCapabilities" fhir: TerminologyCapabilities.resourceType:"TerminologyCapabilities"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"TerminologyCapabilities" fhir: TerminologyCapabilities.resourceType:"TerminologyCapabilities"' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["version"]) { issues.push(...this.version.doModelValidation()); }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: TerminologyCapabilities.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: TerminologyCapabilities.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: TerminologyCapabilities.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (!this['date']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: TerminologyCapabilities.date:dateTime', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: TerminologyCapabilities.date:dateTime' });
     }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
@@ -886,13 +890,21 @@ export class TerminologyCapabilities extends fhir.DomainResource {
     if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
     if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
     if (!this['kind']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property kind:CapabilityStatementKindCodeType fhir: TerminologyCapabilities.kind:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind:fhir.FhirCode<CapabilityStatementKindCodeType> fhir: TerminologyCapabilities.kind:code' });
     }
+    if (this['kind'] && (!Object.values(CapabilityStatementKindCodes).includes(this.kind as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind:fhir.FhirCode<CapabilityStatementKindCodeType> fhir: TerminologyCapabilities.kind:code Required binding to: CapabilityStatementKind' });
+    }
+    if (this["kind"]) { issues.push(...this.kind.doModelValidation()); }
     if (this["software"]) { issues.push(...this.software.doModelValidation()); }
     if (this["implementation"]) { issues.push(...this.implementation.doModelValidation()); }
     if (this["lockedDate"]) { issues.push(...this.lockedDate.doModelValidation()); }
     if (this["codeSystem"]) { this.codeSystem.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["expansion"]) { issues.push(...this.expansion.doModelValidation()); }
+    if (this['codeSearch'] && (!Object.values(CodeSearchSupportCodes).includes(this.codeSearch as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property codeSearch?:fhir.FhirCode<CodeSearchSupportCodeType> fhir: TerminologyCapabilities.codeSearch:code Required binding to: CodeSearchSupport' });
+    }
+    if (this["codeSearch"]) { issues.push(...this.codeSearch.doModelValidation()); }
     if (this["validateCode"]) { issues.push(...this.validateCode.doModelValidation()); }
     if (this["translation"]) { issues.push(...this.translation.doModelValidation()); }
     if (this["closure"]) { issues.push(...this.closure.doModelValidation()); }

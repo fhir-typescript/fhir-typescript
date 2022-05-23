@@ -50,7 +50,7 @@ export class CompartmentDefinitionResource extends fhir.BackboneElement {
   /**
    * If no search parameters are listed, then the resource is not linked to the compartment.
    */
-  public param?: fhir.FhirString[];
+  public param: fhir.FhirString[];
   /**
    * Additional documentation about the resource and compartment.
    */
@@ -69,8 +69,8 @@ export class CompartmentDefinitionResource extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for code (CompartmentDefinition.resource.code)
    */
-  public static codeRequiredCoding():ResourceTypesCodingType {
-    return ResourceTypesCodings;
+  public static get codeRequiredCodes() {
+    return ResourceTypesCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -78,7 +78,10 @@ export class CompartmentDefinitionResource extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.FhirCode fhir: CompartmentDefinition.resource.code:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode fhir: CompartmentDefinition.resource.code:code' });
+    }
+    if (this['code'] && (!Object.values(ResourceTypesCodes).includes(this.code as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode fhir: CompartmentDefinition.resource.code:code Required binding to: ResourceTypes' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["param"]) { this.param.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -111,7 +114,7 @@ export interface CompartmentDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of compartment definitions that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of compartment definitions that are appropriate for use versus not.
    */
@@ -143,7 +146,7 @@ export interface CompartmentDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * Only the specification can define the compartments that can exist. Servers can choose to support them.
    */
-  code: CompartmentTypeCodeType|null;
+  code: fhir.FhirCode<CompartmentTypeCodeType>|string|undefined;
   /**
    * Servers may define and use compartments to manage logical access without implementing the compartment related syntax.
    */
@@ -183,7 +186,7 @@ export class CompartmentDefinition extends fhir.DomainResource {
   /**
    * Allows filtering of compartment definitions that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of compartment definitions that are appropriate for use versus not.
    */
@@ -199,7 +202,7 @@ export class CompartmentDefinition extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the compartment definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the compartment definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the compartment definition is presumed to be the predominant language in the place the compartment definition was created).
    */
@@ -207,7 +210,7 @@ export class CompartmentDefinition extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * This element does not describe the usage of the compartment definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this compartment definition.
    */
@@ -215,7 +218,7 @@ export class CompartmentDefinition extends fhir.DomainResource {
   /**
    * Only the specification can define the compartments that can exist. Servers can choose to support them.
    */
-  public code: CompartmentTypeCodeType|null;
+  public code: fhir.FhirCode<CompartmentTypeCodeType>|null;
   /**
    * Servers may define and use compartments to manage logical access without implementing the compartment related syntax.
    */
@@ -223,7 +226,7 @@ export class CompartmentDefinition extends fhir.DomainResource {
   /**
    * Information about how a resource is related to the compartment.
    */
-  public resource?: fhir.CompartmentDefinitionResource[];
+  public resource: fhir.CompartmentDefinitionResource[];
   /**
    * Default constructor for CompartmentDefinition - initializes any required elements to null if a value is not provided.
    */
@@ -235,7 +238,7 @@ export class CompartmentDefinition extends fhir.DomainResource {
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
@@ -246,7 +249,7 @@ export class CompartmentDefinition extends fhir.DomainResource {
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
     else { this.useContext = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
-    if (source['code']) { this.code = source.code; }
+    if (source['code']) { this.code = new fhir.FhirCode<CompartmentTypeCodeType>({value: source.code}); }
     else { this.code = null; }
     if (source['search']) { this.search = new fhir.FhirBoolean({value: source.search}); }
     else { this.search = null; }
@@ -256,14 +259,14 @@ export class CompartmentDefinition extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (CompartmentDefinition.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Required-bound Value Set for code (CompartmentDefinition.code)
    */
-  public static codeRequiredCoding():CompartmentTypeCodingType {
-    return CompartmentTypeCodings;
+  public static get codeRequiredCodes() {
+    return CompartmentTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -271,20 +274,24 @@ export class CompartmentDefinition extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"CompartmentDefinition" fhir: CompartmentDefinition.resourceType:"CompartmentDefinition"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"CompartmentDefinition" fhir: CompartmentDefinition.resourceType:"CompartmentDefinition"' });
     }
     if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property url:fhir.FhirUri fhir: CompartmentDefinition.url:uri', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url:fhir.FhirUri fhir: CompartmentDefinition.url:uri' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["version"]) { issues.push(...this.version.doModelValidation()); }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: CompartmentDefinition.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: CompartmentDefinition.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: CompartmentDefinition.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: CompartmentDefinition.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: CompartmentDefinition.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
@@ -293,10 +300,14 @@ export class CompartmentDefinition extends fhir.DomainResource {
     if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:CompartmentTypeCodeType fhir: CompartmentDefinition.code:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode<CompartmentTypeCodeType> fhir: CompartmentDefinition.code:code' });
     }
+    if (this['code'] && (!Object.values(CompartmentTypeCodes).includes(this.code as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode<CompartmentTypeCodeType> fhir: CompartmentDefinition.code:code Required binding to: CompartmentType' });
+    }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['search']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property search:fhir.FhirBoolean fhir: CompartmentDefinition.search:boolean', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property search:fhir.FhirBoolean fhir: CompartmentDefinition.search:boolean' });
     }
     if (this["search"]) { issues.push(...this.search.doModelValidation()); }
     if (this["resource"]) { this.resource.forEach((x) => { issues.push(...x.doModelValidation()); }) }

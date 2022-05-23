@@ -115,11 +115,11 @@ export declare class MedicinalProductName extends fhir.BackboneElement {
     /**
      * Coding words or phrases of the name.
      */
-    namePart?: fhir.MedicinalProductNameNamePart[];
+    namePart: fhir.MedicinalProductNameNamePart[];
     /**
      * Country where the name applies.
      */
-    countryLanguage?: fhir.MedicinalProductNameCountryLanguage[];
+    countryLanguage: fhir.MedicinalProductNameCountryLanguage[];
     /**
      * Default constructor for MedicinalProductName - initializes any required elements to null if a value is not provided.
      */
@@ -185,7 +185,7 @@ export declare class MedicinalProductManufacturingBusinessOperation extends fhir
     /**
      * The manufacturer or establishment associated with the process.
      */
-    manufacturer?: fhir.Reference[];
+    manufacturer: fhir.Reference[];
     /**
      * A regulator which oversees the operation.
      */
@@ -251,7 +251,7 @@ export declare class MedicinalProductSpecialDesignation extends fhir.BackboneEle
     /**
      * Identifier for the designation, or procedure number.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * The type of special designation, e.g. orphan drug, minor use.
      */
@@ -393,7 +393,7 @@ export declare class MedicinalProduct extends fhir.DomainResource {
     /**
      * Business identifier for this product. Could be an MPID.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Regulatory type, e.g. Investigational or Authorized.
      */
@@ -417,7 +417,7 @@ export declare class MedicinalProduct extends fhir.DomainResource {
     /**
      * Whether the Medicinal Product is subject to special measures for regulatory reasons.
      */
-    specialMeasures?: fhir.FhirString[];
+    specialMeasures: fhir.FhirString[];
     /**
      * If authorised for use in children.
      */
@@ -425,35 +425,35 @@ export declare class MedicinalProduct extends fhir.DomainResource {
     /**
      * Allows the product to be classified by various systems.
      */
-    productClassification?: fhir.CodeableConcept[];
+    productClassification: fhir.CodeableConcept[];
     /**
      * Marketing status of the medicinal product, in contrast to marketing authorizaton.
      */
-    marketingStatus?: fhir.MarketingStatus[];
+    marketingStatus: fhir.MarketingStatus[];
     /**
      * Pharmaceutical aspects of product.
      */
-    pharmaceuticalProduct?: fhir.Reference[];
+    pharmaceuticalProduct: fhir.Reference[];
     /**
      * Package representation for the product.
      */
-    packagedMedicinalProduct?: fhir.Reference[];
+    packagedMedicinalProduct: fhir.Reference[];
     /**
      * Supporting documentation, typically for regulatory submission.
      */
-    attachedDocument?: fhir.Reference[];
+    attachedDocument: fhir.Reference[];
     /**
      * A master file for to the medicinal product (e.g. Pharmacovigilance System Master File).
      */
-    masterFile?: fhir.Reference[];
+    masterFile: fhir.Reference[];
     /**
      * A product specific contact, person (in a role), or an organization.
      */
-    contact?: fhir.Reference[];
+    contact: fhir.Reference[];
     /**
      * Clinical trials or studies that this product is involved in.
      */
-    clinicalTrial?: fhir.Reference[];
+    clinicalTrial: fhir.Reference[];
     /**
      * The product's name, including full name and possibly coded parts.
      */
@@ -461,15 +461,15 @@ export declare class MedicinalProduct extends fhir.DomainResource {
     /**
      * Reference to another product, e.g. for linking authorised to investigational product.
      */
-    crossReference?: fhir.Identifier[];
+    crossReference: fhir.Identifier[];
     /**
      * An operation applied to the product, for manufacturing or adminsitrative purpose.
      */
-    manufacturingBusinessOperation?: fhir.MedicinalProductManufacturingBusinessOperation[];
+    manufacturingBusinessOperation: fhir.MedicinalProductManufacturingBusinessOperation[];
     /**
      * Indicates if the medicinal product has an orphan designation for the treatment of a rare disease.
      */
-    specialDesignation?: fhir.MedicinalProductSpecialDesignation[];
+    specialDesignation: fhir.MedicinalProductSpecialDesignation[];
     /**
      * Default constructor for MedicinalProduct - initializes any required elements to null if a value is not provided.
      */

@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { ContactPointSystemCodingType } from '../fhirValueSets/ContactPointSystemCodings.js';
 import { ContactPointSystemCodeType } from '../fhirValueSets/ContactPointSystemCodes.js';
-import { ContactPointUseCodingType } from '../fhirValueSets/ContactPointUseCodings.js';
 import { ContactPointUseCodeType } from '../fhirValueSets/ContactPointUseCodes.js';
 /**
  * Valid arguments for the ContactPoint type.
@@ -10,7 +8,7 @@ export interface ContactPointArgs extends fhir.FhirElementArgs {
     /**
      * Telecommunications form for contact point - what communications system is required to make use of the contact.
      */
-    system?: ContactPointSystemCodeType | undefined;
+    system?: fhir.FhirCode<ContactPointSystemCodeType> | string | undefined;
     /**
      * Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.
      */
@@ -18,7 +16,7 @@ export interface ContactPointArgs extends fhir.FhirElementArgs {
     /**
      * Applications can assume that a contact is current unless it explicitly says that it is temporary or old.
      */
-    use?: ContactPointUseCodeType | undefined;
+    use?: fhir.FhirCode<ContactPointUseCodeType> | string | undefined;
     /**
      * Note that rank does not necessarily follow the order in which the contacts are represented in the instance.
      */
@@ -39,7 +37,7 @@ export declare class ContactPoint extends fhir.FhirElement {
     /**
      * Telecommunications form for contact point - what communications system is required to make use of the contact.
      */
-    system?: ContactPointSystemCodeType | undefined;
+    system?: fhir.FhirCode<ContactPointSystemCodeType> | undefined;
     /**
      * Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.
      */
@@ -47,7 +45,7 @@ export declare class ContactPoint extends fhir.FhirElement {
     /**
      * Applications can assume that a contact is current unless it explicitly says that it is temporary or old.
      */
-    use?: ContactPointUseCodeType | undefined;
+    use?: fhir.FhirCode<ContactPointUseCodeType> | undefined;
     /**
      * Note that rank does not necessarily follow the order in which the contacts are represented in the instance.
      */
@@ -63,11 +61,25 @@ export declare class ContactPoint extends fhir.FhirElement {
     /**
      * Required-bound Value Set for system (ContactPoint.system)
      */
-    static systemRequiredCoding(): ContactPointSystemCodingType;
+    static get systemRequiredCodes(): {
+        readonly Email: "email";
+        readonly Fax: "fax";
+        readonly Other: "other";
+        readonly Pager: "pager";
+        readonly Phone: "phone";
+        readonly SMS: "sms";
+        readonly URL: "url";
+    };
     /**
      * Required-bound Value Set for use (ContactPoint.use)
      */
-    static useRequiredCoding(): ContactPointUseCodingType;
+    static get useRequiredCodes(): {
+        readonly Home: "home";
+        readonly Mobile: "mobile";
+        readonly Old: "old";
+        readonly Temp: "temp";
+        readonly Work: "work";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

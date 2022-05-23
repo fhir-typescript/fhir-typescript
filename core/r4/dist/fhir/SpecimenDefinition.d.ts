@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { SpecimenContainedPreferenceCodingType } from '../fhirValueSets/SpecimenContainedPreferenceCodings.js';
 import { SpecimenContainedPreferenceCodeType } from '../fhirValueSets/SpecimenContainedPreferenceCodes.js';
 /**
  * Valid arguments for the SpecimenDefinitionTypeTestedContainerAdditive type.
@@ -127,7 +126,7 @@ export declare class SpecimenDefinitionTypeTestedContainer extends fhir.Backbone
     /**
      * Substance introduced in the kind of container to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.
      */
-    additive?: fhir.SpecimenDefinitionTypeTestedContainerAdditive[];
+    additive: fhir.SpecimenDefinitionTypeTestedContainerAdditive[];
     /**
      * Special processing that should be applied to the container for this kind of specimen.
      */
@@ -210,7 +209,7 @@ export interface SpecimenDefinitionTypeTestedArgs extends fhir.BackboneElementAr
     /**
      * The preference for this type of conditioned specimen.
      */
-    preference: SpecimenContainedPreferenceCodeType | null;
+    preference: fhir.FhirCode<SpecimenContainedPreferenceCodeType> | string | undefined;
     /**
      * The specimen's container.
      */
@@ -251,7 +250,7 @@ export declare class SpecimenDefinitionTypeTested extends fhir.BackboneElement {
     /**
      * The preference for this type of conditioned specimen.
      */
-    preference: SpecimenContainedPreferenceCodeType | null;
+    preference: fhir.FhirCode<SpecimenContainedPreferenceCodeType> | null;
     /**
      * The specimen's container.
      */
@@ -267,11 +266,11 @@ export declare class SpecimenDefinitionTypeTested extends fhir.BackboneElement {
     /**
      * Criterion for rejection of the specimen in its container by the laboratory.
      */
-    rejectionCriterion?: fhir.CodeableConcept[];
+    rejectionCriterion: fhir.CodeableConcept[];
     /**
      * Set of instructions for preservation/transport of the specimen at a defined temperature interval, prior the testing process.
      */
-    handling?: fhir.SpecimenDefinitionTypeTestedHandling[];
+    handling: fhir.SpecimenDefinitionTypeTestedHandling[];
     /**
      * Default constructor for SpecimenDefinitionTypeTested - initializes any required elements to null if a value is not provided.
      */
@@ -279,7 +278,10 @@ export declare class SpecimenDefinitionTypeTested extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for preference (SpecimenDefinition.typeTested.preference)
      */
-    static preferenceRequiredCoding(): SpecimenContainedPreferenceCodingType;
+    static get preferenceRequiredCodes(): {
+        readonly Alternate: "alternate";
+        readonly Preferred: "preferred";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -341,7 +343,7 @@ export declare class SpecimenDefinition extends fhir.DomainResource {
     /**
      * Preparation of the patient for specimen collection.
      */
-    patientPreparation?: fhir.CodeableConcept[];
+    patientPreparation: fhir.CodeableConcept[];
     /**
      * Time aspect of specimen collection (duration or offset).
      */
@@ -349,11 +351,11 @@ export declare class SpecimenDefinition extends fhir.DomainResource {
     /**
      * The action to be performed for collecting the specimen.
      */
-    collection?: fhir.CodeableConcept[];
+    collection: fhir.CodeableConcept[];
     /**
      * Specimen conditioned in a container as expected by the testing laboratory.
      */
-    typeTested?: fhir.SpecimenDefinitionTypeTested[];
+    typeTested: fhir.SpecimenDefinitionTypeTested[];
     /**
      * Default constructor for SpecimenDefinition - initializes any required elements to null if a value is not provided.
      */

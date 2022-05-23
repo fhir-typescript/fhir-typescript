@@ -75,7 +75,7 @@ export class MedicationDispensePerformer extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["function"]) { issues.push(...this.function.doModelValidation()); }
     if (!this['actor']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actor:fhir.Reference fhir: MedicationDispense.performer.actor:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor:fhir.Reference fhir: MedicationDispense.performer.actor:Reference' });
     }
     if (this["actor"]) { issues.push(...this.actor.doModelValidation()); }
     return issues;
@@ -122,11 +122,11 @@ export class MedicationDispenseSubstitution extends fhir.BackboneElement {
   /**
    * Indicates the reason for the substitution (or lack of substitution) from what was prescribed.
    */
-  public reason?: fhir.CodeableConcept[];
+  public reason: fhir.CodeableConcept[];
   /**
    * The person or organization that has primary responsibility for the substitution.
    */
-  public responsibleParty?: fhir.Reference[];
+  public responsibleParty: fhir.Reference[];
   /**
    * Default constructor for MedicationDispenseSubstitution - initializes any required elements to null if a value is not provided.
    */
@@ -146,7 +146,7 @@ export class MedicationDispenseSubstitution extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['wasSubstituted']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property wasSubstituted:fhir.FhirBoolean fhir: MedicationDispense.substitution.wasSubstituted:boolean', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property wasSubstituted:fhir.FhirBoolean fhir: MedicationDispense.substitution.wasSubstituted:boolean' });
     }
     if (this["wasSubstituted"]) { issues.push(...this.wasSubstituted.doModelValidation()); }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
@@ -174,7 +174,7 @@ export interface MedicationDispenseArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status: MedicationdispenseStatusCodeType|null;
+  status: fhir.FhirCode<MedicationdispenseStatusCodeType>|string|undefined;
   /**
    * Indicates the reason why a dispense was not performed.
    */
@@ -293,15 +293,15 @@ export class MedicationDispense extends fhir.DomainResource {
   /**
    * This is a business identifier, not a resource identifier.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The procedure that trigger the dispense.
    */
-  public partOf?: fhir.Reference[];
+  public partOf: fhir.Reference[];
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status: MedicationdispenseStatusCodeType|null;
+  public status: fhir.FhirCode<MedicationdispenseStatusCodeType>|null;
   /**
    * Indicates the reason why a dispense was not performed.
    */
@@ -333,11 +333,11 @@ export class MedicationDispense extends fhir.DomainResource {
   /**
    * Additional information that supports the medication being dispensed.
    */
-  public supportingInformation?: fhir.Reference[];
+  public supportingInformation: fhir.Reference[];
   /**
    * Indicates who or what performed the event.
    */
-  public performer?: fhir.MedicationDispensePerformer[];
+  public performer: fhir.MedicationDispensePerformer[];
   /**
    * The principal physical location where the dispense was performed.
    */
@@ -345,7 +345,7 @@ export class MedicationDispense extends fhir.DomainResource {
   /**
    * Maps to basedOn in Event logical model.
    */
-  public authorizingPrescription?: fhir.Reference[];
+  public authorizingPrescription: fhir.Reference[];
   /**
    * Indicates the type of dispensing event that is performed. For example, Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
    */
@@ -373,16 +373,16 @@ export class MedicationDispense extends fhir.DomainResource {
   /**
    * Identifies the person who picked up the medication.  This will usually be a patient or their caregiver, but some cases exist where it can be a healthcare professional.
    */
-  public receiver?: fhir.Reference[];
+  public receiver: fhir.Reference[];
   /**
    * Extra information about the dispense that could not be conveyed in the other attributes.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * When the dose or rate is intended to change over the entire administration period (e.g. Tapering dose prescriptions), multiple instances of dosage instructions will need to be supplied to convey the different doses/rates.
    * The pharmacist reviews the medication order prior to dispense and updates the dosageInstruction based on the actual product being dispensed.
    */
-  public dosageInstruction?: fhir.Dosage[];
+  public dosageInstruction: fhir.Dosage[];
   /**
    * Indicates whether or not substitution was made as part of the dispense.  In some cases, substitution will be expected but does not happen, in other cases substitution is not expected but does happen.  This block explains what substitution did or did not happen and why.  If nothing is specified, substitution was not done.
    */
@@ -390,11 +390,11 @@ export class MedicationDispense extends fhir.DomainResource {
   /**
    * This element can include a detected issue that has been identified either by a decision support system or by a clinician and may include information on the steps that were taken to address the issue.
    */
-  public detectedIssue?: fhir.Reference[];
+  public detectedIssue: fhir.Reference[];
   /**
    * This might not include provenances for all versions of the request – only those deemed “relevant” or important. This SHALL NOT include the Provenance associated with this current version of the resource. (If that provenance is deemed to be a “relevant” change, it will need to be added as part of a later update. Until then, it can be queried directly as the Provenance that points to this version using _revinclude All Provenances should have some historical version of this Request as their subject.).
    */
-  public eventHistory?: fhir.Reference[];
+  public eventHistory: fhir.Reference[];
   /**
    * Default constructor for MedicationDispense - initializes any required elements to null if a value is not provided.
    */
@@ -405,7 +405,7 @@ export class MedicationDispense extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
     else { this.partOf = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<MedicationdispenseStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['statusReason']) { this.statusReason = source.statusReason; }
     else if (source['statusReasonCodeableConcept']) { this.statusReason = new fhir.CodeableConcept(source.statusReasonCodeableConcept); }
@@ -445,13 +445,13 @@ export class MedicationDispense extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (MedicationDispense.status)
    */
-  public static statusRequiredCoding():MedicationdispenseStatusCodingType {
-    return MedicationdispenseStatusCodings;
+  public static get statusRequiredCodes() {
+    return MedicationdispenseStatusCodes;
   }
   /**
    * Preferred-bound Value Set for category (MedicationDispense.category)
    */
-  public static categoryPreferredCoding():MedicationdispenseCategoryCodingType {
+  public static get categoryPreferredCodings() {
     return MedicationdispenseCategoryCodings;
   }
   /**
@@ -460,16 +460,20 @@ export class MedicationDispense extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicationDispense" fhir: MedicationDispense.resourceType:"MedicationDispense"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicationDispense" fhir: MedicationDispense.resourceType:"MedicationDispense"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:MedicationdispenseStatusCodeType fhir: MedicationDispense.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<MedicationdispenseStatusCodeType> fhir: MedicationDispense.status:code' });
     }
+    if (this['status'] && (!Object.values(MedicationdispenseStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<MedicationdispenseStatusCodeType> fhir: MedicationDispense.status:code Required binding to: MedicationdispenseStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (!this['medication']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property medication: fhir: MedicationDispense.medication[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property medication: fhir: MedicationDispense.medication[x]:' });
     }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["context"]) { issues.push(...this.context.doModelValidation()); }

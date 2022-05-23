@@ -82,8 +82,8 @@ export class MessageDefinitionFocus extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for code (MessageDefinition.focus.code)
    */
-  public static codeRequiredCoding():ResourceTypesCodingType {
-    return ResourceTypesCodings;
+  public static get codeRequiredCodes() {
+    return ResourceTypesCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -91,12 +91,15 @@ export class MessageDefinitionFocus extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.FhirCode fhir: MessageDefinition.focus.code:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode fhir: MessageDefinition.focus.code:code' });
+    }
+    if (this['code'] && (!Object.values(ResourceTypesCodes).includes(this.code as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode fhir: MessageDefinition.focus.code:code Required binding to: ResourceTypes' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["profile"]) { issues.push(...this.profile.doModelValidation()); }
     if (!this['min']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property min:fhir.FhirUnsignedInt fhir: MessageDefinition.focus.min:unsignedInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property min:fhir.FhirUnsignedInt fhir: MessageDefinition.focus.min:unsignedInt' });
     }
     if (this["min"]) { issues.push(...this.min.doModelValidation()); }
     if (this["max"]) { issues.push(...this.max.doModelValidation()); }
@@ -148,7 +151,7 @@ export class MessageDefinitionAllowedResponse extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['message']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property message:fhir.FhirCanonical fhir: MessageDefinition.allowedResponse.message:canonical', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property message:fhir.FhirCanonical fhir: MessageDefinition.allowedResponse.message:canonical' });
     }
     if (this["message"]) { issues.push(...this.message.doModelValidation()); }
     if (this["situation"]) { issues.push(...this.situation.doModelValidation()); }
@@ -192,7 +195,7 @@ export interface MessageDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of message definitions that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of message definitions that are appropriate for use versus not.
    */
@@ -252,7 +255,7 @@ export interface MessageDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * The impact of the content of the message.
    */
-  category?: MessageSignificanceCategoryCodeType|undefined;
+  category?: fhir.FhirCode<MessageSignificanceCategoryCodeType>|string|undefined;
   /**
    * Identifies the resource (or resources) that are being addressed by the event.  For example, the Encounter for an admit message or two Account records for a merge.
    */
@@ -260,7 +263,7 @@ export interface MessageDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * This enables the capability currently available through MSH-16 (Application Level acknowledgement) in HL7 Version 2 to declare at a message instance level whether a response is required or only upon error or success, or never.
    */
-  responseRequired?: MessageheaderResponseRequestCodeType|undefined;
+  responseRequired?: fhir.FhirCode<MessageheaderResponseRequestCodeType>|string|undefined;
   /**
    * This indicates an application level response to "close" a transaction implicit in a particular request message.  To define a complete workflow scenario, look to the [[PlanDefinition]] resource which allows the definition of complex orchestrations, conditionality, etc.
    */
@@ -292,7 +295,7 @@ export class MessageDefinition extends fhir.DomainResource {
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this message definition outside of FHIR, where it is not possible to use the logical URI.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * There may be different message definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the message definition with the format [url]|[version].
    */
@@ -308,11 +311,11 @@ export class MessageDefinition extends fhir.DomainResource {
   /**
    * A MessageDefinition that is superseded by this definition.
    */
-  public replaces?: fhir.FhirCanonical[];
+  public replaces: fhir.FhirCanonical[];
   /**
    * Allows filtering of message definitions that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of message definitions that are appropriate for use versus not.
    */
@@ -328,7 +331,7 @@ export class MessageDefinition extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the message definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the message definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the message definition is presumed to be the predominant language in the place the message definition was created).
    */
@@ -336,11 +339,11 @@ export class MessageDefinition extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the message definition to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * This element does not describe the usage of the message definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this message definition.
    */
@@ -356,7 +359,7 @@ export class MessageDefinition extends fhir.DomainResource {
   /**
    * It should be possible to use MessageDefinition to describe a message to be used by certain steps in a particular protocol as part of a PlanDefinition or ActivityDefinition.
    */
-  public parent?: fhir.FhirCanonical[];
+  public parent: fhir.FhirCanonical[];
   /**
    * Event code or link to the EventDefinition.
    */
@@ -368,23 +371,23 @@ export class MessageDefinition extends fhir.DomainResource {
   /**
    * The impact of the content of the message.
    */
-  public category?: MessageSignificanceCategoryCodeType|undefined;
+  public category?: fhir.FhirCode<MessageSignificanceCategoryCodeType>|undefined;
   /**
    * Identifies the resource (or resources) that are being addressed by the event.  For example, the Encounter for an admit message or two Account records for a merge.
    */
-  public focus?: fhir.MessageDefinitionFocus[];
+  public focus: fhir.MessageDefinitionFocus[];
   /**
    * This enables the capability currently available through MSH-16 (Application Level acknowledgement) in HL7 Version 2 to declare at a message instance level whether a response is required or only upon error or success, or never.
    */
-  public responseRequired?: MessageheaderResponseRequestCodeType|undefined;
+  public responseRequired?: fhir.FhirCode<MessageheaderResponseRequestCodeType>|undefined;
   /**
    * This indicates an application level response to "close" a transaction implicit in a particular request message.  To define a complete workflow scenario, look to the [[PlanDefinition]] resource which allows the definition of complex orchestrations, conditionality, etc.
    */
-  public allowedResponse?: fhir.MessageDefinitionAllowedResponse[];
+  public allowedResponse: fhir.MessageDefinitionAllowedResponse[];
   /**
    * Canonical reference to a GraphDefinition. If a URL is provided, it is the canonical reference to a [GraphDefinition](graphdefinition.html) that it controls what resources are to be added to the bundle when building the document. The GraphDefinition can also specify profiles that apply to the various resources.
    */
-  public graph?: fhir.FhirCanonical[];
+  public graph: fhir.FhirCanonical[];
   /**
    * Default constructor for MessageDefinition - initializes any required elements to null if a value is not provided.
    */
@@ -399,7 +402,7 @@ export class MessageDefinition extends fhir.DomainResource {
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
     if (source['replaces']) { this.replaces = source.replaces.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.replaces = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
@@ -421,10 +424,10 @@ export class MessageDefinition extends fhir.DomainResource {
     else if (source['eventCoding']) { this.event = new fhir.Coding(source.eventCoding); }
     else if (source['eventUri']) { this.event = new fhir.FhirUri({value: source.eventUri}); }
     else { this.event = null; }
-    if (source['category']) { this.category = source.category; }
+    if (source['category']) { this.category = new fhir.FhirCode<MessageSignificanceCategoryCodeType>({value: source.category}); }
     if (source['focus']) { this.focus = source.focus.map((x) => new fhir.MessageDefinitionFocus(x)); }
     else { this.focus = []; }
-    if (source['responseRequired']) { this.responseRequired = source.responseRequired; }
+    if (source['responseRequired']) { this.responseRequired = new fhir.FhirCode<MessageheaderResponseRequestCodeType>({value: source.responseRequired}); }
     if (source['allowedResponse']) { this.allowedResponse = source.allowedResponse.map((x) => new fhir.MessageDefinitionAllowedResponse(x)); }
     else { this.allowedResponse = []; }
     if (source['graph']) { this.graph = source.graph.map((x) => new fhir.FhirCanonical({value: x})); }
@@ -433,20 +436,20 @@ export class MessageDefinition extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (MessageDefinition.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Required-bound Value Set for category (MessageDefinition.category)
    */
-  public static categoryRequiredCoding():MessageSignificanceCategoryCodingType {
-    return MessageSignificanceCategoryCodings;
+  public static get categoryRequiredCodes() {
+    return MessageSignificanceCategoryCodes;
   }
   /**
    * Required-bound Value Set for responseRequired (MessageDefinition.responseRequired)
    */
-  public static responseRequiredRequiredCoding():MessageheaderResponseRequestCodingType {
-    return MessageheaderResponseRequestCodings;
+  public static get responseRequiredRequiredCodes() {
+    return MessageheaderResponseRequestCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -454,7 +457,7 @@ export class MessageDefinition extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MessageDefinition" fhir: MessageDefinition.resourceType:"MessageDefinition"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MessageDefinition" fhir: MessageDefinition.resourceType:"MessageDefinition"' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -463,11 +466,15 @@ export class MessageDefinition extends fhir.DomainResource {
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (this["replaces"]) { this.replaces.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: MessageDefinition.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: MessageDefinition.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: MessageDefinition.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (!this['date']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: MessageDefinition.date:dateTime', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: MessageDefinition.date:dateTime' });
     }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
@@ -480,9 +487,17 @@ export class MessageDefinition extends fhir.DomainResource {
     if (this["base"]) { issues.push(...this.base.doModelValidation()); }
     if (this["parent"]) { this.parent.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['event']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property event: fhir: MessageDefinition.event[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property event: fhir: MessageDefinition.event[x]:' });
     }
+    if (this['category'] && (!Object.values(MessageSignificanceCategoryCodes).includes(this.category as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property category?:fhir.FhirCode<MessageSignificanceCategoryCodeType> fhir: MessageDefinition.category:code Required binding to: MessageSignificanceCategory' });
+    }
+    if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (this["focus"]) { this.focus.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['responseRequired'] && (!Object.values(MessageheaderResponseRequestCodes).includes(this.responseRequired as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property responseRequired?:fhir.FhirCode<MessageheaderResponseRequestCodeType> fhir: MessageDefinition.responseRequired:code Required binding to: MessageheaderResponseRequest' });
+    }
+    if (this["responseRequired"]) { issues.push(...this.responseRequired.doModelValidation()); }
     if (this["allowedResponse"]) { this.allowedResponse.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["graph"]) { this.graph.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;

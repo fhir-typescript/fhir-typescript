@@ -1,12 +1,7 @@
 import * as fhir from '../fhir.js';
-import { ActionParticipantTypeCodingType } from '../fhirValueSets/ActionParticipantTypeCodings.js';
 import { ActionParticipantTypeCodeType } from '../fhirValueSets/ActionParticipantTypeCodes.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
-import { RequestResourceTypesCodingType } from '../fhirValueSets/RequestResourceTypesCodings.js';
-import { RequestIntentCodingType } from '../fhirValueSets/RequestIntentCodings.js';
 import { RequestIntentCodeType } from '../fhirValueSets/RequestIntentCodes.js';
-import { RequestPriorityCodingType } from '../fhirValueSets/RequestPriorityCodings.js';
 import { RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
 /**
  * Valid arguments for the ActivityDefinitionParticipant type.
@@ -15,7 +10,7 @@ export interface ActivityDefinitionParticipantArgs extends fhir.BackboneElementA
     /**
      * The type of participant in the action.
      */
-    type: ActionParticipantTypeCodeType | null;
+    type: fhir.FhirCode<ActionParticipantTypeCodeType> | string | undefined;
     /**
      * The role the participant should play in performing the described action.
      */
@@ -32,7 +27,7 @@ export declare class ActivityDefinitionParticipant extends fhir.BackboneElement 
     /**
      * The type of participant in the action.
      */
-    type: ActionParticipantTypeCodeType | null;
+    type: fhir.FhirCode<ActionParticipantTypeCodeType> | null;
     /**
      * The role the participant should play in performing the described action.
      */
@@ -44,7 +39,12 @@ export declare class ActivityDefinitionParticipant extends fhir.BackboneElement 
     /**
      * Required-bound Value Set for type (ActivityDefinition.participant.type)
      */
-    static typeRequiredCoding(): ActionParticipantTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Device: "device";
+        readonly Patient: "patient";
+        readonly Practitioner: "practitioner";
+        readonly RelatedPerson: "related-person";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -125,7 +125,7 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of activity definitions that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Allows filtering of activity definitions that are appropriate for use versus not.
      */
@@ -233,11 +233,11 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
     /**
      * Indicates the level of authority/intentionality associated with the activity and where the request should fit into the workflow chain.
      */
-    intent?: RequestIntentCodeType | undefined;
+    intent?: fhir.FhirCode<RequestIntentCodeType> | string | undefined;
     /**
      * Indicates how quickly the activity  should be addressed with respect to other requests.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
     /**
      * This element is not intended to be used to communicate a decision support response to cancel an order in progress. That should be done with the "remove" type of a PlanDefinition or RequestGroup.
      */
@@ -344,7 +344,7 @@ export declare class ActivityDefinition extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this activity definition outside of FHIR, where it is not possible to use the logical URI.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * There may be different activity definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the activity definition with the format [url]|[version].
      */
@@ -364,7 +364,7 @@ export declare class ActivityDefinition extends fhir.DomainResource {
     /**
      * Allows filtering of activity definitions that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Allows filtering of activity definitions that are appropriate for use versus not.
      */
@@ -388,7 +388,7 @@ export declare class ActivityDefinition extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * This description can be used to capture details such as why the activity definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the activity definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the activity definition is presumed to be the predominant language in the place the activity definition was created).
      */
@@ -396,11 +396,11 @@ export declare class ActivityDefinition extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the activity definition to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * This element does not describe the usage of the activity definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this activity definition.
      */
@@ -428,31 +428,31 @@ export declare class ActivityDefinition extends fhir.DomainResource {
     /**
      * Descriptive topics related to the content of the activity. Topics provide a high-level categorization of the activity that can be useful for filtering and searching.
      */
-    topic?: fhir.CodeableConcept[];
+    topic: fhir.CodeableConcept[];
     /**
      * An individiual or organization primarily involved in the creation and maintenance of the content.
      */
-    author?: fhir.ContactDetail[];
+    author: fhir.ContactDetail[];
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
      */
-    editor?: fhir.ContactDetail[];
+    editor: fhir.ContactDetail[];
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
      */
-    reviewer?: fhir.ContactDetail[];
+    reviewer: fhir.ContactDetail[];
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
      */
-    endorser?: fhir.ContactDetail[];
+    endorser: fhir.ContactDetail[];
     /**
      * Each related artifact is either an attachment, or a reference to another resource, but not both.
      */
-    relatedArtifact?: fhir.RelatedArtifact[];
+    relatedArtifact: fhir.RelatedArtifact[];
     /**
      * A reference to a Library resource containing any formal logic used by the activity definition.
      */
-    library?: fhir.FhirCanonical[];
+    library: fhir.FhirCanonical[];
     /**
      * May determine what types of extensions are permitted.
      */
@@ -468,11 +468,11 @@ export declare class ActivityDefinition extends fhir.DomainResource {
     /**
      * Indicates the level of authority/intentionality associated with the activity and where the request should fit into the workflow chain.
      */
-    intent?: RequestIntentCodeType | undefined;
+    intent?: fhir.FhirCode<RequestIntentCodeType> | undefined;
     /**
      * Indicates how quickly the activity  should be addressed with respect to other requests.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | undefined;
     /**
      * This element is not intended to be used to communicate a decision support response to cancel an order in progress. That should be done with the "remove" type of a PlanDefinition or RequestGroup.
      */
@@ -492,7 +492,7 @@ export declare class ActivityDefinition extends fhir.DomainResource {
     /**
      * Indicates who should participate in performing the action described.
      */
-    participant?: fhir.ActivityDefinitionParticipant[];
+    participant: fhir.ActivityDefinitionParticipant[];
     /**
      * Identifies the food, drug or other product being consumed or supplied in the activity.
      */
@@ -508,23 +508,23 @@ export declare class ActivityDefinition extends fhir.DomainResource {
     /**
      * If a dosage instruction is used, the definition should not specify timing or quantity.
      */
-    dosage?: fhir.Dosage[];
+    dosage: fhir.Dosage[];
     /**
      * Only used if not implicit in the code found in ServiceRequest.type.
      */
-    bodySite?: fhir.CodeableConcept[];
+    bodySite: fhir.CodeableConcept[];
     /**
      * Defines specimen requirements for the action to be performed, such as required specimens for a lab test.
      */
-    specimenRequirement?: fhir.Reference[];
+    specimenRequirement: fhir.Reference[];
     /**
      * Defines observation requirements for the action to be performed, such as body weight or surface area.
      */
-    observationRequirement?: fhir.Reference[];
+    observationRequirement: fhir.Reference[];
     /**
      * Defines the observations that are expected to be produced by the action.
      */
-    observationResultRequirement?: fhir.Reference[];
+    observationResultRequirement: fhir.Reference[];
     /**
      * Note that if both a transform and dynamic values are specified, the dynamic values will be applied to the result of the transform.
      */
@@ -532,7 +532,7 @@ export declare class ActivityDefinition extends fhir.DomainResource {
     /**
      * Dynamic values are applied in the order in which they are defined in the ActivityDefinition. Note that if both a transform and dynamic values are specified, the dynamic values will be applied to the result of the transform.
      */
-    dynamicValue?: fhir.ActivityDefinitionDynamicValue[];
+    dynamicValue: fhir.ActivityDefinitionDynamicValue[];
     /**
      * Default constructor for ActivityDefinition - initializes any required elements to null if a value is not provided.
      */
@@ -540,19 +540,55 @@ export declare class ActivityDefinition extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (ActivityDefinition.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Required-bound Value Set for kind (ActivityDefinition.kind)
      */
-    static kindRequiredCoding(): RequestResourceTypesCodingType;
+    static get kindRequiredCodes(): {
+        readonly Appointment: "Appointment";
+        readonly AppointmentResponse: "AppointmentResponse";
+        readonly CarePlan: "CarePlan";
+        readonly Claim: "Claim";
+        readonly CommunicationRequest: "CommunicationRequest";
+        readonly Contract: "Contract";
+        readonly DeviceRequest: "DeviceRequest";
+        readonly EnrollmentRequest: "EnrollmentRequest";
+        readonly ImmunizationRecommendation: "ImmunizationRecommendation";
+        readonly MedicationRequest: "MedicationRequest";
+        readonly NutritionOrder: "NutritionOrder";
+        readonly ServiceRequest: "ServiceRequest";
+        readonly SupplyRequest: "SupplyRequest";
+        readonly Task: "Task";
+        readonly VisionPrescription: "VisionPrescription";
+    };
     /**
      * Required-bound Value Set for intent (ActivityDefinition.intent)
      */
-    static intentRequiredCoding(): RequestIntentCodingType;
+    static get intentRequiredCodes(): {
+        readonly Directive: "directive";
+        readonly FillerOrder: "filler-order";
+        readonly InstanceOrder: "instance-order";
+        readonly Option: "option";
+        readonly Order: "order";
+        readonly OriginalOrder: "original-order";
+        readonly Plan: "plan";
+        readonly Proposal: "proposal";
+        readonly ReflexOrder: "reflex-order";
+    };
     /**
      * Required-bound Value Set for priority (ActivityDefinition.priority)
      */
-    static priorityRequiredCoding(): RequestPriorityCodingType;
+    static get priorityRequiredCodes(): {
+        readonly ASAP: "asap";
+        readonly Routine: "routine";
+        readonly STAT: "stat";
+        readonly Urgent: "urgent";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

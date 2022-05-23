@@ -38,6 +38,10 @@ export interface LocationHoursOfOperation extends fhir.BackboneElement {
      */
     daysOfWeek?: ('fri' | 'mon' | 'sat' | 'sun' | 'thu' | 'tue' | 'wed')[] | undefined;
     /**
+     * Extended properties for primitive element: Location.hoursOfOperation.daysOfWeek
+     */
+    _daysOfWeek?: (fhir.FhirElement | null)[];
+    /**
      * The Location is open all day.
      */
     allDay?: boolean | undefined;
@@ -79,6 +83,10 @@ export interface Location extends fhir.DomainResource {
      */
     status?: 'active' | 'inactive' | 'suspended' | undefined;
     /**
+     * Extended properties for primitive element: Location.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * The operational status covers operation values most relevant to beds (but can also apply to rooms/units/chairs/etc. such as an isolation unit/dialysis chair). This typically covers concepts such as contamination, housekeeping, and other activities like maintenance.
      */
     operationalStatus?: fhir.Coding | undefined;
@@ -110,6 +118,10 @@ export interface Location extends fhir.DomainResource {
      * This is labeled as a modifier because whether or not the location is a class of locations changes how it can be used and understood.
      */
     mode?: 'instance' | 'kind' | undefined;
+    /**
+     * Extended properties for primitive element: Location.mode
+     */
+    _mode?: fhir.FhirElement;
     /**
      * Indicates the type of function performed at the location.
      */

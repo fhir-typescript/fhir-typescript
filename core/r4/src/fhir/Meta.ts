@@ -68,15 +68,15 @@ export class Meta extends fhir.FhirElement {
   /**
    * It is up to the server and/or other infrastructure of policy to determine whether/how these claims are verified and/or updated over time.  The list of profile URLs is a set.
    */
-  public profile?: fhir.FhirCanonical[];
+  public profile: fhir.FhirCanonical[];
   /**
    * The security labels can be updated without changing the stated version of the resource. The list of security labels is a set. Uniqueness is based the system/code, and version and display are ignored.
    */
-  public security?: fhir.Coding[];
+  public security: fhir.Coding[];
   /**
    * The tags can be updated without changing the stated version of the resource. The list of tags is a set. Uniqueness is based the system/code, and version and display are ignored.
    */
-  public tag?: fhir.Coding[];
+  public tag: fhir.Coding[];
   /**
    * Default constructor for Meta - initializes any required elements to null if a value is not provided.
    */
@@ -95,7 +95,7 @@ export class Meta extends fhir.FhirElement {
   /**
    * Extensible-bound Value Set for security (Meta.security)
    */
-  public static securityExtensibleCoding():SecurityLabelsCodingType {
+  public static get securityExtensibleCodings() {
     return SecurityLabelsCodings;
   }
   /**

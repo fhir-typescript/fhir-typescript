@@ -32,6 +32,10 @@ export interface AllergyIntoleranceReaction extends fhir.BackboneElement {
      */
     severity?: 'mild' | 'moderate' | 'severe' | undefined;
     /**
+     * Extended properties for primitive element: AllergyIntolerance.reaction.severity
+     */
+    _severity?: fhir.FhirElement;
+    /**
      * Coding of the route of exposure with a terminology should be used wherever possible.
      */
     exposureRoute?: fhir.CodeableConcept | undefined;
@@ -66,13 +70,25 @@ export interface AllergyIntolerance extends fhir.DomainResource {
      */
     type?: 'allergy' | 'intolerance' | undefined;
     /**
+     * Extended properties for primitive element: AllergyIntolerance.type
+     */
+    _type?: fhir.FhirElement;
+    /**
      * This data element has been included because it is currently being captured in some clinical systems. This data can be derived from the substance where coding systems are used, and is effectively redundant in that situation.  When searching on category, consider the implications of AllergyIntolerance resources without a category.  For example, when searching on category = medication, medication allergies that don't have a category valued will not be returned.  Refer to [search](search.html) for more information on how to search category with a :missing modifier to get allergies that don't have a category.  Additionally, category should be used with caution because category can be subjective based on the sender.
      */
     category?: ('biologic' | 'environment' | 'food' | 'medication')[] | undefined;
     /**
+     * Extended properties for primitive element: AllergyIntolerance.category
+     */
+    _category?: (fhir.FhirElement | null)[];
+    /**
      * The default criticality value for any propensity to an adverse reaction should be 'Low Risk', indicating at the very least a relative contraindication to deliberate or voluntary exposure to the substance. 'High Risk' is flagged if the clinician has identified a propensity for a more serious or potentially life-threatening reaction, such as anaphylaxis, and implies an absolute contraindication to deliberate or voluntary exposure to the substance. If this element is missing, the criticality is unknown (though it may be known elsewhere).  Systems that capture a severity at the condition level are actually representing the concept of criticality whereas the severity documented at the reaction level is representing the true reaction severity.  Existing systems that are capturing both condition criticality and reaction severity may use the term "severity" to represent both.  Criticality is the worst it could be in the future (i.e. situation-agnostic) whereas severity is situation-dependent.
      */
     criticality?: 'high' | 'low' | 'unable-to-assess' | undefined;
+    /**
+     * Extended properties for primitive element: AllergyIntolerance.criticality
+     */
+    _criticality?: fhir.FhirElement;
     /**
      * It is strongly recommended that this element be populated using a terminology, where possible. For example, some terminologies used include RxNorm, SNOMED CT, DM+D, NDFRT, ICD-9, IDC-10, UNII, and ATC. Plain text should only be used if there is no appropriate terminology available. Additional details can be specified in the text.
      * When a substance or product code is specified for the 'code' element, the "default" semantic context is that this is a positive statement of an allergy or intolerance (depending on the value of the 'type' element, if present) condition to the specified substance/product.  In the corresponding SNOMED CT allergy model, the specified substance/product is the target (destination) of the "Causative agent" relationship.

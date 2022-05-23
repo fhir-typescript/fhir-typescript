@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { RelatedArtifactTypeCodingType } from '../fhirValueSets/RelatedArtifactTypeCodings.js';
 import { RelatedArtifactTypeCodeType } from '../fhirValueSets/RelatedArtifactTypeCodes.js';
 /**
  * Valid arguments for the RelatedArtifact type.
@@ -8,7 +7,7 @@ export interface RelatedArtifactArgs extends fhir.FhirElementArgs {
     /**
      * The type of relationship to the related artifact.
      */
-    type: RelatedArtifactTypeCodeType | null;
+    type: fhir.FhirCode<RelatedArtifactTypeCodeType> | string | undefined;
     /**
      * A short label that can be used to reference the citation from elsewhere in the containing artifact, such as a footnote index.
      */
@@ -45,7 +44,7 @@ export declare class RelatedArtifact extends fhir.FhirElement {
     /**
      * The type of relationship to the related artifact.
      */
-    type: RelatedArtifactTypeCodeType | null;
+    type: fhir.FhirCode<RelatedArtifactTypeCodeType> | null;
     /**
      * A short label that can be used to reference the citation from elsewhere in the containing artifact, such as a footnote index.
      */
@@ -77,7 +76,18 @@ export declare class RelatedArtifact extends fhir.FhirElement {
     /**
      * Required-bound Value Set for type (RelatedArtifact.type)
      */
-    static typeRequiredCoding(): RelatedArtifactTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Citation: "citation";
+        readonly ComposedOf: "composed-of"; /**
+         * A short label that can be used to reference the citation from elsewhere in the containing artifact, such as a footnote index.
+         */
+        readonly DependsOn: "depends-on";
+        readonly DerivedFrom: "derived-from";
+        readonly Documentation: "documentation";
+        readonly Justification: "justification";
+        readonly Predecessor: "predecessor";
+        readonly Successor: "successor";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

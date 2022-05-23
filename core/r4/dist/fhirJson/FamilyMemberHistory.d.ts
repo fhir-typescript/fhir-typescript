@@ -77,6 +77,10 @@ export interface FamilyMemberHistory extends fhir.DomainResource {
      */
     status: 'completed' | 'entered-in-error' | 'health-unknown' | 'partial' | null;
     /**
+     * Extended properties for primitive element: FamilyMemberHistory.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * Describes why the family member's history is not available.
      */
     dataAbsentReason?: fhir.CodeableConcept | undefined;

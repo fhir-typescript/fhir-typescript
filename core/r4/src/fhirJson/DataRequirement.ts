@@ -94,6 +94,10 @@ export interface DataRequirementSort extends fhir.FhirElement {
    * The direction of the sort, ascending or descending.
    */
   direction: 'ascending'|'descending'|null;
+  /**
+   * Extended properties for primitive element: DataRequirement.sort.direction
+   */
+  _direction?:fhir.FhirElement;
 }
 
 /**

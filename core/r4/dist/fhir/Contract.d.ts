@@ -1,12 +1,6 @@
 import * as fhir from '../fhir.js';
-import { ContractPublicationstatusCodingType } from '../fhirValueSets/ContractPublicationstatusCodings.js';
 import { ContractPublicationstatusCodeType } from '../fhirValueSets/ContractPublicationstatusCodes.js';
-import { V3ActConsentDirectiveCodingType } from '../fhirValueSets/V3ActConsentDirectiveCodings.js';
-import { ConsentContentClassCodingType } from '../fhirValueSets/ConsentContentClassCodings.js';
-import { ContractSignerTypeCodingType } from '../fhirValueSets/ContractSignerTypeCodings.js';
-import { ContractStatusCodingType } from '../fhirValueSets/ContractStatusCodings.js';
 import { ContractStatusCodeType } from '../fhirValueSets/ContractStatusCodes.js';
-import { ContractLegalstateCodingType } from '../fhirValueSets/ContractLegalstateCodings.js';
 /**
  * Valid arguments for the ContractContentDefinition type.
  */
@@ -30,7 +24,7 @@ export interface ContractContentDefinitionArgs extends fhir.BackboneElementArgs 
     /**
      * amended | appended | cancelled | disputed | entered-in-error | executable | executed | negotiable | offered | policy | rejected | renewed | revoked | resolved | terminated.
      */
-    publicationStatus: ContractPublicationstatusCodeType | null;
+    publicationStatus: fhir.FhirCode<ContractPublicationstatusCodeType> | string | undefined;
     /**
      * A copyright statement relating to Contract precursor content. Copyright statements are generally legal restrictions on the use and publishing of the Contract precursor content.
      */
@@ -63,7 +57,7 @@ export declare class ContractContentDefinition extends fhir.BackboneElement {
     /**
      * amended | appended | cancelled | disputed | entered-in-error | executable | executed | negotiable | offered | policy | rejected | renewed | revoked | resolved | terminated.
      */
-    publicationStatus: ContractPublicationstatusCodeType | null;
+    publicationStatus: fhir.FhirCode<ContractPublicationstatusCodeType> | null;
     /**
      * A copyright statement relating to Contract precursor content. Copyright statements are generally legal restrictions on the use and publishing of the Contract precursor content.
      */
@@ -75,7 +69,23 @@ export declare class ContractContentDefinition extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for publicationStatus (Contract.contentDefinition.publicationStatus)
      */
-    static publicationStatusRequiredCoding(): ContractPublicationstatusCodingType;
+    static get publicationStatusRequiredCodes(): {
+        readonly Amended: "amended";
+        readonly Appended: "appended";
+        readonly Cancelled: "cancelled";
+        readonly Disputed: "disputed";
+        readonly EnteredInError: "entered-in-error";
+        readonly Executable: "executable";
+        readonly Executed: "executed";
+        readonly Negotiable: "negotiable";
+        readonly Offered: "offered";
+        readonly Policy: "policy";
+        readonly Rejected: "rejected";
+        readonly Renewed: "renewed";
+        readonly Resolved: "resolved";
+        readonly Revoked: "revoked";
+        readonly Terminated: "terminated";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -113,7 +123,7 @@ export declare class ContractTermSecurityLabel extends fhir.BackboneElement {
     /**
      * Number used to link this term or term element to the applicable Security Label.
      */
-    number?: fhir.FhirUnsignedInt[];
+    number: fhir.FhirUnsignedInt[];
     /**
      * Security label privacy tag that species the level of confidentiality protection required for this term and/or term elements.
      */
@@ -121,11 +131,11 @@ export declare class ContractTermSecurityLabel extends fhir.BackboneElement {
     /**
      * Security label privacy tag that species the applicable privacy and security policies governing this term and/or term elements.
      */
-    category?: fhir.Coding[];
+    category: fhir.Coding[];
     /**
      * Security label privacy tag that species the manner in which term and/or term elements are to be protected.
      */
-    control?: fhir.Coding[];
+    control: fhir.Coding[];
     /**
      * Default constructor for ContractTermSecurityLabel - initializes any required elements to null if a value is not provided.
      */
@@ -314,11 +324,11 @@ export declare class ContractTermOffer extends fhir.BackboneElement {
     /**
      * Unique identifier for this particular Contract Provision.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Offer Recipient.
      */
-    party?: fhir.ContractTermOfferParty[];
+    party: fhir.ContractTermOfferParty[];
     /**
      * The Contract.topic may be an application for or offer of a policy or service (e.g., uri to a consent directive form or a health insurance policy), which becomes the Contract once accepted by both the grantor and grantee.
      * The Contract Resource may function simply as the computable representation of the executed contract, which may be the attached to the Contract Resource as the “binding” or as the “friendly” electronic form.  For example, a Contract Resource may be automatically populated with the values expressed in a related QuestionnaireResponse.
@@ -337,11 +347,11 @@ export declare class ContractTermOffer extends fhir.BackboneElement {
     /**
      * How the decision about a Contract was conveyed.
      */
-    decisionMode?: fhir.CodeableConcept[];
+    decisionMode: fhir.CodeableConcept[];
     /**
      * Response to offer text.
      */
-    answer?: fhir.ContractTermOfferAnswer[];
+    answer: fhir.ContractTermOfferAnswer[];
     /**
      * Human readable form of this Contract Offer.
      */
@@ -349,11 +359,11 @@ export declare class ContractTermOffer extends fhir.BackboneElement {
     /**
      * The id of the clause or question text of the offer in the referenced questionnaire/response.
      */
-    linkId?: fhir.FhirString[];
+    linkId: fhir.FhirString[];
     /**
      * Security labels that protects the offer.
      */
-    securityLabelNumber?: fhir.FhirUnsignedInt[];
+    securityLabelNumber: fhir.FhirUnsignedInt[];
     /**
      * Default constructor for ContractTermOffer - initializes any required elements to null if a value is not provided.
      */
@@ -361,7 +371,19 @@ export declare class ContractTermOffer extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for decision (Contract.term.offer.decision)
      */
-    static decisionExtensibleCoding(): V3ActConsentDirectiveCodingType;
+    static get decisionExtensibleCodings(): {
+        readonly ActConsentDirective: fhir.Coding;
+        readonly EmergencyOnly: fhir.Coding;
+        readonly GrantorChoice: fhir.Coding;
+        readonly ImpliedConsent: fhir.Coding;
+        readonly ImpliedConsentWithOpportunityToDissent: fhir.Coding;
+        readonly NoConsent: fhir.Coding;
+        readonly NoticeOfPrivacyPractices: fhir.Coding;
+        readonly OptIn: fhir.Coding;
+        readonly OptInWithRestrictions: fhir.Coding;
+        readonly OpOut: fhir.Coding;
+        readonly OptOutWithExceptions: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -399,7 +421,7 @@ export declare class ContractTermAssetContext extends fhir.BackboneElement {
     /**
      * Coded representation of the context generally or of the Referenced entity, such as the asset holder type or location.
      */
-    code?: fhir.CodeableConcept[];
+    code: fhir.CodeableConcept[];
     /**
      * Context description.
      */
@@ -545,11 +567,11 @@ export declare class ContractTermAssetValuedItem extends fhir.BackboneElement {
     /**
      * Id  of the clause or question text related to the context of this valuedItem in the referenced form or QuestionnaireResponse.
      */
-    linkId?: fhir.FhirString[];
+    linkId: fhir.FhirString[];
     /**
      * A set of security labels that define which terms are controlled by this condition.
      */
-    securityLabelNumber?: fhir.FhirUnsignedInt[];
+    securityLabelNumber: fhir.FhirUnsignedInt[];
     /**
      * Default constructor for ContractTermAssetValuedItem - initializes any required elements to null if a value is not provided.
      */
@@ -639,15 +661,15 @@ export declare class ContractTermAsset extends fhir.BackboneElement {
     /**
      * Target entity type about which the term may be concerned.
      */
-    type?: fhir.CodeableConcept[];
+    type: fhir.CodeableConcept[];
     /**
      * Associated entities.
      */
-    typeReference?: fhir.Reference[];
+    typeReference: fhir.Reference[];
     /**
      * May be a subtype or part of an offered asset.
      */
-    subtype?: fhir.CodeableConcept[];
+    subtype: fhir.CodeableConcept[];
     /**
      * Specifies the applicability of the term to an asset resource instance, and instances it refers to orinstances that refer to it, and/or are owned by the offeree.
      */
@@ -655,7 +677,7 @@ export declare class ContractTermAsset extends fhir.BackboneElement {
     /**
      * Circumstance of the asset.
      */
-    context?: fhir.ContractTermAssetContext[];
+    context: fhir.ContractTermAssetContext[];
     /**
      * Description of the quality and completeness of the asset that imay be a factor in its valuation.
      */
@@ -663,15 +685,15 @@ export declare class ContractTermAsset extends fhir.BackboneElement {
     /**
      * Type of Asset availability for use or ownership.
      */
-    periodType?: fhir.CodeableConcept[];
+    periodType: fhir.CodeableConcept[];
     /**
      * Asset relevant contractual time period.
      */
-    period?: fhir.Period[];
+    period: fhir.Period[];
     /**
      * Time period of asset use.
      */
-    usePeriod?: fhir.Period[];
+    usePeriod: fhir.Period[];
     /**
      * Clause or question text (Prose Object) concerning the asset in a linked form, such as a QuestionnaireResponse used in the formation of the contract.
      */
@@ -679,19 +701,19 @@ export declare class ContractTermAsset extends fhir.BackboneElement {
     /**
      * Id [identifier??] of the clause or question text about the asset in the referenced form or QuestionnaireResponse.
      */
-    linkId?: fhir.FhirString[];
+    linkId: fhir.FhirString[];
     /**
      * Response to assets.
      */
-    answer?: fhir.ContractTermOfferAnswer[];
+    answer: fhir.ContractTermOfferAnswer[];
     /**
      * Security labels that protects the asset.
      */
-    securityLabelNumber?: fhir.FhirUnsignedInt[];
+    securityLabelNumber: fhir.FhirUnsignedInt[];
     /**
      * Contract Valued Item List.
      */
-    valuedItem?: fhir.ContractTermAssetValuedItem[];
+    valuedItem: fhir.ContractTermAssetValuedItem[];
     /**
      * Default constructor for ContractTermAsset - initializes any required elements to null if a value is not provided.
      */
@@ -699,7 +721,236 @@ export declare class ContractTermAsset extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for relationship (Contract.term.asset.relationship)
      */
-    static relationshipExtensibleCoding(): ConsentContentClassCodingType;
+    static get relationshipExtensibleCodings(): {
+        readonly Account: fhir.Coding;
+        readonly ActivityDefinition: fhir.Coding;
+        readonly AdverseEvent: fhir.Coding;
+        readonly AllergyIntolerance: fhir.Coding;
+        readonly CDADocuments: fhir.Coding;
+        readonly Appointment: fhir.Coding;
+        readonly AppointmentResponse: fhir.Coding;
+        readonly AuditEvent: fhir.Coding;
+        readonly Basic: fhir.Coding;
+        readonly Binary: fhir.Coding;
+        readonly BiologicallyDerivedProduct: fhir.Coding;
+        readonly BodyStructure: fhir.Coding;
+        readonly Bundle: fhir.Coding;
+        readonly CapabilityStatement: fhir.Coding;
+        readonly CarePlan: fhir.Coding;
+        readonly CareTeam: fhir.Coding;
+        readonly CatalogEntry: fhir.Coding;
+        readonly ChargeItem: fhir.Coding;
+        readonly ChargeItemDefinition: fhir.Coding;
+        readonly Claim: fhir.Coding;
+        readonly ClaimResponse: fhir.Coding;
+        readonly ClinicalImpression: fhir.Coding;
+        readonly CodeSystem: fhir.Coding;
+        readonly Communication: fhir.Coding;
+        readonly CommunicationRequest: fhir.Coding;
+        readonly CompartmentDefinition: fhir.Coding;
+        readonly Composition: fhir.Coding;
+        readonly ConceptMap: fhir.Coding;
+        readonly Condition: fhir.Coding;
+        readonly Consent: fhir.Coding;
+        readonly Contract: fhir.Coding;
+        readonly Coverage: fhir.Coding;
+        readonly CoverageEligibilityRequest: fhir.Coding;
+        readonly CoverageEligibilityResponse: fhir.Coding;
+        readonly DetectedIssue: fhir.Coding;
+        readonly Device: fhir.Coding;
+        readonly DeviceDefinition: fhir.Coding;
+        readonly DeviceMetric: fhir.Coding;
+        readonly DeviceRequest: fhir.Coding;
+        readonly DeviceUseStatement: fhir.Coding;
+        readonly DiagnosticReport: fhir.Coding;
+        readonly DocumentManifest: fhir.Coding;
+        readonly DocumentReference: fhir.Coding;
+        readonly DomainResource: fhir.Coding;
+        readonly EffectEvidenceSynthesis: fhir.Coding;
+        readonly Encounter: fhir.Coding;
+        readonly Endpoint: fhir.Coding;
+        readonly EnrollmentRequest: fhir.Coding;
+        readonly EnrollmentResponse: fhir.Coding;
+        readonly EpisodeOfCare: fhir.Coding;
+        readonly EventDefinition: fhir.Coding;
+        readonly Evidence: fhir.Coding;
+        readonly EvidenceVariable: fhir.Coding;
+        readonly ExampleScenario: fhir.Coding;
+        readonly ExplanationOfBenefit: fhir.Coding;
+        readonly FamilyMemberHistory: fhir.Coding;
+        readonly Flag: fhir.Coding;
+        readonly Goal: fhir.Coding;
+        readonly GraphDefinition: fhir.Coding;
+        readonly Group: fhir.Coding;
+        readonly GuidanceResponse: fhir.Coding;
+        readonly HealthcareService: fhir.Coding;
+        readonly LipidLabReport: fhir.Coding;
+        readonly ImagingStudy: fhir.Coding;
+        readonly Immunization: fhir.Coding;
+        readonly ImmunizationEvaluation: fhir.Coding;
+        readonly ImmunizationRecommendation: fhir.Coding;
+        readonly ImplementationGuide: fhir.Coding;
+        readonly InsurancePlan: fhir.Coding;
+        readonly Invoice: fhir.Coding;
+        readonly Library: fhir.Coding;
+        readonly Linkage: fhir.Coding;
+        readonly List: fhir.Coding;
+        readonly Location: fhir.Coding;
+        readonly Measure: fhir.Coding;
+        readonly MeasureReport: fhir.Coding;
+        readonly Media: fhir.Coding;
+        readonly Medication: fhir.Coding;
+        readonly MedicationAdministration: fhir.Coding;
+        readonly MedicationDispense: fhir.Coding;
+        readonly MedicationKnowledge: fhir.Coding;
+        readonly MedicationRequest: fhir.Coding;
+        readonly MedicationStatement: fhir.Coding;
+        readonly MedicinalProduct: fhir.Coding;
+        readonly MedicinalProductAuthorization: fhir.Coding;
+        readonly MedicinalProductContraindication: fhir.Coding;
+        readonly MedicinalProductIndication: fhir.Coding;
+        readonly MedicinalProductIngredient: fhir.Coding;
+        readonly MedicinalProductInteraction: fhir.Coding;
+        readonly MedicinalProductManufactured: fhir.Coding;
+        readonly MedicinalProductPackaged: fhir.Coding;
+        readonly MedicinalProductPharmaceutical: fhir.Coding;
+        readonly MedicinalProductUndesirableEffect: fhir.Coding;
+        readonly MessageDefinition: fhir.Coding;
+        readonly MessageHeader: fhir.Coding;
+        readonly MolecularSequence: fhir.Coding;
+        readonly NamingSystem: fhir.Coding;
+        readonly NutritionOrder: fhir.Coding;
+        readonly Observation: fhir.Coding;
+        readonly ObservationDefinition: fhir.Coding;
+        readonly OperationDefinition: fhir.Coding;
+        readonly OperationOutcome: fhir.Coding;
+        readonly Organization: fhir.Coding;
+        readonly OrganizationAffiliation: fhir.Coding;
+        readonly Parameters: fhir.Coding;
+        readonly Patient: fhir.Coding;
+        readonly PaymentNotice: fhir.Coding;
+        readonly PaymentReconciliation: fhir.Coding;
+        readonly Person: fhir.Coding;
+        readonly PlanDefinition: fhir.Coding;
+        readonly Practitioner: fhir.Coding;
+        readonly PractitionerRole: fhir.Coding;
+        readonly Procedure: fhir.Coding;
+        readonly Provenance: fhir.Coding;
+        readonly Questionnaire: fhir.Coding;
+        readonly QuestionnaireResponse: fhir.Coding;
+        readonly RelatedPerson: fhir.Coding;
+        readonly RequestGroup: fhir.Coding;
+        readonly ResearchDefinition: fhir.Coding;
+        readonly ResearchElementDefinition: fhir.Coding;
+        readonly ResearchStudy: fhir.Coding;
+        readonly ResearchSubject: fhir.Coding;
+        readonly Resource: fhir.Coding;
+        readonly RiskAssessment: fhir.Coding;
+        readonly RiskEvidenceSynthesis: fhir.Coding;
+        readonly Schedule: fhir.Coding;
+        readonly SearchParameter: fhir.Coding;
+        readonly ServiceRequest: fhir.Coding;
+        readonly Slot: fhir.Coding;
+        readonly Specimen: fhir.Coding;
+        readonly SpecimenDefinition: fhir.Coding;
+        readonly StructureDefinition: fhir.Coding;
+        readonly StructureMap: fhir.Coding;
+        readonly Subscription: fhir.Coding;
+        readonly Substance: fhir.Coding;
+        readonly SubstanceNucleicAcid: fhir.Coding;
+        readonly SubstancePolymer: fhir.Coding;
+        readonly SubstanceProtein: fhir.Coding;
+        readonly SubstanceReferenceInformation: fhir.Coding;
+        readonly SubstanceSourceMaterial: fhir.Coding;
+        readonly SubstanceSpecification: fhir.Coding;
+        readonly SupplyDelivery: fhir.Coding;
+        readonly SupplyRequest: fhir.Coding;
+        readonly Task: fhir.Coding;
+        readonly TerminologyCapabilities: fhir.Coding;
+        readonly TestReport: fhir.Coding;
+        readonly TestScript: fhir.Coding;
+        readonly ForDocumentsFollowingCCDA11ConstraintsUsingANonStructuredBody: fhir.Coding;
+        readonly ForDocumentsFollowingCCDA21ConstraintsUsingANonStructuredBody: fhir.Coding;
+        readonly ForDocumentsFollowingCCDA11ConstraintsUsingAStructuredBody: fhir.Coding;
+        readonly ForDocumentsFollowingCCDA21ConstraintsUsingAStructuredBody: fhir.Coding;
+        readonly CardiologyCRC: fhir.Coding;
+        readonly CardiologyEPRCIE: fhir.Coding;
+        readonly CardiacImagingReport: fhir.Coding;
+        readonly DentalCDA: fhir.Coding;
+        readonly DentalPDF: fhir.Coding;
+        readonly DentalText: fhir.Coding;
+        readonly AdvancedPatientPrivacyConsents: fhir.Coding;
+        readonly BasicPatientPrivacyConsentsWithScannedDocument: fhir.Coding;
+        readonly BasicPatientPrivacyConsents: fhir.Coding;
+        readonly DSGDetachedDocument: fhir.Coding;
+        readonly DSGEnvelopingDocument: fhir.Coding;
+        readonly PDFEmbeddedInCDAPerXDSSDProfile: fhir.Coding;
+        readonly TextEmbeddedInCDAPerXDSSDProfile: fhir.Coding;
+        readonly MimeTypeSufficient: fhir.Coding;
+        readonly XDWWorkflowDocument: fhir.Coding;
+        readonly CDALaboratoryReport: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportAll: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerAll: fhir.Coding; /**
+         * Reason or purpose for the action stipulated by this Contract Provision.
+         */
+        readonly AnatomicPathologyStructuredReportCancerBreast: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerCervix: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerColon: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerEndometrium: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerEsophagus: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerKidney: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerLarynx: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerLipOralCavity: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerLiver: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerLung: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerOvary: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerPancreas: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerPharynx: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerProstate: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerSalivaryGland: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerSkin: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerStomach: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerTestis: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerThyroid: fhir.Coding;
+        readonly AnatomicPathologyStructuredReportCancerUrinaryBladder: fhir.Coding;
+        readonly AntepartumRecordAPREducation: fhir.Coding;
+        readonly AntepartumRecordAPRHistoryAndPhysical: fhir.Coding;
+        readonly AntepartumRecordAPRLaboratory: fhir.Coding;
+        readonly IHEAntepartumSummary: fhir.Coding;
+        readonly CareManagementCM: fhir.Coding;
+        readonly CancerRegistryContentCRC: fhir.Coding;
+        readonly PCCCTN: fhir.Coding;
+        readonly EmergencyDepartmentEncounterSummaryEDES: fhir.Coding;
+        readonly PCCEDPN: fhir.Coding;
+        readonly EmergencyDepartmentReferralEDR: fhir.Coding;
+        readonly PCCETS: fhir.Coding;
+        readonly PCCHP: fhir.Coding;
+        readonly ImmunizationContentIC: fhir.Coding;
+        readonly PCCITS: fhir.Coding;
+        readonly PCCLDHP: fhir.Coding;
+        readonly PCCLDS: fhir.Coding;
+        readonly PCCMDS: fhir.Coding;
+        readonly PCCNDS: fhir.Coding;
+        readonly PCCNN: fhir.Coding;
+        readonly PCCPPVS: fhir.Coding;
+        readonly RoutineInterfacilityPatientTransportRIPT: fhir.Coding;
+        readonly PCCTN: fhir.Coding;
+        readonly PCCTRS: fhir.Coding;
+        readonly XDSMedicalSummaries: fhir.Coding;
+        readonly PersonalHealthRecordsAlsoKnownAsHL7CCDAndHITSPC32: fhir.Coding;
+        readonly PharmacyDIS: fhir.Coding;
+        readonly PharmacyPADV: fhir.Coding;
+        readonly PharmacyPML: fhir.Coding;
+        readonly PharmacyPre: fhir.Coding;
+        readonly RadiologyXDSIStructuredCDA: fhir.Coding; /**
+         * Valid arguments for the ContractTerm type.
+         */
+        readonly RadiologyXDSIPDF: fhir.Coding;
+        readonly RadiologyXDSIText: fhir.Coding;
+        readonly ValueSet: fhir.Coding;
+        readonly VerificationResult: fhir.Coding;
+        readonly VisionPrescription: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -864,7 +1115,7 @@ export declare class ContractTermAction extends fhir.BackboneElement {
     /**
      * Entity of the action.
      */
-    subject?: fhir.ContractTermActionSubject[];
+    subject: fhir.ContractTermActionSubject[];
     /**
      * Reason or purpose for the action stipulated by this Contract Provision.
      */
@@ -872,7 +1123,7 @@ export declare class ContractTermAction extends fhir.BackboneElement {
     /**
      * Id [identifier??] of the clause or question text related to this action in the referenced form or QuestionnaireResponse.
      */
-    linkId?: fhir.FhirString[];
+    linkId: fhir.FhirString[];
     /**
      * Current state of the term action.
      */
@@ -884,7 +1135,7 @@ export declare class ContractTermAction extends fhir.BackboneElement {
     /**
      * Id [identifier??] of the clause or question text related to the requester of this action in the referenced form or QuestionnaireResponse.
      */
-    contextLinkId?: fhir.FhirString[];
+    contextLinkId: fhir.FhirString[];
     /**
      * When action happens.
      */
@@ -896,15 +1147,15 @@ export declare class ContractTermAction extends fhir.BackboneElement {
     /**
      * Who or what initiated the action and has responsibility for its activation.
      */
-    requester?: fhir.Reference[];
+    requester: fhir.Reference[];
     /**
      * Id [identifier??] of the clause or question text related to the requester of this action in the referenced form or QuestionnaireResponse.
      */
-    requesterLinkId?: fhir.FhirString[];
+    requesterLinkId: fhir.FhirString[];
     /**
      * The type of individual that is desired or required to perform or not perform the action.
      */
-    performerType?: fhir.CodeableConcept[];
+    performerType: fhir.CodeableConcept[];
     /**
      * The type of role or competency of an individual desired or required to perform or not perform the action.
      */
@@ -916,31 +1167,31 @@ export declare class ContractTermAction extends fhir.BackboneElement {
     /**
      * Id [identifier??] of the clause or question text related to the reason type or reference of this  action in the referenced form or QuestionnaireResponse.
      */
-    performerLinkId?: fhir.FhirString[];
+    performerLinkId: fhir.FhirString[];
     /**
      * Rationale for the action to be performed or not performed. Describes why the action is permitted or prohibited.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * Indicates another resource whose existence justifies permitting or not permitting this action.
      */
-    reasonReference?: fhir.Reference[];
+    reasonReference: fhir.Reference[];
     /**
      * Describes why the action is to be performed or not performed in textual form.
      */
-    reason?: fhir.FhirString[];
+    reason: fhir.FhirString[];
     /**
      * Id [identifier??] of the clause or question text related to the reason type or reference of this  action in the referenced form or QuestionnaireResponse.
      */
-    reasonLinkId?: fhir.FhirString[];
+    reasonLinkId: fhir.FhirString[];
     /**
      * Comments made about the term action made by the requester, performer, subject or other participants.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Security labels that protects the action.
      */
-    securityLabelNumber?: fhir.FhirUnsignedInt[];
+    securityLabelNumber: fhir.FhirUnsignedInt[];
     /**
      * Default constructor for ContractTermAction - initializes any required elements to null if a value is not provided.
      */
@@ -1055,7 +1306,7 @@ export declare class ContractTerm extends fhir.BackboneElement {
     /**
      * Security labels that protect the handling of information about the term and its elements, which may be specifically identified..
      */
-    securityLabel?: fhir.ContractTermSecurityLabel[];
+    securityLabel: fhir.ContractTermSecurityLabel[];
     /**
      * The matter of concern in the context of this provision of the agrement.
      */
@@ -1063,16 +1314,16 @@ export declare class ContractTerm extends fhir.BackboneElement {
     /**
      * Contract Term Asset List.
      */
-    asset?: fhir.ContractTermAsset[];
+    asset: fhir.ContractTermAsset[];
     /**
      * Several agents may be associated (i.e. has some responsibility for an activity) with an activity and vice-versa.
      * For example, in cases of actions initiated by one user for other users, or in events that involve more than one user, hardware device, software, or system process. However, only one user may be the initiator/requestor for the event.
      */
-    action?: fhir.ContractTermAction[];
+    action: fhir.ContractTermAction[];
     /**
      * Nested group of Contract Provisions.
      */
-    group?: fhir.ContractTerm[];
+    group: fhir.ContractTerm[];
     /**
      * Default constructor for ContractTerm - initializes any required elements to null if a value is not provided.
      */
@@ -1127,7 +1378,56 @@ export declare class ContractSigner extends fhir.BackboneElement {
     /**
      * Preferred-bound Value Set for type (Contract.signer.type)
      */
-    static typePreferredCoding(): ContractSignerTypeCodingType;
+    static get typePreferredCodings(): {
+        readonly Affiliate: fhir.Coding;
+        readonly Agent: fhir.Coding;
+        readonly Amender: fhir.Coding;
+        readonly AssignedEntity: fhir.Coding;
+        readonly Author: fhir.Coding;
+        readonly Authenticator: fhir.Coding;
+        readonly Citizen: fhir.Coding;
+        readonly Claimant: fhir.Coding;
+        readonly CoAuthor: fhir.Coding;
+        readonly Consenter: fhir.Coding;
+        readonly ConsentWitness: fhir.Coding;
+        readonly Contact: fhir.Coding;
+        readonly CoParticipant: fhir.Coding;
+        readonly CoveredParty: fhir.Coding;
+        readonly Delegatee: fhir.Coding;
+        readonly Delegator: fhir.Coding;
+        readonly Dependent: fhir.Coding;
+        readonly DurablePowerOfAttorney: fhir.Coding;
+        readonly EmergencyContact: fhir.Coding;
+        readonly EventWitness: fhir.Coding;
+        readonly ExecutorOfEstate: fhir.Coding;
+        readonly Grantee: fhir.Coding;
+        readonly Grantor: fhir.Coding;
+        readonly GuardianAdLidem: fhir.Coding;
+        readonly Guarantor: fhir.Coding;
+        readonly Guardian: fhir.Coding;
+        readonly HealthcarePowerOfAttorney: fhir.Coding;
+        readonly HealthcareProvider: fhir.Coding;
+        readonly Informant: fhir.Coding;
+        readonly InvestigationSubject: fhir.Coding;
+        readonly Interpreter: fhir.Coding;
+        readonly LegalAuthenticator: fhir.Coding;
+        readonly NamedInsured: fhir.Coding;
+        readonly NextOfKin: fhir.Coding;
+        readonly Notary: fhir.Coding;
+        readonly Patient: fhir.Coding;
+        readonly PowerOfAttorney: fhir.Coding;
+        readonly PrimaryAuthor: fhir.Coding;
+        readonly PrimaryResponsibleParty: fhir.Coding;
+        readonly Recipient: fhir.Coding;
+        readonly ResponsibleParty: fhir.Coding;
+        readonly Reviewer: fhir.Coding;
+        readonly Source: fhir.Coding;
+        readonly SpecialPowerOfAttorney: fhir.Coding;
+        readonly Transcriber: fhir.Coding;
+        readonly Validator: fhir.Coding;
+        readonly Verifier: fhir.Coding;
+        readonly Witness: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1283,7 +1583,7 @@ export interface ContractArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the contract as not currently valid or active.
      */
-    status?: ContractStatusCodeType | undefined;
+    status?: fhir.FhirCode<ContractStatusCodeType> | string | undefined;
     /**
      * Legal states of the formation of a legal instrument, which is a formally executed written document that can be formally attributed to its author, records and formally expresses a legally enforceable act, process, or contractual duty, obligation, or right, and therefore evidences that act, process, or agreement.
      */
@@ -1434,7 +1734,7 @@ export declare class Contract extends fhir.DomainResource {
     /**
      * Unique identifier for this Contract or a derivative that references a Source Contract.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Used in a domain that uses a supplied contract repository.
      */
@@ -1447,7 +1747,7 @@ export declare class Contract extends fhir.DomainResource {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the contract as not currently valid or active.
      */
-    status?: ContractStatusCodeType | undefined;
+    status?: fhir.FhirCode<ContractStatusCodeType> | undefined;
     /**
      * Legal states of the formation of a legal instrument, which is a formally executed written document that can be formally attributed to its author, records and formally expresses a legally enforceable act, process, or contractual duty, obligation, or right, and therefore evidences that act, process, or agreement.
      */
@@ -1480,19 +1780,19 @@ export declare class Contract extends fhir.DomainResource {
      * The Contract.subject is an entity that has some role with respect to the Contract.topic and Contract.topic.term, which is of focal interest to the parties to the contract and likely impacted in a significant way by the Contract.action/Contract.action.reason and the Contract.term.action/Contract.action.reason.
      * In many cases, the Contract.subject is a Contract.signer if the subject is an adult; has a legal interest in the contract; and incompetent to participate in the contract agreement.
      */
-    subject?: fhir.Reference[];
+    subject: fhir.Reference[];
     /**
      * A formally or informally recognized grouping of people, principals, organizations, or jurisdictions formed for the purpose of achieving some form of collective action such as the promulgation, administration and enforcement of contracts and policies.
      */
-    authority?: fhir.Reference[];
+    authority: fhir.Reference[];
     /**
      * Recognized governance framework or system operating with a circumscribed scope in accordance with specified principles, policies, processes or procedures for managing rights, actions, or behaviors of parties or principals relative to resources.
      */
-    domain?: fhir.Reference[];
+    domain: fhir.Reference[];
     /**
      * Sites in which the contract is complied with,  exercised, or in force.
      */
-    site?: fhir.Reference[];
+    site: fhir.Reference[];
     /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
@@ -1508,7 +1808,7 @@ export declare class Contract extends fhir.DomainResource {
     /**
      * Alternative representation of the title for this Contract definition, derivative, or instance in any legal state., e.g., a domain specific contract number related to legislation.
      */
-    alias?: fhir.FhirString[];
+    alias: fhir.FhirString[];
     /**
      * The individual or organization that authored the Contract definition, derivative, or instance in any legal state.
      */
@@ -1532,7 +1832,7 @@ export declare class Contract extends fhir.DomainResource {
     /**
      * Sub-category for the Contract that distinguishes the kinds of systems that would be interested in the Contract within the context of the Contract's scope.
      */
-    subType?: fhir.CodeableConcept[];
+    subType: fhir.CodeableConcept[];
     /**
      * Precusory content developed with a focus and intent of supporting the formation a Contract instance, which may be associated with and transformable into a Contract.
      */
@@ -1540,32 +1840,32 @@ export declare class Contract extends fhir.DomainResource {
     /**
      * One or more Contract Provisions, which may be related and conveyed as a group, and may contain nested groups.
      */
-    term?: fhir.ContractTerm[];
+    term: fhir.ContractTerm[];
     /**
      * Information that may be needed by/relevant to the performer in their execution of this term action.
      */
-    supportingInfo?: fhir.Reference[];
+    supportingInfo: fhir.Reference[];
     /**
      * Links to Provenance records for past versions of this Contract definition, derivative, or instance, which identify key state transitions or updates that are likely to be relevant to a user looking at the current version of the Contract.  The Provence.entity indicates the target that was changed in the update. http://build.fhir.org/provenance-definitions.html#Provenance.entity.
      */
-    relevantHistory?: fhir.Reference[];
+    relevantHistory: fhir.Reference[];
     /**
      * Signers who are principal parties to the contract are bound by the Contract.activity related to the Contract.topic, and the Contract.term(s), which either extend or restrict the overall action on the topic by, for example, stipulating specific policies or obligations constraining actions, action reason, or agents with respect to some or all of the topic.
      * For example, specifying how policies or obligations shall constrain actions and action reasons permitted or denied on all or a subset of the Contract.topic (e.g., all or a portion of property being transferred by the contract), agents (e.g., who can resell, assign interests, or alter the property being transferred by the contract), actions, and action reasons; or with respect to Contract.terms, stipulating, extending, or limiting the Contract.period of applicability or valuation of items under consideration.
      */
-    signer?: fhir.ContractSigner[];
+    signer: fhir.ContractSigner[];
     /**
      * The "patient friendly language" versionof the Contract in whole or in parts. "Patient friendly language" means the representation of the Contract and Contract Provisions in a manner that is readily accessible and understandable by a layperson in accordance with best practices for communication styles that ensure that those agreeing to or signing the Contract understand the roles, actions, obligations, responsibilities, and implication of the agreement.
      */
-    friendly?: fhir.ContractFriendly[];
+    friendly: fhir.ContractFriendly[];
     /**
      * List of Legal expressions or representations of this Contract.
      */
-    legal?: fhir.ContractLegal[];
+    legal: fhir.ContractLegal[];
     /**
      * List of Computable Policy Rule Language Representations of this Contract.
      */
-    rule?: fhir.ContractRule[];
+    rule: fhir.ContractRule[];
     /**
      * Legally binding Contract: This is the signed and legally recognized representation of the Contract, which is considered the "source of truth" and which would be the basis for legal action related to enforcement of this Contract.
      */
@@ -1581,11 +1881,43 @@ export declare class Contract extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (Contract.status)
      */
-    static statusRequiredCoding(): ContractStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Amended: "amended";
+        readonly Appended: "appended";
+        readonly Cancelled: "cancelled";
+        readonly Disputed: "disputed";
+        readonly EnteredInError: "entered-in-error";
+        readonly Executable: "executable";
+        readonly Executed: "executed";
+        readonly Negotiable: "negotiable";
+        readonly Offered: "offered";
+        readonly Policy: "policy";
+        readonly Rejected: "rejected";
+        readonly Renewed: "renewed";
+        readonly Resolved: "resolved";
+        readonly Revoked: "revoked";
+        readonly Terminated: "terminated";
+    };
     /**
      * Extensible-bound Value Set for legalState (Contract.legalState)
      */
-    static legalStateExtensibleCoding(): ContractLegalstateCodingType;
+    static get legalStateExtensibleCodings(): {
+        readonly Amended: fhir.Coding;
+        readonly Appended: fhir.Coding;
+        readonly Cancelled: fhir.Coding;
+        readonly Disputed: fhir.Coding;
+        readonly EnteredInError: fhir.Coding;
+        readonly Executable: fhir.Coding;
+        readonly Executed: fhir.Coding;
+        readonly Negotiable: fhir.Coding;
+        readonly Offered: fhir.Coding;
+        readonly Policy: fhir.Coding;
+        readonly Rejected: fhir.Coding;
+        readonly Renewed: fhir.Coding;
+        readonly Resolved: fhir.Coding;
+        readonly Revoked: fhir.Coding;
+        readonly Terminated: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

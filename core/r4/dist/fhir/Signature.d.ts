@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { SignatureTypeCodingType } from '../fhirValueSets/SignatureTypeCodings.js';
 /**
  * Valid arguments for the Signature type.
  */
@@ -76,7 +75,26 @@ export declare class Signature extends fhir.FhirElement {
     /**
      * Preferred-bound Value Set for type (Signature.type)
      */
-    static typePreferredCoding(): SignatureTypeCodingType;
+    static get typePreferredCodings(): {
+        readonly AuthorQuoteSSignature: fhir.Coding;
+        readonly IdentityWitnessSignature: fhir.Coding;
+        readonly ConsentWitnessSignature: fhir.Coding;
+        readonly InterpreterSignature: fhir.Coding;
+        readonly ReviewSignature: fhir.Coding;
+        readonly SourceSignature: fhir.Coding;
+        readonly AddendumSignature: fhir.Coding;
+        readonly ModificationSignature: fhir.Coding;
+        readonly AdministrativeErrorEditSignature: fhir.Coding;
+        readonly TimestampSignature: fhir.Coding;
+        readonly CoauthorQuoteSSignature: fhir.Coding;
+        readonly CoParticipantQuoteSSignature: fhir.Coding;
+        readonly TranscriptionistRecorderSignature: fhir.Coding;
+        readonly VerificationSignature: fhir.Coding;
+        readonly ValidationSignature: fhir.Coding;
+        readonly ConsentSignature: fhir.Coding;
+        readonly SignatureWitnessSignature: fhir.Coding;
+        readonly EventWitnessSignature: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

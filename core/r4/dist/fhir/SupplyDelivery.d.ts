@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { SupplydeliveryStatusCodingType } from '../fhirValueSets/SupplydeliveryStatusCodings.js';
 import { SupplydeliveryStatusCodeType } from '../fhirValueSets/SupplydeliveryStatusCodes.js';
-import { SupplydeliveryTypeCodingType } from '../fhirValueSets/SupplydeliveryTypeCodings.js';
 /**
  * Valid arguments for the SupplyDeliverySuppliedItem type.
  */
@@ -76,7 +74,7 @@ export interface SupplyDeliveryArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status?: SupplydeliveryStatusCodeType | undefined;
+    status?: fhir.FhirCode<SupplydeliveryStatusCodeType> | string | undefined;
     /**
      * A link to a resource representing the person whom the delivered item is for.
      */
@@ -133,20 +131,20 @@ export declare class SupplyDelivery extends fhir.DomainResource {
     /**
      * This identifier is typically assigned by the dispenser, and may be used to reference the delivery when exchanging information about it with other systems.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
      */
-    basedOn?: fhir.Reference[];
+    basedOn: fhir.Reference[];
     /**
      * Not to be used to link an event to an Encounter - use Event.context for that.
      * [The allowed reference resources may be adjusted as appropriate for the event resource].
      */
-    partOf?: fhir.Reference[];
+    partOf: fhir.Reference[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status?: SupplydeliveryStatusCodeType | undefined;
+    status?: fhir.FhirCode<SupplydeliveryStatusCodeType> | undefined;
     /**
      * A link to a resource representing the person whom the delivered item is for.
      */
@@ -178,7 +176,7 @@ export declare class SupplyDelivery extends fhir.DomainResource {
     /**
      * Identifies the person who picked up the Supply.
      */
-    receiver?: fhir.Reference[];
+    receiver: fhir.Reference[];
     /**
      * Default constructor for SupplyDelivery - initializes any required elements to null if a value is not provided.
      */
@@ -186,11 +184,19 @@ export declare class SupplyDelivery extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (SupplyDelivery.status)
      */
-    static statusRequiredCoding(): SupplydeliveryStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Abandoned: "abandoned";
+        readonly Delivered: "completed";
+        readonly EnteredInError: "entered-in-error";
+        readonly InProgress: "in-progress";
+    };
     /**
      * Required-bound Value Set for type (SupplyDelivery.type)
      */
-    static typeRequiredCoding(): SupplydeliveryTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Device: "device";
+        readonly Medication: "medication";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

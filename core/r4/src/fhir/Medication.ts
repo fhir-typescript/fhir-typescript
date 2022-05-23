@@ -85,7 +85,7 @@ export class MedicationIngredient extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['item']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property item: fhir: Medication.ingredient.item[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item: fhir: Medication.ingredient.item[x]:' });
     }
     if (this["isActive"]) { issues.push(...this.isActive.doModelValidation()); }
     if (this["strength"]) { issues.push(...this.strength.doModelValidation()); }
@@ -159,7 +159,7 @@ export interface MedicationArgs extends fhir.DomainResourceArgs {
   /**
    * This status is intended to identify if the medication in a local system is in active use within a drug database or inventory.  For example, a pharmacy system may create a new drug file record for a compounded product "ABC Hospital Special Cream" with an active status.  At some point in the future, it may be determined that the drug record was created with an error and the status is changed to "entered in error".   This status is not intended to specify if a medication is part of a particular formulary.  It is possible that the drug record may be referenced by multiple formularies or catalogues and each of those entries would have a separate status.
    */
-  status?: MedicationStatusCodeType|undefined;
+  status?: fhir.FhirCode<MedicationStatusCodeType>|string|undefined;
   /**
    * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
    */
@@ -197,7 +197,7 @@ export class Medication extends fhir.DomainResource {
   /**
    * The serial number could be included as an identifier.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Depending on the context of use, the code that was actually selected by the user (prescriber, dispenser, etc.) will have the coding.userSelected set to true.  As described in the coding datatype: "A coding may be marked as a "userSelected" if a user selected the particular coded value in a user interface (e.g. the user selects an item in a pick-list). If a user selected coding exists, it is the preferred choice for performing translations etc. Other codes can only be literal translations to alternative code systems, or codes at a lower level of granularity (e.g. a generic code for a vendor-specific primary one).
    */
@@ -205,7 +205,7 @@ export class Medication extends fhir.DomainResource {
   /**
    * This status is intended to identify if the medication in a local system is in active use within a drug database or inventory.  For example, a pharmacy system may create a new drug file record for a compounded product "ABC Hospital Special Cream" with an active status.  At some point in the future, it may be determined that the drug record was created with an error and the status is changed to "entered in error".   This status is not intended to specify if a medication is part of a particular formulary.  It is possible that the drug record may be referenced by multiple formularies or catalogues and each of those entries would have a separate status.
    */
-  public status?: MedicationStatusCodeType|undefined;
+  public status?: fhir.FhirCode<MedicationStatusCodeType>|undefined;
   /**
    * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
    */
@@ -221,7 +221,7 @@ export class Medication extends fhir.DomainResource {
   /**
    * The ingredients need not be a complete list.  If an ingredient is not specified, this does not indicate whether an ingredient is present or absent.  If an ingredient is specified it does not mean that all ingredients are specified.  It is possible to specify both inactive and active ingredients.
    */
-  public ingredient?: fhir.MedicationIngredient[];
+  public ingredient: fhir.MedicationIngredient[];
   /**
    * Information that only applies to packages (not products).
    */
@@ -235,7 +235,7 @@ export class Medication extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<MedicationStatusCodeType>({value: source.status}); }
     if (source['manufacturer']) { this.manufacturer = new fhir.Reference(source.manufacturer); }
     if (source['form']) { this.form = new fhir.CodeableConcept(source.form); }
     if (source['amount']) { this.amount = new fhir.Ratio(source.amount); }
@@ -246,8 +246,8 @@ export class Medication extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Medication.status)
    */
-  public static statusRequiredCoding():MedicationStatusCodingType {
-    return MedicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return MedicationStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -255,10 +255,14 @@ export class Medication extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Medication" fhir: Medication.resourceType:"Medication"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Medication" fhir: Medication.resourceType:"Medication"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this['status'] && (!Object.values(MedicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<MedicationStatusCodeType> fhir: Medication.status:code Required binding to: MedicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["manufacturer"]) { issues.push(...this.manufacturer.doModelValidation()); }
     if (this["form"]) { issues.push(...this.form.doModelValidation()); }
     if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }

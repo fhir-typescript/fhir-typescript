@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { EventStatusCodingType } from '../fhirValueSets/EventStatusCodings.js';
 import { EventStatusCodeType } from '../fhirValueSets/EventStatusCodes.js';
-import { RequestPriorityCodingType } from '../fhirValueSets/RequestPriorityCodings.js';
 import { RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
 /**
  * Valid arguments for the CommunicationPayload type.
@@ -84,7 +82,7 @@ export interface CommunicationArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains the codes aborted and entered-in-error that mark the communication as not currently valid.
      */
-    status: EventStatusCodeType | null;
+    status: fhir.FhirCode<EventStatusCodeType> | string | undefined;
     /**
      * This is generally only used for "exception" statuses such as "not-done", "suspended" or "aborted". The reason for performing the event at all is captured in reasonCode, not here.
      */
@@ -96,7 +94,7 @@ export interface CommunicationArgs extends fhir.DomainResourceArgs {
     /**
      * Used to prioritize workflow (such as which communication to read first) when the communication is planned or in progress.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
     /**
      * A channel that was used for this communication (e.g. email, fax).
      */
@@ -165,31 +163,31 @@ export declare class Communication extends fhir.DomainResource {
     /**
      * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Communication.
      */
-    instantiatesCanonical?: fhir.FhirCanonical[];
+    instantiatesCanonical: fhir.FhirCanonical[];
     /**
      * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
      */
-    instantiatesUri?: fhir.FhirUri[];
+    instantiatesUri: fhir.FhirUri[];
     /**
      * This must point to some sort of a 'Request' resource, such as CarePlan, CommunicationRequest, ServiceRequest, MedicationRequest, etc.
      */
-    basedOn?: fhir.Reference[];
+    basedOn: fhir.Reference[];
     /**
      * Part of this action.
      */
-    partOf?: fhir.Reference[];
+    partOf: fhir.Reference[];
     /**
      * Prior communication that this communication is in response to.
      */
-    inResponseTo?: fhir.Reference[];
+    inResponseTo: fhir.Reference[];
     /**
      * This element is labeled as a modifier because the status contains the codes aborted and entered-in-error that mark the communication as not currently valid.
      */
-    status: EventStatusCodeType | null;
+    status: fhir.FhirCode<EventStatusCodeType> | null;
     /**
      * This is generally only used for "exception" statuses such as "not-done", "suspended" or "aborted". The reason for performing the event at all is captured in reasonCode, not here.
      */
@@ -197,15 +195,15 @@ export declare class Communication extends fhir.DomainResource {
     /**
      * There may be multiple axes of categorization and one communication may serve multiple purposes.
      */
-    category?: fhir.CodeableConcept[];
+    category: fhir.CodeableConcept[];
     /**
      * Used to prioritize workflow (such as which communication to read first) when the communication is planned or in progress.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | undefined;
     /**
      * A channel that was used for this communication (e.g. email, fax).
      */
-    medium?: fhir.CodeableConcept[];
+    medium: fhir.CodeableConcept[];
     /**
      * The patient or group that was the focus of this communication.
      */
@@ -217,7 +215,7 @@ export declare class Communication extends fhir.DomainResource {
     /**
      * Don't use Communication.about element when a more specific element exists, such as basedOn or reasonReference.
      */
-    about?: fhir.Reference[];
+    about: fhir.Reference[];
     /**
      * This will typically be the encounter the event occurred within, but some activities may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter.
      */
@@ -233,7 +231,7 @@ export declare class Communication extends fhir.DomainResource {
     /**
      * The entity (e.g. person, organization, clinical information system, care team or device) which was the target of the communication. If receipts need to be tracked by an individual, a separate resource instance will need to be created for each recipient.  Multiple recipient communications are intended where either receipts are not tracked (e.g. a mass mail-out) or a receipt is captured in aggregate (all emails confirmed received by a particular time).
      */
-    recipient?: fhir.Reference[];
+    recipient: fhir.Reference[];
     /**
      * The entity (e.g. person, organization, clinical information system, or device) which was the source of the communication.
      */
@@ -241,19 +239,19 @@ export declare class Communication extends fhir.DomainResource {
     /**
      * Textual reasons can be captured using reasonCode.text.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * Indicates another resource whose existence justifies this communication.
      */
-    reasonReference?: fhir.Reference[];
+    reasonReference: fhir.Reference[];
     /**
      * Text, attachment(s), or resource(s) that was communicated to the recipient.
      */
-    payload?: fhir.CommunicationPayload[];
+    payload: fhir.CommunicationPayload[];
     /**
      * Additional notes or commentary about the communication by the sender, receiver or other interested parties.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Default constructor for Communication - initializes any required elements to null if a value is not provided.
      */
@@ -261,11 +259,25 @@ export declare class Communication extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (Communication.status)
      */
-    static statusRequiredCoding(): EventStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Completed: "completed";
+        readonly EnteredInError: "entered-in-error";
+        readonly InProgress: "in-progress";
+        readonly NotDone: "not-done";
+        readonly OnHold: "on-hold";
+        readonly Preparation: "preparation";
+        readonly Stopped: "stopped";
+        readonly Unknown: "unknown";
+    };
     /**
      * Required-bound Value Set for priority (Communication.priority)
      */
-    static priorityRequiredCoding(): RequestPriorityCodingType;
+    static get priorityRequiredCodes(): {
+        readonly ASAP: "asap";
+        readonly Routine: "routine";
+        readonly STAT: "stat";
+        readonly Urgent: "urgent";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

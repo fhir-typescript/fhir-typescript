@@ -123,7 +123,7 @@ export class CapabilityStatementSoftware extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: CapabilityStatement.software.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: CapabilityStatement.software.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["version"]) { issues.push(...this.version.doModelValidation()); }
@@ -185,7 +185,7 @@ export class CapabilityStatementImplementation extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['description']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property description:fhir.FhirString fhir: CapabilityStatement.implementation.description:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description:fhir.FhirString fhir: CapabilityStatement.implementation.description:string' });
     }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
@@ -226,7 +226,7 @@ export class CapabilityStatementRestSecurity extends fhir.BackboneElement {
   /**
    * Types of security services that are supported/required by the system.
    */
-  public service?: fhir.CodeableConcept[];
+  public service: fhir.CodeableConcept[];
   /**
    * General description of how security works.
    */
@@ -244,7 +244,7 @@ export class CapabilityStatementRestSecurity extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for service (CapabilityStatement.rest.security.service)
    */
-  public static serviceExtensibleCoding():RestfulSecurityServiceCodingType {
+  public static get serviceExtensibleCodings() {
     return RestfulSecurityServiceCodings;
   }
   /**
@@ -265,7 +265,7 @@ export interface CapabilityStatementRestResourceInteractionArgs extends fhir.Bac
   /**
    * Coded identifier of the operation, supported by the system resource.
    */
-  code: TypeRestfulInteractionCodeType|null;
+  code: fhir.FhirCode<TypeRestfulInteractionCodeType>|string|undefined;
   /**
    * Guidance specific to the implementation of this operation, such as 'delete is a logical delete' or 'updates are only allowed with version id' or 'creates permitted from pre-authorized certificates only'.
    */
@@ -283,7 +283,7 @@ export class CapabilityStatementRestResourceInteraction extends fhir.BackboneEle
   /**
    * Coded identifier of the operation, supported by the system resource.
    */
-  public code: TypeRestfulInteractionCodeType|null;
+  public code: fhir.FhirCode<TypeRestfulInteractionCodeType>|null;
   /**
    * Guidance specific to the implementation of this operation, such as 'delete is a logical delete' or 'updates are only allowed with version id' or 'creates permitted from pre-authorized certificates only'.
    */
@@ -293,15 +293,15 @@ export class CapabilityStatementRestResourceInteraction extends fhir.BackboneEle
    */
   constructor(source:Partial<CapabilityStatementRestResourceInteractionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = source.code; }
+    if (source['code']) { this.code = new fhir.FhirCode<TypeRestfulInteractionCodeType>({value: source.code}); }
     else { this.code = null; }
     if (source['documentation']) { this.documentation = new fhir.FhirMarkdown({value: source.documentation}); }
   }
   /**
    * Required-bound Value Set for code (CapabilityStatement.rest.resource.interaction.code)
    */
-  public static codeRequiredCoding():TypeRestfulInteractionCodingType {
-    return TypeRestfulInteractionCodings;
+  public static get codeRequiredCodes() {
+    return TypeRestfulInteractionCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -309,8 +309,12 @@ export class CapabilityStatementRestResourceInteraction extends fhir.BackboneEle
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:TypeRestfulInteractionCodeType fhir: CapabilityStatement.rest.resource.interaction.code:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode<TypeRestfulInteractionCodeType> fhir: CapabilityStatement.rest.resource.interaction.code:code' });
     }
+    if (this['code'] && (!Object.values(TypeRestfulInteractionCodes).includes(this.code as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode<TypeRestfulInteractionCodeType> fhir: CapabilityStatement.rest.resource.interaction.code:code Required binding to: TypeRestfulInteraction' });
+    }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
     return issues;
   }
@@ -330,7 +334,7 @@ export interface CapabilityStatementRestResourceSearchParamArgs extends fhir.Bac
   /**
    * While this can be looked up from the definition, it is included here as a convenience for systems that autogenerate a query interface based on the server capability statement.  It SHALL be the same as the type in the search parameter definition.
    */
-  type: SearchParamTypeCodeType|null;
+  type: fhir.FhirCode<SearchParamTypeCodeType>|string|undefined;
   /**
    * This allows documentation of any distinct behaviors about how the search parameter is used.  For example, text matching algorithms.
    */
@@ -356,7 +360,7 @@ export class CapabilityStatementRestResourceSearchParam extends fhir.BackboneEle
   /**
    * While this can be looked up from the definition, it is included here as a convenience for systems that autogenerate a query interface based on the server capability statement.  It SHALL be the same as the type in the search parameter definition.
    */
-  public type: SearchParamTypeCodeType|null;
+  public type: fhir.FhirCode<SearchParamTypeCodeType>|null;
   /**
    * This allows documentation of any distinct behaviors about how the search parameter is used.  For example, text matching algorithms.
    */
@@ -369,15 +373,15 @@ export class CapabilityStatementRestResourceSearchParam extends fhir.BackboneEle
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
     if (source['definition']) { this.definition = new fhir.FhirCanonical({value: source.definition}); }
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<SearchParamTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['documentation']) { this.documentation = new fhir.FhirMarkdown({value: source.documentation}); }
   }
   /**
    * Required-bound Value Set for type (CapabilityStatement.rest.resource.searchParam.type)
    */
-  public static typeRequiredCoding():SearchParamTypeCodingType {
-    return SearchParamTypeCodings;
+  public static get typeRequiredCodes() {
+    return SearchParamTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -385,13 +389,17 @@ export class CapabilityStatementRestResourceSearchParam extends fhir.BackboneEle
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: CapabilityStatement.rest.resource.searchParam.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: CapabilityStatement.rest.resource.searchParam.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:SearchParamTypeCodeType fhir: CapabilityStatement.rest.resource.searchParam.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<SearchParamTypeCodeType> fhir: CapabilityStatement.rest.resource.searchParam.type:code' });
     }
+    if (this['type'] && (!Object.values(SearchParamTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<SearchParamTypeCodeType> fhir: CapabilityStatement.rest.resource.searchParam.type:code Required binding to: SearchParamType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
     return issues;
   }
@@ -452,11 +460,11 @@ export class CapabilityStatementRestResourceOperation extends fhir.BackboneEleme
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: CapabilityStatement.rest.resource.operation.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: CapabilityStatement.rest.resource.operation.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (!this['definition']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property definition:fhir.FhirCanonical fhir: CapabilityStatement.rest.resource.operation.definition:canonical', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property definition:fhir.FhirCanonical fhir: CapabilityStatement.rest.resource.operation.definition:canonical' });
     }
     if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
     if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
@@ -490,7 +498,7 @@ export interface CapabilityStatementRestResourceArgs extends fhir.BackboneElemen
   /**
    * If a server supports versionIds correctly, it SHOULD support vread too, but is not required to do so.
    */
-  versioning?: VersioningPolicyCodeType|undefined;
+  versioning?: fhir.FhirCode<VersioningPolicyCodeType>|string|undefined;
   /**
    * It is useful to support the vRead operation for current operations, even if past versions aren't available.
    */
@@ -506,7 +514,7 @@ export interface CapabilityStatementRestResourceArgs extends fhir.BackboneElemen
   /**
    * Conditional Read is mainly appropriate for interface engine scripts converting from other formats, such as v2.
    */
-  conditionalRead?: ConditionalReadStatusCodeType|undefined;
+  conditionalRead?: fhir.FhirCode<ConditionalReadStatusCodeType>|string|undefined;
   /**
    * Conditional Update is mainly appropriate for interface engine scripts converting from other formats, such as v2.
    */
@@ -514,11 +522,11 @@ export interface CapabilityStatementRestResourceArgs extends fhir.BackboneElemen
   /**
    * Conditional Delete is mainly appropriate for interface engine scripts converting from other formats, such as v2.
    */
-  conditionalDelete?: ConditionalDeleteStatusCodeType|undefined;
+  conditionalDelete?: fhir.FhirCode<ConditionalDeleteStatusCodeType>|string|undefined;
   /**
    * A set of flags that defines how references are supported.
    */
-  referencePolicy?: ReferenceHandlingPolicyCodeType[]|undefined;
+  referencePolicy?: fhir.FhirCode<ReferenceHandlingPolicyCodeType>[]|string[]|undefined;
   /**
    * If this list is empty, the server does not support includes.
    */
@@ -557,7 +565,7 @@ export class CapabilityStatementRestResource extends fhir.BackboneElement {
   /**
    * Supported profiles are different than the profile that applies to a particular resource in .rest.resource.profile. The resource profile is a general statement of what features of the resource are supported overall by the system - the sum total of the facilities it supports. A supported profile is a deeper statement about the functionality of the data and services provided by the server (or used by the client). A typical case is a laboratory system that produces a set of different reports - this is the list of types of data that it publishes. A key aspect of declaring profiles here is the question of how the client converts knowledge that the server publishes this data into working with the data; the client can inspect individual resources to determine whether they conform to a particular profile, but how does it find the ones that do? It does so by searching using the _profile parameter, so any resources listed here must be valid values for the _profile resource (using the identifier in the target profile).
    */
-  public supportedProfile?: fhir.FhirCanonical[];
+  public supportedProfile: fhir.FhirCanonical[];
   /**
    * Additional information about the resource type used by the system.
    */
@@ -565,11 +573,11 @@ export class CapabilityStatementRestResource extends fhir.BackboneElement {
   /**
    * In general, a Resource will only appear in a CapabilityStatement if the server actually has some capabilities - e.g. there is at least one interaction supported. However interactions can be omitted to support summarization (_summary = true).
    */
-  public interaction?: fhir.CapabilityStatementRestResourceInteraction[];
+  public interaction: fhir.CapabilityStatementRestResourceInteraction[];
   /**
    * If a server supports versionIds correctly, it SHOULD support vread too, but is not required to do so.
    */
-  public versioning?: VersioningPolicyCodeType|undefined;
+  public versioning?: fhir.FhirCode<VersioningPolicyCodeType>|undefined;
   /**
    * It is useful to support the vRead operation for current operations, even if past versions aren't available.
    */
@@ -585,7 +593,7 @@ export class CapabilityStatementRestResource extends fhir.BackboneElement {
   /**
    * Conditional Read is mainly appropriate for interface engine scripts converting from other formats, such as v2.
    */
-  public conditionalRead?: ConditionalReadStatusCodeType|undefined;
+  public conditionalRead?: fhir.FhirCode<ConditionalReadStatusCodeType>|undefined;
   /**
    * Conditional Update is mainly appropriate for interface engine scripts converting from other formats, such as v2.
    */
@@ -593,28 +601,28 @@ export class CapabilityStatementRestResource extends fhir.BackboneElement {
   /**
    * Conditional Delete is mainly appropriate for interface engine scripts converting from other formats, such as v2.
    */
-  public conditionalDelete?: ConditionalDeleteStatusCodeType|undefined;
+  public conditionalDelete?: fhir.FhirCode<ConditionalDeleteStatusCodeType>|undefined;
   /**
    * A set of flags that defines how references are supported.
    */
-  public referencePolicy?: ReferenceHandlingPolicyCodeType[];
+  public referencePolicy: fhir.FhirCode<ReferenceHandlingPolicyCodeType>[];
   /**
    * If this list is empty, the server does not support includes.
    */
-  public searchInclude?: fhir.FhirString[];
+  public searchInclude: fhir.FhirString[];
   /**
    * If this list is empty, the server does not support reverse includes.
    */
-  public searchRevInclude?: fhir.FhirString[];
+  public searchRevInclude: fhir.FhirString[];
   /**
    * The search parameters should include the control search parameters such as _sort, _count, etc. that also apply to this resource (though many will be listed at [CapabilityStatement.rest.searchParam](capabilitystatement-definitions.html#CapabilityStatement.rest.searchParam)). The behavior of some search parameters may be further described by other code or extension elements, or narrative within the capability statement or linked [SearchParameter](searchparameter.html#) definitions.
    */
-  public searchParam?: fhir.CapabilityStatementRestResourceSearchParam[];
+  public searchParam: fhir.CapabilityStatementRestResourceSearchParam[];
   /**
    * Operations linked from CapabilityStatement.rest.resource.operation must have OperationDefinition.type = true or OperationDefinition.instance = true.    
    * If an operation that is listed in multiple CapabilityStatement.rest.resource.operation (e.g. for different resource types), then clients should understand that the operation is only supported on the specified resource types, and that may be a subset of those listed in OperationDefinition.resource.
    */
-  public operation?: fhir.CapabilityStatementRestResourceOperation[];
+  public operation: fhir.CapabilityStatementRestResourceOperation[];
   /**
    * Default constructor for CapabilityStatementRestResource - initializes any required elements to null if a value is not provided.
    */
@@ -628,14 +636,14 @@ export class CapabilityStatementRestResource extends fhir.BackboneElement {
     if (source['documentation']) { this.documentation = new fhir.FhirMarkdown({value: source.documentation}); }
     if (source['interaction']) { this.interaction = source.interaction.map((x) => new fhir.CapabilityStatementRestResourceInteraction(x)); }
     else { this.interaction = []; }
-    if (source['versioning']) { this.versioning = source.versioning; }
+    if (source['versioning']) { this.versioning = new fhir.FhirCode<VersioningPolicyCodeType>({value: source.versioning}); }
     if (source['readHistory']) { this.readHistory = new fhir.FhirBoolean({value: source.readHistory}); }
     if (source['updateCreate']) { this.updateCreate = new fhir.FhirBoolean({value: source.updateCreate}); }
     if (source['conditionalCreate']) { this.conditionalCreate = new fhir.FhirBoolean({value: source.conditionalCreate}); }
-    if (source['conditionalRead']) { this.conditionalRead = source.conditionalRead; }
+    if (source['conditionalRead']) { this.conditionalRead = new fhir.FhirCode<ConditionalReadStatusCodeType>({value: source.conditionalRead}); }
     if (source['conditionalUpdate']) { this.conditionalUpdate = new fhir.FhirBoolean({value: source.conditionalUpdate}); }
-    if (source['conditionalDelete']) { this.conditionalDelete = source.conditionalDelete; }
-    if (source['referencePolicy']) { this.referencePolicy = source.referencePolicy.map((x) => x); }
+    if (source['conditionalDelete']) { this.conditionalDelete = new fhir.FhirCode<ConditionalDeleteStatusCodeType>({value: source.conditionalDelete}); }
+    if (source['referencePolicy']) { this.referencePolicy = source.referencePolicy.map((x) => new fhir.FhirCode<ReferenceHandlingPolicyCodeType>({value: x})); }
     else { this.referencePolicy = []; }
     if (source['searchInclude']) { this.searchInclude = source.searchInclude.map((x) => new fhir.FhirString({value: x})); }
     else { this.searchInclude = []; }
@@ -649,32 +657,32 @@ export class CapabilityStatementRestResource extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for type (CapabilityStatement.rest.resource.type)
    */
-  public static typeRequiredCoding():ResourceTypesCodingType {
-    return ResourceTypesCodings;
+  public static get typeRequiredCodes() {
+    return ResourceTypesCodes;
   }
   /**
    * Required-bound Value Set for versioning (CapabilityStatement.rest.resource.versioning)
    */
-  public static versioningRequiredCoding():VersioningPolicyCodingType {
-    return VersioningPolicyCodings;
+  public static get versioningRequiredCodes() {
+    return VersioningPolicyCodes;
   }
   /**
    * Required-bound Value Set for conditionalRead (CapabilityStatement.rest.resource.conditionalRead)
    */
-  public static conditionalReadRequiredCoding():ConditionalReadStatusCodingType {
-    return ConditionalReadStatusCodings;
+  public static get conditionalReadRequiredCodes() {
+    return ConditionalReadStatusCodes;
   }
   /**
    * Required-bound Value Set for conditionalDelete (CapabilityStatement.rest.resource.conditionalDelete)
    */
-  public static conditionalDeleteRequiredCoding():ConditionalDeleteStatusCodingType {
-    return ConditionalDeleteStatusCodings;
+  public static get conditionalDeleteRequiredCodes() {
+    return ConditionalDeleteStatusCodes;
   }
   /**
    * Required-bound Value Set for referencePolicy (CapabilityStatement.rest.resource.referencePolicy)
    */
-  public static referencePolicyRequiredCoding():ReferenceHandlingPolicyCodingType {
-    return ReferenceHandlingPolicyCodings;
+  public static get referencePolicyRequiredCodes() {
+    return ReferenceHandlingPolicyCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -682,17 +690,40 @@ export class CapabilityStatementRestResource extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.FhirCode fhir: CapabilityStatement.rest.resource.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode fhir: CapabilityStatement.rest.resource.type:code' });
+    }
+    if (this['type'] && (!Object.values(ResourceTypesCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode fhir: CapabilityStatement.rest.resource.type:code Required binding to: ResourceTypes' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["profile"]) { issues.push(...this.profile.doModelValidation()); }
     if (this["supportedProfile"]) { this.supportedProfile.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
     if (this["interaction"]) { this.interaction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['versioning'] && (!Object.values(VersioningPolicyCodes).includes(this.versioning as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property versioning?:fhir.FhirCode<VersioningPolicyCodeType> fhir: CapabilityStatement.rest.resource.versioning:code Required binding to: VersioningPolicy' });
+    }
+    if (this["versioning"]) { issues.push(...this.versioning.doModelValidation()); }
     if (this["readHistory"]) { issues.push(...this.readHistory.doModelValidation()); }
     if (this["updateCreate"]) { issues.push(...this.updateCreate.doModelValidation()); }
     if (this["conditionalCreate"]) { issues.push(...this.conditionalCreate.doModelValidation()); }
+    if (this['conditionalRead'] && (!Object.values(ConditionalReadStatusCodes).includes(this.conditionalRead as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property conditionalRead?:fhir.FhirCode<ConditionalReadStatusCodeType> fhir: CapabilityStatement.rest.resource.conditionalRead:code Required binding to: ConditionalReadStatus' });
+    }
+    if (this["conditionalRead"]) { issues.push(...this.conditionalRead.doModelValidation()); }
     if (this["conditionalUpdate"]) { issues.push(...this.conditionalUpdate.doModelValidation()); }
+    if (this['conditionalDelete'] && (!Object.values(ConditionalDeleteStatusCodes).includes(this.conditionalDelete as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property conditionalDelete?:fhir.FhirCode<ConditionalDeleteStatusCodeType> fhir: CapabilityStatement.rest.resource.conditionalDelete:code Required binding to: ConditionalDeleteStatus' });
+    }
+    if (this["conditionalDelete"]) { issues.push(...this.conditionalDelete.doModelValidation()); }
+    if (this['referencePolicy']) {
+      this.referencePolicy.forEach((v) => {
+        if (!Object.values(ReferenceHandlingPolicyCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property referencePolicy?:fhir.FhirCode<ReferenceHandlingPolicyCodeType>[] fhir: CapabilityStatement.rest.resource.referencePolicy:code Required binding to: ReferenceHandlingPolicy' });
+        }
+      });
+    }
+    if (this["referencePolicy"]) { this.referencePolicy.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["searchInclude"]) { this.searchInclude.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["searchRevInclude"]) { this.searchRevInclude.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["searchParam"]) { this.searchParam.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -707,7 +738,7 @@ export interface CapabilityStatementRestInteractionArgs extends fhir.BackboneEle
   /**
    * A coded identifier of the operation, supported by the system.
    */
-  code: SystemRestfulInteractionCodeType|null;
+  code: fhir.FhirCode<SystemRestfulInteractionCodeType>|string|undefined;
   /**
    * Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.
    */
@@ -725,7 +756,7 @@ export class CapabilityStatementRestInteraction extends fhir.BackboneElement {
   /**
    * A coded identifier of the operation, supported by the system.
    */
-  public code: SystemRestfulInteractionCodeType|null;
+  public code: fhir.FhirCode<SystemRestfulInteractionCodeType>|null;
   /**
    * Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.
    */
@@ -735,15 +766,15 @@ export class CapabilityStatementRestInteraction extends fhir.BackboneElement {
    */
   constructor(source:Partial<CapabilityStatementRestInteractionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = source.code; }
+    if (source['code']) { this.code = new fhir.FhirCode<SystemRestfulInteractionCodeType>({value: source.code}); }
     else { this.code = null; }
     if (source['documentation']) { this.documentation = new fhir.FhirMarkdown({value: source.documentation}); }
   }
   /**
    * Required-bound Value Set for code (CapabilityStatement.rest.interaction.code)
    */
-  public static codeRequiredCoding():SystemRestfulInteractionCodingType {
-    return SystemRestfulInteractionCodings;
+  public static get codeRequiredCodes() {
+    return SystemRestfulInteractionCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -751,8 +782,12 @@ export class CapabilityStatementRestInteraction extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:SystemRestfulInteractionCodeType fhir: CapabilityStatement.rest.interaction.code:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode<SystemRestfulInteractionCodeType> fhir: CapabilityStatement.rest.interaction.code:code' });
     }
+    if (this['code'] && (!Object.values(SystemRestfulInteractionCodes).includes(this.code as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode<SystemRestfulInteractionCodeType> fhir: CapabilityStatement.rest.interaction.code:code Required binding to: SystemRestfulInteraction' });
+    }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
     return issues;
   }
@@ -764,7 +799,7 @@ export interface CapabilityStatementRestArgs extends fhir.BackboneElementArgs {
   /**
    * Identifies whether this portion of the statement is describing the ability to initiate or receive restful operations.
    */
-  mode: RestfulCapabilityModeCodeType|null;
+  mode: fhir.FhirCode<RestfulCapabilityModeCodeType>|string|undefined;
   /**
    * Information about the system's restful capabilities that apply across all applications, such as security.
    */
@@ -806,7 +841,7 @@ export class CapabilityStatementRest extends fhir.BackboneElement {
   /**
    * Identifies whether this portion of the statement is describing the ability to initiate or receive restful operations.
    */
-  public mode: RestfulCapabilityModeCodeType|null;
+  public mode: fhir.FhirCode<RestfulCapabilityModeCodeType>|null;
   /**
    * Information about the system's restful capabilities that apply across all applications, such as security.
    */
@@ -818,29 +853,29 @@ export class CapabilityStatementRest extends fhir.BackboneElement {
   /**
    * Max of one repetition per resource type.
    */
-  public resource?: fhir.CapabilityStatementRestResource[];
+  public resource: fhir.CapabilityStatementRestResource[];
   /**
    * A specification of restful operations supported by the system.
    */
-  public interaction?: fhir.CapabilityStatementRestInteraction[];
+  public interaction: fhir.CapabilityStatementRestInteraction[];
   /**
    * Typically, the only search parameters supported for all searches are those that apply to all resources - tags, profiles, text search etc. These search parameters should include the control search parameters such as _sort, _count, etc. that also apply to this resource (though many will be listed at [CapabilityStatement.rest.searchParam](capabilitystatement-definitions.html#CapabilityStatement.rest.searchParam)). The behavior of some search parameters may be further described by other code or extension elements, or narrative within the capability statement or linked [SearchParameter](searchparameter.html#) definitions.
    */
-  public searchParam?: fhir.CapabilityStatementRestResourceSearchParam[];
+  public searchParam: fhir.CapabilityStatementRestResourceSearchParam[];
   /**
    * CapabilityStatement.rest.operation is for operations invoked at the system level, or for operations that are supported across multiple resource types. Operations linked from CapabilityStatement.rest.operation must have OperationDefinition.system = true, or more than one Operation.resource.
    */
-  public operation?: fhir.CapabilityStatementRestResourceOperation[];
+  public operation: fhir.CapabilityStatementRestResourceOperation[];
   /**
    * At present, the only defined compartments are at [CompartmentDefinition](compartmentdefinition.html).
    */
-  public compartment?: fhir.FhirCanonical[];
+  public compartment: fhir.FhirCanonical[];
   /**
    * Default constructor for CapabilityStatementRest - initializes any required elements to null if a value is not provided.
    */
   constructor(source:Partial<CapabilityStatementRestArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['mode']) { this.mode = source.mode; }
+    if (source['mode']) { this.mode = new fhir.FhirCode<RestfulCapabilityModeCodeType>({value: source.mode}); }
     else { this.mode = null; }
     if (source['documentation']) { this.documentation = new fhir.FhirMarkdown({value: source.documentation}); }
     if (source['security']) { this.security = new fhir.CapabilityStatementRestSecurity(source.security); }
@@ -858,8 +893,8 @@ export class CapabilityStatementRest extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for mode (CapabilityStatement.rest.mode)
    */
-  public static modeRequiredCoding():RestfulCapabilityModeCodingType {
-    return RestfulCapabilityModeCodings;
+  public static get modeRequiredCodes() {
+    return RestfulCapabilityModeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -867,8 +902,12 @@ export class CapabilityStatementRest extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['mode']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property mode:RestfulCapabilityModeCodeType fhir: CapabilityStatement.rest.mode:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode:fhir.FhirCode<RestfulCapabilityModeCodeType> fhir: CapabilityStatement.rest.mode:code' });
     }
+    if (this['mode'] && (!Object.values(RestfulCapabilityModeCodes).includes(this.mode as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode:fhir.FhirCode<RestfulCapabilityModeCodeType> fhir: CapabilityStatement.rest.mode:code Required binding to: RestfulCapabilityMode' });
+    }
+    if (this["mode"]) { issues.push(...this.mode.doModelValidation()); }
     if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
     if (this["security"]) { issues.push(...this.security.doModelValidation()); }
     if (this["resource"]) { this.resource.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -922,7 +961,7 @@ export class CapabilityStatementMessagingEndpoint extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for protocol (CapabilityStatement.messaging.endpoint.protocol)
    */
-  public static protocolExtensibleCoding():MessageTransportCodingType {
+  public static get protocolExtensibleCodings() {
     return MessageTransportCodings;
   }
   /**
@@ -931,11 +970,11 @@ export class CapabilityStatementMessagingEndpoint extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['protocol']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property protocol:fhir.Coding fhir: CapabilityStatement.messaging.endpoint.protocol:Coding', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property protocol:fhir.Coding fhir: CapabilityStatement.messaging.endpoint.protocol:Coding' });
     }
     if (this["protocol"]) { issues.push(...this.protocol.doModelValidation()); }
     if (!this['address']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property address:fhir.FhirUrl fhir: CapabilityStatement.messaging.endpoint.address:url', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property address:fhir.FhirUrl fhir: CapabilityStatement.messaging.endpoint.address:url' });
     }
     if (this["address"]) { issues.push(...this.address.doModelValidation()); }
     return issues;
@@ -948,7 +987,7 @@ export interface CapabilityStatementMessagingSupportedMessageArgs extends fhir.B
   /**
    * The mode of this event declaration - whether application is sender or receiver.
    */
-  mode: EventCapabilityModeCodeType|null;
+  mode: fhir.FhirCode<EventCapabilityModeCodeType>|string|undefined;
   /**
    * Points to a message definition that identifies the messaging event, message structure, allowed responses, etc.
    */
@@ -966,7 +1005,7 @@ export class CapabilityStatementMessagingSupportedMessage extends fhir.BackboneE
   /**
    * The mode of this event declaration - whether application is sender or receiver.
    */
-  public mode: EventCapabilityModeCodeType|null;
+  public mode: fhir.FhirCode<EventCapabilityModeCodeType>|null;
   /**
    * Points to a message definition that identifies the messaging event, message structure, allowed responses, etc.
    */
@@ -976,7 +1015,7 @@ export class CapabilityStatementMessagingSupportedMessage extends fhir.BackboneE
    */
   constructor(source:Partial<CapabilityStatementMessagingSupportedMessageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['mode']) { this.mode = source.mode; }
+    if (source['mode']) { this.mode = new fhir.FhirCode<EventCapabilityModeCodeType>({value: source.mode}); }
     else { this.mode = null; }
     if (source['definition']) { this.definition = new fhir.FhirCanonical({value: source.definition}); }
     else { this.definition = null; }
@@ -984,8 +1023,8 @@ export class CapabilityStatementMessagingSupportedMessage extends fhir.BackboneE
   /**
    * Required-bound Value Set for mode (CapabilityStatement.messaging.supportedMessage.mode)
    */
-  public static modeRequiredCoding():EventCapabilityModeCodingType {
-    return EventCapabilityModeCodings;
+  public static get modeRequiredCodes() {
+    return EventCapabilityModeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -993,10 +1032,14 @@ export class CapabilityStatementMessagingSupportedMessage extends fhir.BackboneE
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['mode']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property mode:EventCapabilityModeCodeType fhir: CapabilityStatement.messaging.supportedMessage.mode:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode:fhir.FhirCode<EventCapabilityModeCodeType> fhir: CapabilityStatement.messaging.supportedMessage.mode:code' });
     }
+    if (this['mode'] && (!Object.values(EventCapabilityModeCodes).includes(this.mode as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode:fhir.FhirCode<EventCapabilityModeCodeType> fhir: CapabilityStatement.messaging.supportedMessage.mode:code Required binding to: EventCapabilityMode' });
+    }
+    if (this["mode"]) { issues.push(...this.mode.doModelValidation()); }
     if (!this['definition']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property definition:fhir.FhirCanonical fhir: CapabilityStatement.messaging.supportedMessage.definition:canonical', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property definition:fhir.FhirCanonical fhir: CapabilityStatement.messaging.supportedMessage.definition:canonical' });
     }
     if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
     return issues;
@@ -1035,7 +1078,7 @@ export class CapabilityStatementMessaging extends fhir.BackboneElement {
   /**
    * An endpoint (network accessible address) to which messages and/or replies are to be sent.
    */
-  public endpoint?: fhir.CapabilityStatementMessagingEndpoint[];
+  public endpoint: fhir.CapabilityStatementMessagingEndpoint[];
   /**
    * If this value is missing then the application does not implement (receiver) or depend on (sender) reliable messaging.
    */
@@ -1047,7 +1090,7 @@ export class CapabilityStatementMessaging extends fhir.BackboneElement {
   /**
    * This is a proposed alternative to the messaging.event structure.
    */
-  public supportedMessage?: fhir.CapabilityStatementMessagingSupportedMessage[];
+  public supportedMessage: fhir.CapabilityStatementMessagingSupportedMessage[];
   /**
    * Default constructor for CapabilityStatementMessaging - initializes any required elements to null if a value is not provided.
    */
@@ -1079,7 +1122,7 @@ export interface CapabilityStatementDocumentArgs extends fhir.BackboneElementArg
   /**
    * Mode of this document declaration - whether an application is a producer or consumer.
    */
-  mode: DocumentModeCodeType|null;
+  mode: fhir.FhirCode<DocumentModeCodeType>|string|undefined;
   /**
    * A description of how the application supports or uses the specified document profile.  For example, when documents are created, what action is taken with consumed documents, etc.
    */
@@ -1101,7 +1144,7 @@ export class CapabilityStatementDocument extends fhir.BackboneElement {
   /**
    * Mode of this document declaration - whether an application is a producer or consumer.
    */
-  public mode: DocumentModeCodeType|null;
+  public mode: fhir.FhirCode<DocumentModeCodeType>|null;
   /**
    * A description of how the application supports or uses the specified document profile.  For example, when documents are created, what action is taken with consumed documents, etc.
    */
@@ -1115,7 +1158,7 @@ export class CapabilityStatementDocument extends fhir.BackboneElement {
    */
   constructor(source:Partial<CapabilityStatementDocumentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['mode']) { this.mode = source.mode; }
+    if (source['mode']) { this.mode = new fhir.FhirCode<DocumentModeCodeType>({value: source.mode}); }
     else { this.mode = null; }
     if (source['documentation']) { this.documentation = new fhir.FhirMarkdown({value: source.documentation}); }
     if (source['profile']) { this.profile = new fhir.FhirCanonical({value: source.profile}); }
@@ -1124,8 +1167,8 @@ export class CapabilityStatementDocument extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for mode (CapabilityStatement.document.mode)
    */
-  public static modeRequiredCoding():DocumentModeCodingType {
-    return DocumentModeCodings;
+  public static get modeRequiredCodes() {
+    return DocumentModeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -1133,11 +1176,15 @@ export class CapabilityStatementDocument extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['mode']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property mode:DocumentModeCodeType fhir: CapabilityStatement.document.mode:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode:fhir.FhirCode<DocumentModeCodeType> fhir: CapabilityStatement.document.mode:code' });
     }
+    if (this['mode'] && (!Object.values(DocumentModeCodes).includes(this.mode as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode:fhir.FhirCode<DocumentModeCodeType> fhir: CapabilityStatement.document.mode:code Required binding to: DocumentMode' });
+    }
+    if (this["mode"]) { issues.push(...this.mode.doModelValidation()); }
     if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
     if (!this['profile']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property profile:fhir.FhirCanonical fhir: CapabilityStatement.document.profile:canonical', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property profile:fhir.FhirCanonical fhir: CapabilityStatement.document.profile:canonical' });
     }
     if (this["profile"]) { issues.push(...this.profile.doModelValidation()); }
     return issues;
@@ -1172,7 +1219,7 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of capability statements that are appropriate for use versus not.This is not intended for use with actual capability statements, but where capability statements are used to describe possible or desired systems.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of capability statements that are appropriate for use versus not.
    */
@@ -1212,7 +1259,7 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
   /**
    * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
    */
-  kind: CapabilityStatementKindCodeType|null;
+  kind: fhir.FhirCode<CapabilityStatementKindCodeType>|string|undefined;
   /**
    * HL7 defines the following Services: [Terminology Service](terminology-service.html).    
    * Many [Implementation Guides](http://fhir.org/guides/registry) define additional services.
@@ -1294,7 +1341,7 @@ export class CapabilityStatement extends fhir.DomainResource {
   /**
    * Allows filtering of capability statements that are appropriate for use versus not.This is not intended for use with actual capability statements, but where capability statements are used to describe possible or desired systems.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of capability statements that are appropriate for use versus not.
    */
@@ -1310,7 +1357,7 @@ export class CapabilityStatement extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the capability statement was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the capability statement as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the capability statement is presumed to be the predominant language in the place the capability statement was created).This does not need to be populated if the description is adequately implied by the software or implementation details.
    */
@@ -1318,11 +1365,11 @@ export class CapabilityStatement extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the capability statement to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * This element does not describe the usage of the capability statement. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this capability statement.
    */
@@ -1334,17 +1381,17 @@ export class CapabilityStatement extends fhir.DomainResource {
   /**
    * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
    */
-  public kind: CapabilityStatementKindCodeType|null;
+  public kind: fhir.FhirCode<CapabilityStatementKindCodeType>|null;
   /**
    * HL7 defines the following Services: [Terminology Service](terminology-service.html).    
    * Many [Implementation Guides](http://fhir.org/guides/registry) define additional services.
    */
-  public instantiates?: fhir.FhirCanonical[];
+  public instantiates: fhir.FhirCanonical[];
   /**
    * the contents of any directly or indirectly imported CapabilityStatements SHALL NOT overlap, i.e. they cannot refer to the same rest/resource, operations/name, searchparam/name, interaction/code, messaging/endpoint, document/mode pair.
    * A capability statement that imports another CapabilityStatement automatically instantiates it too (though this is often not a very useful statement for the kinds of CapabilityStatements that are suitable for importing).
    */
-  public imports?: fhir.FhirCanonical[];
+  public imports: fhir.FhirCanonical[];
   /**
    * Software that is covered by this capability statement.  It is used when the capability statement describes the capabilities of a particular software version, independent of an installation.
    */
@@ -1364,23 +1411,23 @@ export class CapabilityStatement extends fhir.DomainResource {
   /**
    * At present, the patch mime types application/json-patch+json and application/xml-patch+xml are legal. Generally, if a server supports PATCH, it would be expected to support the patch formats and match the formats it supports, but this is not always possible or necessary.
    */
-  public patchFormat?: fhir.FhirCode[];
+  public patchFormat: fhir.FhirCode[];
   /**
    * A list of implementation guides that the server does (or should) support in their entirety.
    */
-  public implementationGuide?: fhir.FhirCanonical[];
+  public implementationGuide: fhir.FhirCanonical[];
   /**
    * Multiple repetitions allow definition of both client and/or server behaviors or possibly behaviors under different configuration settings (for software or requirements statements).
    */
-  public rest?: fhir.CapabilityStatementRest[];
+  public rest: fhir.CapabilityStatementRest[];
   /**
    * Multiple repetitions allow the documentation of multiple endpoints per solution.
    */
-  public messaging?: fhir.CapabilityStatementMessaging[];
+  public messaging: fhir.CapabilityStatementMessaging[];
   /**
    * A document definition.
    */
-  public document?: fhir.CapabilityStatementDocument[];
+  public document: fhir.CapabilityStatementDocument[];
   /**
    * Default constructor for CapabilityStatement - initializes any required elements to null if a value is not provided.
    */
@@ -1391,7 +1438,7 @@ export class CapabilityStatement extends fhir.DomainResource {
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
@@ -1406,7 +1453,7 @@ export class CapabilityStatement extends fhir.DomainResource {
     else { this.jurisdiction = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
-    if (source['kind']) { this.kind = source.kind; }
+    if (source['kind']) { this.kind = new fhir.FhirCode<CapabilityStatementKindCodeType>({value: source.kind}); }
     else { this.kind = null; }
     if (source['instantiates']) { this.instantiates = source.instantiates.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.instantiates = []; }
@@ -1432,20 +1479,20 @@ export class CapabilityStatement extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (CapabilityStatement.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Required-bound Value Set for kind (CapabilityStatement.kind)
    */
-  public static kindRequiredCoding():CapabilityStatementKindCodingType {
-    return CapabilityStatementKindCodings;
+  public static get kindRequiredCodes() {
+    return CapabilityStatementKindCodes;
   }
   /**
    * Required-bound Value Set for fhirVersion (CapabilityStatement.fhirVersion)
    */
-  public static fhirVersionRequiredCoding():FHIRVersionCodingType {
-    return FHIRVersionCodings;
+  public static get fhirVersionRequiredCodes() {
+    return FHIRVersionCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -1453,18 +1500,22 @@ export class CapabilityStatement extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"CapabilityStatement" fhir: CapabilityStatement.resourceType:"CapabilityStatement"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"CapabilityStatement" fhir: CapabilityStatement.resourceType:"CapabilityStatement"' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["version"]) { issues.push(...this.version.doModelValidation()); }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: CapabilityStatement.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: CapabilityStatement.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: CapabilityStatement.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (!this['date']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: CapabilityStatement.date:dateTime', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: CapabilityStatement.date:dateTime' });
     }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
@@ -1475,22 +1526,29 @@ export class CapabilityStatement extends fhir.DomainResource {
     if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
     if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
     if (!this['kind']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property kind:CapabilityStatementKindCodeType fhir: CapabilityStatement.kind:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind:fhir.FhirCode<CapabilityStatementKindCodeType> fhir: CapabilityStatement.kind:code' });
     }
+    if (this['kind'] && (!Object.values(CapabilityStatementKindCodes).includes(this.kind as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind:fhir.FhirCode<CapabilityStatementKindCodeType> fhir: CapabilityStatement.kind:code Required binding to: CapabilityStatementKind' });
+    }
+    if (this["kind"]) { issues.push(...this.kind.doModelValidation()); }
     if (this["instantiates"]) { this.instantiates.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["imports"]) { this.imports.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["software"]) { issues.push(...this.software.doModelValidation()); }
     if (this["implementation"]) { issues.push(...this.implementation.doModelValidation()); }
     if (!this['fhirVersion']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property fhirVersion:fhir.FhirCode fhir: CapabilityStatement.fhirVersion:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property fhirVersion:fhir.FhirCode fhir: CapabilityStatement.fhirVersion:code' });
+    }
+    if (this['fhirVersion'] && (!Object.values(FHIRVersionCodes).includes(this.fhirVersion as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property fhirVersion:fhir.FhirCode fhir: CapabilityStatement.fhirVersion:code Required binding to: FHIRVersion' });
     }
     if (this["fhirVersion"]) { issues.push(...this.fhirVersion.doModelValidation()); }
     if (!this['format']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property format:fhir.FhirCode[] fhir: CapabilityStatement.format:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property format:fhir.FhirCode[] fhir: CapabilityStatement.format:code' });
     } else if (!Array.isArray(this.format)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property format:fhir.FhirCode[] fhir: CapabilityStatement.format:code', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property format:fhir.FhirCode[] fhir: CapabilityStatement.format:code' });
     } else if (this.format.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property format:fhir.FhirCode[] fhir: CapabilityStatement.format:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property format:fhir.FhirCode[] fhir: CapabilityStatement.format:code' });
     }
     if (this["format"]) { this.format.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["patchFormat"]) { this.patchFormat.forEach((x) => { issues.push(...x.doModelValidation()); }) }

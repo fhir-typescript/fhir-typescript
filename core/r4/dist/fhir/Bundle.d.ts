@@ -1,9 +1,6 @@
 import * as fhir from '../fhir.js';
-import { SearchEntryModeCodingType } from '../fhirValueSets/SearchEntryModeCodings.js';
 import { SearchEntryModeCodeType } from '../fhirValueSets/SearchEntryModeCodes.js';
-import { HttpVerbCodingType } from '../fhirValueSets/HttpVerbCodings.js';
 import { HttpVerbCodeType } from '../fhirValueSets/HttpVerbCodes.js';
-import { BundleTypeCodingType } from '../fhirValueSets/BundleTypeCodings.js';
 import { BundleTypeCodeType } from '../fhirValueSets/BundleTypeCodes.js';
 /**
  * Valid arguments for the BundleLink type.
@@ -52,7 +49,7 @@ export interface BundleEntrySearchArgs extends fhir.BackboneElementArgs {
     /**
      * There is only one mode. In some corner cases, a resource may be included because it is both a match and an include. In these circumstances, 'match' takes precedence.
      */
-    mode?: SearchEntryModeCodeType | undefined;
+    mode?: fhir.FhirCode<SearchEntryModeCodeType> | string | undefined;
     /**
      * Servers are not required to return a ranking score. 1 is most relevant, and 0 is least relevant. Often, search results are sorted by score, but the client may specify a different sort order.
      * See [Patient Match](patient-operation-match.html) for the EMPI search which relates to this element.
@@ -70,7 +67,7 @@ export declare class BundleEntrySearch extends fhir.BackboneElement {
     /**
      * There is only one mode. In some corner cases, a resource may be included because it is both a match and an include. In these circumstances, 'match' takes precedence.
      */
-    mode?: SearchEntryModeCodeType | undefined;
+    mode?: fhir.FhirCode<SearchEntryModeCodeType> | undefined;
     /**
      * Servers are not required to return a ranking score. 1 is most relevant, and 0 is least relevant. Often, search results are sorted by score, but the client may specify a different sort order.
      * See [Patient Match](patient-operation-match.html) for the EMPI search which relates to this element.
@@ -83,7 +80,11 @@ export declare class BundleEntrySearch extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for mode (Bundle.entry.search.mode)
      */
-    static modeRequiredCoding(): SearchEntryModeCodingType;
+    static get modeRequiredCodes(): {
+        readonly Include: "include";
+        readonly Match: "match";
+        readonly Outcome: "outcome";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -96,7 +97,7 @@ export interface BundleEntryRequestArgs extends fhir.BackboneElementArgs {
     /**
      * In a transaction or batch, this is the HTTP action to be executed for this entry. In a history bundle, this indicates the HTTP action that occurred.
      */
-    method: HttpVerbCodeType | null;
+    method: fhir.FhirCode<HttpVerbCodeType> | string | undefined;
     /**
      * E.g. for a Patient Create, the method would be "POST" and the URL would be "Patient". For a Patient Update, the method would be PUT and the URL would be "Patient/[id]".
      */
@@ -129,7 +130,7 @@ export declare class BundleEntryRequest extends fhir.BackboneElement {
     /**
      * In a transaction or batch, this is the HTTP action to be executed for this entry. In a history bundle, this indicates the HTTP action that occurred.
      */
-    method: HttpVerbCodeType | null;
+    method: fhir.FhirCode<HttpVerbCodeType> | null;
     /**
      * E.g. for a Patient Create, the method would be "POST" and the URL would be "Patient". For a Patient Update, the method would be PUT and the URL would be "Patient/[id]".
      */
@@ -157,7 +158,14 @@ export declare class BundleEntryRequest extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for method (Bundle.entry.request.method)
      */
-    static methodRequiredCoding(): HttpVerbCodingType;
+    static get methodRequiredCodes(): {
+        readonly DELETE: "DELETE";
+        readonly GET: "GET";
+        readonly HEAD: "HEAD";
+        readonly PATCH: "PATCH";
+        readonly POST: "POST";
+        readonly PUT: "PUT";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -268,7 +276,7 @@ export declare class BundleEntry extends fhir.BackboneElement {
     /**
      * A series of links that provide context to this entry.
      */
-    link?: fhir.BundleLink[];
+    link: fhir.BundleLink[];
     /**
      * fullUrl might not be [unique in the context of a resource](bundle.html#bundle-unique). Note that since [FHIR resources do not need to be served through the FHIR API](references.html), the fullURL might be a URN or an absolute URL that does not end with the logical id of the resource (Resource.id). However, but if the fullUrl does look like a RESTful server URL (e.g. meets the [regex](references.html#regex), then the 'id' portion of the fullUrl SHALL end with the Resource.id.
      * Note that the fullUrl is not the same as the canonical URL - it's an absolute url for an endpoint serving the resource (these will happen to have the same value on the canonical server for the resource with the canonical URL).
@@ -318,7 +326,7 @@ export interface BundleArgs extends fhir.ResourceArgs {
     /**
      * It's possible to use a bundle for other purposes (e.g. a document can be accepted as a transaction). This is primarily defined so that there can be specific rules for some of the bundle types.
      */
-    type: BundleTypeCodeType | null;
+    type: fhir.FhirCode<BundleTypeCodeType> | string | undefined;
     /**
      * For many bundles, the timestamp is equal to .meta.lastUpdated, because they are not stored (e.g. search results). When a bundle is placed in a persistent store, .meta.lastUpdated will be usually be changed by the server. When the bundle is a message, a middleware agent altering the message (even if not stored) SHOULD update .meta.lastUpdated. .timestamp is used to track the original time of the Bundle, and SHOULD be populated.
      * Usage:
@@ -368,7 +376,7 @@ export declare class Bundle extends fhir.Resource {
     /**
      * It's possible to use a bundle for other purposes (e.g. a document can be accepted as a transaction). This is primarily defined so that there can be specific rules for some of the bundle types.
      */
-    type: BundleTypeCodeType | null;
+    type: fhir.FhirCode<BundleTypeCodeType> | null;
     /**
      * For many bundles, the timestamp is equal to .meta.lastUpdated, because they are not stored (e.g. search results). When a bundle is placed in a persistent store, .meta.lastUpdated will be usually be changed by the server. When the bundle is a message, a middleware agent altering the message (even if not stored) SHOULD update .meta.lastUpdated. .timestamp is used to track the original time of the Bundle, and SHOULD be populated.
      * Usage:
@@ -389,11 +397,11 @@ export declare class Bundle extends fhir.Resource {
      * Bundle.entry.link corresponds to links found in the HTTP header if the resource in the entry was [read](http.html#read) directly.
      * This specification defines some specific uses of Bundle.link for [searching](search.html#conformance) and [paging](http.html#paging), but no specific uses for Bundle.entry.link, and no defined function in a transaction - the meaning is implementation specific.
      */
-    link?: fhir.BundleLink[];
+    link: fhir.BundleLink[];
     /**
      * An entry in a bundle resource - will either contain a resource or information about a resource (transactions and history only).
      */
-    entry?: fhir.BundleEntry[];
+    entry: fhir.BundleEntry[];
     /**
      * The signature could be created by the "author" of the bundle or by the originating device.   Requirements around inclusion of a signature, verification of signatures and treatment of signed/non-signed bundles is implementation-environment specific.
      */
@@ -405,7 +413,17 @@ export declare class Bundle extends fhir.Resource {
     /**
      * Required-bound Value Set for type (Bundle.type)
      */
-    static typeRequiredCoding(): BundleTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Batch: "batch";
+        readonly BatchResponse: "batch-response";
+        readonly Collection: "collection";
+        readonly Document: "document";
+        readonly HistoryList: "history";
+        readonly Message: "message";
+        readonly SearchResults: "searchset";
+        readonly Transaction: "transaction";
+        readonly TransactionResponse: "transaction-response";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

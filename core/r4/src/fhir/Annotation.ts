@@ -74,7 +74,7 @@ export class Annotation extends fhir.FhirElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["time"]) { issues.push(...this.time.doModelValidation()); }
     if (!this['text']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property text:fhir.FhirMarkdown fhir: Annotation.text:markdown', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property text:fhir.FhirMarkdown fhir: Annotation.text:markdown' });
     }
     if (this["text"]) { issues.push(...this.text.doModelValidation()); }
     return issues;

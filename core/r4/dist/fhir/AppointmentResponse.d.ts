@@ -1,6 +1,4 @@
 import * as fhir from '../fhir.js';
-import { EncounterParticipantTypeCodingType } from '../fhirValueSets/EncounterParticipantTypeCodings.js';
-import { ParticipationstatusCodingType } from '../fhirValueSets/ParticipationstatusCodings.js';
 import { ParticipationstatusCodeType } from '../fhirValueSets/ParticipationstatusCodes.js';
 /**
  * Valid arguments for the AppointmentResponse type.
@@ -39,7 +37,7 @@ export interface AppointmentResponseArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains the code entered-in-error that marks the participant as not currently valid.
      */
-    participantStatus: ParticipationstatusCodeType | null;
+    participantStatus: fhir.FhirCode<ParticipationstatusCodeType> | string | undefined;
     /**
      * This comment is particularly important when the responder is declining, tentatively accepting or requesting another time to indicate the reasons why.
      */
@@ -60,7 +58,7 @@ export declare class AppointmentResponse extends fhir.DomainResource {
     /**
      * This records identifiers associated with this appointment response concern that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Appointment that this response is replying to.
      */
@@ -78,7 +76,7 @@ export declare class AppointmentResponse extends fhir.DomainResource {
      * If the actor is not specified, then it is expected that the actor will be filled in at a later stage of planning.
      * This value SHALL be the same as specified on the referenced Appointment so that they can be matched, and subsequently updated.
      */
-    participantType?: fhir.CodeableConcept[];
+    participantType: fhir.CodeableConcept[];
     /**
      * A Person, Location, HealthcareService, or Device that is participating in the appointment.
      */
@@ -86,7 +84,7 @@ export declare class AppointmentResponse extends fhir.DomainResource {
     /**
      * This element is labeled as a modifier because the status contains the code entered-in-error that marks the participant as not currently valid.
      */
-    participantStatus: ParticipationstatusCodeType | null;
+    participantStatus: fhir.FhirCode<ParticipationstatusCodeType> | null;
     /**
      * This comment is particularly important when the responder is declining, tentatively accepting or requesting another time to indicate the reasons why.
      */
@@ -98,11 +96,31 @@ export declare class AppointmentResponse extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for participantType (AppointmentResponse.participantType)
      */
-    static participantTypeExtensibleCoding(): EncounterParticipantTypeCodingType;
+    static get participantTypeExtensibleCodings(): {
+        readonly Admitter: fhir.Coding;
+        readonly Attender: fhir.Coding;
+        readonly CallbackContact: fhir.Coding;
+        readonly Consultant: fhir.Coding;
+        readonly Discharger: fhir.Coding;
+        readonly Emergency: fhir.Coding;
+        readonly Escort: fhir.Coding; /**
+         * A Person, Location, HealthcareService, or Device that is participating in the appointment.
+         */
+        readonly Participation: fhir.Coding;
+        readonly PrimaryPerformer: fhir.Coding;
+        readonly Referrer: fhir.Coding;
+        readonly SecondaryPerformer: fhir.Coding;
+        readonly Translator: fhir.Coding;
+    };
     /**
      * Required-bound Value Set for participantStatus (AppointmentResponse.participantStatus)
      */
-    static participantStatusRequiredCoding(): ParticipationstatusCodingType;
+    static get participantStatusRequiredCodes(): {
+        readonly Accepted: "accepted";
+        readonly Declined: "declined";
+        readonly NeedsAction: "needs-action";
+        readonly Tentative: "tentative";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -98,7 +98,7 @@ export interface SupplyDeliveryArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status?: SupplydeliveryStatusCodeType|undefined;
+  status?: fhir.FhirCode<SupplydeliveryStatusCodeType>|string|undefined;
   /**
    * A link to a resource representing the person whom the delivered item is for.
    */
@@ -156,20 +156,20 @@ export class SupplyDelivery extends fhir.DomainResource {
   /**
    * This identifier is typically assigned by the dispenser, and may be used to reference the delivery when exchanging information about it with other systems.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * A plan, proposal or order that is fulfilled in whole or in part by this event.
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * Not to be used to link an event to an Encounter - use Event.context for that.
    * [The allowed reference resources may be adjusted as appropriate for the event resource].
    */
-  public partOf?: fhir.Reference[];
+  public partOf: fhir.Reference[];
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status?: SupplydeliveryStatusCodeType|undefined;
+  public status?: fhir.FhirCode<SupplydeliveryStatusCodeType>|undefined;
   /**
    * A link to a resource representing the person whom the delivered item is for.
    */
@@ -201,7 +201,7 @@ export class SupplyDelivery extends fhir.DomainResource {
   /**
    * Identifies the person who picked up the Supply.
    */
-  public receiver?: fhir.Reference[];
+  public receiver: fhir.Reference[];
   /**
    * Default constructor for SupplyDelivery - initializes any required elements to null if a value is not provided.
    */
@@ -214,7 +214,7 @@ export class SupplyDelivery extends fhir.DomainResource {
     else { this.basedOn = []; }
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
     else { this.partOf = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<SupplydeliveryStatusCodeType>({value: source.status}); }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['suppliedItem']) { this.suppliedItem = new fhir.SupplyDeliverySuppliedItem(source.suppliedItem); }
@@ -230,14 +230,14 @@ export class SupplyDelivery extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (SupplyDelivery.status)
    */
-  public static statusRequiredCoding():SupplydeliveryStatusCodingType {
-    return SupplydeliveryStatusCodings;
+  public static get statusRequiredCodes() {
+    return SupplydeliveryStatusCodes;
   }
   /**
    * Required-bound Value Set for type (SupplyDelivery.type)
    */
-  public static typeRequiredCoding():SupplydeliveryTypeCodingType {
-    return SupplydeliveryTypeCodings;
+  public static get typeRequiredCodes() {
+    return SupplydeliveryTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -245,12 +245,19 @@ export class SupplyDelivery extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"SupplyDelivery" fhir: SupplyDelivery.resourceType:"SupplyDelivery"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"SupplyDelivery" fhir: SupplyDelivery.resourceType:"SupplyDelivery"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['status'] && (!Object.values(SupplydeliveryStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<SupplydeliveryStatusCodeType> fhir: SupplyDelivery.status:code Required binding to: SupplydeliveryStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
+    if (this['type'] && (!Object.values(SupplydeliveryTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type?:fhir.CodeableConcept fhir: SupplyDelivery.type:CodeableConcept Required binding to: SupplydeliveryType' });
+    }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["suppliedItem"]) { issues.push(...this.suppliedItem.doModelValidation()); }
     if (this["supplier"]) { issues.push(...this.supplier.doModelValidation()); }

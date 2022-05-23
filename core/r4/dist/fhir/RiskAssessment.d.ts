@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ObservationStatusCodingType } from '../fhirValueSets/ObservationStatusCodings.js';
 import { ObservationStatusCodeType } from '../fhirValueSets/ObservationStatusCodes.js';
 /**
  * Valid arguments for the RiskAssessmentPrediction type.
@@ -118,7 +117,7 @@ export interface RiskAssessmentArgs extends fhir.DomainResourceArgs {
     /**
      * The status of the RiskAssessment, using the same statuses as an Observation.
      */
-    status: ObservationStatusCodeType | null;
+    status: fhir.FhirCode<ObservationStatusCodeType> | string | undefined;
     /**
      * The algorithm, process or mechanism used to evaluate the risk.
      */
@@ -195,7 +194,7 @@ export declare class RiskAssessment extends fhir.DomainResource {
     /**
      * Business identifier assigned to the risk assessment.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * A reference to the request that is fulfilled by this risk assessment.
      */
@@ -207,7 +206,7 @@ export declare class RiskAssessment extends fhir.DomainResource {
     /**
      * The status of the RiskAssessment, using the same statuses as an Observation.
      */
-    status: ObservationStatusCodeType | null;
+    status: fhir.FhirCode<ObservationStatusCodeType> | null;
     /**
      * The algorithm, process or mechanism used to evaluate the risk.
      */
@@ -243,19 +242,19 @@ export declare class RiskAssessment extends fhir.DomainResource {
     /**
      * The reason the risk assessment was performed.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * Resources supporting the reason the risk assessment was performed.
      */
-    reasonReference?: fhir.Reference[];
+    reasonReference: fhir.Reference[];
     /**
      * Indicates the source data considered as part of the assessment (for example, FamilyHistory, Observations, Procedures, Conditions, etc.).
      */
-    basis?: fhir.Reference[];
+    basis: fhir.Reference[];
     /**
      * Multiple repetitions can be used to identify the same type of outcome in different timeframes as well as different types of outcomes.
      */
-    prediction?: fhir.RiskAssessmentPrediction[];
+    prediction: fhir.RiskAssessmentPrediction[];
     /**
      * A description of the steps that might be taken to reduce the identified risk(s).
      */
@@ -263,7 +262,7 @@ export declare class RiskAssessment extends fhir.DomainResource {
     /**
      * Additional comments about the risk assessment.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Default constructor for RiskAssessment - initializes any required elements to null if a value is not provided.
      */
@@ -271,7 +270,16 @@ export declare class RiskAssessment extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (RiskAssessment.status)
      */
-    static statusRequiredCoding(): ObservationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Amended: "amended";
+        readonly Cancelled: "cancelled";
+        readonly Corrected: "corrected";
+        readonly EnteredInError: "entered-in-error";
+        readonly Final: "final";
+        readonly Preliminary: "preliminary";
+        readonly Registered: "registered";
+        readonly Unknown: "unknown";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

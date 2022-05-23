@@ -44,7 +44,7 @@ export declare class Basic extends fhir.DomainResource {
     /**
      * Identifier assigned to the resource for business purposes, outside the context of FHIR.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Because resource references will only be able to indicate 'Basic', the type of reference will need to be specified in a Profile identified as part of the resource.  Refer to the resource notes section for information on appropriate terminologies for this code.
      * This element is labeled as a modifier because it defines the meaning of the resource and cannot be ignored.

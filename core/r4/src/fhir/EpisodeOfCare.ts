@@ -24,7 +24,7 @@ export interface EpisodeOfCareStatusHistoryArgs extends fhir.BackboneElementArgs
   /**
    * planned | waitlist | active | onhold | finished | cancelled.
    */
-  status: EpisodeOfCareStatusCodeType|null;
+  status: fhir.FhirCode<EpisodeOfCareStatusCodeType>|string|undefined;
   /**
    * The period during this EpisodeOfCare that the specific status applied.
    */
@@ -42,7 +42,7 @@ export class EpisodeOfCareStatusHistory extends fhir.BackboneElement {
   /**
    * planned | waitlist | active | onhold | finished | cancelled.
    */
-  public status: EpisodeOfCareStatusCodeType|null;
+  public status: fhir.FhirCode<EpisodeOfCareStatusCodeType>|null;
   /**
    * The period during this EpisodeOfCare that the specific status applied.
    */
@@ -52,7 +52,7 @@ export class EpisodeOfCareStatusHistory extends fhir.BackboneElement {
    */
   constructor(source:Partial<EpisodeOfCareStatusHistoryArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<EpisodeOfCareStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     else { this.period = null; }
@@ -60,8 +60,8 @@ export class EpisodeOfCareStatusHistory extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for status (EpisodeOfCare.statusHistory.status)
    */
-  public static statusRequiredCoding():EpisodeOfCareStatusCodingType {
-    return EpisodeOfCareStatusCodings;
+  public static get statusRequiredCodes() {
+    return EpisodeOfCareStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -69,10 +69,14 @@ export class EpisodeOfCareStatusHistory extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:EpisodeOfCareStatusCodeType fhir: EpisodeOfCare.statusHistory.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<EpisodeOfCareStatusCodeType> fhir: EpisodeOfCare.statusHistory.status:code' });
     }
+    if (this['status'] && (!Object.values(EpisodeOfCareStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<EpisodeOfCareStatusCodeType> fhir: EpisodeOfCare.statusHistory.status:code Required binding to: EpisodeOfCareStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['period']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property period:fhir.Period fhir: EpisodeOfCare.statusHistory.period:Period', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property period:fhir.Period fhir: EpisodeOfCare.statusHistory.period:Period' });
     }
     if (this["period"]) { issues.push(...this.period.doModelValidation()); }
     return issues;
@@ -129,7 +133,7 @@ export class EpisodeOfCareDiagnosis extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for role (EpisodeOfCare.diagnosis.role)
    */
-  public static rolePreferredCoding():DiagnosisRoleCodingType {
+  public static get rolePreferredCodings() {
     return DiagnosisRoleCodings;
   }
   /**
@@ -138,7 +142,7 @@ export class EpisodeOfCareDiagnosis extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['condition']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property condition:fhir.Reference fhir: EpisodeOfCare.diagnosis.condition:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property condition:fhir.Reference fhir: EpisodeOfCare.diagnosis.condition:Reference' });
     }
     if (this["condition"]) { issues.push(...this.condition.doModelValidation()); }
     if (this["role"]) { issues.push(...this.role.doModelValidation()); }
@@ -161,7 +165,7 @@ export interface EpisodeOfCareArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the episode as not currently valid.
    */
-  status: EpisodeOfCareStatusCodeType|null;
+  status: fhir.FhirCode<EpisodeOfCareStatusCodeType>|string|undefined;
   /**
    * The history of statuses that the EpisodeOfCare has been through (without requiring processing the history of the resource).
    */
@@ -219,23 +223,23 @@ export class EpisodeOfCare extends fhir.DomainResource {
   /**
    * The EpisodeOfCare may be known by different identifiers for different contexts of use, such as when an external agency is tracking the Episode for funding purposes.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the status contains codes that mark the episode as not currently valid.
    */
-  public status: EpisodeOfCareStatusCodeType|null;
+  public status: fhir.FhirCode<EpisodeOfCareStatusCodeType>|null;
   /**
    * The history of statuses that the EpisodeOfCare has been through (without requiring processing the history of the resource).
    */
-  public statusHistory?: fhir.EpisodeOfCareStatusHistory[];
+  public statusHistory: fhir.EpisodeOfCareStatusHistory[];
   /**
    * The type can be very important in processing as this could be used in determining if the EpisodeOfCare is relevant to specific government reporting, or other types of classifications.
    */
-  public type?: fhir.CodeableConcept[];
+  public type: fhir.CodeableConcept[];
   /**
    * The list of diagnosis relevant to this episode of care.
    */
-  public diagnosis?: fhir.EpisodeOfCareDiagnosis[];
+  public diagnosis: fhir.EpisodeOfCareDiagnosis[];
   /**
    * The patient who is the focus of this episode of care.
    */
@@ -251,7 +255,7 @@ export class EpisodeOfCare extends fhir.DomainResource {
   /**
    * Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming referrals.
    */
-  public referralRequest?: fhir.Reference[];
+  public referralRequest: fhir.Reference[];
   /**
    * The practitioner that is the care manager/care coordinator for this patient.
    */
@@ -259,11 +263,11 @@ export class EpisodeOfCare extends fhir.DomainResource {
   /**
    * The list of practitioners that may be facilitating this episode of care for specific purposes.
    */
-  public team?: fhir.Reference[];
+  public team: fhir.Reference[];
   /**
    * The billing system may choose to allocate billable items associated with the EpisodeOfCare to different referenced Accounts based on internal business rules.
    */
-  public account?: fhir.Reference[];
+  public account: fhir.Reference[];
   /**
    * Default constructor for EpisodeOfCare - initializes any required elements to null if a value is not provided.
    */
@@ -272,7 +276,7 @@ export class EpisodeOfCare extends fhir.DomainResource {
     this.resourceType = 'EpisodeOfCare';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<EpisodeOfCareStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['statusHistory']) { this.statusHistory = source.statusHistory.map((x) => new fhir.EpisodeOfCareStatusHistory(x)); }
     else { this.statusHistory = []; }
@@ -295,8 +299,8 @@ export class EpisodeOfCare extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (EpisodeOfCare.status)
    */
-  public static statusRequiredCoding():EpisodeOfCareStatusCodingType {
-    return EpisodeOfCareStatusCodings;
+  public static get statusRequiredCodes() {
+    return EpisodeOfCareStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -304,17 +308,21 @@ export class EpisodeOfCare extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"EpisodeOfCare" fhir: EpisodeOfCare.resourceType:"EpisodeOfCare"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"EpisodeOfCare" fhir: EpisodeOfCare.resourceType:"EpisodeOfCare"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:EpisodeOfCareStatusCodeType fhir: EpisodeOfCare.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<EpisodeOfCareStatusCodeType> fhir: EpisodeOfCare.status:code' });
     }
+    if (this['status'] && (!Object.values(EpisodeOfCareStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<EpisodeOfCareStatusCodeType> fhir: EpisodeOfCare.status:code Required binding to: EpisodeOfCareStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["statusHistory"]) { this.statusHistory.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["diagnosis"]) { this.diagnosis.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: EpisodeOfCare.patient:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: EpisodeOfCare.patient:Reference' });
     }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
     if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation()); }

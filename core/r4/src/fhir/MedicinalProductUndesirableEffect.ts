@@ -50,7 +50,7 @@ export class MedicinalProductUndesirableEffect extends fhir.DomainResource {
   /**
    * The medication for which this is an indication.
    */
-  public subject?: fhir.Reference[];
+  public subject: fhir.Reference[];
   /**
    * The symptom, condition or undesirable effect.
    */
@@ -66,7 +66,7 @@ export class MedicinalProductUndesirableEffect extends fhir.DomainResource {
   /**
    * The population group to which this applies.
    */
-  public population?: fhir.Population[];
+  public population: fhir.Population[];
   /**
    * Default constructor for MedicinalProductUndesirableEffect - initializes any required elements to null if a value is not provided.
    */
@@ -87,7 +87,7 @@ export class MedicinalProductUndesirableEffect extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicinalProductUndesirableEffect" fhir: MedicinalProductUndesirableEffect.resourceType:"MedicinalProductUndesirableEffect"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicinalProductUndesirableEffect" fhir: MedicinalProductUndesirableEffect.resourceType:"MedicinalProductUndesirableEffect"' });
     }
     if (this["subject"]) { this.subject.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["symptomConditionEffect"]) { issues.push(...this.symptomConditionEffect.doModelValidation()); }

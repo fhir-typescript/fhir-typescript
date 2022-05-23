@@ -80,7 +80,7 @@ export interface DocumentManifestArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains the codes that mark the manifest as not currently valid.
    */
-  status: DocumentReferenceStatusCodeType|null;
+  status: fhir.FhirCode<DocumentReferenceStatusCodeType>|string|undefined;
   /**
    * Specifies the kind of this set of documents (e.g. Patient Summary, Discharge Summary, Prescription, etc.). The type of a set of documents may be the same as one of the documents in it - especially if there is only one - but it may be wider.
    */
@@ -138,11 +138,11 @@ export class DocumentManifest extends fhir.DomainResource {
   /**
    * Other identifiers associated with the document manifest, including version independent  identifiers.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the status contains the codes that mark the manifest as not currently valid.
    */
-  public status: DocumentReferenceStatusCodeType|null;
+  public status: fhir.FhirCode<DocumentReferenceStatusCodeType>|null;
   /**
    * Specifies the kind of this set of documents (e.g. Patient Summary, Discharge Summary, Prescription, etc.). The type of a set of documents may be the same as one of the documents in it - especially if there is only one - but it may be wider.
    */
@@ -158,11 +158,11 @@ export class DocumentManifest extends fhir.DomainResource {
   /**
    * Not necessarily who did the actual data entry (i.e. typist) or who was the source (informant).
    */
-  public author?: fhir.Reference[];
+  public author: fhir.Reference[];
   /**
    * How the recipient receives the document set or is notified of it is up to the implementation. This element is just a statement of intent. If the recipient is a person, and it is not known whether the person is a patient or a practitioner, RelatedPerson would be the default choice.
    */
-  public recipient?: fhir.Reference[];
+  public recipient: fhir.Reference[];
   /**
    * Identifies the source system, application, or software that produced the document manifest.
    */
@@ -178,7 +178,7 @@ export class DocumentManifest extends fhir.DomainResource {
   /**
    * May be identifiers or resources that caused the DocumentManifest to be created.
    */
-  public related?: fhir.DocumentManifestRelated[];
+  public related: fhir.DocumentManifestRelated[];
   /**
    * Default constructor for DocumentManifest - initializes any required elements to null if a value is not provided.
    */
@@ -188,7 +188,7 @@ export class DocumentManifest extends fhir.DomainResource {
     if (source['masterIdentifier']) { this.masterIdentifier = new fhir.Identifier(source.masterIdentifier); }
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<DocumentReferenceStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
@@ -207,8 +207,8 @@ export class DocumentManifest extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (DocumentManifest.status)
    */
-  public static statusRequiredCoding():DocumentReferenceStatusCodingType {
-    return DocumentReferenceStatusCodings;
+  public static get statusRequiredCodes() {
+    return DocumentReferenceStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -216,13 +216,17 @@ export class DocumentManifest extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"DocumentManifest" fhir: DocumentManifest.resourceType:"DocumentManifest"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"DocumentManifest" fhir: DocumentManifest.resourceType:"DocumentManifest"' });
     }
     if (this["masterIdentifier"]) { issues.push(...this.masterIdentifier.doModelValidation()); }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:DocumentReferenceStatusCodeType fhir: DocumentManifest.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<DocumentReferenceStatusCodeType> fhir: DocumentManifest.status:code' });
     }
+    if (this['status'] && (!Object.values(DocumentReferenceStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<DocumentReferenceStatusCodeType> fhir: DocumentManifest.status:code Required binding to: DocumentReferenceStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["created"]) { issues.push(...this.created.doModelValidation()); }
@@ -231,11 +235,11 @@ export class DocumentManifest extends fhir.DomainResource {
     if (this["source"]) { issues.push(...this.source.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property content:fhir.Reference[] fhir: DocumentManifest.content:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content:fhir.Reference[] fhir: DocumentManifest.content:Reference' });
     } else if (!Array.isArray(this.content)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property content:fhir.Reference[] fhir: DocumentManifest.content:Reference', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property content:fhir.Reference[] fhir: DocumentManifest.content:Reference' });
     } else if (this.content.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property content:fhir.Reference[] fhir: DocumentManifest.content:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content:fhir.Reference[] fhir: DocumentManifest.content:Reference' });
     }
     if (this["content"]) { this.content.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["related"]) { this.related.forEach((x) => { issues.push(...x.doModelValidation()); }) }

@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { TriggerTypeCodingType } from '../fhirValueSets/TriggerTypeCodings.js';
 import { TriggerTypeCodeType } from '../fhirValueSets/TriggerTypeCodes.js';
 /**
  * Valid arguments for the TriggerDefinition type.
@@ -8,7 +7,7 @@ export interface TriggerDefinitionArgs extends fhir.FhirElementArgs {
     /**
      * The type of triggering event.
      */
-    type: TriggerTypeCodeType | null;
+    type: fhir.FhirCode<TriggerTypeCodeType> | string | undefined;
     /**
      * An event name can be provided for all event types, but is required for named events. If a name is provided for a type other than named events, it is considered to be a shorthand for the semantics described by the formal description of the event.
      */
@@ -53,7 +52,7 @@ export declare class TriggerDefinition extends fhir.FhirElement {
     /**
      * The type of triggering event.
      */
-    type: TriggerTypeCodeType | null;
+    type: fhir.FhirCode<TriggerTypeCodeType> | null;
     /**
      * An event name can be provided for all event types, but is required for named events. If a name is provided for a type other than named events, it is considered to be a shorthand for the semantics described by the formal description of the event.
      */
@@ -69,7 +68,7 @@ export declare class TriggerDefinition extends fhir.FhirElement {
     /**
      * This element shall be present for any data type trigger.
      */
-    data?: fhir.DataRequirement[];
+    data: fhir.DataRequirement[];
     /**
      * This element can be only be specified for data type triggers and provides additional semantics for the trigger. The context available within the condition is based on the type of data event. For all events, the current resource will be available as context. In addition, for modification events, the previous resource will also be available. The expression may be inlined, or may be a simple absolute URI, which is a reference to a named expression within a logic library referenced by a library element or extension within the containing resource. If the expression is a FHIR Path expression, it evaluates in the context of a resource of one of the type identified in the data requirement, and may also refer to the variable %previous for delta comparisons on events of type data-changed, data-modified, and data-deleted which will always have the same type.
      */
@@ -81,7 +80,18 @@ export declare class TriggerDefinition extends fhir.FhirElement {
     /**
      * Required-bound Value Set for type (TriggerDefinition.type)
      */
-    static typeRequiredCoding(): TriggerTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly DataAccessEnded: "data-access-ended";
+        readonly DataAccessed: "data-accessed";
+        readonly DataAdded: "data-added"; /**
+         * An event name can be provided for all event types, but is required for named events. If a name is provided for a type other than named events, it is considered to be a shorthand for the semantics described by the formal description of the event.
+         */
+        readonly DataChanged: "data-changed";
+        readonly DataUpdated: "data-modified";
+        readonly DataRemoved: "data-removed";
+        readonly NamedEvent: "named-event";
+        readonly Periodic: "periodic";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

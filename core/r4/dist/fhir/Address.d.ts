@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { AddressUseCodingType } from '../fhirValueSets/AddressUseCodings.js';
 import { AddressUseCodeType } from '../fhirValueSets/AddressUseCodes.js';
-import { AddressTypeCodingType } from '../fhirValueSets/AddressTypeCodings.js';
 import { AddressTypeCodeType } from '../fhirValueSets/AddressTypeCodes.js';
 /**
  * Valid arguments for the Address type.
@@ -10,11 +8,11 @@ export interface AddressArgs extends fhir.FhirElementArgs {
     /**
      * Applications can assume that an address is current unless it explicitly says that it is temporary or old.
      */
-    use?: AddressUseCodeType | undefined;
+    use?: fhir.FhirCode<AddressUseCodeType> | string | undefined;
     /**
      * The definition of Address states that "address is intended to describe postal addresses, not physical locations". However, many applications track whether an address has a dual purpose of being a location that can be visited as well as being a valid delivery destination, and Postal addresses are often used as proxies for physical locations (also see the [Location](location.html#) resource).
      */
-    type?: AddressTypeCodeType | undefined;
+    type?: fhir.FhirCode<AddressTypeCodeType> | string | undefined;
     /**
      * Can provide both a text representation and parts. Applications updating an address SHALL ensure that  when both text and parts are present,  no content is included in the text that isn't found in a part.
      */
@@ -59,11 +57,11 @@ export declare class Address extends fhir.FhirElement {
     /**
      * Applications can assume that an address is current unless it explicitly says that it is temporary or old.
      */
-    use?: AddressUseCodeType | undefined;
+    use?: fhir.FhirCode<AddressUseCodeType> | undefined;
     /**
      * The definition of Address states that "address is intended to describe postal addresses, not physical locations". However, many applications track whether an address has a dual purpose of being a location that can be visited as well as being a valid delivery destination, and Postal addresses are often used as proxies for physical locations (also see the [Location](location.html#) resource).
      */
-    type?: AddressTypeCodeType | undefined;
+    type?: fhir.FhirCode<AddressTypeCodeType> | undefined;
     /**
      * Can provide both a text representation and parts. Applications updating an address SHALL ensure that  when both text and parts are present,  no content is included in the text that isn't found in a part.
      */
@@ -71,7 +69,7 @@ export declare class Address extends fhir.FhirElement {
     /**
      * This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.
      */
-    line?: fhir.FhirString[];
+    line: fhir.FhirString[];
     /**
      * The name of the city, town, suburb, village or other community or delivery center.
      */
@@ -103,11 +101,21 @@ export declare class Address extends fhir.FhirElement {
     /**
      * Required-bound Value Set for use (Address.use)
      */
-    static useRequiredCoding(): AddressUseCodingType;
+    static get useRequiredCodes(): {
+        readonly Billing: "billing";
+        readonly Home: "home";
+        readonly OldIncorrect: "old";
+        readonly Temporary: "temp";
+        readonly Work: "work";
+    };
     /**
      * Required-bound Value Set for type (Address.type)
      */
-    static typeRequiredCoding(): AddressTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly PostalAndPhysical: "both";
+        readonly Physical: "physical";
+        readonly Postal: "postal";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

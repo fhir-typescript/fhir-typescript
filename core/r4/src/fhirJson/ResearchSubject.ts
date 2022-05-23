@@ -23,6 +23,10 @@ export interface ResearchSubject extends fhir.DomainResource {
    */
   status: 'candidate'|'eligible'|'follow-up'|'ineligible'|'not-registered'|'off-study'|'on-study'|'on-study-intervention'|'on-study-observation'|'pending-on-study'|'potential-candidate'|'screening'|'withdrawn'|null;
   /**
+   * Extended properties for primitive element: ResearchSubject.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * The dates the subject began and ended their participation in the study.
    */
   period?: fhir.Period|undefined;

@@ -178,23 +178,23 @@ export class NutritionOrderOralDiet extends fhir.BackboneElement {
   /**
    * The kind of diet or dietary restriction such as fiber restricted diet or diabetic diet.
    */
-  public type?: fhir.CodeableConcept[];
+  public type: fhir.CodeableConcept[];
   /**
    * The time period and frequency at which the diet should be given.  The diet should be given for the combination of all schedules if more than one schedule is present.
    */
-  public schedule?: fhir.Timing[];
+  public schedule: fhir.Timing[];
   /**
    * Class that defines the quantity and type of nutrient modifications (for example carbohydrate, fiber or sodium) required for the oral diet.
    */
-  public nutrient?: fhir.NutritionOrderOralDietNutrient[];
+  public nutrient: fhir.NutritionOrderOralDietNutrient[];
   /**
    * Class that describes any texture modifications required for the patient to safely consume various types of solid foods.
    */
-  public texture?: fhir.NutritionOrderOralDietTexture[];
+  public texture: fhir.NutritionOrderOralDietTexture[];
   /**
    * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of liquids or fluids served to the patient.
    */
-  public fluidConsistencyType?: fhir.CodeableConcept[];
+  public fluidConsistencyType: fhir.CodeableConcept[];
   /**
    * Free text dosage instructions can be used for cases where the instructions are too complex to code.
    */
@@ -275,7 +275,7 @@ export class NutritionOrderSupplement extends fhir.BackboneElement {
   /**
    * The time period and frequency at which the supplement(s) should be given.  The supplement should be given for the combination of all schedules if more than one schedule is present.
    */
-  public schedule?: fhir.Timing[];
+  public schedule: fhir.Timing[];
   /**
    * The amount of the nutritional supplement to be given.
    */
@@ -457,7 +457,7 @@ export class NutritionOrderEnteralFormula extends fhir.BackboneElement {
   /**
    * See implementation notes below for further discussion on how to order continuous vs bolus enteral feeding using this resource.
    */
-  public administration?: fhir.NutritionOrderEnteralFormulaAdministration[];
+  public administration: fhir.NutritionOrderEnteralFormulaAdministration[];
   /**
    * The maximum total quantity of formula that may be administered to a subject over the period of time, e.g. 1440 mL over 24 hours.
    */
@@ -485,7 +485,7 @@ export class NutritionOrderEnteralFormula extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for routeofAdministration (NutritionOrder.enteralFormula.routeofAdministration)
    */
-  public static routeofAdministrationExtensibleCoding():EnteralRouteCodingType {
+  public static get routeofAdministrationExtensibleCodings() {
     return EnteralRouteCodings;
   }
   /**
@@ -532,11 +532,11 @@ export interface NutritionOrderArgs extends fhir.DomainResourceArgs {
   /**
    * Typically the system placing the order sets the status to "requested". Thereafter, the order is maintained by the receiver that updates the status as the request is handled.  This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status: RequestStatusCodeType|null;
+  status: fhir.FhirCode<RequestStatusCodeType>|string|undefined;
   /**
    * When resources map to this element, they are free to define as many codes as necessary to cover their space and will map to "proposal, plan or order".  Can have multiple codes that map to one of these.  E.g. "original order", "encoded order", "reflex order" would all map to "order".  Expectation is that the set of codes is mutually exclusive or a strict all-encompassing hierarchy.
    */
-  intent: RequestIntentCodeType|null;
+  intent: fhir.FhirCode<RequestIntentCodeType>|string|undefined;
   /**
    * The person (patient) who needs the nutrition order for an oral diet, nutritional supplement and/or enteral or formula feeding.
    */
@@ -598,27 +598,27 @@ export class NutritionOrder extends fhir.DomainResource {
   /**
    * The Identifier.type element can be to indicate filler vs. placer if needed.  This is explained in further detail [here](servicerequest.html#notes).
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Note: This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  public instantiatesCanonical?: fhir.FhirCanonical[];
+  public instantiatesCanonical: fhir.FhirCanonical[];
   /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
-  public instantiatesUri?: fhir.FhirUri[];
+  public instantiatesUri: fhir.FhirUri[];
   /**
    * The URL pointing to a protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.
    */
-  public instantiates?: fhir.FhirUri[];
+  public instantiates: fhir.FhirUri[];
   /**
    * Typically the system placing the order sets the status to "requested". Thereafter, the order is maintained by the receiver that updates the status as the request is handled.  This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status: RequestStatusCodeType|null;
+  public status: fhir.FhirCode<RequestStatusCodeType>|null;
   /**
    * When resources map to this element, they are free to define as many codes as necessary to cover their space and will map to "proposal, plan or order".  Can have multiple codes that map to one of these.  E.g. "original order", "encoded order", "reflex order" would all map to "order".  Expectation is that the set of codes is mutually exclusive or a strict all-encompassing hierarchy.
    */
-  public intent: RequestIntentCodeType|null;
+  public intent: fhir.FhirCode<RequestIntentCodeType>|null;
   /**
    * The person (patient) who needs the nutrition order for an oral diet, nutritional supplement and/or enteral or formula feeding.
    */
@@ -638,15 +638,15 @@ export class NutritionOrder extends fhir.DomainResource {
   /**
    * Information on a patient's food allergies and intolerances to inform healthcare personnel about the type of foods that the patient shouldn't receive or consume.
    */
-  public allergyIntolerance?: fhir.Reference[];
+  public allergyIntolerance: fhir.Reference[];
   /**
    * Information on a patient's food preferences that inform healthcare personnel about the food that the patient should receive or consume.
    */
-  public foodPreferenceModifier?: fhir.CodeableConcept[];
+  public foodPreferenceModifier: fhir.CodeableConcept[];
   /**
    * Information on a patient's food allergies, intolerances and preferences to inform healthcare personnel about the type  of foods that the patient shouldn't receive or consume.
    */
-  public excludeFoodModifier?: fhir.CodeableConcept[];
+  public excludeFoodModifier: fhir.CodeableConcept[];
   /**
    * Diet given orally in contrast to enteral (tube) feeding.
    */
@@ -654,7 +654,7 @@ export class NutritionOrder extends fhir.DomainResource {
   /**
    * Oral nutritional products given in order to add further nutritional value to the patient's diet.
    */
-  public supplement?: fhir.NutritionOrderSupplement[];
+  public supplement: fhir.NutritionOrderSupplement[];
   /**
    * Feeding provided through the gastrointestinal tract via a tube, catheter, or stoma that delivers nutrition distal to the oral cavity.
    */
@@ -662,7 +662,7 @@ export class NutritionOrder extends fhir.DomainResource {
   /**
    * This element SHALL NOT be used to supply free text instructions for the diet which are represented in the `.oralDiet.instruction`, `supplement.instruction`, or `enteralFormula.administrationInstruction` elements.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Default constructor for NutritionOrder - initializes any required elements to null if a value is not provided.
    */
@@ -677,9 +677,9 @@ export class NutritionOrder extends fhir.DomainResource {
     else { this.instantiatesUri = []; }
     if (source['instantiates']) { this.instantiates = source.instantiates.map((x) => new fhir.FhirUri({value: x})); }
     else { this.instantiates = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<RequestStatusCodeType>({value: source.status}); }
     else { this.status = null; }
-    if (source['intent']) { this.intent = source.intent; }
+    if (source['intent']) { this.intent = new fhir.FhirCode<RequestIntentCodeType>({value: source.intent}); }
     else { this.intent = null; }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     else { this.patient = null; }
@@ -703,14 +703,14 @@ export class NutritionOrder extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (NutritionOrder.status)
    */
-  public static statusRequiredCoding():RequestStatusCodingType {
-    return RequestStatusCodings;
+  public static get statusRequiredCodes() {
+    return RequestStatusCodes;
   }
   /**
    * Required-bound Value Set for intent (NutritionOrder.intent)
    */
-  public static intentRequiredCoding():RequestIntentCodingType {
-    return RequestIntentCodings;
+  public static get intentRequiredCodes() {
+    return RequestIntentCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -718,25 +718,33 @@ export class NutritionOrder extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"NutritionOrder" fhir: NutritionOrder.resourceType:"NutritionOrder"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"NutritionOrder" fhir: NutritionOrder.resourceType:"NutritionOrder"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["instantiates"]) { this.instantiates.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:RequestStatusCodeType fhir: NutritionOrder.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<RequestStatusCodeType> fhir: NutritionOrder.status:code' });
     }
+    if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<RequestStatusCodeType> fhir: NutritionOrder.status:code Required binding to: RequestStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['intent']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property intent:RequestIntentCodeType fhir: NutritionOrder.intent:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent:fhir.FhirCode<RequestIntentCodeType> fhir: NutritionOrder.intent:code' });
     }
+    if (this['intent'] && (!Object.values(RequestIntentCodes).includes(this.intent as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent:fhir.FhirCode<RequestIntentCodeType> fhir: NutritionOrder.intent:code Required binding to: RequestIntent' });
+    }
+    if (this["intent"]) { issues.push(...this.intent.doModelValidation()); }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: NutritionOrder.patient:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: NutritionOrder.patient:Reference' });
     }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
     if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
     if (!this['dateTime']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property dateTime:fhir.FhirDateTime fhir: NutritionOrder.dateTime:dateTime', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property dateTime:fhir.FhirDateTime fhir: NutritionOrder.dateTime:dateTime' });
     }
     if (this["dateTime"]) { issues.push(...this.dateTime.doModelValidation()); }
     if (this["orderer"]) { issues.push(...this.orderer.doModelValidation()); }

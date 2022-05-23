@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 /**
  * Valid arguments for the ResearchDefinition type.
@@ -42,7 +41,7 @@ export interface ResearchDefinitionArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of research definitions that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Allows filtering of research definitions that are appropriate for use versus not.
      */
@@ -177,7 +176,7 @@ export declare class ResearchDefinition extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this research definition outside of FHIR, where it is not possible to use the logical URI.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * There may be different research definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the research definition with the format [url]|[version].
      */
@@ -201,7 +200,7 @@ export declare class ResearchDefinition extends fhir.DomainResource {
     /**
      * Allows filtering of research definitions that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Allows filtering of research definitions that are appropriate for use versus not.
      */
@@ -225,7 +224,7 @@ export declare class ResearchDefinition extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * This description can be used to capture details such as why the research definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the research definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the research definition is presumed to be the predominant language in the place the research definition was created).
      */
@@ -233,15 +232,15 @@ export declare class ResearchDefinition extends fhir.DomainResource {
     /**
      * A human-readable string to clarify or explain concepts about the resource.
      */
-    comment?: fhir.FhirString[];
+    comment: fhir.FhirString[];
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the research definition to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * This element does not describe the usage of the research definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this research definition.
      */
@@ -269,31 +268,31 @@ export declare class ResearchDefinition extends fhir.DomainResource {
     /**
      * Descriptive topics related to the content of the ResearchDefinition. Topics provide a high-level categorization grouping types of ResearchDefinitions that can be useful for filtering and searching.
      */
-    topic?: fhir.CodeableConcept[];
+    topic: fhir.CodeableConcept[];
     /**
      * An individiual or organization primarily involved in the creation and maintenance of the content.
      */
-    author?: fhir.ContactDetail[];
+    author: fhir.ContactDetail[];
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
      */
-    editor?: fhir.ContactDetail[];
+    editor: fhir.ContactDetail[];
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
      */
-    reviewer?: fhir.ContactDetail[];
+    reviewer: fhir.ContactDetail[];
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
      */
-    endorser?: fhir.ContactDetail[];
+    endorser: fhir.ContactDetail[];
     /**
      * Each related artifact is either an attachment, or a reference to another resource, but not both.
      */
-    relatedArtifact?: fhir.RelatedArtifact[];
+    relatedArtifact: fhir.RelatedArtifact[];
     /**
      * A reference to a Library resource containing the formal logic used by the ResearchDefinition.
      */
-    library?: fhir.FhirCanonical[];
+    library: fhir.FhirCanonical[];
     /**
      * A reference to a ResearchElementDefinition resource that defines the population for the research.
      */
@@ -317,7 +316,12 @@ export declare class ResearchDefinition extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (ResearchDefinition.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

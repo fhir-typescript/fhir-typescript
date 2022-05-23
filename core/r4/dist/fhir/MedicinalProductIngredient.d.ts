@@ -51,7 +51,7 @@ export declare class MedicinalProductIngredientSpecifiedSubstanceStrengthReferen
     /**
      * The country or countries for which the strength range applies.
      */
-    country?: fhir.CodeableConcept[];
+    country: fhir.CodeableConcept[];
     /**
      * Default constructor for MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength - initializes any required elements to null if a value is not provided.
      */
@@ -125,11 +125,11 @@ export declare class MedicinalProductIngredientSpecifiedSubstanceStrength extend
     /**
      * The country or countries for which the strength range applies.
      */
-    country?: fhir.CodeableConcept[];
+    country: fhir.CodeableConcept[];
     /**
      * Strength expressed in terms of a reference substance.
      */
-    referenceStrength?: fhir.MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength[];
+    referenceStrength: fhir.MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength[];
     /**
      * Default constructor for MedicinalProductIngredientSpecifiedSubstanceStrength - initializes any required elements to null if a value is not provided.
      */
@@ -183,7 +183,7 @@ export declare class MedicinalProductIngredientSpecifiedSubstance extends fhir.B
     /**
      * Quantity of the substance or specified substance present in the manufactured item or pharmaceutical product.
      */
-    strength?: fhir.MedicinalProductIngredientSpecifiedSubstanceStrength[];
+    strength: fhir.MedicinalProductIngredientSpecifiedSubstanceStrength[];
     /**
      * Default constructor for MedicinalProductIngredientSpecifiedSubstance - initializes any required elements to null if a value is not provided.
      */
@@ -221,7 +221,7 @@ export declare class MedicinalProductIngredientSubstance extends fhir.BackboneEl
     /**
      * Quantity of the substance or specified substance present in the manufactured item or pharmaceutical product.
      */
-    strength?: fhir.MedicinalProductIngredientSpecifiedSubstanceStrength[];
+    strength: fhir.MedicinalProductIngredientSpecifiedSubstanceStrength[];
     /**
      * Default constructor for MedicinalProductIngredientSubstance - initializes any required elements to null if a value is not provided.
      */
@@ -291,11 +291,11 @@ export declare class MedicinalProductIngredient extends fhir.DomainResource {
     /**
      * Manufacturer of this Ingredient.
      */
-    manufacturer?: fhir.Reference[];
+    manufacturer: fhir.Reference[];
     /**
      * A specified substance that comprises this ingredient.
      */
-    specifiedSubstance?: fhir.MedicinalProductIngredientSpecifiedSubstance[];
+    specifiedSubstance: fhir.MedicinalProductIngredientSpecifiedSubstance[];
     /**
      * The ingredient substance.
      */

@@ -69,6 +69,10 @@ export interface ConceptMapGroupElementTarget extends fhir.BackboneElement {
    */
   equivalence: 'disjoint'|'equal'|'equivalent'|'inexact'|'narrower'|'relatedto'|'specializes'|'subsumes'|'unmatched'|'wider'|null;
   /**
+   * Extended properties for primitive element: ConceptMap.group.element.target.equivalence
+   */
+  _equivalence?:fhir.FhirElement;
+  /**
    * A description of status/issues in mapping that conveys additional information not represented in  the structured data.
    */
   comment?: string|undefined;
@@ -120,6 +124,10 @@ export interface ConceptMapGroupUnmapped extends fhir.BackboneElement {
    * Defines which action to take if there is no match for the source concept in the target system designated for the group. One of 3 actions are possible: use the unmapped code (this is useful when doing a mapping between versions, and only a few codes have changed), use a fixed code (a default code), or alternatively, a reference to a different concept map can be provided (by canonical URL).
    */
   mode: 'fixed'|'other-map'|'provided'|null;
+  /**
+   * Extended properties for primitive element: ConceptMap.group.unmapped.mode
+   */
+  _mode?:fhir.FhirElement;
   /**
    * The fixed code to use when the mode = 'fixed'  - all unmapped codes are mapped to a single fixed code.
    */
@@ -242,6 +250,10 @@ export interface ConceptMap extends fhir.DomainResource {
    * Allows filtering of concept maps that are appropriate for use versus not.
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
+  /**
+   * Extended properties for primitive element: ConceptMap.status
+   */
+  _status?:fhir.FhirElement;
   /**
    * Allows filtering of concept maps that are appropriate for use versus not.
    */

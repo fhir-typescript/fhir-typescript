@@ -8,6 +8,10 @@ export interface TestReportParticipant extends fhir.BackboneElement {
      */
     type: 'client' | 'server' | 'test-engine' | null;
     /**
+     * Extended properties for primitive element: TestReport.participant.type
+     */
+    _type?: fhir.FhirElement;
+    /**
      * The uri of the participant. An absolute URL is preferred.
      */
     uri: string | null;
@@ -33,6 +37,10 @@ export interface TestReportSetupActionOperation extends fhir.BackboneElement {
      */
     result: 'error' | 'fail' | 'pass' | 'skip' | 'warning' | null;
     /**
+     * Extended properties for primitive element: TestReport.setup.action.operation.result
+     */
+    _result?: fhir.FhirElement;
+    /**
      * An explanatory message associated with the result.
      */
     message?: string | undefined;
@@ -57,6 +65,10 @@ export interface TestReportSetupActionAssert extends fhir.BackboneElement {
      * The result of this assertion.
      */
     result: 'error' | 'fail' | 'pass' | 'skip' | 'warning' | null;
+    /**
+     * Extended properties for primitive element: TestReport.setup.action.assert.result
+     */
+    _result?: fhir.FhirElement;
     /**
      * An explanatory message associated with the result.
      */
@@ -178,6 +190,10 @@ export interface TestReport extends fhir.DomainResource {
      */
     status: 'completed' | 'entered-in-error' | 'in-progress' | 'stopped' | 'waiting' | null;
     /**
+     * Extended properties for primitive element: TestReport.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
      */
     testScript: fhir.Reference | null;
@@ -185,6 +201,10 @@ export interface TestReport extends fhir.DomainResource {
      * The pass and fail result represents a completed test script execution. The pending result represents a test script execution that has not yet started or is currently in progress.
      */
     result: 'fail' | 'pass' | 'pending' | null;
+    /**
+     * Extended properties for primitive element: TestReport.result
+     */
+    _result?: fhir.FhirElement;
     /**
      * The final score (percentage of tests passed) resulting from the execution of the TestScript.
      */

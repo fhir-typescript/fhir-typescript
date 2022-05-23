@@ -1,10 +1,6 @@
 import * as fhir from '../fhir.js';
-import { ListStatusCodingType } from '../fhirValueSets/ListStatusCodings.js';
 import { ListStatusCodeType } from '../fhirValueSets/ListStatusCodes.js';
-import { ListModeCodingType } from '../fhirValueSets/ListModeCodings.js';
 import { ListModeCodeType } from '../fhirValueSets/ListModeCodes.js';
-import { ListOrderCodingType } from '../fhirValueSets/ListOrderCodings.js';
-import { ListEmptyReasonCodingType } from '../fhirValueSets/ListEmptyReasonCodings.js';
 /**
  * Valid arguments for the ListEntry type.
  */
@@ -74,11 +70,11 @@ export interface ListArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: ListStatusCodeType | null;
+    status: fhir.FhirCode<ListStatusCodeType> | string | undefined;
     /**
      * This element is labeled as a modifier because a change list must not be misunderstood as a complete list.
      */
-    mode: ListModeCodeType | null;
+    mode: fhir.FhirCode<ListModeCodeType> | string | undefined;
     /**
      * A label for the list assigned by the author.
      */
@@ -135,15 +131,15 @@ export declare class List extends fhir.DomainResource {
     /**
      * Identifier for the List assigned for business purposes outside the context of FHIR.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: ListStatusCodeType | null;
+    status: fhir.FhirCode<ListStatusCodeType> | null;
     /**
      * This element is labeled as a modifier because a change list must not be misunderstood as a complete list.
      */
-    mode: ListModeCodeType | null;
+    mode: fhir.FhirCode<ListModeCodeType> | null;
     /**
      * A label for the list assigned by the author.
      */
@@ -175,11 +171,11 @@ export declare class List extends fhir.DomainResource {
     /**
      * Comments that apply to the overall list.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * If there are no entries in the list, an emptyReason SHOULD be provided.
      */
-    entry?: fhir.ListEntry[];
+    entry: fhir.ListEntry[];
     /**
      * The various reasons for an empty list make a significant interpretation to its interpretation. Note that this code is for use when the entire list has been suppressed, and not for when individual items are omitted - implementers may consider using a text note or a flag on an entry in these cases.
      */
@@ -191,19 +187,43 @@ export declare class List extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (List.status)
      */
-    static statusRequiredCoding(): ListStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Current: "current";
+        readonly EnteredInError: "entered-in-error";
+        readonly Retired: "retired";
+    };
     /**
      * Required-bound Value Set for mode (List.mode)
      */
-    static modeRequiredCoding(): ListModeCodingType;
+    static get modeRequiredCodes(): {
+        readonly ChangeList: "changes";
+        readonly SnapshotList: "snapshot";
+        readonly WorkingList: "working";
+    };
     /**
      * Preferred-bound Value Set for orderedBy (List.orderedBy)
      */
-    static orderedByPreferredCoding(): ListOrderCodingType;
+    static get orderedByPreferredCodings(): {
+        readonly SortedAlphabetically: fhir.Coding;
+        readonly SortedByCategory: fhir.Coding;
+        readonly SortedByItemDate: fhir.Coding;
+        readonly SortedByEventDate: fhir.Coding;
+        readonly SortedByPatient: fhir.Coding;
+        readonly SortedByPriority: fhir.Coding;
+        readonly SortedBySystem: fhir.Coding;
+        readonly SortedByUser: fhir.Coding;
+    };
     /**
      * Preferred-bound Value Set for emptyReason (List.emptyReason)
      */
-    static emptyReasonPreferredCoding(): ListEmptyReasonCodingType;
+    static get emptyReasonPreferredCodings(): {
+        readonly Closed: fhir.Coding;
+        readonly NilKnown: fhir.Coding;
+        readonly NotAsked: fhir.Coding;
+        readonly NotStarted: fhir.Coding;
+        readonly Unavailable: fhir.Coding;
+        readonly InformationWithheld: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

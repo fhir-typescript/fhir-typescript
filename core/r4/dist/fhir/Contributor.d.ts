@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ContributorTypeCodingType } from '../fhirValueSets/ContributorTypeCodings.js';
 import { ContributorTypeCodeType } from '../fhirValueSets/ContributorTypeCodes.js';
 /**
  * Valid arguments for the Contributor type.
@@ -8,7 +7,7 @@ export interface ContributorArgs extends fhir.FhirElementArgs {
     /**
      * The type of contributor.
      */
-    type: ContributorTypeCodeType | null;
+    type: fhir.FhirCode<ContributorTypeCodeType> | string | undefined;
     /**
      * The name of the individual or organization responsible for the contribution.
      */
@@ -29,7 +28,7 @@ export declare class Contributor extends fhir.FhirElement {
     /**
      * The type of contributor.
      */
-    type: ContributorTypeCodeType | null;
+    type: fhir.FhirCode<ContributorTypeCodeType> | null;
     /**
      * The name of the individual or organization responsible for the contribution.
      */
@@ -37,7 +36,7 @@ export declare class Contributor extends fhir.FhirElement {
     /**
      * Contact details to assist a user in finding and communicating with the contributor.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * Default constructor for Contributor - initializes any required elements to null if a value is not provided.
      */
@@ -45,7 +44,14 @@ export declare class Contributor extends fhir.FhirElement {
     /**
      * Required-bound Value Set for type (Contributor.type)
      */
-    static typeRequiredCoding(): ContributorTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly Author: "author";
+        readonly Editor: "editor"; /**
+         * Valid arguments for the Contributor type.
+         */
+        readonly Endorser: "endorser";
+        readonly Reviewer: "reviewer";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

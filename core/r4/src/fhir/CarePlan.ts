@@ -40,7 +40,7 @@ export interface CarePlanActivityDetailArgs extends fhir.BackboneElementArgs {
   /**
    * A description of the kind of resource the in-line definition of a care plan activity is representing.  The CarePlan.activity.detail is an in-line definition when a resource is not referenced using CarePlan.activity.reference.  For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.
    */
-  kind?: CarePlanActivityKindCodeType|undefined;
+  kind?: fhir.FhirCode<CarePlanActivityKindCodeType>|string|undefined;
   /**
    * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
    */
@@ -69,7 +69,7 @@ export interface CarePlanActivityDetailArgs extends fhir.BackboneElementArgs {
    * Some aspects of status can be inferred based on the resources linked in actionTaken.  Note that "status" is only as current as the plan was most recently updated.  
    * The unknown code is not to be used to convey other statuses.  The unknown code should be used when one of the statuses applies, but the authoring system doesn't know the current state of the activity.
    */
-  status: CarePlanActivityStatusCodeType|null;
+  status: fhir.FhirCode<CarePlanActivityStatusCodeType>|string|undefined;
   /**
    * Will generally not be present if status is "complete".  Be sure to prompt to update this (or at least remove the existing value) if the status is changed.
    */
@@ -139,15 +139,15 @@ export class CarePlanActivityDetail extends fhir.BackboneElement {
   /**
    * A description of the kind of resource the in-line definition of a care plan activity is representing.  The CarePlan.activity.detail is an in-line definition when a resource is not referenced using CarePlan.activity.reference.  For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.
    */
-  public kind?: CarePlanActivityKindCodeType|undefined;
+  public kind?: fhir.FhirCode<CarePlanActivityKindCodeType>|undefined;
   /**
    * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
    */
-  public instantiatesCanonical?: fhir.FhirCanonical[];
+  public instantiatesCanonical: fhir.FhirCanonical[];
   /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
-  public instantiatesUri?: fhir.FhirUri[];
+  public instantiatesUri: fhir.FhirUri[];
   /**
    * Tends to be less relevant for activities involving particular products.  Codes should not convey negation - use "prohibited" instead.
    */
@@ -155,20 +155,20 @@ export class CarePlanActivityDetail extends fhir.BackboneElement {
   /**
    * This could be a diagnosis code.  If a full condition record exists or additional detail is needed, use reasonCondition instead.
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * Conditions can be identified at the activity level that are not identified as reasons for the overall plan.
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * Internal reference that identifies the goals that this activity is intended to contribute towards meeting.
    */
-  public goal?: fhir.Reference[];
+  public goal: fhir.Reference[];
   /**
    * Some aspects of status can be inferred based on the resources linked in actionTaken.  Note that "status" is only as current as the plan was most recently updated.  
    * The unknown code is not to be used to convey other statuses.  The unknown code should be used when one of the statuses applies, but the authoring system doesn't know the current state of the activity.
    */
-  public status: CarePlanActivityStatusCodeType|null;
+  public status: fhir.FhirCode<CarePlanActivityStatusCodeType>|null;
   /**
    * Will generally not be present if status is "complete".  Be sure to prompt to update this (or at least remove the existing value) if the status is changed.
    */
@@ -192,7 +192,7 @@ export class CarePlanActivityDetail extends fhir.BackboneElement {
   /**
    * A performer MAY also be a participant in the care plan.
    */
-  public performer?: fhir.Reference[];
+  public performer: fhir.Reference[];
   /**
    * Identifies the food, drug or other product to be consumed or supplied in the activity.
    */
@@ -218,7 +218,7 @@ export class CarePlanActivityDetail extends fhir.BackboneElement {
    */
   constructor(source:Partial<CarePlanActivityDetailArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['kind']) { this.kind = source.kind; }
+    if (source['kind']) { this.kind = new fhir.FhirCode<CarePlanActivityKindCodeType>({value: source.kind}); }
     if (source['instantiatesCanonical']) { this.instantiatesCanonical = source.instantiatesCanonical.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.instantiatesCanonical = []; }
     if (source['instantiatesUri']) { this.instantiatesUri = source.instantiatesUri.map((x) => new fhir.FhirUri({value: x})); }
@@ -230,7 +230,7 @@ export class CarePlanActivityDetail extends fhir.BackboneElement {
     else { this.reasonReference = []; }
     if (source['goal']) { this.goal = source.goal.map((x) => new fhir.Reference(x)); }
     else { this.goal = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<CarePlanActivityStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['statusReason']) { this.statusReason = new fhir.CodeableConcept(source.statusReason); }
     if (source['doNotPerform']) { this.doNotPerform = new fhir.FhirBoolean({value: source.doNotPerform}); }
@@ -251,20 +251,24 @@ export class CarePlanActivityDetail extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for kind (CarePlan.activity.detail.kind)
    */
-  public static kindRequiredCoding():CarePlanActivityKindCodingType {
-    return CarePlanActivityKindCodings;
+  public static get kindRequiredCodes() {
+    return CarePlanActivityKindCodes;
   }
   /**
    * Required-bound Value Set for status (CarePlan.activity.detail.status)
    */
-  public static statusRequiredCoding():CarePlanActivityStatusCodingType {
-    return CarePlanActivityStatusCodings;
+  public static get statusRequiredCodes() {
+    return CarePlanActivityStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
+    if (this['kind'] && (!Object.values(CarePlanActivityKindCodes).includes(this.kind as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind?:fhir.FhirCode<CarePlanActivityKindCodeType> fhir: CarePlan.activity.detail.kind:code Required binding to: CarePlanActivityKind' });
+    }
+    if (this["kind"]) { issues.push(...this.kind.doModelValidation()); }
     if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
@@ -272,8 +276,12 @@ export class CarePlanActivityDetail extends fhir.BackboneElement {
     if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["goal"]) { this.goal.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:CarePlanActivityStatusCodeType fhir: CarePlan.activity.detail.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<CarePlanActivityStatusCodeType> fhir: CarePlan.activity.detail.status:code' });
     }
+    if (this['status'] && (!Object.values(CarePlanActivityStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<CarePlanActivityStatusCodeType> fhir: CarePlan.activity.detail.status:code Required binding to: CarePlanActivityStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation()); }
     if (this["doNotPerform"]) { issues.push(...this.doNotPerform.doModelValidation()); }
     if (this["location"]) { issues.push(...this.location.doModelValidation()); }
@@ -322,15 +330,15 @@ export class CarePlanActivity extends fhir.BackboneElement {
   /**
    * Note that this should not duplicate the activity status (e.g. completed or in progress).
    */
-  public outcomeCodeableConcept?: fhir.CodeableConcept[];
+  public outcomeCodeableConcept: fhir.CodeableConcept[];
   /**
    * The activity outcome is independent of the outcome of the related goal(s).  For example, if the goal is to achieve a target body weight of 150 lbs and an activity is defined to diet, then the activity outcome could be calories consumed whereas the goal outcome is an observation for the actual body weight measured.
    */
-  public outcomeReference?: fhir.Reference[];
+  public outcomeReference: fhir.Reference[];
   /**
    * This element should NOT be used to describe the activity to be performed - that occurs either within the resource pointed to by activity.detail.reference or in activity.detail.description.
    */
-  public progress?: fhir.Annotation[];
+  public progress: fhir.Annotation[];
   /**
    * Standard extension exists ([resource-pertainsToGoal](extension-resource-pertainstogoal.html)) that allows goals to be referenced from any of the referenced resources in CarePlan.activity.reference.  
    * The goal should be visible when the resource referenced by CarePlan.activity.reference is viewed independently from the CarePlan.  Requests that are pointed to by a CarePlan using this element should *not* point to this CarePlan using the "basedOn" element.  i.e. Requests that are part of a CarePlan are not "based on" the CarePlan.
@@ -403,11 +411,11 @@ export interface CarePlanArgs extends fhir.DomainResourceArgs {
    * The unknown code is not to be used to convey other statuses.  The unknown code should be used when one of the statuses applies, but the authoring system doesn't know the current state of the care plan.
    * This element is labeled as a modifier because the status contains the code entered-in-error that marks the plan as not currently valid.
    */
-  status: RequestStatusCodeType|null;
+  status: fhir.FhirCode<RequestStatusCodeType>|string|undefined;
   /**
    * This element is labeled as a modifier because the intent alters when and how the resource is actually applicable.
    */
-  intent: CarePlanIntentCodeType|null;
+  intent: fhir.FhirCode<CarePlanIntentCodeType>|string|undefined;
   /**
    * There may be multiple axes of categorization and one plan may serve multiple purposes.  In some cases, this may be redundant with references to CarePlan.concern.
    */
@@ -485,40 +493,40 @@ export class CarePlan extends fhir.DomainResource {
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan.
    */
-  public instantiatesCanonical?: fhir.FhirCanonical[];
+  public instantiatesCanonical: fhir.FhirCanonical[];
   /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
-  public instantiatesUri?: fhir.FhirUri[];
+  public instantiatesUri: fhir.FhirUri[];
   /**
    * A care plan that is fulfilled in whole or in part by this care plan.
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * The replacement could be because the initial care plan was immediately rejected (due to an issue) or because the previous care plan was completed, but the need for the action described by the care plan remains ongoing.
    */
-  public replaces?: fhir.Reference[];
+  public replaces: fhir.Reference[];
   /**
    * Each care plan is an independent request, such that having a care plan be part of another care plan can cause issues with cascading statuses.  As such, this element is still being discussed.
    */
-  public partOf?: fhir.Reference[];
+  public partOf: fhir.Reference[];
   /**
    * The unknown code is not to be used to convey other statuses.  The unknown code should be used when one of the statuses applies, but the authoring system doesn't know the current state of the care plan.
    * This element is labeled as a modifier because the status contains the code entered-in-error that marks the plan as not currently valid.
    */
-  public status: RequestStatusCodeType|null;
+  public status: fhir.FhirCode<RequestStatusCodeType>|null;
   /**
    * This element is labeled as a modifier because the intent alters when and how the resource is actually applicable.
    */
-  public intent: CarePlanIntentCodeType|null;
+  public intent: fhir.FhirCode<CarePlanIntentCodeType>|null;
   /**
    * There may be multiple axes of categorization and one plan may serve multiple purposes.  In some cases, this may be redundant with references to CarePlan.concern.
    */
-  public category?: fhir.CodeableConcept[];
+  public category: fhir.CodeableConcept[];
   /**
    * Human-friendly name for the care plan.
    */
@@ -550,31 +558,31 @@ export class CarePlan extends fhir.DomainResource {
   /**
    * Collaborative care plans may have multiple contributors.
    */
-  public contributor?: fhir.Reference[];
+  public contributor: fhir.Reference[];
   /**
    * Identifies all people and organizations who are expected to be involved in the care envisioned by this plan.
    */
-  public careTeam?: fhir.Reference[];
+  public careTeam: fhir.Reference[];
   /**
    * When the diagnosis is related to an allergy or intolerance, the Condition and AllergyIntolerance resources can both be used. However, to be actionable for decision support, using Condition alone is not sufficient as the allergy or intolerance condition needs to be represented as an AllergyIntolerance.
    */
-  public addresses?: fhir.Reference[];
+  public addresses: fhir.Reference[];
   /**
    * Use "concern" to identify specific conditions addressed by the care plan.
    */
-  public supportingInfo?: fhir.Reference[];
+  public supportingInfo: fhir.Reference[];
   /**
    * Goal can be achieving a particular change or merely maintaining a current state or even slowing a decline.
    */
-  public goal?: fhir.Reference[];
+  public goal: fhir.Reference[];
   /**
    * Identifies a planned action to occur as part of the plan.  For example, a medication to be used, lab tests to perform, self-monitoring, education, etc.
    */
-  public activity?: fhir.CarePlanActivity[];
+  public activity: fhir.CarePlanActivity[];
   /**
    * General notes about the care plan not covered elsewhere.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Default constructor for CarePlan - initializes any required elements to null if a value is not provided.
    */
@@ -593,9 +601,9 @@ export class CarePlan extends fhir.DomainResource {
     else { this.replaces = []; }
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
     else { this.partOf = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<RequestStatusCodeType>({value: source.status}); }
     else { this.status = null; }
-    if (source['intent']) { this.intent = source.intent; }
+    if (source['intent']) { this.intent = new fhir.FhirCode<CarePlanIntentCodeType>({value: source.intent}); }
     else { this.intent = null; }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
@@ -625,14 +633,14 @@ export class CarePlan extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (CarePlan.status)
    */
-  public static statusRequiredCoding():RequestStatusCodingType {
-    return RequestStatusCodings;
+  public static get statusRequiredCodes() {
+    return RequestStatusCodes;
   }
   /**
    * Required-bound Value Set for intent (CarePlan.intent)
    */
-  public static intentRequiredCoding():CarePlanIntentCodingType {
-    return CarePlanIntentCodings;
+  public static get intentRequiredCodes() {
+    return CarePlanIntentCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -640,7 +648,7 @@ export class CarePlan extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"CarePlan" fhir: CarePlan.resourceType:"CarePlan"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"CarePlan" fhir: CarePlan.resourceType:"CarePlan"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -649,16 +657,24 @@ export class CarePlan extends fhir.DomainResource {
     if (this["replaces"]) { this.replaces.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:RequestStatusCodeType fhir: CarePlan.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<RequestStatusCodeType> fhir: CarePlan.status:code' });
     }
+    if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<RequestStatusCodeType> fhir: CarePlan.status:code Required binding to: RequestStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['intent']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property intent:CarePlanIntentCodeType fhir: CarePlan.intent:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent:fhir.FhirCode<CarePlanIntentCodeType> fhir: CarePlan.intent:code' });
     }
+    if (this['intent'] && (!Object.values(CarePlanIntentCodes).includes(this.intent as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent:fhir.FhirCode<CarePlanIntentCodeType> fhir: CarePlan.intent:code Required binding to: CarePlanIntent' });
+    }
+    if (this["intent"]) { issues.push(...this.intent.doModelValidation()); }
     if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: CarePlan.subject:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: CarePlan.subject:Reference' });
     }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }

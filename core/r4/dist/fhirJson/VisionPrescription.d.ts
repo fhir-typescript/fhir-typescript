@@ -15,6 +15,10 @@ export interface VisionPrescriptionLensSpecificationPrism extends fhir.BackboneE
      * The relative base, or reference lens edge, for the prism.
      */
     base: 'down' | 'in' | 'out' | 'up' | null;
+    /**
+     * Extended properties for primitive element: VisionPrescription.lensSpecification.prism.base
+     */
+    _base?: fhir.FhirElement;
 }
 /**
  * Contain the details of  the individual lens specifications and serves as the authorization for the fullfillment by certified professionals.
@@ -28,6 +32,10 @@ export interface VisionPrescriptionLensSpecification extends fhir.BackboneElemen
      * May also appear as OD (oculus dexter) for the right eye and OS (oculus siniter) for the left eye.
      */
     eye: 'left' | 'right' | null;
+    /**
+     * Extended properties for primitive element: VisionPrescription.lensSpecification.eye
+     */
+    _eye?: fhir.FhirElement;
     /**
      * The value is negative for near-sighted and positive for far sighted.
      * Often insurance will not cover a lens with power between +75 and -75.
@@ -130,6 +138,10 @@ export interface VisionPrescription extends fhir.DomainResource {
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
     status: 'active' | 'cancelled' | 'draft' | 'entered-in-error' | null;
+    /**
+     * Extended properties for primitive element: VisionPrescription.status
+     */
+    _status?: fhir.FhirElement;
     /**
      * The date this resource was created.
      */

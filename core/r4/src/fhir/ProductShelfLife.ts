@@ -50,7 +50,7 @@ export class ProductShelfLife extends fhir.BackboneElement {
   /**
    * Special precautions for storage, if any, can be specified using an appropriate controlled vocabulary The controlled term and the controlled term identifier shall be specified.
    */
-  public specialPrecautionsForStorage?: fhir.CodeableConcept[];
+  public specialPrecautionsForStorage: fhir.CodeableConcept[];
   /**
    * Default constructor for ProductShelfLife - initializes any required elements to null if a value is not provided.
    */
@@ -71,11 +71,11 @@ export class ProductShelfLife extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: ProductShelfLife.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: ProductShelfLife.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['period']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property period:fhir.Quantity fhir: ProductShelfLife.period:Quantity', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property period:fhir.Quantity fhir: ProductShelfLife.period:Quantity' });
     }
     if (this["period"]) { issues.push(...this.period.doModelValidation()); }
     if (this["specialPrecautionsForStorage"]) { this.specialPrecautionsForStorage.forEach((x) => { issues.push(...x.doModelValidation()); }) }

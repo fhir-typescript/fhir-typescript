@@ -48,7 +48,7 @@ export interface StructureMapStructureArgs extends fhir.BackboneElementArgs {
   /**
    * How the referenced structure is used in this mapping.
    */
-  mode: MapModelModeCodeType|null;
+  mode: fhir.FhirCode<MapModelModeCodeType>|string|undefined;
   /**
    * This is needed if both types have the same name (e.g. version conversion).
    */
@@ -74,7 +74,7 @@ export class StructureMapStructure extends fhir.BackboneElement {
   /**
    * How the referenced structure is used in this mapping.
    */
-  public mode: MapModelModeCodeType|null;
+  public mode: fhir.FhirCode<MapModelModeCodeType>|null;
   /**
    * This is needed if both types have the same name (e.g. version conversion).
    */
@@ -90,7 +90,7 @@ export class StructureMapStructure extends fhir.BackboneElement {
     super(source, options);
     if (source['url']) { this.url = new fhir.FhirCanonical({value: source.url}); }
     else { this.url = null; }
-    if (source['mode']) { this.mode = source.mode; }
+    if (source['mode']) { this.mode = new fhir.FhirCode<MapModelModeCodeType>({value: source.mode}); }
     else { this.mode = null; }
     if (source['alias']) { this.alias = new fhir.FhirString({value: source.alias}); }
     if (source['documentation']) { this.documentation = new fhir.FhirString({value: source.documentation}); }
@@ -98,8 +98,8 @@ export class StructureMapStructure extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for mode (StructureMap.structure.mode)
    */
-  public static modeRequiredCoding():MapModelModeCodingType {
-    return MapModelModeCodings;
+  public static get modeRequiredCodes() {
+    return MapModelModeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -107,12 +107,16 @@ export class StructureMapStructure extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property url:fhir.FhirCanonical fhir: StructureMap.structure.url:canonical', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url:fhir.FhirCanonical fhir: StructureMap.structure.url:canonical' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (!this['mode']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property mode:MapModelModeCodeType fhir: StructureMap.structure.mode:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode:fhir.FhirCode<MapModelModeCodeType> fhir: StructureMap.structure.mode:code' });
     }
+    if (this['mode'] && (!Object.values(MapModelModeCodes).includes(this.mode as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode:fhir.FhirCode<MapModelModeCodeType> fhir: StructureMap.structure.mode:code Required binding to: MapModelMode' });
+    }
+    if (this["mode"]) { issues.push(...this.mode.doModelValidation()); }
     if (this["alias"]) { issues.push(...this.alias.doModelValidation()); }
     if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
     return issues;
@@ -133,7 +137,7 @@ export interface StructureMapGroupInputArgs extends fhir.BackboneElementArgs {
   /**
    * Mode for this instance of data.
    */
-  mode: MapInputModeCodeType|null;
+  mode: fhir.FhirCode<MapInputModeCodeType>|string|undefined;
   /**
    * Documentation for this instance of data.
    */
@@ -159,7 +163,7 @@ export class StructureMapGroupInput extends fhir.BackboneElement {
   /**
    * Mode for this instance of data.
    */
-  public mode: MapInputModeCodeType|null;
+  public mode: fhir.FhirCode<MapInputModeCodeType>|null;
   /**
    * Documentation for this instance of data.
    */
@@ -172,15 +176,15 @@ export class StructureMapGroupInput extends fhir.BackboneElement {
     if (source['name']) { this.name = new fhir.FhirId({value: source.name}); }
     else { this.name = null; }
     if (source['type']) { this.type = new fhir.FhirString({value: source.type}); }
-    if (source['mode']) { this.mode = source.mode; }
+    if (source['mode']) { this.mode = new fhir.FhirCode<MapInputModeCodeType>({value: source.mode}); }
     else { this.mode = null; }
     if (source['documentation']) { this.documentation = new fhir.FhirString({value: source.documentation}); }
   }
   /**
    * Required-bound Value Set for mode (StructureMap.group.input.mode)
    */
-  public static modeRequiredCoding():MapInputModeCodingType {
-    return MapInputModeCodings;
+  public static get modeRequiredCodes() {
+    return MapInputModeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -188,13 +192,17 @@ export class StructureMapGroupInput extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirId fhir: StructureMap.group.input.name:id', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirId fhir: StructureMap.group.input.name:id' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['mode']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property mode:MapInputModeCodeType fhir: StructureMap.group.input.mode:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode:fhir.FhirCode<MapInputModeCodeType> fhir: StructureMap.group.input.mode:code' });
     }
+    if (this['mode'] && (!Object.values(MapInputModeCodes).includes(this.mode as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode:fhir.FhirCode<MapInputModeCodeType> fhir: StructureMap.group.input.mode:code Required binding to: MapInputMode' });
+    }
+    if (this["mode"]) { issues.push(...this.mode.doModelValidation()); }
     if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
     return issues;
   }
@@ -430,7 +438,7 @@ export interface StructureMapGroupRuleSourceArgs extends fhir.BackboneElementArg
   /**
    * How to handle the list mode for this element.
    */
-  listMode?: MapSourceListModeCodeType|undefined;
+  listMode?: fhir.FhirCode<MapSourceListModeCodeType>|string|undefined;
   /**
    * Named context for field, if a field is specified.
    */
@@ -488,7 +496,7 @@ export class StructureMapGroupRuleSource extends fhir.BackboneElement {
   /**
    * How to handle the list mode for this element.
    */
-  public listMode?: MapSourceListModeCodeType|undefined;
+  public listMode?: fhir.FhirCode<MapSourceListModeCodeType>|undefined;
   /**
    * Named context for field, if a field is specified.
    */
@@ -567,7 +575,7 @@ export class StructureMapGroupRuleSource extends fhir.BackboneElement {
     else if (source['defaultValueDosage']) { this.defaultValue = new fhir.Dosage(source.defaultValueDosage); }
     else if (source['defaultValueMeta']) { this.defaultValue = new fhir.Meta(source.defaultValueMeta); }
     if (source['element']) { this.element = new fhir.FhirString({value: source.element}); }
-    if (source['listMode']) { this.listMode = source.listMode; }
+    if (source['listMode']) { this.listMode = new fhir.FhirCode<MapSourceListModeCodeType>({value: source.listMode}); }
     if (source['variable']) { this.variable = new fhir.FhirId({value: source.variable}); }
     if (source['condition']) { this.condition = new fhir.FhirString({value: source.condition}); }
     if (source['check']) { this.check = new fhir.FhirString({value: source.check}); }
@@ -576,8 +584,8 @@ export class StructureMapGroupRuleSource extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for listMode (StructureMap.group.rule.source.listMode)
    */
-  public static listModeRequiredCoding():MapSourceListModeCodingType {
-    return MapSourceListModeCodings;
+  public static get listModeRequiredCodes() {
+    return MapSourceListModeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -585,13 +593,17 @@ export class StructureMapGroupRuleSource extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['context']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property context:fhir.FhirId fhir: StructureMap.group.rule.source.context:id', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property context:fhir.FhirId fhir: StructureMap.group.rule.source.context:id' });
     }
     if (this["context"]) { issues.push(...this.context.doModelValidation()); }
     if (this["min"]) { issues.push(...this.min.doModelValidation()); }
     if (this["max"]) { issues.push(...this.max.doModelValidation()); }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["element"]) { issues.push(...this.element.doModelValidation()); }
+    if (this['listMode'] && (!Object.values(MapSourceListModeCodes).includes(this.listMode as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property listMode?:fhir.FhirCode<MapSourceListModeCodeType> fhir: StructureMap.group.rule.source.listMode:code Required binding to: MapSourceListMode' });
+    }
+    if (this["listMode"]) { issues.push(...this.listMode.doModelValidation()); }
     if (this["variable"]) { issues.push(...this.variable.doModelValidation()); }
     if (this["condition"]) { issues.push(...this.condition.doModelValidation()); }
     if (this["check"]) { issues.push(...this.check.doModelValidation()); }
@@ -664,7 +676,7 @@ export class StructureMapGroupRuleTargetParameter extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property value: fhir: StructureMap.group.rule.target.parameter.value[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value: fhir: StructureMap.group.rule.target.parameter.value[x]:' });
     }
     return issues;
   }
@@ -680,7 +692,7 @@ export interface StructureMapGroupRuleTargetArgs extends fhir.BackboneElementArg
   /**
    * How to interpret the context.
    */
-  contextType?: MapContextTypeCodeType|undefined;
+  contextType?: fhir.FhirCode<MapContextTypeCodeType>|string|undefined;
   /**
    * Field to create in the context.
    */
@@ -692,7 +704,7 @@ export interface StructureMapGroupRuleTargetArgs extends fhir.BackboneElementArg
   /**
    * If field is a list, how to manage the list.
    */
-  listMode?: MapTargetListModeCodeType[]|undefined;
+  listMode?: fhir.FhirCode<MapTargetListModeCodeType>[]|string[]|undefined;
   /**
    * Internal rule reference for shared list items.
    */
@@ -700,7 +712,7 @@ export interface StructureMapGroupRuleTargetArgs extends fhir.BackboneElementArg
   /**
    * How the data is copied / created.
    */
-  transform?: MapTransformCodeType|undefined;
+  transform?: fhir.FhirCode<MapTransformCodeType>|string|undefined;
   /**
    * Parameters to the transform.
    */
@@ -722,7 +734,7 @@ export class StructureMapGroupRuleTarget extends fhir.BackboneElement {
   /**
    * How to interpret the context.
    */
-  public contextType?: MapContextTypeCodeType|undefined;
+  public contextType?: fhir.FhirCode<MapContextTypeCodeType>|undefined;
   /**
    * Field to create in the context.
    */
@@ -734,7 +746,7 @@ export class StructureMapGroupRuleTarget extends fhir.BackboneElement {
   /**
    * If field is a list, how to manage the list.
    */
-  public listMode?: MapTargetListModeCodeType[];
+  public listMode: fhir.FhirCode<MapTargetListModeCodeType>[];
   /**
    * Internal rule reference for shared list items.
    */
@@ -742,44 +754,44 @@ export class StructureMapGroupRuleTarget extends fhir.BackboneElement {
   /**
    * How the data is copied / created.
    */
-  public transform?: MapTransformCodeType|undefined;
+  public transform?: fhir.FhirCode<MapTransformCodeType>|undefined;
   /**
    * Parameters to the transform.
    */
-  public parameter?: fhir.StructureMapGroupRuleTargetParameter[];
+  public parameter: fhir.StructureMapGroupRuleTargetParameter[];
   /**
    * Default constructor for StructureMapGroupRuleTarget - initializes any required elements to null if a value is not provided.
    */
   constructor(source:Partial<StructureMapGroupRuleTargetArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['context']) { this.context = new fhir.FhirId({value: source.context}); }
-    if (source['contextType']) { this.contextType = source.contextType; }
+    if (source['contextType']) { this.contextType = new fhir.FhirCode<MapContextTypeCodeType>({value: source.contextType}); }
     if (source['element']) { this.element = new fhir.FhirString({value: source.element}); }
     if (source['variable']) { this.variable = new fhir.FhirId({value: source.variable}); }
-    if (source['listMode']) { this.listMode = source.listMode.map((x) => x); }
+    if (source['listMode']) { this.listMode = source.listMode.map((x) => new fhir.FhirCode<MapTargetListModeCodeType>({value: x})); }
     else { this.listMode = []; }
     if (source['listRuleId']) { this.listRuleId = new fhir.FhirId({value: source.listRuleId}); }
-    if (source['transform']) { this.transform = source.transform; }
+    if (source['transform']) { this.transform = new fhir.FhirCode<MapTransformCodeType>({value: source.transform}); }
     if (source['parameter']) { this.parameter = source.parameter.map((x) => new fhir.StructureMapGroupRuleTargetParameter(x)); }
     else { this.parameter = []; }
   }
   /**
    * Required-bound Value Set for contextType (StructureMap.group.rule.target.contextType)
    */
-  public static contextTypeRequiredCoding():MapContextTypeCodingType {
-    return MapContextTypeCodings;
+  public static get contextTypeRequiredCodes() {
+    return MapContextTypeCodes;
   }
   /**
    * Required-bound Value Set for listMode (StructureMap.group.rule.target.listMode)
    */
-  public static listModeRequiredCoding():MapTargetListModeCodingType {
-    return MapTargetListModeCodings;
+  public static get listModeRequiredCodes() {
+    return MapTargetListModeCodes;
   }
   /**
    * Required-bound Value Set for transform (StructureMap.group.rule.target.transform)
    */
-  public static transformRequiredCoding():MapTransformCodingType {
-    return MapTransformCodings;
+  public static get transformRequiredCodes() {
+    return MapTransformCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -787,9 +799,25 @@ export class StructureMapGroupRuleTarget extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["context"]) { issues.push(...this.context.doModelValidation()); }
+    if (this['contextType'] && (!Object.values(MapContextTypeCodes).includes(this.contextType as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property contextType?:fhir.FhirCode<MapContextTypeCodeType> fhir: StructureMap.group.rule.target.contextType:code Required binding to: MapContextType' });
+    }
+    if (this["contextType"]) { issues.push(...this.contextType.doModelValidation()); }
     if (this["element"]) { issues.push(...this.element.doModelValidation()); }
     if (this["variable"]) { issues.push(...this.variable.doModelValidation()); }
+    if (this['listMode']) {
+      this.listMode.forEach((v) => {
+        if (!Object.values(MapTargetListModeCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property listMode?:fhir.FhirCode<MapTargetListModeCodeType>[] fhir: StructureMap.group.rule.target.listMode:code Required binding to: MapTargetListMode' });
+        }
+      });
+    }
+    if (this["listMode"]) { this.listMode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["listRuleId"]) { issues.push(...this.listRuleId.doModelValidation()); }
+    if (this['transform'] && (!Object.values(MapTransformCodes).includes(this.transform as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property transform?:fhir.FhirCode<MapTransformCodeType> fhir: StructureMap.group.rule.target.transform:code Required binding to: MapTransform' });
+    }
+    if (this["transform"]) { issues.push(...this.transform.doModelValidation()); }
     if (this["parameter"]) { this.parameter.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
   }
@@ -840,15 +868,15 @@ export class StructureMapGroupRuleDependent extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirId fhir: StructureMap.group.rule.dependent.name:id', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirId fhir: StructureMap.group.rule.dependent.name:id' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (!this['variable']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property variable:fhir.FhirString[] fhir: StructureMap.group.rule.dependent.variable:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property variable:fhir.FhirString[] fhir: StructureMap.group.rule.dependent.variable:string' });
     } else if (!Array.isArray(this.variable)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property variable:fhir.FhirString[] fhir: StructureMap.group.rule.dependent.variable:string', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property variable:fhir.FhirString[] fhir: StructureMap.group.rule.dependent.variable:string' });
     } else if (this.variable.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property variable:fhir.FhirString[] fhir: StructureMap.group.rule.dependent.variable:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property variable:fhir.FhirString[] fhir: StructureMap.group.rule.dependent.variable:string' });
     }
     if (this["variable"]) { this.variable.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -903,15 +931,15 @@ export class StructureMapGroupRule extends fhir.BackboneElement {
   /**
    * Content to create because of this mapping rule.
    */
-  public target?: fhir.StructureMapGroupRuleTarget[];
+  public target: fhir.StructureMapGroupRuleTarget[];
   /**
    * Rules contained in this rule.
    */
-  public rule?: fhir.StructureMapGroupRule[];
+  public rule: fhir.StructureMapGroupRule[];
   /**
    * Which other rules to apply in the context of this rule.
    */
-  public dependent?: fhir.StructureMapGroupRuleDependent[];
+  public dependent: fhir.StructureMapGroupRuleDependent[];
   /**
    * Documentation for this instance of data.
    */
@@ -939,15 +967,15 @@ export class StructureMapGroupRule extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirId fhir: StructureMap.group.rule.name:id', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirId fhir: StructureMap.group.rule.name:id' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (!this['source']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property source:fhir.StructureMapGroupRuleSource[] fhir: StructureMap.group.rule.source:source', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property source:fhir.StructureMapGroupRuleSource[] fhir: StructureMap.group.rule.source:source' });
     } else if (!Array.isArray(this.source)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property source:fhir.StructureMapGroupRuleSource[] fhir: StructureMap.group.rule.source:source', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property source:fhir.StructureMapGroupRuleSource[] fhir: StructureMap.group.rule.source:source' });
     } else if (this.source.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property source:fhir.StructureMapGroupRuleSource[] fhir: StructureMap.group.rule.source:source', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property source:fhir.StructureMapGroupRuleSource[] fhir: StructureMap.group.rule.source:source' });
     }
     if (this["source"]) { this.source.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["target"]) { this.target.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -972,7 +1000,7 @@ export interface StructureMapGroupArgs extends fhir.BackboneElementArgs {
   /**
    * Not applicable if the underlying model is untyped. There can only be one default mapping for any particular type combination.
    */
-  typeMode: MapGroupTypeModeCodeType|null;
+  typeMode: fhir.FhirCode<MapGroupTypeModeCodeType>|string|undefined;
   /**
    * Additional supporting documentation that explains the purpose of the group and the types of mappings within it.
    */
@@ -1006,7 +1034,7 @@ export class StructureMapGroup extends fhir.BackboneElement {
   /**
    * Not applicable if the underlying model is untyped. There can only be one default mapping for any particular type combination.
    */
-  public typeMode: MapGroupTypeModeCodeType|null;
+  public typeMode: fhir.FhirCode<MapGroupTypeModeCodeType>|null;
   /**
    * Additional supporting documentation that explains the purpose of the group and the types of mappings within it.
    */
@@ -1027,7 +1055,7 @@ export class StructureMapGroup extends fhir.BackboneElement {
     if (source['name']) { this.name = new fhir.FhirId({value: source.name}); }
     else { this.name = null; }
     if (source['extends']) { this.extends = new fhir.FhirId({value: source.extends}); }
-    if (source['typeMode']) { this.typeMode = source.typeMode; }
+    if (source['typeMode']) { this.typeMode = new fhir.FhirCode<MapGroupTypeModeCodeType>({value: source.typeMode}); }
     else { this.typeMode = null; }
     if (source['documentation']) { this.documentation = new fhir.FhirString({value: source.documentation}); }
     if (source['input']) { this.input = source.input.map((x) => new fhir.StructureMapGroupInput(x)); }
@@ -1038,8 +1066,8 @@ export class StructureMapGroup extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for typeMode (StructureMap.group.typeMode)
    */
-  public static typeModeRequiredCoding():MapGroupTypeModeCodingType {
-    return MapGroupTypeModeCodings;
+  public static get typeModeRequiredCodes() {
+    return MapGroupTypeModeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -1047,28 +1075,32 @@ export class StructureMapGroup extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirId fhir: StructureMap.group.name:id', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirId fhir: StructureMap.group.name:id' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["extends"]) { issues.push(...this.extends.doModelValidation()); }
     if (!this['typeMode']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property typeMode:MapGroupTypeModeCodeType fhir: StructureMap.group.typeMode:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property typeMode:fhir.FhirCode<MapGroupTypeModeCodeType> fhir: StructureMap.group.typeMode:code' });
     }
+    if (this['typeMode'] && (!Object.values(MapGroupTypeModeCodes).includes(this.typeMode as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property typeMode:fhir.FhirCode<MapGroupTypeModeCodeType> fhir: StructureMap.group.typeMode:code Required binding to: MapGroupTypeMode' });
+    }
+    if (this["typeMode"]) { issues.push(...this.typeMode.doModelValidation()); }
     if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
     if (!this['input']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property input:fhir.StructureMapGroupInput[] fhir: StructureMap.group.input:input', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property input:fhir.StructureMapGroupInput[] fhir: StructureMap.group.input:input' });
     } else if (!Array.isArray(this.input)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property input:fhir.StructureMapGroupInput[] fhir: StructureMap.group.input:input', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property input:fhir.StructureMapGroupInput[] fhir: StructureMap.group.input:input' });
     } else if (this.input.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property input:fhir.StructureMapGroupInput[] fhir: StructureMap.group.input:input', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property input:fhir.StructureMapGroupInput[] fhir: StructureMap.group.input:input' });
     }
     if (this["input"]) { this.input.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['rule']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property rule:fhir.StructureMapGroupRule[] fhir: StructureMap.group.rule:rule', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property rule:fhir.StructureMapGroupRule[] fhir: StructureMap.group.rule:rule' });
     } else if (!Array.isArray(this.rule)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property rule:fhir.StructureMapGroupRule[] fhir: StructureMap.group.rule:rule', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property rule:fhir.StructureMapGroupRule[] fhir: StructureMap.group.rule:rule' });
     } else if (this.rule.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property rule:fhir.StructureMapGroupRule[] fhir: StructureMap.group.rule:rule', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property rule:fhir.StructureMapGroupRule[] fhir: StructureMap.group.rule:rule' });
     }
     if (this["rule"]) { this.rule.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -1107,7 +1139,7 @@ export interface StructureMapArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of structure maps that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of structure maps that are appropriate for use versus not.
    */
@@ -1179,7 +1211,7 @@ export class StructureMap extends fhir.DomainResource {
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this structure map outside of FHIR, where it is not possible to use the logical URI.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * There may be different structure map instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the structure map with the format [url]|[version].
    */
@@ -1195,7 +1227,7 @@ export class StructureMap extends fhir.DomainResource {
   /**
    * Allows filtering of structure maps that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of structure maps that are appropriate for use versus not.
    */
@@ -1211,7 +1243,7 @@ export class StructureMap extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the structure map was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the structure map as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the structure map is presumed to be the predominant language in the place the structure map was created).
    */
@@ -1219,11 +1251,11 @@ export class StructureMap extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the structure map to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * This element does not describe the usage of the structure map. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this structure map.
    */
@@ -1235,11 +1267,11 @@ export class StructureMap extends fhir.DomainResource {
   /**
    * It is not necessary for a structure map to identify any dependent structures, though not listing them may restrict its usefulness.
    */
-  public structure?: fhir.StructureMapStructure[];
+  public structure: fhir.StructureMapStructure[];
   /**
    * Other maps used by this map (canonical URLs).
    */
-  public import?: fhir.FhirCanonical[];
+  public import: fhir.FhirCanonical[];
   /**
    * Organizes the mapping into manageable chunks for human review/ease of maintenance.
    */
@@ -1258,7 +1290,7 @@ export class StructureMap extends fhir.DomainResource {
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
@@ -1282,8 +1314,8 @@ export class StructureMap extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (StructureMap.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -1291,22 +1323,26 @@ export class StructureMap extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"StructureMap" fhir: StructureMap.resourceType:"StructureMap"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"StructureMap" fhir: StructureMap.resourceType:"StructureMap"' });
     }
     if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property url:fhir.FhirUri fhir: StructureMap.url:uri', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url:fhir.FhirUri fhir: StructureMap.url:uri' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["version"]) { issues.push(...this.version.doModelValidation()); }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: StructureMap.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: StructureMap.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: StructureMap.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: StructureMap.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: StructureMap.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
@@ -1319,11 +1355,11 @@ export class StructureMap extends fhir.DomainResource {
     if (this["structure"]) { this.structure.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["import"]) { this.import.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['group']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property group:fhir.StructureMapGroup[] fhir: StructureMap.group:group', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property group:fhir.StructureMapGroup[] fhir: StructureMap.group:group' });
     } else if (!Array.isArray(this.group)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property group:fhir.StructureMapGroup[] fhir: StructureMap.group:group', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property group:fhir.StructureMapGroup[] fhir: StructureMap.group:group' });
     } else if (this.group.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property group:fhir.StructureMapGroup[] fhir: StructureMap.group:group', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property group:fhir.StructureMapGroup[] fhir: StructureMap.group:group' });
     }
     if (this["group"]) { this.group.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;

@@ -51,7 +51,7 @@ export class CareTeamParticipant extends fhir.BackboneElement {
   /**
    * Roles may sometimes be inferred by type of Practitioner.  These are relationships that hold only within the context of the care team.  General relationships should be handled as properties of the Patient resource directly.
    */
-  public role?: fhir.CodeableConcept[];
+  public role: fhir.CodeableConcept[];
   /**
    * Patient only needs to be listed if they have a role other than "subject of care".
    * Member is optional because some participants may be known only by their role, particularly in draft plans.
@@ -103,7 +103,7 @@ export interface CareTeamArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains the code entered-in-error that marks the care team as not currently valid.
    */
-  status?: CareTeamStatusCodeType|undefined;
+  status?: fhir.FhirCode<CareTeamStatusCodeType>|string|undefined;
   /**
    * There may be multiple axis of categorization and one team may serve multiple purposes.
    */
@@ -165,15 +165,15 @@ export class CareTeam extends fhir.DomainResource {
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the status contains the code entered-in-error that marks the care team as not currently valid.
    */
-  public status?: CareTeamStatusCodeType|undefined;
+  public status?: fhir.FhirCode<CareTeamStatusCodeType>|undefined;
   /**
    * There may be multiple axis of categorization and one team may serve multiple purposes.
    */
-  public category?: fhir.CodeableConcept[];
+  public category: fhir.CodeableConcept[];
   /**
    * The meaning/purpose of the team is conveyed in CareTeam.category.  This element may also convey semantics of the team (e.g. "Red trauma team"), but its primary purpose is to distinguish between identical teams in a human-friendly way.  ("Team 18735" isn't as friendly.).
    */
@@ -193,27 +193,27 @@ export class CareTeam extends fhir.DomainResource {
   /**
    * Identifies all people and organizations who are expected to be involved in the care team.
    */
-  public participant?: fhir.CareTeamParticipant[];
+  public participant: fhir.CareTeamParticipant[];
   /**
    * Describes why the care team exists.
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * Condition(s) that this care team addresses.
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * The organization responsible for the care team.
    */
-  public managingOrganization?: fhir.Reference[];
+  public managingOrganization: fhir.Reference[];
   /**
    * The ContactPoint.use code of home is not appropriate to use. These contacts are not the contact details of individual care team members.
    */
-  public telecom?: fhir.ContactPoint[];
+  public telecom: fhir.ContactPoint[];
   /**
    * Comments made about the CareTeam.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Default constructor for CareTeam - initializes any required elements to null if a value is not provided.
    */
@@ -222,7 +222,7 @@ export class CareTeam extends fhir.DomainResource {
     this.resourceType = 'CareTeam';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<CareTeamStatusCodeType>({value: source.status}); }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
@@ -245,8 +245,8 @@ export class CareTeam extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (CareTeam.status)
    */
-  public static statusRequiredCoding():CareTeamStatusCodingType {
-    return CareTeamStatusCodings;
+  public static get statusRequiredCodes() {
+    return CareTeamStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -254,9 +254,13 @@ export class CareTeam extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"CareTeam" fhir: CareTeam.resourceType:"CareTeam"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"CareTeam" fhir: CareTeam.resourceType:"CareTeam"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['status'] && (!Object.values(CareTeamStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<CareTeamStatusCodeType> fhir: CareTeam.status:code Required binding to: CareTeamStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }

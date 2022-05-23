@@ -78,7 +78,7 @@ export class MessageHeaderDestination extends fhir.BackboneElement {
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["target"]) { issues.push(...this.target.doModelValidation()); }
     if (!this['endpoint']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property endpoint:fhir.FhirUrl fhir: MessageHeader.destination.endpoint:url', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property endpoint:fhir.FhirUrl fhir: MessageHeader.destination.endpoint:url' });
     }
     if (this["endpoint"]) { issues.push(...this.endpoint.doModelValidation()); }
     if (this["receiver"]) { issues.push(...this.receiver.doModelValidation()); }
@@ -161,7 +161,7 @@ export class MessageHeaderSource extends fhir.BackboneElement {
     if (this["version"]) { issues.push(...this.version.doModelValidation()); }
     if (this["contact"]) { issues.push(...this.contact.doModelValidation()); }
     if (!this['endpoint']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property endpoint:fhir.FhirUrl fhir: MessageHeader.source.endpoint:url', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property endpoint:fhir.FhirUrl fhir: MessageHeader.source.endpoint:url' });
     }
     if (this["endpoint"]) { issues.push(...this.endpoint.doModelValidation()); }
     return issues;
@@ -178,7 +178,7 @@ export interface MessageHeaderResponseArgs extends fhir.BackboneElementArgs {
   /**
    * This is a generic response to the request message. Specific data for the response will be found in MessageHeader.focus.
    */
-  code: ResponseCodeCodeType|null;
+  code: fhir.FhirCode<ResponseCodeCodeType>|string|undefined;
   /**
    * This SHALL be contained in the bundle. If any of the issues are errors, the response code SHALL be an error.
    */
@@ -200,7 +200,7 @@ export class MessageHeaderResponse extends fhir.BackboneElement {
   /**
    * This is a generic response to the request message. Specific data for the response will be found in MessageHeader.focus.
    */
-  public code: ResponseCodeCodeType|null;
+  public code: fhir.FhirCode<ResponseCodeCodeType>|null;
   /**
    * This SHALL be contained in the bundle. If any of the issues are errors, the response code SHALL be an error.
    */
@@ -212,15 +212,15 @@ export class MessageHeaderResponse extends fhir.BackboneElement {
     super(source, options);
     if (source['identifier']) { this.identifier = new fhir.FhirId({value: source.identifier}); }
     else { this.identifier = null; }
-    if (source['code']) { this.code = source.code; }
+    if (source['code']) { this.code = new fhir.FhirCode<ResponseCodeCodeType>({value: source.code}); }
     else { this.code = null; }
     if (source['details']) { this.details = new fhir.Reference(source.details); }
   }
   /**
    * Required-bound Value Set for code (MessageHeader.response.code)
    */
-  public static codeRequiredCoding():ResponseCodeCodingType {
-    return ResponseCodeCodings;
+  public static get codeRequiredCodes() {
+    return ResponseCodeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -228,12 +228,16 @@ export class MessageHeaderResponse extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['identifier']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property identifier:fhir.FhirId fhir: MessageHeader.response.identifier:id', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property identifier:fhir.FhirId fhir: MessageHeader.response.identifier:id' });
     }
     if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:ResponseCodeCodeType fhir: MessageHeader.response.code:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode<ResponseCodeCodeType> fhir: MessageHeader.response.code:code' });
     }
+    if (this['code'] && (!Object.values(ResponseCodeCodes).includes(this.code as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode<ResponseCodeCodeType> fhir: MessageHeader.response.code:code Required binding to: ResponseCode' });
+    }
+    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["details"]) { issues.push(...this.details.doModelValidation()); }
     return issues;
   }
@@ -323,7 +327,7 @@ export class MessageHeader extends fhir.DomainResource {
   /**
    * There SHOULD be at least one destination, but in some circumstances, the source system is unaware of any particular destination system.
    */
-  public destination?: fhir.MessageHeaderDestination[];
+  public destination: fhir.MessageHeaderDestination[];
   /**
    * Use case is for where a (trusted) sending system is responsible for multiple organizations, and therefore cannot differentiate based on source endpoint / authentication alone.
    */
@@ -355,7 +359,7 @@ export class MessageHeader extends fhir.DomainResource {
   /**
    * The data is defined where the transaction type is defined. The transaction data is always included in the bundle that is the full message.  Only the root resource is specified.  The resources it references should be contained in the bundle but are not also listed here.  Multiple repetitions are allowed to cater for merges and other situations with multiple focal targets.
    */
-  public focus?: fhir.Reference[];
+  public focus: fhir.Reference[];
   /**
    * Permanent link to the MessageDefinition for this message.
    */
@@ -390,17 +394,17 @@ export class MessageHeader extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MessageHeader" fhir: MessageHeader.resourceType:"MessageHeader"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MessageHeader" fhir: MessageHeader.resourceType:"MessageHeader"' });
     }
     if (!this['event']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property event: fhir: MessageHeader.event[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property event: fhir: MessageHeader.event[x]:' });
     }
     if (this["destination"]) { this.destination.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["sender"]) { issues.push(...this.sender.doModelValidation()); }
     if (this["enterer"]) { issues.push(...this.enterer.doModelValidation()); }
     if (this["author"]) { issues.push(...this.author.doModelValidation()); }
     if (!this['source']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property source:fhir.MessageHeaderSource fhir: MessageHeader.source:source', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property source:fhir.MessageHeaderSource fhir: MessageHeader.source:source' });
     }
     if (this["source"]) { issues.push(...this.source.doModelValidation()); }
     if (this["responsible"]) { issues.push(...this.responsible.doModelValidation()); }

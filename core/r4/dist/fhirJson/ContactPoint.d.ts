@@ -8,6 +8,10 @@ export interface ContactPoint extends fhir.FhirElement {
      */
     system?: 'email' | 'fax' | 'other' | 'pager' | 'phone' | 'sms' | 'url' | undefined;
     /**
+     * Extended properties for primitive element: ContactPoint.system
+     */
+    _system?: fhir.FhirElement;
+    /**
      * Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.
      */
     value?: string | undefined;
@@ -19,6 +23,10 @@ export interface ContactPoint extends fhir.FhirElement {
      * Applications can assume that a contact is current unless it explicitly says that it is temporary or old.
      */
     use?: 'home' | 'mobile' | 'old' | 'temp' | 'work' | undefined;
+    /**
+     * Extended properties for primitive element: ContactPoint.use
+     */
+    _use?: fhir.FhirElement;
     /**
      * Note that rank does not necessarily follow the order in which the contacts are represented in the instance.
      */

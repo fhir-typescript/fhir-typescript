@@ -20,6 +20,10 @@ export interface MolecularSequenceReferenceSeq extends fhir.BackboneElement {
      */
     orientation?: 'antisense' | 'sense' | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.referenceSeq.orientation
+     */
+    _orientation?: fhir.FhirElement;
+    /**
      * Reference identifier of reference sequence submitted to NCBI. It must match the type in the MolecularSequence.type field. For example, the prefix, “NG_” identifies reference sequence for genes, “NM_” for messenger RNA transcripts, and “NP_” for amino acid sequences.
      */
     referenceSeqId?: fhir.CodeableConcept | undefined;
@@ -39,6 +43,10 @@ export interface MolecularSequenceReferenceSeq extends fhir.BackboneElement {
      * An absolute reference to a strand. The Watson strand is the strand whose 5'-end is on the short arm of the chromosome, and the Crick strand as the one whose 5'-end is on the long arm.
      */
     strand?: 'crick' | 'watson' | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.referenceSeq.strand
+     */
+    _strand?: fhir.FhirElement;
     /**
      * Start position of the window on the reference sequence. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
      */
@@ -175,6 +183,10 @@ export interface MolecularSequenceQuality extends fhir.BackboneElement {
      */
     type: 'indel' | 'snp' | 'unknown' | null;
     /**
+     * Extended properties for primitive element: MolecularSequence.quality.type
+     */
+    _type?: fhir.FhirElement;
+    /**
      * Gold standard sequence used for comparing against.
      */
     standardSequence?: fhir.CodeableConcept | undefined;
@@ -279,6 +291,10 @@ export interface MolecularSequenceRepository extends fhir.BackboneElement {
      * Click and see / RESTful API / Need login to see / RESTful API with authentication / Other ways to see resource.
      */
     type: 'directlink' | 'login' | 'oauth' | 'openapi' | 'other' | null;
+    /**
+     * Extended properties for primitive element: MolecularSequence.repository.type
+     */
+    _type?: fhir.FhirElement;
     /**
      * URI of an external repository which contains further details about the genetics data.
      */
@@ -411,6 +427,10 @@ export interface MolecularSequence extends fhir.DomainResource {
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
      */
     type?: 'aa' | 'dna' | 'rna' | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.type
+     */
+    _type?: fhir.FhirElement;
     /**
      * Whether the sequence is numbered starting at 0 (0-based numbering or coordinates, inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive start and inclusive end).
      */

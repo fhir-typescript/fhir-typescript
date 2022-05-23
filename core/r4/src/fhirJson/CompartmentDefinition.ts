@@ -75,6 +75,10 @@ export interface CompartmentDefinition extends fhir.DomainResource {
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
   /**
+   * Extended properties for primitive element: CompartmentDefinition.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Allows filtering of compartment definitions that are appropriate for use versus not.
    */
   experimental?: boolean|undefined;
@@ -126,6 +130,10 @@ export interface CompartmentDefinition extends fhir.DomainResource {
    * Only the specification can define the compartments that can exist. Servers can choose to support them.
    */
   code: 'Device'|'Encounter'|'Patient'|'Practitioner'|'RelatedPerson'|null;
+  /**
+   * Extended properties for primitive element: CompartmentDefinition.code
+   */
+  _code?:fhir.FhirElement;
   /**
    * Servers may define and use compartments to manage logical access without implementing the compartment related syntax.
    */

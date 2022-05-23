@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { EpisodeOfCareStatusCodingType } from '../fhirValueSets/EpisodeOfCareStatusCodings.js';
 import { EpisodeOfCareStatusCodeType } from '../fhirValueSets/EpisodeOfCareStatusCodes.js';
-import { DiagnosisRoleCodingType } from '../fhirValueSets/DiagnosisRoleCodings.js';
 /**
  * Valid arguments for the EpisodeOfCareStatusHistory type.
  */
@@ -9,7 +7,7 @@ export interface EpisodeOfCareStatusHistoryArgs extends fhir.BackboneElementArgs
     /**
      * planned | waitlist | active | onhold | finished | cancelled.
      */
-    status: EpisodeOfCareStatusCodeType | null;
+    status: fhir.FhirCode<EpisodeOfCareStatusCodeType> | string | undefined;
     /**
      * The period during this EpisodeOfCare that the specific status applied.
      */
@@ -26,7 +24,7 @@ export declare class EpisodeOfCareStatusHistory extends fhir.BackboneElement {
     /**
      * planned | waitlist | active | onhold | finished | cancelled.
      */
-    status: EpisodeOfCareStatusCodeType | null;
+    status: fhir.FhirCode<EpisodeOfCareStatusCodeType> | null;
     /**
      * The period during this EpisodeOfCare that the specific status applied.
      */
@@ -38,7 +36,19 @@ export declare class EpisodeOfCareStatusHistory extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for status (EpisodeOfCare.statusHistory.status)
      */
-    static statusRequiredCoding(): EpisodeOfCareStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Cancelled: "cancelled";
+        readonly EnteredInError: "entered-in-error";
+        readonly Finished: "finished";
+        readonly OnHold: "onhold";
+        readonly Planned: "planned"; /**
+         * Mapping of this datatype to a FHIR equivalent
+         */
+        readonly Waitlist: "waitlist"; /**
+         * planned | waitlist | active | onhold | finished | cancelled.
+         */
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -88,7 +98,17 @@ export declare class EpisodeOfCareDiagnosis extends fhir.BackboneElement {
     /**
      * Preferred-bound Value Set for role (EpisodeOfCare.diagnosis.role)
      */
-    static rolePreferredCoding(): DiagnosisRoleCodingType;
+    static get rolePreferredCodings(): {
+        readonly AdmissionDiagnosis: fhir.Coding;
+        readonly Billing: fhir.Coding;
+        readonly ChiefComplaint: fhir.Coding;
+        readonly ComorbidityDiagnosis: fhir.Coding;
+        readonly DischargeDiagnosis: fhir.Coding;
+        readonly PostOpDiagnosis: fhir.Coding;
+        readonly PreOpDiagnosis: fhir.Coding; /**
+         * planned | waitlist | active | onhold | finished | cancelled.
+         */
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -109,7 +129,7 @@ export interface EpisodeOfCareArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the episode as not currently valid.
      */
-    status: EpisodeOfCareStatusCodeType | null;
+    status: fhir.FhirCode<EpisodeOfCareStatusCodeType> | string | undefined;
     /**
      * The history of statuses that the EpisodeOfCare has been through (without requiring processing the history of the resource).
      */
@@ -166,23 +186,23 @@ export declare class EpisodeOfCare extends fhir.DomainResource {
     /**
      * The EpisodeOfCare may be known by different identifiers for different contexts of use, such as when an external agency is tracking the Episode for funding purposes.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the episode as not currently valid.
      */
-    status: EpisodeOfCareStatusCodeType | null;
+    status: fhir.FhirCode<EpisodeOfCareStatusCodeType> | null;
     /**
      * The history of statuses that the EpisodeOfCare has been through (without requiring processing the history of the resource).
      */
-    statusHistory?: fhir.EpisodeOfCareStatusHistory[];
+    statusHistory: fhir.EpisodeOfCareStatusHistory[];
     /**
      * The type can be very important in processing as this could be used in determining if the EpisodeOfCare is relevant to specific government reporting, or other types of classifications.
      */
-    type?: fhir.CodeableConcept[];
+    type: fhir.CodeableConcept[];
     /**
      * The list of diagnosis relevant to this episode of care.
      */
-    diagnosis?: fhir.EpisodeOfCareDiagnosis[];
+    diagnosis: fhir.EpisodeOfCareDiagnosis[];
     /**
      * The patient who is the focus of this episode of care.
      */
@@ -198,7 +218,7 @@ export declare class EpisodeOfCare extends fhir.DomainResource {
     /**
      * Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming referrals.
      */
-    referralRequest?: fhir.Reference[];
+    referralRequest: fhir.Reference[];
     /**
      * The practitioner that is the care manager/care coordinator for this patient.
      */
@@ -206,11 +226,11 @@ export declare class EpisodeOfCare extends fhir.DomainResource {
     /**
      * The list of practitioners that may be facilitating this episode of care for specific purposes.
      */
-    team?: fhir.Reference[];
+    team: fhir.Reference[];
     /**
      * The billing system may choose to allocate billable items associated with the EpisodeOfCare to different referenced Accounts based on internal business rules.
      */
-    account?: fhir.Reference[];
+    account: fhir.Reference[];
     /**
      * Default constructor for EpisodeOfCare - initializes any required elements to null if a value is not provided.
      */
@@ -218,7 +238,19 @@ export declare class EpisodeOfCare extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (EpisodeOfCare.status)
      */
-    static statusRequiredCoding(): EpisodeOfCareStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Cancelled: "cancelled";
+        readonly EnteredInError: "entered-in-error";
+        readonly Finished: "finished";
+        readonly OnHold: "onhold";
+        readonly Planned: "planned"; /**
+         * Mapping of this datatype to a FHIR equivalent
+         */
+        readonly Waitlist: "waitlist"; /**
+         * planned | waitlist | active | onhold | finished | cancelled.
+         */
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

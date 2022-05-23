@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { DocumentReferenceStatusCodingType } from '../fhirValueSets/DocumentReferenceStatusCodings.js';
 import { DocumentReferenceStatusCodeType } from '../fhirValueSets/DocumentReferenceStatusCodes.js';
 /**
  * Valid arguments for the DocumentManifestRelated type.
@@ -58,7 +57,7 @@ export interface DocumentManifestArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains the codes that mark the manifest as not currently valid.
      */
-    status: DocumentReferenceStatusCodeType | null;
+    status: fhir.FhirCode<DocumentReferenceStatusCodeType> | string | undefined;
     /**
      * Specifies the kind of this set of documents (e.g. Patient Summary, Discharge Summary, Prescription, etc.). The type of a set of documents may be the same as one of the documents in it - especially if there is only one - but it may be wider.
      */
@@ -115,11 +114,11 @@ export declare class DocumentManifest extends fhir.DomainResource {
     /**
      * Other identifiers associated with the document manifest, including version independent  identifiers.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains the codes that mark the manifest as not currently valid.
      */
-    status: DocumentReferenceStatusCodeType | null;
+    status: fhir.FhirCode<DocumentReferenceStatusCodeType> | null;
     /**
      * Specifies the kind of this set of documents (e.g. Patient Summary, Discharge Summary, Prescription, etc.). The type of a set of documents may be the same as one of the documents in it - especially if there is only one - but it may be wider.
      */
@@ -135,11 +134,11 @@ export declare class DocumentManifest extends fhir.DomainResource {
     /**
      * Not necessarily who did the actual data entry (i.e. typist) or who was the source (informant).
      */
-    author?: fhir.Reference[];
+    author: fhir.Reference[];
     /**
      * How the recipient receives the document set or is notified of it is up to the implementation. This element is just a statement of intent. If the recipient is a person, and it is not known whether the person is a patient or a practitioner, RelatedPerson would be the default choice.
      */
-    recipient?: fhir.Reference[];
+    recipient: fhir.Reference[];
     /**
      * Identifies the source system, application, or software that produced the document manifest.
      */
@@ -155,7 +154,7 @@ export declare class DocumentManifest extends fhir.DomainResource {
     /**
      * May be identifiers or resources that caused the DocumentManifest to be created.
      */
-    related?: fhir.DocumentManifestRelated[];
+    related: fhir.DocumentManifestRelated[];
     /**
      * Default constructor for DocumentManifest - initializes any required elements to null if a value is not provided.
      */
@@ -163,7 +162,11 @@ export declare class DocumentManifest extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (DocumentManifest.status)
      */
-    static statusRequiredCoding(): DocumentReferenceStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Current: "current";
+        readonly EnteredInError: "entered-in-error";
+        readonly Superseded: "superseded";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

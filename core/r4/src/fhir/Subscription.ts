@@ -20,7 +20,7 @@ export interface SubscriptionChannelArgs extends fhir.BackboneElementArgs {
   /**
    * The type of channel to send notifications on.
    */
-  type: SubscriptionChannelTypeCodeType|null;
+  type: fhir.FhirCode<SubscriptionChannelTypeCodeType>|string|undefined;
   /**
    * For rest-hook, and websocket, the end-point must be an http: or https: URL; for email, a mailto: url, for sms, a tel: url, and for message the endpoint can be in any form of url the server understands (usually, http: or mllp:). The URI is allowed to be relative; in which case, it is relative to the server end-point (since there may be more than one, clients should avoid using relative URIs).
    */
@@ -46,7 +46,7 @@ export class SubscriptionChannel extends fhir.BackboneElement {
   /**
    * The type of channel to send notifications on.
    */
-  public type: SubscriptionChannelTypeCodeType|null;
+  public type: fhir.FhirCode<SubscriptionChannelTypeCodeType>|null;
   /**
    * For rest-hook, and websocket, the end-point must be an http: or https: URL; for email, a mailto: url, for sms, a tel: url, and for message the endpoint can be in any form of url the server understands (usually, http: or mllp:). The URI is allowed to be relative; in which case, it is relative to the server end-point (since there may be more than one, clients should avoid using relative URIs).
    */
@@ -58,13 +58,13 @@ export class SubscriptionChannel extends fhir.BackboneElement {
   /**
    * Exactly what these mean depend on the channel type. They can convey additional information to the recipient and/or meet security requirements; for example, support of multiple headers in the outgoing notifications for rest-hook type subscriptions.
    */
-  public header?: fhir.FhirString[];
+  public header: fhir.FhirString[];
   /**
    * Default constructor for SubscriptionChannel - initializes any required elements to null if a value is not provided.
    */
   constructor(source:Partial<SubscriptionChannelArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<SubscriptionChannelTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['endpoint']) { this.endpoint = new fhir.FhirUrl({value: source.endpoint}); }
     if (source['payload']) { this.payload = new fhir.FhirCode({value: source.payload}); }
@@ -74,8 +74,8 @@ export class SubscriptionChannel extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for type (Subscription.channel.type)
    */
-  public static typeRequiredCoding():SubscriptionChannelTypeCodingType {
-    return SubscriptionChannelTypeCodings;
+  public static get typeRequiredCodes() {
+    return SubscriptionChannelTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -83,8 +83,12 @@ export class SubscriptionChannel extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:SubscriptionChannelTypeCodeType fhir: Subscription.channel.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<SubscriptionChannelTypeCodeType> fhir: Subscription.channel.type:code' });
     }
+    if (this['type'] && (!Object.values(SubscriptionChannelTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<SubscriptionChannelTypeCodeType> fhir: Subscription.channel.type:code Required binding to: SubscriptionChannelType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["endpoint"]) { issues.push(...this.endpoint.doModelValidation()); }
     if (this["payload"]) { issues.push(...this.payload.doModelValidation()); }
     if (this["header"]) { this.header.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -103,7 +107,7 @@ export interface SubscriptionArgs extends fhir.DomainResourceArgs {
    * A client can only submit subscription resources in the requested or off state. Only the server can  move a subscription from requested to active, and then to error. Either the server or the client can turn a subscription off.
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status: SubscriptionStatusCodeType|null;
+  status: fhir.FhirCode<SubscriptionStatusCodeType>|string|undefined;
   /**
    * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
    */
@@ -146,11 +150,11 @@ export class Subscription extends fhir.DomainResource {
    * A client can only submit subscription resources in the requested or off state. Only the server can  move a subscription from requested to active, and then to error. Either the server or the client can turn a subscription off.
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status: SubscriptionStatusCodeType|null;
+  public status: fhir.FhirCode<SubscriptionStatusCodeType>|null;
   /**
    * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
    */
-  public contact?: fhir.ContactPoint[];
+  public contact: fhir.ContactPoint[];
   /**
    * The server is permitted to deviate from this time but should observe it.
    */
@@ -177,7 +181,7 @@ export class Subscription extends fhir.DomainResource {
   constructor(source:Partial<SubscriptionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Subscription';
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<SubscriptionStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactPoint(x)); }
     else { this.contact = []; }
@@ -193,8 +197,8 @@ export class Subscription extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Subscription.status)
    */
-  public static statusRequiredCoding():SubscriptionStatusCodingType {
-    return SubscriptionStatusCodings;
+  public static get statusRequiredCodes() {
+    return SubscriptionStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -202,24 +206,28 @@ export class Subscription extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Subscription" fhir: Subscription.resourceType:"Subscription"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Subscription" fhir: Subscription.resourceType:"Subscription"' });
     }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:SubscriptionStatusCodeType fhir: Subscription.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<SubscriptionStatusCodeType> fhir: Subscription.status:code' });
     }
+    if (this['status'] && (!Object.values(SubscriptionStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<SubscriptionStatusCodeType> fhir: Subscription.status:code Required binding to: SubscriptionStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["end"]) { issues.push(...this.end.doModelValidation()); }
     if (!this['reason']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property reason:fhir.FhirString fhir: Subscription.reason:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reason:fhir.FhirString fhir: Subscription.reason:string' });
     }
     if (this["reason"]) { issues.push(...this.reason.doModelValidation()); }
     if (!this['criteria']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property criteria:fhir.FhirString fhir: Subscription.criteria:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property criteria:fhir.FhirString fhir: Subscription.criteria:string' });
     }
     if (this["criteria"]) { issues.push(...this.criteria.doModelValidation()); }
     if (this["error"]) { issues.push(...this.error.doModelValidation()); }
     if (!this['channel']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property channel:fhir.SubscriptionChannel fhir: Subscription.channel:channel', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property channel:fhir.SubscriptionChannel fhir: Subscription.channel:channel' });
     }
     if (this["channel"]) { issues.push(...this.channel.doModelValidation()); }
     return issues;

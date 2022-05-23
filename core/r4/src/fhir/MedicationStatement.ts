@@ -45,7 +45,7 @@ export interface MedicationStatementArgs extends fhir.DomainResourceArgs {
    * MedicationStatement is a statement at a point in time.  The status is only representative at the point when it was asserted.  The value set for MedicationStatement.status contains codes that assert the status of the use of the medication by the patient (for example, stopped or on hold) as well as codes that assert the status of the medication statement itself (for example, entered in error).
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status: MedicationStatementStatusCodeType|null;
+  status: fhir.FhirCode<MedicationStatementStatusCodeType>|string|undefined;
   /**
    * This is generally only used for "exception" statuses such as "not-taken", "on-hold", "cancelled" or "entered-in-error". The reason for performing the event at all is captured in reasonCode, not here.
    */
@@ -132,24 +132,24 @@ export class MedicationStatement extends fhir.DomainResource {
   /**
    * This is a business identifier, not a resource identifier.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * A plan, proposal or order that is fulfilled in whole or in part by this event.
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * A larger event of which this particular event is a component or step.
    */
-  public partOf?: fhir.Reference[];
+  public partOf: fhir.Reference[];
   /**
    * MedicationStatement is a statement at a point in time.  The status is only representative at the point when it was asserted.  The value set for MedicationStatement.status contains codes that assert the status of the use of the medication by the patient (for example, stopped or on hold) as well as codes that assert the status of the medication statement itself (for example, entered in error).
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status: MedicationStatementStatusCodeType|null;
+  public status: fhir.FhirCode<MedicationStatementStatusCodeType>|null;
   /**
    * This is generally only used for "exception" statuses such as "not-taken", "on-hold", "cancelled" or "entered-in-error". The reason for performing the event at all is captured in reasonCode, not here.
    */
-  public statusReason?: fhir.CodeableConcept[];
+  public statusReason: fhir.CodeableConcept[];
   /**
    * Indicates where the medication is expected to be consumed or administered.
    */
@@ -189,23 +189,23 @@ export class MedicationStatement extends fhir.DomainResource {
   /**
    * Likely references would be to MedicationRequest, MedicationDispense, Claim, Observation or QuestionnaireAnswers.  The most common use cases for deriving a MedicationStatement comes from creating a MedicationStatement from a MedicationRequest or from a lab observation or a claim.  it should be noted that the amount of information that is available varies from the type resource that you derive the MedicationStatement from.
    */
-  public derivedFrom?: fhir.Reference[];
+  public derivedFrom: fhir.Reference[];
   /**
    * This could be a diagnosis code. If a full condition record exists or additional detail is needed, use reasonForUseReference.
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * This is a reference to a condition that is the reason why the medication is being/was taken.  If only a code exists, use reasonForUseCode.
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * Provides extra information about the medication statement that is not conveyed by the other attributes.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * The dates included in the dosage on a Medication Statement reflect the dates for a given dose.  For example, "from November 1, 2016 to November 3, 2016, take one tablet daily and from November 4, 2016 to November 7, 2016, take two tablets daily."  It is expected that this specificity may only be populated where the patient brings in their labeled container or where the Medication Statement is derived from a MedicationRequest.
    */
-  public dosage?: fhir.Dosage[];
+  public dosage: fhir.Dosage[];
   /**
    * Default constructor for MedicationStatement - initializes any required elements to null if a value is not provided.
    */
@@ -218,7 +218,7 @@ export class MedicationStatement extends fhir.DomainResource {
     else { this.basedOn = []; }
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
     else { this.partOf = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<MedicationStatementStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['statusReason']) { this.statusReason = source.statusReason.map((x) => new fhir.CodeableConcept(x)); }
     else { this.statusReason = []; }
@@ -249,13 +249,13 @@ export class MedicationStatement extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (MedicationStatement.status)
    */
-  public static statusRequiredCoding():MedicationStatementStatusCodingType {
-    return MedicationStatementStatusCodings;
+  public static get statusRequiredCodes() {
+    return MedicationStatementStatusCodes;
   }
   /**
    * Preferred-bound Value Set for category (MedicationStatement.category)
    */
-  public static categoryPreferredCoding():MedicationStatementCategoryCodingType {
+  public static get categoryPreferredCodings() {
     return MedicationStatementCategoryCodings;
   }
   /**
@@ -264,21 +264,25 @@ export class MedicationStatement extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"MedicationStatement" fhir: MedicationStatement.resourceType:"MedicationStatement"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicationStatement" fhir: MedicationStatement.resourceType:"MedicationStatement"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:MedicationStatementStatusCodeType fhir: MedicationStatement.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<MedicationStatementStatusCodeType> fhir: MedicationStatement.status:code' });
     }
+    if (this['status'] && (!Object.values(MedicationStatementStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<MedicationStatementStatusCodeType> fhir: MedicationStatement.status:code Required binding to: MedicationStatementStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["statusReason"]) { this.statusReason.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (!this['medication']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property medication: fhir: MedicationStatement.medication[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property medication: fhir: MedicationStatement.medication[x]:' });
     }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: MedicationStatement.subject:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: MedicationStatement.subject:Reference' });
     }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["context"]) { issues.push(...this.context.doModelValidation()); }

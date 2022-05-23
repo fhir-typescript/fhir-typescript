@@ -18,6 +18,10 @@ export interface PersonLink extends fhir.BackboneElement {
    * Level of assurance that this link is associated with the target resource.
    */
   assurance?: 'level1'|'level2'|'level3'|'level4'|undefined;
+  /**
+   * Extended properties for primitive element: Person.link.assurance
+   */
+  _assurance?:fhir.FhirElement;
 }
 
 /**
@@ -44,6 +48,10 @@ export interface Person extends fhir.DomainResource {
    * The gender might not match the biological sex as determined by genetics, or the individual's preferred identification. Note that for both humans and particularly animals, there are other legitimate possibilities than M and F, though a clear majority of systems and contexts only support M and F.
    */
   gender?: 'female'|'male'|'other'|'unknown'|undefined;
+  /**
+   * Extended properties for primitive element: Person.gender
+   */
+  _gender?:fhir.FhirElement;
   /**
    * At least an estimated year should be provided as a guess if the real DOB is unknown.
    */

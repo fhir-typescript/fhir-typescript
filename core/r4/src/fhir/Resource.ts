@@ -81,7 +81,7 @@ export class Resource extends fhir.FhirBase {
   /**
    * Preferred-bound Value Set for language (Resource.language)
    */
-  public static languagePreferredCoding():LanguagesCodingType {
+  public static get languagePreferredCodings() {
     return LanguagesCodings;
   }
   /**
@@ -90,7 +90,7 @@ export class Resource extends fhir.FhirBase {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:string fhir: Resource.resourceType:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:string fhir: Resource.resourceType:string' });
     }
     if (this["id"]) { issues.push(...this.id.doModelValidation()); }
     if (this["meta"]) { issues.push(...this.meta.doModelValidation()); }

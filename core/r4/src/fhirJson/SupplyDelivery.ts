@@ -50,6 +50,10 @@ export interface SupplyDelivery extends fhir.DomainResource {
    */
   status?: 'abandoned'|'completed'|'entered-in-error'|'in-progress'|undefined;
   /**
+   * Extended properties for primitive element: SupplyDelivery.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * A link to a resource representing the person whom the delivered item is for.
    */
   patient?: fhir.Reference|undefined;

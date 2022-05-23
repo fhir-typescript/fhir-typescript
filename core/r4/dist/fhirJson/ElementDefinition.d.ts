@@ -8,6 +8,10 @@ export interface ElementDefinitionSlicingDiscriminator extends fhir.FhirElement 
      */
     type: 'exists' | 'pattern' | 'profile' | 'type' | 'value' | null;
     /**
+     * Extended properties for primitive element: ElementDefinition.slicing.discriminator.type
+     */
+    _type?: fhir.FhirElement;
+    /**
      * The only FHIRPath functions that are allowed are as(type), resolve(), and extension(url).
      */
     path: string | null;
@@ -44,6 +48,10 @@ export interface ElementDefinitionSlicing extends fhir.FhirElement {
      * Allowing additional elements makes for a much for flexible template - it's open for use in wider contexts, but also means that the content of the resource is not closed, and applications have to decide how to handle content not described by the profile.
      */
     rules: 'closed' | 'open' | 'openAtEnd' | null;
+    /**
+     * Extended properties for primitive element: ElementDefinition.slicing.rules
+     */
+    _rules?: fhir.FhirElement;
 }
 /**
  * The base information does not carry any information that could not be determined from the path and related profiles, but making this determination requires both that the related profiles are available, and that the algorithm to determine them be available. For tooling simplicity, the base information must always be populated in element definitions in snap shots, even if it is the same.
@@ -107,9 +115,17 @@ export interface ElementDefinitionType extends fhir.FhirElement {
      */
     aggregation?: ('bundled' | 'contained' | 'referenced')[] | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.type.aggregation
+     */
+    _aggregation?: (fhir.FhirElement | null)[];
+    /**
      * The base specification never makes a rule as to which form is allowed, but implementation guides may do this. See [Aggregation Rules](elementdefinition.html#aggregation) for further clarification.
      */
     versioning?: 'either' | 'independent' | 'specific' | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.type.versioning
+     */
+    _versioning?: fhir.FhirElement;
 }
 /**
  * Examples will most commonly be present for data where it's not implicitly obvious from either the data type or value set what the values might be.  (I.e. Example values for dates or quantities would generally be unnecessary.)  If the example value is fully populated, the publication tool can generate an instance automatically.
@@ -425,6 +441,10 @@ export interface ElementDefinitionConstraint extends fhir.FhirElement {
      */
     severity: 'error' | 'warning' | null;
     /**
+     * Extended properties for primitive element: ElementDefinition.constraint.severity
+     */
+    _severity?: fhir.FhirElement;
+    /**
      * Should be expressed in business terms as much as possible.
      */
     human: string | null;
@@ -465,6 +485,10 @@ export interface ElementDefinitionBinding extends fhir.FhirElement {
      * For further discussion, see [Using Terminologies](terminologies.html).
      */
     strength: 'example' | 'extensible' | 'preferred' | 'required' | null;
+    /**
+     * Extended properties for primitive element: ElementDefinition.binding.strength
+     */
+    _strength?: fhir.FhirElement;
     /**
      * Describes the intended use of this particular set of codes.
      */
@@ -535,6 +559,10 @@ export interface ElementDefinition extends fhir.BackboneElement {
      * In resources, this is rarely used except for special cases where the representation deviates from the normal, and can only be done in the base standard (and profiles must reproduce what the base standard does). This element is used quite commonly in Logical models when the logical models represent a specific serialization format (e.g. CDA, v2 etc.).
      */
     representation?: ('cdaText' | 'typeAttr' | 'xhtml' | 'xmlAttr' | 'xmlText')[] | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.representation
+     */
+    _representation?: (fhir.FhirElement | null)[];
     /**
      * The name SHALL be unique within the structure within the context of the constrained resource element.  (Though to avoid confusion, uniqueness across all elements is recommended.).
      */

@@ -1,13 +1,8 @@
 import * as fhir from '../fhir.js';
-import { OrientationTypeCodingType } from '../fhirValueSets/OrientationTypeCodings.js';
 import { OrientationTypeCodeType } from '../fhirValueSets/OrientationTypeCodes.js';
-import { StrandTypeCodingType } from '../fhirValueSets/StrandTypeCodings.js';
 import { StrandTypeCodeType } from '../fhirValueSets/StrandTypeCodes.js';
-import { QualityTypeCodingType } from '../fhirValueSets/QualityTypeCodings.js';
 import { QualityTypeCodeType } from '../fhirValueSets/QualityTypeCodes.js';
-import { RepositoryTypeCodingType } from '../fhirValueSets/RepositoryTypeCodings.js';
 import { RepositoryTypeCodeType } from '../fhirValueSets/RepositoryTypeCodes.js';
-import { SequenceTypeCodingType } from '../fhirValueSets/SequenceTypeCodings.js';
 import { SequenceTypeCodeType } from '../fhirValueSets/SequenceTypeCodes.js';
 /**
  * Valid arguments for the MolecularSequenceReferenceSeq type.
@@ -24,7 +19,7 @@ export interface MolecularSequenceReferenceSeqArgs extends fhir.BackboneElementA
     /**
      * A relative reference to a DNA strand based on gene orientation. The strand that contains the open reading frame of the gene is the "sense" strand, and the opposite complementary strand is the "antisense" strand.
      */
-    orientation?: OrientationTypeCodeType | undefined;
+    orientation?: fhir.FhirCode<OrientationTypeCodeType> | string | undefined;
     /**
      * Reference identifier of reference sequence submitted to NCBI. It must match the type in the MolecularSequence.type field. For example, the prefix, “NG_” identifies reference sequence for genes, “NM_” for messenger RNA transcripts, and “NP_” for amino acid sequences.
      */
@@ -40,7 +35,7 @@ export interface MolecularSequenceReferenceSeqArgs extends fhir.BackboneElementA
     /**
      * An absolute reference to a strand. The Watson strand is the strand whose 5'-end is on the short arm of the chromosome, and the Crick strand as the one whose 5'-end is on the long arm.
      */
-    strand?: StrandTypeCodeType | undefined;
+    strand?: fhir.FhirCode<StrandTypeCodeType> | string | undefined;
     /**
      * Start position of the window on the reference sequence. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
      */
@@ -69,7 +64,7 @@ export declare class MolecularSequenceReferenceSeq extends fhir.BackboneElement 
     /**
      * A relative reference to a DNA strand based on gene orientation. The strand that contains the open reading frame of the gene is the "sense" strand, and the opposite complementary strand is the "antisense" strand.
      */
-    orientation?: OrientationTypeCodeType | undefined;
+    orientation?: fhir.FhirCode<OrientationTypeCodeType> | undefined;
     /**
      * Reference identifier of reference sequence submitted to NCBI. It must match the type in the MolecularSequence.type field. For example, the prefix, “NG_” identifies reference sequence for genes, “NM_” for messenger RNA transcripts, and “NP_” for amino acid sequences.
      */
@@ -85,7 +80,7 @@ export declare class MolecularSequenceReferenceSeq extends fhir.BackboneElement 
     /**
      * An absolute reference to a strand. The Watson strand is the strand whose 5'-end is on the short arm of the chromosome, and the Crick strand as the one whose 5'-end is on the long arm.
      */
-    strand?: StrandTypeCodeType | undefined;
+    strand?: fhir.FhirCode<StrandTypeCodeType> | undefined;
     /**
      * Start position of the window on the reference sequence. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
      */
@@ -101,11 +96,17 @@ export declare class MolecularSequenceReferenceSeq extends fhir.BackboneElement 
     /**
      * Required-bound Value Set for orientation (MolecularSequence.referenceSeq.orientation)
      */
-    static orientationRequiredCoding(): OrientationTypeCodingType;
+    static get orientationRequiredCodes(): {
+        readonly AntisenseOrientationOfReferenceSeq: "antisense";
+        readonly SenseOrientationOfReferenceSeq: "sense";
+    };
     /**
      * Required-bound Value Set for strand (MolecularSequence.referenceSeq.strand)
      */
-    static strandRequiredCoding(): StrandTypeCodingType;
+    static get strandRequiredCodes(): {
+        readonly CrickStrandOfReferenceSeq: "crick";
+        readonly WatsonStrandOfReferenceSeq: "watson";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -225,31 +226,31 @@ export declare class MolecularSequenceQualityRoc extends fhir.BackboneElement {
     /**
      * Invidual data point representing the GQ (genotype quality) score threshold.
      */
-    score?: fhir.FhirInteger[];
+    score: fhir.FhirInteger[];
     /**
      * The number of true positives if the GQ score threshold was set to "score" field value.
      */
-    numTP?: fhir.FhirInteger[];
+    numTP: fhir.FhirInteger[];
     /**
      * The number of false positives if the GQ score threshold was set to "score" field value.
      */
-    numFP?: fhir.FhirInteger[];
+    numFP: fhir.FhirInteger[];
     /**
      * The number of false negatives if the GQ score threshold was set to "score" field value.
      */
-    numFN?: fhir.FhirInteger[];
+    numFN: fhir.FhirInteger[];
     /**
      * Calculated precision if the GQ score threshold was set to "score" field value.
      */
-    precision?: fhir.FhirDecimal[];
+    precision: fhir.FhirDecimal[];
     /**
      * Calculated sensitivity if the GQ score threshold was set to "score" field value.
      */
-    sensitivity?: fhir.FhirDecimal[];
+    sensitivity: fhir.FhirDecimal[];
     /**
      * Calculated fScore if the GQ score threshold was set to "score" field value.
      */
-    fMeasure?: fhir.FhirDecimal[];
+    fMeasure: fhir.FhirDecimal[];
     /**
      * Default constructor for MolecularSequenceQualityRoc - initializes any required elements to null if a value is not provided.
      */
@@ -266,7 +267,7 @@ export interface MolecularSequenceQualityArgs extends fhir.BackboneElementArgs {
     /**
      * INDEL / SNP / Undefined variant.
      */
-    type: QualityTypeCodeType | null;
+    type: fhir.FhirCode<QualityTypeCodeType> | string | undefined;
     /**
      * Gold standard sequence used for comparing against.
      */
@@ -335,7 +336,7 @@ export declare class MolecularSequenceQuality extends fhir.BackboneElement {
     /**
      * INDEL / SNP / Undefined variant.
      */
-    type: QualityTypeCodeType | null;
+    type: fhir.FhirCode<QualityTypeCodeType> | null;
     /**
      * Gold standard sequence used for comparing against.
      */
@@ -399,7 +400,11 @@ export declare class MolecularSequenceQuality extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for type (MolecularSequence.quality.type)
      */
-    static typeRequiredCoding(): QualityTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly INDELComparison: "indel";
+        readonly SNPComparison: "snp";
+        readonly UNKNOWNComparison: "unknown";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -412,7 +417,7 @@ export interface MolecularSequenceRepositoryArgs extends fhir.BackboneElementArg
     /**
      * Click and see / RESTful API / Need login to see / RESTful API with authentication / Other ways to see resource.
      */
-    type: RepositoryTypeCodeType | null;
+    type: fhir.FhirCode<RepositoryTypeCodeType> | string | undefined;
     /**
      * URI of an external repository which contains further details about the genetics data.
      */
@@ -445,7 +450,7 @@ export declare class MolecularSequenceRepository extends fhir.BackboneElement {
     /**
      * Click and see / RESTful API / Need login to see / RESTful API with authentication / Other ways to see resource.
      */
-    type: RepositoryTypeCodeType | null;
+    type: fhir.FhirCode<RepositoryTypeCodeType> | null;
     /**
      * URI of an external repository which contains further details about the genetics data.
      */
@@ -473,7 +478,13 @@ export declare class MolecularSequenceRepository extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for type (MolecularSequence.repository.type)
      */
-    static typeRequiredCoding(): RepositoryTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly ClickAndSee: "directlink";
+        readonly ResultCannotBeAccessUnlessAnAccountIsLoggedIn: "login";
+        readonly ResultNeedToBeFetchedWithAPIAndNeedLOGINOrCookiesAreRequiredWhenVisitingTheLinkOfResource: "oauth";
+        readonly TheURLIsTheRESTfulOrOtherKindOfAPIThatCanAccessToTheResult: "openapi";
+        readonly SomeOtherComplicatedOrParticularWayToGetResourceFromURL: "other";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -632,7 +643,7 @@ export interface MolecularSequenceArgs extends fhir.DomainResourceArgs {
     /**
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
      */
-    type?: SequenceTypeCodeType | undefined;
+    type?: fhir.FhirCode<SequenceTypeCodeType> | string | undefined;
     /**
      * Whether the sequence is numbered starting at 0 (0-based numbering or coordinates, inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive start and inclusive end).
      */
@@ -705,11 +716,11 @@ export declare class MolecularSequence extends fhir.DomainResource {
     /**
      * A unique identifier for this particular sequence instance. This is a FHIR-defined id.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
      */
-    type?: SequenceTypeCodeType | undefined;
+    type?: fhir.FhirCode<SequenceTypeCodeType> | undefined;
     /**
      * Whether the sequence is numbered starting at 0 (0-based numbering or coordinates, inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive start and inclusive end).
      */
@@ -741,7 +752,7 @@ export declare class MolecularSequence extends fhir.DomainResource {
     /**
      * The definition of variant here originates from Sequence ontology ([variant_of](http://www.sequenceontology.org/browser/current_svn/term/variant_of)). This element can represent amino acid or nucleic sequence change(including insertion,deletion,SNP,etc.)  It can represent some complex mutation or segment variation with the assist of CIGAR string.
      */
-    variant?: fhir.MolecularSequenceVariant[];
+    variant: fhir.MolecularSequenceVariant[];
     /**
      * Sequence that was observed. It is the result marked by referenceSeq along with variant records on referenceSeq. This shall start from referenceSeq.windowStart and end by referenceSeq.windowEnd.
      */
@@ -749,7 +760,7 @@ export declare class MolecularSequence extends fhir.DomainResource {
     /**
      * An experimental feature attribute that defines the quality of the feature in a quantitative way, such as a phred quality score ([SO:0001686](http://www.sequenceontology.org/browser/current_svn/term/SO:0001686)).
      */
-    quality?: fhir.MolecularSequenceQuality[];
+    quality: fhir.MolecularSequenceQuality[];
     /**
      * Coverage (read depth or depth) is the average number of reads representing a given nucleotide in the reconstructed sequence.
      */
@@ -757,15 +768,15 @@ export declare class MolecularSequence extends fhir.DomainResource {
     /**
      * Configurations of the external repository. The repository shall store target's observedSeq or records related with target's observedSeq.
      */
-    repository?: fhir.MolecularSequenceRepository[];
+    repository: fhir.MolecularSequenceRepository[];
     /**
      * Pointer to next atomic sequence which at most contains one variant.
      */
-    pointer?: fhir.Reference[];
+    pointer: fhir.Reference[];
     /**
      * Information about chromosome structure variation.
      */
-    structureVariant?: fhir.MolecularSequenceStructureVariant[];
+    structureVariant: fhir.MolecularSequenceStructureVariant[];
     /**
      * Default constructor for MolecularSequence - initializes any required elements to null if a value is not provided.
      */
@@ -773,7 +784,11 @@ export declare class MolecularSequence extends fhir.DomainResource {
     /**
      * Required-bound Value Set for type (MolecularSequence.type)
      */
-    static typeRequiredCoding(): SequenceTypeCodingType;
+    static get typeRequiredCodes(): {
+        readonly AASequence: "aa";
+        readonly DNASequence: "dna";
+        readonly RNASequence: "rna";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

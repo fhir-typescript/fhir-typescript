@@ -71,7 +71,7 @@ export class ImagingStudySeriesPerformer extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for function (ImagingStudy.series.performer.function)
    */
-  public static functionExtensibleCoding():SeriesPerformerFunctionCodingType {
+  public static get functionExtensibleCodings() {
     return SeriesPerformerFunctionCodings;
   }
   /**
@@ -81,7 +81,7 @@ export class ImagingStudySeriesPerformer extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["function"]) { issues.push(...this.function.doModelValidation()); }
     if (!this['actor']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property actor:fhir.Reference fhir: ImagingStudy.series.performer.actor:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor:fhir.Reference fhir: ImagingStudy.series.performer.actor:Reference' });
     }
     if (this["actor"]) { issues.push(...this.actor.doModelValidation()); }
     return issues;
@@ -151,11 +151,11 @@ export class ImagingStudySeriesInstance extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['uid']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property uid:fhir.FhirId fhir: ImagingStudy.series.instance.uid:id', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property uid:fhir.FhirId fhir: ImagingStudy.series.instance.uid:id' });
     }
     if (this["uid"]) { issues.push(...this.uid.doModelValidation()); }
     if (!this['sopClass']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sopClass:fhir.Coding fhir: ImagingStudy.series.instance.sopClass:Coding', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sopClass:fhir.Coding fhir: ImagingStudy.series.instance.sopClass:Coding' });
     }
     if (this["sopClass"]) { issues.push(...this.sopClass.doModelValidation()); }
     if (this["number"]) { issues.push(...this.number.doModelValidation()); }
@@ -248,7 +248,7 @@ export class ImagingStudySeries extends fhir.BackboneElement {
   /**
    * Typical endpoint types include DICOM WADO-RS, which is used to retrieve DICOM instances in native or rendered (e.g., JPG, PNG) formats using a RESTful API; DICOM WADO-URI, which can similarly retrieve native or rendered instances, except using an HTTP query-based approach; and DICOM QIDO-RS, which allows RESTful query for DICOM information without retrieving the actual instances.
    */
-  public endpoint?: fhir.Reference[];
+  public endpoint: fhir.Reference[];
   /**
    * The anatomic structures examined. See DICOM Part 16 Annex L (http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html) for DICOM to SNOMED-CT mappings. The bodySite may indicate the laterality of body part imaged; if so, it shall be consistent with any content of ImagingStudy.series.laterality.
    */
@@ -260,7 +260,7 @@ export class ImagingStudySeries extends fhir.BackboneElement {
   /**
    * The specimen imaged, e.g., for whole slide imaging of a biopsy.
    */
-  public specimen?: fhir.Reference[];
+  public specimen: fhir.Reference[];
   /**
    * The date and time the series was started.
    */
@@ -268,11 +268,11 @@ export class ImagingStudySeries extends fhir.BackboneElement {
   /**
    * If the person who performed the series is not known, their Organization may be recorded. A patient, or related person, may be the performer, e.g. for patient-captured images.
    */
-  public performer?: fhir.ImagingStudySeriesPerformer[];
+  public performer: fhir.ImagingStudySeriesPerformer[];
   /**
    * A single SOP instance within the series, e.g. an image, or presentation state.
    */
-  public instance?: fhir.ImagingStudySeriesInstance[];
+  public instance: fhir.ImagingStudySeriesInstance[];
   /**
    * Default constructor for ImagingStudySeries - initializes any required elements to null if a value is not provided.
    */
@@ -300,7 +300,7 @@ export class ImagingStudySeries extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for modality (ImagingStudy.series.modality)
    */
-  public static modalityExtensibleCoding():DicomCid29AcquisitionModalityCodingType {
+  public static get modalityExtensibleCodings() {
     return DicomCid29AcquisitionModalityCodings;
   }
   /**
@@ -309,12 +309,12 @@ export class ImagingStudySeries extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['uid']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property uid:fhir.FhirId fhir: ImagingStudy.series.uid:id', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property uid:fhir.FhirId fhir: ImagingStudy.series.uid:id' });
     }
     if (this["uid"]) { issues.push(...this.uid.doModelValidation()); }
     if (this["number"]) { issues.push(...this.number.doModelValidation()); }
     if (!this['modality']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property modality:fhir.Coding fhir: ImagingStudy.series.modality:Coding', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property modality:fhir.Coding fhir: ImagingStudy.series.modality:Coding' });
     }
     if (this["modality"]) { issues.push(...this.modality.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
@@ -344,7 +344,7 @@ export interface ImagingStudyArgs extends fhir.DomainResourceArgs {
   /**
    * Unknown does not represent "other" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.
    */
-  status: ImagingstudyStatusCodeType|null;
+  status: fhir.FhirCode<ImagingstudyStatusCodeType>|string|undefined;
   /**
    * A list of all the series.modality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
    */
@@ -434,15 +434,15 @@ export class ImagingStudy extends fhir.DomainResource {
   /**
    * See discussion under [Imaging Study Implementation Notes](imagingstudy.html#notes) for encoding of DICOM Study Instance UID. Accession Number should use ACSN Identifier type.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Unknown does not represent "other" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.
    */
-  public status: ImagingstudyStatusCodeType|null;
+  public status: fhir.FhirCode<ImagingstudyStatusCodeType>|null;
   /**
    * A list of all the series.modality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
    */
-  public modality?: fhir.Coding[];
+  public modality: fhir.Coding[];
   /**
    * QA phantoms can be recorded with a Device; multiple subjects (such as mice) can be recorded with a Group.
    */
@@ -458,7 +458,7 @@ export class ImagingStudy extends fhir.DomainResource {
   /**
    * A list of the diagnostic requests that resulted in this imaging study being performed.
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * The requesting/referring physician.
    */
@@ -466,11 +466,11 @@ export class ImagingStudy extends fhir.DomainResource {
   /**
    * Who read the study and interpreted the images or other content.
    */
-  public interpreter?: fhir.Reference[];
+  public interpreter: fhir.Reference[];
   /**
    * Typical endpoint types include DICOM WADO-RS, which is used to retrieve DICOM instances in native or rendered (e.g., JPG, PNG), formats using a RESTful API; DICOM WADO-URI, which can similarly retrieve native or rendered instances, except using an HTTP query-based approach; DICOM QIDO-RS, which allows RESTful query for DICOM information without retrieving the actual instances; or IHE Invoke Image Display (IID), which provides standard invocation of an imaging web viewer.
    */
-  public endpoint?: fhir.Reference[];
+  public endpoint: fhir.Reference[];
   /**
    * Number of Series in the Study. This value given may be larger than the number of series elements this Resource contains due to resource availability, security, or other factors. This element should be present if any series elements are present.
    */
@@ -486,7 +486,7 @@ export class ImagingStudy extends fhir.DomainResource {
   /**
    * The code for the performed procedure type.
    */
-  public procedureCode?: fhir.CodeableConcept[];
+  public procedureCode: fhir.CodeableConcept[];
   /**
    * The principal physical location where the ImagingStudy was performed.
    */
@@ -494,15 +494,15 @@ export class ImagingStudy extends fhir.DomainResource {
   /**
    * Description of clinical condition indicating why the ImagingStudy was requested.
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * Indicates another resource whose existence justifies this Study.
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * Per the recommended DICOM mapping, this element is derived from the Study Description attribute (0008,1030). Observations or findings about the imaging study should be recorded in another resource, e.g. Observation, and not in this element.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * The Imaging Manager description of the study. Institution-generated description or classification of the Study (component) performed.
    */
@@ -510,7 +510,7 @@ export class ImagingStudy extends fhir.DomainResource {
   /**
    * Each study has one or more series of images or other content.
    */
-  public series?: fhir.ImagingStudySeries[];
+  public series: fhir.ImagingStudySeries[];
   /**
    * Default constructor for ImagingStudy - initializes any required elements to null if a value is not provided.
    */
@@ -519,7 +519,7 @@ export class ImagingStudy extends fhir.DomainResource {
     this.resourceType = 'ImagingStudy';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<ImagingstudyStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['modality']) { this.modality = source.modality.map((x) => new fhir.Coding(x)); }
     else { this.modality = []; }
@@ -553,13 +553,13 @@ export class ImagingStudy extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (ImagingStudy.status)
    */
-  public static statusRequiredCoding():ImagingstudyStatusCodingType {
-    return ImagingstudyStatusCodings;
+  public static get statusRequiredCodes() {
+    return ImagingstudyStatusCodes;
   }
   /**
    * Extensible-bound Value Set for modality (ImagingStudy.modality)
    */
-  public static modalityExtensibleCoding():DicomCid29AcquisitionModalityCodingType {
+  public static get modalityExtensibleCodings() {
     return DicomCid29AcquisitionModalityCodings;
   }
   /**
@@ -568,15 +568,19 @@ export class ImagingStudy extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ImagingStudy" fhir: ImagingStudy.resourceType:"ImagingStudy"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ImagingStudy" fhir: ImagingStudy.resourceType:"ImagingStudy"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ImagingstudyStatusCodeType fhir: ImagingStudy.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ImagingstudyStatusCodeType> fhir: ImagingStudy.status:code' });
     }
+    if (this['status'] && (!Object.values(ImagingstudyStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ImagingstudyStatusCodeType> fhir: ImagingStudy.status:code Required binding to: ImagingstudyStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["modality"]) { this.modality.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property subject:fhir.Reference fhir: ImagingStudy.subject:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: ImagingStudy.subject:Reference' });
     }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
     if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }

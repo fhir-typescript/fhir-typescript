@@ -87,6 +87,10 @@ export interface MedicationRequest extends fhir.DomainResource {
      */
     status: 'active' | 'cancelled' | 'completed' | 'draft' | 'entered-in-error' | 'on-hold' | 'stopped' | 'unknown' | null;
     /**
+     * Extended properties for primitive element: MedicationRequest.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * This is generally only used for "exception" statuses such as "suspended" or "cancelled". The reason why the MedicationRequest was created at all is captured in reasonCode, not here.
      */
     statusReason?: fhir.CodeableConcept | undefined;
@@ -97,6 +101,10 @@ export interface MedicationRequest extends fhir.DomainResource {
      */
     intent: 'filler-order' | 'instance-order' | 'option' | 'order' | 'original-order' | 'plan' | 'proposal' | 'reflex-order' | null;
     /**
+     * Extended properties for primitive element: MedicationRequest.intent
+     */
+    _intent?: fhir.FhirElement;
+    /**
      * The category can be used to include where the medication is expected to be consumed or other types of requests.
      */
     category?: fhir.CodeableConcept[] | undefined;
@@ -104,6 +112,10 @@ export interface MedicationRequest extends fhir.DomainResource {
      * Indicates how quickly the Medication Request should be addressed with respect to other requests.
      */
     priority?: 'asap' | 'routine' | 'stat' | 'urgent' | undefined;
+    /**
+     * Extended properties for primitive element: MedicationRequest.priority
+     */
+    _priority?: fhir.FhirElement;
     /**
      * If do not perform is not specified, the request is a positive request e.g. "do perform".
      */

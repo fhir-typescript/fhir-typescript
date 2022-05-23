@@ -38,6 +38,10 @@ export interface CareTeam extends fhir.DomainResource {
      */
     status?: 'active' | 'entered-in-error' | 'inactive' | 'proposed' | 'suspended' | undefined;
     /**
+     * Extended properties for primitive element: CareTeam.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * There may be multiple axis of categorization and one team may serve multiple purposes.
      */
     category?: fhir.CodeableConcept[] | undefined;

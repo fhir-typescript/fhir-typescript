@@ -23,6 +23,10 @@ export interface ImmunizationEvaluation extends fhir.DomainResource {
    */
   status: 'completed'|'entered-in-error'|null;
   /**
+   * Extended properties for primitive element: ImmunizationEvaluation.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * The individual for whom the evaluation is being done.
    */
   patient: fhir.Reference|null;

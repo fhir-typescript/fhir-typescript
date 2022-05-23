@@ -139,9 +139,17 @@ export interface MeasureReport extends fhir.DomainResource {
    */
   status: 'complete'|'error'|'pending'|null;
   /**
+   * Extended properties for primitive element: MeasureReport.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Data-collection reports are used only to communicate data-of-interest for a measure. They do not necessarily include all the data for a particular subject or population, but they may.
    */
   type: 'data-collection'|'individual'|'subject-list'|'summary'|null;
+  /**
+   * Extended properties for primitive element: MeasureReport.type
+   */
+  _type?:fhir.FhirElement;
   /**
    * A reference to the Measure that was calculated to produce this report.
    */

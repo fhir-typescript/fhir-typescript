@@ -191,9 +191,17 @@ export interface CoverageEligibilityResponse extends fhir.DomainResource {
    */
   status: 'active'|'cancelled'|'draft'|'entered-in-error'|null;
   /**
+   * Extended properties for primitive element: CoverageEligibilityResponse.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
    */
   purpose: ('auth-requirements'|'benefits'|'discovery'|'validation')[]|null;
+  /**
+   * Extended properties for primitive element: CoverageEligibilityResponse.purpose
+   */
+  _purpose?:(fhir.FhirElement|null)[];
   /**
    * The party who is the beneficiary of the supplied coverage and for whom eligibility is sought.
    */
@@ -230,6 +238,10 @@ export interface CoverageEligibilityResponse extends fhir.DomainResource {
    * The resource may be used to indicate that: the request has been held (queued) for processing; that it has been processed and errors found (error); that no errors were found and that some of the adjudication has been undertaken (partial) or that all of the adjudication has been undertaken (complete).
    */
   outcome: 'complete'|'error'|'partial'|'queued'|null;
+  /**
+   * Extended properties for primitive element: CoverageEligibilityResponse.outcome
+   */
+  _outcome?:fhir.FhirElement;
   /**
    * A human readable description of the status of the adjudication.
    */

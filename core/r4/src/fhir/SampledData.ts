@@ -97,18 +97,18 @@ export class SampledData extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['origin']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property origin:fhir.Quantity fhir: SampledData.origin:Quantity', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property origin:fhir.Quantity fhir: SampledData.origin:Quantity' });
     }
     if (this["origin"]) { issues.push(...this.origin.doModelValidation()); }
     if (!this['period']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property period:fhir.FhirDecimal fhir: SampledData.period:decimal', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property period:fhir.FhirDecimal fhir: SampledData.period:decimal' });
     }
     if (this["period"]) { issues.push(...this.period.doModelValidation()); }
     if (this["factor"]) { issues.push(...this.factor.doModelValidation()); }
     if (this["lowerLimit"]) { issues.push(...this.lowerLimit.doModelValidation()); }
     if (this["upperLimit"]) { issues.push(...this.upperLimit.doModelValidation()); }
     if (!this['dimensions']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property dimensions:fhir.FhirPositiveInt fhir: SampledData.dimensions:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property dimensions:fhir.FhirPositiveInt fhir: SampledData.dimensions:positiveInt' });
     }
     if (this["dimensions"]) { issues.push(...this.dimensions.doModelValidation()); }
     if (this["data"]) { issues.push(...this.data.doModelValidation()); }

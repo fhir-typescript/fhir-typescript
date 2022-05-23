@@ -304,7 +304,7 @@ export class Extension extends fhir.FhirElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property url:fhir.FhirString fhir: Extension.url:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url:fhir.FhirString fhir: Extension.url:string' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     return issues;

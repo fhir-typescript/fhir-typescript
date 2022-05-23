@@ -117,7 +117,7 @@ export declare class ImmunizationRecommendationRecommendation extends fhir.Backb
     /**
      * Vaccine(s) or vaccine group that pertain to the recommendation.
      */
-    vaccineCode?: fhir.CodeableConcept[];
+    vaccineCode: fhir.CodeableConcept[];
     /**
      * The targeted disease for the recommendation.
      */
@@ -125,7 +125,7 @@ export declare class ImmunizationRecommendationRecommendation extends fhir.Backb
     /**
      * Vaccine(s) which should not be used to fulfill the recommendation.
      */
-    contraindicatedVaccineCode?: fhir.CodeableConcept[];
+    contraindicatedVaccineCode: fhir.CodeableConcept[];
     /**
      * Indicates the patient status with respect to the path to immunity for the target disease.
      */
@@ -133,11 +133,11 @@ export declare class ImmunizationRecommendationRecommendation extends fhir.Backb
     /**
      * The reason for the assigned forecast status.
      */
-    forecastReason?: fhir.CodeableConcept[];
+    forecastReason: fhir.CodeableConcept[];
     /**
      * Vaccine date recommendations.  For example, earliest date to administer, latest date to administer, etc.
      */
-    dateCriterion?: fhir.ImmunizationRecommendationRecommendationDateCriterion[];
+    dateCriterion: fhir.ImmunizationRecommendationRecommendationDateCriterion[];
     /**
      * Contains the description about the protocol under which the vaccine was administered.
      */
@@ -165,11 +165,11 @@ export declare class ImmunizationRecommendationRecommendation extends fhir.Backb
     /**
      * Immunization event history and/or evaluation that supports the status and recommendation.
      */
-    supportingImmunization?: fhir.Reference[];
+    supportingImmunization: fhir.Reference[];
     /**
      * Patient Information that supports the status and recommendation.  This includes patient observations, adverse reactions and allergy/intolerance information.
      */
-    supportingPatientInformation?: fhir.Reference[];
+    supportingPatientInformation: fhir.Reference[];
     /**
      * Default constructor for ImmunizationRecommendationRecommendation - initializes any required elements to null if a value is not provided.
      */
@@ -223,7 +223,7 @@ export declare class ImmunizationRecommendation extends fhir.DomainResource {
     /**
      * A unique identifier assigned to this particular recommendation record.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * The patient the recommendation(s) are for.
      */

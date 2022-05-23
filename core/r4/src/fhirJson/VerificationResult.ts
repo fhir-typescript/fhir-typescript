@@ -145,6 +145,10 @@ export interface VerificationResult extends fhir.DomainResource {
    */
   status: 'attested'|'in-process'|'req-revalid'|'reval-fail'|'val-fail'|'validated'|null;
   /**
+   * Extended properties for primitive element: VerificationResult.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * When the validation status was updated.
    */
   statusDate?: string|undefined;

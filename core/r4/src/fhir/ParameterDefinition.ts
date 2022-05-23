@@ -24,7 +24,7 @@ export interface ParameterDefinitionArgs extends fhir.FhirElementArgs {
   /**
    * Whether the parameter is input or output for the module.
    */
-  use: OperationParameterUseCodeType|null;
+  use: fhir.FhirCode<OperationParameterUseCodeType>|string|undefined;
   /**
    * The minimum number of times this parameter SHALL appear in the request or response.
    */
@@ -62,7 +62,7 @@ export class ParameterDefinition extends fhir.FhirElement {
   /**
    * Whether the parameter is input or output for the module.
    */
-  public use: OperationParameterUseCodeType|null;
+  public use: fhir.FhirCode<OperationParameterUseCodeType>|null;
   /**
    * The minimum number of times this parameter SHALL appear in the request or response.
    */
@@ -89,7 +89,7 @@ export class ParameterDefinition extends fhir.FhirElement {
   constructor(source:Partial<ParameterDefinitionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirCode({value: source.name}); }
-    if (source['use']) { this.use = source.use; }
+    if (source['use']) { this.use = new fhir.FhirCode<OperationParameterUseCodeType>({value: source.use}); }
     else { this.use = null; }
     if (source['min']) { this.min = new fhir.FhirInteger({value: source.min}); }
     if (source['max']) { this.max = new fhir.FhirString({value: source.max}); }
@@ -101,14 +101,14 @@ export class ParameterDefinition extends fhir.FhirElement {
   /**
    * Required-bound Value Set for use (ParameterDefinition.use)
    */
-  public static useRequiredCoding():OperationParameterUseCodingType {
-    return OperationParameterUseCodings;
+  public static get useRequiredCodes() {
+    return OperationParameterUseCodes;
   }
   /**
    * Required-bound Value Set for type (ParameterDefinition.type)
    */
-  public static typeRequiredCoding():AllTypesCodingType {
-    return AllTypesCodings;
+  public static get typeRequiredCodes() {
+    return AllTypesCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -117,13 +117,20 @@ export class ParameterDefinition extends fhir.FhirElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (!this['use']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property use:OperationParameterUseCodeType fhir: ParameterDefinition.use:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property use:fhir.FhirCode<OperationParameterUseCodeType> fhir: ParameterDefinition.use:code' });
     }
+    if (this['use'] && (!Object.values(OperationParameterUseCodes).includes(this.use as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use:fhir.FhirCode<OperationParameterUseCodeType> fhir: ParameterDefinition.use:code Required binding to: OperationParameterUse' });
+    }
+    if (this["use"]) { issues.push(...this.use.doModelValidation()); }
     if (this["min"]) { issues.push(...this.min.doModelValidation()); }
     if (this["max"]) { issues.push(...this.max.doModelValidation()); }
     if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.FhirCode fhir: ParameterDefinition.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode fhir: ParameterDefinition.type:code' });
+    }
+    if (this['type'] && (!Object.values(AllTypesCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode fhir: ParameterDefinition.type:code Required binding to: AllTypes' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["profile"]) { issues.push(...this.profile.doModelValidation()); }

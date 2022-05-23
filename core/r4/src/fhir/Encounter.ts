@@ -76,7 +76,7 @@ export interface EncounterStatusHistoryArgs extends fhir.BackboneElementArgs {
   /**
    * planned | arrived | triaged | in-progress | onleave | finished | cancelled +.
    */
-  status: EncounterStatusCodeType|null;
+  status: fhir.FhirCode<EncounterStatusCodeType>|string|undefined;
   /**
    * The time that the episode was in the specified status.
    */
@@ -94,7 +94,7 @@ export class EncounterStatusHistory extends fhir.BackboneElement {
   /**
    * planned | arrived | triaged | in-progress | onleave | finished | cancelled +.
    */
-  public status: EncounterStatusCodeType|null;
+  public status: fhir.FhirCode<EncounterStatusCodeType>|null;
   /**
    * The time that the episode was in the specified status.
    */
@@ -104,7 +104,7 @@ export class EncounterStatusHistory extends fhir.BackboneElement {
    */
   constructor(source:Partial<EncounterStatusHistoryArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<EncounterStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     else { this.period = null; }
@@ -112,8 +112,8 @@ export class EncounterStatusHistory extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for status (Encounter.statusHistory.status)
    */
-  public static statusRequiredCoding():EncounterStatusCodingType {
-    return EncounterStatusCodings;
+  public static get statusRequiredCodes() {
+    return EncounterStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -121,10 +121,14 @@ export class EncounterStatusHistory extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:EncounterStatusCodeType fhir: Encounter.statusHistory.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<EncounterStatusCodeType> fhir: Encounter.statusHistory.status:code' });
     }
+    if (this['status'] && (!Object.values(EncounterStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<EncounterStatusCodeType> fhir: Encounter.statusHistory.status:code Required binding to: EncounterStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['period']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property period:fhir.Period fhir: Encounter.statusHistory.period:Period', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property period:fhir.Period fhir: Encounter.statusHistory.period:Period' });
     }
     if (this["period"]) { issues.push(...this.period.doModelValidation()); }
     return issues;
@@ -173,7 +177,7 @@ export class EncounterClassHistory extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for class (Encounter.classHistory.class)
    */
-  public static classExtensibleCoding():V3ActEncounterCodeCodingType {
+  public static get classExtensibleCodings() {
     return V3ActEncounterCodeCodings;
   }
   /**
@@ -182,11 +186,11 @@ export class EncounterClassHistory extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['class']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property class:fhir.Coding fhir: Encounter.classHistory.class:Coding', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property class:fhir.Coding fhir: Encounter.classHistory.class:Coding' });
     }
     if (this["class"]) { issues.push(...this.class.doModelValidation()); }
     if (!this['period']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property period:fhir.Period fhir: Encounter.classHistory.period:Period', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property period:fhir.Period fhir: Encounter.classHistory.period:Period' });
     }
     if (this["period"]) { issues.push(...this.period.doModelValidation()); }
     return issues;
@@ -221,7 +225,7 @@ export class EncounterParticipant extends fhir.BackboneElement {
   /**
    * The participant type indicates how an individual participates in an encounter. It includes non-practitioner participants, and for practitioners this is to describe the action type in the context of this encounter (e.g. Admitting Dr, Attending Dr, Translator, Consulting Dr). This is different to the practitioner roles which are functional roles, derived from terms of employment, education, licensing, etc.
    */
-  public type?: fhir.CodeableConcept[];
+  public type: fhir.CodeableConcept[];
   /**
    * The period of time that the specified participant participated in the encounter. These can overlap or be sub-sets of the overall encounter's period.
    */
@@ -243,7 +247,7 @@ export class EncounterParticipant extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (Encounter.participant.type)
    */
-  public static typeExtensibleCoding():EncounterParticipantTypeCodingType {
+  public static get typeExtensibleCodings() {
     return EncounterParticipantTypeCodings;
   }
   /**
@@ -308,7 +312,7 @@ export class EncounterDiagnosis extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for use (Encounter.diagnosis.use)
    */
-  public static usePreferredCoding():DiagnosisRoleCodingType {
+  public static get usePreferredCodings() {
     return DiagnosisRoleCodings;
   }
   /**
@@ -317,7 +321,7 @@ export class EncounterDiagnosis extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['condition']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property condition:fhir.Reference fhir: Encounter.diagnosis.condition:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property condition:fhir.Reference fhir: Encounter.diagnosis.condition:Reference' });
     }
     if (this["condition"]) { issues.push(...this.condition.doModelValidation()); }
     if (this["use"]) { issues.push(...this.use.doModelValidation()); }
@@ -395,15 +399,15 @@ export class EncounterHospitalization extends fhir.BackboneElement {
   /**
    * For example, a patient may request both a dairy-free and nut-free diet preference (not mutually exclusive).
    */
-  public dietPreference?: fhir.CodeableConcept[];
+  public dietPreference: fhir.CodeableConcept[];
   /**
    * Special courtesies (VIP, board member).
    */
-  public specialCourtesy?: fhir.CodeableConcept[];
+  public specialCourtesy: fhir.CodeableConcept[];
   /**
    * Any special requests that have been made for this hospitalization encounter, such as the provision of specific equipment or other things.
    */
-  public specialArrangement?: fhir.CodeableConcept[];
+  public specialArrangement: fhir.CodeableConcept[];
   /**
    * Location/organization to which the patient is discharged.
    */
@@ -433,19 +437,19 @@ export class EncounterHospitalization extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for admitSource (Encounter.hospitalization.admitSource)
    */
-  public static admitSourcePreferredCoding():EncounterAdmitSourceCodingType {
+  public static get admitSourcePreferredCodings() {
     return EncounterAdmitSourceCodings;
   }
   /**
    * Preferred-bound Value Set for specialCourtesy (Encounter.hospitalization.specialCourtesy)
    */
-  public static specialCourtesyPreferredCoding():EncounterSpecialCourtesyCodingType {
+  public static get specialCourtesyPreferredCodings() {
     return EncounterSpecialCourtesyCodings;
   }
   /**
    * Preferred-bound Value Set for specialArrangement (Encounter.hospitalization.specialArrangement)
    */
-  public static specialArrangementPreferredCoding():EncounterSpecialArrangementsCodingType {
+  public static get specialArrangementPreferredCodings() {
     return EncounterSpecialArrangementsCodings;
   }
   /**
@@ -476,7 +480,7 @@ export interface EncounterLocationArgs extends fhir.BackboneElementArgs {
   /**
    * When the patient is no longer active at a location, then the period end date is entered, and the status may be changed to completed.
    */
-  status?: EncounterLocationStatusCodeType|undefined;
+  status?: fhir.FhirCode<EncounterLocationStatusCodeType>|string|undefined;
   /**
    * This information is de-normalized from the Location resource to support the easier understanding of the encounter resource and processing in messaging or query.
    * There may be many levels in the hierachy, and this may only pic specific levels that are required for a specific usage scenario.
@@ -503,7 +507,7 @@ export class EncounterLocation extends fhir.BackboneElement {
   /**
    * When the patient is no longer active at a location, then the period end date is entered, and the status may be changed to completed.
    */
-  public status?: EncounterLocationStatusCodeType|undefined;
+  public status?: fhir.FhirCode<EncounterLocationStatusCodeType>|undefined;
   /**
    * This information is de-normalized from the Location resource to support the easier understanding of the encounter resource and processing in messaging or query.
    * There may be many levels in the hierachy, and this may only pic specific levels that are required for a specific usage scenario.
@@ -520,15 +524,15 @@ export class EncounterLocation extends fhir.BackboneElement {
     super(source, options);
     if (source['location']) { this.location = new fhir.Reference(source.location); }
     else { this.location = null; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<EncounterLocationStatusCodeType>({value: source.status}); }
     if (source['physicalType']) { this.physicalType = new fhir.CodeableConcept(source.physicalType); }
     if (source['period']) { this.period = new fhir.Period(source.period); }
   }
   /**
    * Required-bound Value Set for status (Encounter.location.status)
    */
-  public static statusRequiredCoding():EncounterLocationStatusCodingType {
-    return EncounterLocationStatusCodings;
+  public static get statusRequiredCodes() {
+    return EncounterLocationStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -536,9 +540,13 @@ export class EncounterLocation extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['location']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property location:fhir.Reference fhir: Encounter.location.location:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property location:fhir.Reference fhir: Encounter.location.location:Reference' });
     }
     if (this["location"]) { issues.push(...this.location.doModelValidation()); }
+    if (this['status'] && (!Object.values(EncounterLocationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<EncounterLocationStatusCodeType> fhir: Encounter.location.status:code Required binding to: EncounterLocationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["physicalType"]) { issues.push(...this.physicalType.doModelValidation()); }
     if (this["period"]) { issues.push(...this.period.doModelValidation()); }
     return issues;
@@ -559,7 +567,7 @@ export interface EncounterArgs extends fhir.DomainResourceArgs {
   /**
    * Note that internal business rules will determine the appropriate transitions that may occur between statuses (and also classes).
    */
-  status: EncounterStatusCodeType|null;
+  status: fhir.FhirCode<EncounterStatusCodeType>|string|undefined;
   /**
    * The current status is always found in the current version of the resource, not the status history.
    */
@@ -663,15 +671,15 @@ export class Encounter extends fhir.DomainResource {
   /**
    * Identifier(s) by which this encounter is known.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Note that internal business rules will determine the appropriate transitions that may occur between statuses (and also classes).
    */
-  public status: EncounterStatusCodeType|null;
+  public status: fhir.FhirCode<EncounterStatusCodeType>|null;
   /**
    * The current status is always found in the current version of the resource, not the status history.
    */
-  public statusHistory?: fhir.EncounterStatusHistory[];
+  public statusHistory: fhir.EncounterStatusHistory[];
   /**
    * Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.
    */
@@ -679,11 +687,11 @@ export class Encounter extends fhir.DomainResource {
   /**
    * The class history permits the tracking of the encounters transitions without needing to go  through the resource history.  This would be used for a case where an admission starts of as an emergency encounter, then transitions into an inpatient scenario. Doing this and not restarting a new encounter ensures that any lab/diagnostic results can more easily follow the patient and not require re-processing and not get lost or cancelled during a kind of discharge from emergency to inpatient.
    */
-  public classHistory?: fhir.EncounterClassHistory[];
+  public classHistory: fhir.EncounterClassHistory[];
   /**
    * Since there are many ways to further classify encounters, this element is 0..*.
    */
-  public type?: fhir.CodeableConcept[];
+  public type: fhir.CodeableConcept[];
   /**
    * Broad categorization of the service that is to be provided (e.g. cardiology).
    */
@@ -699,19 +707,19 @@ export class Encounter extends fhir.DomainResource {
   /**
    * Where a specific encounter should be classified as a part of a specific episode(s) of care this field should be used. This association can facilitate grouping of related encounters together for a specific purpose, such as government reporting, issue tracking, association via a common problem.  The association is recorded on the encounter as these are typically created after the episode of care and grouped on entry rather than editing the episode of care to append another encounter to it (the episode of care could span years).
    */
-  public episodeOfCare?: fhir.Reference[];
+  public episodeOfCare: fhir.Reference[];
   /**
    * The request this encounter satisfies (e.g. incoming referral or procedure request).
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * The list of people responsible for providing the service.
    */
-  public participant?: fhir.EncounterParticipant[];
+  public participant: fhir.EncounterParticipant[];
   /**
    * The appointment that scheduled this encounter.
    */
-  public appointment?: fhir.Reference[];
+  public appointment: fhir.Reference[];
   /**
    * If not (yet) known, the end of the Period may be omitted.
    */
@@ -723,19 +731,19 @@ export class Encounter extends fhir.DomainResource {
   /**
    * For systems that need to know which was the primary diagnosis, these will be marked with the standard extension primaryDiagnosis (which is a sequence value rather than a flag, 1 = primary diagnosis).
    */
-  public reasonCode?: fhir.CodeableConcept[];
+  public reasonCode: fhir.CodeableConcept[];
   /**
    * For systems that need to know which was the primary diagnosis, these will be marked with the standard extension primaryDiagnosis (which is a sequence value rather than a flag, 1 = primary diagnosis).
    */
-  public reasonReference?: fhir.Reference[];
+  public reasonReference: fhir.Reference[];
   /**
    * The list of diagnosis relevant to this encounter.
    */
-  public diagnosis?: fhir.EncounterDiagnosis[];
+  public diagnosis: fhir.EncounterDiagnosis[];
   /**
    * The billing system may choose to allocate billable items associated with the Encounter to different referenced Accounts based on internal business rules.
    */
-  public account?: fhir.Reference[];
+  public account: fhir.Reference[];
   /**
    * An Encounter may cover more than just the inpatient stay. Contexts such as outpatients, community clinics, and aged care facilities are also included.
    * The duration recorded in the period of this encounter covers the entire scope of this hospitalization record.
@@ -744,7 +752,7 @@ export class Encounter extends fhir.DomainResource {
   /**
    * Virtual encounters can be recorded in the Encounter by specifying a location reference to a location of type "kind" such as "client's home" and an encounter.class = "virtual".
    */
-  public location?: fhir.EncounterLocation[];
+  public location: fhir.EncounterLocation[];
   /**
    * The organization that is primarily responsible for this Encounter's services. This MAY be the same as the organization on the Patient record, however it could be different, such as if the actor performing the services was from an external organization (which may be billed seperately) for an external consultation.  Refer to the example bundle showing an abbreviated set of Encounters for a colonoscopy.
    */
@@ -762,7 +770,7 @@ export class Encounter extends fhir.DomainResource {
     this.resourceType = 'Encounter';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<EncounterStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['statusHistory']) { this.statusHistory = source.statusHistory.map((x) => new fhir.EncounterStatusHistory(x)); }
     else { this.statusHistory = []; }
@@ -802,19 +810,19 @@ export class Encounter extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (Encounter.status)
    */
-  public static statusRequiredCoding():EncounterStatusCodingType {
-    return EncounterStatusCodings;
+  public static get statusRequiredCodes() {
+    return EncounterStatusCodes;
   }
   /**
    * Extensible-bound Value Set for class (Encounter.class)
    */
-  public static classExtensibleCoding():V3ActEncounterCodeCodingType {
+  public static get classExtensibleCodings() {
     return V3ActEncounterCodeCodings;
   }
   /**
    * Preferred-bound Value Set for reasonCode (Encounter.reasonCode)
    */
-  public static reasonCodePreferredCoding():EncounterReasonCodingType {
+  public static get reasonCodePreferredCodings() {
     return EncounterReasonCodings;
   }
   /**
@@ -823,15 +831,19 @@ export class Encounter extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"Encounter" fhir: Encounter.resourceType:"Encounter"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Encounter" fhir: Encounter.resourceType:"Encounter"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:EncounterStatusCodeType fhir: Encounter.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<EncounterStatusCodeType> fhir: Encounter.status:code' });
     }
+    if (this['status'] && (!Object.values(EncounterStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<EncounterStatusCodeType> fhir: Encounter.status:code Required binding to: EncounterStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["statusHistory"]) { this.statusHistory.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['class']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property class:fhir.Coding fhir: Encounter.class:Coding', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property class:fhir.Coding fhir: Encounter.class:Coding' });
     }
     if (this["class"]) { issues.push(...this.class.doModelValidation()); }
     if (this["classHistory"]) { this.classHistory.forEach((x) => { issues.push(...x.doModelValidation()); }) }

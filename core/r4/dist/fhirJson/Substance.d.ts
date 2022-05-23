@@ -54,6 +54,10 @@ export interface Substance extends fhir.DomainResource {
      */
     status?: 'active' | 'entered-in-error' | 'inactive' | undefined;
     /**
+     * Extended properties for primitive element: Substance.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * The level of granularity is defined by the category concepts in the value set.   More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in Substance.code.
      */
     category?: fhir.CodeableConcept[] | undefined;

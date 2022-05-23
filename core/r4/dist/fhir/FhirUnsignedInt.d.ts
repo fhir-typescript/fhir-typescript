@@ -6,7 +6,7 @@ export interface FhirUnsignedIntArgs extends fhir.FhirPrimitiveArgs {
     /**
      * An integer with a value that is not negative (e.g. &gt;= 0)
      */
-    value?: FhirUnsignedInt | number | undefined;
+    value?: FhirUnsignedInt | number | undefined | null;
 }
 /**
  * An integer with a value that is not negative (e.g. &gt;= 0)

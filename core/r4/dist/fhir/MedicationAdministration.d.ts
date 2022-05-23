@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { MedicationAdminStatusCodingType } from '../fhirValueSets/MedicationAdminStatusCodings.js';
 import { MedicationAdminStatusCodeType } from '../fhirValueSets/MedicationAdminStatusCodes.js';
-import { MedicationAdminCategoryCodingType } from '../fhirValueSets/MedicationAdminCategoryCodings.js';
 /**
  * Valid arguments for the MedicationAdministrationPerformer type.
  */
@@ -147,7 +145,7 @@ export interface MedicationAdministrationArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: MedicationAdminStatusCodeType | null;
+    status: fhir.FhirCode<MedicationAdminStatusCodeType> | string | undefined;
     /**
      * A code indicating why the administration was not performed.
      */
@@ -240,23 +238,23 @@ export declare class MedicationAdministration extends fhir.DomainResource {
     /**
      * This is a business identifier, not a resource identifier.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * A protocol, guideline, orderset, or other definition that was adhered to in whole or in part by this event.
      */
-    instantiates?: fhir.FhirUri[];
+    instantiates: fhir.FhirUri[];
     /**
      * A larger event of which this particular event is a component or step.
      */
-    partOf?: fhir.Reference[];
+    partOf: fhir.Reference[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: MedicationAdminStatusCodeType | null;
+    status: fhir.FhirCode<MedicationAdminStatusCodeType> | null;
     /**
      * A code indicating why the administration was not performed.
      */
-    statusReason?: fhir.CodeableConcept[];
+    statusReason: fhir.CodeableConcept[];
     /**
      * Indicates where the medication is expected to be consumed or administered.
      */
@@ -280,7 +278,7 @@ export declare class MedicationAdministration extends fhir.DomainResource {
     /**
      * Additional information (for example, patient height and weight) that supports the administration of the medication.
      */
-    supportingInformation?: fhir.Reference[];
+    supportingInformation: fhir.Reference[];
     /**
      * A specific date/time or interval of time during which the administration took place (or did not take place, when the 'notGiven' attribute is true). For many administrations, such as swallowing a tablet the use of dateTime is more appropriate.
      */
@@ -292,15 +290,15 @@ export declare class MedicationAdministration extends fhir.DomainResource {
     /**
      * Indicates who or what performed the medication administration and how they were involved.
      */
-    performer?: fhir.MedicationAdministrationPerformer[];
+    performer: fhir.MedicationAdministrationPerformer[];
     /**
      * A code indicating why the medication was given.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * This is a reference to a condition that is the reason for the medication request.  If only a code exists, use reasonCode.
      */
-    reasonReference?: fhir.Reference[];
+    reasonReference: fhir.Reference[];
     /**
      * This is a reference to the MedicationRequest  where the intent is either order or instance-order.  It should not reference MedicationRequests where the intent is any other value.
      */
@@ -308,11 +306,11 @@ export declare class MedicationAdministration extends fhir.DomainResource {
     /**
      * The device used in administering the medication to the patient.  For example, a particular infusion pump.
      */
-    device?: fhir.Reference[];
+    device: fhir.Reference[];
     /**
      * Extra information about the medication administration that is not conveyed by the other attributes.
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Describes the medication dosage information details e.g. dose, rate, site, route, etc.
      */
@@ -320,7 +318,7 @@ export declare class MedicationAdministration extends fhir.DomainResource {
     /**
      * This might not include provenances for all versions of the request – only those deemed “relevant” or important. This SHALL NOT include the Provenance associated with this current version of the resource. (If that provenance is deemed to be a “relevant” change, it will need to be added as part of a later update. Until then, it can be queried directly as the Provenance that points to this version using _revinclude All Provenances should have some historical version of this Request as their subject.
      */
-    eventHistory?: fhir.Reference[];
+    eventHistory: fhir.Reference[];
     /**
      * Default constructor for MedicationAdministration - initializes any required elements to null if a value is not provided.
      */
@@ -328,11 +326,23 @@ export declare class MedicationAdministration extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (MedicationAdministration.status)
      */
-    static statusRequiredCoding(): MedicationAdminStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Completed: "completed";
+        readonly EnteredInError: "entered-in-error";
+        readonly InProgress: "in-progress";
+        readonly NotDone: "not-done";
+        readonly OnHold: "on-hold";
+        readonly Stopped: "stopped";
+        readonly Unknown: "unknown";
+    };
     /**
      * Preferred-bound Value Set for category (MedicationAdministration.category)
      */
-    static categoryPreferredCoding(): MedicationAdminCategoryCodingType;
+    static get categoryPreferredCodings(): {
+        readonly Community: fhir.Coding;
+        readonly Inpatient: fhir.Coding;
+        readonly Outpatient: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

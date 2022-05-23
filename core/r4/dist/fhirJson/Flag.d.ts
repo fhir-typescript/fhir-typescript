@@ -16,6 +16,10 @@ export interface Flag extends fhir.DomainResource {
      */
     status: 'active' | 'entered-in-error' | 'inactive' | null;
     /**
+     * Extended properties for primitive element: Flag.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * The value set will often need to be adjusted based on local business rules and usage context.
      */
     category?: fhir.CodeableConcept[] | undefined;

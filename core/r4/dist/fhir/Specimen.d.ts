@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { SpecimenStatusCodingType } from '../fhirValueSets/SpecimenStatusCodings.js';
 import { SpecimenStatusCodeType } from '../fhirValueSets/SpecimenStatusCodes.js';
-import { V20493CodingType } from '../fhirValueSets/V20493Codings.js';
 /**
  * Valid arguments for the SpecimenCollection type.
  */
@@ -152,7 +150,7 @@ export declare class SpecimenProcessing extends fhir.BackboneElement {
     /**
      * Material used in the processing step.
      */
-    additive?: fhir.Reference[];
+    additive: fhir.Reference[];
     /**
      * A record of the time or period when the specimen processing occurred.  For example the time of sample fixation or the period of time the sample was in formalin.
      */
@@ -218,7 +216,7 @@ export declare class SpecimenContainer extends fhir.BackboneElement {
     /**
      * Id for container. There may be multiple; a manufacturer's bar code, lab assigned identifier, etc. The container ID may differ from the specimen id in some circumstances.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Textual description of the container.
      */
@@ -271,7 +269,7 @@ export interface SpecimenArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status?: SpecimenStatusCodeType | undefined;
+    status?: fhir.FhirCode<SpecimenStatusCodeType> | string | undefined;
     /**
      * The type can change the way that a specimen is handled and drives what kind of analyses can properly be performed on the specimen. It is frequently used in diagnostic work flow decision making systems.
      */
@@ -328,7 +326,7 @@ export declare class Specimen extends fhir.DomainResource {
     /**
      * Id for specimen.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.
      */
@@ -336,7 +334,7 @@ export declare class Specimen extends fhir.DomainResource {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status?: SpecimenStatusCodeType | undefined;
+    status?: fhir.FhirCode<SpecimenStatusCodeType> | undefined;
     /**
      * The type can change the way that a specimen is handled and drives what kind of analyses can properly be performed on the specimen. It is frequently used in diagnostic work flow decision making systems.
      */
@@ -352,11 +350,11 @@ export declare class Specimen extends fhir.DomainResource {
     /**
      * The parent specimen could be the source from which the current specimen is derived by some processing step (e.g. an aliquot or isolate or extracted nucleic acids from clinical samples) or one of many specimens that were combined to create a pooled sample.
      */
-    parent?: fhir.Reference[];
+    parent: fhir.Reference[];
     /**
      * The request may be explicit or implied such with a ServiceRequest that requires a blood draw.
      */
-    request?: fhir.Reference[];
+    request: fhir.Reference[];
     /**
      * Details concerning the specimen collection.
      */
@@ -364,19 +362,19 @@ export declare class Specimen extends fhir.DomainResource {
     /**
      * Details concerning processing and processing steps for the specimen.
      */
-    processing?: fhir.SpecimenProcessing[];
+    processing: fhir.SpecimenProcessing[];
     /**
      * The container holding the specimen.  The recursive nature of containers; i.e. blood in tube in tray in rack is not addressed here.
      */
-    container?: fhir.SpecimenContainer[];
+    container: fhir.SpecimenContainer[];
     /**
      * Specimen condition is an observation made about the specimen.  It's a point-in-time assessment.  It can be used to assess its quality or appropriateness for a specific test.
      */
-    condition?: fhir.CodeableConcept[];
+    condition: fhir.CodeableConcept[];
     /**
      * To communicate any details or issues about the specimen or during the specimen collection. (for example: broken vial, sent with patient, frozen).
      */
-    note?: fhir.Annotation[];
+    note: fhir.Annotation[];
     /**
      * Default constructor for Specimen - initializes any required elements to null if a value is not provided.
      */
@@ -384,11 +382,29 @@ export declare class Specimen extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (Specimen.status)
      */
-    static statusRequiredCoding(): SpecimenStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Available: "available";
+        readonly EnteredInError: "entered-in-error";
+        readonly Unavailable: "unavailable";
+        readonly Unsatisfactory: "unsatisfactory";
+    };
     /**
      * Extensible-bound Value Set for condition (Specimen.condition)
      */
-    static conditionExtensibleCoding(): V20493CodingType;
+    static get conditionExtensibleCodings(): {
+        readonly Autolyzed: fhir.Coding;
+        readonly Centrifuged: fhir.Coding;
+        readonly Clotted: fhir.Coding;
+        readonly Contaminated: fhir.Coding;
+        readonly Cool: fhir.Coding;
+        readonly Frozen: fhir.Coding;
+        readonly Hemolyzed: fhir.Coding;
+        readonly Live: fhir.Coding;
+        readonly RoomTemperature: fhir.Coding;
+        readonly SampleNotReceived: fhir.Coding; /**
+         * Person who collected the specimen.
+         */
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -328,11 +328,11 @@ export class ExplanationOfBenefitCareTeam extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: ExplanationOfBenefit.careTeam.sequence:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: ExplanationOfBenefit.careTeam.sequence:positiveInt' });
     }
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (!this['provider']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property provider:fhir.Reference fhir: ExplanationOfBenefit.careTeam.provider:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property provider:fhir.Reference fhir: ExplanationOfBenefit.careTeam.provider:Reference' });
     }
     if (this["provider"]) { issues.push(...this.provider.doModelValidation()); }
     if (this["responsible"]) { issues.push(...this.responsible.doModelValidation()); }
@@ -466,11 +466,11 @@ export class ExplanationOfBenefitSupportingInfo extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: ExplanationOfBenefit.supportingInfo.sequence:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: ExplanationOfBenefit.supportingInfo.sequence:positiveInt' });
     }
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (!this['category']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property category:fhir.CodeableConcept fhir: ExplanationOfBenefit.supportingInfo.category:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category:fhir.CodeableConcept fhir: ExplanationOfBenefit.supportingInfo.category:CodeableConcept' });
     }
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
@@ -535,7 +535,7 @@ export class ExplanationOfBenefitDiagnosis extends fhir.BackboneElement {
   /**
    * For example: admitting, primary, secondary, discharge.
    */
-  public type?: fhir.CodeableConcept[];
+  public type: fhir.CodeableConcept[];
   /**
    * Indication of whether the diagnosis was present on admission to a facility.
    */
@@ -566,11 +566,11 @@ export class ExplanationOfBenefitDiagnosis extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: ExplanationOfBenefit.diagnosis.sequence:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: ExplanationOfBenefit.diagnosis.sequence:positiveInt' });
     }
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (!this['diagnosis']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property diagnosis: fhir: ExplanationOfBenefit.diagnosis.diagnosis[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property diagnosis: fhir: ExplanationOfBenefit.diagnosis.diagnosis[x]:' });
     }
     if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["onAdmission"]) { issues.push(...this.onAdmission.doModelValidation()); }
@@ -627,7 +627,7 @@ export class ExplanationOfBenefitProcedure extends fhir.BackboneElement {
   /**
    * When the condition was observed or the relative ranking.
    */
-  public type?: fhir.CodeableConcept[];
+  public type: fhir.CodeableConcept[];
   /**
    * Date and optionally time the procedure was performed.
    */
@@ -643,7 +643,7 @@ export class ExplanationOfBenefitProcedure extends fhir.BackboneElement {
   /**
    * Unique Device Identifiers associated with this line item.
    */
-  public udi?: fhir.Reference[];
+  public udi: fhir.Reference[];
   /**
    * Default constructor for ExplanationOfBenefitProcedure - initializes any required elements to null if a value is not provided.
    */
@@ -667,13 +667,13 @@ export class ExplanationOfBenefitProcedure extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: ExplanationOfBenefit.procedure.sequence:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: ExplanationOfBenefit.procedure.sequence:positiveInt' });
     }
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (!this['procedure']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property procedure: fhir: ExplanationOfBenefit.procedure.procedure[x]:', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property procedure: fhir: ExplanationOfBenefit.procedure.procedure[x]:' });
     }
     if (this["udi"]) { this.udi.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -716,7 +716,7 @@ export class ExplanationOfBenefitInsurance extends fhir.BackboneElement {
   /**
    * This value is an alphanumeric string that may be provided over the phone, via text, via paper, or within a ClaimResponse resource and is not a FHIR Identifier.
    */
-  public preAuthRef?: fhir.FhirString[];
+  public preAuthRef: fhir.FhirString[];
   /**
    * Default constructor for ExplanationOfBenefitInsurance - initializes any required elements to null if a value is not provided.
    */
@@ -735,11 +735,11 @@ export class ExplanationOfBenefitInsurance extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['focal']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property focal:fhir.FhirBoolean fhir: ExplanationOfBenefit.insurance.focal:boolean', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property focal:fhir.FhirBoolean fhir: ExplanationOfBenefit.insurance.focal:boolean' });
     }
     if (this["focal"]) { issues.push(...this.focal.doModelValidation()); }
     if (!this['coverage']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property coverage:fhir.Reference fhir: ExplanationOfBenefit.insurance.coverage:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property coverage:fhir.Reference fhir: ExplanationOfBenefit.insurance.coverage:Reference' });
     }
     if (this["coverage"]) { issues.push(...this.coverage.doModelValidation()); }
     if (this["preAuthRef"]) { this.preAuthRef.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -810,7 +810,7 @@ export class ExplanationOfBenefitAccident extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (ExplanationOfBenefit.accident.type)
    */
-  public static typeExtensibleCoding():V3ActIncidentCodeCodingType {
+  public static get typeExtensibleCodings() {
     return V3ActIncidentCodeCodings;
   }
   /**
@@ -886,7 +886,7 @@ export class ExplanationOfBenefitItemAdjudication extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['category']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property category:fhir.CodeableConcept fhir: ExplanationOfBenefit.item.adjudication.category:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category:fhir.CodeableConcept fhir: ExplanationOfBenefit.item.adjudication.category:CodeableConcept' });
     }
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (this["reason"]) { issues.push(...this.reason.doModelValidation()); }
@@ -980,11 +980,11 @@ export class ExplanationOfBenefitItemDetailSubDetail extends fhir.BackboneElemen
   /**
    * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or outside of office hours.
    */
-  public modifier?: fhir.CodeableConcept[];
+  public modifier: fhir.CodeableConcept[];
   /**
    * For example: Neonatal program, child dental program or drug users recovery program.
    */
-  public programCode?: fhir.CodeableConcept[];
+  public programCode: fhir.CodeableConcept[];
   /**
    * The number of repetitions of a service or product.
    */
@@ -1004,15 +1004,15 @@ export class ExplanationOfBenefitItemDetailSubDetail extends fhir.BackboneElemen
   /**
    * Unique Device Identifiers associated with this line item.
    */
-  public udi?: fhir.Reference[];
+  public udi: fhir.Reference[];
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  public noteNumber?: fhir.FhirPositiveInt[];
+  public noteNumber: fhir.FhirPositiveInt[];
   /**
    * The adjudication results.
    */
-  public adjudication?: fhir.ExplanationOfBenefitItemAdjudication[];
+  public adjudication: fhir.ExplanationOfBenefitItemAdjudication[];
   /**
    * Default constructor for ExplanationOfBenefitItemDetailSubDetail - initializes any required elements to null if a value is not provided.
    */
@@ -1045,13 +1045,13 @@ export class ExplanationOfBenefitItemDetailSubDetail extends fhir.BackboneElemen
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: ExplanationOfBenefit.item.detail.subDetail.sequence:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: ExplanationOfBenefit.item.detail.subDetail.sequence:positiveInt' });
     }
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (this["revenue"]) { issues.push(...this.revenue.doModelValidation()); }
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (!this['productOrService']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: ExplanationOfBenefit.item.detail.subDetail.productOrService:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: ExplanationOfBenefit.item.detail.subDetail.productOrService:CodeableConcept' });
     }
     if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation()); }
     if (this["modifier"]) { this.modifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -1155,11 +1155,11 @@ export class ExplanationOfBenefitItemDetail extends fhir.BackboneElement {
   /**
    * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  public modifier?: fhir.CodeableConcept[];
+  public modifier: fhir.CodeableConcept[];
   /**
    * For example: Neonatal program, child dental program or drug users recovery program.
    */
-  public programCode?: fhir.CodeableConcept[];
+  public programCode: fhir.CodeableConcept[];
   /**
    * The number of repetitions of a service or product.
    */
@@ -1179,19 +1179,19 @@ export class ExplanationOfBenefitItemDetail extends fhir.BackboneElement {
   /**
    * Unique Device Identifiers associated with this line item.
    */
-  public udi?: fhir.Reference[];
+  public udi: fhir.Reference[];
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  public noteNumber?: fhir.FhirPositiveInt[];
+  public noteNumber: fhir.FhirPositiveInt[];
   /**
    * The adjudication results.
    */
-  public adjudication?: fhir.ExplanationOfBenefitItemAdjudication[];
+  public adjudication: fhir.ExplanationOfBenefitItemAdjudication[];
   /**
    * Third-tier of goods and services.
    */
-  public subDetail?: fhir.ExplanationOfBenefitItemDetailSubDetail[];
+  public subDetail: fhir.ExplanationOfBenefitItemDetailSubDetail[];
   /**
    * Default constructor for ExplanationOfBenefitItemDetail - initializes any required elements to null if a value is not provided.
    */
@@ -1226,13 +1226,13 @@ export class ExplanationOfBenefitItemDetail extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: ExplanationOfBenefit.item.detail.sequence:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: ExplanationOfBenefit.item.detail.sequence:positiveInt' });
     }
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (this["revenue"]) { issues.push(...this.revenue.doModelValidation()); }
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (!this['productOrService']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: ExplanationOfBenefit.item.detail.productOrService:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: ExplanationOfBenefit.item.detail.productOrService:CodeableConcept' });
     }
     if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation()); }
     if (this["modifier"]) { this.modifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -1381,19 +1381,19 @@ export class ExplanationOfBenefitItem extends fhir.BackboneElement {
   /**
    * Care team members related to this service or product.
    */
-  public careTeamSequence?: fhir.FhirPositiveInt[];
+  public careTeamSequence: fhir.FhirPositiveInt[];
   /**
    * Diagnoses applicable for this service or product.
    */
-  public diagnosisSequence?: fhir.FhirPositiveInt[];
+  public diagnosisSequence: fhir.FhirPositiveInt[];
   /**
    * Procedures applicable for this service or product.
    */
-  public procedureSequence?: fhir.FhirPositiveInt[];
+  public procedureSequence: fhir.FhirPositiveInt[];
   /**
    * Exceptions, special conditions and supporting information applicable for this service or product.
    */
-  public informationSequence?: fhir.FhirPositiveInt[];
+  public informationSequence: fhir.FhirPositiveInt[];
   /**
    * The type of revenue or cost center providing the product and/or service.
    */
@@ -1409,11 +1409,11 @@ export class ExplanationOfBenefitItem extends fhir.BackboneElement {
   /**
    * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  public modifier?: fhir.CodeableConcept[];
+  public modifier: fhir.CodeableConcept[];
   /**
    * For example: Neonatal program, child dental program or drug users recovery program.
    */
-  public programCode?: fhir.CodeableConcept[];
+  public programCode: fhir.CodeableConcept[];
   /**
    * The date or dates when the service or product was supplied, performed or completed.
    */
@@ -1449,7 +1449,7 @@ export class ExplanationOfBenefitItem extends fhir.BackboneElement {
   /**
    * Unique Device Identifiers associated with this line item.
    */
-  public udi?: fhir.Reference[];
+  public udi: fhir.Reference[];
   /**
    * For example: Providing a tooth code, allows an insurer to identify a provider performing a filling on a tooth that was previously removed.
    */
@@ -1457,23 +1457,23 @@ export class ExplanationOfBenefitItem extends fhir.BackboneElement {
   /**
    * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
    */
-  public subSite?: fhir.CodeableConcept[];
+  public subSite: fhir.CodeableConcept[];
   /**
    * A billed item may include goods or services provided in multiple encounters.
    */
-  public encounter?: fhir.Reference[];
+  public encounter: fhir.Reference[];
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  public noteNumber?: fhir.FhirPositiveInt[];
+  public noteNumber: fhir.FhirPositiveInt[];
   /**
    * If this item is a group then the values here are a summary of the adjudication of the detail items. If this item is a simple product or service then this is the result of the adjudication of this item.
    */
-  public adjudication?: fhir.ExplanationOfBenefitItemAdjudication[];
+  public adjudication: fhir.ExplanationOfBenefitItemAdjudication[];
   /**
    * Second-tier of goods and services.
    */
-  public detail?: fhir.ExplanationOfBenefitItemDetail[];
+  public detail: fhir.ExplanationOfBenefitItemDetail[];
   /**
    * Default constructor for ExplanationOfBenefitItem - initializes any required elements to null if a value is not provided.
    */
@@ -1528,7 +1528,7 @@ export class ExplanationOfBenefitItem extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: ExplanationOfBenefit.item.sequence:positiveInt', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: ExplanationOfBenefit.item.sequence:positiveInt' });
     }
     if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
     if (this["careTeamSequence"]) { this.careTeamSequence.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -1538,7 +1538,7 @@ export class ExplanationOfBenefitItem extends fhir.BackboneElement {
     if (this["revenue"]) { issues.push(...this.revenue.doModelValidation()); }
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (!this['productOrService']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: ExplanationOfBenefit.item.productOrService:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: ExplanationOfBenefit.item.productOrService:CodeableConcept' });
     }
     if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation()); }
     if (this["modifier"]) { this.modifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -1610,7 +1610,7 @@ export class ExplanationOfBenefitAddItemDetailSubDetail extends fhir.BackboneEle
   /**
    * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  public modifier?: fhir.CodeableConcept[];
+  public modifier: fhir.CodeableConcept[];
   /**
    * The number of repetitions of a service or product.
    */
@@ -1630,11 +1630,11 @@ export class ExplanationOfBenefitAddItemDetailSubDetail extends fhir.BackboneEle
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  public noteNumber?: fhir.FhirPositiveInt[];
+  public noteNumber: fhir.FhirPositiveInt[];
   /**
    * The adjudication results.
    */
-  public adjudication?: fhir.ExplanationOfBenefitItemAdjudication[];
+  public adjudication: fhir.ExplanationOfBenefitItemAdjudication[];
   /**
    * Default constructor for ExplanationOfBenefitAddItemDetailSubDetail - initializes any required elements to null if a value is not provided.
    */
@@ -1659,7 +1659,7 @@ export class ExplanationOfBenefitAddItemDetailSubDetail extends fhir.BackboneEle
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['productOrService']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: ExplanationOfBenefit.addItem.detail.subDetail.productOrService:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: ExplanationOfBenefit.addItem.detail.subDetail.productOrService:CodeableConcept' });
     }
     if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation()); }
     if (this["modifier"]) { this.modifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -1729,7 +1729,7 @@ export class ExplanationOfBenefitAddItemDetail extends fhir.BackboneElement {
   /**
    * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  public modifier?: fhir.CodeableConcept[];
+  public modifier: fhir.CodeableConcept[];
   /**
    * The number of repetitions of a service or product.
    */
@@ -1749,15 +1749,15 @@ export class ExplanationOfBenefitAddItemDetail extends fhir.BackboneElement {
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  public noteNumber?: fhir.FhirPositiveInt[];
+  public noteNumber: fhir.FhirPositiveInt[];
   /**
    * The adjudication results.
    */
-  public adjudication?: fhir.ExplanationOfBenefitItemAdjudication[];
+  public adjudication: fhir.ExplanationOfBenefitItemAdjudication[];
   /**
    * The third-tier service adjudications for payor added services.
    */
-  public subDetail?: fhir.ExplanationOfBenefitAddItemDetailSubDetail[];
+  public subDetail: fhir.ExplanationOfBenefitAddItemDetailSubDetail[];
   /**
    * Default constructor for ExplanationOfBenefitAddItemDetail - initializes any required elements to null if a value is not provided.
    */
@@ -1784,7 +1784,7 @@ export class ExplanationOfBenefitAddItemDetail extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['productOrService']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: ExplanationOfBenefit.addItem.detail.productOrService:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: ExplanationOfBenefit.addItem.detail.productOrService:CodeableConcept' });
     }
     if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation()); }
     if (this["modifier"]) { this.modifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -1907,19 +1907,19 @@ export class ExplanationOfBenefitAddItem extends fhir.BackboneElement {
   /**
    * Claim items which this service line is intended to replace.
    */
-  public itemSequence?: fhir.FhirPositiveInt[];
+  public itemSequence: fhir.FhirPositiveInt[];
   /**
    * The sequence number of the details within the claim item which this line is intended to replace.
    */
-  public detailSequence?: fhir.FhirPositiveInt[];
+  public detailSequence: fhir.FhirPositiveInt[];
   /**
    * The sequence number of the sub-details woithin the details within the claim item which this line is intended to replace.
    */
-  public subDetailSequence?: fhir.FhirPositiveInt[];
+  public subDetailSequence: fhir.FhirPositiveInt[];
   /**
    * The providers who are authorized for the services rendered to the patient.
    */
-  public provider?: fhir.Reference[];
+  public provider: fhir.Reference[];
   /**
    * If this is an actual service or product line, i.e. not a Group, then use code to indicate the Professional Service or Product supplied (e.g. CTP, HCPCS, USCLS, ICD10, NCPDP, DIN, RxNorm, ACHI, CCI). If a grouping item then use a group code to indicate the type of thing being grouped e.g. 'glasses' or 'compound'.
    */
@@ -1927,11 +1927,11 @@ export class ExplanationOfBenefitAddItem extends fhir.BackboneElement {
   /**
    * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  public modifier?: fhir.CodeableConcept[];
+  public modifier: fhir.CodeableConcept[];
   /**
    * For example: Neonatal program, child dental program or drug users recovery program.
    */
-  public programCode?: fhir.CodeableConcept[];
+  public programCode: fhir.CodeableConcept[];
   /**
    * The date or dates when the service or product was supplied, performed or completed.
    */
@@ -1971,19 +1971,19 @@ export class ExplanationOfBenefitAddItem extends fhir.BackboneElement {
   /**
    * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
    */
-  public subSite?: fhir.CodeableConcept[];
+  public subSite: fhir.CodeableConcept[];
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  public noteNumber?: fhir.FhirPositiveInt[];
+  public noteNumber: fhir.FhirPositiveInt[];
   /**
    * The adjudication results.
    */
-  public adjudication?: fhir.ExplanationOfBenefitItemAdjudication[];
+  public adjudication: fhir.ExplanationOfBenefitItemAdjudication[];
   /**
    * The second-tier service adjudications for payor added services.
    */
-  public detail?: fhir.ExplanationOfBenefitAddItemDetail[];
+  public detail: fhir.ExplanationOfBenefitAddItemDetail[];
   /**
    * Default constructor for ExplanationOfBenefitAddItem - initializes any required elements to null if a value is not provided.
    */
@@ -2034,7 +2034,7 @@ export class ExplanationOfBenefitAddItem extends fhir.BackboneElement {
     if (this["subDetailSequence"]) { this.subDetailSequence.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["provider"]) { this.provider.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['productOrService']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: ExplanationOfBenefit.addItem.productOrService:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: ExplanationOfBenefit.addItem.productOrService:CodeableConcept' });
     }
     if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation()); }
     if (this["modifier"]) { this.modifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -2097,11 +2097,11 @@ export class ExplanationOfBenefitTotal extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['category']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property category:fhir.CodeableConcept fhir: ExplanationOfBenefit.total.category:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category:fhir.CodeableConcept fhir: ExplanationOfBenefit.total.category:CodeableConcept' });
     }
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (!this['amount']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property amount:fhir.Money fhir: ExplanationOfBenefit.total.amount:Money', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property amount:fhir.Money fhir: ExplanationOfBenefit.total.amount:Money' });
     }
     if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
     return issues;
@@ -2206,7 +2206,7 @@ export interface ExplanationOfBenefitProcessNoteArgs extends fhir.BackboneElemen
   /**
    * The business purpose of the note text.
    */
-  type?: NoteTypeCodeType|undefined;
+  type?: fhir.FhirCode<NoteTypeCodeType>|string|undefined;
   /**
    * The explanation or description associated with the processing.
    */
@@ -2232,7 +2232,7 @@ export class ExplanationOfBenefitProcessNote extends fhir.BackboneElement {
   /**
    * The business purpose of the note text.
    */
-  public type?: NoteTypeCodeType|undefined;
+  public type?: fhir.FhirCode<NoteTypeCodeType>|undefined;
   /**
    * The explanation or description associated with the processing.
    */
@@ -2247,20 +2247,20 @@ export class ExplanationOfBenefitProcessNote extends fhir.BackboneElement {
   constructor(source:Partial<ExplanationOfBenefitProcessNoteArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['number']) { this.number = new fhir.FhirPositiveInt({value: source.number}); }
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<NoteTypeCodeType>({value: source.type}); }
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
     if (source['language']) { this.language = new fhir.CodeableConcept(source.language); }
   }
   /**
    * Required-bound Value Set for type (ExplanationOfBenefit.processNote.type)
    */
-  public static typeRequiredCoding():NoteTypeCodingType {
-    return NoteTypeCodings;
+  public static get typeRequiredCodes() {
+    return NoteTypeCodes;
   }
   /**
    * Preferred-bound Value Set for language (ExplanationOfBenefit.processNote.language)
    */
-  public static languagePreferredCoding():LanguagesCodingType {
+  public static get languagePreferredCodings() {
     return LanguagesCodings;
   }
   /**
@@ -2269,6 +2269,10 @@ export class ExplanationOfBenefitProcessNote extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["number"]) { issues.push(...this.number.doModelValidation()); }
+    if (this['type'] && (!Object.values(NoteTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type?:fhir.FhirCode<NoteTypeCodeType> fhir: ExplanationOfBenefit.processNote.type:code Required binding to: NoteType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["text"]) { issues.push(...this.text.doModelValidation()); }
     if (this["language"]) { issues.push(...this.language.doModelValidation()); }
     return issues;
@@ -2361,7 +2365,7 @@ export class ExplanationOfBenefitBenefitBalanceFinancial extends fhir.BackboneEl
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: ExplanationOfBenefit.benefitBalance.financial.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: ExplanationOfBenefit.benefitBalance.financial.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     return issues;
@@ -2444,7 +2448,7 @@ export class ExplanationOfBenefitBenefitBalance extends fhir.BackboneElement {
   /**
    * Benefits Used to date.
    */
-  public financial?: fhir.ExplanationOfBenefitBenefitBalanceFinancial[];
+  public financial: fhir.ExplanationOfBenefitBenefitBalanceFinancial[];
   /**
    * Default constructor for ExplanationOfBenefitBenefitBalance - initializes any required elements to null if a value is not provided.
    */
@@ -2467,7 +2471,7 @@ export class ExplanationOfBenefitBenefitBalance extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['category']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property category:fhir.CodeableConcept fhir: ExplanationOfBenefit.benefitBalance.category:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category:fhir.CodeableConcept fhir: ExplanationOfBenefit.benefitBalance.category:CodeableConcept' });
     }
     if (this["category"]) { issues.push(...this.category.doModelValidation()); }
     if (this["excluded"]) { issues.push(...this.excluded.doModelValidation()); }
@@ -2495,7 +2499,7 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status: ExplanationofbenefitStatusCodeType|null;
+  status: fhir.FhirCode<ExplanationofbenefitStatusCodeType>|string|undefined;
   /**
    * The majority of jurisdictions use: oral, pharmacy, vision, professional and institutional, or variants on those terms, as the general styles of claims. The valueset is extensible to accommodate other jurisdictional requirements.
    */
@@ -2507,7 +2511,7 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
   /**
    * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
    */
-  use: ClaimUseCodeType|null;
+  use: fhir.FhirCode<ClaimUseCodeType>|string|undefined;
   /**
    * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for forecast reimbursement is sought.
    */
@@ -2579,7 +2583,7 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
   /**
    * The resource may be used to indicate that: the request has been held (queued) for processing; that it has been processed and errors found (error); that no errors were found and that some of the adjudication has been undertaken (partial) or that all of the adjudication has been undertaken (complete).
    */
-  outcome: RemittanceOutcomeCodeType|null;
+  outcome: fhir.FhirCode<RemittanceOutcomeCodeType>|string|undefined;
   /**
    * A human readable description of the status of the adjudication.
    */
@@ -2677,11 +2681,11 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * A unique identifier assigned to this explanation of benefit.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status: ExplanationofbenefitStatusCodeType|null;
+  public status: fhir.FhirCode<ExplanationofbenefitStatusCodeType>|null;
   /**
    * The majority of jurisdictions use: oral, pharmacy, vision, professional and institutional, or variants on those terms, as the general styles of claims. The valueset is extensible to accommodate other jurisdictional requirements.
    */
@@ -2693,7 +2697,7 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
    */
-  public use: ClaimUseCodeType|null;
+  public use: fhir.FhirCode<ClaimUseCodeType>|null;
   /**
    * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for forecast reimbursement is sought.
    */
@@ -2733,7 +2737,7 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * For example,  for the original treatment and follow-up exams.
    */
-  public related?: fhir.ExplanationOfBenefitRelated[];
+  public related: fhir.ExplanationOfBenefitRelated[];
   /**
    * Prescription to support the dispensing of pharmacy, device or vision products.
    */
@@ -2765,7 +2769,7 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * The resource may be used to indicate that: the request has been held (queued) for processing; that it has been processed and errors found (error); that no errors were found and that some of the adjudication has been undertaken (partial) or that all of the adjudication has been undertaken (complete).
    */
-  public outcome: RemittanceOutcomeCodeType|null;
+  public outcome: fhir.FhirCode<RemittanceOutcomeCodeType>|null;
   /**
    * A human readable description of the status of the adjudication.
    */
@@ -2773,27 +2777,27 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * This value is only present on preauthorization adjudications.
    */
-  public preAuthRef?: fhir.FhirString[];
+  public preAuthRef: fhir.FhirString[];
   /**
    * This value is only present on preauthorization adjudications.
    */
-  public preAuthRefPeriod?: fhir.Period[];
+  public preAuthRefPeriod: fhir.Period[];
   /**
    * The members of the team who provided the products and services.
    */
-  public careTeam?: fhir.ExplanationOfBenefitCareTeam[];
+  public careTeam: fhir.ExplanationOfBenefitCareTeam[];
   /**
    * Often there are multiple jurisdiction specific valuesets which are required.
    */
-  public supportingInfo?: fhir.ExplanationOfBenefitSupportingInfo[];
+  public supportingInfo: fhir.ExplanationOfBenefitSupportingInfo[];
   /**
    * Information about diagnoses relevant to the claim items.
    */
-  public diagnosis?: fhir.ExplanationOfBenefitDiagnosis[];
+  public diagnosis: fhir.ExplanationOfBenefitDiagnosis[];
   /**
    * Procedures performed on the patient relevant to the billing items with the claim.
    */
-  public procedure?: fhir.ExplanationOfBenefitProcedure[];
+  public procedure: fhir.ExplanationOfBenefitProcedure[];
   /**
    * This indicates the relative order of a series of EOBs related to different coverages for the same suite of services.
    */
@@ -2809,19 +2813,19 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * A claim line. Either a simple (a product or service) or a 'group' of details which can also be a simple items or groups of sub-details.
    */
-  public item?: fhir.ExplanationOfBenefitItem[];
+  public item: fhir.ExplanationOfBenefitItem[];
   /**
    * The first-tier service adjudications for payor added product or service lines.
    */
-  public addItem?: fhir.ExplanationOfBenefitAddItem[];
+  public addItem: fhir.ExplanationOfBenefitAddItem[];
   /**
    * The adjudication results which are presented at the header level rather than at the line-item or add-item levels.
    */
-  public adjudication?: fhir.ExplanationOfBenefitItemAdjudication[];
+  public adjudication: fhir.ExplanationOfBenefitItemAdjudication[];
   /**
    * Totals for amounts submitted, co-pays, benefits payable etc.
    */
-  public total?: fhir.ExplanationOfBenefitTotal[];
+  public total: fhir.ExplanationOfBenefitTotal[];
   /**
    * Payment details for the adjudication of the claim.
    */
@@ -2837,7 +2841,7 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * A note that describes or explains adjudication results in a human readable form.
    */
-  public processNote?: fhir.ExplanationOfBenefitProcessNote[];
+  public processNote: fhir.ExplanationOfBenefitProcessNote[];
   /**
    * Not applicable when use=claim.
    */
@@ -2845,7 +2849,7 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * Balance by Benefit Category.
    */
-  public benefitBalance?: fhir.ExplanationOfBenefitBenefitBalance[];
+  public benefitBalance: fhir.ExplanationOfBenefitBenefitBalance[];
   /**
    * Default constructor for ExplanationOfBenefit - initializes any required elements to null if a value is not provided.
    */
@@ -2854,12 +2858,12 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
     this.resourceType = 'ExplanationOfBenefit';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<ExplanationofbenefitStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     else { this.type = null; }
     if (source['subType']) { this.subType = new fhir.CodeableConcept(source.subType); }
-    if (source['use']) { this.use = source.use; }
+    if (source['use']) { this.use = new fhir.FhirCode<ClaimUseCodeType>({value: source.use}); }
     else { this.use = null; }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     else { this.patient = null; }
@@ -2883,7 +2887,7 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
     if (source['facility']) { this.facility = new fhir.Reference(source.facility); }
     if (source['claim']) { this.claim = new fhir.Reference(source.claim); }
     if (source['claimResponse']) { this.claimResponse = new fhir.Reference(source.claimResponse); }
-    if (source['outcome']) { this.outcome = source.outcome; }
+    if (source['outcome']) { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>({value: source.outcome}); }
     else { this.outcome = null; }
     if (source['disposition']) { this.disposition = new fhir.FhirString({value: source.disposition}); }
     if (source['preAuthRef']) { this.preAuthRef = source.preAuthRef.map((x) => new fhir.FhirString({value: x})); }
@@ -2922,26 +2926,26 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (ExplanationOfBenefit.status)
    */
-  public static statusRequiredCoding():ExplanationofbenefitStatusCodingType {
-    return ExplanationofbenefitStatusCodings;
+  public static get statusRequiredCodes() {
+    return ExplanationofbenefitStatusCodes;
   }
   /**
    * Extensible-bound Value Set for type (ExplanationOfBenefit.type)
    */
-  public static typeExtensibleCoding():ClaimTypeCodingType {
+  public static get typeExtensibleCodings() {
     return ClaimTypeCodings;
   }
   /**
    * Required-bound Value Set for use (ExplanationOfBenefit.use)
    */
-  public static useRequiredCoding():ClaimUseCodingType {
-    return ClaimUseCodings;
+  public static get useRequiredCodes() {
+    return ClaimUseCodes;
   }
   /**
    * Required-bound Value Set for outcome (ExplanationOfBenefit.outcome)
    */
-  public static outcomeRequiredCoding():RemittanceOutcomeCodingType {
-    return RemittanceOutcomeCodings;
+  public static get outcomeRequiredCodes() {
+    return RemittanceOutcomeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -2949,36 +2953,44 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"ExplanationOfBenefit" fhir: ExplanationOfBenefit.resourceType:"ExplanationOfBenefit"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ExplanationOfBenefit" fhir: ExplanationOfBenefit.resourceType:"ExplanationOfBenefit"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ExplanationofbenefitStatusCodeType fhir: ExplanationOfBenefit.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ExplanationofbenefitStatusCodeType> fhir: ExplanationOfBenefit.status:code' });
     }
+    if (this['status'] && (!Object.values(ExplanationofbenefitStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ExplanationofbenefitStatusCodeType> fhir: ExplanationOfBenefit.status:code Required binding to: ExplanationofbenefitStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: ExplanationOfBenefit.type:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: ExplanationOfBenefit.type:CodeableConcept' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["subType"]) { issues.push(...this.subType.doModelValidation()); }
     if (!this['use']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property use:ClaimUseCodeType fhir: ExplanationOfBenefit.use:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property use:fhir.FhirCode<ClaimUseCodeType> fhir: ExplanationOfBenefit.use:code' });
     }
+    if (this['use'] && (!Object.values(ClaimUseCodes).includes(this.use as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use:fhir.FhirCode<ClaimUseCodeType> fhir: ExplanationOfBenefit.use:code Required binding to: ClaimUse' });
+    }
+    if (this["use"]) { issues.push(...this.use.doModelValidation()); }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: ExplanationOfBenefit.patient:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: ExplanationOfBenefit.patient:Reference' });
     }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
     if (this["billablePeriod"]) { issues.push(...this.billablePeriod.doModelValidation()); }
     if (!this['created']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property created:fhir.FhirDateTime fhir: ExplanationOfBenefit.created:dateTime', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property created:fhir.FhirDateTime fhir: ExplanationOfBenefit.created:dateTime' });
     }
     if (this["created"]) { issues.push(...this.created.doModelValidation()); }
     if (this["enterer"]) { issues.push(...this.enterer.doModelValidation()); }
     if (!this['insurer']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property insurer:fhir.Reference fhir: ExplanationOfBenefit.insurer:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property insurer:fhir.Reference fhir: ExplanationOfBenefit.insurer:Reference' });
     }
     if (this["insurer"]) { issues.push(...this.insurer.doModelValidation()); }
     if (!this['provider']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property provider:fhir.Reference fhir: ExplanationOfBenefit.provider:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property provider:fhir.Reference fhir: ExplanationOfBenefit.provider:Reference' });
     }
     if (this["provider"]) { issues.push(...this.provider.doModelValidation()); }
     if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
@@ -2993,8 +3005,12 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
     if (this["claim"]) { issues.push(...this.claim.doModelValidation()); }
     if (this["claimResponse"]) { issues.push(...this.claimResponse.doModelValidation()); }
     if (!this['outcome']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property outcome:RemittanceOutcomeCodeType fhir: ExplanationOfBenefit.outcome:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property outcome:fhir.FhirCode<RemittanceOutcomeCodeType> fhir: ExplanationOfBenefit.outcome:code' });
     }
+    if (this['outcome'] && (!Object.values(RemittanceOutcomeCodes).includes(this.outcome as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property outcome:fhir.FhirCode<RemittanceOutcomeCodeType> fhir: ExplanationOfBenefit.outcome:code Required binding to: RemittanceOutcome' });
+    }
+    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation()); }
     if (this["disposition"]) { issues.push(...this.disposition.doModelValidation()); }
     if (this["preAuthRef"]) { this.preAuthRef.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["preAuthRefPeriod"]) { this.preAuthRefPeriod.forEach((x) => { issues.push(...x.doModelValidation()); }) }
@@ -3004,11 +3020,11 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
     if (this["procedure"]) { this.procedure.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["precedence"]) { issues.push(...this.precedence.doModelValidation()); }
     if (!this['insurance']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property insurance:fhir.ExplanationOfBenefitInsurance[] fhir: ExplanationOfBenefit.insurance:insurance', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property insurance:fhir.ExplanationOfBenefitInsurance[] fhir: ExplanationOfBenefit.insurance:insurance' });
     } else if (!Array.isArray(this.insurance)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property insurance:fhir.ExplanationOfBenefitInsurance[] fhir: ExplanationOfBenefit.insurance:insurance', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property insurance:fhir.ExplanationOfBenefitInsurance[] fhir: ExplanationOfBenefit.insurance:insurance' });
     } else if (this.insurance.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property insurance:fhir.ExplanationOfBenefitInsurance[] fhir: ExplanationOfBenefit.insurance:insurance', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property insurance:fhir.ExplanationOfBenefitInsurance[] fhir: ExplanationOfBenefit.insurance:insurance' });
     }
     if (this["insurance"]) { this.insurance.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["accident"]) { issues.push(...this.accident.doModelValidation()); }

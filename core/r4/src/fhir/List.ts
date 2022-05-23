@@ -95,7 +95,7 @@ export class ListEntry extends fhir.BackboneElement {
     if (this["deleted"]) { issues.push(...this.deleted.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (!this['item']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property item:fhir.Reference fhir: List.entry.item:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item:fhir.Reference fhir: List.entry.item:Reference' });
     }
     if (this["item"]) { issues.push(...this.item.doModelValidation()); }
     return issues;
@@ -116,11 +116,11 @@ export interface ListArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status: ListStatusCodeType|null;
+  status: fhir.FhirCode<ListStatusCodeType>|string|undefined;
   /**
    * This element is labeled as a modifier because a change list must not be misunderstood as a complete list.
    */
-  mode: ListModeCodeType|null;
+  mode: fhir.FhirCode<ListModeCodeType>|string|undefined;
   /**
    * A label for the list assigned by the author.
    */
@@ -178,15 +178,15 @@ export class List extends fhir.DomainResource {
   /**
    * Identifier for the List assigned for business purposes outside the context of FHIR.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status: ListStatusCodeType|null;
+  public status: fhir.FhirCode<ListStatusCodeType>|null;
   /**
    * This element is labeled as a modifier because a change list must not be misunderstood as a complete list.
    */
-  public mode: ListModeCodeType|null;
+  public mode: fhir.FhirCode<ListModeCodeType>|null;
   /**
    * A label for the list assigned by the author.
    */
@@ -218,11 +218,11 @@ export class List extends fhir.DomainResource {
   /**
    * Comments that apply to the overall list.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * If there are no entries in the list, an emptyReason SHOULD be provided.
    */
-  public entry?: fhir.ListEntry[];
+  public entry: fhir.ListEntry[];
   /**
    * The various reasons for an empty list make a significant interpretation to its interpretation. Note that this code is for use when the entire list has been suppressed, and not for when individual items are omitted - implementers may consider using a text note or a flag on an entry in these cases.
    */
@@ -235,9 +235,9 @@ export class List extends fhir.DomainResource {
     this.resourceType = 'List';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<ListStatusCodeType>({value: source.status}); }
     else { this.status = null; }
-    if (source['mode']) { this.mode = source.mode; }
+    if (source['mode']) { this.mode = new fhir.FhirCode<ListModeCodeType>({value: source.mode}); }
     else { this.mode = null; }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
@@ -255,25 +255,25 @@ export class List extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (List.status)
    */
-  public static statusRequiredCoding():ListStatusCodingType {
-    return ListStatusCodings;
+  public static get statusRequiredCodes() {
+    return ListStatusCodes;
   }
   /**
    * Required-bound Value Set for mode (List.mode)
    */
-  public static modeRequiredCoding():ListModeCodingType {
-    return ListModeCodings;
+  public static get modeRequiredCodes() {
+    return ListModeCodes;
   }
   /**
    * Preferred-bound Value Set for orderedBy (List.orderedBy)
    */
-  public static orderedByPreferredCoding():ListOrderCodingType {
+  public static get orderedByPreferredCodings() {
     return ListOrderCodings;
   }
   /**
    * Preferred-bound Value Set for emptyReason (List.emptyReason)
    */
-  public static emptyReasonPreferredCoding():ListEmptyReasonCodingType {
+  public static get emptyReasonPreferredCodings() {
     return ListEmptyReasonCodings;
   }
   /**
@@ -282,15 +282,23 @@ export class List extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"List" fhir: List.resourceType:"List"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"List" fhir: List.resourceType:"List"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:ListStatusCodeType fhir: List.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ListStatusCodeType> fhir: List.status:code' });
     }
+    if (this['status'] && (!Object.values(ListStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ListStatusCodeType> fhir: List.status:code Required binding to: ListStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['mode']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property mode:ListModeCodeType fhir: List.mode:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode:fhir.FhirCode<ListModeCodeType> fhir: List.mode:code' });
     }
+    if (this['mode'] && (!Object.values(ListModeCodes).includes(this.mode as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode:fhir.FhirCode<ListModeCodeType> fhir: List.mode:code Required binding to: ListMode' });
+    }
+    if (this["mode"]) { issues.push(...this.mode.doModelValidation()); }
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }

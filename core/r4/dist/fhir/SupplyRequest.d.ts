@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { SupplyrequestStatusCodingType } from '../fhirValueSets/SupplyrequestStatusCodings.js';
 import { SupplyrequestStatusCodeType } from '../fhirValueSets/SupplyrequestStatusCodes.js';
-import { RequestPriorityCodingType } from '../fhirValueSets/RequestPriorityCodings.js';
 import { RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
 /**
  * Valid arguments for the SupplyRequestParameter type.
@@ -76,7 +74,7 @@ export interface SupplyRequestArgs extends fhir.DomainResourceArgs {
     /**
      * Status of the supply request.
      */
-    status?: SupplyrequestStatusCodeType | undefined;
+    status?: fhir.FhirCode<SupplyrequestStatusCodeType> | string | undefined;
     /**
      * Category of supply, e.g.  central, non-stock, etc. This is used to support work flows associated with the supply process.
      */
@@ -84,7 +82,7 @@ export interface SupplyRequestArgs extends fhir.DomainResourceArgs {
     /**
      * Indicates how quickly this SupplyRequest should be addressed with respect to other requests.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
     /**
      * Note that there's a difference between a prescription - an instruction to take a medication, along with a (sometimes) implicit supply, and an explicit request to supply, with no explicit instructions.
      */
@@ -165,11 +163,11 @@ export declare class SupplyRequest extends fhir.DomainResource {
     /**
      * The identifier.type element is used to distinguish between the identifiers assigned by the requester/placer and the performer/filler.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * Status of the supply request.
      */
-    status?: SupplyrequestStatusCodeType | undefined;
+    status?: fhir.FhirCode<SupplyrequestStatusCodeType> | undefined;
     /**
      * Category of supply, e.g.  central, non-stock, etc. This is used to support work flows associated with the supply process.
      */
@@ -177,7 +175,7 @@ export declare class SupplyRequest extends fhir.DomainResource {
     /**
      * Indicates how quickly this SupplyRequest should be addressed with respect to other requests.
      */
-    priority?: RequestPriorityCodeType | undefined;
+    priority?: fhir.FhirCode<RequestPriorityCodeType> | undefined;
     /**
      * Note that there's a difference between a prescription - an instruction to take a medication, along with a (sometimes) implicit supply, and an explicit request to supply, with no explicit instructions.
      */
@@ -193,7 +191,7 @@ export declare class SupplyRequest extends fhir.DomainResource {
     /**
      * Specific parameters for the ordered item.  For example, the size of the indicated item.
      */
-    parameter?: fhir.SupplyRequestParameter[];
+    parameter: fhir.SupplyRequestParameter[];
     /**
      * When the request should be fulfilled.
      */
@@ -213,15 +211,15 @@ export declare class SupplyRequest extends fhir.DomainResource {
     /**
      * Who is intended to fulfill the request.
      */
-    supplier?: fhir.Reference[];
+    supplier: fhir.Reference[];
     /**
      * The reason why the supply item was requested.
      */
-    reasonCode?: fhir.CodeableConcept[];
+    reasonCode: fhir.CodeableConcept[];
     /**
      * The reason why the supply item was requested.
      */
-    reasonReference?: fhir.Reference[];
+    reasonReference: fhir.Reference[];
     /**
      * Where the supply is expected to come from.
      */
@@ -237,11 +235,24 @@ export declare class SupplyRequest extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (SupplyRequest.status)
      */
-    static statusRequiredCoding(): SupplyrequestStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Cancelled: "cancelled";
+        readonly Completed: "completed";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+        readonly Suspended: "suspended";
+        readonly Unknown: "unknown";
+    };
     /**
      * Required-bound Value Set for priority (SupplyRequest.priority)
      */
-    static priorityRequiredCoding(): RequestPriorityCodingType;
+    static get priorityRequiredCodes(): {
+        readonly ASAP: "asap";
+        readonly Routine: "routine";
+        readonly STAT: "stat";
+        readonly Urgent: "urgent";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

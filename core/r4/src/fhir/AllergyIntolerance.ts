@@ -68,7 +68,7 @@ export interface AllergyIntoleranceReactionArgs extends fhir.BackboneElementArgs
   /**
    * It is acknowledged that this assessment is very subjective. There may be some specific practice domains where objective scales have been applied. Objective scales can be included in this model as extensions.
    */
-  severity?: ReactionEventSeverityCodeType|undefined;
+  severity?: fhir.FhirCode<ReactionEventSeverityCodeType>|string|undefined;
   /**
    * Coding of the route of exposure with a terminology should be used wherever possible.
    */
@@ -106,7 +106,7 @@ export class AllergyIntoleranceReaction extends fhir.BackboneElement {
   /**
    * It is acknowledged that this assessment is very subjective. There may be some specific practice domains where objective scales have been applied. Objective scales can be included in this model as extensions.
    */
-  public severity?: ReactionEventSeverityCodeType|undefined;
+  public severity?: fhir.FhirCode<ReactionEventSeverityCodeType>|undefined;
   /**
    * Coding of the route of exposure with a terminology should be used wherever possible.
    */
@@ -114,7 +114,7 @@ export class AllergyIntoleranceReaction extends fhir.BackboneElement {
   /**
    * Use this field to record information indirectly related to a particular event and not captured in the description. For example: Clinical records are no longer available, recorded based on information provided to the patient by her mother and her mother is deceased.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Default constructor for AllergyIntoleranceReaction - initializes any required elements to null if a value is not provided.
    */
@@ -125,7 +125,7 @@ export class AllergyIntoleranceReaction extends fhir.BackboneElement {
     else { this.manifestation = []; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
     if (source['onset']) { this.onset = new fhir.FhirDateTime({value: source.onset}); }
-    if (source['severity']) { this.severity = source.severity; }
+    if (source['severity']) { this.severity = new fhir.FhirCode<ReactionEventSeverityCodeType>({value: source.severity}); }
     if (source['exposureRoute']) { this.exposureRoute = new fhir.CodeableConcept(source.exposureRoute); }
     if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
     else { this.note = []; }
@@ -133,8 +133,8 @@ export class AllergyIntoleranceReaction extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for severity (AllergyIntolerance.reaction.severity)
    */
-  public static severityRequiredCoding():ReactionEventSeverityCodingType {
-    return ReactionEventSeverityCodings;
+  public static get severityRequiredCodes() {
+    return ReactionEventSeverityCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -143,15 +143,19 @@ export class AllergyIntoleranceReaction extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["substance"]) { issues.push(...this.substance.doModelValidation()); }
     if (!this['manifestation']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property manifestation:fhir.CodeableConcept[] fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property manifestation:fhir.CodeableConcept[] fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept' });
     } else if (!Array.isArray(this.manifestation)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property manifestation:fhir.CodeableConcept[] fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property manifestation:fhir.CodeableConcept[] fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept' });
     } else if (this.manifestation.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property manifestation:fhir.CodeableConcept[] fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property manifestation:fhir.CodeableConcept[] fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept' });
     }
     if (this["manifestation"]) { this.manifestation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
     if (this["onset"]) { issues.push(...this.onset.doModelValidation()); }
+    if (this['severity'] && (!Object.values(ReactionEventSeverityCodes).includes(this.severity as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property severity?:fhir.FhirCode<ReactionEventSeverityCodeType> fhir: AllergyIntolerance.reaction.severity:code Required binding to: ReactionEventSeverity' });
+    }
+    if (this["severity"]) { issues.push(...this.severity.doModelValidation()); }
     if (this["exposureRoute"]) { issues.push(...this.exposureRoute.doModelValidation()); }
     if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -181,15 +185,15 @@ export interface AllergyIntoleranceArgs extends fhir.DomainResourceArgs {
   /**
    * Allergic (typically immune-mediated) reactions have been traditionally regarded as an indicator for potential escalation to significant future risk. Contemporary knowledge suggests that some reactions previously thought to be immune-mediated are, in fact, non-immune, but in some cases can still pose a life threatening risk. It is acknowledged that many clinicians might not be in a position to distinguish the mechanism of a particular reaction. Often the term "allergy" is used rather generically and may overlap with the use of "intolerance" - in practice the boundaries between these two concepts might not be well-defined or understood. This data element is included nevertheless, because many legacy systems have captured this attribute. Immunologic testing may provide supporting evidence for the basis of the reaction and the causative substance, but no tests are 100% sensitive or specific for sensitivity to a particular substance. If, as is commonly the case, it is unclear whether the reaction is due to an allergy or an intolerance, then the type element should be omitted from the resource.
    */
-  type?: AllergyIntoleranceTypeCodeType|undefined;
+  type?: fhir.FhirCode<AllergyIntoleranceTypeCodeType>|string|undefined;
   /**
    * This data element has been included because it is currently being captured in some clinical systems. This data can be derived from the substance where coding systems are used, and is effectively redundant in that situation.  When searching on category, consider the implications of AllergyIntolerance resources without a category.  For example, when searching on category = medication, medication allergies that don't have a category valued will not be returned.  Refer to [search](search.html) for more information on how to search category with a :missing modifier to get allergies that don't have a category.  Additionally, category should be used with caution because category can be subjective based on the sender.
    */
-  category?: AllergyIntoleranceCategoryCodeType[]|undefined;
+  category?: fhir.FhirCode<AllergyIntoleranceCategoryCodeType>[]|string[]|undefined;
   /**
    * The default criticality value for any propensity to an adverse reaction should be 'Low Risk', indicating at the very least a relative contraindication to deliberate or voluntary exposure to the substance. 'High Risk' is flagged if the clinician has identified a propensity for a more serious or potentially life-threatening reaction, such as anaphylaxis, and implies an absolute contraindication to deliberate or voluntary exposure to the substance. If this element is missing, the criticality is unknown (though it may be known elsewhere).  Systems that capture a severity at the condition level are actually representing the concept of criticality whereas the severity documented at the reaction level is representing the true reaction severity.  Existing systems that are capturing both condition criticality and reaction severity may use the term "severity" to represent both.  Criticality is the worst it could be in the future (i.e. situation-agnostic) whereas severity is situation-dependent.
    */
-  criticality?: AllergyIntoleranceCriticalityCodeType|undefined;
+  criticality?: fhir.FhirCode<AllergyIntoleranceCriticalityCodeType>|string|undefined;
   /**
    * It is strongly recommended that this element be populated using a terminology, where possible. For example, some terminologies used include RxNorm, SNOMED CT, DM+D, NDFRT, ICD-9, IDC-10, UNII, and ATC. Plain text should only be used if there is no appropriate terminology available. Additional details can be specified in the text.
    * When a substance or product code is specified for the 'code' element, the "default" semantic context is that this is a positive statement of an allergy or intolerance (depending on the value of the 'type' element, if present) condition to the specified substance/product.  In the corresponding SNOMED CT allergy model, the specified substance/product is the target (destination) of the "Causative agent" relationship.
@@ -269,7 +273,7 @@ export class AllergyIntolerance extends fhir.DomainResource {
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Refer to [discussion](extensibility.html#Special-Case) if clincalStatus is missing data.
    * The data type is CodeableConcept because clinicalStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.
@@ -282,15 +286,15 @@ export class AllergyIntolerance extends fhir.DomainResource {
   /**
    * Allergic (typically immune-mediated) reactions have been traditionally regarded as an indicator for potential escalation to significant future risk. Contemporary knowledge suggests that some reactions previously thought to be immune-mediated are, in fact, non-immune, but in some cases can still pose a life threatening risk. It is acknowledged that many clinicians might not be in a position to distinguish the mechanism of a particular reaction. Often the term "allergy" is used rather generically and may overlap with the use of "intolerance" - in practice the boundaries between these two concepts might not be well-defined or understood. This data element is included nevertheless, because many legacy systems have captured this attribute. Immunologic testing may provide supporting evidence for the basis of the reaction and the causative substance, but no tests are 100% sensitive or specific for sensitivity to a particular substance. If, as is commonly the case, it is unclear whether the reaction is due to an allergy or an intolerance, then the type element should be omitted from the resource.
    */
-  public type?: AllergyIntoleranceTypeCodeType|undefined;
+  public type?: fhir.FhirCode<AllergyIntoleranceTypeCodeType>|undefined;
   /**
    * This data element has been included because it is currently being captured in some clinical systems. This data can be derived from the substance where coding systems are used, and is effectively redundant in that situation.  When searching on category, consider the implications of AllergyIntolerance resources without a category.  For example, when searching on category = medication, medication allergies that don't have a category valued will not be returned.  Refer to [search](search.html) for more information on how to search category with a :missing modifier to get allergies that don't have a category.  Additionally, category should be used with caution because category can be subjective based on the sender.
    */
-  public category?: AllergyIntoleranceCategoryCodeType[];
+  public category: fhir.FhirCode<AllergyIntoleranceCategoryCodeType>[];
   /**
    * The default criticality value for any propensity to an adverse reaction should be 'Low Risk', indicating at the very least a relative contraindication to deliberate or voluntary exposure to the substance. 'High Risk' is flagged if the clinician has identified a propensity for a more serious or potentially life-threatening reaction, such as anaphylaxis, and implies an absolute contraindication to deliberate or voluntary exposure to the substance. If this element is missing, the criticality is unknown (though it may be known elsewhere).  Systems that capture a severity at the condition level are actually representing the concept of criticality whereas the severity documented at the reaction level is representing the true reaction severity.  Existing systems that are capturing both condition criticality and reaction severity may use the term "severity" to represent both.  Criticality is the worst it could be in the future (i.e. situation-agnostic) whereas severity is situation-dependent.
    */
-  public criticality?: AllergyIntoleranceCriticalityCodeType|undefined;
+  public criticality?: fhir.FhirCode<AllergyIntoleranceCriticalityCodeType>|undefined;
   /**
    * It is strongly recommended that this element be populated using a terminology, where possible. For example, some terminologies used include RxNorm, SNOMED CT, DM+D, NDFRT, ICD-9, IDC-10, UNII, and ATC. Plain text should only be used if there is no appropriate terminology available. Additional details can be specified in the text.
    * When a substance or product code is specified for the 'code' element, the "default" semantic context is that this is a positive statement of an allergy or intolerance (depending on the value of the 'type' element, if present) condition to the specified substance/product.  In the corresponding SNOMED CT allergy model, the specified substance/product is the target (destination) of the "Causative agent" relationship.
@@ -332,11 +336,11 @@ export class AllergyIntolerance extends fhir.DomainResource {
   /**
    * For example: including reason for flagging a seriousness of 'High Risk'; and instructions related to future exposure or administration of the substance, such as administration within an Intensive Care Unit or under corticosteroid cover. The notes should be related to an allergy or intolerance as a condition in general and not related to any particular episode of it. For episode notes and descriptions, use AllergyIntolerance.event.description and  AllergyIntolerance.event.notes.
    */
-  public note?: fhir.Annotation[];
+  public note: fhir.Annotation[];
   /**
    * Details about each adverse reaction event linked to exposure to the identified substance.
    */
-  public reaction?: fhir.AllergyIntoleranceReaction[];
+  public reaction: fhir.AllergyIntoleranceReaction[];
   /**
    * Default constructor for AllergyIntolerance - initializes any required elements to null if a value is not provided.
    */
@@ -347,10 +351,10 @@ export class AllergyIntolerance extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['clinicalStatus']) { this.clinicalStatus = new fhir.CodeableConcept(source.clinicalStatus); }
     if (source['verificationStatus']) { this.verificationStatus = new fhir.CodeableConcept(source.verificationStatus); }
-    if (source['type']) { this.type = source.type; }
-    if (source['category']) { this.category = source.category.map((x) => x); }
+    if (source['type']) { this.type = new fhir.FhirCode<AllergyIntoleranceTypeCodeType>({value: source.type}); }
+    if (source['category']) { this.category = source.category.map((x) => new fhir.FhirCode<AllergyIntoleranceCategoryCodeType>({value: x})); }
     else { this.category = []; }
-    if (source['criticality']) { this.criticality = source.criticality; }
+    if (source['criticality']) { this.criticality = new fhir.FhirCode<AllergyIntoleranceCriticalityCodeType>({value: source.criticality}); }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     else { this.patient = null; }
@@ -373,32 +377,32 @@ export class AllergyIntolerance extends fhir.DomainResource {
   /**
    * Required-bound Value Set for clinicalStatus (AllergyIntolerance.clinicalStatus)
    */
-  public static clinicalStatusRequiredCoding():AllergyintoleranceClinicalCodingType {
-    return AllergyintoleranceClinicalCodings;
+  public static get clinicalStatusRequiredCodes() {
+    return AllergyintoleranceClinicalCodes;
   }
   /**
    * Required-bound Value Set for verificationStatus (AllergyIntolerance.verificationStatus)
    */
-  public static verificationStatusRequiredCoding():AllergyintoleranceVerificationCodingType {
-    return AllergyintoleranceVerificationCodings;
+  public static get verificationStatusRequiredCodes() {
+    return AllergyintoleranceVerificationCodes;
   }
   /**
    * Required-bound Value Set for type (AllergyIntolerance.type)
    */
-  public static typeRequiredCoding():AllergyIntoleranceTypeCodingType {
-    return AllergyIntoleranceTypeCodings;
+  public static get typeRequiredCodes() {
+    return AllergyIntoleranceTypeCodes;
   }
   /**
    * Required-bound Value Set for category (AllergyIntolerance.category)
    */
-  public static categoryRequiredCoding():AllergyIntoleranceCategoryCodingType {
-    return AllergyIntoleranceCategoryCodings;
+  public static get categoryRequiredCodes() {
+    return AllergyIntoleranceCategoryCodes;
   }
   /**
    * Required-bound Value Set for criticality (AllergyIntolerance.criticality)
    */
-  public static criticalityRequiredCoding():AllergyIntoleranceCriticalityCodingType {
-    return AllergyIntoleranceCriticalityCodings;
+  public static get criticalityRequiredCodes() {
+    return AllergyIntoleranceCriticalityCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -406,14 +410,36 @@ export class AllergyIntolerance extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"AllergyIntolerance" fhir: AllergyIntolerance.resourceType:"AllergyIntolerance"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"AllergyIntolerance" fhir: AllergyIntolerance.resourceType:"AllergyIntolerance"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['clinicalStatus'] && (!Object.values(AllergyintoleranceClinicalCodes).includes(this.clinicalStatus as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property clinicalStatus?:fhir.CodeableConcept fhir: AllergyIntolerance.clinicalStatus:CodeableConcept Required binding to: AllergyintoleranceClinical' });
+    }
     if (this["clinicalStatus"]) { issues.push(...this.clinicalStatus.doModelValidation()); }
+    if (this['verificationStatus'] && (!Object.values(AllergyintoleranceVerificationCodes).includes(this.verificationStatus as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property verificationStatus?:fhir.CodeableConcept fhir: AllergyIntolerance.verificationStatus:CodeableConcept Required binding to: AllergyintoleranceVerification' });
+    }
     if (this["verificationStatus"]) { issues.push(...this.verificationStatus.doModelValidation()); }
+    if (this['type'] && (!Object.values(AllergyIntoleranceTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type?:fhir.FhirCode<AllergyIntoleranceTypeCodeType> fhir: AllergyIntolerance.type:code Required binding to: AllergyIntoleranceType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this['category']) {
+      this.category.forEach((v) => {
+        if (!Object.values(AllergyIntoleranceCategoryCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property category?:fhir.FhirCode<AllergyIntoleranceCategoryCodeType>[] fhir: AllergyIntolerance.category:code Required binding to: AllergyIntoleranceCategory' });
+        }
+      });
+    }
+    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['criticality'] && (!Object.values(AllergyIntoleranceCriticalityCodes).includes(this.criticality as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property criticality?:fhir.FhirCode<AllergyIntoleranceCriticalityCodeType> fhir: AllergyIntolerance.criticality:code Required binding to: AllergyIntoleranceCriticality' });
+    }
+    if (this["criticality"]) { issues.push(...this.criticality.doModelValidation()); }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property patient:fhir.Reference fhir: AllergyIntolerance.patient:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: AllergyIntolerance.patient:Reference' });
     }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
     if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }

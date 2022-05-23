@@ -43,7 +43,7 @@ export declare class ProductShelfLife extends fhir.BackboneElement {
     /**
      * Special precautions for storage, if any, can be specified using an appropriate controlled vocabulary The controlled term and the controlled term identifier shall be specified.
      */
-    specialPrecautionsForStorage?: fhir.CodeableConcept[];
+    specialPrecautionsForStorage: fhir.CodeableConcept[];
     /**
      * Default constructor for ProductShelfLife - initializes any required elements to null if a value is not provided.
      */

@@ -76,6 +76,10 @@ export interface ResearchElementDefinitionCharacteristic extends fhir.BackboneEl
      */
     studyEffectiveGroupMeasure?: 'mean' | 'mean-of-mean' | 'mean-of-median' | 'median' | 'median-of-mean' | 'median-of-median' | undefined;
     /**
+     * Extended properties for primitive element: ResearchElementDefinition.characteristic.studyEffectiveGroupMeasure
+     */
+    _studyEffectiveGroupMeasure?: fhir.FhirElement;
+    /**
      * A narrative description of the time period the study covers.
      */
     participantEffectiveDescription?: string | undefined;
@@ -111,6 +115,10 @@ export interface ResearchElementDefinitionCharacteristic extends fhir.BackboneEl
      * Indicates how elements are aggregated within the study effective period.
      */
     participantEffectiveGroupMeasure?: 'mean' | 'mean-of-mean' | 'mean-of-median' | 'median' | 'median-of-mean' | 'median-of-median' | undefined;
+    /**
+     * Extended properties for primitive element: ResearchElementDefinition.characteristic.participantEffectiveGroupMeasure
+     */
+    _participantEffectiveGroupMeasure?: fhir.FhirElement;
 }
 /**
  * The ResearchElementDefinition resource describes a "PICO" element that knowledge (evidence, assertion, recommendation) is about.
@@ -178,6 +186,10 @@ export interface ResearchElementDefinition extends fhir.DomainResource {
      * Allows filtering of research element definitions that are appropriate for use versus not.
      */
     status: 'active' | 'draft' | 'retired' | 'unknown' | null;
+    /**
+     * Extended properties for primitive element: ResearchElementDefinition.status
+     */
+    _status?: fhir.FhirElement;
     /**
      * Allows filtering of research element definitions that are appropriate for use versus not.
      */
@@ -319,9 +331,17 @@ export interface ResearchElementDefinition extends fhir.DomainResource {
      */
     type: 'exposure' | 'outcome' | 'population' | null;
     /**
+     * Extended properties for primitive element: ResearchElementDefinition.type
+     */
+    _type?: fhir.FhirElement;
+    /**
      * The type of the outcome (e.g. Dichotomous, Continuous, or Descriptive).
      */
     variableType?: 'continuous' | 'descriptive' | 'dichotomous' | undefined;
+    /**
+     * Extended properties for primitive element: ResearchElementDefinition.variableType
+     */
+    _variableType?: fhir.FhirElement;
     /**
      * Characteristics can be defined flexibly to accommodate different use cases for membership criteria, ranging from simple codes, all the way to using an expression language to express the criteria.
      */

@@ -23,6 +23,10 @@ export interface Quantity extends fhir.FhirElement {
    */
   comparator?: '<'|'<='|'>'|'>='|undefined;
   /**
+   * Extended properties for primitive element: Quantity.comparator
+   */
+  _comparator?:fhir.FhirElement;
+  /**
    * A human-readable form of the unit.
    */
   unit?: string|undefined;

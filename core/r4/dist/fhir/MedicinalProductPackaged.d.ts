@@ -101,7 +101,7 @@ export declare class MedicinalProductPackagedPackageItem extends fhir.BackboneEl
     /**
      * Including possibly Data Carrier Identifier.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * The physical type of the container of the medicine.
      */
@@ -113,23 +113,23 @@ export declare class MedicinalProductPackagedPackageItem extends fhir.BackboneEl
     /**
      * Material type of the package item.
      */
-    material?: fhir.CodeableConcept[];
+    material: fhir.CodeableConcept[];
     /**
      * A possible alternate material for the packaging.
      */
-    alternateMaterial?: fhir.CodeableConcept[];
+    alternateMaterial: fhir.CodeableConcept[];
     /**
      * A device accompanying a medicinal product.
      */
-    device?: fhir.Reference[];
+    device: fhir.Reference[];
     /**
      * The manufactured item as contained in the packaged medicinal product.
      */
-    manufacturedItem?: fhir.Reference[];
+    manufacturedItem: fhir.Reference[];
     /**
      * Allows containers within containers.
      */
-    packageItem?: fhir.MedicinalProductPackagedPackageItem[];
+    packageItem: fhir.MedicinalProductPackagedPackageItem[];
     /**
      * Dimensions, color etc.
      */
@@ -137,15 +137,15 @@ export declare class MedicinalProductPackagedPackageItem extends fhir.BackboneEl
     /**
      * Other codeable characteristics.
      */
-    otherCharacteristics?: fhir.CodeableConcept[];
+    otherCharacteristics: fhir.CodeableConcept[];
     /**
      * Shelf Life and storage information.
      */
-    shelfLifeStorage?: fhir.ProductShelfLife[];
+    shelfLifeStorage: fhir.ProductShelfLife[];
     /**
      * Manufacturer of this Package Item.
      */
-    manufacturer?: fhir.Reference[];
+    manufacturer: fhir.Reference[];
     /**
      * Default constructor for MedicinalProductPackagedPackageItem - initializes any required elements to null if a value is not provided.
      */
@@ -215,11 +215,11 @@ export declare class MedicinalProductPackaged extends fhir.DomainResource {
     /**
      * Unique identifier.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * The product with this is a pack for.
      */
-    subject?: fhir.Reference[];
+    subject: fhir.Reference[];
     /**
      * Textual description.
      */
@@ -231,7 +231,7 @@ export declare class MedicinalProductPackaged extends fhir.DomainResource {
     /**
      * Marketing information.
      */
-    marketingStatus?: fhir.MarketingStatus[];
+    marketingStatus: fhir.MarketingStatus[];
     /**
      * Manufacturer of this Package Item.
      */
@@ -239,11 +239,11 @@ export declare class MedicinalProductPackaged extends fhir.DomainResource {
     /**
      * Manufacturer of this Package Item.
      */
-    manufacturer?: fhir.Reference[];
+    manufacturer: fhir.Reference[];
     /**
      * Batch numbering.
      */
-    batchIdentifier?: fhir.MedicinalProductPackagedBatchIdentifier[];
+    batchIdentifier: fhir.MedicinalProductPackagedBatchIdentifier[];
     /**
      * A packaging item, as a contained for medicine, possibly with other packaging items within.
      */

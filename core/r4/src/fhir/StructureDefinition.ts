@@ -96,7 +96,7 @@ export class StructureDefinitionMapping extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['identity']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property identity:fhir.FhirId fhir: StructureDefinition.mapping.identity:id', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property identity:fhir.FhirId fhir: StructureDefinition.mapping.identity:id' });
     }
     if (this["identity"]) { issues.push(...this.identity.doModelValidation()); }
     if (this["uri"]) { issues.push(...this.uri.doModelValidation()); }
@@ -112,7 +112,7 @@ export interface StructureDefinitionContextArgs extends fhir.BackboneElementArgs
   /**
    * Defines how to interpret the expression that defines what the context of the extension is.
    */
-  type: ExtensionContextTypeCodeType|null;
+  type: fhir.FhirCode<ExtensionContextTypeCodeType>|string|undefined;
   /**
    * An expression that defines where an extension can be used in resources.
    */
@@ -130,7 +130,7 @@ export class StructureDefinitionContext extends fhir.BackboneElement {
   /**
    * Defines how to interpret the expression that defines what the context of the extension is.
    */
-  public type: ExtensionContextTypeCodeType|null;
+  public type: fhir.FhirCode<ExtensionContextTypeCodeType>|null;
   /**
    * An expression that defines where an extension can be used in resources.
    */
@@ -140,7 +140,7 @@ export class StructureDefinitionContext extends fhir.BackboneElement {
    */
   constructor(source:Partial<StructureDefinitionContextArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type; }
+    if (source['type']) { this.type = new fhir.FhirCode<ExtensionContextTypeCodeType>({value: source.type}); }
     else { this.type = null; }
     if (source['expression']) { this.expression = new fhir.FhirString({value: source.expression}); }
     else { this.expression = null; }
@@ -148,8 +148,8 @@ export class StructureDefinitionContext extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for type (StructureDefinition.context.type)
    */
-  public static typeRequiredCoding():ExtensionContextTypeCodingType {
-    return ExtensionContextTypeCodings;
+  public static get typeRequiredCodes() {
+    return ExtensionContextTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -157,10 +157,14 @@ export class StructureDefinitionContext extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:ExtensionContextTypeCodeType fhir: StructureDefinition.context.type:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<ExtensionContextTypeCodeType> fhir: StructureDefinition.context.type:code' });
     }
+    if (this['type'] && (!Object.values(ExtensionContextTypeCodes).includes(this.type as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<ExtensionContextTypeCodeType> fhir: StructureDefinition.context.type:code Required binding to: ExtensionContextType' });
+    }
+    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['expression']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property expression:fhir.FhirString fhir: StructureDefinition.context.expression:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property expression:fhir.FhirString fhir: StructureDefinition.context.expression:string' });
     }
     if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
     return issues;
@@ -202,11 +206,11 @@ export class StructureDefinitionSnapshot extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['element']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property element:fhir.ElementDefinition[] fhir: StructureDefinition.snapshot.element:ElementDefinition', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property element:fhir.ElementDefinition[] fhir: StructureDefinition.snapshot.element:ElementDefinition' });
     } else if (!Array.isArray(this.element)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property element:fhir.ElementDefinition[] fhir: StructureDefinition.snapshot.element:ElementDefinition', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property element:fhir.ElementDefinition[] fhir: StructureDefinition.snapshot.element:ElementDefinition' });
     } else if (this.element.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property element:fhir.ElementDefinition[] fhir: StructureDefinition.snapshot.element:ElementDefinition', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property element:fhir.ElementDefinition[] fhir: StructureDefinition.snapshot.element:ElementDefinition' });
     }
     if (this["element"]) { this.element.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -248,11 +252,11 @@ export class StructureDefinitionDifferential extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['element']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property element:fhir.ElementDefinition[] fhir: StructureDefinition.differential.element:ElementDefinition', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property element:fhir.ElementDefinition[] fhir: StructureDefinition.differential.element:ElementDefinition' });
     } else if (!Array.isArray(this.element)) {
-      issues.push({ severity: 'error', code: 'structure',  diagnostics: 'Found scalar in array property element:fhir.ElementDefinition[] fhir: StructureDefinition.differential.element:ElementDefinition', });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property element:fhir.ElementDefinition[] fhir: StructureDefinition.differential.element:ElementDefinition' });
     } else if (this.element.length === 0) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property element:fhir.ElementDefinition[] fhir: StructureDefinition.differential.element:ElementDefinition', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property element:fhir.ElementDefinition[] fhir: StructureDefinition.differential.element:ElementDefinition' });
     }
     if (this["element"]) { this.element.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     return issues;
@@ -295,7 +299,7 @@ export interface StructureDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * Allows filtering of structure definitions that are appropriate for use versus not.
    */
-  status: PublicationStatusCodeType|null;
+  status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * Allows filtering of structure definitions that are appropriate for use versus not.
    */
@@ -347,7 +351,7 @@ export interface StructureDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * Defines the kind of structure that this definition is describing.
    */
-  kind: StructureDefinitionKindCodeType|null;
+  kind: fhir.FhirCode<StructureDefinitionKindCodeType>|string|undefined;
   /**
    * Abstract Resources cannot be instantiated - a concrete sub-type must be used. Abstract datatypes and extensions cannot be used in an instance. For logical models, the exact implication of "abstract" will rest with the author, depending how the logical model is used. Flagging a constraint structure as abstract conveys design intent but makes no difference to how the structure definition is handled. Note that inline declared elements that are given the type "Element" in the StructureDefinition, but have children described, are anonymous concrete types that specialize Element.
    */
@@ -372,7 +376,7 @@ export interface StructureDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * If the definition is a specialization, then it adds new elements in the differential, and the snapshot includes the inherited elements.  If the definition is a constraint, then it cannot define new elements, it can only make new rules about existing content (see [Profiling Resources](profiling.html#resources)).
    */
-  derivation?: TypeDerivationRuleCodeType|undefined;
+  derivation?: fhir.FhirCode<TypeDerivationRuleCodeType>|string|undefined;
   /**
    * A snapshot view is expressed in a standalone form that can be used and interpreted without considering the base StructureDefinition.
    */
@@ -404,7 +408,7 @@ export class StructureDefinition extends fhir.DomainResource {
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this structure definition outside of FHIR, where it is not possible to use the logical URI.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * There may be different structure definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the structure definition with the format [url]|[version].
    */
@@ -424,7 +428,7 @@ export class StructureDefinition extends fhir.DomainResource {
   /**
    * Allows filtering of structure definitions that are appropriate for use versus not.
    */
-  public status: PublicationStatusCodeType|null;
+  public status: fhir.FhirCode<PublicationStatusCodeType>|null;
   /**
    * Allows filtering of structure definitions that are appropriate for use versus not.
    */
@@ -440,7 +444,7 @@ export class StructureDefinition extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  public contact?: fhir.ContactDetail[];
+  public contact: fhir.ContactDetail[];
   /**
    * This description can be used to capture details such as why the structure definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the structure definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the structure definition is presumed to be the predominant language in the place the structure definition was created).
    */
@@ -448,11 +452,11 @@ export class StructureDefinition extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  public useContext?: fhir.UsageContext[];
+  public useContext: fhir.UsageContext[];
   /**
    * It may be possible for the structure definition to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  public jurisdiction?: fhir.CodeableConcept[];
+  public jurisdiction: fhir.CodeableConcept[];
   /**
    * This element does not describe the usage of the structure definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this structure definition.
    */
@@ -464,7 +468,7 @@ export class StructureDefinition extends fhir.DomainResource {
   /**
    * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates nby describing the use of this structure definition, or the content it describes.
    */
-  public keyword?: fhir.Coding[];
+  public keyword: fhir.Coding[];
   /**
    * A StructureDefinition does not need to specify the target it applies to as StructureDefinitions will often be valid across multiple versions of FHIR. FHIR tooling can determine whether a StructureDefinition is consistent with a particular StructureDefinition if desired.
    */
@@ -472,11 +476,11 @@ export class StructureDefinition extends fhir.DomainResource {
   /**
    * An external specification that the content is mapped to.
    */
-  public mapping?: fhir.StructureDefinitionMapping[];
+  public mapping: fhir.StructureDefinitionMapping[];
   /**
    * Defines the kind of structure that this definition is describing.
    */
-  public kind: StructureDefinitionKindCodeType|null;
+  public kind: fhir.FhirCode<StructureDefinitionKindCodeType>|null;
   /**
    * Abstract Resources cannot be instantiated - a concrete sub-type must be used. Abstract datatypes and extensions cannot be used in an instance. For logical models, the exact implication of "abstract" will rest with the author, depending how the logical model is used. Flagging a constraint structure as abstract conveys design intent but makes no difference to how the structure definition is handled. Note that inline declared elements that are given the type "Element" in the StructureDefinition, but have children described, are anonymous concrete types that specialize Element.
    */
@@ -484,11 +488,11 @@ export class StructureDefinition extends fhir.DomainResource {
   /**
    * Identifies the types of resource or data type elements to which the extension can be applied.
    */
-  public context?: fhir.StructureDefinitionContext[];
+  public context: fhir.StructureDefinitionContext[];
   /**
    * The rules are only evaluated when the extension is present. When evaluating the invariant, the FHIRPath focus is the element that holds the extension, and %extension refers to the extension itself.
    */
-  public contextInvariant?: fhir.FhirString[];
+  public contextInvariant: fhir.FhirString[];
   /**
    * Note that in the case of constraints, the type could be determined by chasing through the baseDefinition references until a concrete structure (derivation = specialization) is reached, or by looking at the path of the first element in the snapshot - if present - but providing the type directly makes for simpler tooling and indexing. 
    * The type must match the elements defined in the differential and the snapshot. For all FHIR defined types, the path name of the element will start with the type name. For logical models, where the type is a URL, the type name SHOULD start with the tail of the type URL where required.
@@ -501,7 +505,7 @@ export class StructureDefinition extends fhir.DomainResource {
   /**
    * If the definition is a specialization, then it adds new elements in the differential, and the snapshot includes the inherited elements.  If the definition is a constraint, then it cannot define new elements, it can only make new rules about existing content (see [Profiling Resources](profiling.html#resources)).
    */
-  public derivation?: TypeDerivationRuleCodeType|undefined;
+  public derivation?: fhir.FhirCode<TypeDerivationRuleCodeType>|undefined;
   /**
    * A snapshot view is expressed in a standalone form that can be used and interpreted without considering the base StructureDefinition.
    */
@@ -524,7 +528,7 @@ export class StructureDefinition extends fhir.DomainResource {
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
@@ -543,7 +547,7 @@ export class StructureDefinition extends fhir.DomainResource {
     if (source['fhirVersion']) { this.fhirVersion = new fhir.FhirCode({value: source.fhirVersion}); }
     if (source['mapping']) { this.mapping = source.mapping.map((x) => new fhir.StructureDefinitionMapping(x)); }
     else { this.mapping = []; }
-    if (source['kind']) { this.kind = source.kind; }
+    if (source['kind']) { this.kind = new fhir.FhirCode<StructureDefinitionKindCodeType>({value: source.kind}); }
     else { this.kind = null; }
     if (source['abstract']) { this.abstract = new fhir.FhirBoolean({value: source.abstract}); }
     else { this.abstract = null; }
@@ -554,45 +558,45 @@ export class StructureDefinition extends fhir.DomainResource {
     if (source['type']) { this.type = new fhir.FhirUri({value: source.type}); }
     else { this.type = null; }
     if (source['baseDefinition']) { this.baseDefinition = new fhir.FhirCanonical({value: source.baseDefinition}); }
-    if (source['derivation']) { this.derivation = source.derivation; }
+    if (source['derivation']) { this.derivation = new fhir.FhirCode<TypeDerivationRuleCodeType>({value: source.derivation}); }
     if (source['snapshot']) { this.snapshot = new fhir.StructureDefinitionSnapshot(source.snapshot); }
     if (source['differential']) { this.differential = new fhir.StructureDefinitionDifferential(source.differential); }
   }
   /**
    * Required-bound Value Set for status (StructureDefinition.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Extensible-bound Value Set for keyword (StructureDefinition.keyword)
    */
-  public static keywordExtensibleCoding():DefinitionUseCodingType {
+  public static get keywordExtensibleCodings() {
     return DefinitionUseCodings;
   }
   /**
    * Required-bound Value Set for fhirVersion (StructureDefinition.fhirVersion)
    */
-  public static fhirVersionRequiredCoding():FHIRVersionCodingType {
-    return FHIRVersionCodings;
+  public static get fhirVersionRequiredCodes() {
+    return FHIRVersionCodes;
   }
   /**
    * Required-bound Value Set for kind (StructureDefinition.kind)
    */
-  public static kindRequiredCoding():StructureDefinitionKindCodingType {
-    return StructureDefinitionKindCodings;
+  public static get kindRequiredCodes() {
+    return StructureDefinitionKindCodes;
   }
   /**
    * Extensible-bound Value Set for type (StructureDefinition.type)
    */
-  public static typeExtensibleCoding():DefinedTypesCodingType {
+  public static get typeExtensibleCodings() {
     return DefinedTypesCodings;
   }
   /**
    * Required-bound Value Set for derivation (StructureDefinition.derivation)
    */
-  public static derivationRequiredCoding():TypeDerivationRuleCodingType {
-    return TypeDerivationRuleCodings;
+  public static get derivationRequiredCodes() {
+    return TypeDerivationRuleCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -600,22 +604,26 @@ export class StructureDefinition extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"StructureDefinition" fhir: StructureDefinition.resourceType:"StructureDefinition"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"StructureDefinition" fhir: StructureDefinition.resourceType:"StructureDefinition"' });
     }
     if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property url:fhir.FhirUri fhir: StructureDefinition.url:uri', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url:fhir.FhirUri fhir: StructureDefinition.url:uri' });
     }
     if (this["url"]) { issues.push(...this.url.doModelValidation()); }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["version"]) { issues.push(...this.version.doModelValidation()); }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property name:fhir.FhirString fhir: StructureDefinition.name:string', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: StructureDefinition.name:string' });
     }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (this["title"]) { issues.push(...this.title.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:PublicationStatusCodeType fhir: StructureDefinition.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: StructureDefinition.status:code' });
     }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: StructureDefinition.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
     if (this["date"]) { issues.push(...this.date.doModelValidation()); }
     if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
@@ -626,22 +634,33 @@ export class StructureDefinition extends fhir.DomainResource {
     if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
     if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
     if (this["keyword"]) { this.keyword.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['fhirVersion'] && (!Object.values(FHIRVersionCodes).includes(this.fhirVersion as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property fhirVersion?:fhir.FhirCode fhir: StructureDefinition.fhirVersion:code Required binding to: FHIRVersion' });
+    }
     if (this["fhirVersion"]) { issues.push(...this.fhirVersion.doModelValidation()); }
     if (this["mapping"]) { this.mapping.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['kind']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property kind:StructureDefinitionKindCodeType fhir: StructureDefinition.kind:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind:fhir.FhirCode<StructureDefinitionKindCodeType> fhir: StructureDefinition.kind:code' });
     }
+    if (this['kind'] && (!Object.values(StructureDefinitionKindCodes).includes(this.kind as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind:fhir.FhirCode<StructureDefinitionKindCodeType> fhir: StructureDefinition.kind:code Required binding to: StructureDefinitionKind' });
+    }
+    if (this["kind"]) { issues.push(...this.kind.doModelValidation()); }
     if (!this['abstract']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property abstract:fhir.FhirBoolean fhir: StructureDefinition.abstract:boolean', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property abstract:fhir.FhirBoolean fhir: StructureDefinition.abstract:boolean' });
     }
     if (this["abstract"]) { issues.push(...this.abstract.doModelValidation()); }
     if (this["context"]) { this.context.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["contextInvariant"]) { this.contextInvariant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property type:fhir.FhirUri fhir: StructureDefinition.type:uri', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirUri fhir: StructureDefinition.type:uri' });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (this["baseDefinition"]) { issues.push(...this.baseDefinition.doModelValidation()); }
+    if (this['derivation'] && (!Object.values(TypeDerivationRuleCodes).includes(this.derivation as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property derivation?:fhir.FhirCode<TypeDerivationRuleCodeType> fhir: StructureDefinition.derivation:code Required binding to: TypeDerivationRule' });
+    }
+    if (this["derivation"]) { issues.push(...this.derivation.doModelValidation()); }
     if (this["snapshot"]) { issues.push(...this.snapshot.doModelValidation()); }
     if (this["differential"]) { issues.push(...this.differential.doModelValidation()); }
     return issues;

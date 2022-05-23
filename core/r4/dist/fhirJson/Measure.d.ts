@@ -175,6 +175,10 @@ export interface Measure extends fhir.DomainResource {
      */
     status: 'active' | 'draft' | 'retired' | 'unknown' | null;
     /**
+     * Extended properties for primitive element: Measure.status
+     */
+    _status?: fhir.FhirElement;
+    /**
      * Allows filtering of measures that are appropriate for use versus not.
      */
     experimental?: boolean | undefined;

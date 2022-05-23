@@ -15,13 +15,25 @@ export interface GraphDefinitionLinkTargetCompartment extends fhir.BackboneEleme
    */
   use: 'condition'|'requirement'|null;
   /**
+   * Extended properties for primitive element: GraphDefinition.link.target.compartment.use
+   */
+  _use?:fhir.FhirElement;
+  /**
    * Identifies the compartment.
    */
   code: 'Device'|'Encounter'|'Patient'|'Practitioner'|'RelatedPerson'|null;
   /**
+   * Extended properties for primitive element: GraphDefinition.link.target.compartment.code
+   */
+  _code?:fhir.FhirElement;
+  /**
    * identical | matching | different | no-rule | custom.
    */
   rule: 'custom'|'different'|'identical'|'matching'|null;
+  /**
+   * Extended properties for primitive element: GraphDefinition.link.target.compartment.rule
+   */
+  _rule?:fhir.FhirElement;
   /**
    * Custom rule, as a FHIRPath expression.
    */
@@ -166,6 +178,10 @@ export interface GraphDefinition extends fhir.DomainResource {
    * Allows filtering of graph definitions that are appropriate for use versus not.
    */
   status: 'active'|'draft'|'retired'|'unknown'|null;
+  /**
+   * Extended properties for primitive element: GraphDefinition.status
+   */
+  _status?:fhir.FhirElement;
   /**
    * Allows filtering of graph definitions that are appropriate for use versus not.
    */

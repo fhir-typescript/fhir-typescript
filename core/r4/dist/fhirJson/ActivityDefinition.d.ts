@@ -8,6 +8,10 @@ export interface ActivityDefinitionParticipant extends fhir.BackboneElement {
      */
     type: 'device' | 'patient' | 'practitioner' | 'related-person' | null;
     /**
+     * Extended properties for primitive element: ActivityDefinition.participant.type
+     */
+    _type?: fhir.FhirElement;
+    /**
      * The role the participant should play in performing the described action.
      */
     role?: fhir.CodeableConcept | undefined;
@@ -87,6 +91,10 @@ export interface ActivityDefinition extends fhir.DomainResource {
      * Allows filtering of activity definitions that are appropriate for use versus not.
      */
     status: 'active' | 'draft' | 'retired' | 'unknown' | null;
+    /**
+     * Extended properties for primitive element: ActivityDefinition.status
+     */
+    _status?: fhir.FhirElement;
     /**
      * Allows filtering of activity definitions that are appropriate for use versus not.
      */
@@ -240,9 +248,17 @@ export interface ActivityDefinition extends fhir.DomainResource {
      */
     intent?: 'directive' | 'filler-order' | 'instance-order' | 'option' | 'order' | 'original-order' | 'plan' | 'proposal' | 'reflex-order' | undefined;
     /**
+     * Extended properties for primitive element: ActivityDefinition.intent
+     */
+    _intent?: fhir.FhirElement;
+    /**
      * Indicates how quickly the activity  should be addressed with respect to other requests.
      */
     priority?: 'asap' | 'routine' | 'stat' | 'urgent' | undefined;
+    /**
+     * Extended properties for primitive element: ActivityDefinition.priority
+     */
+    _priority?: fhir.FhirElement;
     /**
      * This element is not intended to be used to communicate a decision support response to cancel an order in progress. That should be done with the "remove" type of a PlanDefinition or RequestGroup.
      */

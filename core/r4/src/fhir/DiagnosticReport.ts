@@ -67,7 +67,7 @@ export class DiagnosticReportMedia extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
     if (!this['link']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property link:fhir.Reference fhir: DiagnosticReport.media.link:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property link:fhir.Reference fhir: DiagnosticReport.media.link:Reference' });
     }
     if (this["link"]) { issues.push(...this.link.doModelValidation()); }
     return issues;
@@ -92,7 +92,7 @@ export interface DiagnosticReportArgs extends fhir.DomainResourceArgs {
   /**
    * The status of the diagnostic report.
    */
-  status: DiagnosticReportStatusCodeType|null;
+  status: fhir.FhirCode<DiagnosticReportStatusCodeType>|string|undefined;
   /**
    * Multiple categories are allowed using various categorization schemes.   The level of granularity is defined by the category concepts in the value set. More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in DiagnosticReport.code.
    */
@@ -178,19 +178,19 @@ export class DiagnosticReport extends fhir.DomainResource {
   /**
    * Usually assigned by the Information System of the diagnostic service provider (filler id).
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * Note: Usually there is one test request for each result, however in some circumstances multiple test requests may be represented using a single test result resource. Note that there are also cases where one request leads to multiple reports.
    */
-  public basedOn?: fhir.Reference[];
+  public basedOn: fhir.Reference[];
   /**
    * The status of the diagnostic report.
    */
-  public status: DiagnosticReportStatusCodeType|null;
+  public status: fhir.FhirCode<DiagnosticReportStatusCodeType>|null;
   /**
    * Multiple categories are allowed using various categorization schemes.   The level of granularity is defined by the category concepts in the value set. More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in DiagnosticReport.code.
    */
-  public category?: fhir.CodeableConcept[];
+  public category: fhir.CodeableConcept[];
   /**
    * A code or name that describes this diagnostic report.
    */
@@ -218,27 +218,27 @@ export class DiagnosticReport extends fhir.DomainResource {
   /**
    * This is not necessarily the source of the atomic data items or the entity that interpreted the results. It is the entity that takes responsibility for the clinical report.
    */
-  public performer?: fhir.Reference[];
+  public performer: fhir.Reference[];
   /**
    * Might not be the same entity that takes responsibility for the clinical report.
    */
-  public resultsInterpreter?: fhir.Reference[];
+  public resultsInterpreter: fhir.Reference[];
   /**
    * If the specimen is sufficiently specified with a code in the test result name, then this additional data may be redundant. If there are multiple specimens, these may be represented per observation or group.
    */
-  public specimen?: fhir.Reference[];
+  public specimen: fhir.Reference[];
   /**
    * Observations can contain observations.
    */
-  public result?: fhir.Reference[];
+  public result: fhir.Reference[];
   /**
    * ImagingStudy and the image element are somewhat overlapping - typically, the list of image references in the image element will also be found in one of the imaging study resources. However, each caters to different types of displays for different types of purposes. Neither, either, or both may be provided.
    */
-  public imagingStudy?: fhir.Reference[];
+  public imagingStudy: fhir.Reference[];
   /**
    * A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest).
    */
-  public media?: fhir.DiagnosticReportMedia[];
+  public media: fhir.DiagnosticReportMedia[];
   /**
    * Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.
    */
@@ -246,11 +246,11 @@ export class DiagnosticReport extends fhir.DomainResource {
   /**
    * One or more codes that represent the summary conclusion (interpretation/impression) of the diagnostic report.
    */
-  public conclusionCode?: fhir.CodeableConcept[];
+  public conclusionCode: fhir.CodeableConcept[];
   /**
    * "application/pdf" is recommended as the most reliable and interoperable in this context.
    */
-  public presentedForm?: fhir.Attachment[];
+  public presentedForm: fhir.Attachment[];
   /**
    * Default constructor for DiagnosticReport - initializes any required elements to null if a value is not provided.
    */
@@ -261,7 +261,7 @@ export class DiagnosticReport extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x)); }
     else { this.basedOn = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<DiagnosticReportStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
@@ -294,13 +294,13 @@ export class DiagnosticReport extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (DiagnosticReport.status)
    */
-  public static statusRequiredCoding():DiagnosticReportStatusCodingType {
-    return DiagnosticReportStatusCodings;
+  public static get statusRequiredCodes() {
+    return DiagnosticReportStatusCodes;
   }
   /**
    * Preferred-bound Value Set for code (DiagnosticReport.code)
    */
-  public static codePreferredCoding():ReportCodesCodingType {
+  public static get codePreferredCodings() {
     return ReportCodesCodings;
   }
   /**
@@ -309,16 +309,20 @@ export class DiagnosticReport extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"DiagnosticReport" fhir: DiagnosticReport.resourceType:"DiagnosticReport"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"DiagnosticReport" fhir: DiagnosticReport.resourceType:"DiagnosticReport"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property status:DiagnosticReportStatusCodeType fhir: DiagnosticReport.status:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<DiagnosticReportStatusCodeType> fhir: DiagnosticReport.status:code' });
     }
+    if (this['status'] && (!Object.values(DiagnosticReportStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<DiagnosticReportStatusCodeType> fhir: DiagnosticReport.status:code Required binding to: DiagnosticReportStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: DiagnosticReport.code:CodeableConcept', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: DiagnosticReport.code:CodeableConcept' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }

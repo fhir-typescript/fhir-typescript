@@ -1,17 +1,8 @@
 import * as fhir from '../fhir.js';
-import { TestscriptProfileOriginTypesCodingType } from '../fhirValueSets/TestscriptProfileOriginTypesCodings.js';
-import { TestscriptProfileDestinationTypesCodingType } from '../fhirValueSets/TestscriptProfileDestinationTypesCodings.js';
-import { TestscriptOperationCodesCodingType } from '../fhirValueSets/TestscriptOperationCodesCodings.js';
-import { DefinedTypesCodingType } from '../fhirValueSets/DefinedTypesCodings.js';
-import { HttpOperationsCodingType } from '../fhirValueSets/HttpOperationsCodings.js';
 import { HttpOperationsCodeType } from '../fhirValueSets/HttpOperationsCodes.js';
-import { AssertDirectionCodesCodingType } from '../fhirValueSets/AssertDirectionCodesCodings.js';
 import { AssertDirectionCodesCodeType } from '../fhirValueSets/AssertDirectionCodesCodes.js';
-import { AssertOperatorCodesCodingType } from '../fhirValueSets/AssertOperatorCodesCodings.js';
 import { AssertOperatorCodesCodeType } from '../fhirValueSets/AssertOperatorCodesCodes.js';
-import { AssertResponseCodeTypesCodingType } from '../fhirValueSets/AssertResponseCodeTypesCodings.js';
 import { AssertResponseCodeTypesCodeType } from '../fhirValueSets/AssertResponseCodeTypesCodes.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 /**
  * Valid arguments for the TestScriptOrigin type.
@@ -53,7 +44,10 @@ export declare class TestScriptOrigin extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for profile (TestScript.origin.profile)
      */
-    static profileExtensibleCoding(): TestscriptProfileOriginTypesCodingType;
+    static get profileExtensibleCodings(): {
+        readonly FHIRClient: fhir.Coding;
+        readonly FHIRSDCFormFiller: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -99,7 +93,12 @@ export declare class TestScriptDestination extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for profile (TestScript.destination.profile)
      */
-    static profileExtensibleCoding(): TestscriptProfileDestinationTypesCodingType;
+    static get profileExtensibleCodings(): {
+        readonly FHIRSDCFormManager: fhir.Coding;
+        readonly FHIRSDCFormProcessor: fhir.Coding;
+        readonly FHIRSDCFormReceiver: fhir.Coding;
+        readonly FHIRServer: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -199,7 +198,7 @@ export declare class TestScriptMetadataCapability extends fhir.BackboneElement {
     /**
      * Which origin server these requirements apply to.
      */
-    origin?: fhir.FhirInteger[];
+    origin: fhir.FhirInteger[];
     /**
      * Which server these requirements apply to.
      */
@@ -207,7 +206,7 @@ export declare class TestScriptMetadataCapability extends fhir.BackboneElement {
     /**
      * Links to the FHIR specification that describes this interaction and the resources involved in more detail.
      */
-    link?: fhir.FhirUri[];
+    link: fhir.FhirUri[];
     /**
      * The conformance statement of the server has to contain at a minimum the contents of the reference pointed to by this element.
      */
@@ -245,7 +244,7 @@ export declare class TestScriptMetadata extends fhir.BackboneElement {
     /**
      * A link to the FHIR specification that this test is covering.
      */
-    link?: fhir.TestScriptMetadataLink[];
+    link: fhir.TestScriptMetadataLink[];
     /**
      * When the metadata capabilities section is defined at TestScript.metadata or at TestScript.setup.metadata, and the server's conformance statement does not contain the elements defined in the minimal conformance statement, then all the tests in the TestScript are skipped.  When the metadata capabilities section is defined at TestScript.test.metadata and the server's conformance statement does not contain the elements defined in the minimal conformance statement, then only that test is skipped.  The "metadata.capabilities.required" and "metadata.capabilities.validated" elements only indicate whether the capabilities are the primary focus of the test script or not.  They do not impact the skipping logic.  Capabilities whose "metadata.capabilities.validated" flag is true are the primary focus of the test script.
      */
@@ -468,7 +467,7 @@ export interface TestScriptSetupActionOperationArgs extends fhir.BackboneElement
     /**
      * The primary purpose of the explicit HTTP method is support of  HTTP POST method invocation of the FHIR search. Other uses will include support of negative testing.
      */
-    method?: HttpOperationsCodeType | undefined;
+    method?: fhir.FhirCode<HttpOperationsCodeType> | string | undefined;
     /**
      * If absent, test engine will send the message.  When present, test engine will not send the request message but will wait for the request message to be sent from this origin server.
      */
@@ -545,7 +544,7 @@ export declare class TestScriptSetupActionOperation extends fhir.BackboneElement
     /**
      * The primary purpose of the explicit HTTP method is support of  HTTP POST method invocation of the FHIR search. Other uses will include support of negative testing.
      */
-    method?: HttpOperationsCodeType | undefined;
+    method?: fhir.FhirCode<HttpOperationsCodeType> | undefined;
     /**
      * If absent, test engine will send the message.  When present, test engine will not send the request message but will wait for the request message to be sent from this origin server.
      */
@@ -557,7 +556,7 @@ export declare class TestScriptSetupActionOperation extends fhir.BackboneElement
     /**
      * This gives control to test-script writers to set headers explicitly based on test requirements.  It will allow for testing using:  - "If-Modified-Since" and "If-None-Match" headers.  See http://build.fhir.org/http.html#2.1.0.5.1 - "If-Match" header.  See http://build.fhir.org/http.html#2.1.0.11 - Conditional Create using "If-None-Exist".  See http://build.fhir.org/http.html#2.1.0.13.1 - Invalid "Content-Type" header for negative testing. - etc.
      */
-    requestHeader?: fhir.TestScriptSetupActionOperationRequestHeader[];
+    requestHeader: fhir.TestScriptSetupActionOperationRequestHeader[];
     /**
      * If a requestId is supplied, then the resulting request (both headers and body) is mapped to the fixture ID (which may be entirely new and previously undeclared) designated by "requestId".  If requestId is not specified, it is the test engine's responsibility to store the request and use it as the requestId in subsequent assertions when assertion path and/or headerField is specified, direction is equal to request, and the requestId in not specified.
      */
@@ -585,15 +584,284 @@ export declare class TestScriptSetupActionOperation extends fhir.BackboneElement
     /**
      * Extensible-bound Value Set for type (TestScript.setup.action.operation.type)
      */
-    static typeExtensibleCoding(): TestscriptOperationCodesCodingType;
+    static get typeExtensibleCodings(): {
+        readonly Apply: fhir.Coding;
+        readonly Batch: fhir.Coding;
+        readonly Capabilities: fhir.Coding;
+        readonly Closure: fhir.Coding;
+        readonly Conforms: fhir.Coding;
+        readonly Create: fhir.Coding;
+        readonly DataRequirements: fhir.Coding;
+        readonly Delete: fhir.Coding;
+        readonly DeleteCondMultiple: fhir.Coding;
+        readonly DeleteCondSingle: fhir.Coding;
+        readonly Document: fhir.Coding;
+        readonly Evaluate: fhir.Coding;
+        readonly EvaluateMeasure: fhir.Coding;
+        readonly Everything: fhir.Coding;
+        readonly Expand: fhir.Coding;
+        readonly Find: fhir.Coding;
+        readonly FindMatches: fhir.Coding;
+        readonly Graphql: fhir.Coding;
+        readonly History: fhir.Coding;
+        readonly Implements: fhir.Coding;
+        readonly Lastn: fhir.Coding;
+        readonly Lookup: fhir.Coding;
+        readonly Match: fhir.Coding;
+        readonly Meta: fhir.Coding;
+        readonly MetaAdd: fhir.Coding;
+        readonly MetaDelete: fhir.Coding;
+        readonly Patch: fhir.Coding;
+        readonly Populate: fhir.Coding;
+        readonly Populatehtml: fhir.Coding;
+        readonly Populatelink: fhir.Coding;
+        readonly ProcessMessage: fhir.Coding;
+        readonly Questionnaire: fhir.Coding;
+        readonly Read: fhir.Coding;
+        readonly Search: fhir.Coding;
+        readonly Stats: fhir.Coding;
+        readonly Subset: fhir.Coding;
+        readonly Subsumes: fhir.Coding;
+        readonly Transaction: fhir.Coding;
+        readonly Transform: fhir.Coding;
+        readonly Translate: fhir.Coding;
+        readonly Update: fhir.Coding;
+        readonly UpdateCreate: fhir.Coding;
+        readonly Validate: fhir.Coding;
+        readonly ValidateCode: fhir.Coding;
+        readonly Vread: fhir.Coding;
+    };
     /**
      * Required-bound Value Set for resource (TestScript.setup.action.operation.resource)
      */
-    static resourceRequiredCoding(): DefinedTypesCodingType;
+    static get resourceRequiredCodes(): {
+        readonly Account: "Account";
+        readonly ActivityDefinition: "ActivityDefinition";
+        readonly Address: "Address";
+        readonly AdverseEvent: "AdverseEvent";
+        readonly Age: "Age";
+        readonly AllergyIntolerance: "AllergyIntolerance";
+        readonly Annotation: "Annotation";
+        readonly Appointment: "Appointment";
+        readonly AppointmentResponse: "AppointmentResponse";
+        readonly Attachment: "Attachment";
+        readonly AuditEvent: "AuditEvent";
+        readonly BackboneElement: "BackboneElement";
+        readonly Base64Binary: "base64Binary";
+        readonly Basic: "Basic";
+        readonly Binary: "Binary";
+        readonly BiologicallyDerivedProduct: "BiologicallyDerivedProduct";
+        readonly BodyStructure: "BodyStructure";
+        readonly VALBoolean: "boolean";
+        readonly Bundle: "Bundle";
+        readonly Canonical: "canonical";
+        readonly CapabilityStatement: "CapabilityStatement";
+        readonly CarePlan: "CarePlan";
+        readonly CareTeam: "CareTeam";
+        readonly CatalogEntry: "CatalogEntry";
+        readonly ChargeItem: "ChargeItem";
+        readonly ChargeItemDefinition: "ChargeItemDefinition";
+        readonly Claim: "Claim";
+        readonly ClaimResponse: "ClaimResponse";
+        readonly ClinicalImpression: "ClinicalImpression";
+        readonly Code: "code";
+        readonly CodeableConcept: "CodeableConcept";
+        readonly CodeSystem: "CodeSystem";
+        readonly Coding: "Coding";
+        readonly Communication: "Communication";
+        readonly CommunicationRequest: "CommunicationRequest";
+        readonly CompartmentDefinition: "CompartmentDefinition";
+        readonly Composition: "Composition";
+        readonly ConceptMap: "ConceptMap";
+        readonly Condition: "Condition";
+        readonly Consent: "Consent";
+        readonly ContactDetail: "ContactDetail";
+        readonly ContactPoint: "ContactPoint";
+        readonly Contract: "Contract";
+        readonly Contributor: "Contributor";
+        readonly Count: "Count";
+        readonly Coverage: "Coverage";
+        readonly CoverageEligibilityRequest: "CoverageEligibilityRequest";
+        readonly CoverageEligibilityResponse: "CoverageEligibilityResponse";
+        readonly DataRequirement: "DataRequirement";
+        readonly Date: "date";
+        /**
+         * Whether or not the test execution will validate the given capabilities of the server in order for this test script to execute.
+         */
+        readonly DateTime: "dateTime";
+        readonly Decimal: "decimal";
+        readonly DetectedIssue: "DetectedIssue";
+        readonly Device: "Device";
+        readonly DeviceDefinition: "DeviceDefinition";
+        readonly DeviceMetric: "DeviceMetric";
+        readonly DeviceRequest: "DeviceRequest";
+        readonly DeviceUseStatement: "DeviceUseStatement";
+        readonly DiagnosticReport: "DiagnosticReport";
+        readonly Distance: "Distance";
+        readonly DocumentManifest: "DocumentManifest";
+        readonly DocumentReference: "DocumentReference";
+        readonly DomainResource: "DomainResource";
+        readonly Dosage: "Dosage";
+        readonly Duration: "Duration";
+        readonly EffectEvidenceSynthesis: "EffectEvidenceSynthesis";
+        readonly VALElement: "Element";
+        readonly ElementDefinition: "ElementDefinition";
+        readonly Encounter: "Encounter";
+        readonly Endpoint: "Endpoint";
+        readonly EnrollmentRequest: "EnrollmentRequest";
+        readonly EnrollmentResponse: "EnrollmentResponse";
+        readonly EpisodeOfCare: "EpisodeOfCare";
+        readonly EventDefinition: "EventDefinition";
+        readonly Evidence: "Evidence";
+        readonly EvidenceVariable: "EvidenceVariable";
+        readonly ExampleScenario: "ExampleScenario";
+        readonly ExplanationOfBenefit: "ExplanationOfBenefit";
+        readonly Expression: "Expression";
+        readonly Extension: "Extension";
+        readonly FamilyMemberHistory: "FamilyMemberHistory";
+        readonly Flag: "Flag";
+        readonly Goal: "Goal";
+        readonly GraphDefinition: "GraphDefinition";
+        readonly Group: "Group";
+        readonly GuidanceResponse: "GuidanceResponse";
+        readonly HealthcareService: "HealthcareService";
+        readonly HumanName: "HumanName";
+        readonly Id: "id";
+        readonly Identifier: "Identifier";
+        readonly ImagingStudy: "ImagingStudy";
+        readonly Immunization: "Immunization";
+        readonly ImmunizationEvaluation: "ImmunizationEvaluation";
+        readonly ImmunizationRecommendation: "ImmunizationRecommendation";
+        readonly ImplementationGuide: "ImplementationGuide";
+        readonly Instant: "instant";
+        readonly InsurancePlan: "InsurancePlan";
+        readonly Integer: "integer";
+        readonly Invoice: "Invoice";
+        readonly Library: "Library";
+        readonly Linkage: "Linkage";
+        readonly List: "List";
+        readonly Location: "Location";
+        readonly Markdown: "markdown";
+        readonly MarketingStatus: "MarketingStatus";
+        readonly Measure: "Measure";
+        readonly MeasureReport: "MeasureReport";
+        readonly Media: "Media";
+        readonly Medication: "Medication";
+        readonly MedicationAdministration: "MedicationAdministration";
+        readonly MedicationDispense: "MedicationDispense";
+        readonly MedicationKnowledge: "MedicationKnowledge";
+        readonly MedicationRequest: "MedicationRequest";
+        readonly MedicationStatement: "MedicationStatement";
+        readonly MedicinalProduct: "MedicinalProduct";
+        readonly MedicinalProductAuthorization: "MedicinalProductAuthorization";
+        readonly MedicinalProductContraindication: "MedicinalProductContraindication";
+        readonly MedicinalProductIndication: "MedicinalProductIndication";
+        readonly MedicinalProductIngredient: "MedicinalProductIngredient";
+        readonly MedicinalProductInteraction: "MedicinalProductInteraction";
+        readonly MedicinalProductManufactured: "MedicinalProductManufactured";
+        readonly MedicinalProductPackaged: "MedicinalProductPackaged";
+        readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
+        readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
+        readonly MessageDefinition: "MessageDefinition";
+        readonly MessageHeader: "MessageHeader";
+        readonly Meta: "Meta";
+        readonly MolecularSequence: "MolecularSequence";
+        readonly Money: "Money";
+        readonly MoneyQuantity: "MoneyQuantity";
+        readonly NamingSystem: "NamingSystem";
+        readonly Narrative: "Narrative";
+        readonly NutritionOrder: "NutritionOrder";
+        readonly Observation: "Observation";
+        readonly ObservationDefinition: "ObservationDefinition";
+        readonly Oid: "oid";
+        readonly OperationDefinition: "OperationDefinition";
+        readonly OperationOutcome: "OperationOutcome";
+        readonly Organization: "Organization";
+        readonly OrganizationAffiliation: "OrganizationAffiliation";
+        readonly ParameterDefinition: "ParameterDefinition";
+        readonly Parameters: "Parameters";
+        readonly Patient: "Patient";
+        readonly PaymentNotice: "PaymentNotice";
+        readonly PaymentReconciliation: "PaymentReconciliation";
+        readonly Period: "Period";
+        readonly Person: "Person";
+        readonly PlanDefinition: "PlanDefinition";
+        readonly Population: "Population";
+        readonly PositiveInt: "positiveInt";
+        readonly Practitioner: "Practitioner";
+        readonly PractitionerRole: "PractitionerRole";
+        readonly Procedure: "Procedure";
+        readonly ProdCharacteristic: "ProdCharacteristic";
+        readonly ProductShelfLife: "ProductShelfLife";
+        readonly Provenance: "Provenance";
+        readonly Quantity: "Quantity";
+        readonly Questionnaire: "Questionnaire";
+        readonly QuestionnaireResponse: "QuestionnaireResponse";
+        readonly Range: "Range";
+        readonly Ratio: "Ratio";
+        readonly Reference: "Reference";
+        readonly RelatedArtifact: "RelatedArtifact";
+        readonly RelatedPerson: "RelatedPerson";
+        readonly RequestGroup: "RequestGroup";
+        readonly ResearchDefinition: "ResearchDefinition";
+        readonly ResearchElementDefinition: "ResearchElementDefinition";
+        readonly ResearchStudy: "ResearchStudy";
+        readonly ResearchSubject: "ResearchSubject";
+        readonly Resource: "Resource";
+        readonly RiskAssessment: "RiskAssessment";
+        readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
+        readonly SampledData: "SampledData";
+        readonly Schedule: "Schedule";
+        readonly SearchParameter: "SearchParameter";
+        readonly ServiceRequest: "ServiceRequest";
+        readonly Signature: "Signature";
+        readonly SimpleQuantity: "SimpleQuantity";
+        readonly Slot: "Slot";
+        readonly Specimen: "Specimen";
+        readonly SpecimenDefinition: "SpecimenDefinition";
+        readonly VALString: "string";
+        readonly StructureDefinition: "StructureDefinition";
+        readonly StructureMap: "StructureMap";
+        readonly Subscription: "Subscription";
+        readonly Substance: "Substance";
+        readonly SubstanceAmount: "SubstanceAmount";
+        readonly SubstanceNucleicAcid: "SubstanceNucleicAcid";
+        readonly SubstancePolymer: "SubstancePolymer";
+        readonly SubstanceProtein: "SubstanceProtein";
+        readonly SubstanceReferenceInformation: "SubstanceReferenceInformation";
+        readonly SubstanceSourceMaterial: "SubstanceSourceMaterial";
+        readonly SubstanceSpecification: "SubstanceSpecification";
+        readonly SupplyDelivery: "SupplyDelivery";
+        readonly SupplyRequest: "SupplyRequest";
+        readonly Task: "Task";
+        readonly TerminologyCapabilities: "TerminologyCapabilities";
+        readonly TestReport: "TestReport";
+        readonly TestScript: "TestScript";
+        readonly Time: "time";
+        readonly Timing: "Timing";
+        readonly TriggerDefinition: "TriggerDefinition";
+        readonly UnsignedInt: "unsignedInt";
+        readonly Uri: "uri";
+        readonly Url: "url";
+        readonly UsageContext: "UsageContext";
+        readonly Uuid: "uuid";
+        readonly ValueSet: "ValueSet";
+        readonly VerificationResult: "VerificationResult";
+        readonly VisionPrescription: "VisionPrescription";
+        readonly XHTML: "xhtml";
+    };
     /**
      * Required-bound Value Set for method (TestScript.setup.action.operation.method)
      */
-    static methodRequiredCoding(): HttpOperationsCodingType;
+    static get methodRequiredCodes(): {
+        readonly DELETE: "delete";
+        readonly GET: "get";
+        readonly HEAD: "head";
+        readonly OPTIONS: "options";
+        readonly PATCH: "patch";
+        readonly POST: "post";
+        readonly PUT: "put";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -614,7 +882,7 @@ export interface TestScriptSetupActionAssertArgs extends fhir.BackboneElementArg
     /**
      * If the direction is specified as "response" (the default), then the processing of this assert is against the received response message. If the direction is specified as "request", then the processing of this assert is against the sent request message.
      */
-    direction?: AssertDirectionCodesCodeType | undefined;
+    direction?: fhir.FhirCode<AssertDirectionCodesCodeType> | string | undefined;
     /**
      * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
      */
@@ -650,7 +918,7 @@ export interface TestScriptSetupActionAssertArgs extends fhir.BackboneElementArg
     /**
      * Operators are useful especially for negative testing.  If operator is not specified, then the "equals" operator is assumed; e.g. ```&lt;code&gt;   &lt;assert&gt;  &lt;operator value="in" /&gt;  &lt;responseCode value="200,201,204" /&gt;    &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="notEquals" /&gt;  &lt;response value="okay"/&gt;   &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="greaterThan" /&gt;    &lt;responseHeader&gt;     &lt;field value="Content-Length" /&gt;     &lt;value value="0" /&gt;    &lt;/responseHeader/&gt;   &lt;/assert&gt; &lt;/code&gt; ```.
      */
-    operator?: AssertOperatorCodesCodeType | undefined;
+    operator?: fhir.FhirCode<AssertOperatorCodesCodeType> | string | undefined;
     /**
      * If both "path" and a "fixtureId" are specified, then the path will be evaluated against the request or response body mapped to the fixtureId.  If "path" is specified and a "fixtureId" is not, then the path will be evaluated against the response body of the last operation.  Test engines are to store the request and response body and headers of the last operation at all times for subsequent assertions.
      */
@@ -658,7 +926,7 @@ export interface TestScriptSetupActionAssertArgs extends fhir.BackboneElementArg
     /**
      * If "requestMethod" is specified then it will be used in place of "value". The "requestMethod" will evaluate against the last operation's request HTTP operation.
      */
-    requestMethod?: HttpOperationsCodeType | undefined;
+    requestMethod?: fhir.FhirCode<HttpOperationsCodeType> | string | undefined;
     /**
      * If "requestURL" is specified then it will be used in place of "value". The "requestURL" will evaluate against the last operation's full request URL path string.
      */
@@ -670,7 +938,7 @@ export interface TestScriptSetupActionAssertArgs extends fhir.BackboneElementArg
     /**
      * This is a shorter way of achieving similar verifications via "assert.responseCode".  If you need more control, then use "assert.responseCode"  e.g. &lt;assert&gt;  &lt;contentType value="json" /&gt;  &lt;response value="okay"/&gt; &lt;/assert&gt;.
      */
-    response?: AssertResponseCodeTypesCodeType | undefined;
+    response?: fhir.FhirCode<AssertResponseCodeTypesCodeType> | string | undefined;
     /**
      * To be used with "operator" attribute value. Asserts that the response code equals this value if "operator" is not specified.   If the operator is "in" or "notIn" then the responseCode would be a comma-separated list of values e.g. "200,201". Otherwise, it's expected to be a numeric value.   If "fixture" is not specified, then the "responseBodyId" value of the last operation is assumed.
      */
@@ -711,7 +979,7 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
     /**
      * If the direction is specified as "response" (the default), then the processing of this assert is against the received response message. If the direction is specified as "request", then the processing of this assert is against the sent request message.
      */
-    direction?: AssertDirectionCodesCodeType | undefined;
+    direction?: fhir.FhirCode<AssertDirectionCodesCodeType> | undefined;
     /**
      * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
      */
@@ -747,7 +1015,7 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
     /**
      * Operators are useful especially for negative testing.  If operator is not specified, then the "equals" operator is assumed; e.g. ```&lt;code&gt;   &lt;assert&gt;  &lt;operator value="in" /&gt;  &lt;responseCode value="200,201,204" /&gt;    &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="notEquals" /&gt;  &lt;response value="okay"/&gt;   &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="greaterThan" /&gt;    &lt;responseHeader&gt;     &lt;field value="Content-Length" /&gt;     &lt;value value="0" /&gt;    &lt;/responseHeader/&gt;   &lt;/assert&gt; &lt;/code&gt; ```.
      */
-    operator?: AssertOperatorCodesCodeType | undefined;
+    operator?: fhir.FhirCode<AssertOperatorCodesCodeType> | undefined;
     /**
      * If both "path" and a "fixtureId" are specified, then the path will be evaluated against the request or response body mapped to the fixtureId.  If "path" is specified and a "fixtureId" is not, then the path will be evaluated against the response body of the last operation.  Test engines are to store the request and response body and headers of the last operation at all times for subsequent assertions.
      */
@@ -755,7 +1023,7 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
     /**
      * If "requestMethod" is specified then it will be used in place of "value". The "requestMethod" will evaluate against the last operation's request HTTP operation.
      */
-    requestMethod?: HttpOperationsCodeType | undefined;
+    requestMethod?: fhir.FhirCode<HttpOperationsCodeType> | undefined;
     /**
      * If "requestURL" is specified then it will be used in place of "value". The "requestURL" will evaluate against the last operation's full request URL path string.
      */
@@ -767,7 +1035,7 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
     /**
      * This is a shorter way of achieving similar verifications via "assert.responseCode".  If you need more control, then use "assert.responseCode"  e.g. &lt;assert&gt;  &lt;contentType value="json" /&gt;  &lt;response value="okay"/&gt; &lt;/assert&gt;.
      */
-    response?: AssertResponseCodeTypesCodeType | undefined;
+    response?: fhir.FhirCode<AssertResponseCodeTypesCodeType> | undefined;
     /**
      * To be used with "operator" attribute value. Asserts that the response code equals this value if "operator" is not specified.   If the operator is "in" or "notIn" then the responseCode would be a comma-separated list of values e.g. "200,201". Otherwise, it's expected to be a numeric value.   If "fixture" is not specified, then the "responseBodyId" value of the last operation is assumed.
      */
@@ -795,23 +1063,274 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
     /**
      * Required-bound Value Set for direction (TestScript.setup.action.assert.direction)
      */
-    static directionRequiredCoding(): AssertDirectionCodesCodingType;
+    static get directionRequiredCodes(): {
+        readonly Request: "request";
+        readonly Response: "response";
+    };
     /**
      * Required-bound Value Set for operator (TestScript.setup.action.assert.operator)
      */
-    static operatorRequiredCoding(): AssertOperatorCodesCodingType;
+    static get operatorRequiredCodes(): {
+        readonly Contains: "contains";
+        readonly Empty: "empty";
+        readonly Equals: "equals";
+        readonly Evaluate: "eval";
+        readonly GreaterThan: "greaterThan";
+        readonly In: "in";
+        readonly LessThan: "lessThan";
+        readonly NotContains: "notContains";
+        readonly NotEmpty: "notEmpty";
+        readonly NotEquals: "notEquals";
+        readonly NotIn: "notIn";
+    };
     /**
      * Required-bound Value Set for requestMethod (TestScript.setup.action.assert.requestMethod)
      */
-    static requestMethodRequiredCoding(): HttpOperationsCodingType;
+    static get requestMethodRequiredCodes(): {
+        readonly DELETE: "delete";
+        readonly GET: "get";
+        readonly HEAD: "head";
+        readonly OPTIONS: "options";
+        readonly PATCH: "patch";
+        readonly POST: "post";
+        readonly PUT: "put";
+    };
     /**
      * Required-bound Value Set for resource (TestScript.setup.action.assert.resource)
      */
-    static resourceRequiredCoding(): DefinedTypesCodingType;
+    static get resourceRequiredCodes(): {
+        readonly Account: "Account";
+        readonly ActivityDefinition: "ActivityDefinition";
+        readonly Address: "Address";
+        readonly AdverseEvent: "AdverseEvent";
+        readonly Age: "Age";
+        readonly AllergyIntolerance: "AllergyIntolerance";
+        readonly Annotation: "Annotation";
+        readonly Appointment: "Appointment";
+        readonly AppointmentResponse: "AppointmentResponse";
+        readonly Attachment: "Attachment";
+        readonly AuditEvent: "AuditEvent";
+        readonly BackboneElement: "BackboneElement";
+        readonly Base64Binary: "base64Binary";
+        readonly Basic: "Basic";
+        readonly Binary: "Binary";
+        readonly BiologicallyDerivedProduct: "BiologicallyDerivedProduct";
+        readonly BodyStructure: "BodyStructure";
+        readonly VALBoolean: "boolean";
+        readonly Bundle: "Bundle";
+        readonly Canonical: "canonical";
+        readonly CapabilityStatement: "CapabilityStatement";
+        readonly CarePlan: "CarePlan";
+        readonly CareTeam: "CareTeam";
+        readonly CatalogEntry: "CatalogEntry";
+        readonly ChargeItem: "ChargeItem";
+        readonly ChargeItemDefinition: "ChargeItemDefinition";
+        readonly Claim: "Claim";
+        readonly ClaimResponse: "ClaimResponse";
+        readonly ClinicalImpression: "ClinicalImpression";
+        readonly Code: "code";
+        readonly CodeableConcept: "CodeableConcept";
+        readonly CodeSystem: "CodeSystem";
+        readonly Coding: "Coding";
+        readonly Communication: "Communication";
+        readonly CommunicationRequest: "CommunicationRequest";
+        readonly CompartmentDefinition: "CompartmentDefinition";
+        readonly Composition: "Composition";
+        readonly ConceptMap: "ConceptMap";
+        readonly Condition: "Condition";
+        readonly Consent: "Consent";
+        readonly ContactDetail: "ContactDetail";
+        readonly ContactPoint: "ContactPoint";
+        readonly Contract: "Contract";
+        readonly Contributor: "Contributor";
+        readonly Count: "Count";
+        readonly Coverage: "Coverage";
+        readonly CoverageEligibilityRequest: "CoverageEligibilityRequest";
+        readonly CoverageEligibilityResponse: "CoverageEligibilityResponse";
+        readonly DataRequirement: "DataRequirement";
+        readonly Date: "date";
+        /**
+         * Whether or not the test execution will validate the given capabilities of the server in order for this test script to execute.
+         */
+        readonly DateTime: "dateTime";
+        readonly Decimal: "decimal";
+        readonly DetectedIssue: "DetectedIssue";
+        readonly Device: "Device";
+        readonly DeviceDefinition: "DeviceDefinition";
+        readonly DeviceMetric: "DeviceMetric";
+        readonly DeviceRequest: "DeviceRequest";
+        readonly DeviceUseStatement: "DeviceUseStatement";
+        readonly DiagnosticReport: "DiagnosticReport";
+        readonly Distance: "Distance";
+        readonly DocumentManifest: "DocumentManifest";
+        readonly DocumentReference: "DocumentReference";
+        readonly DomainResource: "DomainResource";
+        readonly Dosage: "Dosage";
+        readonly Duration: "Duration";
+        readonly EffectEvidenceSynthesis: "EffectEvidenceSynthesis";
+        readonly VALElement: "Element";
+        readonly ElementDefinition: "ElementDefinition";
+        readonly Encounter: "Encounter";
+        readonly Endpoint: "Endpoint";
+        readonly EnrollmentRequest: "EnrollmentRequest";
+        readonly EnrollmentResponse: "EnrollmentResponse";
+        readonly EpisodeOfCare: "EpisodeOfCare";
+        readonly EventDefinition: "EventDefinition";
+        readonly Evidence: "Evidence";
+        readonly EvidenceVariable: "EvidenceVariable";
+        readonly ExampleScenario: "ExampleScenario";
+        readonly ExplanationOfBenefit: "ExplanationOfBenefit";
+        readonly Expression: "Expression";
+        readonly Extension: "Extension";
+        readonly FamilyMemberHistory: "FamilyMemberHistory";
+        readonly Flag: "Flag";
+        readonly Goal: "Goal";
+        readonly GraphDefinition: "GraphDefinition";
+        readonly Group: "Group";
+        readonly GuidanceResponse: "GuidanceResponse";
+        readonly HealthcareService: "HealthcareService";
+        readonly HumanName: "HumanName";
+        readonly Id: "id";
+        readonly Identifier: "Identifier";
+        readonly ImagingStudy: "ImagingStudy";
+        readonly Immunization: "Immunization";
+        readonly ImmunizationEvaluation: "ImmunizationEvaluation";
+        readonly ImmunizationRecommendation: "ImmunizationRecommendation";
+        readonly ImplementationGuide: "ImplementationGuide";
+        readonly Instant: "instant";
+        readonly InsurancePlan: "InsurancePlan";
+        readonly Integer: "integer";
+        readonly Invoice: "Invoice";
+        readonly Library: "Library";
+        readonly Linkage: "Linkage";
+        readonly List: "List";
+        readonly Location: "Location";
+        readonly Markdown: "markdown";
+        readonly MarketingStatus: "MarketingStatus";
+        readonly Measure: "Measure";
+        readonly MeasureReport: "MeasureReport";
+        readonly Media: "Media";
+        readonly Medication: "Medication";
+        readonly MedicationAdministration: "MedicationAdministration";
+        readonly MedicationDispense: "MedicationDispense";
+        readonly MedicationKnowledge: "MedicationKnowledge";
+        readonly MedicationRequest: "MedicationRequest";
+        readonly MedicationStatement: "MedicationStatement";
+        readonly MedicinalProduct: "MedicinalProduct";
+        readonly MedicinalProductAuthorization: "MedicinalProductAuthorization";
+        readonly MedicinalProductContraindication: "MedicinalProductContraindication";
+        readonly MedicinalProductIndication: "MedicinalProductIndication";
+        readonly MedicinalProductIngredient: "MedicinalProductIngredient";
+        readonly MedicinalProductInteraction: "MedicinalProductInteraction";
+        readonly MedicinalProductManufactured: "MedicinalProductManufactured";
+        readonly MedicinalProductPackaged: "MedicinalProductPackaged";
+        readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
+        readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
+        readonly MessageDefinition: "MessageDefinition";
+        readonly MessageHeader: "MessageHeader";
+        readonly Meta: "Meta";
+        readonly MolecularSequence: "MolecularSequence";
+        readonly Money: "Money";
+        readonly MoneyQuantity: "MoneyQuantity";
+        readonly NamingSystem: "NamingSystem";
+        readonly Narrative: "Narrative";
+        readonly NutritionOrder: "NutritionOrder";
+        readonly Observation: "Observation";
+        readonly ObservationDefinition: "ObservationDefinition";
+        readonly Oid: "oid";
+        readonly OperationDefinition: "OperationDefinition";
+        readonly OperationOutcome: "OperationOutcome";
+        readonly Organization: "Organization";
+        readonly OrganizationAffiliation: "OrganizationAffiliation";
+        readonly ParameterDefinition: "ParameterDefinition";
+        readonly Parameters: "Parameters";
+        readonly Patient: "Patient";
+        readonly PaymentNotice: "PaymentNotice";
+        readonly PaymentReconciliation: "PaymentReconciliation";
+        readonly Period: "Period";
+        readonly Person: "Person";
+        readonly PlanDefinition: "PlanDefinition";
+        readonly Population: "Population";
+        readonly PositiveInt: "positiveInt";
+        readonly Practitioner: "Practitioner";
+        readonly PractitionerRole: "PractitionerRole";
+        readonly Procedure: "Procedure";
+        readonly ProdCharacteristic: "ProdCharacteristic";
+        readonly ProductShelfLife: "ProductShelfLife";
+        readonly Provenance: "Provenance";
+        readonly Quantity: "Quantity";
+        readonly Questionnaire: "Questionnaire";
+        readonly QuestionnaireResponse: "QuestionnaireResponse";
+        readonly Range: "Range";
+        readonly Ratio: "Ratio";
+        readonly Reference: "Reference";
+        readonly RelatedArtifact: "RelatedArtifact";
+        readonly RelatedPerson: "RelatedPerson";
+        readonly RequestGroup: "RequestGroup";
+        readonly ResearchDefinition: "ResearchDefinition";
+        readonly ResearchElementDefinition: "ResearchElementDefinition";
+        readonly ResearchStudy: "ResearchStudy";
+        readonly ResearchSubject: "ResearchSubject";
+        readonly Resource: "Resource";
+        readonly RiskAssessment: "RiskAssessment";
+        readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
+        readonly SampledData: "SampledData";
+        readonly Schedule: "Schedule";
+        readonly SearchParameter: "SearchParameter";
+        readonly ServiceRequest: "ServiceRequest";
+        readonly Signature: "Signature";
+        readonly SimpleQuantity: "SimpleQuantity";
+        readonly Slot: "Slot";
+        readonly Specimen: "Specimen";
+        readonly SpecimenDefinition: "SpecimenDefinition";
+        readonly VALString: "string";
+        readonly StructureDefinition: "StructureDefinition";
+        readonly StructureMap: "StructureMap";
+        readonly Subscription: "Subscription";
+        readonly Substance: "Substance";
+        readonly SubstanceAmount: "SubstanceAmount";
+        readonly SubstanceNucleicAcid: "SubstanceNucleicAcid";
+        readonly SubstancePolymer: "SubstancePolymer";
+        readonly SubstanceProtein: "SubstanceProtein";
+        readonly SubstanceReferenceInformation: "SubstanceReferenceInformation";
+        readonly SubstanceSourceMaterial: "SubstanceSourceMaterial";
+        readonly SubstanceSpecification: "SubstanceSpecification";
+        readonly SupplyDelivery: "SupplyDelivery";
+        readonly SupplyRequest: "SupplyRequest";
+        readonly Task: "Task";
+        readonly TerminologyCapabilities: "TerminologyCapabilities";
+        readonly TestReport: "TestReport";
+        readonly TestScript: "TestScript";
+        readonly Time: "time";
+        readonly Timing: "Timing";
+        readonly TriggerDefinition: "TriggerDefinition";
+        readonly UnsignedInt: "unsignedInt";
+        readonly Uri: "uri";
+        readonly Url: "url";
+        readonly UsageContext: "UsageContext";
+        readonly Uuid: "uuid";
+        readonly ValueSet: "ValueSet";
+        readonly VerificationResult: "VerificationResult";
+        readonly VisionPrescription: "VisionPrescription";
+        readonly XHTML: "xhtml";
+    };
     /**
      * Required-bound Value Set for response (TestScript.setup.action.assert.response)
      */
-    static responseRequiredCoding(): AssertResponseCodeTypesCodingType;
+    static get responseRequiredCodes(): {
+        readonly Bad: "bad";
+        readonly Conflict: "conflict";
+        readonly Created: "created";
+        readonly Forbidden: "forbidden";
+        readonly Gone: "gone";
+        readonly MethodNotAllowed: "methodNotAllowed";
+        readonly NoContent: "noContent";
+        readonly NotFound: "notFound";
+        readonly NotModified: "notModified";
+        readonly Okay: "okay";
+        readonly PreconditionFailed: "preconditionFailed";
+        readonly Unprocessable: "unprocessable";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1062,7 +1581,7 @@ export interface TestScriptArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of test scripts that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Allows filtering of test scripts that are appropriate for use versus not.
      */
@@ -1173,7 +1692,7 @@ export declare class TestScript extends fhir.DomainResource {
     /**
      * Allows filtering of test scripts that are appropriate for use versus not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Allows filtering of test scripts that are appropriate for use versus not.
      */
@@ -1189,7 +1708,7 @@ export declare class TestScript extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * This description can be used to capture details such as why the test script was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the test script as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the test script is presumed to be the predominant language in the place the test script was created).
      */
@@ -1197,11 +1716,11 @@ export declare class TestScript extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the test script to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * This element does not describe the usage of the test script. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this test script.
      */
@@ -1213,11 +1732,11 @@ export declare class TestScript extends fhir.DomainResource {
     /**
      * The purpose of this element is to define the profile of an origin element used elsewhere in the script.  Test engines could then use the origin-profile mapping to offer a filtered list of test systems that can serve as the sender for the interaction.
      */
-    origin?: fhir.TestScriptOrigin[];
+    origin: fhir.TestScriptOrigin[];
     /**
      * The purpose of this element is to define the profile of a destination element used elsewhere in the script.  Test engines could then use the destination-profile mapping to offer a filtered list of test systems that can serve as the receiver for the interaction.
      */
-    destination?: fhir.TestScriptDestination[];
+    destination: fhir.TestScriptDestination[];
     /**
      * The required capability must exist and are assumed to function correctly on the FHIR server being tested.
      */
@@ -1225,15 +1744,15 @@ export declare class TestScript extends fhir.DomainResource {
     /**
      * Fixture in the test script - by reference (uri). All fixtures are required for the test script to execute.
      */
-    fixture?: fhir.TestScriptFixture[];
+    fixture: fhir.TestScriptFixture[];
     /**
      * See http://build.fhir.org/resourcelist.html for complete list of resource types.
      */
-    profile?: fhir.Reference[];
+    profile: fhir.Reference[];
     /**
      * Variables would be set based either on XPath/JSONPath expressions against fixtures (static and response), or headerField evaluations against response headers. If variable evaluates to nodelist or anything other than a primitive value, then test engine would report an error.  Variables would be used to perform clean replacements in "operation.params", "operation.requestHeader.value", and "operation.url" element values during operation calls and in "assert.value" during assertion evaluations. This limits the places that test engines would need to look for placeholders "${}".  Variables are scoped to the whole script. They are NOT evaluated at declaration. They are evaluated by test engine when used for substitutions in "operation.params", "operation.requestHeader.value", and "operation.url" element values during operation calls and in "assert.value" during assertion evaluations.  See example testscript-search.xml.
      */
-    variable?: fhir.TestScriptVariable[];
+    variable: fhir.TestScriptVariable[];
     /**
      * A series of required setup operations before tests are executed.
      */
@@ -1241,7 +1760,7 @@ export declare class TestScript extends fhir.DomainResource {
     /**
      * A test in this script.
      */
-    test?: fhir.TestScriptTest[];
+    test: fhir.TestScriptTest[];
     /**
      * A series of operations required to clean up after all the tests are executed (successfully or otherwise).
      */
@@ -1253,7 +1772,12 @@ export declare class TestScript extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (TestScript.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

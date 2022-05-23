@@ -162,11 +162,11 @@ export class SubstanceProtein extends fhir.DomainResource {
   /**
    * The disulphide bond between two cysteine residues either on the same subunit or on two different subunits shall be described. The position of the disulfide bonds in the SubstanceProtein shall be listed in increasing order of subunit number and position within subunit followed by the abbreviation of the amino acids involved. The disulfide linkage positions shall actually contain the amino acid Cysteine at the respective positions.
    */
-  public disulfideLinkage?: fhir.FhirString[];
+  public disulfideLinkage: fhir.FhirString[];
   /**
    * This subclause refers to the description of each subunit constituting the SubstanceProtein. A subunit is a linear sequence of amino acids linked through peptide bonds. The Subunit information shall be provided when the finished SubstanceProtein is a complex of multiple sequences; subunits are not used to delineate domains within a single sequence. Subunits are listed in order of decreasing length; sequences of the same length will be ordered by decreasing molecular weight; subunits that have identical sequences will be repeated multiple times.
    */
-  public subunit?: fhir.SubstanceProteinSubunit[];
+  public subunit: fhir.SubstanceProteinSubunit[];
   /**
    * Default constructor for SubstanceProtein - initializes any required elements to null if a value is not provided.
    */
@@ -186,7 +186,7 @@ export class SubstanceProtein extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"SubstanceProtein" fhir: SubstanceProtein.resourceType:"SubstanceProtein"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"SubstanceProtein" fhir: SubstanceProtein.resourceType:"SubstanceProtein"' });
     }
     if (this["sequenceType"]) { issues.push(...this.sequenceType.doModelValidation()); }
     if (this["numberOfSubunits"]) { issues.push(...this.numberOfSubunits.doModelValidation()); }

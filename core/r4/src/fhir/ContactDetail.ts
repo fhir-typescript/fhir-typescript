@@ -34,7 +34,7 @@ export class ContactDetail extends fhir.FhirElement {
   /**
    * The contact details for the individual (if a name was provided) or the organization.
    */
-  public telecom?: fhir.ContactPoint[];
+  public telecom: fhir.ContactPoint[];
   /**
    * Default constructor for ContactDetail - initializes any required elements to null if a value is not provided.
    */

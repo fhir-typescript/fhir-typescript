@@ -20,7 +20,7 @@ export interface CatalogEntryRelatedEntryArgs extends fhir.BackboneElementArgs {
   /**
    * The type of relation to the related item: child, parent, packageContent, containerPackage, usedIn, uses, requires, etc.
    */
-  relationtype: RelationTypeCodeType|null;
+  relationtype: fhir.FhirCode<RelationTypeCodeType>|string|undefined;
   /**
    * The reference to the related item.
    */
@@ -38,7 +38,7 @@ export class CatalogEntryRelatedEntry extends fhir.BackboneElement {
   /**
    * The type of relation to the related item: child, parent, packageContent, containerPackage, usedIn, uses, requires, etc.
    */
-  public relationtype: RelationTypeCodeType|null;
+  public relationtype: fhir.FhirCode<RelationTypeCodeType>|null;
   /**
    * The reference to the related item.
    */
@@ -48,7 +48,7 @@ export class CatalogEntryRelatedEntry extends fhir.BackboneElement {
    */
   constructor(source:Partial<CatalogEntryRelatedEntryArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['relationtype']) { this.relationtype = source.relationtype; }
+    if (source['relationtype']) { this.relationtype = new fhir.FhirCode<RelationTypeCodeType>({value: source.relationtype}); }
     else { this.relationtype = null; }
     if (source['item']) { this.item = new fhir.Reference(source.item); }
     else { this.item = null; }
@@ -56,8 +56,8 @@ export class CatalogEntryRelatedEntry extends fhir.BackboneElement {
   /**
    * Required-bound Value Set for relationtype (CatalogEntry.relatedEntry.relationtype)
    */
-  public static relationtypeRequiredCoding():RelationTypeCodingType {
-    return RelationTypeCodings;
+  public static get relationtypeRequiredCodes() {
+    return RelationTypeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -65,10 +65,14 @@ export class CatalogEntryRelatedEntry extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['relationtype']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property relationtype:RelationTypeCodeType fhir: CatalogEntry.relatedEntry.relationtype:code', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property relationtype:fhir.FhirCode<RelationTypeCodeType> fhir: CatalogEntry.relatedEntry.relationtype:code' });
     }
+    if (this['relationtype'] && (!Object.values(RelationTypeCodes).includes(this.relationtype as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property relationtype:fhir.FhirCode<RelationTypeCodeType> fhir: CatalogEntry.relatedEntry.relationtype:code Required binding to: RelationType' });
+    }
+    if (this["relationtype"]) { issues.push(...this.relationtype.doModelValidation()); }
     if (!this['item']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property item:fhir.Reference fhir: CatalogEntry.relatedEntry.item:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item:fhir.Reference fhir: CatalogEntry.relatedEntry.item:Reference' });
     }
     if (this["item"]) { issues.push(...this.item.doModelValidation()); }
     return issues;
@@ -109,7 +113,7 @@ export interface CatalogEntryArgs extends fhir.DomainResourceArgs {
   /**
    * Used to support catalog exchange even for unsupported products, e.g. getting list of medications even if not prescribable.
    */
-  status?: PublicationStatusCodeType|undefined;
+  status?: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
    * The time period in which this catalog entry is expected to be active.
    */
@@ -151,7 +155,7 @@ export class CatalogEntry extends fhir.DomainResource {
   /**
    * Used in supporting different identifiers for the same product, e.g. manufacturer code and retailer code.
    */
-  public identifier?: fhir.Identifier[];
+  public identifier: fhir.Identifier[];
   /**
    * The type of item - medication, device, service, protocol or other.
    */
@@ -167,15 +171,15 @@ export class CatalogEntry extends fhir.DomainResource {
   /**
    * Used in supporting related concepts, e.g. NDC to RxNorm.
    */
-  public additionalIdentifier?: fhir.Identifier[];
+  public additionalIdentifier: fhir.Identifier[];
   /**
    * Classes of devices, or ATC for medication.
    */
-  public classification?: fhir.CodeableConcept[];
+  public classification: fhir.CodeableConcept[];
   /**
    * Used to support catalog exchange even for unsupported products, e.g. getting list of medications even if not prescribable.
    */
-  public status?: PublicationStatusCodeType|undefined;
+  public status?: fhir.FhirCode<PublicationStatusCodeType>|undefined;
   /**
    * The time period in which this catalog entry is expected to be active.
    */
@@ -191,15 +195,15 @@ export class CatalogEntry extends fhir.DomainResource {
   /**
    * Used for examplefor Out of Formulary, or any specifics.
    */
-  public additionalCharacteristic?: fhir.CodeableConcept[];
+  public additionalCharacteristic: fhir.CodeableConcept[];
   /**
    * User for example for ATC classification, or.
    */
-  public additionalClassification?: fhir.CodeableConcept[];
+  public additionalClassification: fhir.CodeableConcept[];
   /**
    * Used for example, to point to a substance, or to a device used to administer a medication.
    */
-  public relatedEntry?: fhir.CatalogEntryRelatedEntry[];
+  public relatedEntry: fhir.CatalogEntryRelatedEntry[];
   /**
    * Default constructor for CatalogEntry - initializes any required elements to null if a value is not provided.
    */
@@ -217,7 +221,7 @@ export class CatalogEntry extends fhir.DomainResource {
     else { this.additionalIdentifier = []; }
     if (source['classification']) { this.classification = source.classification.map((x) => new fhir.CodeableConcept(x)); }
     else { this.classification = []; }
-    if (source['status']) { this.status = source.status; }
+    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     if (source['validityPeriod']) { this.validityPeriod = new fhir.Period(source.validityPeriod); }
     if (source['validTo']) { this.validTo = new fhir.FhirDateTime({value: source.validTo}); }
     if (source['lastUpdated']) { this.lastUpdated = new fhir.FhirDateTime({value: source.lastUpdated}); }
@@ -231,8 +235,8 @@ export class CatalogEntry extends fhir.DomainResource {
   /**
    * Required-bound Value Set for status (CatalogEntry.status)
    */
-  public static statusRequiredCoding():PublicationStatusCodingType {
-    return PublicationStatusCodings;
+  public static get statusRequiredCodes() {
+    return PublicationStatusCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -240,20 +244,24 @@ export class CatalogEntry extends fhir.DomainResource {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property resourceType:"CatalogEntry" fhir: CatalogEntry.resourceType:"CatalogEntry"', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"CatalogEntry" fhir: CatalogEntry.resourceType:"CatalogEntry"' });
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["type"]) { issues.push(...this.type.doModelValidation()); }
     if (!this['orderable']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property orderable:fhir.FhirBoolean fhir: CatalogEntry.orderable:boolean', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property orderable:fhir.FhirBoolean fhir: CatalogEntry.orderable:boolean' });
     }
     if (this["orderable"]) { issues.push(...this.orderable.doModelValidation()); }
     if (!this['referencedItem']) {
-      issues.push({ severity: 'error', code: 'required',  diagnostics: 'Missing required property referencedItem:fhir.Reference fhir: CatalogEntry.referencedItem:Reference', });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property referencedItem:fhir.Reference fhir: CatalogEntry.referencedItem:Reference' });
     }
     if (this["referencedItem"]) { issues.push(...this.referencedItem.doModelValidation()); }
     if (this["additionalIdentifier"]) { this.additionalIdentifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this["classification"]) { this.classification.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<PublicationStatusCodeType> fhir: CatalogEntry.status:code Required binding to: PublicationStatus' });
+    }
+    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (this["validityPeriod"]) { issues.push(...this.validityPeriod.doModelValidation()); }
     if (this["validTo"]) { issues.push(...this.validTo.doModelValidation()); }
     if (this["lastUpdated"]) { issues.push(...this.lastUpdated.doModelValidation()); }

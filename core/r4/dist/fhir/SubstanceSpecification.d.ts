@@ -393,7 +393,7 @@ export declare class SubstanceSpecificationStructure extends fhir.BackboneElemen
     /**
      * Applicable for single substances that contain a radionuclide or a non-natural isotopic ratio.
      */
-    isotope?: fhir.SubstanceSpecificationStructureIsotope[];
+    isotope: fhir.SubstanceSpecificationStructureIsotope[];
     /**
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
      */
@@ -401,11 +401,11 @@ export declare class SubstanceSpecificationStructure extends fhir.BackboneElemen
     /**
      * Supporting literature.
      */
-    source?: fhir.Reference[];
+    source: fhir.Reference[];
     /**
      * Molecular structural representation.
      */
-    representation?: fhir.SubstanceSpecificationStructureRepresentation[];
+    representation: fhir.SubstanceSpecificationStructureRepresentation[];
     /**
      * Default constructor for SubstanceSpecificationStructure - initializes any required elements to null if a value is not provided.
      */
@@ -467,7 +467,7 @@ export declare class SubstanceSpecificationCode extends fhir.BackboneElement {
     /**
      * Supporting literature.
      */
-    source?: fhir.Reference[];
+    source: fhir.Reference[];
     /**
      * Default constructor for SubstanceSpecificationCode - initializes any required elements to null if a value is not provided.
      */
@@ -599,31 +599,31 @@ export declare class SubstanceSpecificationName extends fhir.BackboneElement {
     /**
      * Language of the name.
      */
-    language?: fhir.CodeableConcept[];
+    language: fhir.CodeableConcept[];
     /**
      * The use context of this name for example if there is a different name a drug active ingredient as opposed to a food colour additive.
      */
-    domain?: fhir.CodeableConcept[];
+    domain: fhir.CodeableConcept[];
     /**
      * The jurisdiction where this name applies.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * A synonym of this name.
      */
-    synonym?: fhir.SubstanceSpecificationName[];
+    synonym: fhir.SubstanceSpecificationName[];
     /**
      * A translation for this name.
      */
-    translation?: fhir.SubstanceSpecificationName[];
+    translation: fhir.SubstanceSpecificationName[];
     /**
      * Details of the official nature of this name.
      */
-    official?: fhir.SubstanceSpecificationNameOfficial[];
+    official: fhir.SubstanceSpecificationNameOfficial[];
     /**
      * Supporting literature.
      */
-    source?: fhir.Reference[];
+    source: fhir.Reference[];
     /**
      * Default constructor for SubstanceSpecificationName - initializes any required elements to null if a value is not provided.
      */
@@ -733,7 +733,7 @@ export declare class SubstanceSpecificationRelationship extends fhir.BackboneEle
     /**
      * Supporting literature.
      */
-    source?: fhir.Reference[];
+    source: fhir.Reference[];
     /**
      * Default constructor for SubstanceSpecificationRelationship - initializes any required elements to null if a value is not provided.
      */
@@ -863,7 +863,7 @@ export declare class SubstanceSpecification extends fhir.DomainResource {
     /**
      * Supporting literature.
      */
-    source?: fhir.Reference[];
+    source: fhir.Reference[];
     /**
      * Textual comment about this record of a substance.
      */
@@ -871,11 +871,11 @@ export declare class SubstanceSpecification extends fhir.DomainResource {
     /**
      * Moiety, for structural modifications.
      */
-    moiety?: fhir.SubstanceSpecificationMoiety[];
+    moiety: fhir.SubstanceSpecificationMoiety[];
     /**
      * General specifications for this substance, including how it is related to other substances.
      */
-    property?: fhir.SubstanceSpecificationProperty[];
+    property: fhir.SubstanceSpecificationProperty[];
     /**
      * General information detailing this substance.
      */
@@ -887,19 +887,19 @@ export declare class SubstanceSpecification extends fhir.DomainResource {
     /**
      * Codes associated with the substance.
      */
-    code?: fhir.SubstanceSpecificationCode[];
+    code: fhir.SubstanceSpecificationCode[];
     /**
      * Names applicable to this substance.
      */
-    name?: fhir.SubstanceSpecificationName[];
+    name: fhir.SubstanceSpecificationName[];
     /**
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
      */
-    molecularWeight?: fhir.SubstanceSpecificationStructureIsotopeMolecularWeight[];
+    molecularWeight: fhir.SubstanceSpecificationStructureIsotopeMolecularWeight[];
     /**
      * A link between this substance and another, with details of the relationship.
      */
-    relationship?: fhir.SubstanceSpecificationRelationship[];
+    relationship: fhir.SubstanceSpecificationRelationship[];
     /**
      * Data items specific to nucleic acids.
      */

@@ -54,6 +54,10 @@ export interface AdverseEvent extends fhir.DomainResource {
      */
     actuality: 'actual' | 'potential' | null;
     /**
+     * Extended properties for primitive element: AdverseEvent.actuality
+     */
+    _actuality?: fhir.FhirElement;
+    /**
      * The overall type of event, intended for search and filtering purposes.
      */
     category?: fhir.CodeableConcept[] | undefined;

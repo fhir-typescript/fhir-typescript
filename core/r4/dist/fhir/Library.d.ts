@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { PublicationStatusCodingType } from '../fhirValueSets/PublicationStatusCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
-import { LibraryTypeCodingType } from '../fhirValueSets/LibraryTypeCodings.js';
 /**
  * Valid arguments for the Library type.
  */
@@ -39,7 +37,7 @@ export interface LibraryArgs extends fhir.DomainResourceArgs {
     /**
      * Allows filtering of libraries that are appropriate for use vs. not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
      * Allows filtering of librarys that are appropriate for use versus not.
      */
@@ -166,7 +164,7 @@ export declare class Library extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this library outside of FHIR, where it is not possible to use the logical URI.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * There may be different library instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the library with the format [url]|[version].
      */
@@ -186,7 +184,7 @@ export declare class Library extends fhir.DomainResource {
     /**
      * Allows filtering of libraries that are appropriate for use vs. not.
      */
-    status: PublicationStatusCodeType | null;
+    status: fhir.FhirCode<PublicationStatusCodeType> | null;
     /**
      * Allows filtering of librarys that are appropriate for use versus not.
      */
@@ -214,7 +212,7 @@ export declare class Library extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[];
+    contact: fhir.ContactDetail[];
     /**
      * This description can be used to capture details such as why the library was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the library as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the library is presumed to be the predominant language in the place the library was created).
      */
@@ -222,11 +220,11 @@ export declare class Library extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[];
+    useContext: fhir.UsageContext[];
     /**
      * It may be possible for the library to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[];
+    jurisdiction: fhir.CodeableConcept[];
     /**
      * This element does not describe the usage of the library. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this library.
      */
@@ -254,39 +252,39 @@ export declare class Library extends fhir.DomainResource {
     /**
      * Descriptive topics related to the content of the library. Topics provide a high-level categorization of the library that can be useful for filtering and searching.
      */
-    topic?: fhir.CodeableConcept[];
+    topic: fhir.CodeableConcept[];
     /**
      * An individiual or organization primarily involved in the creation and maintenance of the content.
      */
-    author?: fhir.ContactDetail[];
+    author: fhir.ContactDetail[];
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
      */
-    editor?: fhir.ContactDetail[];
+    editor: fhir.ContactDetail[];
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
      */
-    reviewer?: fhir.ContactDetail[];
+    reviewer: fhir.ContactDetail[];
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
      */
-    endorser?: fhir.ContactDetail[];
+    endorser: fhir.ContactDetail[];
     /**
      * Each related artifact is either an attachment, or a reference to another resource, but not both.
      */
-    relatedArtifact?: fhir.RelatedArtifact[];
+    relatedArtifact: fhir.RelatedArtifact[];
     /**
      * The parameter element defines parameters used by the library.
      */
-    parameter?: fhir.ParameterDefinition[];
+    parameter: fhir.ParameterDefinition[];
     /**
      * Describes a set of data that must be provided in order to be able to successfully perform the computations defined by the library.
      */
-    dataRequirement?: fhir.DataRequirement[];
+    dataRequirement: fhir.DataRequirement[];
     /**
      * The content of the library as an Attachment. The content may be a reference to a url, or may be directly embedded as a base-64 string. Either way, the contentType of the attachment determines how to interpret the content.
      */
-    content?: fhir.Attachment[];
+    content: fhir.Attachment[];
     /**
      * Default constructor for Library - initializes any required elements to null if a value is not provided.
      */
@@ -294,11 +292,21 @@ export declare class Library extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (Library.status)
      */
-    static statusRequiredCoding(): PublicationStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Draft: "draft";
+        readonly Retired: "retired";
+        readonly Unknown: "unknown";
+    };
     /**
      * Extensible-bound Value Set for type (Library.type)
      */
-    static typeExtensibleCoding(): LibraryTypeCodingType;
+    static get typeExtensibleCodings(): {
+        readonly AssetCollection: fhir.Coding;
+        readonly LogicLibrary: fhir.Coding;
+        readonly ModelDefinition: fhir.Coding;
+        readonly ModuleDefinition: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

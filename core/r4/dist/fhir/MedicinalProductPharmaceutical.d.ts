@@ -111,7 +111,7 @@ export declare class MedicinalProductPharmaceuticalRouteOfAdministrationTargetSp
     /**
      * A species specific time during which consumption of animal product is not appropriate.
      */
-    withdrawalPeriod?: fhir.MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod[];
+    withdrawalPeriod: fhir.MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod[];
     /**
      * Default constructor for MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies - initializes any required elements to null if a value is not provided.
      */
@@ -189,7 +189,7 @@ export declare class MedicinalProductPharmaceuticalRouteOfAdministration extends
     /**
      * A species for which this route applies.
      */
-    targetSpecies?: fhir.MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies[];
+    targetSpecies: fhir.MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies[];
     /**
      * Default constructor for MedicinalProductPharmaceuticalRouteOfAdministration - initializes any required elements to null if a value is not provided.
      */
@@ -251,7 +251,7 @@ export declare class MedicinalProductPharmaceutical extends fhir.DomainResource 
     /**
      * An identifier for the pharmaceutical medicinal product.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * The administrable dose form, after necessary reconstitution.
      */
@@ -263,15 +263,15 @@ export declare class MedicinalProductPharmaceutical extends fhir.DomainResource 
     /**
      * Ingredient.
      */
-    ingredient?: fhir.Reference[];
+    ingredient: fhir.Reference[];
     /**
      * Accompanying device.
      */
-    device?: fhir.Reference[];
+    device: fhir.Reference[];
     /**
      * Characteristics e.g. a products onset of action.
      */
-    characteristics?: fhir.MedicinalProductPharmaceuticalCharacteristics[];
+    characteristics: fhir.MedicinalProductPharmaceuticalCharacteristics[];
     /**
      * The path by which the pharmaceutical product is taken into or makes contact with the body.
      */

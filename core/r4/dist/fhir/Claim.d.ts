@@ -1,9 +1,5 @@
 import * as fhir from '../fhir.js';
-import { V3ActIncidentCodeCodingType } from '../fhirValueSets/V3ActIncidentCodeCodings.js';
-import { FmStatusCodingType } from '../fhirValueSets/FmStatusCodings.js';
 import { FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
-import { ClaimTypeCodingType } from '../fhirValueSets/ClaimTypeCodings.js';
-import { ClaimUseCodingType } from '../fhirValueSets/ClaimUseCodings.js';
 import { ClaimUseCodeType } from '../fhirValueSets/ClaimUseCodes.js';
 /**
  * Valid arguments for the ClaimRelated type.
@@ -313,7 +309,7 @@ export declare class ClaimDiagnosis extends fhir.BackboneElement {
     /**
      * For example: admitting, primary, secondary, discharge.
      */
-    type?: fhir.CodeableConcept[];
+    type: fhir.CodeableConcept[];
     /**
      * Indication of whether the diagnosis was present on admission to a facility.
      */
@@ -379,7 +375,7 @@ export declare class ClaimProcedure extends fhir.BackboneElement {
     /**
      * For example: primary, secondary.
      */
-    type?: fhir.CodeableConcept[];
+    type: fhir.CodeableConcept[];
     /**
      * Date and optionally time the procedure was performed.
      */
@@ -395,7 +391,7 @@ export declare class ClaimProcedure extends fhir.BackboneElement {
     /**
      * Unique Device Identifiers associated with this line item.
      */
-    udi?: fhir.Reference[];
+    udi: fhir.Reference[];
     /**
      * Default constructor for ClaimProcedure - initializes any required elements to null if a value is not provided.
      */
@@ -469,7 +465,7 @@ export declare class ClaimInsurance extends fhir.BackboneElement {
     /**
      * This value is an alphanumeric string that may be provided over the phone, via text, via paper, or within a ClaimResponse resource and is not a FHIR Identifier.
      */
-    preAuthRef?: fhir.FhirString[];
+    preAuthRef: fhir.FhirString[];
     /**
      * Must not be specified when 'focal=true' for this insurance.
      */
@@ -539,7 +535,12 @@ export declare class ClaimAccident extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for type (Claim.accident.type)
      */
-    static typeExtensibleCoding(): V3ActIncidentCodeCodingType;
+    static get typeExtensibleCodings(): {
+        readonly MotorVehicleAccident: fhir.Coding;
+        readonly SchoolAccident: fhir.Coding;
+        readonly SportingAccident: fhir.Coding;
+        readonly WorkplaceAccident: fhir.Coding;
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -621,11 +622,11 @@ export declare class ClaimItemDetailSubDetail extends fhir.BackboneElement {
     /**
      * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
      */
-    modifier?: fhir.CodeableConcept[];
+    modifier: fhir.CodeableConcept[];
     /**
      * For example: Neonatal program, child dental program or drug users recovery program.
      */
-    programCode?: fhir.CodeableConcept[];
+    programCode: fhir.CodeableConcept[];
     /**
      * The number of repetitions of a service or product.
      */
@@ -645,7 +646,7 @@ export declare class ClaimItemDetailSubDetail extends fhir.BackboneElement {
     /**
      * Unique Device Identifiers associated with this line item.
      */
-    udi?: fhir.Reference[];
+    udi: fhir.Reference[];
     /**
      * Default constructor for ClaimItemDetailSubDetail - initializes any required elements to null if a value is not provided.
      */
@@ -735,11 +736,11 @@ export declare class ClaimItemDetail extends fhir.BackboneElement {
     /**
      * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
      */
-    modifier?: fhir.CodeableConcept[];
+    modifier: fhir.CodeableConcept[];
     /**
      * For example: Neonatal program, child dental program or drug users recovery program.
      */
-    programCode?: fhir.CodeableConcept[];
+    programCode: fhir.CodeableConcept[];
     /**
      * The number of repetitions of a service or product.
      */
@@ -759,11 +760,11 @@ export declare class ClaimItemDetail extends fhir.BackboneElement {
     /**
      * Unique Device Identifiers associated with this line item.
      */
-    udi?: fhir.Reference[];
+    udi: fhir.Reference[];
     /**
      * A claim detail line. Either a simple (a product or service) or a 'group' of sub-details which are simple items.
      */
-    subDetail?: fhir.ClaimItemDetailSubDetail[];
+    subDetail: fhir.ClaimItemDetailSubDetail[];
     /**
      * Default constructor for ClaimItemDetail - initializes any required elements to null if a value is not provided.
      */
@@ -897,19 +898,19 @@ export declare class ClaimItem extends fhir.BackboneElement {
     /**
      * CareTeam members related to this service or product.
      */
-    careTeamSequence?: fhir.FhirPositiveInt[];
+    careTeamSequence: fhir.FhirPositiveInt[];
     /**
      * Diagnosis applicable for this service or product.
      */
-    diagnosisSequence?: fhir.FhirPositiveInt[];
+    diagnosisSequence: fhir.FhirPositiveInt[];
     /**
      * Procedures applicable for this service or product.
      */
-    procedureSequence?: fhir.FhirPositiveInt[];
+    procedureSequence: fhir.FhirPositiveInt[];
     /**
      * Exceptions, special conditions and supporting information applicable for this service or product.
      */
-    informationSequence?: fhir.FhirPositiveInt[];
+    informationSequence: fhir.FhirPositiveInt[];
     /**
      * The type of revenue or cost center providing the product and/or service.
      */
@@ -925,11 +926,11 @@ export declare class ClaimItem extends fhir.BackboneElement {
     /**
      * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or outside of office hours.
      */
-    modifier?: fhir.CodeableConcept[];
+    modifier: fhir.CodeableConcept[];
     /**
      * For example: Neonatal program, child dental program or drug users recovery program.
      */
-    programCode?: fhir.CodeableConcept[];
+    programCode: fhir.CodeableConcept[];
     /**
      * The date or dates when the service or product was supplied, performed or completed.
      */
@@ -965,7 +966,7 @@ export declare class ClaimItem extends fhir.BackboneElement {
     /**
      * Unique Device Identifiers associated with this line item.
      */
-    udi?: fhir.Reference[];
+    udi: fhir.Reference[];
     /**
      * For example: Providing a tooth code, allows an insurer to identify a provider performing a filling on a tooth that was previously removed.
      */
@@ -973,15 +974,15 @@ export declare class ClaimItem extends fhir.BackboneElement {
     /**
      * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
      */
-    subSite?: fhir.CodeableConcept[];
+    subSite: fhir.CodeableConcept[];
     /**
      * This will typically be the encounter the event occurred within, but some activities may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter.
      */
-    encounter?: fhir.Reference[];
+    encounter: fhir.Reference[];
     /**
      * A claim detail line. Either a simple (a product or service) or a 'group' of sub-details which are simple items.
      */
-    detail?: fhir.ClaimItemDetail[];
+    detail: fhir.ClaimItemDetail[];
     /**
      * Default constructor for ClaimItem - initializes any required elements to null if a value is not provided.
      */
@@ -1006,7 +1007,7 @@ export interface ClaimArgs extends fhir.DomainResourceArgs {
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: FmStatusCodeType | null;
+    status: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
      * The majority of jurisdictions use: oral, pharmacy, vision, professional and institutional, or variants on those terms, as the general styles of claims. The valueset is extensible to accommodate other jurisdictional requirements.
      */
@@ -1018,7 +1019,7 @@ export interface ClaimArgs extends fhir.DomainResourceArgs {
     /**
      * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
      */
-    use: ClaimUseCodeType | null;
+    use: fhir.FhirCode<ClaimUseCodeType> | string | undefined;
     /**
      * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual or forecast reimbursement is sought.
      */
@@ -1123,11 +1124,11 @@ export declare class Claim extends fhir.DomainResource {
     /**
      * A unique identifier assigned to this claim.
      */
-    identifier?: fhir.Identifier[];
+    identifier: fhir.Identifier[];
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
-    status: FmStatusCodeType | null;
+    status: fhir.FhirCode<FmStatusCodeType> | null;
     /**
      * The majority of jurisdictions use: oral, pharmacy, vision, professional and institutional, or variants on those terms, as the general styles of claims. The valueset is extensible to accommodate other jurisdictional requirements.
      */
@@ -1139,7 +1140,7 @@ export declare class Claim extends fhir.DomainResource {
     /**
      * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
      */
-    use: ClaimUseCodeType | null;
+    use: fhir.FhirCode<ClaimUseCodeType> | null;
     /**
      * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual or forecast reimbursement is sought.
      */
@@ -1175,7 +1176,7 @@ export declare class Claim extends fhir.DomainResource {
     /**
      * For example,  for the original treatment and follow-up exams.
      */
-    related?: fhir.ClaimRelated[];
+    related: fhir.ClaimRelated[];
     /**
      * Prescription to support the dispensing of pharmacy, device or vision products.
      */
@@ -1199,19 +1200,19 @@ export declare class Claim extends fhir.DomainResource {
     /**
      * The members of the team who provided the products and services.
      */
-    careTeam?: fhir.ClaimCareTeam[];
+    careTeam: fhir.ClaimCareTeam[];
     /**
      * Often there are multiple jurisdiction specific valuesets which are required.
      */
-    supportingInfo?: fhir.ClaimSupportingInfo[];
+    supportingInfo: fhir.ClaimSupportingInfo[];
     /**
      * Information about diagnoses relevant to the claim items.
      */
-    diagnosis?: fhir.ClaimDiagnosis[];
+    diagnosis: fhir.ClaimDiagnosis[];
     /**
      * Procedures performed on the patient relevant to the billing items with the claim.
      */
-    procedure?: fhir.ClaimProcedure[];
+    procedure: fhir.ClaimProcedure[];
     /**
      * All insurance coverages for the patient which may be applicable for reimbursement, of the products and services listed in the claim, are typically provided in the claim to allow insurers to confirm the ordering of the insurance coverages relative to local 'coordination of benefit' rules. One coverage (and only one) with 'focal=true' is to be used in the adjudication of this claim. Coverages appearing before the focal Coverage in the list, and where 'Coverage.subrogation=false', should provide a reference to the ClaimResponse containing the adjudication results of the prior claim.
      */
@@ -1223,7 +1224,7 @@ export declare class Claim extends fhir.DomainResource {
     /**
      * A claim line. Either a simple  product or service or a 'group' of details which can each be a simple items or groups of sub-details.
      */
-    item?: fhir.ClaimItem[];
+    item: fhir.ClaimItem[];
     /**
      * The total value of the all the items in the claim.
      */
@@ -1235,15 +1236,30 @@ export declare class Claim extends fhir.DomainResource {
     /**
      * Required-bound Value Set for status (Claim.status)
      */
-    static statusRequiredCoding(): FmStatusCodingType;
+    static get statusRequiredCodes(): {
+        readonly Active: "active";
+        readonly Cancelled: "cancelled";
+        readonly Draft: "draft";
+        readonly EnteredInError: "entered-in-error";
+    };
     /**
      * Extensible-bound Value Set for type (Claim.type)
      */
-    static typeExtensibleCoding(): ClaimTypeCodingType;
+    static get typeExtensibleCodings(): {
+        readonly Institutional: fhir.Coding;
+        readonly Oral: fhir.Coding;
+        readonly Pharmacy: fhir.Coding;
+        readonly Professional: fhir.Coding;
+        readonly Vision: fhir.Coding;
+    };
     /**
      * Required-bound Value Set for use (Claim.use)
      */
-    static useRequiredCoding(): ClaimUseCodingType;
+    static get useRequiredCodes(): {
+        readonly Claim: "claim";
+        readonly Preauthorization: "preauthorization";
+        readonly Predetermination: "predetermination";
+    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

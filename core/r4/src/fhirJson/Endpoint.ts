@@ -23,6 +23,10 @@ export interface Endpoint extends fhir.DomainResource {
    */
   status: 'active'|'entered-in-error'|'error'|'off'|'suspended'|'test'|null;
   /**
+   * Extended properties for primitive element: Endpoint.status
+   */
+  _status?:fhir.FhirElement;
+  /**
    * For additional connectivity details for the protocol, extensions will be used at this point, as in the XDS example.
    */
   connectionType: fhir.Coding|null;

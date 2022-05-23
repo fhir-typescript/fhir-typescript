@@ -33,6 +33,10 @@ export interface HealthcareServiceAvailableTime extends fhir.BackboneElement {
    */
   daysOfWeek?: ('fri'|'mon'|'sat'|'sun'|'thu'|'tue'|'wed')[]|undefined;
   /**
+   * Extended properties for primitive element: HealthcareService.availableTime.daysOfWeek
+   */
+  _daysOfWeek?:(fhir.FhirElement|null)[];
+  /**
    * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
    */
   allDay?: boolean|undefined;

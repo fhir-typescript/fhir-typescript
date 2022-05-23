@@ -101,7 +101,7 @@ export declare class MedicinalProductContraindication extends fhir.DomainResourc
     /**
      * The medication for which this is an indication.
      */
-    subject?: fhir.Reference[];
+    subject: fhir.Reference[];
     /**
      * The disease, symptom or procedure for the contraindication.
      */
@@ -113,19 +113,19 @@ export declare class MedicinalProductContraindication extends fhir.DomainResourc
     /**
      * A comorbidity (concurrent condition) or coinfection.
      */
-    comorbidity?: fhir.CodeableConcept[];
+    comorbidity: fhir.CodeableConcept[];
     /**
      * Information about the use of the medicinal product in relation to other therapies as part of the indication.
      */
-    therapeuticIndication?: fhir.Reference[];
+    therapeuticIndication: fhir.Reference[];
     /**
      * Information about the use of the medicinal product in relation to other therapies described as part of the indication.
      */
-    otherTherapy?: fhir.MedicinalProductContraindicationOtherTherapy[];
+    otherTherapy: fhir.MedicinalProductContraindicationOtherTherapy[];
     /**
      * The population group to which this applies.
      */
-    population?: fhir.Population[];
+    population: fhir.Population[];
     /**
      * Default constructor for MedicinalProductContraindication - initializes any required elements to null if a value is not provided.
      */
