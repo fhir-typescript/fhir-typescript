@@ -52,5 +52,38 @@ export declare class DomainResource extends fhir.Resource {
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(): fhir.FtsIssue[];
+    /**
+     * Fluent-style function to add extensions
+     * @param ext
+     * @returns
+     */
+    addExtension(ext: fhir.ExtensionArgs): DomainResource;
+    /**
+     * Remove ALL instances of extensions with a matching URL, optionally recurse into extension.extension.
+     * @param url URL of extensions to remove
+     * @param searchNested If the removal should search for nested extensions
+     */
+    removeExtensions(url: fhir.FhirString | string, searchNested?: boolean): DomainResource;
+    /**
+     * Find the first instance of an extension with a matching URL, optionally recurse into extension.extension.
+     * @param url URL to search for
+     * @param searchNested If the search should nest into extensions
+     * @returns The FHIR Extension if found, or undefined.
+     */
+    findExtension(url: fhir.FhirString | string, searchNested?: boolean): fhir.Extension | undefined;
+    /**
+     * Find all instances of an extension with a matching URL, optionally recurse into extension.extension.
+     * @param url URL to search for
+     * @param searchNested If the search should nest into extensions
+     * @returns A new array of FHIR Extensions, with just the desired extensions
+     */
+    filterExtensions(url: fhir.FhirString | string, searchNested?: boolean): fhir.Extension[];
+    /**
+     * Internal recursive search function
+     * @param url
+     * @param exts
+     * @returns A new array (flat) of matching extensions
+     */
+    private static recurseForExtension;
 }
 //# sourceMappingURL=DomainResource.d.ts.map

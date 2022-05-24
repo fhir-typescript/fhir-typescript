@@ -240,12 +240,5 @@ export declare class Extension extends fhir.FhirElement {
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(): fhir.FtsIssue[];
-    /**
-     * Create an extension object with a specified URL and FhirBase value
-     * @param url
-     * @param value
-     * @returns
-     */
-    static fromValue(url: string, value: fhir.FhirBase): Extension;
 }
 //# sourceMappingURL=Extension.d.ts.map
